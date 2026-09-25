@@ -1,0 +1,8 @@
+[
+  {
+    "id": "fp_alu_simple",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/fp_alu_simple.sv",
+    "top": "alu_core",
+    "clock_ps": 8000
+  }
+]

@@ -1,0 +1,363 @@
+{
+ "plans": {
+  "front_1": {
+   "structures": {
+    "m0.l0.multiplier": {
+     "pin": {
+      "per_lane_signed": true,
+      "lane_cpa.family": "manchester_carry_chain",
+      "lane_cpa.variable_skip": false
+     },
+     "family": "twin_precision_subword"
+    },
+    "m1.l0.multiplier": {
+     "pin": {
+      "per_lane_signed": false,
+      "lane_cpa.family": "carry_increment",
+      "lane_cpa.intergroup_carry": "ripple",
+      "lane_cpa.block_width": 14,
+      "lane_cpa.block_sizing": "uniform",
+      "lane_cpa.increment_levels": 2,
+      "lane_cpa.block_adder.family": "carry_lookahead",
+      "lane_cpa.block_adder.group_size": 2,
+      "lane_cpa.block_adder.levels": 1,
+      "lane_cpa.block_adder.intergroup_carry": "lookahead",
+      "lane_cpa.increment_stage.family": "prefix_and_incrementer",
+      "lane_cpa.increment_stage.structure": "select_blocks",
+      "lane_cpa.increment_stage.topology": "sklansky"
+     },
+     "family": "twin_precision_subword"
+    },
+    "m2.l0.multiplier": {
+     "pin": {
+      "signed_scheme": "baugh_wooley",
+      "cpa.family": "uniform",
+      "cpa.adder.family": "manchester_carry_chain",
+      "cpa.adder.variable_skip": false
+     },
+     "family": "carry_save_array"
+    },
+    "m2.l1.multiplier": {
+     "pin": {
+      "signed_scheme": "baugh_wooley",
+      "cpa.family": "uniform",
+      "cpa.adder.family": "manchester_carry_chain",
+      "cpa.adder.variable_skip": false
+     },
+     "family": "carry_save_array"
+    },
+    "m0.l0.shifter": {
+     "pin": {
+      "sticky_collect": true,
+      "network": "butterfly"
+     },
+     "family": "butterfly_network"
+    },
+    "m1.l0.shifter": {
+     "pin": {
+      "sticky_collect": true,
+      "mask_generator": "thermometer_decode",
+      "merge_style": "and_or_merge",
+      "rotator.family": "barrel_mux_tree",
+      "rotator.stage_radix": 8,
+      "rotator.select_encoding": "one_hot_decoded",
+      "rotator.stage_order": "small_shift_first"
+     },
+     "family": "masked_merged"
+    },
+    "m2.l0.shifter": {
+     "pin": {
+      "sticky_collect": false,
+      "network": "butterfly"
+     },
+     "family": "butterfly_network"
+    },
+    "m2.l1.shifter": {
+     "pin": {
+      "sticky_collect": false,
+      "network": "butterfly"
+     },
+     "family": "butterfly_network"
+    },
+    "m0.l0.bitcount": {
+     "pin": {
+      "block_primitive": "pair_cell",
+      "valid_flag_propagation": true
+     },
+     "family": "lzd_cell_tree"
+    },
+    "m1.l0.bitcount": {
+     "pin": {
+      "block_primitive": "nibble_cell",
+      "output_form": "binary_count",
+      "valid_flag_propagation": false
+     },
+     "family": "lzd_cell_tree"
+    },
+    "m2.l0.bitcount": {
+     "pin": {
+      "strategy": "debruijn_multiply_index",
+      "isolate_circuit": "ripple_kill_chain",
+      "lzd.family": "lzd_cell_tree",
+      "lzd.block_primitive": "nibble_cell",
+      "lzd.valid_flag_propagation": false,
+      "negation_incrementer.family": "prefix_and_incrementer",
+      "negation_incrementer.structure": "prefix_and_tree",
+      "negation_incrementer.topology": "brent_kung"
+     },
+     "family": "trailing_zero"
+    },
+    "m2.l1.bitcount": {
+     "pin": {
+      "strategy": "debruijn_multiply_index",
+      "isolate_circuit": "ripple_kill_chain",
+      "lzd.family": "lzd_cell_tree",
+      "lzd.block_primitive": "nibble_cell",
+      "lzd.valid_flag_propagation": false,
+      "negation_incrementer.family": "prefix_and_incrementer",
+      "negation_incrementer.structure": "prefix_and_tree",
+      "negation_incrementer.topology": "brent_kung"
+     },
+     "family": "trailing_zero"
+    },
+    "m0.l0.comparator": {
+     "pin": {
+      "zero_detect": "sum_or_tree",
+      "subtractor.family": "sparse_prefix_hybrid",
+      "subtractor.valency": 2,
+      "subtractor.log2_sparsity": 3,
+      "subtractor.tree_topology": "sklansky",
+      "subtractor.sum_block_style": "conditional_sum"
+     },
+     "family": "subtractor_comparator"
+    },
+    "m1.l0.comparator": {
+     "pin": {
+      "structure": "msb_first_prefix",
+      "radix": 4
+     },
+     "family": "prefix_comparator"
+    },
+    "m2.l0.comparator": {
+     "pin": {
+      "structure": "tree_reduction",
+      "radix": 4
+     },
+     "family": "prefix_comparator"
+    },
+    "m2.l1.comparator": {
+     "pin": {
+      "structure": "tree_reduction",
+      "radix": 4
+     },
+     "family": "prefix_comparator"
+    }
+   },
+   "why": "front point 1 of the numeric stage: estimated area 5083 um2, delay 1579 ps; sharing scheme add-all_mul-none_log-all_pair-none_fmt-none_sw-pcc; 7 choices the seed does not realize dropped",
+   "shared": {
+    "adders_0": {
+     "members": [
+      "m0.l0.adder",
+      "m1.l0.adder",
+      "m2.l0.adder",
+      "m2.l1.adder"
+     ],
+     "why": "one lane-partitioned adder for these lanes",
+     "family": "compound_flagged_prefix"
+    },
+    "gate_rows_0": {
+     "members": [
+      "m0.l0.logic",
+      "m1.l0.logic",
+      "m2.l0.logic",
+      "m2.l1.logic"
+     ],
+     "family": "wide_gate_row",
+     "why": "one gate row for these lanes"
+    }
+   },
+   "components": {
+    "subword": {
+     "family": "partitioned_carry_chain"
+    }
+   },
+   "dropped": [
+    "core.bitcount.m0.output_form",
+    "core.bitcount.m2.lzd.output_form",
+    "core.comparator.m0.subtractor.sum_block.chain_segment_length",
+    "core.comparator.m0.subtractor.sum_block.family",
+    "core.comparator.m0.subtractor.sum_block.variable_skip",
+    "core.multiplier.m0.lane_cpa.chain_segment_length",
+    "core.multiplier.m2.cpa.adder.chain_segment_length"
+   ]
+  },
+  "front_5": {
+   "structures": {
+    "m0.l0.shifter": {
+     "pin": {
+      "stage_radix": 4,
+      "select_encoding": "binary",
+      "stage_order": "small_shift_first",
+      "direction_handling": "amount_negation",
+      "sticky_collect": false
+     },
+     "family": "barrel_mux_tree"
+    },
+    "m1.l0.shifter": {
+     "pin": {
+      "sticky_collect": false,
+      "mask_generator": "two_thermometer_and",
+      "merge_style": "and_or_merge",
+      "rotator.family": "barrel_mux_tree",
+      "rotator.stage_radix": 4,
+      "rotator.select_encoding": "binary",
+      "rotator.stage_order": "large_shift_first"
+     },
+     "family": "masked_merged"
+    },
+    "m2.l0.shifter": {
+     "pin": {
+      "stage_radix": 8,
+      "select_encoding": "binary",
+      "stage_order": "small_shift_first",
+      "direction_handling": "amount_negation",
+      "sticky_collect": false
+     },
+     "family": "barrel_mux_tree"
+    },
+    "m2.l1.shifter": {
+     "pin": {
+      "stage_radix": 8,
+      "select_encoding": "binary",
+      "stage_order": "small_shift_first",
+      "direction_handling": "amount_negation",
+      "sticky_collect": false
+     },
+     "family": "barrel_mux_tree"
+    },
+    "m0.l0.bitcount": {
+     "pin": {
+      "block_primitive": "nibble_cell",
+      "output_form": "one_hot_shift_controls",
+      "valid_flag_propagation": false
+     },
+     "family": "lzd_cell_tree"
+    },
+    "m1.l0.bitcount": {
+     "pin": {
+      "output_form": "direct_binary",
+      "lookahead_group": 12,
+      "levels": 1
+     },
+     "family": "priority_encoder"
+    },
+    "m2.l0.bitcount": {
+     "pin": {
+      "strategy": "isolate_then_encode",
+      "isolate_circuit": "twos_complement_and",
+      "lzd.family": "priority_encoder",
+      "lzd.output_form": "one_hot_then_encode",
+      "lzd.lookahead_group": 8,
+      "lzd.levels": 2,
+      "negation_incrementer.family": "prefix_and_incrementer",
+      "negation_incrementer.structure": "prefix_and_tree",
+      "negation_incrementer.topology": "kogge_stone"
+     },
+     "family": "trailing_zero"
+    },
+    "m2.l1.bitcount": {
+     "pin": {
+      "strategy": "isolate_then_encode",
+      "isolate_circuit": "twos_complement_and",
+      "lzd.family": "priority_encoder",
+      "lzd.output_form": "one_hot_then_encode",
+      "lzd.lookahead_group": 8,
+      "lzd.levels": 2,
+      "negation_incrementer.family": "prefix_and_incrementer",
+      "negation_incrementer.structure": "prefix_and_tree",
+      "negation_incrementer.topology": "kogge_stone"
+     },
+     "family": "trailing_zero"
+    },
+    "m0.l0.comparator": {
+     "pin": {
+      "zero_detect": "operand_xnor",
+      "subtractor.family": "ling_prefix",
+      "subtractor.topology": "sklansky",
+      "subtractor.pseudo_carry_group": 2,
+      "subtractor.sum_recovery": "late_select_mux"
+     },
+     "family": "subtractor_comparator"
+    },
+    "m1.l0.comparator": {
+     "pin": {
+      "structure": "tree_reduction",
+      "radix": 3
+     },
+     "family": "prefix_comparator"
+    },
+    "m2.l0.comparator": {
+     "pin": {
+      "zero_detect": "sum_or_tree",
+      "subtractor.family": "conditional_sum",
+      "subtractor.base_block_width": 1,
+      "subtractor.selection_radix": 2
+     },
+     "family": "subtractor_comparator"
+    },
+    "m2.l1.comparator": {
+     "pin": {
+      "zero_detect": "sum_or_tree",
+      "subtractor.family": "conditional_sum",
+      "subtractor.base_block_width": 1,
+      "subtractor.selection_radix": 2
+     },
+     "family": "subtractor_comparator"
+    }
+   },
+   "why": "front point 5 of the numeric stage: estimated area 2667 um2, delay 2927 ps; sharing scheme add-all_mul-all_log-all_pair-none_fmt-none_sw-pcc",
+   "shared": {
+    "adders_0": {
+     "members": [
+      "m0.l0.adder",
+      "m1.l0.adder",
+      "m2.l0.adder",
+      "m2.l1.adder"
+     ],
+     "why": "one lane-partitioned adder for these lanes",
+     "family": "carry_skip"
+    },
+    "multipliers_0": {
+     "members": [
+      "m0.l0.multiplier",
+      "m1.l0.multiplier",
+      "m2.l0.multiplier",
+      "m2.l1.multiplier"
+     ],
+     "family": "twin_precision_subword",
+     "why": "one gated twin-precision matrix for these lanes"
+    },
+    "gate_rows_0": {
+     "members": [
+      "m0.l0.logic",
+      "m1.l0.logic",
+      "m2.l0.logic",
+      "m2.l1.logic"
+     ],
+     "family": "wide_gate_row",
+     "why": "one gate row for these lanes"
+    }
+   },
+   "components": {
+    "subword": {
+     "family": "partitioned_carry_chain"
+    }
+   }
+  }
+ },
+ "rejected": {
+  "front_2": "SelectionError: partition gate_rows_0: physical sharing is not implemented for these selected structures: m0.l0.logic, m1.l0.logic, m2.l0.logic",
+  "front_3": "ValueError: subword partitioned_carry_chain: one lane-partitioned adder serves modes [0, 1, 2], whose declared adder families differ (core.adder.m0: carry_increment, core.adder.m2: sparse_prefix_hybrid); declare ",
+  "front_4": "ValueError: subword partitioned_carry_chain: one lane-partitioned adder serves modes [0, 1, 2], whose declared adder families differ (core.adder.m0: manchester_carry_chain, core.adder.m2: carry_lookahead); declar"
+ }
+}

@@ -1,0 +1,47 @@
+{
+  "int": {
+    "total": 700,
+    "fma": []
+  },
+  "fp": {
+    "total": 700,
+    "fma": [
+      {
+        "name": "r0160",
+        "slots": [
+          "m2.l0.fp_fma",
+          "m2.l1.fp_fma"
+        ]
+      },
+      {
+        "name": "r0169",
+        "slots": [
+          "m0.l0.fp_fma"
+        ]
+      },
+      {
+        "name": "c00313",
+        "slots": [
+          "m0.l0.fp_fma"
+        ]
+      }
+    ]
+  },
+  "hf": {
+    "total": 700,
+    "fma": [
+      {
+        "name": "c00217",
+        "slots": [
+          "m0.l0.fp_fma"
+        ]
+      },
+      {
+        "name": "c00354",
+        "slots": [
+          "m1.l0.fp_fma"
+        ]
+      }
+    ]
+  }
+}

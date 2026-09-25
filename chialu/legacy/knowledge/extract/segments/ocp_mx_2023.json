@@ -1,0 +1,22 @@
+{
+ "key": "ocp_mx_2023",
+ "file": "OCP_Microscaling Formats (MX) v1.0 Spec_Final.pdf",
+ "kind": "standard",
+ "citation": "Open Compute Project, \"OCP Microscaling Formats (MX) Specification v1.0\", 2023",
+ "pages": 16,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 15,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

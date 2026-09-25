@@ -1,0 +1,41 @@
+# PDK descriptor: ASAP7, the Arizona State University 7 nm predictive PDK,
+# 7.5-track standard cells, RVT devices, typical corner, NLDM libraries as
+# packaged by OpenROAD-flow-scripts. Cited from an instance as
+# `target: asap7`. Combinational cells only (AO, OA, INVBUF, SIMPLE); the
+# sequential library is not needed for the loop's combinational units.
+name: asap7
+aliases: []
+status: descriptor only — the VM's Debian yosys 0.23 + berkeley-abc segfault on these NLDM
+        libraries (ABC return code 139 on the SIMPLE library alone, no mapping output on the
+        others); a newer yosys with its bundled ABC (oss-cad-suite) is needed on the EDA node
+description: ASAP7 7 nm predictive PDK, asap7sc7p5t RVT cells, TT corner, NLDM
+process_nm: 7
+corner: TT RVT
+area_unit: um2
+liberty:
+  - path: pdk/lib/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib
+    url: https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz
+  - path: pdk/lib/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib
+    url: https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz
+  - path: pdk/lib/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib
+    url: https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz
+  - path: pdk/lib/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib
+    url: https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz
+abc:
+  clock_ps: 500
+  # the ABC scripts per flow.synth_effort (yosys -script form, commas for blanks; the loop writes the chosen one as a script file):
+  #   map:  structural hashing, then &nf, yosys's default liberty mapper, at its default effort (a lane module in 2 s; the mixed32 top in ~8 min)
+  #   opt:  bounded AIG optimization before mapping (&dc2 rewriting, &dch -f structural choices) and a higher mapping effort (&nf -C 32 -F 8 -p: more priority cuts, more area-flow rounds, pin permutation)
+  #   full: yosys's default liberty script (&fraig -x SAT sweeping, scorr, dc2, dretime, &dch -f) with the higher mapping effort; &fraig -x ran without end on the alu_mixed32 seed's divider arrays, so flow.synth_timeout_s guards it
+  # After mapping, the netlist is buffered and sized under the same target
+  # (buffer;upsize -D;dnsize -D), which is what yosys's own -liberty flow appends when a
+  # constraint is given. Without it ABC's stime charges the mapper's high-fanout nets in
+  # full: measured 2026-09-17 it overstates the delay of float-bearing designs by 12 to
+  # 27% for 2 to 3% area and leaves the integer ones unmoved.
+  scripts:
+    low: "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+    medium: "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+    high: "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+yosys:
+  # {noshare} is "-noshare" unless flow.synth_share: true (the SAT-based SHARE pass, which merges same-type cells in mutually exclusive branches, ran without end on the alu_mixed32 top)
+  synth: "synth -top {top} -flatten {noshare} -noabc"   # flatten: one area total, one critical path; -noabc: the mapping is the abc.scripts entry above (synth's own ABC pass would run yosys's default script)

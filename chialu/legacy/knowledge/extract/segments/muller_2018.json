@@ -1,0 +1,261 @@
+{
+ "key": "muller_2018",
+ "file": "muller2018.pdf",
+ "kind": "book",
+ "citation": "J.-M. Muller, N. Brunie, F. de Dinechin, C.-P. Jeannerod, M. Joldes, V. Lefevre, G. Melquiond, N. Revol, S. Torres, \"Handbook of Floating-Point Arithmetic\", 2nd ed., Birkhauser, 2018",
+ "pages": 640,
+ "title": "",
+ "authors": "",
+ "source": "outline",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "1 Introduction",
+   "start": 25,
+   "end": 36,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter is introductory/history material without arithmetic-unit design detail."
+  },
+  {
+   "id": "s02",
+   "title": "2 Definitions and Basic Notions",
+   "start": 37,
+   "end": 67,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter defines floating-point numbers/rounding properties rather than hardware mechanisms."
+  },
+  {
+   "id": "s03",
+   "title": "3 Floating-Point Formats and Environment",
+   "start": 68,
+   "end": 115,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter specifies floating-point formats/environment semantics rather than arithmetic-unit implementations."
+  },
+  {
+   "id": "s04",
+   "title": "4 Basic Properties and Algorithms",
+   "start": 116,
+   "end": 181,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter presents numerical/software algorithms and floating-point properties without a hardware mechanism."
+  },
+  {
+   "id": "s05",
+   "title": "5 Enhanced Floating-Point Sums, Dot Products,and Polynomial Values",
+   "start": 182,
+   "end": 211,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter develops compensated numerical algorithms for sums/dot products/polynomials and defers hardware acceleration to Chapter 8."
+  },
+  {
+   "id": "s06",
+   "title": "6 Languages and Compilers",
+   "start": 212,
+   "end": 250,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns programming languages/compilers rather than arithmetic-unit microarchitecture."
+  },
+  {
+   "id": "s07",
+   "title": "7 Algorithms for the Basic Operations",
+   "start": 251,
+   "end": 284,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "single_path",
+    "sig_mul_then_round",
+    "sig_div_then_round",
+    "classic_fma",
+    "decimal_fp_addition",
+    "decimal_fma"
+   ],
+   "why": "The chapter defines implementation algorithms and correct-rounding structures for binary/decimal addition, multiplication, division, square root, and FMA."
+  },
+  {
+   "id": "s08",
+   "title": "8 Hardware Implementation of Floating-Point Arithmetic",
+   "start": 285,
+   "end": 338,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "carry_lookahead",
+    "carry_skip",
+    "carry_select",
+    "parallel_prefix",
+    "booth_recoded_parallel",
+    "carry_save_array",
+    "sequential_shift_add",
+    "restoring_nonrestoring",
+    "srt_radix2",
+    "srt_high_radix",
+    "newton_raphson",
+    "goldschmidt",
+    "digit_recurrence_sqrt_combined",
+    "single_path",
+    "two_path",
+    "sig_mul_then_round",
+    "round_fused_in_reduction",
+    "sig_div_then_round",
+    "classic_fma",
+    "reduced_latency_fma",
+    "pairwise_tree",
+    "fused_csa",
+    "kulisch_long_accumulator",
+    "carry_save_datapath",
+    "barrel_mux_tree",
+    "lzd_cell_tree"
+   ],
+   "why": "The chapter reviews fixed-point primitives and evaluates complete hardware datapaths for floating-point add/multiply/divide/square-root/FMA and enhanced sum/dot operations."
+  },
+  {
+   "id": "s09",
+   "title": "9 Software Implementation of Floating-Point Arithmetic",
+   "start": 339,
+   "end": 392,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter explicitly implements floating-point operations as software on integer processors."
+  },
+  {
+   "id": "s10",
+   "title": "10 Evaluating Floating-Point Elementary Functions",
+   "start": 393,
+   "end": 452,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "direct_lut",
+    "bipartite",
+    "multipartite",
+    "pwl",
+    "piecewise_poly",
+    "single_poly",
+    "lut_plus_poly",
+    "correct_rounding_strategy",
+    "cordic",
+    "horner",
+    "estrin",
+    "shift_add_coeff",
+    "range_reduction"
+   ],
+   "why": "The chapter surveys hardware-relevant LUT/polynomial/shift-add/range-reduction mechanisms and correct-rounding strategies for elementary functions."
+  },
+  {
+   "id": "s11",
+   "title": "11 Complex Numbers",
+   "start": 453,
+   "end": 468,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter presents numerical algorithms for complex arithmetic without arithmetic-unit microarchitecture."
+  },
+  {
+   "id": "s12",
+   "title": "12 Interval Arithmetic",
+   "start": 469,
+   "end": 493,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns interval-arithmetic semantics and numerical error bounds rather than hardware mechanisms."
+  },
+  {
+   "id": "s13",
+   "title": "13 Verifying Floating-Point Algorithms",
+   "start": 494,
+   "end": 526,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns formal verification of floating-point algorithms rather than arithmetic-unit designs."
+  },
+  {
+   "id": "s14",
+   "title": "14 Extending the Precision",
+   "start": 527,
+   "end": 566,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter describes software techniques for extended/multiple precision rather than a covered hardware-unit mechanism."
+  },
+  {
+   "id": "s15",
+   "title": "A.1 Continued Fractions",
+   "start": 567,
+   "end": 569,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The appendix supplies number-theory tools for approximation/range-reduction proofs without hardware design detail."
+  },
+  {
+   "id": "s16",
+   "title": "A.2 Euclidean Lattices",
+   "start": 570,
+   "end": 574,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The appendix presents Euclidean-lattice theory for approximation/search problems rather than arithmetic-unit mechanisms."
+  },
+  {
+   "id": "s17",
+   "title": "B.1 The IEEE 754-1985 Standard",
+   "start": 575,
+   "end": 577,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The appendix summarizes a superseded floating-point standard and contains no microarchitectural design detail."
+  },
+  {
+   "id": "s18",
+   "title": "B.2 The IEEE 854-1987 Standard",
+   "start": 578,
+   "end": 579,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The appendix summarizes IEEE 854 format/operation requirements rather than implementation mechanisms."
+  },
+  {
+   "id": "s19",
+   "title": "B.3 The Need for a Revision",
+   "start": 580,
+   "end": 580,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The appendix gives historical motivation for standards revision without arithmetic-unit design detail."
+  },
+  {
+   "id": "s20",
+   "title": "B.4 The IEEE 754-2008 Revision",
+   "start": 581,
+   "end": 639,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The section is standards history followed by bibliography/back matter rather than a mechanism chapter."
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "target": "$A3EVAL/3rdparty/chialu/targets/eval/fp_alu_cmp.yaml",
+ "run_file": "$A3EVAL/3rdparty/chialu/targets/eval/fp_alu_cmp.nollm.yaml",
+ "run_dir": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp",
+ "stages": {
+  "calibrate": {
+   "area_scale": 0.6284,
+   "delay_scale": 1.0514,
+   "glue": {
+    "mode": {
+     "0": 96.2,
+     "1": 0.0,
+     "2": 0.0
+    },
+    "top": 273.4,
+    "outputs": {
+     "y": 5468.2,
+     "flags": 4961.8
+    },
+    "deepest_mode_bus_ps": 5194.8,
+    "whole_ps": 5312.76,
+    "factors": {
+     "fp_adder/single_path": 0.6704,
+     "unpacker/per_unit_unpack": 0.9551,
+     "rounder/dedicated_per_op": 0.6444,
+     "fp_multiplier/sig_mul_then_round": 0.4609,
+     "fp_comparator/integer_compare_on_bits": 0.5522
+    }
+   },
+   "exit": 0,
+   "estimate_exit": 0,
+   "measured": [
+    true,
+    [
+     7283.612,
+     4318.54
+    ]
+   ],
+   "estimated": [
+    true,
+    [
+     11589.9,
+     4107.5
+    ]
+   ],
+   "file": "$A3EVAL/3rdparty/chialu/targets/eval/fp_alu_cmp.numeric.cal.yaml"
+  },
+  "numeric": {
+   "exit": 0,
+   "records": 216,
+   "front_seeds_exit": 0,
+   "run_file": "$A3EVAL/3rdparty/chialu/targets/eval/fp_alu_cmp.numeric.cal.yaml",
+   "schemes": [
+    {
+     "scheme": "add-none_mul-none_log-none_pair-none_fmt-all",
+     "exit": 0,
+     "records": 54,
+     "estimate": {
+      "area_um2": 2665.4,
+      "delay_ps": 5438.2,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-none_mul-none_log-none_pair-none_fmt-arith",
+     "exit": 0,
+     "records": 54,
+     "estimate": {
+      "area_um2": 4700.4,
+      "delay_ps": 4607.5,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-none_mul-none_log-none_pair-none_fmt-none",
+     "exit": 0,
+     "records": 54,
+     "estimate": {
+      "area_um2": 7283.1,
+      "delay_ps": 4318.6,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-none_mul-none_log-none_pair-none_fmt-stage",
+     "exit": 0,
+     "records": 54,
+     "estimate": {
+      "area_um2": 5641.3,
+      "delay_ps": 5049.3,
+      "coverage": 1.0
+     }
+    }
+   ],
+   "schemes_enumerated": 4,
+   "schemes_priced": 4,
+   "front": [
+    "front_1",
+    "front_3",
+    "front_5"
+   ]
+  },
+  "seeds": {
+   "exit": 0,
+   "seeds": {
+    "front_1": {
+     "feasible": true,
+     "goal": [
+      7283.612,
+      4318.54
+     ]
+    },
+    "front_3": {
+     "feasible": true,
+     "goal": [
+      7288.134,
+      4780.11
+     ]
+    },
+    "front_5": {
+     "feasible": true,
+     "goal": [
+      8291.22,
+      5427.28
+     ]
+    }
+   }
+  }
+ }
+}

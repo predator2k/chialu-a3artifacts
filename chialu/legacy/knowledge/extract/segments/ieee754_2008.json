@@ -1,0 +1,142 @@
+{
+ "key": "ieee754_2008",
+ "file": "ieee-standard-for-floatingpoint-arithmetic.pdf",
+ "kind": "standard",
+ "citation": "IEEE, \"IEEE Standard for Floating-Point Arithmetic\", IEEE Std 754-2008, 2008",
+ "pages": 70,
+ "title": "",
+ "authors": "",
+ "source": "outline",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "1. Overview",
+   "start": 12,
+   "end": 12,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s02",
+   "title": "2. Definitions, abbreviations, and acronyms",
+   "start": 14,
+   "end": 16,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s03",
+   "title": "3. Floating-point formats",
+   "start": 17,
+   "end": 25,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s04",
+   "title": "4. Attributes and rounding",
+   "start": 26,
+   "end": 27,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s05",
+   "title": "5. Operations",
+   "start": 28,
+   "end": 44,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s06",
+   "title": "6. Infinity, NaNs, and sign bit",
+   "start": 45,
+   "end": 46,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s07",
+   "title": "7. Default exception handling",
+   "start": 47,
+   "end": 49,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s08",
+   "title": "8. Alternate exception handling attributes",
+   "start": 50,
+   "end": 51,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s09",
+   "title": "9. Recommended operations",
+   "start": 52,
+   "end": 58,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s10",
+   "title": "10. Expression evaluation",
+   "start": 59,
+   "end": 61,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s11",
+   "title": "11. Reproducible floating-point results",
+   "start": 62,
+   "end": 63,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s12",
+   "title": "Annex A (informative) Bibliography",
+   "start": 64,
+   "end": 65,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  },
+  {
+   "id": "s13",
+   "title": "Annex B (informative) Program debugging support",
+   "start": 66,
+   "end": 67,
+   "kind": "chapter",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

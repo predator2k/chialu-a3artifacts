@@ -1,0 +1,443 @@
+{
+  "before": {
+    "pass": false,
+    "mismatch_count": 25,
+    "first_mismatches": [
+      "MISMATCH i=228 in=0fe0201fc00004 got=3f7e8 expect=3f7f8",
+      "MISMATCH i=229 in=0fe02020000005 got=3f7e8 expect=3f7f8",
+      "MISMATCH i=230 in=0fe02020400006 got=3f7e8 expect=3f7f8",
+      "MISMATCH i=639 in=2fdfd00000000f got=3f828 expect=3f818",
+      "MISMATCH i=661 in=2fe00000400005 got=bf7e8 expect=bf7f8",
+      "MISMATCH i=724 in=30000020000004 got=bffe8 expect=bfff8",
+      "MISMATCH i=725 in=30000020400005 got=bffe8 expect=bfff8",
+      "MISMATCH i=1456 in=0fe0001f800014 got=3f7e8 expect=3f7f8",
+      "MISMATCH i=1457 in=0fe0001fc00015 got=3f7e8 expect=3f7f8",
+      "MISMATCH i=1458 in=0fe00020000016 got=3f7e8 expect=3f7f8"
+    ],
+    "detail": "25 vectors mismatch; the first ones:\n* vector 228: mode 0 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x807f (-1.16631e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 229: mode 0 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=True, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x8080 (-1.17549e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 230: mode 0 (1 x bf16), op fadd, rounding=RTZ, daz_in=True, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x8081 (-1.18468e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 639: mode 0 (1 x bf16), op fadd, rounding=RUP, daz_in=True, ftz_out=True, unary_dual=False; a[0]=0xbf7f (-0.996094) b[0]=0x4000 (2); y[0] expected 0x3f81 (1.00781) got 0x3f82 (1.01562)\n* vector 661: mode 0 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=True, unary_dual=False; a[0]=0xbf80 (-1) b[0]=0x1 (9.18355e-41); y[0] expected 0xbf7f (-0.996094) got 0xbf7e (-0.992188)\n* vector 724: mode 0 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xc000 (-2) b[0]=0x80 (1.17549e-38); y[0] expected 0xbfff (-1.99219) got 0xbffe (-1.98438)\n* vector 725: mode 0 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=True, unary_dual=False; a[0]=0xc000 (-2) b[0]=0x81 (1.18468e-38); y[0] expected 0xbfff (-1.99219) got 0xbffe (-1.98438)\n* vector 1456: mode 0 (1 x bf16), op fsub, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x7e (1.15713e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)",
+    "cycles_per_frame": null,
+    "seconds": 15.0,
+    "rule_defect_candidate": false,
+    "rule_members": [],
+    "source_bytes": 176744,
+    "source_sha256": "c28d1740573c05801b75a4848f0b97e2227c96f0e618cfe55dfcc6a56d7a8c5e",
+    "vectors_sha256": "3a80ad07986798c50a26fcb825dc766c9937f8e1bf4b115e9207e3b4e1519076",
+    "expected_sha256": "a025eb2193f0a9065b134b68ae3a8c7bb2cf25e6ff04caccd7b56a2e0535af74",
+    "fidelity": {
+      "criterion": "effective structural parameters",
+      "effects": [
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pin": "normalize_before_add",
+          "requested": false,
+          "effective": false,
+          "geometry": {
+            "kind": "fp_fma",
+            "fmt": {
+              "name": "bf16",
+              "exp_bits": 8,
+              "man_bits": 7,
+              "signed": true,
+              "width": 16,
+              "bias": 127,
+              "has_inf": true,
+              "has_nan": true,
+              "emax_code": 255,
+              "exp_only": false
+            },
+            "geom": {
+              "XW": 20,
+              "EW": 16,
+              "SW": 8,
+              "sr_bits": 7,
+              "XT": 40,
+              "VW": 27,
+              "tight": false,
+              "sr": false
+            }
+          },
+          "detail": "result normalization after the CPA",
+          "partial": false
+        },
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pin": "rounding_position",
+          "requested": "fused_with_cpa_dual_sum",
+          "effective": "fused_with_cpa_dual_sum",
+          "geometry": {
+            "kind": "fp_fma",
+            "fmt": {
+              "name": "bf16",
+              "exp_bits": 8,
+              "man_bits": 7,
+              "signed": true,
+              "width": 16,
+              "bias": 127,
+              "has_inf": true,
+              "has_nan": true,
+              "emax_code": 255,
+              "exp_only": false
+            },
+            "geom": {
+              "XW": 20,
+              "EW": 16,
+              "SW": 8,
+              "sr_bits": 7,
+              "XT": 40,
+              "VW": 27,
+              "tight": false,
+              "sr": false
+            }
+          },
+          "detail": "compound-CPA rounding candidates",
+          "partial": false
+        },
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pin": "lza.correction_scheme",
+          "requested": "compensation_in_rounding",
+          "effective": "compensation_in_rounding",
+          "geometry": {
+            "kind": "fp_fma",
+            "fmt": {
+              "name": "bf16",
+              "exp_bits": 8,
+              "man_bits": 7,
+              "signed": true,
+              "width": 16,
+              "bias": 127,
+              "has_inf": true,
+              "has_nan": true,
+              "emax_code": 255,
+              "exp_only": false
+            },
+            "geom": {
+              "XW": 20,
+              "EW": 16,
+              "SW": 8,
+              "sr_bits": 7,
+              "XT": 40,
+              "VW": 27,
+              "tight": false,
+              "sr": false
+            }
+          },
+          "detail": "full selected LZA on the actual final operand pair",
+          "partial": false
+        }
+      ],
+      "sharing": [],
+      "generated": [
+        {
+          "owner": null,
+          "family": "ripple_carry",
+          "pins": {},
+          "module": "fam_adder_ripple_carry",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "lzd_cell_tree",
+          "pins": {},
+          "module": "fam_count_lzd_pair_cell_binary_count_vprop_w20",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "barrel_mux_tree",
+          "pins": {},
+          "module": "fam_shift_barrel_mux_tree",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "prefix_and_incrementer",
+          "pins": {},
+          "module": "fam_incr_prefix_and",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "dedicated_per_op",
+          "pins": {},
+          "module": "fam_fp_round_dedicated_per_op_increment_adder_bf16_x20e16s8",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "parallel_prefix",
+          "pins": {
+            "topology": "sklansky"
+          },
+          "module": "fam_prefix_sklansky_w35",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "lzd_cell_tree",
+          "pins": {},
+          "module": "fam_count_lzd_pair_cell_binary_count_vprop_w39",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "barrel_mux_tree",
+          "pins": {
+            "sticky_collect": true
+          },
+          "module": "fam_shift_barrel_mux_tree",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "parallel_prefix",
+          "pins": {
+            "family": "parallel_prefix",
+            "topology": "sklansky"
+          },
+          "module": "fam_prefix_sklansky_w40",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "compound_flagged_prefix",
+          "pins": {
+            "topology": "sklansky"
+          },
+          "module": "fam_prefix_sklansky_w8_flag_dual",
+          "source_sha256": null
+        },
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pins": {
+            "rounding_position": "fused_with_cpa_dual_sum",
+            "normalize_before_add": false,
+            "negation_handling": "complement_recode",
+            "lza.family": "lza",
+            "lza.correction_scheme": "compensation_in_rounding"
+          },
+          "module": "fam_fp_fma_reduced_latency_fma_x20e16s8_p0959c32a9771",
+          "source_sha256": null
+        }
+      ]
+    }
+  },
+  "after": {
+    "pass": true,
+    "mismatch_count": 0,
+    "first_mismatches": [],
+    "detail": "bit-exact against the reference",
+    "cycles_per_frame": null,
+    "seconds": 0.0,
+    "source_bytes": 176838,
+    "source_sha256": "2231d32818d7ffc2fe729fb2836ca2e81d781c0cb734064de52977061b1a1e39",
+    "vectors_sha256": "3a80ad07986798c50a26fcb825dc766c9937f8e1bf4b115e9207e3b4e1519076",
+    "expected_sha256": "a025eb2193f0a9065b134b68ae3a8c7bb2cf25e6ff04caccd7b56a2e0535af74",
+    "fidelity": {
+      "criterion": "effective structural parameters",
+      "effects": [
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pin": "normalize_before_add",
+          "requested": false,
+          "effective": false,
+          "geometry": {
+            "kind": "fp_fma",
+            "fmt": {
+              "name": "bf16",
+              "exp_bits": 8,
+              "man_bits": 7,
+              "signed": true,
+              "width": 16,
+              "bias": 127,
+              "has_inf": true,
+              "has_nan": true,
+              "emax_code": 255,
+              "exp_only": false
+            },
+            "geom": {
+              "XW": 20,
+              "EW": 16,
+              "SW": 8,
+              "sr_bits": 7,
+              "XT": 40,
+              "VW": 27,
+              "tight": false,
+              "sr": false
+            }
+          },
+          "detail": "result normalization after the CPA",
+          "partial": false
+        },
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pin": "rounding_position",
+          "requested": "fused_with_cpa_dual_sum",
+          "effective": "fused_with_cpa_dual_sum",
+          "geometry": {
+            "kind": "fp_fma",
+            "fmt": {
+              "name": "bf16",
+              "exp_bits": 8,
+              "man_bits": 7,
+              "signed": true,
+              "width": 16,
+              "bias": 127,
+              "has_inf": true,
+              "has_nan": true,
+              "emax_code": 255,
+              "exp_only": false
+            },
+            "geom": {
+              "XW": 20,
+              "EW": 16,
+              "SW": 8,
+              "sr_bits": 7,
+              "XT": 40,
+              "VW": 27,
+              "tight": false,
+              "sr": false
+            }
+          },
+          "detail": "compound-CPA rounding candidates",
+          "partial": false
+        },
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pin": "lza.correction_scheme",
+          "requested": "compensation_in_rounding",
+          "effective": "compensation_in_rounding",
+          "geometry": {
+            "kind": "fp_fma",
+            "fmt": {
+              "name": "bf16",
+              "exp_bits": 8,
+              "man_bits": 7,
+              "signed": true,
+              "width": 16,
+              "bias": 127,
+              "has_inf": true,
+              "has_nan": true,
+              "emax_code": 255,
+              "exp_only": false
+            },
+            "geom": {
+              "XW": 20,
+              "EW": 16,
+              "SW": 8,
+              "sr_bits": 7,
+              "XT": 40,
+              "VW": 27,
+              "tight": false,
+              "sr": false
+            }
+          },
+          "detail": "full selected LZA on the actual final operand pair",
+          "partial": false
+        }
+      ],
+      "sharing": [],
+      "generated": [
+        {
+          "owner": null,
+          "family": "ripple_carry",
+          "pins": {},
+          "module": "fam_adder_ripple_carry",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "lzd_cell_tree",
+          "pins": {},
+          "module": "fam_count_lzd_pair_cell_binary_count_vprop_w20",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "barrel_mux_tree",
+          "pins": {},
+          "module": "fam_shift_barrel_mux_tree",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "prefix_and_incrementer",
+          "pins": {},
+          "module": "fam_incr_prefix_and",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "dedicated_per_op",
+          "pins": {},
+          "module": "fam_fp_round_dedicated_per_op_increment_adder_bf16_x20e16s8",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "parallel_prefix",
+          "pins": {
+            "topology": "sklansky"
+          },
+          "module": "fam_prefix_sklansky_w35",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "lzd_cell_tree",
+          "pins": {},
+          "module": "fam_count_lzd_pair_cell_binary_count_vprop_w39",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "barrel_mux_tree",
+          "pins": {
+            "sticky_collect": true
+          },
+          "module": "fam_shift_barrel_mux_tree",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "parallel_prefix",
+          "pins": {
+            "family": "parallel_prefix",
+            "topology": "sklansky"
+          },
+          "module": "fam_prefix_sklansky_w40",
+          "source_sha256": null
+        },
+        {
+          "owner": null,
+          "family": "compound_flagged_prefix",
+          "pins": {
+            "topology": "sklansky"
+          },
+          "module": "fam_prefix_sklansky_w8_flag_dual",
+          "source_sha256": null
+        },
+        {
+          "owner": "core.fp_fma.m0",
+          "family": "reduced_latency_fma",
+          "pins": {
+            "rounding_position": "fused_with_cpa_dual_sum",
+            "normalize_before_add": false,
+            "negation_handling": "complement_recode",
+            "lza.family": "lza",
+            "lza.correction_scheme": "compensation_in_rounding"
+          },
+          "module": "fam_fp_fma_reduced_latency_fma_x20e16s8_p0959c32a9771",
+          "source_sha256": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+run	complete	iterations	state	detail
+exp10.fp_alu_cmp.adaevolve.r1	yes	20	done	
+exp10.fp_alu_cmp.adaevolve.r2	yes	20	done	
+exp10.fp_alu_cmp.adaevolve.r3	yes	20	done	
+exp10.fp_alu_cmp.beam_search.r1	yes	20	done	
+exp10.fp_alu_cmp.beam_search.r2	yes	20	done	
+exp10.fp_alu_cmp.beam_search.r3	yes	20	done	
+exp10.fp_alu_cmp.best_of_n.r1	NO	19	done	
+exp10.fp_alu_cmp.best_of_n.r2	NO	19	done	
+exp10.fp_alu_cmp.best_of_n.r3	NO	19	running	
+exp10.fp_alu_cmp.chialu.r1	yes	20	done	pipeline stages {'seeds': 0, 'search': 0} synth_repeats=3
+exp10.fp_alu_cmp.chialu.r2	NO	18	running	pipeline stages {'seeds': 0, 'search': None} synth_repeats=3
+exp10.fp_alu_cmp.chialu.r3	NO	18	running	pipeline stages {'seeds': 0, 'search': None} synth_repeats=3
+exp10.fp_alu_cmp.plain.r1	NO	16	done	
+exp10.fp_alu_cmp.plain.r2	NO	15	done	
+exp10.fp_alu_cmp.plain.r3	NO	15	done	
+exp10.fp_alu_cmp_hf.adaevolve.r1	yes	20	done	
+exp10.fp_alu_cmp_hf.adaevolve.r2	yes	20	done	
+exp10.fp_alu_cmp_hf.adaevolve.r3	yes	20	done	
+exp10.fp_alu_cmp_hf.beam_search.r1	yes	20	done	
+exp10.fp_alu_cmp_hf.beam_search.r2	yes	20	done	
+exp10.fp_alu_cmp_hf.beam_search.r3	yes	20	done	
+exp10.fp_alu_cmp_hf.best_of_n.r1	yes	20	done	
+exp10.fp_alu_cmp_hf.best_of_n.r2	yes	20	done	
+exp10.fp_alu_cmp_hf.best_of_n.r3	yes	20	done	
+exp10.fp_alu_cmp_hf.chialu.r1	NO	19	running	pipeline stages {'seeds': 0, 'search': None} synth_repeats=3
+exp10.fp_alu_cmp_hf.chialu.r2	yes	20	done	pipeline stages {'seeds': 0, 'search': 0} synth_repeats=3
+exp10.fp_alu_cmp_hf.chialu.r3	yes	20	done	pipeline stages {'seeds': 0, 'search': 0} synth_repeats=3
+exp10.fp_alu_cmp_hf.plain.r1	NO	15	done	
+exp10.fp_alu_cmp_hf.plain.r2	NO	16	done	
+exp10.fp_alu_cmp_hf.plain.r3	NO	15	done	
+exp10.fpnew.hand_adaevolve.r1	yes	20	done	
+exp10.fpnew.hand_adaevolve.r2	yes	20	done	
+exp10.fpnew.hand_adaevolve.r3	yes	20	done	
+exp10.hardfloat.hand_adaevolve.r1	yes	20	done	
+exp10.hardfloat.hand_adaevolve.r2	NO	16	running	
+exp10.hardfloat.hand_adaevolve.r3	NO	18	running	
+exp10.int_subword_alu.adaevolve.r1	yes	20	done	
+exp10.int_subword_alu.adaevolve.r2	yes	20	done	
+exp10.int_subword_alu.adaevolve.r3	yes	20	done	
+exp10.int_subword_alu.beam_search.r1	yes	20	done	
+exp10.int_subword_alu.beam_search.r2	yes	20	done	
+exp10.int_subword_alu.beam_search.r3	yes	20	done	
+exp10.int_subword_alu.best_of_n.r1	yes	20	done	
+exp10.int_subword_alu.best_of_n.r2	yes	20	done	
+exp10.int_subword_alu.best_of_n.r3	yes	20	done	
+exp10.int_subword_alu.chialu.r1	yes	20	done	pipeline stages {'seeds': 0, 'search': 0} synth_repeats=3
+exp10.int_subword_alu.chialu.r2	NO	19	done	pipeline stages {'seeds': 0, 'search': 0} synth_repeats=3
+exp10.int_subword_alu.chialu.r3	yes	20	done	pipeline stages {'seeds': 0, 'search': 0} synth_repeats=3
+exp10.int_subword_alu.plain.r1	NO	13	done	
+exp10.int_subword_alu.plain.r2	NO	13	done	
+exp10.int_subword_alu.plain.r3	NO	14	done	
+exp10.transdot.hand_adaevolve.r1	NO	19	done	
+exp10.transdot.hand_adaevolve.r2	yes	20	done	
+exp10.transdot.hand_adaevolve.r3	yes	20	done	

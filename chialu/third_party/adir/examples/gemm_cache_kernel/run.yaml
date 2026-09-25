@@ -1,0 +1,207 @@
+# GEMM kernels for a fixed cache configuration, measured under cachegrind:
+# four C kernels, one per shape class, with the plan declared as BUFFER
+# and TILE lines; the domain library is `chiacache/` beside this file.
+# This is the runnable cousin of cacheflex_kernel: the same shape of
+# task (a family of kernels, domain lines, a cheap-to-expensive
+# constraint chain) with gcc and valgrind as the only tools. The
+# CacheFlex task itself (a scratchpad-converted L2 under an ISA
+# extension, measured on gem5) is examples/cacheflex_kernel.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: gemm_cache_kernel
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  sim:                                   # gcc and valgrind on the host
+    resources:
+      build: 2
+      sim: 4
+      opencode_creds: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    worker_env_commands:
+      - export PATH=$HOME/.opencode/bin:$HOME/miniconda3/envs/chia_env/bin:$PATH
+
+head_env_commands:
+  - export PATH=$HOME/.opencode/bin:$HOME/miniconda3/envs/chia_env/bin:$PATH
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --include-dashboard=false --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  build:
+    cache: true
+  cachesim:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chiacache.Kernel
+  run_dir: run/gemm_cache_kernel
+
+  variables:                             # all fixed: the hardware is the specification
+    l2.size_kb:
+      fixed: 2048
+    l2.ways:
+      fixed: 16
+    l2.line_bytes:
+      fixed: 64
+    l1.size_kb:
+      fixed: 32
+    isa.ext:
+      fixed: plain_c
+    kernel.op:
+      fixed: gemm
+    kernel.dtype:
+      fixed: fp32
+
+  artifacts:
+    kernels:                             # one kernel per shape class, each independently mutable
+      role: seed
+      kind: text
+      source: generated
+      language: c
+      members: [gemm_small, gemm_large, gemm_tall, gemm_wide]
+      declaration_member: gemm_small     # the BUFFER and TILE lines live in this member's block
+      evolve: ["gemm_*"]
+    harness:                             # the driver: operands, the kernel call, the reference compare
+      role: fixed
+      kind: text
+      source: generated
+      language: c
+    reference:                           # the naive reference kernel
+      role: input
+      kind: text
+      source: file
+      file: ref/gemm_ref.c
+      language: c
+    shapes:                              # the training shape set
+      role: input
+      kind: text
+      source: file
+      file: shapes/train.json
+    shapes_heldout:
+      role: input
+      kind: text
+      source: file
+      file: shapes/heldout.json
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration           # BUFFER within the capacity; TILE consistent with the buffers
+      isa_check:                         # plain C only: no inline asm, intrinsics or pragmas
+        node: chiacache.nodes.isa_check
+        inputs:
+          source: candidate.kernels
+          ext: vars.isa.ext
+      build:
+        node: chiacache.nodes.build
+        inputs:
+          source: candidate
+          reference: artifacts.reference
+      conformance:                       # random operands, the reference compare, per shape
+        node: chiacache.nodes.conformance
+        inputs:
+          binary: build.binary
+          shapes: artifacts.shapes
+          trials: 2
+      sim:                               # cachegrind with the configured L1 and L2; a stated cycle model
+        node: chiacache.nodes.cachesim
+        inputs:
+          binary: build.binary
+          shapes: artifacts.shapes
+          l2_size_kb: vars.l2.size_kb
+          l2_ways: vars.l2.ways
+          line_bytes: vars.l2.line_bytes
+          l1_size_kb: vars.l1.size_kb
+        when:
+          - conformance.pass
+      sim_heldout:
+        node: chiacache.nodes.cachesim
+        inputs:
+          binary: build.binary
+          shapes: artifacts.shapes_heldout
+          l2_size_kb: vars.l2.size_kb
+          l2_ways: vars.l2.ways
+          line_bytes: vars.l2.line_bytes
+          l1_size_kb: vars.l1.size_kb
+        report_only: true
+    feedback: [conformance.detail, sim.stats]
+    report: [sim_heldout.cycles]
+
+  constraints:                           # cheap first: the static check, the build, the conformance run, then the simulation
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: isa_check.ok, eq: true, hard: true}
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: conformance.pass, eq: true, hard: true}
+
+  goal:
+    minimize: geomean(sim.cycles)        # over the training shapes
+    score:
+      rule: ratio_to_seed
+      infeasible: zero
+
+  knowledge: chiacache/knowledge
+  task:
+    context: task.md
+
+  search:
+    backend: adaevolve
+    iterations: 150
+    parallel: 4
+    eval_timeout_s: 1800
+    diff_mode: true
+    max_solution_bytes: 120000
+    retries: 2
+    database:
+      use_migration: true
+      use_paradigm_breakthrough: true
+      diversity_strategy: metric
+    seeds:
+      generated: [naive, tiled_l2, packed_tiled]
+    context:
+      programs: 1
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        member_focus: [none, one]
+      sample: ucb
+      sources: [chiacache_plan_table]
+    tactics:
+      sources: [worst_member, unexplored_values]
+      select: ucb
+      window: 20
+    models:
+      solution:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+        timeout_s: 1800
+      guide:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+        timeout_s: 1800
+    budget:
+      wall_hours: 24
+      node_runs: 1500
+      llm_calls: 600
+    stop:
+      plateau_iterations: 40
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: false

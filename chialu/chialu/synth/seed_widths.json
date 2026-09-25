@@ -1,0 +1,78 @@
+{
+ "formats": [
+  "bf16",
+  "fp16",
+  "fp4e2m1",
+  "fp8e4m3",
+  "fp8e5m2"
+ ],
+ "geoms": [
+  "x12e12s4",
+  "x14e11s11",
+  "x26e13s11",
+  "x26e16s11",
+  "x36e11s16"
+ ],
+ "widths": {
+  "adder": [
+   8,
+   16
+  ],
+  "bitcount": [
+   8,
+   16
+  ],
+  "comparator": [
+   8,
+   16
+  ],
+  "converter": [
+   8,
+   16
+  ],
+  "fp_adder": [
+   8,
+   16,
+   40
+  ],
+  "fp_comparator": [
+   8,
+   16
+  ],
+  "fp_fma": [
+   8,
+   16
+  ],
+  "fp_multiplier": [
+   8,
+   16,
+   40
+  ],
+  "logic": [
+   8,
+   16
+  ],
+  "multiplier": [
+   8,
+   16
+  ],
+  "posit_unit": [
+   16
+  ],
+  "quantizer": [
+   40
+  ],
+  "rounder": [
+   8,
+   16
+  ],
+  "shifter": [
+   8,
+   16
+  ],
+  "unpacker": [
+   8,
+   16
+  ]
+ }
+}

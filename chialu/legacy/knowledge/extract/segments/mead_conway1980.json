@@ -1,0 +1,75 @@
+{
+ "key": "mead_conway1980",
+ "file": "Introduction_to_VLSI_systems.pdf",
+ "kind": "book",
+ "citation": "C. Mead, L. Conway, \"Introduction to VLSI Systems\", Addison-Wesley, 1980.",
+ "pages": 258,
+ "title": "Introduction to VLSI Systems",
+ "authors": "Carver A. Mead; Lynn A. Conway",
+ "source": "toc_llm",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "Front matter",
+   "start": 0,
+   "end": 6,
+   "kind": "front",
+   "extract": false,
+   "families": [],
+   "why": "The front matter provides publication context and a general VLSI motivation without arithmetic-unit design detail."
+  },
+  {
+   "id": "s02",
+   "title": "MOS Devices and Circuits",
+   "start": 7,
+   "end": 48,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter covers general MOS devices, logic circuits, delay, and scaling rather than an arithmetic-unit mechanism."
+  },
+  {
+   "id": "s03",
+   "title": "Integrated System Fabrication",
+   "start": 49,
+   "end": 79,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns fabrication processes, design rules, yield, and conductor limits rather than arithmetic-unit architecture."
+  },
+  {
+   "id": "s04",
+   "title": "Data and Control Flow in Systematic Structures",
+   "start": 80,
+   "end": 124,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter presents general data/control structures, registers, programmable logic, and finite-state machines without a covered arithmetic-unit mechanism."
+  },
+  {
+   "id": "s05",
+   "title": "Implementing Integrated System Designs",
+   "start": 125,
+   "end": 191,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter covers layout, fabrication, design tools, simulation, and testing rather than arithmetic-unit mechanisms."
+  },
+  {
+   "id": "s06",
+   "title": "Architecture and Design of a Data Processing Engine",
+   "start": 192,
+   "end": 257,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "barrel_mux_tree"
+   ],
+   "why": "The chapter gives implementation detail for a 16-bit arithmetic logic unit and barrel shifter, which can inform its carry-propagating adder and mux-tree shifter families."
+  }
+ ]
+}

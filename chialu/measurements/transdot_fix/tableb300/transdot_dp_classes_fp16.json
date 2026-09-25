@@ -1,0 +1,17 @@
+{
+ "classes": {
+  "value/operand_special=yes": 1,
+  "value/operand_special=no": 1
+ },
+ "by_mode": {
+  "mode0/value": 2
+ },
+ "samples": {
+  "value/operand_special=yes": [
+   "mode 0 a=[31802, 5384] b=[29216, 53314] c=e0000000 expected 4c17ada7 got 4c17ada8 specials=['nan']"
+  ],
+  "value/operand_special=no": [
+   "mode 0 a=[3738, 30214] b=[33795, 14584] c=a0000000 expected cc405a5f got cc405a60 specials=[]"
+  ]
+ }
+}

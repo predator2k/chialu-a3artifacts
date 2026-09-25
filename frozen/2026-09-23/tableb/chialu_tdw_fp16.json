@@ -1,0 +1,69 @@
+{
+ "design": "chialu_tdw",
+ "row": "fp16",
+ "contract": "fused (TransDot's slots and window)",
+ "chars": 133799,
+ "modules": [
+  "fam_dot_multi_term_fused_dot_n2_s11c24_a281lm149_x52e16s24_09ac12ad8924"
+ ],
+ "lint": {
+  "ok": true,
+  "seconds": 1.4,
+  "detail": ""
+ },
+ "conformance": {
+  "pass": true,
+  "mismatch_count": 0,
+  "vectors": 3156,
+  "seconds": 0.0,
+  "detail": "bit-exact against the reference"
+ },
+ "ulp": {
+  "target": "$A3EVAL/3rdparty/chialu/targets/eval/vec_dot_acc_cmp_fp16.yaml",
+  "n_random": 3000,
+  "vectors": 3156,
+  "definition": "error = |got - ref| / ulp(ref binade); ref is the fused reference's packed d; zero or subnormal ref: ulp = 2^(emin - p + 1); specials are classes rather than errors",
+  "vs_fused": {
+   "exact_fraction": 1.0,
+   "exact": 3156,
+   "numeric_vectors": 3156,
+   "max_ulp": 0.0,
+   "mean_ulp": 0.0,
+   "max_ulp_vs_exact": 0.0,
+   "mean_ulp_vs_exact": 0.0,
+   "histogram": {
+    "0": 3156
+   },
+   "classes": {},
+   "worst": ""
+  },
+  "vs_sequential": {
+   "exact_fraction": 0.969265,
+   "exact": 3059,
+   "max_ulp": 6.0,
+   "mean_ulp": 0.03263624841571609,
+   "histogram": {
+    "0": 3060,
+    "(0.5, 1]": 93,
+    "(1, 2]": 2,
+    "(4, 8]": 1
+   },
+   "classes": {
+    "value": 96,
+    "zero_sign": 1
+   }
+  },
+  "samples": {},
+  "seconds": 1
+ },
+ "synth": {
+  "ok": true,
+  "area_um2": 12619.306,
+  "abc_delay_ps": 8851.71,
+  "cells": 10064,
+  "seconds": 12.0,
+  "detail": "",
+  "clock_ps": 300
+ },
+ "seconds": 17
+}

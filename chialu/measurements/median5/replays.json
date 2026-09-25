@@ -1,0 +1,134 @@
+{
+  "int_subword_alu": [
+    {
+      "repeat_index": 0,
+      "matches": true,
+      "expected": {
+        "status": "ok",
+        "area_um2": 5743.472,
+        "abc_delay_ps": 1735.74,
+        "cells": 4992
+      },
+      "actual": {
+        "status": "ok",
+        "area_um2": 5743.472,
+        "abc_delay_ps": 1735.74,
+        "cells": 4992
+      },
+      "replay_record": {
+        "sha256": "76e8eb277b78b8732d0b79a8484b935be29f1fd354db61b414e17b55a1754ef5",
+        "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/76e8eb277b78b8732d0b79a8484b935be29f1fd354db61b414e17b55a1754ef5.gz",
+        "encoding": "gzip"
+      }
+    },
+    {
+      "repeat_index": 4,
+      "matches": true,
+      "expected": {
+        "status": "ok",
+        "area_um2": 5623.24,
+        "abc_delay_ps": 1804.76,
+        "cells": 4926
+      },
+      "actual": {
+        "status": "ok",
+        "area_um2": 5623.24,
+        "abc_delay_ps": 1804.76,
+        "cells": 4926
+      },
+      "replay_record": {
+        "sha256": "df529680c4e768feeabf52db5d05028c4fa354812408225d88185d50c0b7d9c0",
+        "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/df529680c4e768feeabf52db5d05028c4fa354812408225d88185d50c0b7d9c0.gz",
+        "encoding": "gzip"
+      }
+    }
+  ],
+  "fp_alu_cmp": [
+    {
+      "repeat_index": 0,
+      "matches": true,
+      "expected": {
+        "status": "ok",
+        "area_um2": 7283.612,
+        "abc_delay_ps": 4318.54,
+        "cells": 6156
+      },
+      "actual": {
+        "status": "ok",
+        "area_um2": 7283.612,
+        "abc_delay_ps": 4318.54,
+        "cells": 6156
+      },
+      "replay_record": {
+        "sha256": "05bceb30f479da009c6a5aefd65af7b1da8cfa3ed3c64b93dd7f2b188f279fb7",
+        "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/05bceb30f479da009c6a5aefd65af7b1da8cfa3ed3c64b93dd7f2b188f279fb7.gz",
+        "encoding": "gzip"
+      }
+    },
+    {
+      "repeat_index": 4,
+      "matches": true,
+      "expected": {
+        "status": "ok",
+        "area_um2": 7208.6,
+        "abc_delay_ps": 4470.86,
+        "cells": 6199
+      },
+      "actual": {
+        "status": "ok",
+        "area_um2": 7208.6,
+        "abc_delay_ps": 4470.86,
+        "cells": 6199
+      },
+      "replay_record": {
+        "sha256": "7356af17f88b5bd30e2e27b7991947bea8f24670cbfaabf3b224125ff8d2b673",
+        "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/7356af17f88b5bd30e2e27b7991947bea8f24670cbfaabf3b224125ff8d2b673.gz",
+        "encoding": "gzip"
+      }
+    }
+  ],
+  "fp_alu_cmp_hf": [
+    {
+      "repeat_index": 0,
+      "matches": true,
+      "expected": {
+        "status": "ok",
+        "area_um2": 6350.218,
+        "abc_delay_ps": 4365.67,
+        "cells": 5403
+      },
+      "actual": {
+        "status": "ok",
+        "area_um2": 6350.218,
+        "abc_delay_ps": 4365.67,
+        "cells": 5403
+      },
+      "replay_record": {
+        "sha256": "6a3db1ca0ffd17fd9ccab13135e874bfc93213ba4d43fc7f2bc6cb3c1bd44fd5",
+        "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/6a3db1ca0ffd17fd9ccab13135e874bfc93213ba4d43fc7f2bc6cb3c1bd44fd5.gz",
+        "encoding": "gzip"
+      }
+    },
+    {
+      "repeat_index": 4,
+      "matches": true,
+      "expected": {
+        "status": "ok",
+        "area_um2": 6478.164,
+        "abc_delay_ps": 4528.21,
+        "cells": 5431
+      },
+      "actual": {
+        "status": "ok",
+        "area_um2": 6478.164,
+        "abc_delay_ps": 4528.21,
+        "cells": 5431
+      },
+      "replay_record": {
+        "sha256": "6ae42900ab1c17dc565fde8a7cafa05b465226a1ca69fbb3a7c7d1af1df605b8",
+        "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/6ae42900ab1c17dc565fde8a7cafa05b465226a1ca69fbb3a7c7d1af1df605b8.gz",
+        "encoding": "gzip"
+      }
+    }
+  ]
+}

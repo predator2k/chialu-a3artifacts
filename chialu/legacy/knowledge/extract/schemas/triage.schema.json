@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["segments"],
+  "properties": {
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "extract", "families", "why"],
+        "properties": {
+          "id": {"type": "string"},
+          "extract": {"type": "boolean"},
+          "families": {"type": "array", "items": {"type": "string"}},
+          "why": {"type": "string"}
+        }
+      }
+    }
+  }
+}

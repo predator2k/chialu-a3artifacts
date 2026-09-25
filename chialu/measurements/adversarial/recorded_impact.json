@@ -1,0 +1,895 @@
+[
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_1",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_2",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_3",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_4",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_5",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_6",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_7",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r1/front_8",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r1/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_1",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_2",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_3",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_4",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_5",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_6",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_7",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r2/front_8",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r2/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_1",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_2",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_3",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_4",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_5",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_6",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_7",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.int_subword_alu.chialu.r3/front_8",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.int_subword_alu.chialu.r3/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu/front_1",
+    "hits": [],
+    "error": "ValueError('structures m1.l0.multiplier: lane_cpa.block_width=14 is outside 2..2 by 1')",
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu/discovered.json",
+    "source_sha256": "b29471fcc4c4177adf1b4025277bf496ce0ae90ab9ff3f8c500c35d9850d2012",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu/front_5",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu/discovered.json",
+    "source_sha256": "b29471fcc4c4177adf1b4025277bf496ce0ae90ab9ff3f8c500c35d9850d2012",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.clock3000/front_1",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.clock3000/discovered.json",
+    "source_sha256": "8db792b1cf743e869d8c1e3f1b71c966bc9fd5d315a53720a6a3f7df076164c1",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.clock3000/front_2",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.clock3000/discovered.json",
+    "source_sha256": "8db792b1cf743e869d8c1e3f1b71c966bc9fd5d315a53720a6a3f7df076164c1",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_1",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_2",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_3",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_4",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_5",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_6",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_7",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "int_subword_alu.surrogate/front_8",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/int_subword_alu.surrogate/discovered.json",
+    "source_sha256": "3e435a623ea76cac50395fb96c7b47f452c7f5381b557e885f078e6c0126c5a2",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_int/front_1",
+    "hits": [],
+    "error": "ValueError('structures m1.l0.multiplier: lane_cpa.block_width=14 is outside 2..2 by 1')",
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_int/discovered.json",
+    "source_sha256": "b29471fcc4c4177adf1b4025277bf496ce0ae90ab9ff3f8c500c35d9850d2012",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_int/front_5",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_int/discovered.json",
+    "source_sha256": "b29471fcc4c4177adf1b4025277bf496ce0ae90ab9ff3f8c500c35d9850d2012",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.schemes0_int/front_1",
+    "hits": [],
+    "error": "ValueError(\"structures m0.l0.adder: block_adder.family='manchester_carry_chain' is outside enum['ripple_carry', 'parallel_prefix']\")",
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.schemes0_int/discovered.json",
+    "source_sha256": "bb57a8396443e910f2f81d3fda14e3b260f48ad3afd4e8170d2585d7e881a112",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.schemes0_int/front_2",
+    "hits": [],
+    "error": "ValueError(\"structures m0.l0.multiplier: adder.family='fpga_carry_chain' is outside enum['ripple_carry', 'manchester_carry_chain', 'carry_lookahead', 'carry_skip', 'carry_select', 'conditional_sum', 'carry_increment', 'parallel_prefix', ...]\")",
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.schemes0_int/discovered.json",
+    "source_sha256": "bb57a8396443e910f2f81d3fda14e3b260f48ad3afd4e8170d2585d7e881a112",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.schemes0_int/front_3",
+    "hits": [],
+    "error": "ValueError(\"structures m2.l0.multiplier: reduction.cpa.adder.family='carry_lookahead' is outside enum['ripple_carry', 'manchester_carry_chain', 'carry_skip', 'carry_select', 'conditional_sum', 'carry_increment', 'parallel_prefix', 'sparse_prefix_hybrid', ...]\")",
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.schemes0_int/discovered.json",
+    "source_sha256": "bb57a8396443e910f2f81d3fda14e3b260f48ad3afd4e8170d2585d7e881a112",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.schemes0_int/front_4",
+    "hits": [],
+    "kind": "int",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.schemes0_int/discovered.json",
+    "source_sha256": "bb57a8396443e910f2f81d3fda14e3b260f48ad3afd4e8170d2585d7e881a112",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r1/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r1/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r1/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r1/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r1/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r1/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r1/front_4",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r1/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r2/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r2/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r2/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r2/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r2/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r2/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r2/front_4",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r2/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r3/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r3/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r3/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r3/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r3/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r3/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp.chialu.r3/front_4",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp.chialu.r3/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp/front_5",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp.clock8000/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp.clock8000/discovered.json",
+    "source_sha256": "bc13e6d89b5582fe8e5ad9d452690ca702431a522fdbd5421be6c7a72aac5da8",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp.clock8000/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp.clock8000/discovered.json",
+    "source_sha256": "bc13e6d89b5582fe8e5ad9d452690ca702431a522fdbd5421be6c7a72aac5da8",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp.clock8000/front_5",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp.clock8000/discovered.json",
+    "source_sha256": "bc13e6d89b5582fe8e5ad9d452690ca702431a522fdbd5421be6c7a72aac5da8",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp.surrogate/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp.surrogate/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp.surrogate/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp.surrogate/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp.surrogate/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp.surrogate/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp.surrogate/front_4",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp.surrogate/discovered.json",
+    "source_sha256": "c301f2ba3000b973cddeab47357e066c0f0bedd318b587e625a9d9edc13abd35",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.abl_fp_noreview/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.abl_fp_noreview/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.abl_fp_noreview/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.abl_fp_noreview/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.abl_fp_noreview/front_5",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.abl_fp_noreview/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_fp/front_1",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_fp/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_fp/front_3",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_fp/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_fp/front_5",
+    "hits": [],
+    "kind": "fp",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_fp/discovered.json",
+    "source_sha256": "38030ef6e7f46a542bda52f2a078895a8de51bf83e2e20906893ae45614c9005",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_1",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_3",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_4",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_5",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_6",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_7",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r1/front_8",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r1/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_1",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_3",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_4",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_5",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_6",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_7",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r2/front_8",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r2/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_1",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_3",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_4",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_5",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_6",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_7",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "exp.fp_alu_cmp_hf.chialu.r3/front_8",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/exp.fp_alu_cmp_hf.chialu.r3/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf/front_1",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf/front_3",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf/front_4",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf/front_5",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_1",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_2",
+    "hits": [],
+    "error": "ValueError(\"output_form='binary_count' is outside enum['one_hot_then_encode', 'direct_binary']\")",
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_3",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_4",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_5",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_6",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_7",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "fp_alu_cmp_hf.surrogate/front_8",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/fp_alu_cmp_hf.surrogate/discovered.json",
+    "source_sha256": "0f5f4ae2754178cdc61243667e031275f9f2080ef808f93ea8c7c8ff713f8556",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_hf/front_1",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_hf/front_3",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_hf/front_4",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  },
+  {
+    "name": "smoke.pipe_hf/front_5",
+    "hits": [],
+    "kind": "hf",
+    "source": "$A3EVAL/3rdparty/chialu/run/smoke.pipe_hf/discovered.json",
+    "source_sha256": "a03aa15b1e83515e99bb9546cdd53f399c642cfbc22f9ac90fc433782bc30878",
+    "fma_hits": []
+  }
+]

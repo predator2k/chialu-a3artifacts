@@ -1,0 +1,22 @@
+{
+ "key": "dedinechin_2024",
+ "file": "dedinechin_2024.pdf",
+ "kind": "book",
+ "citation": "F. de Dinechin, M. Kumm, \"Application-Specific Arithmetic\", Springer, 2024",
+ "pages": 22,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 21,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

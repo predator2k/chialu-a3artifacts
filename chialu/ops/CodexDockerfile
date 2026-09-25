@@ -1,0 +1,21 @@
+# Codex CLI on top of the opencode worker image: the `codex/<model>`
+# handles of chia_loop/llm.py run `codex exec --json` here (the codex
+# node of cluster.yaml, resource codex_creds). Build on the VM:
+#
+#   docker build -t chialu-codex:latest -f ops/CodexDockerfile ops
+#   (ops/vmctl.sh codex-image)
+#
+# The ChatGPT login lives in ~/.codex on the VM (codex login --device-auth
+# there, or a copied auth.json) and cluster.yaml mounts it at
+# /home/ray/.codex, which CODEX_HOME names. The image carries no
+# credentials. Codex's own Linux sandbox (bubblewrap) cannot start inside
+# the container, so the handle runs codex with its sandbox bypassed; the
+# container, which holds no repository and no EDA tool, is the isolation.
+FROM ghcr.io/ucb-bar/chia-opencode:latest
+
+USER root
+RUN npm install -g @openai/codex@0.153.2
+
+USER ray
+RUN mkdir -p /home/ray/.codex /home/ray/llm_env
+WORKDIR /home/ray/llm_env

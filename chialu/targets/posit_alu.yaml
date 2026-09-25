@@ -1,0 +1,404 @@
+# A posit ALU of chiALU on nangate45: one posit16 (es = 1) mode beside
+# 2 x int8, with integer add, mul and min and posit add, mul and min, a
+# residue-15 checker; the Pareto front of area and delay at a 30 ns
+# target. The posit decode and encode are realized inline in the top;
+# the significand arithmetic can share the integer structures.
+# Every model call is opencode on deepseek-flash through deepseek; every prompt
+# and reply is logged under the run directory. Written by targets/make_targets.py.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+# Two machines are registered: <host> (the head, also an EDA worker) and
+# <host>.  Neither shares a filesystem with the other, so each node type
+# sources its own environment file; those files move HOME onto the large
+# volume (/data2 on <host>, /mnt/ssd on <host>) so that nothing this
+# cluster runs writes to a home quota or to /tmp.
+cluster_name: posit_alu
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+  overrides:
+    <IP>:                        # <host>; a literal IP, chia expands ${VAR} in values only
+      tunnel:                            # <host>'s and <host>'s firewalls pass only port 22, so Ray rides an SSH tunnel
+        gcs_tunnel_port: 6395            # the worker dials $RAY_HEAD_IP:<this>, so it must equal the head port above
+        # chia pins the HEAD's ray worker ports as soon as any worker is tunnelled, and its
+        # default range is 100 wide.  Ray keeps idle workers alive, so on a 344-CPU cluster the
+        # range runs out and every later driver hangs in cache.start_cache() with no error.
+        # The range is also bounded from above: chia reverse-tunnels every one of these ports,
+        # each listener costs two sockets (v4 and v6) on <host>, and <host>'s sshd hands sessions
+        # RLIMIT_NOFILE=1024 -- the forward fails at offset 483 every time, and
+        # ExitOnForwardFailure then kills the whole tunnel.  chia's default fix for this raises
+        # sshd's LimitNOFILE, which needs root we do not have, so the range stays under ~450.
+        # It sits below the ephemeral range (32768-60999) as well, so an outgoing connection on
+        # <host> cannot transiently steal one of these ports.
+        head_worker_port_min: 21000
+        head_worker_port_max: 21399
+        # The worker's range does cost: chia emits one ssh -L per port.  200 is far more than
+        # <host>'s 84 eda slots can occupy and still keeps the ssh command manageable.
+        ray_worker_port_min: 30000
+        ray_worker_port_max: 30199
+        pre_tunnel_commands:             # chia's default here needs sudo; we have no root on either machine
+          - bash $REMOTE_HOME/chialu-home/start_relay.sh
+
+available_node_types:
+  eda:                                   # <host>: verilator, yosys, ABC; the opencode login
+    resources:
+      eda: 124                           # tool slots: a simulation node takes CHIALU_VERILATOR_JOBS of them, a synthesis one CHIALU_EDA_SYNTH_WEIGHT
+      opencode_creds: 100                 # concurrent agent calls; one per run in flight, so this bounds how many runs share the host
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    worker_env_commands:
+      - source $CHIALU_HOME/chialu-env.sh
+      - export RAY_num_workers_soft_limit=150
+      - export VERTEX_LOCATION=global       # the region deepseek-flash answers on through opencode
+  eda_<host>:                             # <host>: EDA only, no agent calls (no credentials staged there)
+    resources:
+      eda: 84
+      opencode_creds: 0
+    num_workers: 1
+    compatible_ips: ["${<host>_MACHINE}"]
+    worker_env_commands:
+      - source $REMOTE_HOME/chialu-home/chialu-env.sh
+
+head_env_commands:
+  - source $CHIALU_HOME/chialu-env.sh
+  - export VERTEX_LOCATION=global
+  - export RAY_num_workers_soft_limit=150   # ray keeps one idle worker per CPU by default; on 344
+                                            # CPUs that outruns the pinned worker-port range above
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=${CHIA_RAY_PORT} --include-dashboard=false --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:${CHIA_RAY_PORT} --dashboard-agent-listen-port=0
+
+cache:
+  conformance:
+    cache: true
+  fault:
+    cache: true
+  synth_unit:
+    cache: true
+  synth_ppa:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chialu.ALU
+  run_dir: run/posit_alu
+
+  variables:
+    modes:                             # a mode port over the formats
+      runtime:
+        - {count: 1, format: posit16_1}
+        - {count: 2, format: int8}
+    ops:                               # an opcode port over the ops
+      runtime: [add, mul, min, fadd, fmul, fmin]
+    accuracy:
+      fixed: exact
+    check:                             # the check specification per format and op (docs/checker-spec-plan.md); the search picks check.<rule>.*
+      fixed:
+        default: {detect: none}        # a pair no rule selects is unchecked
+        fallback: duplicate            # an op the code does not cover gets a replica of the datapath
+        rules:
+          - name: all                  # one rule over every format and op: the one-rule spelling as a table
+            formats: [posit16_1, int8]
+            ops: [add, mul, min, fadd, fmul, fmin]
+            choices:                   # the checker families and pins in play; an omitted pin is open to the search
+              - {family: residue, modulus: 15, generator_style: csa_tree, comparator.family: direct_compare}
+    clock_ps:                          # the synthesis timing target: the mapper optimizes area under it; the Pareto front is taken at it
+      fixed: 30000
+    rounding:
+      fixed: RNE
+    daz_in:
+      fixed: false
+    ftz_out:
+      fixed: false
+    flags:                             # the flag bits the unit reports
+      fixed: []
+    sr_bits:
+      fixed: 8
+    unary_dual:                        # a unary op on both operands at once
+      fixed: false
+    check_sr:
+      fixed: true
+    nan_payload:
+      fixed: canonical
+    invalid_result:
+      fixed: saturate
+    nan_to_int:
+      fixed: zero
+    minmax_nan:
+      fixed: propagate
+    tininess:
+      fixed: after
+    int_div_zero:
+      fixed: riscv
+    zero_sign:
+      fixed: positive
+    quire_overflow:
+      fixed: wrap
+    block_scale_rounding:
+      fixed: nearest
+    block_element_overflow:
+      fixed: saturate
+    sr_compare:
+      fixed: gt
+    flag_scope:
+      fixed: per_result
+    check_flags:
+      fixed: false
+    verify.n_random:                   # random vectors of the conformance testbench
+      fixed: 20000
+    verify.seed:
+      fixed: 655366
+    verify.n_random_masks:             # fault masks of the checker gate
+      fixed: 2000
+    core.family:                       # the core's architecture: one unit per op class, its structures shared by plan
+      fixed: unit_per_class
+    core.*:                            # every structure family and choice; undeclared ones stand at their defaults
+      search: all
+
+  artifacts:
+    core:
+      role: seed
+      kind: text
+      source: generated
+      language: systemverilog
+      indexed_by: rtl_members           # one member (file) per structure, plus packages, top and library
+      declaration_member: top            # the VAR / STRUCTURE block sits in the top's region
+      evolve: [alu_core, "alu_core_u_*"]  # the top and every unit module: one region each
+    checker:
+      role: fixed
+      kind: text
+      source: generated
+      language: systemverilog
+    verify_bundle:
+      role: fixed
+      kind: text
+      source: generated
+      indexed_by: verify_files
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      lint:
+        node: chialu.eda.lint
+        inputs:
+          rtl_text: candidate.core
+      conformance:
+        node: chialu.eda.conformance
+        inputs:
+          rtl_text: candidate.core
+          files: artifacts.verify_bundle
+      checker_gen:                       # the checker under the candidate's declared check.<rule>.* choices
+        node: chialu.eda.checker_gen
+        inputs:
+          files: artifacts.verify_bundle
+          decl: decl.check
+      fault:
+        node: chialu.eda.fault
+        inputs:
+          rtl_text: candidate.core
+          files: artifacts.verify_bundle
+          checker_rtl: checker_gen.rtl_text
+      review:                            # a coding agent reads the modules the candidate wrote itself: does the text realize the declared family?
+        node: chialu.review.opencode       # opencode | claude | codex; the node takes that agent's worker credential
+        inputs:
+          rtl_text: candidate.core
+          structures: decl.STRUCTURE
+          declaration: decl.core           # the completed declaration: a structure at its slot's default family is reviewed too
+          provider: "'deepseek'"
+          model: "'deepseek-flash'"
+          timeout_s: 900
+          effort: high
+          max_output_tokens: 393216
+          only: candidate.touched          # the members whose text differs from the parent's; a re-rendered unit needs no review
+          work_dir: run.agent_dir           # the review calls' directories (prompt, files, transcript) beside the solution calls'
+        when:
+          - conformance.pass
+      yosys_stat:                        # a gate count after techmap: the screen before synthesis
+        node: chialu.eda.yosys_stat
+        inputs:
+          rtl_text: candidate.core
+          top: alu_core
+      synth_unit:                        # ABC map of every unit module alone: the attribution per structure
+        node: chialu.eda.synth_unit
+        inputs:
+          rtl_text: candidate.core
+          structures: decl.STRUCTURE
+          pdk: nangate45
+          clock_ps: vars.clock_ps
+          repeats: 3
+          effort: medium
+        when:
+          - conformance.pass
+          - yosys_stat.cells le 2.0 * seed.yosys_stat.cells
+      synth_ppa:
+        node: chialu.eda.synth_ppa
+        inputs:
+          rtl_text: candidate.core
+          top: alu_core
+          pdk: nangate45
+          clock_ps: vars.clock_ps
+          repeats: 3
+          effort: medium
+          timeout_s: 1200
+          report: true                   # the critical path, paths and area by hierarchy as feedback, whatever CHIALU_SYNTH_REPORT says
+        when:
+          - conformance.pass
+          - synth_unit.area_um2 le 1.2 * seed.synth_unit.area_um2
+    feedback: [conformance.detail, checker_gen.detail, fault.detail, review.detail, synth_unit.attribution, synth_ppa.detail, synth_ppa.summary, synth_ppa.critical_path, synth_ppa.paths, synth_ppa.area_by_hierarchy]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: lint.ok, eq: true, hard: true}
+    - {metric: conformance.pass, eq: true, hard: true}
+    - {metric: fault.pass, eq: true, hard: true}
+    - {metric: fault.alias_rate, le: 0.09, hard: true}
+    # alias_rate is the seam campaign's: an XOR mask on y_core before the checker, so for a
+    # conformant core it gates the checker declaration rather than this candidate. escape_max is
+    # the grouped campaign's worst group: the fraction of one-bit corruptions of a unit's own
+    # internal nets the checker misses, which does depend on the datapath. Measured 2026-09-17 on
+    # the baseline seeds: int_subword 0.0126, mixed_cvt 0.0020, posit 0.0199.
+    - {metric: fault.escape_max, le: 0.05, hard: true}
+    - {metric: synth_ppa.abc_delay_ps, le: vars.clock_ps}   # a violation is infeasible, kept with its measurements
+    - {metric: review.dissent, le: 1}           # modules whose text does not realize the family they declare;
+                                               # one is tolerated because a rewrite often lands on a structure the
+                                               # declaration no longer names, two says the declaration is fiction.
+                                               # A count, not a ratio: it means the same for two structures or twelve,
+                                               # and a review whose call failed reports no dissent rather than total dissent.
+
+  goal:
+    pareto:                              # the front over area and delay at the clock
+      - minimize: synth_ppa.area_um2
+      - minimize: synth_ppa.abc_delay_ps
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+
+  knowledge: ../chialu/knowledge
+  role:
+    file: ../targets/prompts/role.md   # who the model is: the system text's first section
+  task:
+    script: ../chialu/task.py          # the task statement, rendered from the bound unit
+
+  search:
+    backend: adaevolve
+    iterations: 20
+    parallel: 2
+    parallel_nodes: 6
+    eval_timeout_s: 3600
+    diff_mode: true
+    max_solution_bytes: 400000
+    attempts: 1                          # one candidate per iteration for every backend (no re-prompt on a failed one)
+    retries: 0
+    database:
+      use_migration: true
+      migration_interval: 10
+      use_paradigm_breakthrough: true
+      diversity_strategy: metric
+    seeds:
+      generated: []                      # the numeric stage's front (chialu.pipeline), fastest point first
+    context:
+      programs: 1                        # the program reaches the agent as a file path in the call's directory
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        ambition: [conservative, moderate, aggressive]   # how far one round's change reaches; sampled like the rest
+        member_focus: [one]              # one region per round
+        feedback_depth: [files]          # every feedback artifact as a file of the call directory, indexed in the prompt
+        knowledge_depth: [path]          # the directory's layout in one line; the agent lists it and reads the cards it needs
+      sample: ucb
+      sources: [chialu_interface, chialu_families, chialu_structures, chialu_timing]
+      log: true
+    tactics:
+      sources: []
+      select: ucb
+      window: 20
+    models:
+      solution:
+        agent: opencode
+        provider: deepseek               # opencode's provider id; the model id is the provider's own
+        model: deepseek-flash
+        effort: high               # opencode passes it as --variant, the provider's reasoning effort
+        max_output_tokens: 393216   # the model's whole output limit (MAX_OUTPUT_TOKENS in make_targets.py)
+        timeout_s: 1200                # one attempt, as the plain loop's call: a stalled call is recorded, not repeated
+        retries: 1
+      guide:
+        agent: opencode
+        provider: deepseek
+        model: deepseek-flash
+        effort: high
+        max_output_tokens: 393216
+        timeout_s: 1200                # one attempt, as the plain loop's call: a stalled call is recorded, not repeated
+        retries: 1
+    budget:
+      wall_hours: 48                     # a stop only a hung run reaches: 20 iterations take a few hours
+      node_runs: 2000
+      llm_calls: 2000                    # likewise: the iterations bound the run, not the call count
+    history:
+      entries: 7                         # entries of a region's history the prompt summarizes
+    extensions:                    # ADIR passes this through without reading it
+      calibration:
+        model: xgboost             # gnn selects the packaged whole-design graph model
+        min_delay_gap_pct: 5       # smaller true differences are synthesis noise
+        min_area_gap_pct: 2
+        gnn:
+          config: G5              # G1..G8, or full experiment names; G5 omits estimate globals
+          hyperparameters: {}     # optional architecture/optimizer overrides
+          ensemble_size: 3
+          epochs: 250
+          patience: 40
+          device: cpu             # cuda for a configured GPU worker
+          python: python          # interpreter with numpy and torch
+          host: null              # optional SSH host, e.g. <host>
+          workdir: null           # required remote scratch directory when host is set
+          threads: 2
+        # A plan is a sharing scheme over a fixed structure set, and inside one plan the search ranks
+        # micro-architectures rather than prices them: the Pareto front is five to eleven designs out
+        # of thousands and can span as little as 4% in area. A calibration coefficient is a monotone
+        # transform of the estimate, so it moves the level and leaves that ordering untouched -- the
+        # numeric model's own rank correlation against synthesis was measured at 0.00 to 0.61 on
+        # delay. So what a plan declares here is the ranking accuracy it requires, and how much
+        # synthesis it will spend to certify it.
+        exhaustive_below: 2000     # a plan with no more admissible designs than this is synthesized
+                                   # whole: ranking by measurement beats ranking by any model, and
+                                   # the heavily shared plans really are this small (8, for fmt-all)
+        ranking:
+          metric: delay            # the objective the target is stated against
+          target_rho: 0.90         # required gap-filtered rank correlation on held-out designs
+          margin: 0.03             # size the test set to certify the target when the truth is this
+                                   # much above it. This, not the size of the space, is what drives
+                                   # the number: the standard error of a correlation depends on the
+                                   # sample alone, so 500 designs certify a space of 1e11 exactly as
+                                   # well as one of 1e6. At 99% confidence a 0.90 target needs 160
+                                   # designs against a true 0.93, and 1773 against a true 0.91.
+          confidence: 0.99         # one-sided, for the lower bound the certificate is taken on
+          rows_per_column: 10      # the initial TRAINING set is sized per one-hot family column
+                                   # instead, because it is a learning curve and not an inference:
+                                   # an int_subword plan has ~102 columns, so 100 designs is
+                                   # underdetermined and ~1000 is where the measured curve flattens
+          test_size: null          # null derives it from target_rho, margin and confidence
+          initial_train: null      # null derives it from rows_per_column
+          increment: null          # designs added after a failed round; null reuses the test size
+          max_rounds: 6            # after this many failures the plan falls back to exhaustive
+          max_error_ratio: 0.5     # the holdout RMSE over the spread (std) of all measured designs: the
+                                   # model's error must stay well inside the differences between designs
+          cv_floor_pct: 3.0        # a metric whose coefficient of variation over the measured points is
+                                   # below this needs no ranking (the designs are about equal on it):
+                                   # a low rho there is the synthesizer's jitter, not a model failure
+    stop:
+      plateau_iterations: 0              # off: every method runs its full iteration count (the plain loop has no such stop)
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: false

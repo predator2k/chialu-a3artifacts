@@ -1,0 +1,339 @@
+# PF-LLM (Xu et al., ASPLOS '26) as an ADIR run. A language model
+# fine-tuned on the assembly around each load emits one hint per load
+# PC: which sub-prefetcher may prefetch for it, how aggressively, and
+# whether its demand request is kept from a sub-prefetcher. The hints
+# sit in a table in main memory (the PHT) and reach the L1D ensemble,
+# the LMHint prefetcher, through a small on-chip buffer (the PHB). The
+# paper's design is the seed. The search rewrites the router and the
+# orchestrator that apply a hint, and declares which hint fields they
+# apply, the sub-prefetcher set, the buffer size and the policy used
+# while a buffer miss is served. The ground truth, the model and the
+# hint files are node outputs, pinned or cached by content, so a
+# candidate that changes only the hardware never retrains. Geomean IPC
+# on six of the paper's twelve SPEC 2017 workloads is the goal; the
+# other six are reported. The pfllm library is named as the task needs
+# it; champsim is a CHIA node.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: pf_llm
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+  ssh_private_key: ${SSH_KEY}
+
+available_node_types:
+  champsim_build:                        # compiles a candidate into a ChampSim binary
+    resources:
+      champsim_build: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-champsim:latest
+      pull_before_run: true
+      run_options:
+        - --cpuset-cpus=0-7
+  champsim:                              # one trace per worker: the ground truth and every IPC
+    resources:
+      champsim: 1
+    num_workers: 8
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-champsim:latest
+      pull_before_run: true
+      run_options:
+        - -v ${TRACE_DIR}:${TRACE_DIR}:ro
+        - -v ${BIN_DIR}:${BIN_DIR}:ro
+  gpu:                                   # the paper's 8 x H20 machine: fine-tuning takes all eight, hint generation one
+    resources:
+      gpu: 8
+    num_workers: 1
+    compatible_ips: ["${GPU_HOST}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-pfllm:latest   # LLaMA-Factory, DeepSpeed, vLLM, objdump
+      pull_before_run: true
+      run_options:
+        - --gpus all
+        - -v ${HF_HOME}:/root/.cache/huggingface
+        - -v ${BIN_DIR}:${BIN_DIR}:ro
+  evolver:
+    resources:
+      evolver: 1
+      opencode_creds: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  build_champsim:
+    cache: true
+  champsim:
+    cache: true
+  amat:
+    cache: true
+  finetune:
+    cache: true
+  hints:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: pfllm.HintedPrefetcher
+  run_dir: run/pf_llm
+
+  variables:
+    cache_level:
+      fixed: L1D                         # the LMHint prefetcher sits at L1D
+    api:
+      fixed: champsim_dpc3               # the paper's ChampSim: prefetcher_cache_operate / prefetcher_cache_fill
+    isa:
+      fixed: x86_64                      # a 48-bit virtual PC in the table
+    model.base:
+      fixed: Qwen/Qwen2.5-Coder-0.5B-Instruct
+    model.context_lines:
+      fixed: 128                         # assembly lines before and after the load: 257 lines per prompt
+    model.epochs:
+      fixed: 2
+    model.lr:
+      fixed: 1.0e-5
+    model.batch:
+      fixed: 64                          # the effective batch, AdamW in BF16
+    hint.fields:                         # which hints the orchestrator applies: the paper's LMHint-SDF, -SD and -S;
+      search: [SDF, SD, S]               # the first member of a searched list is its default
+    hint.degree_levels:
+      fixed: 3                           # 1, 2, 3 -> the first quartile, the median, the third quartile of the native range
+    hint.bits:
+      fixed: 8                           # 4 selection + 2 degree + 2 filter: one SRAM row
+    hint.default:                        # the policy at the reserved entry, used while a buffer miss is served
+      search: [none, next_line, stride, sandbox]
+    ensemble:                            # full: the twelve of the paper's Table 2; reduced: the four the model selects
+      search: [full, reduced]            # most often (LMHint-SDFR), imposed through the inference schema, no retraining
+    phb.entries:
+      search: [256, 128, 512]
+    # the on-chip state is a metric (accounting.bytes) under a hard constraint, not a variable;
+    # the model.* lines are the paper's values: make them `search` and drop the pins below
+    # to search the model as well
+
+  artifacts:
+    ensemble:                            # the LMHint prefetcher: router, multiplexer and orchestrator
+      role: seed
+      kind: text
+      source: file
+      file: seeds/lmhint.cc              # the paper's LMHint-SDF
+      language: cpp
+      evolve: [lmhint]                   # the struct that applies a hint; the sub-prefetchers and the buffer stay outside
+    subprefetchers:                      # Table 2 as implemented in the paper's ChampSim
+      role: fixed
+      kind: text
+      source: file
+      file: src/subprefetchers.cc
+      language: cpp
+    harness:                             # the ChampSim glue: the buffer, the table loader, the hint decode
+      role: fixed
+      kind: text
+      source: generated
+      language: cpp
+    prompt:                              # the paper's Listing 1: the system prompt, the <load> tags, the JSON answer
+      role: fixed
+      kind: text
+      source: file
+      file: prompt/template.md
+    spec2006:                            # SPEC 2006, compiled by the task so that the assembly and the trace share a binary
+      role: input
+      kind: text
+      source: file
+      file: bench/spec2006.json
+    spec2017:                            # the twelve memory-intensive SPEC 2017 workloads
+      role: input
+      kind: text
+      source: file
+      file: bench/spec2017.json
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      lint:                              # the documented API only; a hint reaches the router through the buffer lookup, never from the table
+        node: pfllm.lint
+        inputs:
+          source: candidate.ensemble
+          api: vars.api
+      build:
+        node: pfllm.build_champsim
+        inputs:
+          source: candidate
+          root: /home/ray/champsim
+          module_name: lmhint
+          ensemble: decl.ensemble        # which sub-prefetchers are compiled in
+          fields: decl.hint.fields
+          phb_entries: decl.phb.entries
+          default_policy: decl.hint.default
+        resources:
+          champsim_build: 1
+      accounting:                        # sizeof(lmhint) plus the buffer, by a compile-time probe
+        node: pfllm.state_bytes
+        inputs:
+          source: candidate.ensemble
+          struct: lmhint
+          phb_entries: decl.phb.entries
+          hint_bits: vars.hint.bits
+      amat:                              # the ground truth: one ChampSim run per (sub-prefetcher, degree) on every training
+        node: pfllm.amat                 # binary, recording the average memory access time of each load PC
+        pin: true                        # once per run
+        map_over:
+          subprefetcher: [pythia, sms, ampm, bingo, sandbox, power7, dspatch, mlop, stride, stream, next_line, ppf]
+        inputs:
+          binaries: artifacts.spec2006
+          trace_dir: ${TRACE_DIR}
+          degrees: native                # every degree of the sub-prefetcher's own range (Table 2)
+          warmup_instructions: 20000000
+          simulation_instructions: 200000000
+        resources:
+          champsim: 1
+      labels:                            # per load PC: the least AMAT names the selection and the degree, the worst the filter
+        node: pfllm.label
+        pin: true
+        inputs:
+          amat: amat.table
+          degree_levels: vars.hint.degree_levels
+          context_lines: vars.model.context_lines
+          binaries: artifacts.spec2006
+          prompt: artifacts.prompt
+      finetune:                          # LLaMA-Factory over DeepSpeed on the eight GPUs, loss on the JSON tokens only: hours
+        node: pfllm.finetune
+        pin: true
+        inputs:
+          dataset: labels.dataset
+          base_model: vars.model.base
+          epochs: vars.model.epochs
+          learning_rate: vars.model.lr
+          batch_size: vars.model.batch
+        resources:
+          gpu: 8
+      hints:                             # one inference per load of every test binary under vLLM; the schema
+        node: pfllm.hints                # restricts the selection to the declared ensemble
+        inputs:
+          model: finetune.model
+          binaries: artifacts.spec2017
+          prompt: artifacts.prompt
+          context_lines: vars.model.context_lines
+          ensemble: decl.ensemble
+        resources:
+          gpu: 1
+      pack:                              # the JSON hints as the table: a 48-bit virtual PC and the 8-bit hint per load
+        node: pfllm.pack_pht
+        inputs:
+          hints: hints.json
+          isa: vars.isa
+          bits: vars.hint.bits
+          fields: decl.hint.fields
+      probe:                             # one trace, short: determinism and a quick IPC
+        node: champsim
+        inputs:
+          binary: build.binary
+          hints: pack.tables
+          trace_dir: ${TRACE_DIR}
+          benchmarks: [605.mcf_s]
+          warmup_instructions: 1000000
+          simulation_instructions: 5000000
+          repeat: 2                      # two runs; deterministic iff they agree
+      dev:                               # six of the paper's twelve: the goal
+        node: champsim
+        inputs:
+          binary: build.binary
+          hints: pack.tables
+          trace_dir: ${TRACE_DIR}
+          benchmarks: [602.gcc_s, 603.bwaves_s, 605.mcf_s, 619.lbm_s, 627.cam4_s, 649.fotonik3d_s]
+          warmup_instructions: 20000000
+          simulation_instructions: 200000000
+          baseline_ipc: seed.dev.ipc     # per-trace regression against the seed
+        when:
+          - probe.deterministic
+          - probe.ipc_geomean ge 0.98 * seed.probe.ipc_geomean
+      heldout:                           # the other six, simulated once for the front, at report time
+        node: champsim
+        inputs:
+          binary: build.binary
+          hints: pack.tables
+          trace_dir: ${TRACE_DIR}
+          benchmarks: [607.cactuBSSN_s, 620.omnetpp_s, 621.wrf_s, 623.xalancbmk_s, 628.pop2_s, 654.roms_s]
+          warmup_instructions: 20000000
+          simulation_instructions: 200000000
+        report_only: true
+    feedback: [build.detail, finetune.accuracy, hints.distribution, dev.per_workload, dev.traffic_detail]
+    report: [heldout.ipc, heldout.ipc_geomean]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: lint.ok, eq: true, hard: true}
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: accounting.bytes, le: 8192, hard: true}   # the router's state and the buffer; the sub-prefetchers are the paper's
+    - {metric: finetune.ok, eq: true, hard: true}
+    - {metric: probe.deterministic, eq: true, hard: true}
+    - {metric: pack.pht_kb_per_mb, le: 128}              # the paper's table costs 74 KB per MB of binary
+    - {metric: dev.dram_traffic_increase_pct, le: 15}
+    - {metric: dev.ipc_regression_pct_max, le: 2}        # no dev trace loses more than this against the seed
+
+  goal:
+    maximize: geomean(dev.ipc)
+    score:
+      rule: ratio_to_seed                # seed = 1.0
+      infeasible: zero
+
+  knowledge: pfllm/knowledge             # the sub-prefetcher table with its degree ranges, the hint encoding, the buffer
+  task:
+    context: task.md
+
+  search:
+    backend: adaevolve
+    iterations: 40
+    parallel: 2
+    diff_mode: true
+    max_solution_bytes: 80000
+    retries: 2
+    database:                            # num_islands defaults to the seed count (1)
+      use_migration: false
+      use_paradigm_breakthrough: true
+      diversity_strategy: code
+    seeds:
+      files: [seeds/lmhint.cc]           # LMHint-SDF: all three fields, the full ensemble, 256 buffer entries
+    context:
+      programs: 2
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+    tactics:
+      sources: [unexplored_values, worst_constraint]
+      select: ucb
+      window: 10
+    models:
+      solution:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+      guide:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+    budget:
+      wall_hours: 48
+      llm_calls: 150
+    stop:
+      plateau_iterations: 20
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: true

@@ -1,0 +1,8 @@
+# TransDot's sources for the no-DP FMA cascade of Table B, relative to 3rdparty/transdot:
+# the packages and cells the no-DP SIMD FMA reads, then the FMA itself.
+src/common_cells/src/cf_math_pkg.sv
+src/common_cells/src/lzc.sv
+src/fpnew_pkg.sv
+src/fpnew_classifier.sv
+src/fpnew_rounding.sv
+src/transdot_no_dp/transdot_fp16_fp32_fma_simd_base.sv

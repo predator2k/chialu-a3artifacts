@@ -1,0 +1,3841 @@
+{
+  "revision": "438037f",
+  "cases": 300,
+  "identical": 300,
+  "results": [
+    {
+      "index": 0,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "feaa67f3369ddf30b68ca87831e8ca4ba51418427a5710663a056a97fe2faea3",
+      "after": "feaa67f3369ddf30b68ca87831e8ca4ba51418427a5710663a056a97fe2faea3"
+    },
+    {
+      "index": 1,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "da7bdf9f5953a999f56b2a42f41a1838691f2cd954b064c3a5f9c70748f71a07",
+      "after": "da7bdf9f5953a999f56b2a42f41a1838691f2cd954b064c3a5f9c70748f71a07"
+    },
+    {
+      "index": 2,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "53d294c7cde6b83ec29f550d8a3aec17f089c6cebfe8e39cdf9d7e369982497f",
+      "after": "53d294c7cde6b83ec29f550d8a3aec17f089c6cebfe8e39cdf9d7e369982497f"
+    },
+    {
+      "index": 3,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "529246fd8f4eb7eca96c9b0d36fc58a4111efe7dcc31c1833b0a967d30a79c40",
+      "after": "529246fd8f4eb7eca96c9b0d36fc58a4111efe7dcc31c1833b0a967d30a79c40"
+    },
+    {
+      "index": 4,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "5c98c6399a80b541ff0ed5509822265331570338de33c8bdde91e876df924f27",
+      "after": "5c98c6399a80b541ff0ed5509822265331570338de33c8bdde91e876df924f27"
+    },
+    {
+      "index": 5,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "e4cae146728d8d286dab104e3a54e75075d103d53026e48e646e8c0db49fb78f",
+      "after": "e4cae146728d8d286dab104e3a54e75075d103d53026e48e646e8c0db49fb78f"
+    },
+    {
+      "index": 6,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "47450e8a8b5c2a541760c20400119841eff95470def703f3e3e7750d56f1735a",
+      "after": "47450e8a8b5c2a541760c20400119841eff95470def703f3e3e7750d56f1735a"
+    },
+    {
+      "index": 7,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "0e8dd7161cd8fc9d9805546489438dd72f2d366577a2888f69e3a547f32a11bc",
+      "after": "0e8dd7161cd8fc9d9805546489438dd72f2d366577a2888f69e3a547f32a11bc"
+    },
+    {
+      "index": 8,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "8a401c61dd18723a148d99c70d04d3c43dcd27397f457d868962c57a228b9fdc",
+      "after": "8a401c61dd18723a148d99c70d04d3c43dcd27397f457d868962c57a228b9fdc"
+    },
+    {
+      "index": 9,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "5bc7dc56b92819ef0826bd3c0dadba94acad6dbe37b2c3e86a4fa9add6c8b591",
+      "after": "5bc7dc56b92819ef0826bd3c0dadba94acad6dbe37b2c3e86a4fa9add6c8b591"
+    },
+    {
+      "index": 10,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "a017860cb442fbc01b73f404bf004615fda3d8fbbcb6a8db629c4f0f93c8a04d",
+      "after": "a017860cb442fbc01b73f404bf004615fda3d8fbbcb6a8db629c4f0f93c8a04d"
+    },
+    {
+      "index": 11,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "94d0a5718bbdb6ed76901eb7a7ceb7707e06f74bf6bfeadfb49f09a1f7867647",
+      "after": "94d0a5718bbdb6ed76901eb7a7ceb7707e06f74bf6bfeadfb49f09a1f7867647"
+    },
+    {
+      "index": 12,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "de35cdf749b3e855cd253589ed9629b596a47bca6c612223aa7d337d622db49d",
+      "after": "de35cdf749b3e855cd253589ed9629b596a47bca6c612223aa7d337d622db49d"
+    },
+    {
+      "index": 13,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "320484b9cee1ac9469e64b81bafad1423e6c1039bbedaa9e995986c196b2d273",
+      "after": "320484b9cee1ac9469e64b81bafad1423e6c1039bbedaa9e995986c196b2d273"
+    },
+    {
+      "index": 14,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "e6b383df300a74e9905416d6f80ada062a2e386c83af1880de1d5829a111fb82",
+      "after": "e6b383df300a74e9905416d6f80ada062a2e386c83af1880de1d5829a111fb82"
+    },
+    {
+      "index": 15,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "9e1d2c0cfb015563b995e881b03b286f5f64ef177ea3e6c8513ffeeb46c6bd52",
+      "after": "9e1d2c0cfb015563b995e881b03b286f5f64ef177ea3e6c8513ffeeb46c6bd52"
+    },
+    {
+      "index": 16,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "f1d18201d6e9194b73084519c1ed52bed6c3b53d49593e25e64a435f912aab90",
+      "after": "f1d18201d6e9194b73084519c1ed52bed6c3b53d49593e25e64a435f912aab90"
+    },
+    {
+      "index": 17,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "0c5598240ef6fa06df22a4d3512325d4504f3153268815177b80c87951c5ee23",
+      "after": "0c5598240ef6fa06df22a4d3512325d4504f3153268815177b80c87951c5ee23"
+    },
+    {
+      "index": 18,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "a4f328793208116725db284f349ada64f42eaf433744529ea7655157370ad857",
+      "after": "a4f328793208116725db284f349ada64f42eaf433744529ea7655157370ad857"
+    },
+    {
+      "index": 19,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "e2d387dad7a441eff248cfcc5ef72310d79c0a82a002951102f67c3bb03519b5",
+      "after": "e2d387dad7a441eff248cfcc5ef72310d79c0a82a002951102f67c3bb03519b5"
+    },
+    {
+      "index": 20,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "00004e304a87189f8f8253ceec415515e2855f7525d8eb985242824aead29785",
+      "after": "00004e304a87189f8f8253ceec415515e2855f7525d8eb985242824aead29785"
+    },
+    {
+      "index": 21,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "015a3ecea30173925d230a484cd0c7a966e9884a73b3c927059728ce19a20436",
+      "after": "015a3ecea30173925d230a484cd0c7a966e9884a73b3c927059728ce19a20436"
+    },
+    {
+      "index": 22,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "abcee9228c2c4242607ae2dbfce388793c3db8ef372beb64459e16b3c29184e2",
+      "after": "abcee9228c2c4242607ae2dbfce388793c3db8ef372beb64459e16b3c29184e2"
+    },
+    {
+      "index": 23,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "9b00492c429723121c301480bd361ce817401ad482fbd4f0729952e9c6301340",
+      "after": "9b00492c429723121c301480bd361ce817401ad482fbd4f0729952e9c6301340"
+    },
+    {
+      "index": 24,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "8ad8ce48a238d853706487943ba6efb322a046f743e01824f2f6d96819dbdb03",
+      "after": "8ad8ce48a238d853706487943ba6efb322a046f743e01824f2f6d96819dbdb03"
+    },
+    {
+      "index": 25,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "024d7871984c2b5f25aec0ca2af4bd8650b74691465abef151b613f91d72f836",
+      "after": "024d7871984c2b5f25aec0ca2af4bd8650b74691465abef151b613f91d72f836"
+    },
+    {
+      "index": 26,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "0e83a0847583cdc9f2663eea12eccf07b2b4bfc6294938b01b6db5435d6e54ab",
+      "after": "0e83a0847583cdc9f2663eea12eccf07b2b4bfc6294938b01b6db5435d6e54ab"
+    },
+    {
+      "index": 27,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "955cdeb7595221d86dfb06b1feb632060038306029b916c868b0cf9a59c63415",
+      "after": "955cdeb7595221d86dfb06b1feb632060038306029b916c868b0cf9a59c63415"
+    },
+    {
+      "index": 28,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "f84da521f8a6ea089e8f6ab8e41398b6a487a05ce26da87d40ec3040ddcfd26c",
+      "after": "f84da521f8a6ea089e8f6ab8e41398b6a487a05ce26da87d40ec3040ddcfd26c"
+    },
+    {
+      "index": 29,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "6a638afa5eb569e007bf06cec0e4b8e4eccf8aefd59aecc8677f9e6db244d612",
+      "after": "6a638afa5eb569e007bf06cec0e4b8e4eccf8aefd59aecc8677f9e6db244d612"
+    },
+    {
+      "index": 30,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "09b0e7c8d9689533f8f7f06c395abbc51a817126c5b8a5d69ada687649384e09",
+      "after": "09b0e7c8d9689533f8f7f06c395abbc51a817126c5b8a5d69ada687649384e09"
+    },
+    {
+      "index": 31,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "45fbdefcbad63cb3646eea8f1d75bf3812ba921fee8c559a4d7783c5bc09da33",
+      "after": "45fbdefcbad63cb3646eea8f1d75bf3812ba921fee8c559a4d7783c5bc09da33"
+    },
+    {
+      "index": 32,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "e6740c00246704c75024064d097b67331dc0d030717d88e71e4b00c11ef61501",
+      "after": "e6740c00246704c75024064d097b67331dc0d030717d88e71e4b00c11ef61501"
+    },
+    {
+      "index": 33,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "541b170a42cec23382da21fb4c4c6e6f08c394e5603cf528bf9f27ee3bff33b1",
+      "after": "541b170a42cec23382da21fb4c4c6e6f08c394e5603cf528bf9f27ee3bff33b1"
+    },
+    {
+      "index": 34,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "444f96e39f43b76dfb63442dabddbee125cbbde9b4a5cba481de89491df73314",
+      "after": "444f96e39f43b76dfb63442dabddbee125cbbde9b4a5cba481de89491df73314"
+    },
+    {
+      "index": 35,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "a777767ad6d87adc58949c93b16bd52647779a12f90c2fc2677d151aa46d9f79",
+      "after": "a777767ad6d87adc58949c93b16bd52647779a12f90c2fc2677d151aa46d9f79"
+    },
+    {
+      "index": 36,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "8f222947625b521d284a253869b30cae03b76e6469d35c00b871e055e459c22b",
+      "after": "8f222947625b521d284a253869b30cae03b76e6469d35c00b871e055e459c22b"
+    },
+    {
+      "index": 37,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "0f2c22855e6496493df72cd1603d5992e14cc93e9f0048ea16772d6adc7002b6",
+      "after": "0f2c22855e6496493df72cd1603d5992e14cc93e9f0048ea16772d6adc7002b6"
+    },
+    {
+      "index": 38,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "7a429e172e34f47659b6044f924565d9f24dcb6f2457722e17bde67254c54f26",
+      "after": "7a429e172e34f47659b6044f924565d9f24dcb6f2457722e17bde67254c54f26"
+    },
+    {
+      "index": 39,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "e7fdb438f063627d2c826bcddabc8508a4096efa2fa995838ad9ea2ea6703622",
+      "after": "e7fdb438f063627d2c826bcddabc8508a4096efa2fa995838ad9ea2ea6703622"
+    },
+    {
+      "index": 40,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "dc576bccdd383c7f0dcf2d6e774d5bca33e3d3618e6c411fbfede917eabed42e",
+      "after": "dc576bccdd383c7f0dcf2d6e774d5bca33e3d3618e6c411fbfede917eabed42e"
+    },
+    {
+      "index": 41,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "721d61af81f6cffd04824a10b55b14310e987c6aa54c39c0aad4530c8f51fa7d",
+      "after": "721d61af81f6cffd04824a10b55b14310e987c6aa54c39c0aad4530c8f51fa7d"
+    },
+    {
+      "index": 42,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "68184ef1260bd6fb7ab8f477ef108c451ec5bc54fe0d14a4f63203664af15ff2",
+      "after": "68184ef1260bd6fb7ab8f477ef108c451ec5bc54fe0d14a4f63203664af15ff2"
+    },
+    {
+      "index": 43,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "d9486b312d2e9ab58d98079a47cc119b570f249ae8e9e9648a4140fd5e93489c",
+      "after": "d9486b312d2e9ab58d98079a47cc119b570f249ae8e9e9648a4140fd5e93489c"
+    },
+    {
+      "index": 44,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "746caaaef2e890700ad6ef325b5de90714949eafa09ec9e512e72fc26a283ad3",
+      "after": "746caaaef2e890700ad6ef325b5de90714949eafa09ec9e512e72fc26a283ad3"
+    },
+    {
+      "index": 45,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "dc204b8a802dd892ecdf59441cbae688389f0f2d655ab227ac2659c1e4e05f78",
+      "after": "dc204b8a802dd892ecdf59441cbae688389f0f2d655ab227ac2659c1e4e05f78"
+    },
+    {
+      "index": 46,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "2564d2b0857ee634dfa4101553a4308b3887c7be5d0ec9e90c1ff48ccce67802",
+      "after": "2564d2b0857ee634dfa4101553a4308b3887c7be5d0ec9e90c1ff48ccce67802"
+    },
+    {
+      "index": 47,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "b68937360b1388605c5068ea9fc06fc93bd88dfbd978ce1e2335b3a44e1cf79f",
+      "after": "b68937360b1388605c5068ea9fc06fc93bd88dfbd978ce1e2335b3a44e1cf79f"
+    },
+    {
+      "index": 48,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "b8624fbc90a5dd2501ee40ae67314745d188fb877ea101f80b06a0bd24c468ce",
+      "after": "b8624fbc90a5dd2501ee40ae67314745d188fb877ea101f80b06a0bd24c468ce"
+    },
+    {
+      "index": 49,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "be4b7596006b662f864665bb2c02c0fd44c8bb277e53a45384b49695fdb4d96c",
+      "after": "be4b7596006b662f864665bb2c02c0fd44c8bb277e53a45384b49695fdb4d96c"
+    },
+    {
+      "index": 50,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "158a1d20aae46f131ed35f733f3b6d423caa520b4ff8456efa319161e422262c",
+      "after": "158a1d20aae46f131ed35f733f3b6d423caa520b4ff8456efa319161e422262c"
+    },
+    {
+      "index": 51,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "37cccb99ba3bb04569780e551ed3ab8a766f5dac843d62e7f4fac0c191b0f40e",
+      "after": "37cccb99ba3bb04569780e551ed3ab8a766f5dac843d62e7f4fac0c191b0f40e"
+    },
+    {
+      "index": 52,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "09cf6bffd3cb9a23788ab1adc9f2be88b94c492e0ec7c3d917996270d52115d1",
+      "after": "09cf6bffd3cb9a23788ab1adc9f2be88b94c492e0ec7c3d917996270d52115d1"
+    },
+    {
+      "index": 53,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "6f80b1689675ec29e683edd8be3175ff7e0040ef6c72ab1e59e8288bd59ef071",
+      "after": "6f80b1689675ec29e683edd8be3175ff7e0040ef6c72ab1e59e8288bd59ef071"
+    },
+    {
+      "index": 54,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "7613e9cde65555130544ea3df868d2182d15d2b5a0540fc772c6a80a5e17efcb",
+      "after": "7613e9cde65555130544ea3df868d2182d15d2b5a0540fc772c6a80a5e17efcb"
+    },
+    {
+      "index": 55,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "019777b198797b8a71cbc695c2bfcd01c474dc9b987e6aecaa46aed0e8d8416a",
+      "after": "019777b198797b8a71cbc695c2bfcd01c474dc9b987e6aecaa46aed0e8d8416a"
+    },
+    {
+      "index": 56,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "b6f9d9ba6488930cf9ec488792aeb781fbef6d643a2826daa9994af5f637250c",
+      "after": "b6f9d9ba6488930cf9ec488792aeb781fbef6d643a2826daa9994af5f637250c"
+    },
+    {
+      "index": 57,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "64da6df0dc63655468cb6779cbab57cdc64b062151beb9d895c15cc7501c0a2c",
+      "after": "64da6df0dc63655468cb6779cbab57cdc64b062151beb9d895c15cc7501c0a2c"
+    },
+    {
+      "index": 58,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "97715daf1dec96730fcf9b5a13dc848d3d1e79d2d24d3fb5123ec1c06b0a016e",
+      "after": "97715daf1dec96730fcf9b5a13dc848d3d1e79d2d24d3fb5123ec1c06b0a016e"
+    },
+    {
+      "index": 59,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "59338e88a7e385096d8c1387bceb8e6ddaec953df7221298bc67604b24e6d2a2",
+      "after": "59338e88a7e385096d8c1387bceb8e6ddaec953df7221298bc67604b24e6d2a2"
+    },
+    {
+      "index": 60,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "af642005e2fc7f88d8d0415e558ec7a22788f9eb0438e4f69b3c443ec32d375a",
+      "after": "af642005e2fc7f88d8d0415e558ec7a22788f9eb0438e4f69b3c443ec32d375a"
+    },
+    {
+      "index": 61,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "c8078a7580b682762ea95f75e5b6b0cd2d87d4fb24d44fff877938f88a253d87",
+      "after": "c8078a7580b682762ea95f75e5b6b0cd2d87d4fb24d44fff877938f88a253d87"
+    },
+    {
+      "index": 62,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "cf796e51376f119a7892889abbc4cf8775346a476b98a8e7db943a5b70915a6d",
+      "after": "cf796e51376f119a7892889abbc4cf8775346a476b98a8e7db943a5b70915a6d"
+    },
+    {
+      "index": 63,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "9039829a9e272f826b28733d1ba1ac425ed58007b681b0128d433873a4a2aee0",
+      "after": "9039829a9e272f826b28733d1ba1ac425ed58007b681b0128d433873a4a2aee0"
+    },
+    {
+      "index": 64,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "436e8ee777fce24020fef57ef5a436360d7101238dbdc0a647d4bb567cda78e3",
+      "after": "436e8ee777fce24020fef57ef5a436360d7101238dbdc0a647d4bb567cda78e3"
+    },
+    {
+      "index": 65,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "38fe852990438bff750f0c0dc08763206fa960abc827c680c1f2e52f33bd5f3d",
+      "after": "38fe852990438bff750f0c0dc08763206fa960abc827c680c1f2e52f33bd5f3d"
+    },
+    {
+      "index": 66,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "2c3561cc3ce73235eaf21a37b097033e4736bb731c4a912a9bc080a22877b010",
+      "after": "2c3561cc3ce73235eaf21a37b097033e4736bb731c4a912a9bc080a22877b010"
+    },
+    {
+      "index": 67,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "2c4b074e2083823ece03b38b7f24c884faf8cfef4082cc12a58c672dba381062",
+      "after": "2c4b074e2083823ece03b38b7f24c884faf8cfef4082cc12a58c672dba381062"
+    },
+    {
+      "index": 68,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "53d57b90b00ba549ec6c9f4b54b62cf480c9d63faf8a0a188d9a7f509421b85a",
+      "after": "53d57b90b00ba549ec6c9f4b54b62cf480c9d63faf8a0a188d9a7f509421b85a"
+    },
+    {
+      "index": 69,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "e2717ff490cd33bd056ff96b98b50c3bca4636b45d4d1ba6f039cd3841d82a54",
+      "after": "e2717ff490cd33bd056ff96b98b50c3bca4636b45d4d1ba6f039cd3841d82a54"
+    },
+    {
+      "index": 70,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "dd2e45d283ed614cfc1ee4af46b8206849f5e97583dcb9f8402c03512e223166",
+      "after": "dd2e45d283ed614cfc1ee4af46b8206849f5e97583dcb9f8402c03512e223166"
+    },
+    {
+      "index": 71,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "2a00836d6ba8f7857b0343a8257cae49c171899e8f93e599f364e7ee1026224f",
+      "after": "2a00836d6ba8f7857b0343a8257cae49c171899e8f93e599f364e7ee1026224f"
+    },
+    {
+      "index": 72,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "a4f328793208116725db284f349ada64f42eaf433744529ea7655157370ad857",
+      "after": "a4f328793208116725db284f349ada64f42eaf433744529ea7655157370ad857"
+    },
+    {
+      "index": 73,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "f58e9f8e898821ecdf57122bb0e11212936e471012e4cb974c05656cbe772dcf",
+      "after": "f58e9f8e898821ecdf57122bb0e11212936e471012e4cb974c05656cbe772dcf"
+    },
+    {
+      "index": 74,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "92699b7e1936b1ebd02abe6db1b260c5060d531117585aef0df0fc3db359e615",
+      "after": "92699b7e1936b1ebd02abe6db1b260c5060d531117585aef0df0fc3db359e615"
+    },
+    {
+      "index": 75,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "08c1a2e3578643cc6f171fef736f93ef1b50a705d25a720f298ea6547ef12543",
+      "after": "08c1a2e3578643cc6f171fef736f93ef1b50a705d25a720f298ea6547ef12543"
+    },
+    {
+      "index": 76,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "92d0e2680ade7b210fc40e92341d7c19a5e2f2beef0344804242aa7574519832",
+      "after": "92d0e2680ade7b210fc40e92341d7c19a5e2f2beef0344804242aa7574519832"
+    },
+    {
+      "index": 77,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "2bccac594eca8bceb58045604cf9ceb9621204fbc41d96c5be9b8710ab5cb581",
+      "after": "2bccac594eca8bceb58045604cf9ceb9621204fbc41d96c5be9b8710ab5cb581"
+    },
+    {
+      "index": 78,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "f329deceee5e99ee334e667ec2f93ac3dce44bba052875314a72b381a22a1ead",
+      "after": "f329deceee5e99ee334e667ec2f93ac3dce44bba052875314a72b381a22a1ead"
+    },
+    {
+      "index": 79,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "f4d584b9010c34cf0712df6db5a4866bac8ef940ffc03f4c88c32ca9ba494561",
+      "after": "f4d584b9010c34cf0712df6db5a4866bac8ef940ffc03f4c88c32ca9ba494561"
+    },
+    {
+      "index": 80,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "31d5b4e010bc06eb3704043ec4275c174998a5ee6c2e45c72ed9567077824f45",
+      "after": "31d5b4e010bc06eb3704043ec4275c174998a5ee6c2e45c72ed9567077824f45"
+    },
+    {
+      "index": 81,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "fa19f06c73781a169390376d78750ba014a4a0ce1b0104cebd0b60abcbc2312e",
+      "after": "fa19f06c73781a169390376d78750ba014a4a0ce1b0104cebd0b60abcbc2312e"
+    },
+    {
+      "index": 82,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "2206cabfa585f66b054bdd9790bafdee74e5eddf6f96005312962ef9e2f6aaa2",
+      "after": "2206cabfa585f66b054bdd9790bafdee74e5eddf6f96005312962ef9e2f6aaa2"
+    },
+    {
+      "index": 83,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "d7f13ac83fdfefd8260712e67732f8b27d9dd971be136c998e7d39a77df7ddfa",
+      "after": "d7f13ac83fdfefd8260712e67732f8b27d9dd971be136c998e7d39a77df7ddfa"
+    },
+    {
+      "index": 84,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "f42958486a3c87a7782e24689e45d3d579b28b3a87872bca4302f7234dd4d143",
+      "after": "f42958486a3c87a7782e24689e45d3d579b28b3a87872bca4302f7234dd4d143"
+    },
+    {
+      "index": 85,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "e2faea91c5f774b86f9b7521d82f3c5755e35a853620ba05effafa100e3e3ca3",
+      "after": "e2faea91c5f774b86f9b7521d82f3c5755e35a853620ba05effafa100e3e3ca3"
+    },
+    {
+      "index": 86,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "afd7fd3ad74c648c67734b181ba8ae86e9fad348af7ecfc923609d9061f51b5d",
+      "after": "afd7fd3ad74c648c67734b181ba8ae86e9fad348af7ecfc923609d9061f51b5d"
+    },
+    {
+      "index": 87,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "89e0a06d99cb9fc720bf97c4c686682c5ca6c4248b0a7f337c9540a81cd5c91b",
+      "after": "89e0a06d99cb9fc720bf97c4c686682c5ca6c4248b0a7f337c9540a81cd5c91b"
+    },
+    {
+      "index": 88,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "944c20ced2e4f106ae033d0fc9a1eaa71a0a1e9392aba2bb575d442a6b76639f",
+      "after": "944c20ced2e4f106ae033d0fc9a1eaa71a0a1e9392aba2bb575d442a6b76639f"
+    },
+    {
+      "index": 89,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "8fe05d54e401db7b811c4ef075bd843e7dc702f83e92edc142881b81b35c9ec8",
+      "after": "8fe05d54e401db7b811c4ef075bd843e7dc702f83e92edc142881b81b35c9ec8"
+    },
+    {
+      "index": 90,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "46ef7ba765217b9be7be00f1f8d38eeb0547dbe1dd07240ec495c736d9c5cbb6",
+      "after": "46ef7ba765217b9be7be00f1f8d38eeb0547dbe1dd07240ec495c736d9c5cbb6"
+    },
+    {
+      "index": 91,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "2dfe0605c29fee83d2a29a273abe1ce816d6ffbf69c409ed794d839a1a8bf005",
+      "after": "2dfe0605c29fee83d2a29a273abe1ce816d6ffbf69c409ed794d839a1a8bf005"
+    },
+    {
+      "index": 92,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "548ebf22cbde2fb2cfa9cfee930a4685b121e640349cc23bba276356b538549d",
+      "after": "548ebf22cbde2fb2cfa9cfee930a4685b121e640349cc23bba276356b538549d"
+    },
+    {
+      "index": 93,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "96f38c9c0d4cd7a8248d56a278e736f1ae4c5bb2e2557a0779b3a41690bb2009",
+      "after": "96f38c9c0d4cd7a8248d56a278e736f1ae4c5bb2e2557a0779b3a41690bb2009"
+    },
+    {
+      "index": 94,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "5813173f9c6f377ac5ef89b3b312bde419afd6b0eab5d42cc8485722dd8f5255",
+      "after": "5813173f9c6f377ac5ef89b3b312bde419afd6b0eab5d42cc8485722dd8f5255"
+    },
+    {
+      "index": 95,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "988ed5e06006eddc6d9a81e51e586f1e10c13ebab5d6702811cfc4388e9248f7",
+      "after": "988ed5e06006eddc6d9a81e51e586f1e10c13ebab5d6702811cfc4388e9248f7"
+    },
+    {
+      "index": 96,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "11685f0a939c5b971864f58f9a7e7344909fae585d3e98d54c4f92479f9481b0",
+      "after": "11685f0a939c5b971864f58f9a7e7344909fae585d3e98d54c4f92479f9481b0"
+    },
+    {
+      "index": 97,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "8cea1ef6134082b57a5f043235ef83655449c228f336ecf13bd0bc754c58dce1",
+      "after": "8cea1ef6134082b57a5f043235ef83655449c228f336ecf13bd0bc754c58dce1"
+    },
+    {
+      "index": 98,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "92a783674e6b2838a9022273681cbcadd88af460f9105ffe1d52283d0c70deb8",
+      "after": "92a783674e6b2838a9022273681cbcadd88af460f9105ffe1d52283d0c70deb8"
+    },
+    {
+      "index": 99,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "57811b78aff2f1b95b4329775ec7361f4891ad42a1bfbbce0a26905507f8713b",
+      "after": "57811b78aff2f1b95b4329775ec7361f4891ad42a1bfbbce0a26905507f8713b"
+    },
+    {
+      "index": 100,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "e386896a6dfae75897343ef108d96b6d4e6a4d217a0e78d0fbf03c81e437fbc0",
+      "after": "e386896a6dfae75897343ef108d96b6d4e6a4d217a0e78d0fbf03c81e437fbc0"
+    },
+    {
+      "index": 101,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "f08dfd26f2adc7724d37dfc032e063147619722525fe38451a99ec01f5ad4288",
+      "after": "f08dfd26f2adc7724d37dfc032e063147619722525fe38451a99ec01f5ad4288"
+    },
+    {
+      "index": 102,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "9e429c61f0eede7fc12b0e40e0d01594ab6238c709c632b75036d83cb9aed7fc",
+      "after": "9e429c61f0eede7fc12b0e40e0d01594ab6238c709c632b75036d83cb9aed7fc"
+    },
+    {
+      "index": 103,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "75bafeb9584b2474ac6966cc19288d2d5e65a5ee3589a4a6d13ec103fe271935",
+      "after": "75bafeb9584b2474ac6966cc19288d2d5e65a5ee3589a4a6d13ec103fe271935"
+    },
+    {
+      "index": 104,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "89fc2195dacdb54aaaf1c22ac013659c31dc0dce4abd5c08ff840d2c1e8d44b9",
+      "after": "89fc2195dacdb54aaaf1c22ac013659c31dc0dce4abd5c08ff840d2c1e8d44b9"
+    },
+    {
+      "index": 105,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "47450e8a8b5c2a541760c20400119841eff95470def703f3e3e7750d56f1735a",
+      "after": "47450e8a8b5c2a541760c20400119841eff95470def703f3e3e7750d56f1735a"
+    },
+    {
+      "index": 106,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "1f69ee01c65ccec85003133f07db438e8c90b48bcbcad88fed209f881bdd24d0",
+      "after": "1f69ee01c65ccec85003133f07db438e8c90b48bcbcad88fed209f881bdd24d0"
+    },
+    {
+      "index": 107,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "c72c82d72bd92b9e40b62a64115647f8b025610f65dfc328b6317777962337b4",
+      "after": "c72c82d72bd92b9e40b62a64115647f8b025610f65dfc328b6317777962337b4"
+    },
+    {
+      "index": 108,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "b6f2b66b9d52eced60ace1d70fe7480dd87661679697350134d73fa739ad8e43",
+      "after": "b6f2b66b9d52eced60ace1d70fe7480dd87661679697350134d73fa739ad8e43"
+    },
+    {
+      "index": 109,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "e0763247cbef4dcf3274a221a9090b4cf3065f7d3d577b08e2d059b9856652ca",
+      "after": "e0763247cbef4dcf3274a221a9090b4cf3065f7d3d577b08e2d059b9856652ca"
+    },
+    {
+      "index": 110,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "62293171b4d6b883ed566bd3bd065c11896ccce1eb50d34eea9c744058451465",
+      "after": "62293171b4d6b883ed566bd3bd065c11896ccce1eb50d34eea9c744058451465"
+    },
+    {
+      "index": 111,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "5cff6e8bb636fc2edcb3f3d2d1675d3ac17f624724ed958a33238be44cfda75a",
+      "after": "5cff6e8bb636fc2edcb3f3d2d1675d3ac17f624724ed958a33238be44cfda75a"
+    },
+    {
+      "index": 112,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "4fa6d061f09c450e1978d233e75b296bc8565b31af90b896629aa13b18fd7dbd",
+      "after": "4fa6d061f09c450e1978d233e75b296bc8565b31af90b896629aa13b18fd7dbd"
+    },
+    {
+      "index": 113,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "96443dcdb774b83cbdee93a7c1c3ab7c1fda6c1b0ca0a8029a45e94022112d71",
+      "after": "96443dcdb774b83cbdee93a7c1c3ab7c1fda6c1b0ca0a8029a45e94022112d71"
+    },
+    {
+      "index": 114,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "cbe1058189748abc608879385acaf3b9bd38a357d1bc6c80f3c61084d39b32cd",
+      "after": "cbe1058189748abc608879385acaf3b9bd38a357d1bc6c80f3c61084d39b32cd"
+    },
+    {
+      "index": 115,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "ae7d0b14479df732784175156a2594f6c2213a3d9ab4c9690b8df25edff8f0ad",
+      "after": "ae7d0b14479df732784175156a2594f6c2213a3d9ab4c9690b8df25edff8f0ad"
+    },
+    {
+      "index": 116,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "da63fad68d26d1fcb1be21e11e876a31e362cda0ef6308f84f87f3d2a3107fb1",
+      "after": "da63fad68d26d1fcb1be21e11e876a31e362cda0ef6308f84f87f3d2a3107fb1"
+    },
+    {
+      "index": 117,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "d9486b312d2e9ab58d98079a47cc119b570f249ae8e9e9648a4140fd5e93489c",
+      "after": "d9486b312d2e9ab58d98079a47cc119b570f249ae8e9e9648a4140fd5e93489c"
+    },
+    {
+      "index": 118,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "1568a313f6efe28bd7fe32ed5b7274504bcb35dab697f66d78c40b9244cb5596",
+      "after": "1568a313f6efe28bd7fe32ed5b7274504bcb35dab697f66d78c40b9244cb5596"
+    },
+    {
+      "index": 119,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "ccb174ae72b931aaab12d433549ffd9f4a0df9e70419adb2278936759c9c29eb",
+      "after": "ccb174ae72b931aaab12d433549ffd9f4a0df9e70419adb2278936759c9c29eb"
+    },
+    {
+      "index": 120,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "4900bee5f7f6e74cadba3962fcc7ca41113eac3bf2eadcbb5c677d72aa99125e",
+      "after": "4900bee5f7f6e74cadba3962fcc7ca41113eac3bf2eadcbb5c677d72aa99125e"
+    },
+    {
+      "index": 121,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "04ddf7f2d0d8817fe1757e373d811ab3839a7f41e5232f75b772fa4923149271",
+      "after": "04ddf7f2d0d8817fe1757e373d811ab3839a7f41e5232f75b772fa4923149271"
+    },
+    {
+      "index": 122,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "0022e59ec7bb71fce72cec6f7f20ccbe63363fddbe03388b6cbaca51b22f83f4",
+      "after": "0022e59ec7bb71fce72cec6f7f20ccbe63363fddbe03388b6cbaca51b22f83f4"
+    },
+    {
+      "index": 123,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "e740fde2ba4e0e434ed245f2f40f8080eb3fba4dd1d5491a32f8b96bc9ba3a4b",
+      "after": "e740fde2ba4e0e434ed245f2f40f8080eb3fba4dd1d5491a32f8b96bc9ba3a4b"
+    },
+    {
+      "index": 124,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "33fcdd32075d97415e806f4d46eae48db904d10c6877c77ce6e2e3631c30c634",
+      "after": "33fcdd32075d97415e806f4d46eae48db904d10c6877c77ce6e2e3631c30c634"
+    },
+    {
+      "index": 125,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "14bcb73dfb4ed94ab98fb6f3f1c7cf100854611b8edcbeca039573724b94e88e",
+      "after": "14bcb73dfb4ed94ab98fb6f3f1c7cf100854611b8edcbeca039573724b94e88e"
+    },
+    {
+      "index": 126,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "ce0a11265f434f0da7a476bdbc80d5aed1e6fc9e003914ace358d003d9eb1656",
+      "after": "ce0a11265f434f0da7a476bdbc80d5aed1e6fc9e003914ace358d003d9eb1656"
+    },
+    {
+      "index": 127,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "20839636197d9d6be48e0d2d6e3b72d8be7c9a63ebed30498034e233866800b5",
+      "after": "20839636197d9d6be48e0d2d6e3b72d8be7c9a63ebed30498034e233866800b5"
+    },
+    {
+      "index": 128,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "932b728d415c534737cbbf1cb6e3c6abbcb0a246915cf50f76a558dd7f3ef35f",
+      "after": "932b728d415c534737cbbf1cb6e3c6abbcb0a246915cf50f76a558dd7f3ef35f"
+    },
+    {
+      "index": 129,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "541b170a42cec23382da21fb4c4c6e6f08c394e5603cf528bf9f27ee3bff33b1",
+      "after": "541b170a42cec23382da21fb4c4c6e6f08c394e5603cf528bf9f27ee3bff33b1"
+    },
+    {
+      "index": 130,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "33fcdd32075d97415e806f4d46eae48db904d10c6877c77ce6e2e3631c30c634",
+      "after": "33fcdd32075d97415e806f4d46eae48db904d10c6877c77ce6e2e3631c30c634"
+    },
+    {
+      "index": 131,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "0beb0b3f5991e58e4255710469df4594596ce62b59affbcac9e3d94bda42174b",
+      "after": "0beb0b3f5991e58e4255710469df4594596ce62b59affbcac9e3d94bda42174b"
+    },
+    {
+      "index": 132,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "e656aa4f4dab1dd63bd1082522f5a280f76f6e85cf6212552189de26489d3f95",
+      "after": "e656aa4f4dab1dd63bd1082522f5a280f76f6e85cf6212552189de26489d3f95"
+    },
+    {
+      "index": 133,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "3b3487f407dc61b5d1fb74cdbd4f1bab8778c7f5ae949d563dc37416d533b153",
+      "after": "3b3487f407dc61b5d1fb74cdbd4f1bab8778c7f5ae949d563dc37416d533b153"
+    },
+    {
+      "index": 134,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "95fa007262c495c5bf72f4744e460a6bafd3a74a0f03771ee6b4b9df88b6dda4",
+      "after": "95fa007262c495c5bf72f4744e460a6bafd3a74a0f03771ee6b4b9df88b6dda4"
+    },
+    {
+      "index": 135,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "fa95a0f840a02bb7b97eb6a8b8bbbb70a9a57b1b7a4d5906448e03977d94f416",
+      "after": "fa95a0f840a02bb7b97eb6a8b8bbbb70a9a57b1b7a4d5906448e03977d94f416"
+    },
+    {
+      "index": 136,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "fc6028c1630b2161567d82dbc2607c8b584fafab115d4a1477be82fb99334f04",
+      "after": "fc6028c1630b2161567d82dbc2607c8b584fafab115d4a1477be82fb99334f04"
+    },
+    {
+      "index": 137,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "4e44d7b6e0c24fff17159ad72b1edd3e79e4e0e1e5ab607513987b346b516ee6",
+      "after": "4e44d7b6e0c24fff17159ad72b1edd3e79e4e0e1e5ab607513987b346b516ee6"
+    },
+    {
+      "index": 138,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "6ca3aecc1da9702e5da99867a6e92692eeb6d63117ebaea2a81241276a1a4563",
+      "after": "6ca3aecc1da9702e5da99867a6e92692eeb6d63117ebaea2a81241276a1a4563"
+    },
+    {
+      "index": 139,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "2807e941fbf1783a5c96aed1afc597ecaf3d4bee6820872805e56ae2f84ecab6",
+      "after": "2807e941fbf1783a5c96aed1afc597ecaf3d4bee6820872805e56ae2f84ecab6"
+    },
+    {
+      "index": 140,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "3299a6cf3ab9af2fb636be2e5dea41c7849a3c71bd9c24778b03096f375bbcc2",
+      "after": "3299a6cf3ab9af2fb636be2e5dea41c7849a3c71bd9c24778b03096f375bbcc2"
+    },
+    {
+      "index": 141,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "ffaad93b4c5cf407877d00d68f58785667570662a237403ca1556232abc3aee7",
+      "after": "ffaad93b4c5cf407877d00d68f58785667570662a237403ca1556232abc3aee7"
+    },
+    {
+      "index": 142,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "51db6411c4bde75e74e419c835e03ce7e6afc1e4938446be2ccbe940ff1bd7f6",
+      "after": "51db6411c4bde75e74e419c835e03ce7e6afc1e4938446be2ccbe940ff1bd7f6"
+    },
+    {
+      "index": 143,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "4c4270c669cfc66f3ec6400e51bfb5f560e681f3283cb85920473b6cc2e00147",
+      "after": "4c4270c669cfc66f3ec6400e51bfb5f560e681f3283cb85920473b6cc2e00147"
+    },
+    {
+      "index": 144,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "be4b7596006b662f864665bb2c02c0fd44c8bb277e53a45384b49695fdb4d96c",
+      "after": "be4b7596006b662f864665bb2c02c0fd44c8bb277e53a45384b49695fdb4d96c"
+    },
+    {
+      "index": 145,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "377b16c59a2969917770bfb7f70ac0b2b8309b0c1f87b9b85cd383c69496d121",
+      "after": "377b16c59a2969917770bfb7f70ac0b2b8309b0c1f87b9b85cd383c69496d121"
+    },
+    {
+      "index": 146,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "294f16bcceed18da2b1f71afbd9cd971fd7fc5e066d861bbab962d77a4ca7abf",
+      "after": "294f16bcceed18da2b1f71afbd9cd971fd7fc5e066d861bbab962d77a4ca7abf"
+    },
+    {
+      "index": 147,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "abc24d1cf8bf4cc32e0e664b5f8cc9d4bd2b3c3670030ff591342db220e3f422",
+      "after": "abc24d1cf8bf4cc32e0e664b5f8cc9d4bd2b3c3670030ff591342db220e3f422"
+    },
+    {
+      "index": 148,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "be87de689f45ac7a65ac7e6812f471170ea71172400fbace106b00f5fee0f8e5",
+      "after": "be87de689f45ac7a65ac7e6812f471170ea71172400fbace106b00f5fee0f8e5"
+    },
+    {
+      "index": 149,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "a8a51f7ac6f6bf5d760dbec99d5799648562ed54c20de24a85b71cf9154f4ae4",
+      "after": "a8a51f7ac6f6bf5d760dbec99d5799648562ed54c20de24a85b71cf9154f4ae4"
+    },
+    {
+      "index": 150,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "1f9f2acb16ef36c015ff4707f21ce7ff4aed0155124f2ec31085dde43f7f567e",
+      "after": "1f9f2acb16ef36c015ff4707f21ce7ff4aed0155124f2ec31085dde43f7f567e"
+    },
+    {
+      "index": 151,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "ab22b8c09e2e5fd370f9e0b09d835a28a2563cc18167a3d51cb2ecfa96086872",
+      "after": "ab22b8c09e2e5fd370f9e0b09d835a28a2563cc18167a3d51cb2ecfa96086872"
+    },
+    {
+      "index": 152,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "4285c0e7da616032169b78bc32ddf1e1ac3b1ddc635f980a8475d84916db36a3",
+      "after": "4285c0e7da616032169b78bc32ddf1e1ac3b1ddc635f980a8475d84916db36a3"
+    },
+    {
+      "index": 153,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "21d4a5e4299e431391db6c6ae5e3b21fba8cb63547af4b96097a7100ea1c4fb8",
+      "after": "21d4a5e4299e431391db6c6ae5e3b21fba8cb63547af4b96097a7100ea1c4fb8"
+    },
+    {
+      "index": 154,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "fa46825ce18d61b5d8748442f16666352fa21c13942e3dea5f44bc11f4efc582",
+      "after": "fa46825ce18d61b5d8748442f16666352fa21c13942e3dea5f44bc11f4efc582"
+    },
+    {
+      "index": 155,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "bc140000354edcb449897315a528dffde17533d0b560c9f464b9fd39e4bfec37",
+      "after": "bc140000354edcb449897315a528dffde17533d0b560c9f464b9fd39e4bfec37"
+    },
+    {
+      "index": 156,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "66c286051ecc6b52114241b7c62c3d938303853cc11a190bcfcee86e31528d4b",
+      "after": "66c286051ecc6b52114241b7c62c3d938303853cc11a190bcfcee86e31528d4b"
+    },
+    {
+      "index": 157,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "39b66f00739236aaaa5354840d6eb17fe8a1b24f3f8454c78299c1a622d5e569",
+      "after": "39b66f00739236aaaa5354840d6eb17fe8a1b24f3f8454c78299c1a622d5e569"
+    },
+    {
+      "index": 158,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "0998abe492b9c81a699cdd8690a5434d937100e70d6ae9e54f3c3932d2b7c431",
+      "after": "0998abe492b9c81a699cdd8690a5434d937100e70d6ae9e54f3c3932d2b7c431"
+    },
+    {
+      "index": 159,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "3fe6b1a873fbe80db64be207404e15c162faaea16b4ee4b9889329fe18c97be7",
+      "after": "3fe6b1a873fbe80db64be207404e15c162faaea16b4ee4b9889329fe18c97be7"
+    },
+    {
+      "index": 160,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "afbbad4f609e5887b2c240a22880f56a0ae7cece07613c4969a93201a515cfc6",
+      "after": "afbbad4f609e5887b2c240a22880f56a0ae7cece07613c4969a93201a515cfc6"
+    },
+    {
+      "index": 161,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "d59be99810b4b62944f11b440671a00941f273540c986d12702b5779bedfbbe4",
+      "after": "d59be99810b4b62944f11b440671a00941f273540c986d12702b5779bedfbbe4"
+    },
+    {
+      "index": 162,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "4551d6f67181c6dc7d85347ffa0c16126e3e399e773a541fa20bcee3332e6342",
+      "after": "4551d6f67181c6dc7d85347ffa0c16126e3e399e773a541fa20bcee3332e6342"
+    },
+    {
+      "index": 163,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "57811b78aff2f1b95b4329775ec7361f4891ad42a1bfbbce0a26905507f8713b",
+      "after": "57811b78aff2f1b95b4329775ec7361f4891ad42a1bfbbce0a26905507f8713b"
+    },
+    {
+      "index": 164,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "69954b5b37d4e6d57545db25ba54f23f93c4fbb61ae4f13ec53a41f11aa03894",
+      "after": "69954b5b37d4e6d57545db25ba54f23f93c4fbb61ae4f13ec53a41f11aa03894"
+    },
+    {
+      "index": 165,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "b0b7ad79851d65dbb44bb7e3966263ebc4d8a9d46b28fc3cdf83f3ebbe551c57",
+      "after": "b0b7ad79851d65dbb44bb7e3966263ebc4d8a9d46b28fc3cdf83f3ebbe551c57"
+    },
+    {
+      "index": 166,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "06e154aef440308e7c5ecffd5e69fd37d97fdb1b9971d26a3e36982086fb0af6",
+      "after": "06e154aef440308e7c5ecffd5e69fd37d97fdb1b9971d26a3e36982086fb0af6"
+    },
+    {
+      "index": 167,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "0e8d53395d9782c3eaa4cdf0d8906d1d74539096a06d0aec43112bd3f1966a77",
+      "after": "0e8d53395d9782c3eaa4cdf0d8906d1d74539096a06d0aec43112bd3f1966a77"
+    },
+    {
+      "index": 168,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "10e4b876dc5f7a64ec52590d2a86d117ef943f0503502e27c2610d3d07575496",
+      "after": "10e4b876dc5f7a64ec52590d2a86d117ef943f0503502e27c2610d3d07575496"
+    },
+    {
+      "index": 169,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "2a99e718c1bded5d3cd81e08f7a7cc6650b9cb13d939e5556da27b12f8ab6de5",
+      "after": "2a99e718c1bded5d3cd81e08f7a7cc6650b9cb13d939e5556da27b12f8ab6de5"
+    },
+    {
+      "index": 170,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "8763bfeeebc66a6f69564d10790279652fb32e2fd7ff1ac938fe0ea71cd9dcf8",
+      "after": "8763bfeeebc66a6f69564d10790279652fb32e2fd7ff1ac938fe0ea71cd9dcf8"
+    },
+    {
+      "index": 171,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "3f1efd0dfc14daf1b6abbcf82fd40bdafa4df26f1d5d2abb93e1237e42f14de8",
+      "after": "3f1efd0dfc14daf1b6abbcf82fd40bdafa4df26f1d5d2abb93e1237e42f14de8"
+    },
+    {
+      "index": 172,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "8f222947625b521d284a253869b30cae03b76e6469d35c00b871e055e459c22b",
+      "after": "8f222947625b521d284a253869b30cae03b76e6469d35c00b871e055e459c22b"
+    },
+    {
+      "index": 173,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "fb645f3ae7eff1311b12f3774b2625232151c758585824bf2bec3e0d6e583ff9",
+      "after": "fb645f3ae7eff1311b12f3774b2625232151c758585824bf2bec3e0d6e583ff9"
+    },
+    {
+      "index": 174,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "d3bcf5ba3cd8b3645755e2cd1333da3598cfab1fec12707884d30b7d08ed8a8b",
+      "after": "d3bcf5ba3cd8b3645755e2cd1333da3598cfab1fec12707884d30b7d08ed8a8b"
+    },
+    {
+      "index": 175,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "3f98affab70e2eb20a354bd39f3bf2546ee983b258a8f7aafd0dd4eefc078ca1",
+      "after": "3f98affab70e2eb20a354bd39f3bf2546ee983b258a8f7aafd0dd4eefc078ca1"
+    },
+    {
+      "index": 176,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "4663627636822daadc35717cf71674e018e2b33427634b267c17c0cd49838d99",
+      "after": "4663627636822daadc35717cf71674e018e2b33427634b267c17c0cd49838d99"
+    },
+    {
+      "index": 177,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "a0fd306826c52807840ae5e6259a184d7aa8a619899045c9e81ea6f6adfe09b2",
+      "after": "a0fd306826c52807840ae5e6259a184d7aa8a619899045c9e81ea6f6adfe09b2"
+    },
+    {
+      "index": 178,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "e8fe22d95ff46eb8e44638a4615510ab32d4e09f20987a216aabb5edadc52e7a",
+      "after": "e8fe22d95ff46eb8e44638a4615510ab32d4e09f20987a216aabb5edadc52e7a"
+    },
+    {
+      "index": 179,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "c91c7a06df4bced3013bdfd7ea3864c5d1bead6a576bfc0df79ed2fe8cd90d01",
+      "after": "c91c7a06df4bced3013bdfd7ea3864c5d1bead6a576bfc0df79ed2fe8cd90d01"
+    },
+    {
+      "index": 180,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "d8778bfc1502953e3f70f98bb9b6d435b9622af3fe8893ff087d53dbd455f83d",
+      "after": "d8778bfc1502953e3f70f98bb9b6d435b9622af3fe8893ff087d53dbd455f83d"
+    },
+    {
+      "index": 181,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "5fe0aa67e43ff45acc1932ea56ec995f5e4ef878012e8595a6e5c9fcaaa7272e",
+      "after": "5fe0aa67e43ff45acc1932ea56ec995f5e4ef878012e8595a6e5c9fcaaa7272e"
+    },
+    {
+      "index": 182,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "fafbc6de43f65df013b6136642d7a6d724b7f96a3b80c37f6321c689d1bcdbf7",
+      "after": "fafbc6de43f65df013b6136642d7a6d724b7f96a3b80c37f6321c689d1bcdbf7"
+    },
+    {
+      "index": 183,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "5414600ba637dbfcdfa0e7b075b187664b491188ea74f195c18295063b4a479d",
+      "after": "5414600ba637dbfcdfa0e7b075b187664b491188ea74f195c18295063b4a479d"
+    },
+    {
+      "index": 184,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "234d1607ab2c201763713d54dc0af1d1fa98a37fe03655bb75c69deb80bd298a",
+      "after": "234d1607ab2c201763713d54dc0af1d1fa98a37fe03655bb75c69deb80bd298a"
+    },
+    {
+      "index": 185,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "effb15900bd1da09cd4ec276677bd8cf14330929ceefc8fbb2d1d65ade78cb7c",
+      "after": "effb15900bd1da09cd4ec276677bd8cf14330929ceefc8fbb2d1d65ade78cb7c"
+    },
+    {
+      "index": 186,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "30ee5f685505af0adfe76a3b377d6d71972da45a8cc6d2924010d8b2c7713b0b",
+      "after": "30ee5f685505af0adfe76a3b377d6d71972da45a8cc6d2924010d8b2c7713b0b"
+    },
+    {
+      "index": 187,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "e6740c00246704c75024064d097b67331dc0d030717d88e71e4b00c11ef61501",
+      "after": "e6740c00246704c75024064d097b67331dc0d030717d88e71e4b00c11ef61501"
+    },
+    {
+      "index": 188,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "cb949820a73216eed5204d7256a29ceca5100ead0db3dbdeb1274fac0a832990",
+      "after": "cb949820a73216eed5204d7256a29ceca5100ead0db3dbdeb1274fac0a832990"
+    },
+    {
+      "index": 189,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "062bb1fcd5ce22db4486593a2350263243ac60e1788703a28cee87cf94a3add0",
+      "after": "062bb1fcd5ce22db4486593a2350263243ac60e1788703a28cee87cf94a3add0"
+    },
+    {
+      "index": 190,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "bd2c8804b217e44e9042defa266b3b42bce404b994fe2f39f9d63b3dfbd7d962",
+      "after": "bd2c8804b217e44e9042defa266b3b42bce404b994fe2f39f9d63b3dfbd7d962"
+    },
+    {
+      "index": 191,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "4322bc012cedc009868e4ba0ea0c63f9ea10d430a22fe669916934bacc00eaa6",
+      "after": "4322bc012cedc009868e4ba0ea0c63f9ea10d430a22fe669916934bacc00eaa6"
+    },
+    {
+      "index": 192,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "5b6711aeabfcc04f8e7f36f843b4ab718708bf04d166c1b6bcc83fb523141deb",
+      "after": "5b6711aeabfcc04f8e7f36f843b4ab718708bf04d166c1b6bcc83fb523141deb"
+    },
+    {
+      "index": 193,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "06e154aef440308e7c5ecffd5e69fd37d97fdb1b9971d26a3e36982086fb0af6",
+      "after": "06e154aef440308e7c5ecffd5e69fd37d97fdb1b9971d26a3e36982086fb0af6"
+    },
+    {
+      "index": 194,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "b9fdc158f9acefbd493ad1d7cf1af4d438609123f51353d465cd5a2bf618bcd4",
+      "after": "b9fdc158f9acefbd493ad1d7cf1af4d438609123f51353d465cd5a2bf618bcd4"
+    },
+    {
+      "index": 195,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "ec63cf9bc7a4bb2ee294b690fc9cdacef8a7efa9fe16a35ec578c158bc08b9c8",
+      "after": "ec63cf9bc7a4bb2ee294b690fc9cdacef8a7efa9fe16a35ec578c158bc08b9c8"
+    },
+    {
+      "index": 196,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "feaa67f3369ddf30b68ca87831e8ca4ba51418427a5710663a056a97fe2faea3",
+      "after": "feaa67f3369ddf30b68ca87831e8ca4ba51418427a5710663a056a97fe2faea3"
+    },
+    {
+      "index": 197,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "741d6c046d9aab01e0935d66dd61c43e6dbc3a82fcd007a2be4f09c8463a196a",
+      "after": "741d6c046d9aab01e0935d66dd61c43e6dbc3a82fcd007a2be4f09c8463a196a"
+    },
+    {
+      "index": 198,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "ba60d6ac3b8647c2ea02399915c6c8a3399ffbeac192d77123af57f48c7e2e74",
+      "after": "ba60d6ac3b8647c2ea02399915c6c8a3399ffbeac192d77123af57f48c7e2e74"
+    },
+    {
+      "index": 199,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "38992160ea8943918ff5fdd009d325ed149705960c267b6deeea0a8732948c26",
+      "after": "38992160ea8943918ff5fdd009d325ed149705960c267b6deeea0a8732948c26"
+    },
+    {
+      "index": 200,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "56fa39f17b4035f15d88f7c775674fa40ad576af67f168e5090b66a2ab5a2cd8",
+      "after": "56fa39f17b4035f15d88f7c775674fa40ad576af67f168e5090b66a2ab5a2cd8"
+    },
+    {
+      "index": 201,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "cde7d02b70efee81dc248c197604ae2a673266b135e67eef4509532db0602346",
+      "after": "cde7d02b70efee81dc248c197604ae2a673266b135e67eef4509532db0602346"
+    },
+    {
+      "index": 202,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "2a99e718c1bded5d3cd81e08f7a7cc6650b9cb13d939e5556da27b12f8ab6de5",
+      "after": "2a99e718c1bded5d3cd81e08f7a7cc6650b9cb13d939e5556da27b12f8ab6de5"
+    },
+    {
+      "index": 203,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "5ea673f27086aaf11e94b3e392cb48fadca82c328452d9e9cd0c07e9f1c944c1",
+      "after": "5ea673f27086aaf11e94b3e392cb48fadca82c328452d9e9cd0c07e9f1c944c1"
+    },
+    {
+      "index": 204,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "5b59cbe2edbf94e634d5ac260335d070e85d5b1ad0fa08aa259753d53d010116",
+      "after": "5b59cbe2edbf94e634d5ac260335d070e85d5b1ad0fa08aa259753d53d010116"
+    },
+    {
+      "index": 205,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "9a2977757f5bedd8e8a26672937949b9fb1a4b4293ebe877f501f54a84964d07",
+      "after": "9a2977757f5bedd8e8a26672937949b9fb1a4b4293ebe877f501f54a84964d07"
+    },
+    {
+      "index": 206,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "8ef12d6061445e9bdaa473d178c36c56a01a8b589277c02194aa70ec043bbe01",
+      "after": "8ef12d6061445e9bdaa473d178c36c56a01a8b589277c02194aa70ec043bbe01"
+    },
+    {
+      "index": 207,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "6c3b407a30f39cceea5446b40a31e99383f32e1acdf749f327a76f87cbcfa891",
+      "after": "6c3b407a30f39cceea5446b40a31e99383f32e1acdf749f327a76f87cbcfa891"
+    },
+    {
+      "index": 208,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "dff2e8476704f31a895383858a342dd58ea0e797ea639013ef2745d012850615",
+      "after": "dff2e8476704f31a895383858a342dd58ea0e797ea639013ef2745d012850615"
+    },
+    {
+      "index": 209,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "d2aed94b1b184465cf887d007fbc2cfbf5699bf1789dcc029ecda61eb6dcdb08",
+      "after": "d2aed94b1b184465cf887d007fbc2cfbf5699bf1789dcc029ecda61eb6dcdb08"
+    },
+    {
+      "index": 210,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "2b30b00a5123e0598fab673d8f3b641b0e7c2469a757853c61114834c8af6cfb",
+      "after": "2b30b00a5123e0598fab673d8f3b641b0e7c2469a757853c61114834c8af6cfb"
+    },
+    {
+      "index": 211,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "7c9e32906fd8607f954ef6e80184ccbd64dd2372d5e37b951215f0476d4a99ec",
+      "after": "7c9e32906fd8607f954ef6e80184ccbd64dd2372d5e37b951215f0476d4a99ec"
+    },
+    {
+      "index": 212,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "3bc47ff3cdd04db8dbe196e410a2e2b55099307120928c9cf6d17d94c7939fa4",
+      "after": "3bc47ff3cdd04db8dbe196e410a2e2b55099307120928c9cf6d17d94c7939fa4"
+    },
+    {
+      "index": 213,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "9eee2b428534d64a7840753d9db39ce55453fce7506f7f00d19f6c1cadcd505c",
+      "after": "9eee2b428534d64a7840753d9db39ce55453fce7506f7f00d19f6c1cadcd505c"
+    },
+    {
+      "index": 214,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "6dc655ce251a90dcfba3be7956e9a780671ca2e84e10570cb7bf41b1246e468b",
+      "after": "6dc655ce251a90dcfba3be7956e9a780671ca2e84e10570cb7bf41b1246e468b"
+    },
+    {
+      "index": 215,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "7b96e0f527a416de090e842f7a4bd2a354fd6ee4b9498274e5807c5ad3a223a5",
+      "after": "7b96e0f527a416de090e842f7a4bd2a354fd6ee4b9498274e5807c5ad3a223a5"
+    },
+    {
+      "index": 216,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "a54eca58e1216d60b26222960a01e9fa27a3c71e6033e6c396c2f965af6b069a",
+      "after": "a54eca58e1216d60b26222960a01e9fa27a3c71e6033e6c396c2f965af6b069a"
+    },
+    {
+      "index": 217,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "08376db63f81196c4e61e30e5ce86021ba5d2f251bcc3c307bbab6fa28004428",
+      "after": "08376db63f81196c4e61e30e5ce86021ba5d2f251bcc3c307bbab6fa28004428"
+    },
+    {
+      "index": 218,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "698d4a234402344d9f554097f5efe2ac38142cc57b174b7fa9a5bc63d857b4cf",
+      "after": "698d4a234402344d9f554097f5efe2ac38142cc57b174b7fa9a5bc63d857b4cf"
+    },
+    {
+      "index": 219,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "43f552b58fba1e7a4ef98a88078321b6b6d88f6444a522b98c0d55aa3e81ae00",
+      "after": "43f552b58fba1e7a4ef98a88078321b6b6d88f6444a522b98c0d55aa3e81ae00"
+    },
+    {
+      "index": 220,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "51d9d9bfde3d25cf90996cdf61f79e00f1d673acd916d820ffac4fa8d6a7564e",
+      "after": "51d9d9bfde3d25cf90996cdf61f79e00f1d673acd916d820ffac4fa8d6a7564e"
+    },
+    {
+      "index": 221,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "9b907a091c12997250a602a883b0591579eb46ae04f2a789519ebff60b89223b",
+      "after": "9b907a091c12997250a602a883b0591579eb46ae04f2a789519ebff60b89223b"
+    },
+    {
+      "index": 222,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "0a58da89d827295685ac36a9824231367c3d08ff4d074777f2bd0cbe470a33ec",
+      "after": "0a58da89d827295685ac36a9824231367c3d08ff4d074777f2bd0cbe470a33ec"
+    },
+    {
+      "index": 223,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "072bdaba0c4ff30cf0dcef190f60db74cb95566fc3536b6ae77c92abb4f06768",
+      "after": "072bdaba0c4ff30cf0dcef190f60db74cb95566fc3536b6ae77c92abb4f06768"
+    },
+    {
+      "index": 224,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "08162b1dcd4e95be49d4fe0480761753edea8b063fc27d6b40ee0860f7680ce3",
+      "after": "08162b1dcd4e95be49d4fe0480761753edea8b063fc27d6b40ee0860f7680ce3"
+    },
+    {
+      "index": 225,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "cd004c44f53d3ef3fd87e1a11fc0689812e7e6585fbe12b09220dc7fde6b662c",
+      "after": "cd004c44f53d3ef3fd87e1a11fc0689812e7e6585fbe12b09220dc7fde6b662c"
+    },
+    {
+      "index": 226,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "2e0121bade0b6bfaa6fc9dab4ff811b0e7e6a38bea6fcfe3a465d2f653c62e6a",
+      "after": "2e0121bade0b6bfaa6fc9dab4ff811b0e7e6a38bea6fcfe3a465d2f653c62e6a"
+    },
+    {
+      "index": 227,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "a100d9de0cb5fd55219e22d26fb9704350379b381ff2951612f64d6604bcaddd",
+      "after": "a100d9de0cb5fd55219e22d26fb9704350379b381ff2951612f64d6604bcaddd"
+    },
+    {
+      "index": 228,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "980ad26fa7d6a480b3652af3ff6f7782fd13d5f3a4ff23530239829bd9ca0e4d",
+      "after": "980ad26fa7d6a480b3652af3ff6f7782fd13d5f3a4ff23530239829bd9ca0e4d"
+    },
+    {
+      "index": 229,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "c3f905f042d457b4b392accc78ed47ddfbd811c3c5e6ef0e7299cac2c114a11c",
+      "after": "c3f905f042d457b4b392accc78ed47ddfbd811c3c5e6ef0e7299cac2c114a11c"
+    },
+    {
+      "index": 230,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "8c69a7d6d9cf393ed56b8abc9393656841d3ba80d6c0bb5b2f8e11cab5153be6",
+      "after": "8c69a7d6d9cf393ed56b8abc9393656841d3ba80d6c0bb5b2f8e11cab5153be6"
+    },
+    {
+      "index": 231,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "e8edf3b88ab9ef3bfc2133d25b52d5af861d2951862771035ed8fbd61e320fe4",
+      "after": "e8edf3b88ab9ef3bfc2133d25b52d5af861d2951862771035ed8fbd61e320fe4"
+    },
+    {
+      "index": 232,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "60a7b1c0f295ec47099fc697c7b4ba3a55ab8938917aa37df5e941c623f58b76",
+      "after": "60a7b1c0f295ec47099fc697c7b4ba3a55ab8938917aa37df5e941c623f58b76"
+    },
+    {
+      "index": 233,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "b01b402dfb50cb6738d66eacad5e11f178b63847a75ae01c5075fe180ed79df0",
+      "after": "b01b402dfb50cb6738d66eacad5e11f178b63847a75ae01c5075fe180ed79df0"
+    },
+    {
+      "index": 234,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "eb5273a14948dbe8b08bcce8755003776e753499f006128414676d3ca4071ba7",
+      "after": "eb5273a14948dbe8b08bcce8755003776e753499f006128414676d3ca4071ba7"
+    },
+    {
+      "index": 235,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "96779ac347bc377b288aeed0d1f6cd3f5156472dcded3756f37d5d795408532f",
+      "after": "96779ac347bc377b288aeed0d1f6cd3f5156472dcded3756f37d5d795408532f"
+    },
+    {
+      "index": 236,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "a369bb8b30cbd1f256acfade9c7e1bae2b67c199aecf6208c08bf662a51fe790",
+      "after": "a369bb8b30cbd1f256acfade9c7e1bae2b67c199aecf6208c08bf662a51fe790"
+    },
+    {
+      "index": 237,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "a73a001f63577de60cca1c14939498c256a9616ac95ed8516b50d110e4d269de",
+      "after": "a73a001f63577de60cca1c14939498c256a9616ac95ed8516b50d110e4d269de"
+    },
+    {
+      "index": 238,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "10e301484a31f6381cef442ccaf70fd26ef3d4ee537abb1198da1f5d39a5aa55",
+      "after": "10e301484a31f6381cef442ccaf70fd26ef3d4ee537abb1198da1f5d39a5aa55"
+    },
+    {
+      "index": 239,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "953711b1b0bfdc6f18c7586f3bf84b88c00359e2455df03ac5200ca04cb50060",
+      "after": "953711b1b0bfdc6f18c7586f3bf84b88c00359e2455df03ac5200ca04cb50060"
+    },
+    {
+      "index": 240,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "e78247d75e9377d9d800576d22cea841571ac24a419a3e1c54e8a01a95f9d26d",
+      "after": "e78247d75e9377d9d800576d22cea841571ac24a419a3e1c54e8a01a95f9d26d"
+    },
+    {
+      "index": 241,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "9a1ce3c976c2c9f9fbe58223902c55f8c3817beb241eff4822713095a0714d82",
+      "after": "9a1ce3c976c2c9f9fbe58223902c55f8c3817beb241eff4822713095a0714d82"
+    },
+    {
+      "index": 242,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "223c8709010fb4166b42716ea677984aa13a0c6d44c5da5d6345d657557f892d",
+      "after": "223c8709010fb4166b42716ea677984aa13a0c6d44c5da5d6345d657557f892d"
+    },
+    {
+      "index": 243,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "b829e547bac97bc4962b880374071209ec5968e190e6650a7b77b6c0d3293959",
+      "after": "b829e547bac97bc4962b880374071209ec5968e190e6650a7b77b6c0d3293959"
+    },
+    {
+      "index": 244,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "4199dc8da0091aee1a153b1216454e362cc3706ebd10e4f7eb3b61e184245fce",
+      "after": "4199dc8da0091aee1a153b1216454e362cc3706ebd10e4f7eb3b61e184245fce"
+    },
+    {
+      "index": 245,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "d8c27b09e3abc567b0f7515cc9c229c6c8da0200ea44794e14574732cacc2597",
+      "after": "d8c27b09e3abc567b0f7515cc9c229c6c8da0200ea44794e14574732cacc2597"
+    },
+    {
+      "index": 246,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "bad2f04275fd3c359f2e902d95350436180524ded7d33e7061186e0f6eafaaad",
+      "after": "bad2f04275fd3c359f2e902d95350436180524ded7d33e7061186e0f6eafaaad"
+    },
+    {
+      "index": 247,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "81e6339b5e217fba62fcfcfb64fae1c23fd612cd43570d78e9e3be2f31c3486c",
+      "after": "81e6339b5e217fba62fcfcfb64fae1c23fd612cd43570d78e9e3be2f31c3486c"
+    },
+    {
+      "index": 248,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "cf660a10d8e5b85fb95c3aebea0f197049e6bdd50f1524cbef7b1059b79b2d18",
+      "after": "cf660a10d8e5b85fb95c3aebea0f197049e6bdd50f1524cbef7b1059b79b2d18"
+    },
+    {
+      "index": 249,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "d0453ed2a08a569d54764971600f5ec8c6d1fb8cb42edbfee37dee1d0af89c9f",
+      "after": "d0453ed2a08a569d54764971600f5ec8c6d1fb8cb42edbfee37dee1d0af89c9f"
+    },
+    {
+      "index": 250,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "972307e366c3607beebe3389a51dfadfcd1223b0db6a69d759923c7dcd4b4f15",
+      "after": "972307e366c3607beebe3389a51dfadfcd1223b0db6a69d759923c7dcd4b4f15"
+    },
+    {
+      "index": 251,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "82b5a127c7701bc87e2345ebb67ac4e1f5a6b311470915a93fa0aed96847c4ff",
+      "after": "82b5a127c7701bc87e2345ebb67ac4e1f5a6b311470915a93fa0aed96847c4ff"
+    },
+    {
+      "index": 252,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "ff0af8dcd132c6bf764b674d3ade199aee59b4548211250c141cb434458957d4",
+      "after": "ff0af8dcd132c6bf764b674d3ade199aee59b4548211250c141cb434458957d4"
+    },
+    {
+      "index": 253,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "db3dba5aa80c4c24854ae763cca7dbd5ad1ab20e618431f37188c4a6a64962e0",
+      "after": "db3dba5aa80c4c24854ae763cca7dbd5ad1ab20e618431f37188c4a6a64962e0"
+    },
+    {
+      "index": 254,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "b24f2aac07ccf14d9d3e91f251e373afb0d0db702c8b106f66abce54f04ffb13",
+      "after": "b24f2aac07ccf14d9d3e91f251e373afb0d0db702c8b106f66abce54f04ffb13"
+    },
+    {
+      "index": 255,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "30b97ea110d8943756d5acca7d784b2dd67e676ee389d993811b7bfbad5fa6e7",
+      "after": "30b97ea110d8943756d5acca7d784b2dd67e676ee389d993811b7bfbad5fa6e7"
+    },
+    {
+      "index": 256,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "0a27006d1b8e21cc75ac445f592fdc19e8f9ea6ab9d791cc4bb58dc98d997e1d",
+      "after": "0a27006d1b8e21cc75ac445f592fdc19e8f9ea6ab9d791cc4bb58dc98d997e1d"
+    },
+    {
+      "index": 257,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "a6828972cce829722ca9d41f39ec1c02f2c8b105bbe0d258efb07b680bcd5629",
+      "after": "a6828972cce829722ca9d41f39ec1c02f2c8b105bbe0d258efb07b680bcd5629"
+    },
+    {
+      "index": 258,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "70ef8ea17bda3e1f23421bcd44ce1eb7673c4f7b182f894ba93830a00b592e9e",
+      "after": "70ef8ea17bda3e1f23421bcd44ce1eb7673c4f7b182f894ba93830a00b592e9e"
+    },
+    {
+      "index": 259,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "2683ad69b8fd9b027522d215cce018a9495933417b74bd7e24649dd60c3c59af",
+      "after": "2683ad69b8fd9b027522d215cce018a9495933417b74bd7e24649dd60c3c59af"
+    },
+    {
+      "index": 260,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "6a951d1e1dc450226f9907a9dcb553f883ae18ca4ef3cb5fcb52152ce3cc25fa",
+      "after": "6a951d1e1dc450226f9907a9dcb553f883ae18ca4ef3cb5fcb52152ce3cc25fa"
+    },
+    {
+      "index": 261,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "627a4dbe27c2583741d7c5655b0997cee16dab5f22472e29acd92e56dd663533",
+      "after": "627a4dbe27c2583741d7c5655b0997cee16dab5f22472e29acd92e56dd663533"
+    },
+    {
+      "index": 262,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "0fb565d50f0b32dafc2d28befee857c0960ef2181cb8f107d44acd7d78f95c3e",
+      "after": "0fb565d50f0b32dafc2d28befee857c0960ef2181cb8f107d44acd7d78f95c3e"
+    },
+    {
+      "index": 263,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "76e950ed059c430b42e1cdddba686b3f75ab0fcabc5f906bb469bf8e992847c0",
+      "after": "76e950ed059c430b42e1cdddba686b3f75ab0fcabc5f906bb469bf8e992847c0"
+    },
+    {
+      "index": 264,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "e953cf6a493609efa8ce37591fa642ef461357996731f2dc6decaef40f3c3e1d",
+      "after": "e953cf6a493609efa8ce37591fa642ef461357996731f2dc6decaef40f3c3e1d"
+    },
+    {
+      "index": 265,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "dd1e11516c5bfa7007378ab4ca33382f79d5ce91c2c7cd93d4a477e8f63e0484",
+      "after": "dd1e11516c5bfa7007378ab4ca33382f79d5ce91c2c7cd93d4a477e8f63e0484"
+    },
+    {
+      "index": 266,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "2492894b2b6fdeb367236cf3f1c9997d5e44a32661da25cfc80fb87ef19589ca",
+      "after": "2492894b2b6fdeb367236cf3f1c9997d5e44a32661da25cfc80fb87ef19589ca"
+    },
+    {
+      "index": 267,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "cdb0ae458957311252e71a0c472664c8d7e45b7a7e4995b2a07eb9e115aaceb2",
+      "after": "cdb0ae458957311252e71a0c472664c8d7e45b7a7e4995b2a07eb9e115aaceb2"
+    },
+    {
+      "index": 268,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "e5b3d27973a48c9f5188f2b32d57130807616878677d09ce77e344c86a755789",
+      "after": "e5b3d27973a48c9f5188f2b32d57130807616878677d09ce77e344c86a755789"
+    },
+    {
+      "index": 269,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "fa81bebc0f4c7c34d69b5f699365034246a77430f91fd951636bb1053bf3fb31",
+      "after": "fa81bebc0f4c7c34d69b5f699365034246a77430f91fd951636bb1053bf3fb31"
+    },
+    {
+      "index": 270,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "99a647427d376956f44d4d6a24d01ad88a3945645528d39b270557efce48c5be",
+      "after": "99a647427d376956f44d4d6a24d01ad88a3945645528d39b270557efce48c5be"
+    },
+    {
+      "index": 271,
+      "family": "an_code",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "d585cc35442909e96be4db3f77e2015b09d4c45ad66c2afdc19361d06e92412b",
+      "after": "d585cc35442909e96be4db3f77e2015b09d4c45ad66c2afdc19361d06e92412b"
+    },
+    {
+      "index": 272,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "a06a7d73d11083db26aa5e5c9ce85052cb6f9ab85b6bd971b54779ecf7c4ecfe",
+      "after": "a06a7d73d11083db26aa5e5c9ce85052cb6f9ab85b6bd971b54779ecf7c4ecfe"
+    },
+    {
+      "index": 273,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "06bde2924d021f6a111e589636cafc76e82e6baf3f6e242e8af0263e9aa560d2",
+      "after": "06bde2924d021f6a111e589636cafc76e82e6baf3f6e242e8af0263e9aa560d2"
+    },
+    {
+      "index": 274,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "2f46f4ed7f95c79b6ceee8c10ff261e877a9fb604b71378f4a417c764eaf2154",
+      "after": "2f46f4ed7f95c79b6ceee8c10ff261e877a9fb604b71378f4a417c764eaf2154"
+    },
+    {
+      "index": 275,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "1f65ef7de54a656fca702f20c0c235290565d3f3656ff01ce9df7ccb17ffacb7",
+      "after": "1f65ef7de54a656fca702f20c0c235290565d3f3656ff01ce9df7ccb17ffacb7"
+    },
+    {
+      "index": 276,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "e2d387dad7a441eff248cfcc5ef72310d79c0a82a002951102f67c3bb03519b5",
+      "after": "e2d387dad7a441eff248cfcc5ef72310d79c0a82a002951102f67c3bb03519b5"
+    },
+    {
+      "index": 277,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "0a58da89d827295685ac36a9824231367c3d08ff4d074777f2bd0cbe470a33ec",
+      "after": "0a58da89d827295685ac36a9824231367c3d08ff4d074777f2bd0cbe470a33ec"
+    },
+    {
+      "index": 278,
+      "family": "parity_prediction_adder",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "4d7b21faf8761dce3ea0e98cadfe7671d9bd69cab4d621952770bea9552c23d3",
+      "after": "4d7b21faf8761dce3ea0e98cadfe7671d9bd69cab4d621952770bea9552c23d3"
+    },
+    {
+      "index": 279,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "sklansky"
+      },
+      "equal": true,
+      "before": "bdfe31af861e51f0ac00211cd13fab0295a37ffa1381dd9a202b1e67674084e4",
+      "after": "bdfe31af861e51f0ac00211cd13fab0295a37ffa1381dd9a202b1e67674084e4"
+    },
+    {
+      "index": 280,
+      "family": "parity_prediction_adder",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "6870801783b0d4f3d3895639c1f4b94eabac2ecd3d05f010b543f96878f06709",
+      "after": "6870801783b0d4f3d3895639c1f4b94eabac2ecd3d05f010b543f96878f06709"
+    },
+    {
+      "index": 281,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "c6364c04203c4f669106b2da333f20c88d5ffbc4a32ccab6009c2964940b280b",
+      "after": "c6364c04203c4f669106b2da333f20c88d5ffbc4a32ccab6009c2964940b280b"
+    },
+    {
+      "index": 282,
+      "family": "berger",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "5813173f9c6f377ac5ef89b3b312bde419afd6b0eab5d42cc8485722dd8f5255",
+      "after": "5813173f9c6f377ac5ef89b3b312bde419afd6b0eab5d42cc8485722dd8f5255"
+    },
+    {
+      "index": 283,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "7e435292cf8eaaf1e8c40b4e47166d3055b922a30bd2698e8b27821aaef6126b",
+      "after": "7e435292cf8eaaf1e8c40b4e47166d3055b922a30bd2698e8b27821aaef6126b"
+    },
+    {
+      "index": 284,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "1910171ed2d699e7df31fc017543a42279a84deff2c2fe1388c61fb18e3f739b",
+      "after": "1910171ed2d699e7df31fc017543a42279a84deff2c2fe1388c61fb18e3f739b"
+    },
+    {
+      "index": 285,
+      "family": "berger",
+      "width": 4,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "c91a36d57ef3a1267b500d74774e4cf8fcfa55590a18ce338162cfdb31366fed",
+      "after": "c91a36d57ef3a1267b500d74774e4cf8fcfa55590a18ce338162cfdb31366fed"
+    },
+    {
+      "index": 286,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "9aa9f71f1e546923d66cf51ae5b8346694bd63354fe4baedb3e052ea3edb7f13",
+      "after": "9aa9f71f1e546923d66cf51ae5b8346694bd63354fe4baedb3e052ea3edb7f13"
+    },
+    {
+      "index": 287,
+      "family": "berger",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "6483bfce4111f709621fe27a7a22f298f93c212b454cd4411ab667b448cd0b03",
+      "after": "6483bfce4111f709621fe27a7a22f298f93c212b454cd4411ab667b448cd0b03"
+    },
+    {
+      "index": 288,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "970ffe93306e41b57d37cbd073bc2ffc4ce313f388627cfb6160c2958bb62201",
+      "after": "970ffe93306e41b57d37cbd073bc2ffc4ce313f388627cfb6160c2958bb62201"
+    },
+    {
+      "index": 289,
+      "family": "an_code",
+      "width": 8,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "88f6a8ce84a55ba0f6b2824900edd3989f80b558b4a8a52e731b7659034c88b6",
+      "after": "88f6a8ce84a55ba0f6b2824900edd3989f80b558b4a8a52e731b7659034c88b6"
+    },
+    {
+      "index": 290,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "e963c8f2ca1a0c8535b040b4a1d6eb0f12d89ee86ba3fbf198b00676f25dd0ec",
+      "after": "e963c8f2ca1a0c8535b040b4a1d6eb0f12d89ee86ba3fbf198b00676f25dd0ec"
+    },
+    {
+      "index": 291,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "a6828972cce829722ca9d41f39ec1c02f2c8b105bbe0d258efb07b680bcd5629",
+      "after": "a6828972cce829722ca9d41f39ec1c02f2c8b105bbe0d258efb07b680bcd5629"
+    },
+    {
+      "index": 292,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "b36621eaa558e66a27559a280ad961473f4e5092288a596b5a7fd6d3a36b2ad2",
+      "after": "b36621eaa558e66a27559a280ad961473f4e5092288a596b5a7fd6d3a36b2ad2"
+    },
+    {
+      "index": 293,
+      "family": "parity_prediction_adder",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "50122b639883d04f280f4f775d0266b6d9318fac6402538ad40cc36719a9e1da",
+      "after": "50122b639883d04f280f4f775d0266b6d9318fac6402538ad40cc36719a9e1da"
+    },
+    {
+      "index": 294,
+      "family": "an_code",
+      "width": 16,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "generate_propagate",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "e04c779533dea7ef72002e311b5c44fff1e4bbb06e9b769531fddcd3b45af533",
+      "after": "e04c779533dea7ef72002e311b5c44fff1e4bbb06e9b769531fddcd3b45af533"
+    },
+    {
+      "index": 295,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "kogge_stone"
+      },
+      "equal": true,
+      "before": "4c9ad41a75dcc07d7ad10bed70aed276a674a12dd083b04d2bb5a5c6dd549344",
+      "after": "4c9ad41a75dcc07d7ad10bed70aed276a674a12dd083b04d2bb5a5c6dd549344"
+    },
+    {
+      "index": 296,
+      "family": "parity_prediction_adder",
+      "width": 32,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 2
+      },
+      "equal": true,
+      "before": "7da9cd7c85bad853d4a6a50bd85779ac7c3c10df0365352d24df71be3e192272",
+      "after": "7da9cd7c85bad853d4a6a50bd85779ac7c3c10df0365352d24df71be3e192272"
+    },
+    {
+      "index": 297,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "xor_majority",
+        "chunk_width_bits": 4
+      },
+      "equal": true,
+      "before": "7d03499b03213b8a84b6b5dc8a5f56f2fd571d6462a536d9cfacdc24396506a2",
+      "after": "7d03499b03213b8a84b6b5dc8a5f56f2fd571d6462a536d9cfacdc24396506a2"
+    },
+    {
+      "index": 298,
+      "family": "an_code",
+      "width": 4,
+      "child": {
+        "family": "ripple_carry",
+        "full_adder_logic": "two_half_adders_or",
+        "chunk_width_bits": 1
+      },
+      "equal": true,
+      "before": "9c2ed6de4a11c4f269f75ab4b4e62f39dad86d3291242e51ca10ce02add80b78",
+      "after": "9c2ed6de4a11c4f269f75ab4b4e62f39dad86d3291242e51ca10ce02add80b78"
+    },
+    {
+      "index": 299,
+      "family": "berger",
+      "width": 32,
+      "child": {
+        "family": "parallel_prefix",
+        "topology": "brent_kung"
+      },
+      "equal": true,
+      "before": "c1ae7ce66501f668b8d4c459e73dae32b75f6d8b3b3ed427eb1d0e9ce34bb32b",
+      "after": "c1ae7ce66501f668b8d4c459e73dae32b75f6d8b3b3ed427eb1d0e9ce34bb32b"
+    }
+  ]
+}

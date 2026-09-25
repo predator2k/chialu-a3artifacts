@@ -1,0 +1,114 @@
+{
+ "key": "lala_2001",
+ "file": "Self-checking and fault-tolerant digital design (Lala, Parag K., 1948-) .pdf",
+ "kind": "book",
+ "citation": "P. K. Lala, \"Self-Checking and Fault-Tolerant Digital Design\", Morgan Kaufmann, 2001",
+ "pages": 240,
+ "title": "Self-Checking and Fault-Tolerant Digital Design",
+ "authors": "Parag K. Lala",
+ "source": "toc_llm",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "Front matter",
+   "start": 0,
+   "end": 17,
+   "kind": "front",
+   "extract": false,
+   "families": [],
+   "why": "The chapter is front matter without arithmetic-unit or error-checking design detail."
+  },
+  {
+   "id": "s02",
+   "title": "Fundamentals of Reliability",
+   "start": 18,
+   "end": 31,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter presents general reliability and failure-rate analysis rather than an arithmetic-unit or checker mechanism."
+  },
+  {
+   "id": "s03",
+   "title": "Error Detecting and Correcting Codes",
+   "start": 32,
+   "end": 59,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "residue",
+    "berger"
+   ],
+   "why": "The chapter defines error-detecting codes, including residue and Berger codes that underpin the corresponding concurrent-checking families."
+  },
+  {
+   "id": "s04",
+   "title": "Self-Checking Combinational Logic Design",
+   "start": 60,
+   "end": 95,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "residue",
+    "self_checking_datapath"
+   ],
+   "why": "The chapter develops self-checking combinational circuits and applies coded-output checking to arithmetic logic, including residue-protected ALUs."
+  },
+  {
+   "id": "s05",
+   "title": "Self-Checking Checkers",
+   "start": 96,
+   "end": 147,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "two_rail_tree",
+    "berger"
+   ],
+   "why": "The chapter describes tree-structured two-rail checkers and totally self-checking Berger-code checkers."
+  },
+  {
+   "id": "s06",
+   "title": "Self-Checking Sequential Circuit Design",
+   "start": 148,
+   "end": 177,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns self-checking finite-state and sequential-control circuits rather than arithmetic units or their checkers."
+  },
+  {
+   "id": "s07",
+   "title": "Fault-Tolerant Design",
+   "start": 178,
+   "end": 219,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "duplication",
+    "time_redundancy"
+   ],
+   "why": "The chapter describes hardware replication and temporal redundancy as fault-tolerant checking and recovery mechanisms."
+  },
+  {
+   "id": "s08",
+   "title": "Markov Models",
+   "start": 220,
+   "end": 221,
+   "kind": "appendix",
+   "extract": false,
+   "families": [],
+   "why": "The appendix explains Markov reliability models without describing an arithmetic-unit or checker implementation."
+  },
+  {
+   "id": "s09",
+   "title": "Index",
+   "start": 222,
+   "end": 239,
+   "kind": "back",
+   "extract": false,
+   "families": [],
+   "why": "The chapter is an index rather than substantive design material."
+  }
+ ]
+}

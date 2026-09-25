@@ -1,0 +1,22 @@
+{
+ "key": "ercegovac_2004",
+ "file": "ercegovac2004.pdf",
+ "kind": "book",
+ "citation": "M. D. Ercegovac and T. Lang, \"Digital Arithmetic\", Morgan Kaufmann, 2004",
+ "pages": 59,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 58,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

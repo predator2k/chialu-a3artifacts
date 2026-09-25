@@ -1,0 +1,14 @@
+# TransDot's sources for the dot-product (DP) point, relative to 3rdparty/transdot
+src/common_cells/src/cf_math_pkg.sv
+src/common_cells/src/lzc.sv
+src/fpnew_pkg.sv
+src/fpnew_classifier.sv
+src/fpnew_rounding.sv
+src/transdot_decomp_adder.sv
+src/transdot_decomp_shifter.sv
+src/transdot_decomp_multiplier.sv
+src/transdot_decomp_exponent_datapath_fp8.sv
+src/transdot_decomp_addend_datapath.sv
+src/transdot_decomp_normalize_datapath.sv
+src/transdot_fp4_dp.sv
+src/transdot_fp4_fp8_fp16_fp32_fma.sv

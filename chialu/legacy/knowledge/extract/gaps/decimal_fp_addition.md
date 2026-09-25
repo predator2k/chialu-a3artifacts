@@ -1,0 +1,9 @@
+# decimal_fp_addition: proposed changes to the space
+
+* choices `coefficient_form: integer`, `normalization_policy: no_automatic_normalization`, `result_exponent_rule: minimum_operand_exponent`, and commercial rounding modes (half-up, half-down, up, Java BigDecimal) — the scale-preserving semantics that drive alignment are not representable [cowlishaw_2003, wang_2009]
+* `alignment` values `parallel_left_and_right` (dual barrel shifters from LSA/RSA fixing the rounding position), `operation_dependent_pre_alignment` (assume carry-out for add, cancellation for subtract), and a case partition `{equal_exponents, align_to_smaller_exponent, shift_both}` — the commercial units sequence by case rather than by a single shifter [wang_2009, carlough_2011, muller_2018, eisen_2007, schwarz_2009]
+* `alignment` value for BID operands aligned by binary-integer multiplication with a tabulated 10^k — the present domain covers only decimal-significand shifters [cornea_2009, tsen_2007, muller_2018]
+* `rounding` values `second_pass_adder` (POWER6 reuses the adder for rounding), `direct_combinational_ieee_conditions`, and `trailing_nine_flag_vectors` — three rounding realizations lie outside injection and LSD-increment tables [eisen_2007, vazquez_2009, wang_2009]
+* make `format` set-valued — z10 and z196 support decimal64 and decimal128 in one unit [schwarz_2009, carlough_2011]
+* choices `internal_digit_encoding: excess3` and `correction_basis: flags_effective_operation_digit_carry_outs` — the 2004 adder runs excess-3 significands through a binary adder and corrects from flags [thompson_2004]
+* choice `operation_set` for adder-based multifunction units covering compare/minNum/maxNum/quantize/sameQuantum/roundToIntegral, matching the `extend_to_multifunction_unit` mutation [wang_2007b, wang_2009]

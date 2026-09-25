@@ -1,0 +1,604 @@
+{
+  "before": [
+    {
+      "child": "ripple_carry",
+      "result": {
+        "pass": true,
+        "detail": "accuracy within budget",
+        "metrics": {
+          "bit_exact": false,
+          "max_ulp": 1,
+          "max_abs": 0.125,
+          "error_rate": 0.010416666666666666,
+          "med": 0.0009765625,
+          "nmed": 2.1798270089285713e-06,
+          "mred": 0.000904224537037037,
+          "error_bias": -0.0009765625,
+          "n": 384,
+          "n_wrong": 4,
+          "n_special_mismatch": 0
+        },
+        "max_ulp": 1,
+        "seconds": 6.6,
+        "accuracy_mode": "search_implementation",
+        "budget_applied": true,
+        "algorithm_pass": null,
+        "first_mismatches": [],
+        "precision_target": {
+          "max_ulp": 1
+        },
+        "user_target": null,
+        "sampled_metrics": {
+          "bit_exact": false,
+          "max_ulp": 1,
+          "max_abs": 0.125,
+          "error_rate": 0.010416666666666666,
+          "med": 0.0009765625,
+          "nmed": 2.1798270089285713e-06,
+          "mred": 0.000904224537037037,
+          "error_bias": -0.0009765625,
+          "n": 384,
+          "n_wrong": 4,
+          "n_special_mismatch": 0
+        },
+        "error_range_complete": false,
+        "range_evidence": {
+          "complete": false,
+          "reason": "stimulus is a sample"
+        },
+        "budget_pass": true,
+        "source_bytes": 35140,
+        "source_sha256": "81ddf4bc0dcd2fb552cb933479ac55efaf313bffb63909dd310684fd2dd55042",
+        "vectors_sha256": "44eb3381f5f3204c422aae0029b8ee913460d61fcf7ea8b767b0d47014b03f5a",
+        "fidelity": {
+          "criterion": "effective structural parameters",
+          "effects": [],
+          "sharing": [],
+          "generated": [
+            {
+              "owner": "core.adder",
+              "family": "ripple_carry",
+              "pins": {},
+              "module": "fam_adder_ripple_carry",
+              "source_sha256": null
+            },
+            {
+              "owner": "core",
+              "family": "pwl",
+              "pins": {
+                "adder.family": "ripple_carry"
+              },
+              "module": "fam_sfu_pwl_exp2_fp8e4m3_ae020d363a7c",
+              "source_sha256": "4e0ad9dbc8a55df2596a953963e4b9844c4429ca152bbc7869938e630eee42f0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "child": "end_around_carry",
+      "result": {
+        "pass": false,
+        "detail": "ArithmeticError.max_ulp <= 1: measured 126",
+        "metrics": {
+          "bit_exact": false,
+          "max_ulp": 126,
+          "max_abs": 448.0,
+          "error_rate": 0.890625,
+          "med": 82.17362976074219,
+          "nmed": 0.18342328071594238,
+          "mred": 2759.7128628316127,
+          "error_bias": -42.99316914876302,
+          "n": 384,
+          "n_wrong": 342,
+          "n_special_mismatch": 0
+        },
+        "max_ulp": 126,
+        "seconds": 14.0,
+        "accuracy_mode": "search_implementation",
+        "budget_applied": true,
+        "algorithm_pass": null,
+        "first_mismatches": [],
+        "precision_target": {
+          "max_ulp": 1
+        },
+        "user_target": null,
+        "sampled_metrics": {
+          "bit_exact": false,
+          "max_ulp": 126,
+          "max_abs": 448.0,
+          "error_rate": 0.890625,
+          "med": 82.17362976074219,
+          "nmed": 0.18342328071594238,
+          "mred": 2759.7128628316127,
+          "error_bias": -42.99316914876302,
+          "n": 384,
+          "n_wrong": 342,
+          "n_special_mismatch": 0
+        },
+        "error_range_complete": false,
+        "range_evidence": {
+          "complete": false,
+          "reason": "stimulus is a sample"
+        },
+        "budget_pass": false,
+        "source_bytes": 80879,
+        "source_sha256": "8713de47ec103cc75257dfa346c2cea6321047dc10af6d6d2f9b80ace4fb05a6",
+        "vectors_sha256": "44eb3381f5f3204c422aae0029b8ee913460d61fcf7ea8b767b0d47014b03f5a",
+        "fidelity": {
+          "criterion": "effective structural parameters",
+          "effects": [],
+          "sharing": [],
+          "generated": [
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w4",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w5",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w4",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w14",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w15",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w14",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w16",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w15",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w17",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w18",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w17",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w6",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w5",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w11",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w12",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w11",
+              "source_sha256": null
+            },
+            {
+              "owner": "core",
+              "family": "pwl",
+              "pins": {
+                "adder.family": "end_around_carry",
+                "adder.modulus": "generic_p_correction",
+                "adder.modulus_value": 3
+              },
+              "module": "fam_sfu_pwl_exp2_fp8e4m3_0f9f13825f89",
+              "source_sha256": "d360c0096925eed5befd71b2ffbdec6c68922b5c768ad68a5e9342c106bbb487"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "before_component": [
+    {
+      "child": "ripple_carry",
+      "pins": {
+        "adder.family": "ripple_carry"
+      },
+      "result": "- Verilator: $finish at 256ps; walltime 0.000 s; speed 1.390 us/s",
+      "bytes": 18583,
+      "stdout": "PASS\n- tb.sv:258: Verilog $finish\n- S i m u l a t i o n   R e p o r t: Verilator 5.051 devel\n- Verilator: $finish at 256ps; walltime 0.000 s; speed 1.566 us/s\n- Verilator: cpu 0.000 s on 1 threads; allocated 18 MB\n",
+      "passed": true
+    },
+    {
+      "child": "end_around_carry",
+      "pins": {
+        "adder.family": "end_around_carry",
+        "adder.modulus": "generic_p_correction",
+        "adder.modulus_value": 3
+      },
+      "result": "- Verilator: $finish at 256ps; walltime 0.001 s; speed 273.571 ns/s",
+      "bytes": 63404,
+      "stdout": "FAIL x=00000014 y=00008000 exp=00020080\nFAIL x=08020014 y=00008000 exp=06000003\nFAIL x=07fd001c y=00008000 exp=07fd0095\nFAIL 256\n- tb.sv:258: Verilog $finish\n- S i m u l a t i o n   R e p o r t: Verilator 5.051 devel\n- Verilator: $finish at 256ps; walltime 0.001 s; speed 325.575 ns/s\n- Verilator: cpu 0.001 s on 1 threads; allocated 18 MB\n",
+      "passed": false
+    }
+  ],
+  "after": [
+    {
+      "child": "ripple_carry",
+      "result": {
+        "pass": true,
+        "detail": "accuracy within budget",
+        "metrics": {
+          "bit_exact": false,
+          "max_ulp": 1,
+          "max_abs": 0.125,
+          "error_rate": 0.010416666666666666,
+          "med": 0.0009765625,
+          "nmed": 2.1798270089285713e-06,
+          "mred": 0.000904224537037037,
+          "error_bias": -0.0009765625,
+          "n": 384,
+          "n_wrong": 4,
+          "n_special_mismatch": 0
+        },
+        "max_ulp": 1,
+        "seconds": 0.1,
+        "accuracy_mode": "search_implementation",
+        "budget_applied": true,
+        "algorithm_pass": null,
+        "first_mismatches": [],
+        "precision_target": {
+          "max_ulp": 1
+        },
+        "user_target": null,
+        "sampled_metrics": {
+          "bit_exact": false,
+          "max_ulp": 1,
+          "max_abs": 0.125,
+          "error_rate": 0.010416666666666666,
+          "med": 0.0009765625,
+          "nmed": 2.1798270089285713e-06,
+          "mred": 0.000904224537037037,
+          "error_bias": -0.0009765625,
+          "n": 384,
+          "n_wrong": 4,
+          "n_special_mismatch": 0
+        },
+        "error_range_complete": false,
+        "range_evidence": {
+          "complete": false,
+          "reason": "stimulus is a sample"
+        },
+        "budget_pass": true,
+        "source_bytes": 35140,
+        "source_sha256": "81ddf4bc0dcd2fb552cb933479ac55efaf313bffb63909dd310684fd2dd55042",
+        "vectors_sha256": "44eb3381f5f3204c422aae0029b8ee913460d61fcf7ea8b767b0d47014b03f5a",
+        "fidelity": {
+          "criterion": "effective structural parameters",
+          "effects": [],
+          "sharing": [],
+          "generated": [
+            {
+              "owner": "core.adder",
+              "family": "ripple_carry",
+              "pins": {},
+              "module": "fam_adder_ripple_carry",
+              "source_sha256": null
+            },
+            {
+              "owner": "core",
+              "family": "pwl",
+              "pins": {
+                "adder.family": "ripple_carry"
+              },
+              "module": "fam_sfu_pwl_exp2_fp8e4m3_ae020d363a7c",
+              "source_sha256": "4e0ad9dbc8a55df2596a953963e4b9844c4429ca152bbc7869938e630eee42f0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "child": "end_around_carry",
+      "result": {
+        "pass": true,
+        "detail": "accuracy within budget",
+        "metrics": {
+          "bit_exact": false,
+          "max_ulp": 1,
+          "max_abs": 0.125,
+          "error_rate": 0.010416666666666666,
+          "med": 0.0009765625,
+          "nmed": 2.1798270089285713e-06,
+          "mred": 0.000904224537037037,
+          "error_bias": -0.0009765625,
+          "n": 384,
+          "n_wrong": 4,
+          "n_special_mismatch": 0
+        },
+        "max_ulp": 1,
+        "seconds": 12.4,
+        "accuracy_mode": "search_implementation",
+        "budget_applied": true,
+        "algorithm_pass": null,
+        "first_mismatches": [],
+        "precision_target": {
+          "max_ulp": 1
+        },
+        "user_target": null,
+        "sampled_metrics": {
+          "bit_exact": false,
+          "max_ulp": 1,
+          "max_abs": 0.125,
+          "error_rate": 0.010416666666666666,
+          "med": 0.0009765625,
+          "nmed": 2.1798270089285713e-06,
+          "mred": 0.000904224537037037,
+          "error_bias": -0.0009765625,
+          "n": 384,
+          "n_wrong": 4,
+          "n_special_mismatch": 0
+        },
+        "error_range_complete": false,
+        "range_evidence": {
+          "complete": false,
+          "reason": "stimulus is a sample"
+        },
+        "budget_pass": true,
+        "source_bytes": 92179,
+        "source_sha256": "a8a225228ba120b487bd91bee45a696b388c7730549b459aca125fad142d1c6d",
+        "vectors_sha256": "44eb3381f5f3204c422aae0029b8ee913460d61fcf7ea8b767b0d47014b03f5a",
+        "fidelity": {
+          "criterion": "effective structural parameters",
+          "effects": [],
+          "sharing": [],
+          "generated": [
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w4",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w5",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w4",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w14",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w15",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w14",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w16",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w15",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w17",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w18",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w17",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w6",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w5",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w11",
+              "source_sha256": null
+            },
+            {
+              "owner": null,
+              "family": "parallel_prefix",
+              "pins": {},
+              "module": "fam_prefix_sklansky_w12",
+              "source_sha256": null
+            },
+            {
+              "owner": "core.adder",
+              "family": "end_around_carry",
+              "pins": {
+                "modulus": "generic_p_correction",
+                "modulus_value": 3
+              },
+              "module": "fam_adder_eac_cyclic_prefix_level_p5f2353e89746dfb2152d7af018816b197748f85fa8639dfa08bb95b8d4ef0311_w11",
+              "source_sha256": null
+            },
+            {
+              "owner": "core",
+              "family": "pwl",
+              "pins": {
+                "adder.family": "end_around_carry",
+                "adder.modulus": "generic_p_correction",
+                "adder.modulus_value": 3
+              },
+              "module": "fam_sfu_pwl_exp2_fp8e4m3_0f9f13825f89",
+              "source_sha256": "3880bd158b131758245f32e579939225a9aab6ccce9a3d8af40094e10dc3fbab"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "after_component": [
+    {
+      "child": "ripple_carry",
+      "pins": {
+        "adder.family": "ripple_carry"
+      },
+      "result": "- Verilator: $finish at 256ps; walltime 0.000 s; speed 1.878 us/s",
+      "passed": true,
+      "stdout": "PASS\n- tb.sv:258: Verilog $finish\n- S i m u l a t i o n   R e p o r t: Verilator 5.051 devel\n- Verilator: $finish at 256ps; walltime 0.000 s; speed 1.403 us/s\n- Verilator: cpu 0.000 s on 1 threads; allocated 18 MB\n",
+      "bytes": 18583
+    },
+    {
+      "child": "end_around_carry",
+      "pins": {
+        "adder.family": "end_around_carry",
+        "adder.modulus": "generic_p_correction",
+        "adder.modulus_value": 3
+      },
+      "result": "- Verilator: $finish at 256ps; walltime 0.001 s; speed 292.386 ns/s",
+      "passed": true,
+      "stdout": "PASS\n- tb.sv:258: Verilog $finish\n- S i m u l a t i o n   R e p o r t: Verilator 5.051 devel\n- Verilator: $finish at 256ps; walltime 0.001 s; speed 287.719 ns/s\n- Verilator: cpu 0.001 s on 1 threads; allocated 18 MB\n",
+      "bytes": 73956
+    }
+  ]
+}

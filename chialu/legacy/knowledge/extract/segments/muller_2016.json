@@ -1,0 +1,182 @@
+{
+ "key": "muller_2016",
+ "file": "elementary-functions-2006.pdf",
+ "kind": "book",
+ "citation": "J.-M. Muller, \"Elementary Functions: Algorithms and Implementation\", 3rd ed., Birkhauser, 2016",
+ "pages": 273,
+ "title": "Elementary Functions: Algorithms and Implementation",
+ "authors": "Jean-Michel Muller",
+ "source": "toc_llm",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "Front Matter",
+   "start": 0,
+   "end": 17,
+   "kind": "front",
+   "extract": false,
+   "families": [],
+   "why": "The chapter is front matter and contains no arithmetic-unit design detail."
+  },
+  {
+   "id": "s02",
+   "title": "Introduction",
+   "start": 18,
+   "end": 24,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter introduces elementary-function accuracy and implementation goals without describing a specific hardware mechanism."
+  },
+  {
+   "id": "s03",
+   "title": "Some Basic Things About Computer Arithmetic",
+   "start": 25,
+   "end": 41,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter defines floating-point formats/rounding and numerical properties rather than arithmetic-unit microarchitectures."
+  },
+  {
+   "id": "s04",
+   "title": "Polynomial or Rational Approximations",
+   "start": 42,
+   "end": 81,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "single_poly",
+    "horner",
+    "fma_based"
+   ],
+   "why": "The chapter develops polynomial/rational approximation and evaluation methods that determine elementary-function polynomial datapaths."
+  },
+  {
+   "id": "s05",
+   "title": "Table-Based Methods",
+   "start": 82,
+   "end": 102,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "direct_lut",
+    "compressed_lut",
+    "bipartite",
+    "multipartite",
+    "piecewise_poly",
+    "lut_plus_poly",
+    "uniform_high_bit_decode"
+   ],
+   "why": "The chapter describes table lookup, domain segmentation, and table-plus-polynomial tradeoffs for elementary-function units."
+  },
+  {
+   "id": "s06",
+   "title": "Multiple-Precision Evaluation of Functions",
+   "start": 103,
+   "end": 115,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns multiple-precision software packages and numerical algorithms rather than hardware arithmetic units."
+  },
+  {
+   "id": "s07",
+   "title": "Introduction to Shift-and-Add Algorithms",
+   "start": 116,
+   "end": 144,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "digit_recurrence_exp_log"
+   ],
+   "why": "The chapter develops iterative shift-and-add mechanisms for computing exponential/logarithmic functions."
+  },
+  {
+   "id": "s08",
+   "title": "The CORDIC Algorithm",
+   "start": 145,
+   "end": 168,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "cordic"
+   ],
+   "why": "The chapter defines and evaluates CORDIC rotation/vectoring iterations and their hardware implementation properties."
+  },
+  {
+   "id": "s09",
+   "title": "Some Other Shift-and-Add Algorithms",
+   "start": 169,
+   "end": 182,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "digit_recurrence_exp_log",
+    "redundant_high_radix_cordic"
+   ],
+   "why": "The chapter describes high-radix shift-and-add recurrences that reduce elementary-function iteration counts."
+  },
+  {
+   "id": "s10",
+   "title": "Range Reduction",
+   "start": 183,
+   "end": 201,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "range_reduction"
+   ],
+   "why": "The chapter develops additive/multiplicative range-reduction mechanisms and their implementation accuracy requirements."
+  },
+  {
+   "id": "s11",
+   "title": "Final Rounding",
+   "start": 202,
+   "end": 225,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "correct_rounding_strategy"
+   ],
+   "why": "The chapter analyzes implementation strategies for monotonic and correctly rounded elementary-function results."
+  },
+  {
+   "id": "s12",
+   "title": "Miscellaneous",
+   "start": 226,
+   "end": 232,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter discusses exceptional-case semantics without presenting an arithmetic-unit mechanism."
+  },
+  {
+   "id": "s13",
+   "title": "Examples of Implementation",
+   "start": 233,
+   "end": 240,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "single_poly",
+    "piecewise_poly",
+    "lut_plus_poly",
+    "fma_based",
+    "range_reduction",
+    "correct_rounding_strategy"
+   ],
+   "why": "The chapter examines processor implementations that combine polynomial/rational evaluation, segmentation, range reduction, FMA use, and rounding control."
+  },
+  {
+   "id": "s14",
+   "title": "Bibliography and Index",
+   "start": 241,
+   "end": 272,
+   "kind": "back",
+   "extract": false,
+   "families": [],
+   "why": "The chapter is bibliography/index back matter and contains no original design discussion."
+  }
+ ]
+}

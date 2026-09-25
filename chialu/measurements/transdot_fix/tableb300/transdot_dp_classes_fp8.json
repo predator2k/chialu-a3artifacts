@@ -1,0 +1,56 @@
+{
+ "classes": {
+  "value/operand_special=no": 534,
+  "value/operand_special=yes": 57
+ },
+ "by_mode": {
+  "mode1/value": 310,
+  "mode0/value": 281
+ },
+ "samples": {
+  "value/operand_special=no": [
+   "mode 1 a=[189, 182, 132, 120] b=[222, 94, 233, 145] c=80400000 expected c798c601 got c798c600 specials=[]",
+   "mode 0 a=[36797, 31443] b=[26241, 27725] c=592e8d62 expected 4a200005 got 4a200000 specials=[]",
+   "mode 1 a=[130, 177, 151, 0] b=[1, 146, 37, 24] c=5fc00000 expected 41688002 got 41688000 specials=[]",
+   "mode 0 a=[384, 17858] b=[64029, 21473] c=956836df expected bf3ff19e got bf3ff1a0 specials=[]",
+   "mode 1 a=[64, 152, 194, 90] b=[222, 154, 131, 237] c=40400000 expected 428c1402 got 428c1400 specials=[]",
+   "mode 0 a=[41346, 18930] b=[17597, 38638] c=85b1e68e expected 48a0008c got 48a00088 specials=[]",
+   "mode 1 a=[32, 15, 95, 79] b=[130, 217, 174, 194] c=11dea657 expected c3f00025 got c3f00028 specials=[]",
+   "mode 1 a=[1, 184, 221, 10] b=[222, 248, 201, 54] c=cd33dc79 expected cc9fffff got cca00000 specials=[]",
+   "mode 0 a=[3329, 10065] b=[30144, 27665] c=403fffff expected c540a801 got c540a800 specials=[]",
+   "mode 1 a=[0, 197, 169, 54] b=[66, 171, 99, 168] c=c87ebc13 expected 481f9dff got 481f9e00 specials=[]",
+   "mode 0 a=[60098, 20179] b=[64445, 22473] c=c0000000 expected 4a0bfff2 got 4a0bfff4 specials=[]",
+   "mode 0 a=[28221, 29413] b=[46589, 1839] c=24341373 expected cf100a74 got cf100a73 specials=[]",
+   "mode 1 a=[130, 65, 224, 119] b=[189, 232, 59, 177] c=08d05645 expected caa9bff8 got caa9bffc specials=[]",
+   "mode 0 a=[61728, 27773] b=[21918, 15623] c=40000000 expected cabfffd2 got cabfffd8 specials=[]",
+   "mode 0 a=[41373, 12879] b=[22558, 60303] c=d656b2a3 expected c7dfffac got c7dfffb0 specials=[]",
+   "mode 0 a=[46593, 1474] b=[62110, 64336] c=a17dd966 expected ca9fff0f got ca9fff0c specials=[]",
+   "mode 1 a=[230, 185, 39, 69] b=[34, 184, 109, 136] c=4523674b expected 4cdffce6 got 4cdffce8 specials=[]",
+   "mode 1 a=[22, 245, 169, 115] b=[154, 73, 38, 47] c=d7bdfcd5 expected c927c7d6 got c927c7d8 specials=[]",
+   "mode 1 a=[71, 55, 25, 31] b=[148, 51, 150, 28] c=e43e2868 expected 4b240ebe got 4b240ebd specials=[]",
+   "mode 1 a=[151, 209, 31, 98] b=[157, 78, 10, 245] c=836c9bca expected 46400064 got 46400060 specials=[]"
+  ],
+  "value/operand_special=yes": [
+   "mode 1 a=[253, 116, 228, 123] b=[189, 229, 239, 252] c=0dcf799e expected cec3fecc got cec3fed0 specials=['nan', 'inf']",
+   "mode 1 a=[253, 39, 238, 114] b=[61, 49, 201, 228] c=8324fc0d expected cf43ff7a got cf43ff7c specials=['nan']",
+   "mode 1 a=[32, 241, 176, 43] b=[187, 124, 20, 59] c=e430f51e expected 4c01d61b got 4c01d61a specials=['inf']",
+   "mode 1 a=[103, 217, 125, 50] b=[128, 130, 86, 157] c=e0000000 expected 45a3efff got 45a3f000 specials=['nan']",
+   "mode 0 a=[28304, 26019] b=[64821, 8265] c=47f26830 expected 4b6ffffc got 4b700000 specials=['nan']",
+   "mode 1 a=[131, 124, 208, 28] b=[124, 117, 118, 55] c=10c4e122 expected 4cf001e4 got 4cf001e0 specials=['inf', 'inf']",
+   "mode 1 a=[67, 90, 252, 12] b=[184, 103, 46, 37] c=06712e8b expected cafffff3 got cb000000 specials=['inf']",
+   "mode 0 a=[6322, 5564] b=[57427, 32125] c=c9e75e64 expected cee00015 got cee00010 specials=['nan']",
+   "mode 1 a=[189, 253, 209, 78] b=[179, 145, 231, 193] c=1399c02a expected 4ca7ff9e got 4ca7ffa0 specials=['nan']",
+   "mode 1 a=[174, 249, 84, 36] b=[252, 71, 220, 217] c=82e11b03 expected cb47fffc got cb480000 specials=['inf']",
+   "mode 0 a=[37163, 1891] b=[63376, 31875] c=dfc00000 expected c2c62062 got c2c62060 specials=['nan']",
+   "mode 0 a=[19414, 7755] b=[17548, 64623] c=e24c0708 expected c704bfe1 got c704bfe0 specials=['nan']",
+   "mode 1 a=[93, 124, 86, 51] b=[28, 231, 72, 181] c=0a3f2fb5 expected 4aa7ffff got 4aa80000 specials=['inf']",
+   "mode 0 a=[45355, 1059] b=[64792, 15755] c=e2365bb3 expected cc1000e7 got cc1000ed specials=['nan']",
+   "mode 1 a=[169, 253, 96, 99] b=[218, 170, 222, 106] c=05064c7e expected ca8bfc52 got ca8bfc54 specials=['nan']",
+   "mode 1 a=[241, 124, 120, 35] b=[200, 106, 202, 102] c=55c22a90 expected 4a47fe41 got 4a47fe40 specials=['inf']",
+   "mode 0 a=[9518, 15021] b=[31953, 62395] c=5fad9865 expected cbf7c002 got cbf7c000 specials=['nan']",
+   "mode 1 a=[212, 25, 55, 55] b=[253, 108, 44, 114] c=d7727b74 expected caa7f246 got caa7f240 specials=['nan']",
+   "mode 0 a=[47462, 23598] b=[11539, 32236] c=cc29db3c expected 4a0f3ffe got 4a0f4000 specials=['nan']",
+   "mode 1 a=[135, 252, 162, 92] b=[18, 99, 225, 24] c=dd03a86e expected 486ffc3a got 486ffc40 specials=['inf']"
+  ]
+ }
+}

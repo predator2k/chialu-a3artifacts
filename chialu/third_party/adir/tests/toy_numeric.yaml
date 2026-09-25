@@ -1,0 +1,61 @@
+cluster_name: toy_numeric
+adir:
+  module: toy.Box
+  variables:
+    lanes:
+      fixed: 2
+    lanes_outer:
+      fixed: 1
+    mode:
+      fixed: a
+    algo:
+      search: [fast, small]
+    algo.k:
+      search: {min: 1, max: 8, step: 1}
+    lane.*.style:
+      search: all
+    cfg.a:
+      fixed: 1
+    cfg.b:
+      fixed: false
+    accuracy:
+      fixed: exact
+  artifacts:
+    harness:
+      role: fixed
+      kind: text
+      source: generated
+      language: python
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      fast_measure:
+        node: toy.nodes.numeric_measure
+        inputs:
+          k: decl.algo.k
+          style: decl.lane.l0.style
+          lanes: vars.lanes
+      small_measure:
+        node: toy.nodes.numeric_measure
+        inputs:
+          k: 0
+          style: decl.lane.l0.style
+          lanes: vars.lanes
+    feedback: []
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+  goal:
+    minimize: min(fast_measure.area, small_measure.area)
+  search:
+    backend: random
+    iterations: 12
+    numeric:
+      seed: 3
+    seeds:
+      generated: [baseline]
+    stop:
+      plateau_iterations: 40
+  archive:
+    store: sqlite
+    path: toy.db

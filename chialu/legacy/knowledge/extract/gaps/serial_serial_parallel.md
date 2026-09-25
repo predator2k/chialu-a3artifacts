@@ -1,0 +1,15 @@
+# serial_serial_parallel: proposed changes to the space
+
+* array_generation {subarray_rows_diagonals, column_wise} with columns_per_step and input_register_style — the serial-serial generator can emit rows/diagonals or one or two columns per step [dadda1965]
+* summator slot fillable by carry_save_datapath or a carry-propagate parallel adder, and a terminal-adder slot for the instantiated (n-1)-bit ripple_carry — the residual resolver is a component [dadda1965, gnanasekaran1985]
+* product_output / product_delivery choice {serial_single_output, stack_outputs, serial_lsb_parallel_msb} — where and when product bits appear [dadda1965, gnanasekaran1985]
+* operand_loading preloaded_programmable and systolic_style {pure, semi_systolic} — a preloaded multiplier with broadcast multiplicand digits [irwin_owens_1987]
+* group_size s from 1 to m — the number of multiplier places processed sequentially within each parallel group spans the parallel/sequential continuum [karatsuba1962]
+* word_pipeline_overlap — separates the N-bit-time initiation interval from the N+K bit-time operation delay [lyon1976]
+* coefficient_representation {sign_magnitude, twos_complement, booth_ternary, five_level, fixed_custom} and recoded_digit_set — sign handling and partial-product digits [lyon1976]
+* coefficient_delivery {parallel, serial_shift_register, hardwired} — module interconnection and coefficient storage [lyon1976]
+* rounding-offset / sign-extension choice — determines rounding direction and internal overflow in the two's-complement pipeline [lyon1976]
+* input_adder_count p, position_pairing adjacent_pairs and multiplier_recoding scale_four_short_cut — chained adder-subtractors with fixed position allocation [tocher_1958]
+* partial_product_shift_schedule {regular_right_shift, irregular_2d} — distinguishes 1D and 2D serial accumulation [camus2019]
+* output_latency_cycles zero, output_length_extension and activation_control — the zero-latency slice multiplier's interface [ienne1994]
+* digit_order msdf — most-significant-digit-first serial multiplication belongs to the online families rather than here [guyot_1989]

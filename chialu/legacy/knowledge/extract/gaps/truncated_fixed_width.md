@@ -1,0 +1,14 @@
+# truncated_fixed_width: proposed changes to the space
+
+* slots `partial_product_generator` (admitting `booth_recoded_parallel`), `reduction_structure: {array, dadda_tree}` and `final_cpa` (admitting `parallel_prefix`) — the Booth fixed-width designs, the array/Dadda savings analysis and the Kogge-Stone final adder are explicit components the family cannot name [cho2004, decaro2013, petra2010, schulte1993]
+* choice `unformed_columns_r` (or `discarded_columns`) distinct from formed-but-discarded columns k, including the values n-1 and 4 used by the compressor-based designs [pasca_2011#s07, walters2005, esposito2018, yang2015]
+* choice `truncation_location: {operand_lsb, partial_product_columns, array_cells}` — operand truncation, column truncation and omitted array cells are different structures with different error behaviour [jiang2017]
+* choice `operand_representation: {unsigned, sign_magnitude, twos_complement}` — the correction logic and error analysis differ by representation [schulte1993, jou1999, kidambi1996]
+* choices `correction_source: {adjacent_truncated_column, diagonal_boundary_products, booth_encoder_outputs, multiplier_coefficients}` and `correction_injection: {array_carry_inputs, retained_diagonal_adder_inputs, partial_product_matrix}` — the data-dependent designs differ in what signals feed the correction and where it enters [king1997, kidambi1996, jou1999, cho2003, cho2004]
+* choices `carry_generator_form: {ao_chain_and, or_chain_nor}`, `generalized_index`/`thresholding_type`, `compensation_generator: simplified_odd_even_merge_sorting_network` and `partial_product_matrix_transform: preadd_boundary_terms` — named correction circuits of individual designs [jou1999, van2000, wang2011]
+* choices `discarded_region_partition: major_minor` and `approximate_carry_generation: {acgp_i, acgp_ii}` — the major/minor split and the two carry-generation procedures of the Booth fixed-width line [cho2003, cho2004]
+* choices `compensation_form: {optimal_quadratic, linear_quantized}`, `coefficient_quantization` and `compensation_implementation: {standard_ppm, auxiliary_tree, auxiliary_tree_signed_digit}` — the MMSE and min-max designs expose these as accuracy/hardware knobs [petra2010, decaro2013]
+* choice `correction_selection: rounded_inverse_expected_total_error` — the constant is chosen from the joint expected reduction and rounding error [schulte1993]
+* choice `compensation_source: {offset_bit, free_dsp_bits, soft_multiplier_tiles}` — FPGA tiling counts discarded DSP bits as free compensation [pasca_2011#s07]
+* a runtime-selectable (dynamic) truncation family with reduction-tree remapping — the family covers only design-time truncation [frustaci2020]
+* `target` values `squarer`, `cuber` and `multiplier_accumulator` — fixed-width squarers, the degree-3 evaluator's truncated cuber and the MAC form use the same scheme [cho2003, strollo_2011, decaro2013]

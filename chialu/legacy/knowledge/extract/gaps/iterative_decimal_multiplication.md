@@ -1,0 +1,17 @@
+# iterative_decimal_multiplication: proposed changes to the space
+
+* multiple_set values precomputed_1x_2x_4x_6x_8x and 1x_2x_5x_10x — the z900 stores W/2W/4W/6W/8W in the register file and the z196 forms 1x/2x/5x/10x on the fly, neither of which the enumeration names. [busaba_2001, carlough_2011]
+* multiple_set value on_demand_restricted_digit_products — signed-digit recoding of both operands lets digit products of magnitude 2 through 5 be computed directly without stored multiplicand multiples. [erle_2005]
+* multiple_set value repeated_addition_count — a digit can be implemented by repeated addition rather than a precomputed multiple mux. [meggitt_1962]
+* choices product_generation {stored_digit_table, switching_array, repeated_add_subtract, generated_multiple} and available_easy_multiples {1, 2, 4, 5, all_1_to_9} — the chapter taxonomy distinguishes how each digit-controlled partial product is formed and which multiples are supplied. [richards_1955__s10]
+* choice multiplier_digit_order {ascending, descending} — the digit order changes accumulator length and complement handling. [richards_1955__s10]
+* choice multiple_storage {generated_not_stored, stored} — 2A/4A/5A are regenerated from A by dedicated logic rather than held in registers. [erle_2003]
+* choices zero_skipping, double_digit_multiplication, and early_exit — zero digits can be skipped, selected two-digit groups consumed in one iteration, and processing stopped after the most significant nonzero digit or after trailing-zero removal. [erle_2003, wang_2004, wang_2005, wang_2007]
+* choices iteration_operand_selection (fewer_significant_digits) and iteration_count_basis (operand_significant_digits) — the iteration count follows the significant-digit counts of both operands. [busaba_2001, schwarz_2002]
+* choices operand_recoding (parallel_signed_magnitude_m5_p5), partial_product_generation (restricted_word_by_digit_combinational), and partial_product_form (overlapped_then_svoboda_encoded) — these are the central tunables of the signed-digit design. [erle_2005]
+* choice intermediate_product_representation value overloaded_decimal_0_to_15 — intermediate base-10 digits admit every 4-bit value from 0 through F. [kenney_2004]
+* choice accumulator_encoding value bcd_sum_plus_one_bit_carry — every partial-product digit holds a 4-bit BCD sum and a 1-bit carry. [erle_2003]
+* choice partial_product_split value tens_and_units_tables — ENIAC stores and emits the two decimal digits of each fundamental product separately. [goldstine_1946]
+* choice extreme_result_handling value exponent_adjusted_single_shift — subnormal/supernormal correction is folded into the final right-shift amount. [carlough_2011]
+* slot accumulator admits decimal_multioperand_addition (decimal 3:2/4:2 compressors), generalized_signed_digit (radix 10, Svoboda encoding), redundant_decimal_addition (overloaded digits), and decimal_pulse_accumulator — the implemented accumulators are decimal redundant forms the slot domain does not name. [erle_2003, erle_2005, kenney_2004, goldstine_1946]
+* slot final_adder admits decimal-adder families (bcd_direct_addition, simplified decimal carry-propagate adder, decimal compound adder, decimal accumulator) — the slot admits only binary-adder families although every implementation finishes with a decimal adder. [erle_2003, erle_2009, kenney_2004, wang_2004, wang_2007, goldstine_1946]

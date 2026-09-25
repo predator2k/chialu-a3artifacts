@@ -1,0 +1,394 @@
+{
+ "design": "transdot_dp",
+ "row": "fp8",
+ "contract": "fused (fp16, out of a 76-bit window) / window (fp8)",
+ "chars": 431992,
+ "modules": [],
+ "lint": {
+  "ok": true,
+  "seconds": 1.9,
+  "detail": ""
+ },
+ "conformance": {
+  "pass": false,
+  "mismatch_count": 591,
+  "vectors": 3153,
+  "seconds": 7.5,
+  "detail": "591 vectors mismatch; the first ones:\n* vector 0: mode 0; d expected 0xc798c601 got 0xc798c600\n* vector 4: mode 0; d expected 0x4a200005 got 0x4a200000\n* vector 11: mode 0; d expected 0x41688002 got 0x41688000\n* vector 24: mode 0; d expected 0xbf3ff19e got 0xbf3ff1a0\n* vector 27: mode 0; d expected 0x428c1402 got 0x428c1400\n* vector 28: mode 0; d expected 0x48a0008c got 0x48a00088\n* vector 40: mode 0; d expected 0xc3f00025 got 0xc3f00028\n* vector 41: mode 0; d expected 0xcc9fffff got 0xcca00000"
+ },
+ "ulp": {
+  "target": "$A3EVAL/3rdparty/chialu/targets/eval/vec_dot_acc_cmp_fp8.yaml",
+  "n_random": 3000,
+  "vectors": 3153,
+  "definition": "error = |got - ref| / ulp(ref binade); ref is the fused reference's packed d; zero or subnormal ref: ulp = 2^(emin - p + 1); specials are classes rather than errors",
+  "vs_fused": {
+   "exact_fraction": 0.812559,
+   "exact": 2562,
+   "numeric_vectors": 3153,
+   "max_ulp": 393056.0,
+   "mean_ulp": 125.38629876308278,
+   "max_ulp_vs_exact": 393056.0,
+   "mean_ulp_vs_exact": 125.37907793374517,
+   "histogram": {
+    "0": 2562,
+    "(0.5, 1]": 171,
+    "(1, 2]": 142,
+    "(2, 4]": 140,
+    "(4, 8]": 113,
+    "(8, 16]": 17,
+    "(16, 64]": 5,
+    "(64, 1024]": 2,
+    "(1024, inf]": 1
+   },
+   "classes": {
+    "value": 591,
+    "value/operand_special=no": 591
+   },
+   "worst": "393056.0 ulp: i=2096 mode 0 a=[164, 119, 248, 173] b=[194, 76, 75, 12] c=c0000000 fused bffa00a0 sequential bff800a0 got c0000000 specials=[]"
+  },
+  "vs_sequential": {
+   "exact_fraction": 0.807168,
+   "exact": 2545,
+   "max_ulp": 4.253529586511731e+37,
+   "mean_ulp": 2.698084101815243e+34,
+   "histogram": {
+    "0": 2546,
+    "(0.5, 1]": 174,
+    "(1, 2]": 160,
+    "(2, 4]": 138,
+    "(4, 8]": 107,
+    "(8, 16]": 19,
+    "(16, 64]": 4,
+    "(64, 1024]": 2,
+    "(1024, inf]": 3
+   },
+   "classes": {
+    "value": 607,
+    "zero_sign": 1
+   }
+  },
+  "samples": {
+   "value/operand_special=no": [
+    "i=0 mode 0 a=[123, 109, 9, 241] b=[189, 189, 210, 35] c=00800001 fused c798c601 sequential c798c601 got c798c600 specials=[]",
+    "i=4 mode 0 a=[122, 31, 167, 245] b=[2, 205, 154, 216] c=b25d1ac4 fused 4a200005 sequential 4a200005 got 4a200000 specials=[]",
+    "i=11 mode 0 a=[4, 99, 47, 1] b=[2, 36, 75, 48] c=bf800001 fused 41688002 sequential 41688002 got 41688000 specials=[]",
+    "i=24 mode 0 a=[0, 3, 132, 139] b=[59, 244, 195, 167] c=2ad06dbe fused bf3ff19e sequential bf3ff19e got bf3ff1a0 specials=[]",
+    "i=27 mode 0 a=[129, 48, 133, 181] b=[188, 53, 7, 219] c=80800001 fused 428c1402 sequential 428c1402 got 428c1400 specials=[]",
+    "i=28 mode 0 a=[5, 67, 229, 147] b=[123, 137, 220, 45] c=0b63cd1c fused 48a0008c sequential 48a0008c got 48a00088 specials=[]"
+   ]
+  },
+  "seconds": 2
+ },
+ "synth": {
+  "ok": true,
+  "area_um2": 5030.06,
+  "abc_delay_ps": 5243.93,
+  "cells": 4225,
+  "cells_run_index": 2,
+  "seconds": 8.984,
+  "repeats": 3,
+  "seeds": [
+   null,
+   11,
+   23
+  ],
+  "runs": [
+   {
+    "ok": true,
+    "area_um2": 5014.632,
+    "cells": 4074,
+    "abc_delay_ps": 5243.93,
+    "seconds": 6.0,
+    "pdk": "nangate45",
+    "clock_ps": 300,
+    "detail": "",
+    "status": "ok",
+    "repeat_index": 0,
+    "abc_seed": null,
+    "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+    "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+    "rtl": {
+     "sha256": "a0de6ab337522aa8e2c7d18fd21b6a092f93a94df133253d887c0d282ba7ecb8",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/a0de6ab337522aa8e2c7d18fd21b6a092f93a94df133253d887c0d282ba7ecb8.gz",
+     "encoding": "gzip"
+    },
+    "netlist": {
+     "sha256": "a64f663270debb48698f39f0b4ff673fffd1b92fe41dab72ef0214d26495dd64",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/a64f663270debb48698f39f0b4ff673fffd1b92fe41dab72ef0214d26495dd64.gz",
+     "encoding": "gzip"
+    },
+    "mapping_input": "rtl",
+    "liberties": [
+     {
+      "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+      "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+      "encoding": "gzip"
+     }
+    ],
+    "liberty_hash": "38d65aff29303470",
+    "tool_hash": "4b9888fa0093b04f",
+    "tools": {
+     "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+     "executables": {
+      "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+      "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+     }
+    },
+    "effort": "medium",
+    "share": false,
+    "top": "dot_core",
+    "hierarchy": false,
+    "keep_scopeinfo": false,
+    "timeout_s": 3600,
+    "pdk_descriptor": {
+     "name": "nangate45",
+     "aliases": [
+      "freepdk45"
+     ],
+     "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+     "process_nm": 45,
+     "corner": "TT 1.1V 25C",
+     "area_unit": "um2",
+     "liberty": [
+      {
+       "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+       "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+      }
+     ],
+     "abc": {
+      "clock_ps": 1000,
+      "scripts": {
+       "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+       "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+       "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+      }
+     },
+     "yosys": {
+      "synth": "synth -top {top} -flatten {noshare} -noabc"
+     }
+    },
+    "log": {
+     "sha256": "de846771aa962a74ecc4c972435b8cc0f9701a15eece3a9ab634d0a1e16e7d2d",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/de846771aa962a74ecc4c972435b8cc0f9701a15eece3a9ab634d0a1e16e7d2d.gz",
+     "encoding": "gzip"
+    },
+    "stderr": {
+     "sha256": "0ea6b0127590dd1ab388b5b5b4a2aa037acce9f31371365f9d93417e10bb6f41",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/0ea6b0127590dd1ab388b5b5b4a2aa037acce9f31371365f9d93417e10bb6f41.gz",
+     "encoding": "gzip"
+    },
+    "yosys_script": {
+     "sha256": "d2a9c05b1b834b2f9e06bfc6de4bd8815fe1d742fcb6b6772baa1fdecb34b1b9",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/d2a9c05b1b834b2f9e06bfc6de4bd8815fe1d742fcb6b6772baa1fdecb34b1b9.gz",
+     "encoding": "gzip"
+    }
+   },
+   {
+    "ok": true,
+    "area_um2": 5167.316,
+    "cells": 4298,
+    "abc_delay_ps": 5174.91,
+    "seconds": 2.4,
+    "pdk": "nangate45",
+    "clock_ps": 300,
+    "detail": "",
+    "status": "ok",
+    "repeat_index": 1,
+    "abc_seed": 11,
+    "abc_script": "+strash;permute -S 11;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+    "abc_script_text": "strash\npermute -S 11\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+    "rtl": {
+     "sha256": "a0de6ab337522aa8e2c7d18fd21b6a092f93a94df133253d887c0d282ba7ecb8",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/a0de6ab337522aa8e2c7d18fd21b6a092f93a94df133253d887c0d282ba7ecb8.gz",
+     "encoding": "gzip"
+    },
+    "netlist": {
+     "sha256": "a64f663270debb48698f39f0b4ff673fffd1b92fe41dab72ef0214d26495dd64",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/a64f663270debb48698f39f0b4ff673fffd1b92fe41dab72ef0214d26495dd64.gz",
+     "encoding": "gzip"
+    },
+    "mapping_input": "rtlil",
+    "liberties": [
+     {
+      "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+      "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+      "encoding": "gzip"
+     }
+    ],
+    "liberty_hash": "38d65aff29303470",
+    "tool_hash": "4b9888fa0093b04f",
+    "tools": {
+     "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+     "executables": {
+      "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+      "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+     }
+    },
+    "effort": "medium",
+    "share": false,
+    "top": "dot_core",
+    "hierarchy": false,
+    "keep_scopeinfo": false,
+    "timeout_s": 3600,
+    "pdk_descriptor": {
+     "name": "nangate45",
+     "aliases": [
+      "freepdk45"
+     ],
+     "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+     "process_nm": 45,
+     "corner": "TT 1.1V 25C",
+     "area_unit": "um2",
+     "liberty": [
+      {
+       "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+       "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+      }
+     ],
+     "abc": {
+      "clock_ps": 1000,
+      "scripts": {
+       "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+       "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+       "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+      }
+     },
+     "yosys": {
+      "synth": "synth -top {top} -flatten {noshare} -noabc"
+     }
+    },
+    "log": {
+     "sha256": "337efd62b4ac353c2bbb53052e72cc087c0c154408ad4aa1500f566909ebf0b6",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/337efd62b4ac353c2bbb53052e72cc087c0c154408ad4aa1500f566909ebf0b6.gz",
+     "encoding": "gzip"
+    },
+    "stderr": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+     "encoding": "gzip"
+    },
+    "yosys_script": {
+     "sha256": "88b37bf9fe8de81d24ff3426cf95e2cb3c2eab96c40d8f4d7e30cdbb49c521d8",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/88b37bf9fe8de81d24ff3426cf95e2cb3c2eab96c40d8f4d7e30cdbb49c521d8.gz",
+     "encoding": "gzip"
+    }
+   },
+   {
+    "ok": true,
+    "area_um2": 5030.06,
+    "cells": 4225,
+    "abc_delay_ps": 5274.08,
+    "seconds": 2.6,
+    "pdk": "nangate45",
+    "clock_ps": 300,
+    "detail": "",
+    "status": "ok",
+    "repeat_index": 2,
+    "abc_seed": 23,
+    "abc_script": "+strash;permute -S 23;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+    "abc_script_text": "strash\npermute -S 23\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+    "rtl": {
+     "sha256": "a0de6ab337522aa8e2c7d18fd21b6a092f93a94df133253d887c0d282ba7ecb8",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/a0de6ab337522aa8e2c7d18fd21b6a092f93a94df133253d887c0d282ba7ecb8.gz",
+     "encoding": "gzip"
+    },
+    "netlist": {
+     "sha256": "a64f663270debb48698f39f0b4ff673fffd1b92fe41dab72ef0214d26495dd64",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/a64f663270debb48698f39f0b4ff673fffd1b92fe41dab72ef0214d26495dd64.gz",
+     "encoding": "gzip"
+    },
+    "mapping_input": "rtlil",
+    "liberties": [
+     {
+      "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+      "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+      "encoding": "gzip"
+     }
+    ],
+    "liberty_hash": "38d65aff29303470",
+    "tool_hash": "4b9888fa0093b04f",
+    "tools": {
+     "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+     "executables": {
+      "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+      "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+     }
+    },
+    "effort": "medium",
+    "share": false,
+    "top": "dot_core",
+    "hierarchy": false,
+    "keep_scopeinfo": false,
+    "timeout_s": 3600,
+    "pdk_descriptor": {
+     "name": "nangate45",
+     "aliases": [
+      "freepdk45"
+     ],
+     "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+     "process_nm": 45,
+     "corner": "TT 1.1V 25C",
+     "area_unit": "um2",
+     "liberty": [
+      {
+       "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+       "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+      }
+     ],
+     "abc": {
+      "clock_ps": 1000,
+      "scripts": {
+       "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+       "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+       "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+      }
+     },
+     "yosys": {
+      "synth": "synth -top {top} -flatten {noshare} -noabc"
+     }
+    },
+    "log": {
+     "sha256": "301144055864bc260e36dc9c79ca244667f0f388667677d1ca2c525dc8aee1e5",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/301144055864bc260e36dc9c79ca244667f0f388667677d1ca2c525dc8aee1e5.gz",
+     "encoding": "gzip"
+    },
+    "stderr": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+     "encoding": "gzip"
+    },
+    "yosys_script": {
+     "sha256": "4c535a5af5a36808d10dda19f3f56ce2e14858439a1b36b7909da07d2f61ffad",
+     "path": "$A3EVAL/3rdparty/chialu/measurements/transdot_fix/artifacts/4c535a5af5a36808d10dda19f3f56ce2e14858439a1b36b7909da07d2f61ffad.gz",
+     "encoding": "gzip"
+    }
+   }
+  ],
+  "successful_runs": 3,
+  "statistics": {
+   "area_um2": {
+    "median": 5030.06,
+    "min": 5014.632,
+    "max": 5167.316,
+    "std": 68.62914555460783
+   },
+   "abc_delay_ps": {
+    "median": 5243.93,
+    "min": 5174.91,
+    "max": 5274.08,
+    "std": 41.50966661179331
+   },
+   "cells": {
+    "median": 4225,
+    "min": 4074,
+    "max": 4298,
+    "std": 93.27736417087839
+   }
+  },
+  "median_rule": "all_requested_runs_must_succeed; partial_statistics_are_diagnostic_only",
+  "pdk": "nangate45",
+  "clock_ps": 300,
+  "detail": ""
+ },
+ "seconds": 24
+}

@@ -1,0 +1,17 @@
+# The CVFPU sources the ADDMUL and NONCOMP configuration needs, in compile order,
+# relative to 3rdparty/cvfpu; the divider, the caster and the vendor units are out.
+src/common_cells/src/cf_math_pkg.sv
+src/common_cells/src/lzc.sv
+src/common_cells/src/rr_arb_tree.sv
+src/fpnew_pkg.sv
+src/fpnew_classifier.sv
+src/fpnew_cast_multi.sv
+src/fpnew_rounding.sv
+vendor/cvw/fma/fmalza.sv
+src/fpnew_fma.sv
+src/fpnew_fma_multi.sv
+src/fpnew_noncomp.sv
+src/fpnew_opgroup_fmt_slice.sv
+src/fpnew_opgroup_multifmt_slice.sv
+src/fpnew_opgroup_block.sv
+src/fpnew_top.sv

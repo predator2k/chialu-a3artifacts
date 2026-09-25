@@ -1,0 +1,5 @@
+# separate_multiplier_and_adder: proposed changes to the space
+
+* a rounding-contract choice on the fp_fma organization — the separate form delivers the result of a sequential multiply and add by construction, which is the stated definition of an IEEE-compatible multiply-add-fused instruction, while the single-rounded RS/6000-style unit with higher internal precision is called not IEEE compatible and no family here records either contract [quach_1991]
+* a pipeline-depth choice and a retiming-style choice on the fp_fma organization — depth from 3 to 16 and the retiming style (automatic, guided, replicated half-pumping) move the energy and area per operation of both the fused and the separate form, and no family declares either [galal_2011, galal_2013]
+* a value separating a natively cascaded multiplier-then-adder unit from a bridge that retrofits two existing units — `bridge_fma.cascade_mul_then_add` carries both intents under one name, and the natively cascaded unit is the separate organization with a forwarding path rather than a retrofit [galal_2011]

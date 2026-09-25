@@ -1,0 +1,28 @@
+{
+ "pass": false,
+ "mismatch_count": 24,
+ "first_mismatches": [
+  "MISMATCH i=190774 in=003f9fc0a4 got=0080c expect=00808",
+  "MISMATCH i=190789 in=003fdfc0a4 got=8080c expect=80808",
+  "MISMATCH i=190919 in=1fc0803fa4 got=0080c expect=00808",
+  "MISMATCH i=190934 in=1fc0c03fa4 got=8080c expect=80808",
+  "MISMATCH i=191224 in=403f9fc0a4 got=8080c expect=80808",
+  "MISMATCH i=191239 in=403fdfc0a4 got=0080c expect=00808",
+  "MISMATCH i=191369 in=5fc0803fa4 got=8080c expect=80808",
+  "MISMATCH i=191384 in=5fc0c03fa4 got=0080c expect=00808",
+  "MISMATCH i=333370 in=5501b29ea8 got=d404c expect=d4048",
+  "MISMATCH i=333385 in=1b81855ea8 got=0584c expect=05848"
+ ],
+ "detail": "24 vectors mismatch; the first ones:\n* vector 190774: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x7f (1.16631e-38) b[0]=0x3f81 (1.00781); flags expected 0x8 got 0xc\n* vector 190789: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x7f (1.16631e-38) b[0]=0xbf81 (-1.00781); flags expected 0x8 got 0xc\n* vector 190919: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f81 (1.00781) b[0]=0x7f (1.16631e-38); flags expected 0x8 got 0xc\n* vector 190934: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f81 (1.00781) b[0]=0x807f (-1.16631e-38); flags expected 0x8 got 0xc\n* vector 191224: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x807f (-1.16631e-38) b[0]=0x3f81 (1.00781); flags expected 0x8 got 0xc\n* vector 191239: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x807f (-1.16631e-38) b[0]=0xbf81 (-1.00781); flags expected 0x8 got 0xc\n* vector 191369: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xbf81 (-1.00781) b[0]=0x7f (1.16631e-38); flags expected 0x8 got 0xc\n* vector 191384: mode 1 (1 x bf16), op fmul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xbf81 (-1.00781) b[0]=0x807f (-1.16631e-38); flags expected 0x8 got 0xc",
+ "cycles_per_frame": null,
+ "seconds": 72.4,
+ "rule_defect_candidate": false,
+ "rule_members": [],
+ "lint": {
+  "ok": true,
+  "detail": "",
+  "seconds": 0.6
+ },
+ "n_random": 20000,
+ "vectors": 427964
+}

@@ -1,0 +1,2092 @@
+{
+  "before": [
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_380fd19a7387",
+      "status": "pass",
+      "size_bytes": 9185,
+      "reason": "multiplier_booth_recoded_parallel_w4_380fd19a7387: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_ba4f8d3fd86d",
+      "status": "pass",
+      "size_bytes": 8134,
+      "reason": "multiplier_booth_recoded_parallel_w4_ba4f8d3fd86d: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_8b9cbd70cb7d",
+      "status": "pass",
+      "size_bytes": 8978,
+      "reason": "multiplier_booth_recoded_parallel_w4_8b9cbd70cb7d: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_e3edb264ee31",
+      "status": "pass",
+      "size_bytes": 7927,
+      "reason": "multiplier_booth_recoded_parallel_w4_e3edb264ee31: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_96e2e2eef7ca",
+      "status": "pass",
+      "size_bytes": 13226,
+      "reason": "multiplier_booth_recoded_parallel_w4_96e2e2eef7ca: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_b767d025a6f0",
+      "status": "pass",
+      "size_bytes": 10467,
+      "reason": "multiplier_booth_recoded_parallel_w4_b767d025a6f0: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_06b710a1df69",
+      "status": "pass",
+      "size_bytes": 9769,
+      "reason": "multiplier_booth_recoded_parallel_w4_06b710a1df69: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_723b3f520614",
+      "status": "pass",
+      "size_bytes": 7906,
+      "reason": "multiplier_booth_recoded_parallel_w4_723b3f520614: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_983d75871ba0",
+      "status": "pass",
+      "size_bytes": 10358,
+      "reason": "multiplier_booth_recoded_parallel_w5_983d75871ba0: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_0988f6e61e8b",
+      "status": "pass",
+      "size_bytes": 8731,
+      "reason": "multiplier_booth_recoded_parallel_w5_0988f6e61e8b: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_f4df448802e6",
+      "status": "pass",
+      "size_bytes": 9777,
+      "reason": "multiplier_booth_recoded_parallel_w5_f4df448802e6: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_25d6dbba355f",
+      "status": "pass",
+      "size_bytes": 8524,
+      "reason": "multiplier_booth_recoded_parallel_w5_25d6dbba355f: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_c3ad39f25756",
+      "status": "pass",
+      "size_bytes": 15545,
+      "reason": "multiplier_booth_recoded_parallel_w5_c3ad39f25756: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_2c173bab6864",
+      "status": "pass",
+      "size_bytes": 11208,
+      "reason": "multiplier_booth_recoded_parallel_w5_2c173bab6864: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_be9cf94361a0",
+      "status": "fail",
+      "size_bytes": 15173,
+      "reason": "multiplier_booth_recoded_parallel_w5_be9cf94361a0: FAIL 563; MISMATCH vector=20 got=203 expected=003 | MISMATCH vector=22 got=1fd expected=3fd"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_d75788394fd4",
+      "status": "pass",
+      "size_bytes": 10857,
+      "reason": "multiplier_booth_recoded_parallel_w5_d75788394fd4: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_276b8c85de0c",
+      "status": "pass",
+      "size_bytes": 16842,
+      "reason": "multiplier_booth_recoded_parallel_w8_276b8c85de0c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_836c3a355827",
+      "status": "pass",
+      "size_bytes": 14072,
+      "reason": "multiplier_booth_recoded_parallel_w8_836c3a355827: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_4274ccc5962b",
+      "status": "pass",
+      "size_bytes": 16501,
+      "reason": "multiplier_booth_recoded_parallel_w8_4274ccc5962b: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_9fc9e4a656f1",
+      "status": "pass",
+      "size_bytes": 13738,
+      "reason": "multiplier_booth_recoded_parallel_w8_9fc9e4a656f1: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_9c02b3f8a279",
+      "status": "pass",
+      "size_bytes": 26888,
+      "reason": "multiplier_booth_recoded_parallel_w8_9c02b3f8a279: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_a3bbc52a794c",
+      "status": "pass",
+      "size_bytes": 18065,
+      "reason": "multiplier_booth_recoded_parallel_w8_a3bbc52a794c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_b36d7cabfe0a",
+      "status": "pass",
+      "size_bytes": 19835,
+      "reason": "multiplier_booth_recoded_parallel_w8_b36d7cabfe0a: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_87796386c104",
+      "status": "pass",
+      "size_bytes": 13983,
+      "reason": "multiplier_booth_recoded_parallel_w8_87796386c104: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_ac0771c51f2c",
+      "status": "pass",
+      "size_bytes": 21705,
+      "reason": "multiplier_booth_recoded_parallel_w9_ac0771c51f2c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_dc67c7e0de85",
+      "status": "pass",
+      "size_bytes": 17863,
+      "reason": "multiplier_booth_recoded_parallel_w9_dc67c7e0de85: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_41f33d07f91e",
+      "status": "pass",
+      "size_bytes": 17712,
+      "reason": "multiplier_booth_recoded_parallel_w9_41f33d07f91e: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_2d47d6d0e30c",
+      "status": "pass",
+      "size_bytes": 14711,
+      "reason": "multiplier_booth_recoded_parallel_w9_2d47d6d0e30c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_bd172f5722c7",
+      "status": "pass",
+      "size_bytes": 29927,
+      "reason": "multiplier_booth_recoded_parallel_w9_bd172f5722c7: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_b1ee1b049a13",
+      "status": "pass",
+      "size_bytes": 19265,
+      "reason": "multiplier_booth_recoded_parallel_w9_b1ee1b049a13: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_6de4ed0d4cdb",
+      "status": "fail",
+      "size_bytes": 29346,
+      "reason": "multiplier_booth_recoded_parallel_w9_6de4ed0d4cdb: FAIL 880; MISMATCH vector=32 got=3e003 expected=00003 | MISMATCH vector=34 got=01ffd expected=3fffd"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_6020ea6fd2df",
+      "status": "pass",
+      "size_bytes": 18705,
+      "reason": "multiplier_booth_recoded_parallel_w9_6020ea6fd2df: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_ab2add2b6df0",
+      "status": "pass",
+      "size_bytes": 48839,
+      "reason": "multiplier_booth_recoded_parallel_w16_ab2add2b6df0: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_fea18939d309",
+      "status": "pass",
+      "size_bytes": 39276,
+      "reason": "multiplier_booth_recoded_parallel_w16_fea18939d309: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_43c109aa494d",
+      "status": "pass",
+      "size_bytes": 48153,
+      "reason": "multiplier_booth_recoded_parallel_w16_43c109aa494d: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_448dfcbaaacf",
+      "status": "pass",
+      "size_bytes": 38595,
+      "reason": "multiplier_booth_recoded_parallel_w16_448dfcbaaacf: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_d1e255c1f495",
+      "status": "pass",
+      "size_bytes": 70426,
+      "reason": "multiplier_booth_recoded_parallel_w16_d1e255c1f495: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_3045e5b71a92",
+      "status": "pass",
+      "size_bytes": 43573,
+      "reason": "multiplier_booth_recoded_parallel_w16_3045e5b71a92: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_fef9c611ecfd",
+      "status": "pass",
+      "size_bytes": 56773,
+      "reason": "multiplier_booth_recoded_parallel_w16_fef9c611ecfd: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_8b8de3d363b0",
+      "status": "pass",
+      "size_bytes": 36344,
+      "reason": "multiplier_booth_recoded_parallel_w16_8b8de3d363b0: PASS"
+    }
+  ],
+  "after": [
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_380fd19a7387",
+      "status": "pass",
+      "size_bytes": 9185,
+      "reason": "multiplier_booth_recoded_parallel_w4_380fd19a7387: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_ba4f8d3fd86d",
+      "status": "pass",
+      "size_bytes": 8134,
+      "reason": "multiplier_booth_recoded_parallel_w4_ba4f8d3fd86d: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_8b9cbd70cb7d",
+      "status": "pass",
+      "size_bytes": 8978,
+      "reason": "multiplier_booth_recoded_parallel_w4_8b9cbd70cb7d: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_e3edb264ee31",
+      "status": "pass",
+      "size_bytes": 7927,
+      "reason": "multiplier_booth_recoded_parallel_w4_e3edb264ee31: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_96e2e2eef7ca",
+      "status": "pass",
+      "size_bytes": 13226,
+      "reason": "multiplier_booth_recoded_parallel_w4_96e2e2eef7ca: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_b767d025a6f0",
+      "status": "pass",
+      "size_bytes": 10467,
+      "reason": "multiplier_booth_recoded_parallel_w4_b767d025a6f0: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w4_06b710a1df69",
+      "status": "pass",
+      "size_bytes": 9769,
+      "reason": "multiplier_booth_recoded_parallel_w4_06b710a1df69: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(4, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w4_723b3f520614",
+      "status": "pass",
+      "size_bytes": 7906,
+      "reason": "multiplier_booth_recoded_parallel_w4_723b3f520614: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_983d75871ba0",
+      "status": "pass",
+      "size_bytes": 10358,
+      "reason": "multiplier_booth_recoded_parallel_w5_983d75871ba0: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_0988f6e61e8b",
+      "status": "pass",
+      "size_bytes": 8731,
+      "reason": "multiplier_booth_recoded_parallel_w5_0988f6e61e8b: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_f4df448802e6",
+      "status": "pass",
+      "size_bytes": 9777,
+      "reason": "multiplier_booth_recoded_parallel_w5_f4df448802e6: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_25d6dbba355f",
+      "status": "pass",
+      "size_bytes": 8524,
+      "reason": "multiplier_booth_recoded_parallel_w5_25d6dbba355f: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_c3ad39f25756",
+      "status": "pass",
+      "size_bytes": 15545,
+      "reason": "multiplier_booth_recoded_parallel_w5_c3ad39f25756: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_2c173bab6864",
+      "status": "pass",
+      "size_bytes": 11208,
+      "reason": "multiplier_booth_recoded_parallel_w5_2c173bab6864: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w5_be9cf94361a0",
+      "status": "pass",
+      "size_bytes": 15930,
+      "reason": "multiplier_booth_recoded_parallel_w5_be9cf94361a0: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(5, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w5_d75788394fd4",
+      "status": "pass",
+      "size_bytes": 10857,
+      "reason": "multiplier_booth_recoded_parallel_w5_d75788394fd4: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_276b8c85de0c",
+      "status": "pass",
+      "size_bytes": 16842,
+      "reason": "multiplier_booth_recoded_parallel_w8_276b8c85de0c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_836c3a355827",
+      "status": "pass",
+      "size_bytes": 14072,
+      "reason": "multiplier_booth_recoded_parallel_w8_836c3a355827: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_4274ccc5962b",
+      "status": "pass",
+      "size_bytes": 16501,
+      "reason": "multiplier_booth_recoded_parallel_w8_4274ccc5962b: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_9fc9e4a656f1",
+      "status": "pass",
+      "size_bytes": 13738,
+      "reason": "multiplier_booth_recoded_parallel_w8_9fc9e4a656f1: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_9c02b3f8a279",
+      "status": "pass",
+      "size_bytes": 26888,
+      "reason": "multiplier_booth_recoded_parallel_w8_9c02b3f8a279: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_a3bbc52a794c",
+      "status": "pass",
+      "size_bytes": 18065,
+      "reason": "multiplier_booth_recoded_parallel_w8_a3bbc52a794c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w8_b36d7cabfe0a",
+      "status": "pass",
+      "size_bytes": 19835,
+      "reason": "multiplier_booth_recoded_parallel_w8_b36d7cabfe0a: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 8,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(8, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w8_87796386c104",
+      "status": "pass",
+      "size_bytes": 13983,
+      "reason": "multiplier_booth_recoded_parallel_w8_87796386c104: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_ac0771c51f2c",
+      "status": "pass",
+      "size_bytes": 21705,
+      "reason": "multiplier_booth_recoded_parallel_w9_ac0771c51f2c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_dc67c7e0de85",
+      "status": "pass",
+      "size_bytes": 17863,
+      "reason": "multiplier_booth_recoded_parallel_w9_dc67c7e0de85: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_41f33d07f91e",
+      "status": "pass",
+      "size_bytes": 17712,
+      "reason": "multiplier_booth_recoded_parallel_w9_41f33d07f91e: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_2d47d6d0e30c",
+      "status": "pass",
+      "size_bytes": 14711,
+      "reason": "multiplier_booth_recoded_parallel_w9_2d47d6d0e30c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_bd172f5722c7",
+      "status": "pass",
+      "size_bytes": 29927,
+      "reason": "multiplier_booth_recoded_parallel_w9_bd172f5722c7: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_b1ee1b049a13",
+      "status": "pass",
+      "size_bytes": 19265,
+      "reason": "multiplier_booth_recoded_parallel_w9_b1ee1b049a13: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w9_6de4ed0d4cdb",
+      "status": "pass",
+      "size_bytes": 30489,
+      "reason": "multiplier_booth_recoded_parallel_w9_6de4ed0d4cdb: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 9,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(9, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w9_6020ea6fd2df",
+      "status": "pass",
+      "size_bytes": 18705,
+      "reason": "multiplier_booth_recoded_parallel_w9_6020ea6fd2df: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_ab2add2b6df0",
+      "status": "pass",
+      "size_bytes": 48839,
+      "reason": "multiplier_booth_recoded_parallel_w16_ab2add2b6df0: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_fea18939d309",
+      "status": "pass",
+      "size_bytes": 39276,
+      "reason": "multiplier_booth_recoded_parallel_w16_fea18939d309: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_43c109aa494d",
+      "status": "pass",
+      "size_bytes": 48153,
+      "reason": "multiplier_booth_recoded_parallel_w16_43c109aa494d: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 8,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 8, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_448dfcbaaacf",
+      "status": "pass",
+      "size_bytes": 38595,
+      "reason": "multiplier_booth_recoded_parallel_w16_448dfcbaaacf: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, False, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_d1e255c1f495",
+      "status": "pass",
+      "size_bytes": 70426,
+      "reason": "multiplier_booth_recoded_parallel_w16_d1e255c1f495: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": false,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, False, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_3045e5b71a92",
+      "status": "pass",
+      "size_bytes": 43573,
+      "reason": "multiplier_booth_recoded_parallel_w16_3045e5b71a92: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "partially_redundant",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, True, 'partially_redundant')",
+      "name": "multiplier_booth_recoded_parallel_w16_fef9c611ecfd",
+      "status": "pass",
+      "size_bytes": 56773,
+      "reason": "multiplier_booth_recoded_parallel_w16_fef9c611ecfd: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 16,
+      "family": "booth_recoded_parallel",
+      "pins": {
+        "_signed": true,
+        "booth_radix": 16,
+        "hard_multiple_gen": "cpa_precompute",
+        "sign_extension": "full_extension"
+      },
+      "label": "(16, 16, True, 'cpa_precompute')",
+      "name": "multiplier_booth_recoded_parallel_w16_8b8de3d363b0",
+      "status": "pass",
+      "size_bytes": 36344,
+      "reason": "multiplier_booth_recoded_parallel_w16_8b8de3d363b0: PASS"
+    }
+  ],
+  "whole_alu_before": {
+    "name": "c00088",
+    "scheme": "add-none_mul-none_log-none_pair-none_fmt-none_sw-pcc",
+    "sha256": "22ef81292e89d4690e209e7152ccc2921c47566c5494db03503c0ad2b470aa88",
+    "lint": {
+      "ok": true,
+      "detail": "",
+      "seconds": 6.4
+    },
+    "conformance": {
+      "pass": false,
+      "mismatch_count": 2365,
+      "first_mismatches": [
+        "MISMATCH i=121982 in=7fffd55518 got=55562 expect=55560",
+        "MISMATCH i=121998 in=7fffd55518 got=55562 expect=55560",
+        "MISMATCH i=141139 in=7ffe8d1918 got=b16a2 expect=b16a0",
+        "MISMATCH i=142206 in=400055551c got=aa2b2 expect=2aab2",
+        "MISMATCH i=142222 in=4000d5551c got=aa2a2 expect=2aaa2",
+        "MISMATCH i=142238 in=555555551c got=9bf22 expect=1c722",
+        "MISMATCH i=142254 in=7fffd5551c got=7f802 expect=00000",
+        "MISMATCH i=142258 in=400055551c got=aa2b2 expect=2aab2",
+        "MISMATCH i=142262 in=4000d5551c got=aa2a2 expect=2aaa2",
+        "MISMATCH i=142266 in=555555551c got=9bf22 expect=1c722"
+      ],
+      "detail": "2365 vectors mismatch; the first ones:\n* vector 121982: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xffff (-1) b[0]=0xaaaa (-21846); flags expected 0x0 got 0x2\n* vector 121998: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xffff (-1) b[0]=0xaaaa (-21846); flags expected 0x0 got 0x2\n* vector 141139: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xfffd (-3) b[0]=0x1a32 (6706); flags expected 0x0 got 0x2\n* vector 142206: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8000 (-32768) b[0]=0xaaaa (-21846); y[0] expected 0x2aab (10923) got 0xaa2b (-21973)\n* vector 142222: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8001 (-32767) b[0]=0xaaaa (-21846); y[0] expected 0x2aaa (10922) got 0xaa2a (-21974)\n* vector 142238: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xaaaa (-21846) b[0]=0xaaaa (-21846); y[0] expected 0x1c72 (7282) got 0x9bf2 (-25614)\n* vector 142254: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xffff (-1) b[0]=0xaaaa (-21846); y[0] expected 0x0 (0) got 0x7f80 (32640); flags expected 0x0 got 0x2\n* vector 142258: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8000 (-32768) b[0]=0xaaaa (-21846); y[0] expected 0x2aab (10923) got 0xaa2b (-21973)\nthe declaration names core.multiplier.m1.final_converter.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+      "cycles_per_frame": null,
+      "seconds": 99.2,
+      "rule_defect_candidate": true,
+      "rule_members": [
+        "core.multiplier.m1.final_converter.family=end_around_carry (end_around_carry|*|*)"
+      ]
+    },
+    "seconds": 110.44
+  },
+  "cli_after": {
+    "feasible": true,
+    "measurements": {
+      "declaration": {
+        "value": {
+          "decl.check.all.family": "residue",
+          "decl.core.adder.m0.family": "carry_increment",
+          "decl.core.adder.m1.family": "carry_increment",
+          "decl.core.adder.m2.family": "carry_increment",
+          "decl.core.multiplier.m0.family": "segmented_grid",
+          "decl.core.multiplier.m1.family": "redundant_binary_multiplier",
+          "decl.core.multiplier.m2.family": "segmented_grid",
+          "decl.core.shifter.m0.family": "masked_merged",
+          "decl.core.shifter.m0.sticky_collect": true,
+          "decl.core.shifter.m1.family": "funnel",
+          "decl.core.shifter.m1.sticky_collect": false,
+          "decl.core.shifter.m2.family": "masked_merged",
+          "decl.core.shifter.m2.sticky_collect": true,
+          "decl.core.bitcount.m0.family": "trailing_zero",
+          "decl.core.bitcount.m1.family": "popcount_counter_tree",
+          "decl.core.bitcount.m1.counter_primitive": "full_adder_3_2",
+          "decl.core.bitcount.m1.tree_shape": "balanced_tree",
+          "decl.core.bitcount.m1.final_adder.family": "carry_skip",
+          "decl.core.bitcount.m2.family": "trailing_zero",
+          "decl.core.subword.family": "partitioned_carry_chain",
+          "decl.core.subword.boundary_mechanism": "carry_kill_gate",
+          "decl.core.logic.m0.family": "wide_gate_row",
+          "decl.core.logic.m1.family": "lane_replicated_gates",
+          "decl.core.logic.m2.family": "lane_replicated_gates",
+          "decl.core.comparator.m0.family": "prefix_comparator",
+          "decl.core.comparator.m0.structure": "msb_first_prefix",
+          "decl.core.comparator.m0.radix": 3,
+          "decl.core.comparator.m1.family": "subtractor_comparator",
+          "decl.core.comparator.m2.family": "subtractor_comparator",
+          "decl.check.all.residue.modulus": 15,
+          "decl.check.all.residue.generator_style": "csa_tree",
+          "decl.check.all.residue.comparator.family": "direct_compare",
+          "decl.core.adder.m0.intergroup_carry": "lookahead_tree",
+          "decl.core.adder.m1.intergroup_carry": "lookahead_tree",
+          "decl.core.adder.m2.intergroup_carry": "lookahead_tree",
+          "decl.core.adder.m0.block_sizing": "uniform",
+          "decl.core.adder.m0.block_width": 7,
+          "decl.core.adder.m1.block_sizing": "uniform",
+          "decl.core.adder.m1.block_width": 7,
+          "decl.core.adder.m2.block_sizing": "uniform",
+          "decl.core.adder.m2.block_width": 7,
+          "decl.core.adder.m0.increment_levels": 1,
+          "decl.core.adder.m1.increment_levels": 1,
+          "decl.core.adder.m2.increment_levels": 1,
+          "decl.core.adder.m0.block_adder.family": "ripple_carry",
+          "decl.core.adder.m1.block_adder.family": "ripple_carry",
+          "decl.core.adder.m2.block_adder.family": "ripple_carry",
+          "decl.core.adder.m0.block_adder.full_adder_logic": "two_half_adders_or",
+          "decl.core.adder.m1.block_adder.full_adder_logic": "two_half_adders_or",
+          "decl.core.adder.m2.block_adder.full_adder_logic": "two_half_adders_or",
+          "decl.core.adder.m0.block_adder.chunk_width_bits": 1,
+          "decl.core.adder.m1.block_adder.chunk_width_bits": 1,
+          "decl.core.adder.m2.block_adder.chunk_width_bits": 1,
+          "decl.core.adder.m0.increment_stage.family": "prefix_and_incrementer",
+          "decl.core.adder.m1.increment_stage.family": "prefix_and_incrementer",
+          "decl.core.adder.m2.increment_stage.family": "prefix_and_incrementer",
+          "decl.core.adder.m0.increment_stage.structure": "ripple_and_chain",
+          "decl.core.adder.m1.increment_stage.structure": "ripple_and_chain",
+          "decl.core.adder.m2.increment_stage.structure": "ripple_and_chain",
+          "decl.core.multiplier.m1.booth_radix": 2,
+          "decl.core.multiplier.m0.recursion_depth": 2,
+          "decl.core.multiplier.m2.recursion_depth": 3,
+          "decl.core.multiplier.m0.seg_w": 2,
+          "decl.core.multiplier.m2.seg_w": 8,
+          "decl.core.multiplier.m0.num_seg": 2,
+          "decl.core.multiplier.m2.num_seg": 3,
+          "decl.core.multiplier.m0.segment_shape": "square",
+          "decl.core.multiplier.m2.segment_shape": "rectangular",
+          "decl.core.multiplier.m0.merge_form": "carry_save_tree",
+          "decl.core.multiplier.m2.merge_form": "carry_save_tree",
+          "decl.core.multiplier.m1.rb_encoding": "plus_minus_pair",
+          "decl.core.multiplier.m1.rbnb_converter": "carry_select",
+          "decl.core.multiplier.m0.segment.family": "booth_recoded_parallel",
+          "decl.core.multiplier.m2.segment.family": "direct_pp_parallel",
+          "decl.core.multiplier.m2.segment.group_bits": 1,
+          "decl.core.multiplier.m2.segment.signed_scheme": "baugh_wooley",
+          "decl.core.multiplier.m0.segment.booth_radix": 16,
+          "decl.core.multiplier.m0.segment.hard_multiple_gen": "partially_redundant",
+          "decl.core.multiplier.m0.segment.sign_extension": "full_extension",
+          "decl.core.multiplier.m0.segment.negative_pp_encoding": "ones_complement_plus_neg_bit",
+          "decl.core.multiplier.m0.segment.reduction.family": "tiled_cpa_reduction_tree",
+          "decl.core.multiplier.m2.segment.reduction.family": "tiled_cpa_reduction_tree",
+          "decl.core.multiplier.m0.segment.reduction.adder_width": 4,
+          "decl.core.multiplier.m2.segment.reduction.adder_width": 4,
+          "decl.core.multiplier.m0.segment.reduction.carry_assimilation": "extra_counter_row",
+          "decl.core.multiplier.m2.segment.reduction.carry_assimilation": "terminal_compressor",
+          "decl.core.multiplier.m0.segment.reduction.terminal_reduction": "compressor_9_2",
+          "decl.core.multiplier.m2.segment.reduction.terminal_reduction": "compressor_4_2",
+          "decl.core.multiplier.m0.segment.reduction.cpa.family": "uniform",
+          "decl.core.multiplier.m2.segment.reduction.cpa.family": "uniform",
+          "decl.core.multiplier.m0.segment.reduction.cpa.adder.family": "ling_prefix",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.family": "carry_increment",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.intergroup_carry": "lookahead_tree",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.block_sizing": "uniform",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.block_width": 2,
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.increment_levels": 1,
+          "decl.core.multiplier.m0.segment.reduction.cpa.adder.topology": "kogge_stone",
+          "decl.core.multiplier.m0.segment.reduction.cpa.adder.pseudo_carry_group": 4,
+          "decl.core.multiplier.m0.segment.reduction.cpa.adder.sum_recovery": "xor_correction",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.block_adder.family": "ripple_carry",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.block_adder.full_adder_logic": "two_half_adders_or",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.block_adder.chunk_width_bits": 1,
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.increment_stage.family": "prefix_and_incrementer",
+          "decl.core.multiplier.m2.segment.reduction.cpa.adder.increment_stage.structure": "select_blocks",
+          "decl.core.multiplier.m0.segment.reduction.tile_adder.family": "ripple_carry",
+          "decl.core.multiplier.m2.segment.reduction.tile_adder.family": "ripple_carry",
+          "decl.core.multiplier.m0.segment.reduction.tile_adder.full_adder_logic": "xor_majority",
+          "decl.core.multiplier.m2.segment.reduction.tile_adder.full_adder_logic": "two_half_adders_or",
+          "decl.core.multiplier.m0.segment.reduction.tile_adder.chunk_width_bits": 1,
+          "decl.core.multiplier.m2.segment.reduction.tile_adder.chunk_width_bits": 1,
+          "decl.core.multiplier.m0.segment.hard_multiple_adder.family": "ripple_carry",
+          "decl.core.multiplier.m2.segment.hard_multiple_adder.family": "parallel_prefix",
+          "decl.core.multiplier.m0.segment.hard_multiple_adder.full_adder_logic": "xor_majority",
+          "decl.core.multiplier.m0.segment.hard_multiple_adder.chunk_width_bits": 1,
+          "decl.core.multiplier.m2.segment.hard_multiple_adder.topology": "sklansky",
+          "decl.core.multiplier.m2.segment.hard_multiple_adder.valency": 2,
+          "decl.core.multiplier.m0.segment.negation_incrementer.family": "prefix_and_incrementer",
+          "decl.core.multiplier.m0.segment.negation_incrementer.structure": "select_blocks",
+          "decl.core.multiplier.m0.merge_adder.family": "sparse_prefix_hybrid",
+          "decl.core.multiplier.m2.merge_adder.family": "carry_increment",
+          "decl.core.multiplier.m2.merge_adder.intergroup_carry": "lookahead_tree",
+          "decl.core.multiplier.m2.merge_adder.block_sizing": "variable_ramp",
+          "decl.core.multiplier.m2.merge_adder.increment_levels": 1,
+          "decl.core.multiplier.m0.merge_adder.valency": 2,
+          "decl.core.multiplier.m0.merge_adder.log2_sparsity": 1,
+          "decl.core.multiplier.m0.merge_adder.tree_topology": "kogge_stone",
+          "decl.core.multiplier.m0.merge_adder.sum_block_style": "conditional_sum",
+          "decl.core.multiplier.m2.merge_adder.block_adder.family": "ripple_carry",
+          "decl.core.multiplier.m2.merge_adder.block_adder.full_adder_logic": "generate_propagate",
+          "decl.core.multiplier.m2.merge_adder.block_adder.chunk_width_bits": 1,
+          "decl.core.multiplier.m2.merge_adder.increment_stage.family": "prefix_and_incrementer",
+          "decl.core.multiplier.m2.merge_adder.increment_stage.structure": "prefix_and_tree",
+          "decl.core.multiplier.m2.merge_adder.increment_stage.topology": "kogge_stone",
+          "decl.core.multiplier.m0.merge_tree.family": "csa_reduction_tree",
+          "decl.core.multiplier.m2.merge_tree.family": "csa_reduction_tree",
+          "decl.core.multiplier.m0.merge_tree.geometry": "dadda",
+          "decl.core.multiplier.m2.merge_tree.geometry": "tdm_arrival_driven",
+          "decl.core.multiplier.m0.merge_tree.counter_kind": "4_2",
+          "decl.core.multiplier.m2.merge_tree.counter_kind": "7_3",
+          "decl.core.multiplier.m0.merge_tree.cpa.family": "hybrid_arrival_driven",
+          "decl.core.multiplier.m2.merge_tree.cpa.family": "hybrid_arrival_driven",
+          "decl.core.multiplier.m0.merge_tree.cpa.region_count": 4,
+          "decl.core.multiplier.m2.merge_tree.cpa.region_count": 2,
+          "decl.core.multiplier.m0.merge_tree.cpa.region_adder_mix": "ripple_cla_select",
+          "decl.core.multiplier.m2.merge_tree.cpa.region_adder_mix": "ripple_then_select",
+          "decl.core.multiplier.m0.merge_tree.cpa.arrival_model": "measured_tree_profile",
+          "decl.core.multiplier.m2.merge_tree.cpa.arrival_model": "measured_tree_profile",
+          "decl.core.multiplier.m0.merge_tree.cpa.boundary_search": "delay_bound_boundary_enumeration",
+          "decl.core.multiplier.m2.merge_tree.cpa.boundary_search": "delay_bound_boundary_enumeration",
+          "decl.core.multiplier.m1.final_converter.family": "end_around_carry",
+          "decl.core.multiplier.m1.final_converter.modulus": "mod_2n_minus_1",
+          "decl.core.multiplier.m1.final_converter.recirculation": "select_based",
+          "decl.core.multiplier.m1.final_converter.topology": "harris",
+          "decl.core.multiplier.m1.final_converter.log2_sparsity": 1,
+          "decl.core.multiplier.m1.final_converter.fanout_cap": 6,
+          "decl.core.multiplier.m1.final_converter.incrementer.family": "prefix_and_incrementer",
+          "decl.core.multiplier.m1.final_converter.incrementer.structure": "select_blocks",
+          "decl.core.shifter.m1.window_mux_radix": 4,
+          "decl.core.shifter.m1.amount_preprocess": "ones_complement_for_right",
+          "decl.core.shifter.m0.mask_generator": "thermometer_decode",
+          "decl.core.shifter.m2.mask_generator": "thermometer_decode",
+          "decl.core.shifter.m0.merge_style": "and_or_merge",
+          "decl.core.shifter.m2.merge_style": "per_bit_mux",
+          "decl.core.shifter.m0.rotator.family": "barrel_mux_tree",
+          "decl.core.shifter.m2.rotator.family": "barrel_mux_tree",
+          "decl.core.shifter.m0.rotator.stage_radix": 2,
+          "decl.core.shifter.m2.rotator.stage_radix": 4,
+          "decl.core.shifter.m0.rotator.select_encoding": "binary",
+          "decl.core.shifter.m2.rotator.select_encoding": "one_hot_decoded",
+          "decl.core.shifter.m0.rotator.stage_order": "large_shift_first",
+          "decl.core.shifter.m2.rotator.stage_order": "large_shift_first",
+          "decl.core.bitcount.m0.strategy": "reverse_then_lzd",
+          "decl.core.bitcount.m2.strategy": "reverse_then_lzd",
+          "decl.core.bitcount.m0.isolate_circuit": "ripple_kill_chain",
+          "decl.core.bitcount.m2.isolate_circuit": "twos_complement_and",
+          "decl.core.bitcount.m1.final_adder.block_sizing": "dp_optimized",
+          "decl.core.bitcount.m1.final_adder.block_width": 2,
+          "decl.core.bitcount.m1.final_adder.skip_levels": 1,
+          "decl.core.bitcount.m1.final_adder.skip_gate": "mux",
+          "decl.core.bitcount.m1.final_adder.block_adder.family": "ripple_carry",
+          "decl.core.bitcount.m1.final_adder.block_adder.full_adder_logic": "xor_majority",
+          "decl.core.bitcount.m1.final_adder.block_adder.chunk_width_bits": 1,
+          "decl.core.bitcount.m0.lzd.family": "priority_encoder",
+          "decl.core.bitcount.m2.lzd.family": "prefix_lzc",
+          "decl.core.bitcount.m0.lzd.output_form": "one_hot_then_encode",
+          "decl.core.bitcount.m2.lzd.prefix_topology": "brent_kung",
+          "decl.core.bitcount.m2.lzd.count_form": "lookahead_flags",
+          "decl.core.bitcount.m0.lzd.lookahead_group": 4,
+          "decl.core.bitcount.m0.lzd.levels": 2,
+          "decl.core.bitcount.m2.lzd.counter.family": "popcount_counter_tree",
+          "decl.core.bitcount.m2.lzd.counter.counter_primitive": "compressor_4_2",
+          "decl.core.bitcount.m2.lzd.counter.tree_shape": "balanced_tree",
+          "decl.core.bitcount.m2.lzd.counter.final_adder.family": "conditional_sum",
+          "decl.core.bitcount.m2.lzd.counter.final_adder.base_block_width": 1,
+          "decl.core.bitcount.m2.lzd.counter.final_adder.selection_radix": 2,
+          "decl.core.bitcount.m0.negation_incrementer.family": "prefix_and_incrementer",
+          "decl.core.bitcount.m2.negation_incrementer.family": "prefix_and_incrementer",
+          "decl.core.bitcount.m0.negation_incrementer.structure": "prefix_and_tree",
+          "decl.core.bitcount.m2.negation_incrementer.structure": "prefix_and_tree",
+          "decl.core.bitcount.m0.negation_incrementer.topology": "sklansky",
+          "decl.core.bitcount.m2.negation_incrementer.topology": "sklansky",
+          "decl.core.logic.m0.not_via_xor": true,
+          "decl.core.comparator.m1.zero_detect": "sum_or_tree",
+          "decl.core.comparator.m2.zero_detect": "operand_xnor",
+          "decl.core.comparator.m1.subtractor.family": "carry_increment",
+          "decl.core.comparator.m2.subtractor.family": "prefix_synthesis_nonuniform_arrival",
+          "decl.core.comparator.m1.subtractor.intergroup_carry": "rippled",
+          "decl.core.comparator.m1.subtractor.block_sizing": "uniform",
+          "decl.core.comparator.m1.subtractor.block_width": 7,
+          "decl.core.comparator.m1.subtractor.increment_levels": 2,
+          "decl.core.comparator.m2.subtractor.arrival_profile": "multiplier_vee",
+          "decl.core.comparator.m1.subtractor.block_adder.family": "parallel_prefix",
+          "decl.core.comparator.m1.subtractor.block_adder.topology": "kogge_stone",
+          "decl.core.comparator.m1.subtractor.block_adder.valency": 3,
+          "decl.core.comparator.m1.subtractor.increment_stage.family": "prefix_and_incrementer",
+          "decl.core.comparator.m1.subtractor.increment_stage.structure": "prefix_and_tree",
+          "decl.core.comparator.m1.subtractor.increment_stage.topology": "sklansky",
+          "decl.STRUCTURE": [
+            {
+              "kind": "adder",
+              "slot": "adder",
+              "mode": 0,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_twos_complement",
+              "ops": [
+                "add",
+                "sub",
+                "adc",
+                "neg",
+                "abs",
+                "add_sat"
+              ],
+              "sv": "alu_core_u_m0_l0_adder",
+              "_": [
+                "m0.l0.adder"
+              ]
+            },
+            {
+              "kind": "multiplier",
+              "slot": "multiplier",
+              "mode": 0,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_twos_complement",
+              "ops": [
+                "mul",
+                "mul_high"
+              ],
+              "sv": "alu_core_u_m0_l0_multiplier",
+              "_": [
+                "m0.l0.multiplier"
+              ]
+            },
+            {
+              "kind": "comparator",
+              "slot": "comparator",
+              "mode": 0,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_twos_complement",
+              "ops": [
+                "min",
+                "max",
+                "cmp"
+              ],
+              "sv": "alu_core_u_m0_l0_comparator",
+              "_": [
+                "m0.l0.comparator"
+              ]
+            },
+            {
+              "kind": "shifter",
+              "slot": "shifter",
+              "mode": 0,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_twos_complement",
+              "ops": [
+                "shl",
+                "shr_arith",
+                "rol"
+              ],
+              "sv": "alu_core_u_m0_l0_shifter",
+              "_": [
+                "m0.l0.shifter"
+              ]
+            },
+            {
+              "kind": "logic",
+              "slot": "logic",
+              "mode": 0,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_twos_complement",
+              "ops": [
+                "and",
+                "or",
+                "xor",
+                "not"
+              ],
+              "sv": "alu_core_u_m0_l0_logic",
+              "_": [
+                "m0.l0.logic"
+              ]
+            },
+            {
+              "kind": "bitcount",
+              "slot": "bitcount",
+              "mode": 0,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_twos_complement",
+              "ops": [
+                "popcount",
+                "clz",
+                "ctz"
+              ],
+              "sv": "alu_core_u_m0_l0_bitcount",
+              "_": [
+                "m0.l0.bitcount"
+              ]
+            },
+            {
+              "kind": "adder",
+              "slot": "adder",
+              "mode": 1,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_unsigned",
+              "ops": [
+                "add",
+                "sub",
+                "adc",
+                "neg",
+                "abs",
+                "add_sat"
+              ],
+              "sv": "alu_core_u_m1_l0_adder",
+              "_": [
+                "m1.l0.adder"
+              ]
+            },
+            {
+              "kind": "multiplier",
+              "slot": "multiplier",
+              "mode": 1,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_unsigned",
+              "ops": [
+                "mul",
+                "mul_high"
+              ],
+              "sv": "alu_core_u_m1_l0_multiplier",
+              "_": [
+                "m1.l0.multiplier"
+              ]
+            },
+            {
+              "kind": "comparator",
+              "slot": "comparator",
+              "mode": 1,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_unsigned",
+              "ops": [
+                "min",
+                "max",
+                "cmp"
+              ],
+              "sv": "alu_core_u_m1_l0_comparator",
+              "_": [
+                "m1.l0.comparator"
+              ]
+            },
+            {
+              "kind": "shifter",
+              "slot": "shifter",
+              "mode": 1,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_unsigned",
+              "ops": [
+                "shl",
+                "shr_arith",
+                "rol"
+              ],
+              "sv": "alu_core_u_m1_l0_shifter",
+              "_": [
+                "m1.l0.shifter"
+              ]
+            },
+            {
+              "kind": "logic",
+              "slot": "logic",
+              "mode": 1,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_unsigned",
+              "ops": [
+                "and",
+                "or",
+                "xor",
+                "not"
+              ],
+              "sv": "alu_core_u_m1_l0_logic",
+              "_": [
+                "m1.l0.logic"
+              ]
+            },
+            {
+              "kind": "bitcount",
+              "slot": "bitcount",
+              "mode": 1,
+              "lane": 0,
+              "width": 16,
+              "format": "int16_unsigned",
+              "ops": [
+                "popcount",
+                "clz",
+                "ctz"
+              ],
+              "sv": "alu_core_u_m1_l0_bitcount",
+              "_": [
+                "m1.l0.bitcount"
+              ]
+            },
+            {
+              "kind": "adder",
+              "slot": "adder",
+              "mode": 2,
+              "lane": 0,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "add",
+                "sub",
+                "adc",
+                "neg",
+                "abs",
+                "add_sat"
+              ],
+              "sv": "alu_core_u_m2_l0_adder",
+              "_": [
+                "m2.l0.adder"
+              ]
+            },
+            {
+              "kind": "adder",
+              "slot": "adder",
+              "mode": 2,
+              "lane": 1,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "add",
+                "sub",
+                "adc",
+                "neg",
+                "abs",
+                "add_sat"
+              ],
+              "sv": "alu_core_u_m2_l1_adder",
+              "_": [
+                "m2.l1.adder"
+              ]
+            },
+            {
+              "kind": "multiplier",
+              "slot": "multiplier",
+              "mode": 2,
+              "lane": 0,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "mul",
+                "mul_high"
+              ],
+              "sv": "alu_core_u_m2_l0_multiplier",
+              "_": [
+                "m2.l0.multiplier"
+              ]
+            },
+            {
+              "kind": "multiplier",
+              "slot": "multiplier",
+              "mode": 2,
+              "lane": 1,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "mul",
+                "mul_high"
+              ],
+              "sv": "alu_core_u_m2_l1_multiplier",
+              "_": [
+                "m2.l1.multiplier"
+              ]
+            },
+            {
+              "kind": "comparator",
+              "slot": "comparator",
+              "mode": 2,
+              "lane": 0,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "min",
+                "max",
+                "cmp"
+              ],
+              "sv": "alu_core_u_m2_l0_comparator",
+              "_": [
+                "m2.l0.comparator"
+              ]
+            },
+            {
+              "kind": "comparator",
+              "slot": "comparator",
+              "mode": 2,
+              "lane": 1,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "min",
+                "max",
+                "cmp"
+              ],
+              "sv": "alu_core_u_m2_l1_comparator",
+              "_": [
+                "m2.l1.comparator"
+              ]
+            },
+            {
+              "kind": "shifter",
+              "slot": "shifter",
+              "mode": 2,
+              "lane": 0,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "shl",
+                "shr_arith",
+                "rol"
+              ],
+              "sv": "alu_core_u_m2_l0_shifter",
+              "_": [
+                "m2.l0.shifter"
+              ]
+            },
+            {
+              "kind": "shifter",
+              "slot": "shifter",
+              "mode": 2,
+              "lane": 1,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "shl",
+                "shr_arith",
+                "rol"
+              ],
+              "sv": "alu_core_u_m2_l1_shifter",
+              "_": [
+                "m2.l1.shifter"
+              ]
+            },
+            {
+              "kind": "logic",
+              "slot": "logic",
+              "mode": 2,
+              "lane": 0,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "and",
+                "or",
+                "xor",
+                "not"
+              ],
+              "sv": "alu_core_u_m2_l0_logic",
+              "_": [
+                "m2.l0.logic"
+              ]
+            },
+            {
+              "kind": "logic",
+              "slot": "logic",
+              "mode": 2,
+              "lane": 1,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "and",
+                "or",
+                "xor",
+                "not"
+              ],
+              "sv": "alu_core_u_m2_l1_logic",
+              "_": [
+                "m2.l1.logic"
+              ]
+            },
+            {
+              "kind": "bitcount",
+              "slot": "bitcount",
+              "mode": 2,
+              "lane": 0,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "popcount",
+                "clz",
+                "ctz"
+              ],
+              "sv": "alu_core_u_m2_l0_bitcount",
+              "_": [
+                "m2.l0.bitcount"
+              ]
+            },
+            {
+              "kind": "bitcount",
+              "slot": "bitcount",
+              "mode": 2,
+              "lane": 1,
+              "width": 8,
+              "format": "int8_twos_complement",
+              "ops": [
+                "popcount",
+                "clz",
+                "ctz"
+              ],
+              "sv": "alu_core_u_m2_l1_bitcount",
+              "_": [
+                "m2.l1.bitcount"
+              ]
+            }
+          ],
+          "ok": true,
+          "defaulted": [
+            "check.all.family",
+            "core.shifter.m1.sticky_collect",
+            "core.bitcount.m1.family",
+            "core.bitcount.m1.counter_primitive",
+            "core.bitcount.m1.tree_shape",
+            "core.subword.family",
+            "core.subword.boundary_mechanism",
+            "core.logic.m1.family",
+            "core.logic.m2.family",
+            "core.comparator.m0.family",
+            "core.comparator.m0.structure",
+            "check.all.residue.modulus",
+            "check.all.residue.generator_style",
+            "check.all.residue.comparator.family",
+            "core.adder.m0.block_sizing",
+            "core.adder.m1.block_sizing",
+            "core.adder.m2.block_sizing",
+            "core.adder.m0.increment_levels",
+            "core.adder.m1.increment_levels",
+            "core.adder.m2.increment_levels",
+            "core.adder.m0.block_adder.family",
+            "core.adder.m1.block_adder.family",
+            "core.adder.m2.block_adder.family",
+            "core.adder.m0.block_adder.chunk_width_bits",
+            "core.adder.m1.block_adder.chunk_width_bits",
+            "core.adder.m2.block_adder.chunk_width_bits",
+            "core.adder.m0.increment_stage.family",
+            "core.adder.m1.increment_stage.family",
+            "core.adder.m2.increment_stage.family",
+            "core.adder.m0.increment_stage.structure",
+            "core.adder.m1.increment_stage.structure",
+            "core.adder.m2.increment_stage.structure",
+            "core.multiplier.m0.seg_w",
+            "core.multiplier.m0.num_seg",
+            "core.multiplier.m0.segment_shape",
+            "core.multiplier.m2.segment.family",
+            "core.multiplier.m2.segment.group_bits",
+            "core.multiplier.m2.segment.signed_scheme",
+            "core.multiplier.m0.segment.negative_pp_encoding",
+            "core.multiplier.m0.segment.reduction.carry_assimilation",
+            "core.multiplier.m0.segment.reduction.cpa.family",
+            "core.multiplier.m2.segment.reduction.cpa.family",
+            "core.multiplier.m2.segment.reduction.cpa.adder.block_sizing",
+            "core.multiplier.m2.segment.reduction.cpa.adder.block_width",
+            "core.multiplier.m2.segment.reduction.cpa.adder.increment_levels",
+            "core.multiplier.m2.segment.reduction.cpa.adder.block_adder.family",
+            "core.multiplier.m2.segment.reduction.cpa.adder.block_adder.chunk_width_bits",
+            "core.multiplier.m2.segment.reduction.cpa.adder.increment_stage.family",
+            "core.multiplier.m0.segment.reduction.tile_adder.family",
+            "core.multiplier.m2.segment.reduction.tile_adder.family",
+            "core.multiplier.m0.segment.reduction.tile_adder.chunk_width_bits",
+            "core.multiplier.m2.segment.reduction.tile_adder.chunk_width_bits",
+            "core.multiplier.m0.segment.hard_multiple_adder.family",
+            "core.multiplier.m0.segment.hard_multiple_adder.chunk_width_bits",
+            "core.multiplier.m2.segment.hard_multiple_adder.topology",
+            "core.multiplier.m2.segment.hard_multiple_adder.valency",
+            "core.multiplier.m0.segment.negation_incrementer.family",
+            "core.multiplier.m2.merge_adder.increment_levels",
+            "core.multiplier.m0.merge_adder.valency",
+            "core.multiplier.m2.merge_adder.block_adder.family",
+            "core.multiplier.m2.merge_adder.block_adder.full_adder_logic",
+            "core.multiplier.m2.merge_adder.block_adder.chunk_width_bits",
+            "core.multiplier.m2.merge_adder.increment_stage.family",
+            "core.multiplier.m0.merge_tree.family",
+            "core.multiplier.m2.merge_tree.family",
+            "core.multiplier.m0.merge_tree.geometry",
+            "core.multiplier.m2.merge_tree.cpa.region_count",
+            "core.multiplier.m2.merge_tree.cpa.region_adder_mix",
+            "core.multiplier.m1.final_converter.modulus",
+            "core.multiplier.m1.final_converter.incrementer.family",
+            "core.shifter.m1.amount_preprocess",
+            "core.shifter.m0.mask_generator",
+            "core.shifter.m2.mask_generator",
+            "core.shifter.m0.merge_style",
+            "core.shifter.m0.rotator.family",
+            "core.shifter.m2.rotator.family",
+            "core.shifter.m0.rotator.stage_radix",
+            "core.shifter.m0.rotator.select_encoding",
+            "core.bitcount.m0.strategy",
+            "core.bitcount.m2.strategy",
+            "core.bitcount.m2.isolate_circuit",
+            "core.bitcount.m1.final_adder.block_width",
+            "core.bitcount.m1.final_adder.skip_levels",
+            "core.bitcount.m1.final_adder.skip_gate",
+            "core.bitcount.m1.final_adder.block_adder.family",
+            "core.bitcount.m1.final_adder.block_adder.chunk_width_bits",
+            "core.bitcount.m0.lzd.lookahead_group",
+            "core.bitcount.m2.lzd.counter.family",
+            "core.bitcount.m2.lzd.counter.tree_shape",
+            "core.bitcount.m2.lzd.counter.final_adder.base_block_width",
+            "core.bitcount.m2.lzd.counter.final_adder.selection_radix",
+            "core.bitcount.m0.negation_incrementer.family",
+            "core.bitcount.m2.negation_incrementer.family",
+            "core.bitcount.m0.negation_incrementer.topology",
+            "core.bitcount.m2.negation_incrementer.topology",
+            "core.comparator.m1.zero_detect",
+            "core.comparator.m1.subtractor.block_sizing",
+            "core.comparator.m1.subtractor.increment_stage.family",
+            "core.comparator.m1.subtractor.increment_stage.topology"
+          ],
+          "defaulted_under": {},
+          "detail": "declaration ok (118 declared, 99 at defaults)"
+        },
+        "node_hash": "declaration"
+      },
+      "lint": {
+        "value": {
+          "ok": true,
+          "detail": "",
+          "seconds": 7.2
+        },
+        "node_hash": "1a623dfbf23d20bcf0bed629c23df0166d40aaf29fb32fa1764973e3c116b29d"
+      },
+      "conformance": {
+        "value": {
+          "pass": true,
+          "mismatch_count": 0,
+          "first_mismatches": [],
+          "detail": "bit-exact against the reference",
+          "cycles_per_frame": null,
+          "seconds": 65.3
+        },
+        "node_hash": "785408164a6ae563aa4bbffc6d86633b1815aa2687fac0e6c79a8d6774423788"
+      }
+    }
+  }
+}

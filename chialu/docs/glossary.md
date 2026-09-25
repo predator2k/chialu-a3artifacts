@@ -1,0 +1,52 @@
+# Glossary of the search chain
+
+The names the run files, the seed generator, the database and the
+prompts use, with one example each from `targets/int_subword_alu.yaml`
+(three modes: 1 x int16, 1 x int16 and 2 x int8; ops add, sub, mul,
+shifts, logic, compare, count).
+
+| Name | Description | Example |
+| --- | --- | --- |
+| role | The system prompt's first section, who the model is; the run file names its text (`role.file`, here `targets/prompts/role.md`) or a script. | "You are a senior digital arithmetic designer ..." |
+| task | The system prompt's third section, the statement of the problem; the run file names a script (`task.script`, here `chialu/task.py`) that renders it from the bound unit, or a file. | "The unit is an ALU serving 1 x `int16`, 1 x `uint16` and 2 x `int8` lanes ..." |
+| target | One ALU to design: a run file under `targets/` that binds the template's variables (modes, ops, formats, clock, checker) and names the search. | `targets/int_subword_alu.yaml`, clock 3000 ps |
+| mode | One operand format the unit serves at run time, selected by the mode port; a mode has one or more lanes. | mode 2: two lanes of int8 |
+| lane | One sub-word position of a mode; the lanes of a mode compute in parallel on slices of the operand bus. | mode 2, lane 1: bits 15:8 |
+| structure | One arithmetic block the unit needs for one (mode, lane) and kind: the atom of the plan and of the estimate. Its id is `m<mode>.l<lane>.<kind>`. | `m2.l1.adder`, the int8 adder of mode 2, lane 1 |
+| kind | What a structure computes: adder, multiplier, comparator, shifter, bitcount, logic, fp_adder, fp_multiplier, rounder, unpacker, ... | `adder` |
+| slot | The place in the template's variable tree where a structure's family is declared; the same name as the kind, at the unit level (`core.<slot>`), or a component slot inside a family (`sig_adder`, `reduction.cpa`). | `core.adder` (unit level), `reduction.cpa` (inside a multiplier) |
+| index | Which structure of a slot a declaration addresses: the mode, since the lanes of a mode share one declaration. | `core.adder.m2.family` covers `m2.l0.adder` and `m2.l1.adder` |
+| space | The family space of a kind: the families a slot admits, each with its design choices and its component slots (`chialu/spaces/*.py`). | the integer multiplier space: direct_pp_parallel, booth_recoded_parallel, carry_save_array, ... |
+| family | One micro-architecture of a kind, realized by the family library as a module; the value of `core.<slot>.<index>.family`. | `carry_lookahead` for `core.adder.m0` |
+| choice (pin) | One design choice of a family, declared as `core.<slot>.<index>.<choice>`; a pin's value is what a VAR line sets. "Pin" is the library's word for the same thing. | `core.adder.m0.group_size = 4` |
+| variant | A family at one assignment of its pins; the unit the synthesis database measures (a database point). | carry_lookahead, group_size 4, levels 2, at 16 bits |
+| VAR line | One line of a candidate's declaration block that sets a family or a choice away from its default. | `// VAR core.adder.m0.family=carry_lookahead` |
+| STRUCTURE line | One line of the declaration block that lists a structure with its kind, mode, lane, width, format, ops, the module realizing it and its group if shared. | `// STRUCTURE m2.l1.adder kind=adder slot=adder mode=2 lane=1 width=8 ... group=adders_0` |
+| declaration | The whole assignment of families and choices of a candidate (its VAR lines plus the defaults it leaves unsaid): the micro-architecture combination. The database calls the same thing a point. | baseline: every slot at its default; front_2: adders parallel_prefix, multipliers booth_recoded_parallel, ... |
+| default | The first member of a variable's domain; an undeclared decision stands at it. | `core.adder.*.family` defaults to ripple_carry |
+| plan | A sharing scheme with, optionally, families and choices: `shared` groups, `structures` entries and unit-level `components` (`chialu.plans.PLAN_DOC`). `plan_seed` renders a plan into a seed. | the plan of front_2: adders and gate rows shared, multipliers free |
+| group | One entry of a plan's `shared`: several structures realized by one physical datapath. A group of a float kind's structures across two formats or more is one datapath per lane position at the union geometry of their modes, the operands muxed by the mode; the seed then widens every float mode of the unit to that geometry. | `adders_0` = the four binary adders, one lane-partitioned adder; `fp_adders_across_formats` = the fp16, bf16 and fp8 adders, one x26e16s11 datapath per lane |
+| sharing scheme | A plan that states sharing alone: the groups and the subword family, no other family or choice. `chialu.plans.sharing_schemes` enumerates the legal ones (per integer kind none / all / per mode / per lane, the adder-comparator pairing, the float adders in the integer bank, and per float unit `fmt-stage` the rounders and unpackers across formats, `fmt-arith` each float arithmetic kind on one datapath per lane position at the union geometry of its modes, `fmt-all` both). | `add-all_mul-none_log-all_pair-none_fmt-none_sw-pcc`; on a float unit `..._fmt-arith`; on a mixed unit `..._intfp-all_sw-pcc` |
+| subword family | The unit-level component that says how the lanes of one datapath pack: `partitioned_carry_chain` (one adder cut at lane boundaries) or `replicated_lanes` (one adder per lane). | `components.subword.family = partitioned_carry_chain` |
+| realization | The run file's `realization` option: `library` (a declared family is realized by the family library's module, the default) or `behavioral` (every structure renders as the behavioral text it would have without a library module; the library ablation). | `realization: {fixed: behavioral}` in `targets/int_subword_alu.behavioral.yaml` |
+| unit (module) | The generated module that realizes one structure or one group: one EVOLVE region of the seed, one member file. | `alu_core_u_m2_l1_adder`; for the group, `alu_core_u_adders_0` |
+| member | One file of a multi-file seed: the packages, the top, one file per unit, the library. | `members/m2_l1_adder.sv` |
+| region | The text between an EVOLVE-BLOCK-START and EVOLVE-BLOCK-END pair, which the coding agent may edit; every region is a unit, plus the top. | the region of `alu_core_u_m2_l1_adder` |
+| seed | A rendered plan: a complete program the search starts from, evaluated through the gates. | `baseline`, `front_1` |
+| candidate | One program the search evaluates: a seed or an agent's rewrite, with its declaration, its measurements and its score in the archive. | candidate `a5d63e1b32d8`, parent `area_lean_banks` |
+| replan | The re-rendering of the units whose declaration or grouping a candidate changed, from the library; a unit whose text the agent edited keeps that text. | the agent sets `core.adder.m0.family=carry_lookahead` and the adder unit is regenerated |
+| estimate | The numeric stage's area and delay of a declaration under a scheme, summed from the database's rows per unit and scaled by the calibration. | 3837 um2 / 2042 ps measured against 4875 / 1802 estimated |
+| calibration | The ratios measured / estimated of the baseline, applied to every estimate of a target (`area_scale`, `delay_scale`). | int_subword_alu: x0.939, x1.676 |
+| front | The non-dominated declarations of the numeric archives by estimated area and delay; `front_seeds` turns its points into plans. | `front_1`, `front_2`, `front_3` |
+| gate | One check every candidate passes or fails: lint, conformance against the reference model, the fault campaign of the checker, synthesis under the clock. | conformance: 33,126 vectors bit-exact |
+| review | A coding agent's reading of the units the candidate wrote itself (`candidate.touched`) that declare a family: does the text realize that family? The agent gets a call directory (the program, the modules, a knowledge copy) and an index prompt; `review.agree` is the fraction realized, and a re-rendered unit is not read. | `alu_core_u_adders_0: ling_prefix realized` |
+| feedback | The evaluation outputs a run file lists under `feedback:`, written whole as files under `feedback/` of the call directory and indexed in the next prompt (`feedback_depth: files`). | `feedback/synth_ppa.paths.txt`, `feedback/synth_ppa.summary.txt` |
+| knowledge card | One markdown file of `chialu/knowledge/`: a family (`arch/<domain>/<family>.md`), a move (`moves/<move>.md`) or a flow note (`flow/`); the call directory holds a copy of the whole base, the prompt gives its layout in one line, and the agent lists the directory and reads what it needs. | `knowledge/arch/adder/ling_prefix.md` |
+| operator | The kind of change a round asks for: `structural` (change VAR lines; the template re-renders), `local` (keep every declaration, rewrite text inside a region), `free` (either). | round 12: structural |
+| ambition | How far one round's change reaches: `conservative`, `moderate`, `aggressive`. | round 12: aggressive |
+| target (tactic) | Where the round's change goes: the critical path (shorten it) or the logic off it (shrink it), from the parent's synthesis report; one is picked per round. | "Target: the critical path ... u_m0_l0_adder (1174 ps)" |
+| focus | The one region a round addresses under `member_focus: one`. | `alu_core_u_m1_l0_comparator` |
+| composer | ADIR's prompt builder: it samples the operator and the ambition per round (UCB over child improvement), writes the call directory with the round's files, and inlines the task, the goal, the conduct, the operator, the ambition, the target and an index of the files. | `<run>/prompts/<stamp>_solution_<parent>.md` |
+| call directory | The working directory of one model call and the only tree its file tools may read (opencode's `external_directory` is denied): copies of `program.sv`, `members/`, `knowledge/`, the context programs, and the prompt's long sections as files under `context/` (`unit.md`, `decisions.md`, `seeds.md`, `parent.md`, `chialu_families.md`, `chialu_timing.md`, `chialu_structures.md`, `<candidate>.md`) and `feedback/`. | `<run>/agent/20260916-021027-a0e632-seed:area_lean_banks/` |
+| archive | The run's record of every evaluated candidate (`results_db.jsonl`). | `/tmp/pipe_isa6/results_db.jsonl` |
+| checker | The concurrent error detector generated beside the datapath when `check_en` is set; the fault campaign measures its coverage and alias rate. | residue checker, modulus 15 |

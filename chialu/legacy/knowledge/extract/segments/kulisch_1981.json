@@ -1,0 +1,22 @@
+{
+ "key": "kulisch_1981",
+ "file": "kulisch_1981.pdf",
+ "kind": "book",
+ "citation": "U. W. Kulisch, W. L. Miranker, \"Computer Arithmetic in Theory and Practice\", Academic Press, 1981",
+ "pages": 5,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 4,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

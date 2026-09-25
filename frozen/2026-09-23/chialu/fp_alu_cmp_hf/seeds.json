@@ -1,0 +1,4140 @@
+[
+ {
+  "seed_name": "front_1",
+  "feasible": true,
+  "goal_values": [
+   6350.218,
+   4365.67
+  ],
+  "constraints": [
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "declaration.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "lint.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "conformance.pass == true",
+    "hard": true,
+    "satisfies": null
+   }
+  ],
+  "measurements": {
+   "declaration": {
+    "value": {
+     "decl.core.subword.family": "replicated_lanes",
+     "decl.core.fp_fma.m0.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m0.family": "single_path",
+     "decl.core.fp_adder.m0.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m0.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m0.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m0.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.exp.family": "exponent_path",
+     "decl.core.fp_adder.m0.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m0.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.align.family": "full_align",
+     "decl.core.fp_adder.m0.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m0.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m0.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m0.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m0.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m0.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m0.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m0.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.lz.family": "lza",
+     "decl.core.fp_adder.m0.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m0.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m0.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m0.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m0.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m0.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m0.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m0.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m0.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m1.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m1.family": "single_path",
+     "decl.core.fp_adder.m1.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m1.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m1.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m1.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.exp.family": "exponent_path",
+     "decl.core.fp_adder.m1.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m1.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.align.family": "full_align",
+     "decl.core.fp_adder.m1.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m1.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m1.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m1.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m1.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m1.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m1.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m1.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.lz.family": "lza",
+     "decl.core.fp_adder.m1.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m1.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m1.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m1.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m1.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m1.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m1.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m1.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m1.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m2.family": "separate_multiplier_and_adder",
+     "decl.core.fp_multiplier.m2.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m2.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m2.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_comparator.m0.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m0.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m0.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m0.comparator.radix": 2,
+     "decl.core.fp_comparator.m1.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m1.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m1.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m1.comparator.radix": 2,
+     "decl.core.fp_comparator.m2.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m2.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m2.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m2.comparator.radix": 2,
+     "decl.core.rounder.m0.family": "dedicated_per_op",
+     "decl.core.rounder.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m0.lzc.output_form": "binary_count",
+     "decl.core.rounder.m0.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m0.shifter.stage_radix": 2,
+     "decl.core.rounder.m0.shifter.select_encoding": "binary",
+     "decl.core.rounder.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m0.shifter.sticky_collect": false,
+     "decl.core.rounder.m0.round.family": "increment_adder",
+     "decl.core.rounder.m0.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m0.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m0.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.family": "dedicated_per_op",
+     "decl.core.rounder.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m1.lzc.output_form": "binary_count",
+     "decl.core.rounder.m1.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m1.shifter.stage_radix": 2,
+     "decl.core.rounder.m1.shifter.select_encoding": "binary",
+     "decl.core.rounder.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m1.shifter.sticky_collect": false,
+     "decl.core.rounder.m1.round.family": "increment_adder",
+     "decl.core.rounder.m1.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m1.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.family": "dedicated_per_op",
+     "decl.core.rounder.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m2.lzc.output_form": "binary_count",
+     "decl.core.rounder.m2.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m2.shifter.stage_radix": 2,
+     "decl.core.rounder.m2.shifter.select_encoding": "binary",
+     "decl.core.rounder.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m2.shifter.sticky_collect": false,
+     "decl.core.rounder.m2.round.family": "increment_adder",
+     "decl.core.rounder.m2.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m2.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.exp_incrementer.topology": "sklansky",
+     "decl.core.unpacker.m0.family": "per_unit_unpack",
+     "decl.core.unpacker.m0.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m0.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m0.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m0.shifter.stage_radix": 2,
+     "decl.core.unpacker.m0.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m0.shifter.sticky_collect": false,
+     "decl.core.unpacker.m1.family": "per_unit_unpack",
+     "decl.core.unpacker.m1.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m1.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m1.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m1.shifter.stage_radix": 2,
+     "decl.core.unpacker.m1.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m1.shifter.sticky_collect": false,
+     "decl.core.unpacker.m2.family": "per_unit_unpack",
+     "decl.core.unpacker.m2.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m2.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m2.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m2.shifter.stage_radix": 2,
+     "decl.core.unpacker.m2.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m2.shifter.sticky_collect": false,
+     "decl.STRUCTURE": [
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_m0_l0_fp_adder",
+       "_": [
+        "m0.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m0_l0_unpacker",
+       "_": [
+        "m0.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_m0_l0_rounder",
+       "_": [
+        "m0.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m0.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": "fmul",
+       "sv": "alu_core_u_m0_l0_fp_multiplier",
+       "_": [
+        "m0.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m0_l0_fp_comparator",
+       "_": [
+        "m0.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_m1_l0_fp_adder",
+       "_": [
+        "m1.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m1_l0_unpacker",
+       "_": [
+        "m1.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_m1_l0_rounder",
+       "_": [
+        "m1.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m1.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": "fmul",
+       "sv": "alu_core_u_m1_l0_fp_multiplier",
+       "_": [
+        "m1.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m1_l0_fp_comparator",
+       "_": [
+        "m1.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l0_fp_multiplier",
+       "_": [
+        "m2.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l1_fp_multiplier",
+       "_": [
+        "m2.l1.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l0_unpacker",
+       "_": [
+        "m2.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l0_rounder",
+       "_": [
+        "m2.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l1_unpacker",
+       "_": [
+        "m2.l1.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l1_rounder",
+       "_": [
+        "m2.l1.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l1.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l0_fp_comparator",
+       "_": [
+        "m2.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l1_fp_comparator",
+       "_": [
+        "m2.l1.fp_comparator"
+       ]
+      }
+     ],
+     "ok": true,
+     "defaulted": [
+      "core.subword.family",
+      "core.fp_fma.m0.family",
+      "core.fp_adder.m0.family",
+      "core.fp_adder.m0.subnormal_representation",
+      "core.fp_adder.m0.operand_order",
+      "core.fp_adder.m0.negation_handling",
+      "core.fp_adder.m0.sig_adder.family",
+      "core.fp_adder.m0.sig_adder.full_adder_logic",
+      "core.fp_adder.m0.sig_adder.chunk_width_bits",
+      "core.fp_adder.m0.exp.family",
+      "core.fp_adder.m0.exp.dual_direction_subtract",
+      "core.fp_adder.m0.exp.adder.family",
+      "core.fp_adder.m0.exp.adder.full_adder_logic",
+      "core.fp_adder.m0.exp.adder.chunk_width_bits",
+      "core.fp_adder.m0.align.family",
+      "core.fp_adder.m0.align.sticky_method",
+      "core.fp_adder.m0.align.shifter.family",
+      "core.fp_adder.m0.align.shifter.stage_radix",
+      "core.fp_adder.m0.align.shifter.select_encoding",
+      "core.fp_adder.m0.align.shifter.stage_order",
+      "core.fp_adder.m0.align.shifter.direction_handling",
+      "core.fp_adder.m0.align.shifter.sticky_collect",
+      "core.fp_adder.m0.align.tzc.family",
+      "core.fp_adder.m0.align.tzc.strategy",
+      "core.fp_adder.m0.align.tzc.isolate_circuit",
+      "core.fp_adder.m0.align.tzc.lzd.family",
+      "core.fp_adder.m0.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m0.align.tzc.lzd.output_form",
+      "core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m0.norm.family",
+      "core.fp_adder.m0.norm.coarse_granularity",
+      "core.fp_adder.m0.norm.shifter.family",
+      "core.fp_adder.m0.norm.shifter.stage_radix",
+      "core.fp_adder.m0.norm.shifter.select_encoding",
+      "core.fp_adder.m0.norm.shifter.stage_order",
+      "core.fp_adder.m0.norm.shifter.direction_handling",
+      "core.fp_adder.m0.norm.shifter.sticky_collect",
+      "core.fp_adder.m0.lz.family",
+      "core.fp_adder.m0.lz.correction_scheme",
+      "core.fp_adder.m0.lz.string_form",
+      "core.fp_adder.m0.lz.indicator_restriction",
+      "core.fp_adder.m0.lz.zero_result_detect",
+      "core.fp_adder.m0.lz.encoder.family",
+      "core.fp_adder.m0.lz.encoder.block_primitive",
+      "core.fp_adder.m0.lz.encoder.output_form",
+      "core.fp_adder.m0.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m0.family",
+      "core.fp_multiplier.m0.sig_mul.family",
+      "core.fp_multiplier.m0.exp_adder.family",
+      "core.fp_multiplier.m0.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m0.exp_adder.chunk_width_bits",
+      "core.fp_fma.m1.family",
+      "core.fp_adder.m1.family",
+      "core.fp_adder.m1.subnormal_representation",
+      "core.fp_adder.m1.operand_order",
+      "core.fp_adder.m1.negation_handling",
+      "core.fp_adder.m1.sig_adder.family",
+      "core.fp_adder.m1.sig_adder.full_adder_logic",
+      "core.fp_adder.m1.sig_adder.chunk_width_bits",
+      "core.fp_adder.m1.exp.family",
+      "core.fp_adder.m1.exp.dual_direction_subtract",
+      "core.fp_adder.m1.exp.adder.family",
+      "core.fp_adder.m1.exp.adder.full_adder_logic",
+      "core.fp_adder.m1.exp.adder.chunk_width_bits",
+      "core.fp_adder.m1.align.family",
+      "core.fp_adder.m1.align.sticky_method",
+      "core.fp_adder.m1.align.shifter.family",
+      "core.fp_adder.m1.align.shifter.stage_radix",
+      "core.fp_adder.m1.align.shifter.select_encoding",
+      "core.fp_adder.m1.align.shifter.stage_order",
+      "core.fp_adder.m1.align.shifter.direction_handling",
+      "core.fp_adder.m1.align.shifter.sticky_collect",
+      "core.fp_adder.m1.align.tzc.family",
+      "core.fp_adder.m1.align.tzc.strategy",
+      "core.fp_adder.m1.align.tzc.isolate_circuit",
+      "core.fp_adder.m1.align.tzc.lzd.family",
+      "core.fp_adder.m1.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m1.align.tzc.lzd.output_form",
+      "core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m1.norm.family",
+      "core.fp_adder.m1.norm.coarse_granularity",
+      "core.fp_adder.m1.norm.shifter.family",
+      "core.fp_adder.m1.norm.shifter.stage_radix",
+      "core.fp_adder.m1.norm.shifter.select_encoding",
+      "core.fp_adder.m1.norm.shifter.stage_order",
+      "core.fp_adder.m1.norm.shifter.direction_handling",
+      "core.fp_adder.m1.norm.shifter.sticky_collect",
+      "core.fp_adder.m1.lz.family",
+      "core.fp_adder.m1.lz.correction_scheme",
+      "core.fp_adder.m1.lz.string_form",
+      "core.fp_adder.m1.lz.indicator_restriction",
+      "core.fp_adder.m1.lz.zero_result_detect",
+      "core.fp_adder.m1.lz.encoder.family",
+      "core.fp_adder.m1.lz.encoder.block_primitive",
+      "core.fp_adder.m1.lz.encoder.output_form",
+      "core.fp_adder.m1.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m1.family",
+      "core.fp_multiplier.m1.sig_mul.family",
+      "core.fp_multiplier.m1.exp_adder.family",
+      "core.fp_multiplier.m1.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m1.exp_adder.chunk_width_bits",
+      "core.fp_fma.m2.family",
+      "core.fp_multiplier.m2.family",
+      "core.fp_multiplier.m2.sig_mul.family",
+      "core.fp_multiplier.m2.exp_adder.family",
+      "core.fp_multiplier.m2.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m2.exp_adder.chunk_width_bits",
+      "core.fp_comparator.m0.family",
+      "core.fp_comparator.m0.comparator.family",
+      "core.fp_comparator.m0.comparator.structure",
+      "core.fp_comparator.m0.comparator.radix",
+      "core.fp_comparator.m1.family",
+      "core.fp_comparator.m1.comparator.family",
+      "core.fp_comparator.m1.comparator.structure",
+      "core.fp_comparator.m1.comparator.radix",
+      "core.fp_comparator.m2.family",
+      "core.fp_comparator.m2.comparator.family",
+      "core.fp_comparator.m2.comparator.structure",
+      "core.fp_comparator.m2.comparator.radix",
+      "core.rounder.m0.family",
+      "core.rounder.m0.lzc.family",
+      "core.rounder.m0.lzc.block_primitive",
+      "core.rounder.m0.lzc.output_form",
+      "core.rounder.m0.lzc.valid_flag_propagation",
+      "core.rounder.m0.shifter.family",
+      "core.rounder.m0.shifter.stage_radix",
+      "core.rounder.m0.shifter.select_encoding",
+      "core.rounder.m0.shifter.stage_order",
+      "core.rounder.m0.shifter.direction_handling",
+      "core.rounder.m0.shifter.sticky_collect",
+      "core.rounder.m0.round.family",
+      "core.rounder.m0.round.incrementer.family",
+      "core.rounder.m0.round.incrementer.structure",
+      "core.rounder.m0.round.incrementer.topology",
+      "core.rounder.m0.exp_adder.family",
+      "core.rounder.m0.exp_adder.full_adder_logic",
+      "core.rounder.m0.exp_adder.chunk_width_bits",
+      "core.rounder.m0.exp_incrementer.family",
+      "core.rounder.m0.exp_incrementer.structure",
+      "core.rounder.m0.exp_incrementer.topology",
+      "core.rounder.m1.family",
+      "core.rounder.m1.lzc.family",
+      "core.rounder.m1.lzc.block_primitive",
+      "core.rounder.m1.lzc.output_form",
+      "core.rounder.m1.lzc.valid_flag_propagation",
+      "core.rounder.m1.shifter.family",
+      "core.rounder.m1.shifter.stage_radix",
+      "core.rounder.m1.shifter.select_encoding",
+      "core.rounder.m1.shifter.stage_order",
+      "core.rounder.m1.shifter.direction_handling",
+      "core.rounder.m1.shifter.sticky_collect",
+      "core.rounder.m1.round.family",
+      "core.rounder.m1.round.incrementer.family",
+      "core.rounder.m1.round.incrementer.structure",
+      "core.rounder.m1.round.incrementer.topology",
+      "core.rounder.m1.exp_adder.family",
+      "core.rounder.m1.exp_adder.full_adder_logic",
+      "core.rounder.m1.exp_adder.chunk_width_bits",
+      "core.rounder.m1.exp_incrementer.family",
+      "core.rounder.m1.exp_incrementer.structure",
+      "core.rounder.m1.exp_incrementer.topology",
+      "core.rounder.m2.family",
+      "core.rounder.m2.lzc.family",
+      "core.rounder.m2.lzc.block_primitive",
+      "core.rounder.m2.lzc.output_form",
+      "core.rounder.m2.lzc.valid_flag_propagation",
+      "core.rounder.m2.shifter.family",
+      "core.rounder.m2.shifter.stage_radix",
+      "core.rounder.m2.shifter.select_encoding",
+      "core.rounder.m2.shifter.stage_order",
+      "core.rounder.m2.shifter.direction_handling",
+      "core.rounder.m2.shifter.sticky_collect",
+      "core.rounder.m2.round.family",
+      "core.rounder.m2.round.incrementer.family",
+      "core.rounder.m2.round.incrementer.structure",
+      "core.rounder.m2.round.incrementer.topology",
+      "core.rounder.m2.exp_adder.family",
+      "core.rounder.m2.exp_adder.full_adder_logic",
+      "core.rounder.m2.exp_adder.chunk_width_bits",
+      "core.rounder.m2.exp_incrementer.family",
+      "core.rounder.m2.exp_incrementer.structure",
+      "core.rounder.m2.exp_incrementer.topology",
+      "core.unpacker.m0.family",
+      "core.unpacker.m0.denormal_handling",
+      "core.unpacker.m0.lzc.family",
+      "core.unpacker.m0.lzc.block_primitive",
+      "core.unpacker.m0.lzc.output_form",
+      "core.unpacker.m0.lzc.valid_flag_propagation",
+      "core.unpacker.m0.shifter.family",
+      "core.unpacker.m0.shifter.stage_radix",
+      "core.unpacker.m0.shifter.select_encoding",
+      "core.unpacker.m0.shifter.stage_order",
+      "core.unpacker.m0.shifter.direction_handling",
+      "core.unpacker.m0.shifter.sticky_collect",
+      "core.unpacker.m1.family",
+      "core.unpacker.m1.denormal_handling",
+      "core.unpacker.m1.lzc.family",
+      "core.unpacker.m1.lzc.block_primitive",
+      "core.unpacker.m1.lzc.output_form",
+      "core.unpacker.m1.lzc.valid_flag_propagation",
+      "core.unpacker.m1.shifter.family",
+      "core.unpacker.m1.shifter.stage_radix",
+      "core.unpacker.m1.shifter.select_encoding",
+      "core.unpacker.m1.shifter.stage_order",
+      "core.unpacker.m1.shifter.direction_handling",
+      "core.unpacker.m1.shifter.sticky_collect",
+      "core.unpacker.m2.family",
+      "core.unpacker.m2.denormal_handling",
+      "core.unpacker.m2.lzc.family",
+      "core.unpacker.m2.lzc.block_primitive",
+      "core.unpacker.m2.lzc.output_form",
+      "core.unpacker.m2.lzc.valid_flag_propagation",
+      "core.unpacker.m2.shifter.family",
+      "core.unpacker.m2.shifter.stage_radix",
+      "core.unpacker.m2.shifter.select_encoding",
+      "core.unpacker.m2.shifter.stage_order",
+      "core.unpacker.m2.shifter.direction_handling",
+      "core.unpacker.m2.shifter.sticky_collect"
+     ],
+     "defaulted_under": {},
+     "detail": "declaration ok (0 declared, 224 at defaults)"
+    },
+    "node_hash": "declaration"
+   },
+   "conformance": {
+    "value": {
+     "pass": true,
+     "mismatch_count": 0,
+     "first_mismatches": [],
+     "detail": "bit-exact against the reference",
+     "cycles_per_frame": null,
+     "seconds": 0.2
+    },
+    "node_hash": "ff2f7f37265e4f835aad1c011d81bb431bbab89a0df2a2de4ef68ab168da0517"
+   },
+   "lint": {
+    "value": {
+     "ok": true,
+     "detail": "",
+     "seconds": 2.6
+    },
+    "node_hash": "dcd8d2d777f6f36ddc5ea8140dfd3d84067ce4f53ead11df6ac067f1e73ec1ad"
+   },
+   "yosys_stat": {
+    "value": {
+     "ok": true,
+     "cells": 34896,
+     "detail": "",
+     "seconds": 12.0
+    },
+    "node_hash": "22d3c4cff37eacd6ec2ea5e34a094b5f8af7c40b6ddb8012842b56a647771d24"
+   },
+   "synth_unit": {
+    "value": {
+     "ok": true,
+     "area_um2": 10480.134,
+     "attribution": {
+      "m0.l0.fp_adder": {
+       "module": "alu_core_u_m0_l0_fp_adder",
+       "area_um2": 1652.392,
+       "abc_delay_ps": 3042.55,
+       "ok": true
+      },
+      "m0.l0.unpacker": {
+       "module": "alu_core_u_m0_l0_unpacker",
+       "area_um2": 309.092,
+       "abc_delay_ps": 572.97,
+       "ok": true
+      },
+      "m0.l0.rounder": {
+       "module": "alu_core_u_m0_l0_rounder",
+       "area_um2": 1168.006,
+       "abc_delay_ps": 1946.31,
+       "ok": true
+      },
+      "m0.l0.fp_multiplier": {
+       "module": "alu_core_u_m0_l0_fp_multiplier",
+       "area_um2": 1298.612,
+       "abc_delay_ps": 1485.8,
+       "ok": true
+      },
+      "m0.l0.fp_comparator": {
+       "module": "alu_core_u_m0_l0_fp_comparator",
+       "area_um2": 525.35,
+       "abc_delay_ps": 1137.67,
+       "ok": true
+      },
+      "m1.l0.fp_adder": {
+       "module": "alu_core_u_m1_l0_fp_adder",
+       "area_um2": 1319.626,
+       "abc_delay_ps": 2585.86,
+       "ok": true
+      },
+      "m1.l0.unpacker": {
+       "module": "alu_core_u_m1_l0_unpacker",
+       "area_um2": 259.882,
+       "abc_delay_ps": 402.5,
+       "ok": true
+      },
+      "m1.l0.rounder": {
+       "module": "alu_core_u_m1_l0_rounder",
+       "area_um2": 892.962,
+       "abc_delay_ps": 2162.95,
+       "ok": true
+      },
+      "m1.l0.fp_multiplier": {
+       "module": "alu_core_u_m1_l0_fp_multiplier",
+       "area_um2": 738.15,
+       "abc_delay_ps": 1214.95,
+       "ok": true
+      },
+      "m1.l0.fp_comparator": {
+       "module": "alu_core_u_m1_l0_fp_comparator",
+       "area_um2": 428.526,
+       "abc_delay_ps": 1048.2,
+       "ok": true
+      },
+      "m2.l0.fp_multiplier": {
+       "module": "alu_core_u_m2_l0_fp_multiplier",
+       "area_um2": 156.142,
+       "abc_delay_ps": 485.39,
+       "ok": true
+      },
+      "m2.l1.fp_multiplier": {
+       "module": "alu_core_u_m2_l1_fp_multiplier",
+       "area_um2": 156.142,
+       "abc_delay_ps": 485.39,
+       "ok": true
+      },
+      "m2.l0.unpacker": {
+       "module": "alu_core_u_m2_l0_unpacker",
+       "area_um2": 73.682,
+       "abc_delay_ps": 248.99,
+       "ok": true
+      },
+      "m2.l0.rounder": {
+       "module": "alu_core_u_m2_l0_rounder",
+       "area_um2": 515.242,
+       "abc_delay_ps": 1395.89,
+       "ok": true
+      },
+      "m2.l1.unpacker": {
+       "module": "alu_core_u_m2_l1_unpacker",
+       "area_um2": 73.682,
+       "abc_delay_ps": 248.99,
+       "ok": true
+      },
+      "m2.l1.rounder": {
+       "module": "alu_core_u_m2_l1_rounder",
+       "area_um2": 515.242,
+       "abc_delay_ps": 1395.89,
+       "ok": true
+      },
+      "m2.l0.fp_comparator": {
+       "module": "alu_core_u_m2_l0_fp_comparator",
+       "area_um2": 198.702,
+       "abc_delay_ps": 684.28,
+       "ok": true
+      },
+      "m2.l1.fp_comparator": {
+       "module": "alu_core_u_m2_l1_fp_comparator",
+       "area_um2": 198.702,
+       "abc_delay_ps": 684.28,
+       "ok": true
+      }
+     },
+     "seconds": 0.0,
+     "detail": ""
+    },
+    "node_hash": "3de737451d2eb3fd5ea81a07d2657f2575e7713f239554b9881c6c5e643a81d1"
+   },
+   "synth_ppa": {
+    "value": {
+     "ok": true,
+     "area_um2": 6350.218,
+     "cells": 5403,
+     "abc_delay_ps": 4365.67,
+     "seconds": 14.9,
+     "pdk": "nangate45",
+     "clock_ps": 300,
+     "detail": ""
+    },
+    "node_hash": "2213d24d7525924db46609f2a3d8c1eafa6a04f6f604d2b038674d15d731cd67"
+   }
+  }
+ },
+ {
+  "seed_name": "front_3",
+  "feasible": true,
+  "goal_values": [
+   6174.392,
+   4999.77
+  ],
+  "constraints": [
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "declaration.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "lint.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "conformance.pass == true",
+    "hard": true,
+    "satisfies": null
+   }
+  ],
+  "measurements": {
+   "declaration": {
+    "value": {
+     "decl.core.subword.family": "replicated_lanes",
+     "decl.core.fp_fma.m0.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m0.family": "single_path",
+     "decl.core.fp_adder.m0.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m0.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m0.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m0.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.exp.family": "exponent_path",
+     "decl.core.fp_adder.m0.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m0.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.align.family": "full_align",
+     "decl.core.fp_adder.m0.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m0.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m0.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m0.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m0.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m0.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m0.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m0.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.lz.family": "lza",
+     "decl.core.fp_adder.m0.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m0.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m0.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m0.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m0.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m0.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m0.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m0.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m0.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m1.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m1.family": "single_path",
+     "decl.core.fp_adder.m1.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m1.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m1.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m1.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.exp.family": "exponent_path",
+     "decl.core.fp_adder.m1.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m1.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.align.family": "full_align",
+     "decl.core.fp_adder.m1.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m1.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m1.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m1.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m1.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m1.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m1.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m1.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.lz.family": "lza",
+     "decl.core.fp_adder.m1.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m1.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m1.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m1.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m1.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m1.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m1.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m1.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m1.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m2.family": "separate_multiplier_and_adder",
+     "decl.core.fp_multiplier.m2.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m2.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m2.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_comparator.m0.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m0.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m0.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m0.comparator.radix": 2,
+     "decl.core.fp_comparator.m1.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m1.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m1.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m1.comparator.radix": 2,
+     "decl.core.fp_comparator.m2.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m2.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m2.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m2.comparator.radix": 2,
+     "decl.core.rounder.m0.family": "dedicated_per_op",
+     "decl.core.rounder.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m0.lzc.output_form": "binary_count",
+     "decl.core.rounder.m0.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m0.shifter.stage_radix": 2,
+     "decl.core.rounder.m0.shifter.select_encoding": "binary",
+     "decl.core.rounder.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m0.shifter.sticky_collect": false,
+     "decl.core.rounder.m0.round.family": "increment_adder",
+     "decl.core.rounder.m0.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m0.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m0.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.family": "dedicated_per_op",
+     "decl.core.rounder.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m1.lzc.output_form": "binary_count",
+     "decl.core.rounder.m1.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m1.shifter.stage_radix": 2,
+     "decl.core.rounder.m1.shifter.select_encoding": "binary",
+     "decl.core.rounder.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m1.shifter.sticky_collect": false,
+     "decl.core.rounder.m1.round.family": "increment_adder",
+     "decl.core.rounder.m1.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m1.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.family": "dedicated_per_op",
+     "decl.core.rounder.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m2.lzc.output_form": "binary_count",
+     "decl.core.rounder.m2.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m2.shifter.stage_radix": 2,
+     "decl.core.rounder.m2.shifter.select_encoding": "binary",
+     "decl.core.rounder.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m2.shifter.sticky_collect": false,
+     "decl.core.rounder.m2.round.family": "increment_adder",
+     "decl.core.rounder.m2.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m2.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.exp_incrementer.topology": "sklansky",
+     "decl.core.unpacker.m0.family": "per_unit_unpack",
+     "decl.core.unpacker.m0.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m0.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m0.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m0.shifter.stage_radix": 2,
+     "decl.core.unpacker.m0.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m0.shifter.sticky_collect": false,
+     "decl.core.unpacker.m1.family": "per_unit_unpack",
+     "decl.core.unpacker.m1.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m1.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m1.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m1.shifter.stage_radix": 2,
+     "decl.core.unpacker.m1.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m1.shifter.sticky_collect": false,
+     "decl.core.unpacker.m2.family": "per_unit_unpack",
+     "decl.core.unpacker.m2.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m2.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m2.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m2.shifter.stage_radix": 2,
+     "decl.core.unpacker.m2.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m2.shifter.sticky_collect": false,
+     "decl.STRUCTURE": [
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_fp_adders_across_formats",
+       "group": "fp_adders_across_formats",
+       "_": [
+        "m0.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m0_l0_unpacker",
+       "_": [
+        "m0.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_m0_l0_rounder",
+       "_": [
+        "m0.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m0.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m0.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m0.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_fp_adders_across_formats",
+       "group": "fp_adders_across_formats",
+       "_": [
+        "m1.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m1_l0_unpacker",
+       "_": [
+        "m1.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_m1_l0_rounder",
+       "_": [
+        "m1.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m1.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m1.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m1.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m2.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m2.l1.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l0_unpacker",
+       "_": [
+        "m2.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l0_rounder",
+       "_": [
+        "m2.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l1_unpacker",
+       "_": [
+        "m2.l1.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l1_rounder",
+       "_": [
+        "m2.l1.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l1.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m2.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m2.l1.fp_comparator"
+       ]
+      }
+     ],
+     "ok": true,
+     "defaulted": [
+      "core.subword.family",
+      "core.fp_fma.m0.family",
+      "core.fp_adder.m0.family",
+      "core.fp_adder.m0.subnormal_representation",
+      "core.fp_adder.m0.operand_order",
+      "core.fp_adder.m0.negation_handling",
+      "core.fp_adder.m0.sig_adder.family",
+      "core.fp_adder.m0.sig_adder.full_adder_logic",
+      "core.fp_adder.m0.sig_adder.chunk_width_bits",
+      "core.fp_adder.m0.exp.family",
+      "core.fp_adder.m0.exp.dual_direction_subtract",
+      "core.fp_adder.m0.exp.adder.family",
+      "core.fp_adder.m0.exp.adder.full_adder_logic",
+      "core.fp_adder.m0.exp.adder.chunk_width_bits",
+      "core.fp_adder.m0.align.family",
+      "core.fp_adder.m0.align.sticky_method",
+      "core.fp_adder.m0.align.shifter.family",
+      "core.fp_adder.m0.align.shifter.stage_radix",
+      "core.fp_adder.m0.align.shifter.select_encoding",
+      "core.fp_adder.m0.align.shifter.stage_order",
+      "core.fp_adder.m0.align.shifter.direction_handling",
+      "core.fp_adder.m0.align.shifter.sticky_collect",
+      "core.fp_adder.m0.align.tzc.family",
+      "core.fp_adder.m0.align.tzc.strategy",
+      "core.fp_adder.m0.align.tzc.isolate_circuit",
+      "core.fp_adder.m0.align.tzc.lzd.family",
+      "core.fp_adder.m0.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m0.align.tzc.lzd.output_form",
+      "core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m0.norm.family",
+      "core.fp_adder.m0.norm.coarse_granularity",
+      "core.fp_adder.m0.norm.shifter.family",
+      "core.fp_adder.m0.norm.shifter.stage_radix",
+      "core.fp_adder.m0.norm.shifter.select_encoding",
+      "core.fp_adder.m0.norm.shifter.stage_order",
+      "core.fp_adder.m0.norm.shifter.direction_handling",
+      "core.fp_adder.m0.norm.shifter.sticky_collect",
+      "core.fp_adder.m0.lz.family",
+      "core.fp_adder.m0.lz.correction_scheme",
+      "core.fp_adder.m0.lz.string_form",
+      "core.fp_adder.m0.lz.indicator_restriction",
+      "core.fp_adder.m0.lz.zero_result_detect",
+      "core.fp_adder.m0.lz.encoder.family",
+      "core.fp_adder.m0.lz.encoder.block_primitive",
+      "core.fp_adder.m0.lz.encoder.output_form",
+      "core.fp_adder.m0.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m0.family",
+      "core.fp_multiplier.m0.sig_mul.family",
+      "core.fp_multiplier.m0.exp_adder.family",
+      "core.fp_multiplier.m0.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m0.exp_adder.chunk_width_bits",
+      "core.fp_fma.m1.family",
+      "core.fp_adder.m1.family",
+      "core.fp_adder.m1.subnormal_representation",
+      "core.fp_adder.m1.operand_order",
+      "core.fp_adder.m1.negation_handling",
+      "core.fp_adder.m1.sig_adder.family",
+      "core.fp_adder.m1.sig_adder.full_adder_logic",
+      "core.fp_adder.m1.sig_adder.chunk_width_bits",
+      "core.fp_adder.m1.exp.family",
+      "core.fp_adder.m1.exp.dual_direction_subtract",
+      "core.fp_adder.m1.exp.adder.family",
+      "core.fp_adder.m1.exp.adder.full_adder_logic",
+      "core.fp_adder.m1.exp.adder.chunk_width_bits",
+      "core.fp_adder.m1.align.family",
+      "core.fp_adder.m1.align.sticky_method",
+      "core.fp_adder.m1.align.shifter.family",
+      "core.fp_adder.m1.align.shifter.stage_radix",
+      "core.fp_adder.m1.align.shifter.select_encoding",
+      "core.fp_adder.m1.align.shifter.stage_order",
+      "core.fp_adder.m1.align.shifter.direction_handling",
+      "core.fp_adder.m1.align.shifter.sticky_collect",
+      "core.fp_adder.m1.align.tzc.family",
+      "core.fp_adder.m1.align.tzc.strategy",
+      "core.fp_adder.m1.align.tzc.isolate_circuit",
+      "core.fp_adder.m1.align.tzc.lzd.family",
+      "core.fp_adder.m1.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m1.align.tzc.lzd.output_form",
+      "core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m1.norm.family",
+      "core.fp_adder.m1.norm.coarse_granularity",
+      "core.fp_adder.m1.norm.shifter.family",
+      "core.fp_adder.m1.norm.shifter.stage_radix",
+      "core.fp_adder.m1.norm.shifter.select_encoding",
+      "core.fp_adder.m1.norm.shifter.stage_order",
+      "core.fp_adder.m1.norm.shifter.direction_handling",
+      "core.fp_adder.m1.norm.shifter.sticky_collect",
+      "core.fp_adder.m1.lz.family",
+      "core.fp_adder.m1.lz.correction_scheme",
+      "core.fp_adder.m1.lz.string_form",
+      "core.fp_adder.m1.lz.indicator_restriction",
+      "core.fp_adder.m1.lz.zero_result_detect",
+      "core.fp_adder.m1.lz.encoder.family",
+      "core.fp_adder.m1.lz.encoder.block_primitive",
+      "core.fp_adder.m1.lz.encoder.output_form",
+      "core.fp_adder.m1.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m1.family",
+      "core.fp_multiplier.m1.sig_mul.family",
+      "core.fp_multiplier.m1.exp_adder.family",
+      "core.fp_multiplier.m1.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m1.exp_adder.chunk_width_bits",
+      "core.fp_fma.m2.family",
+      "core.fp_multiplier.m2.family",
+      "core.fp_multiplier.m2.sig_mul.family",
+      "core.fp_multiplier.m2.exp_adder.family",
+      "core.fp_multiplier.m2.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m2.exp_adder.chunk_width_bits",
+      "core.fp_comparator.m0.family",
+      "core.fp_comparator.m0.comparator.family",
+      "core.fp_comparator.m0.comparator.structure",
+      "core.fp_comparator.m0.comparator.radix",
+      "core.fp_comparator.m1.family",
+      "core.fp_comparator.m1.comparator.family",
+      "core.fp_comparator.m1.comparator.structure",
+      "core.fp_comparator.m1.comparator.radix",
+      "core.fp_comparator.m2.family",
+      "core.fp_comparator.m2.comparator.family",
+      "core.fp_comparator.m2.comparator.structure",
+      "core.fp_comparator.m2.comparator.radix",
+      "core.rounder.m0.family",
+      "core.rounder.m0.lzc.family",
+      "core.rounder.m0.lzc.block_primitive",
+      "core.rounder.m0.lzc.output_form",
+      "core.rounder.m0.lzc.valid_flag_propagation",
+      "core.rounder.m0.shifter.family",
+      "core.rounder.m0.shifter.stage_radix",
+      "core.rounder.m0.shifter.select_encoding",
+      "core.rounder.m0.shifter.stage_order",
+      "core.rounder.m0.shifter.direction_handling",
+      "core.rounder.m0.shifter.sticky_collect",
+      "core.rounder.m0.round.family",
+      "core.rounder.m0.round.incrementer.family",
+      "core.rounder.m0.round.incrementer.structure",
+      "core.rounder.m0.round.incrementer.topology",
+      "core.rounder.m0.exp_adder.family",
+      "core.rounder.m0.exp_adder.full_adder_logic",
+      "core.rounder.m0.exp_adder.chunk_width_bits",
+      "core.rounder.m0.exp_incrementer.family",
+      "core.rounder.m0.exp_incrementer.structure",
+      "core.rounder.m0.exp_incrementer.topology",
+      "core.rounder.m1.family",
+      "core.rounder.m1.lzc.family",
+      "core.rounder.m1.lzc.block_primitive",
+      "core.rounder.m1.lzc.output_form",
+      "core.rounder.m1.lzc.valid_flag_propagation",
+      "core.rounder.m1.shifter.family",
+      "core.rounder.m1.shifter.stage_radix",
+      "core.rounder.m1.shifter.select_encoding",
+      "core.rounder.m1.shifter.stage_order",
+      "core.rounder.m1.shifter.direction_handling",
+      "core.rounder.m1.shifter.sticky_collect",
+      "core.rounder.m1.round.family",
+      "core.rounder.m1.round.incrementer.family",
+      "core.rounder.m1.round.incrementer.structure",
+      "core.rounder.m1.round.incrementer.topology",
+      "core.rounder.m1.exp_adder.family",
+      "core.rounder.m1.exp_adder.full_adder_logic",
+      "core.rounder.m1.exp_adder.chunk_width_bits",
+      "core.rounder.m1.exp_incrementer.family",
+      "core.rounder.m1.exp_incrementer.structure",
+      "core.rounder.m1.exp_incrementer.topology",
+      "core.rounder.m2.family",
+      "core.rounder.m2.lzc.family",
+      "core.rounder.m2.lzc.block_primitive",
+      "core.rounder.m2.lzc.output_form",
+      "core.rounder.m2.lzc.valid_flag_propagation",
+      "core.rounder.m2.shifter.family",
+      "core.rounder.m2.shifter.stage_radix",
+      "core.rounder.m2.shifter.select_encoding",
+      "core.rounder.m2.shifter.stage_order",
+      "core.rounder.m2.shifter.direction_handling",
+      "core.rounder.m2.shifter.sticky_collect",
+      "core.rounder.m2.round.family",
+      "core.rounder.m2.round.incrementer.family",
+      "core.rounder.m2.round.incrementer.structure",
+      "core.rounder.m2.round.incrementer.topology",
+      "core.rounder.m2.exp_adder.family",
+      "core.rounder.m2.exp_adder.full_adder_logic",
+      "core.rounder.m2.exp_adder.chunk_width_bits",
+      "core.rounder.m2.exp_incrementer.family",
+      "core.rounder.m2.exp_incrementer.structure",
+      "core.rounder.m2.exp_incrementer.topology",
+      "core.unpacker.m0.family",
+      "core.unpacker.m0.denormal_handling",
+      "core.unpacker.m0.lzc.family",
+      "core.unpacker.m0.lzc.block_primitive",
+      "core.unpacker.m0.lzc.output_form",
+      "core.unpacker.m0.lzc.valid_flag_propagation",
+      "core.unpacker.m0.shifter.family",
+      "core.unpacker.m0.shifter.stage_radix",
+      "core.unpacker.m0.shifter.select_encoding",
+      "core.unpacker.m0.shifter.stage_order",
+      "core.unpacker.m0.shifter.direction_handling",
+      "core.unpacker.m0.shifter.sticky_collect",
+      "core.unpacker.m1.family",
+      "core.unpacker.m1.denormal_handling",
+      "core.unpacker.m1.lzc.family",
+      "core.unpacker.m1.lzc.block_primitive",
+      "core.unpacker.m1.lzc.output_form",
+      "core.unpacker.m1.lzc.valid_flag_propagation",
+      "core.unpacker.m1.shifter.family",
+      "core.unpacker.m1.shifter.stage_radix",
+      "core.unpacker.m1.shifter.select_encoding",
+      "core.unpacker.m1.shifter.stage_order",
+      "core.unpacker.m1.shifter.direction_handling",
+      "core.unpacker.m1.shifter.sticky_collect",
+      "core.unpacker.m2.family",
+      "core.unpacker.m2.denormal_handling",
+      "core.unpacker.m2.lzc.family",
+      "core.unpacker.m2.lzc.block_primitive",
+      "core.unpacker.m2.lzc.output_form",
+      "core.unpacker.m2.lzc.valid_flag_propagation",
+      "core.unpacker.m2.shifter.family",
+      "core.unpacker.m2.shifter.stage_radix",
+      "core.unpacker.m2.shifter.select_encoding",
+      "core.unpacker.m2.shifter.stage_order",
+      "core.unpacker.m2.shifter.direction_handling",
+      "core.unpacker.m2.shifter.sticky_collect"
+     ],
+     "defaulted_under": {},
+     "detail": "declaration ok (0 declared, 224 at defaults)"
+    },
+    "node_hash": "declaration"
+   },
+   "lint": {
+    "value": {
+     "ok": true,
+     "detail": "",
+     "seconds": 4.0
+    },
+    "node_hash": "330431c5600505d073f75ad7585161b939feb430acffe915e62085fb446076c2"
+   },
+   "conformance": {
+    "value": {
+     "pass": true,
+     "mismatch_count": 0,
+     "first_mismatches": [],
+     "detail": "bit-exact against the reference",
+     "cycles_per_frame": null,
+     "seconds": 5.3
+    },
+    "node_hash": "4b589708b7f7b56eec50d3646a4b85c02765ca8b3e61f78320afd8f1d3a05560"
+   },
+   "yosys_stat": {
+    "value": {
+     "ok": true,
+     "cells": 53465,
+     "detail": "",
+     "seconds": 15.5
+    },
+    "node_hash": "fc0b4cd6d4e1b05bacc0531aeb235eb435a3f25e39fa3bee98c0f9d4295499a8"
+   },
+   "synth_unit": {
+    "value": {
+     "ok": true,
+     "area_um2": 7846.202,
+     "attribution": {
+      "m0.l0.fp_adder": {
+       "module": "alu_core_u_fp_adders_across_formats",
+       "area_um2": 830.718,
+       "abc_delay_ps": 808.17,
+       "ok": true
+      },
+      "m0.l0.unpacker": {
+       "module": "alu_core_u_m0_l0_unpacker",
+       "area_um2": 318.136,
+       "abc_delay_ps": 574.45,
+       "ok": true
+      },
+      "m0.l0.rounder": {
+       "module": "alu_core_u_m0_l0_rounder",
+       "area_um2": 1203.118,
+       "abc_delay_ps": 2009.7,
+       "ok": true
+      },
+      "m0.l0.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 1018.514,
+       "abc_delay_ps": 617.61,
+       "ok": true
+      },
+      "m0.l0.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1202.32,
+       "abc_delay_ps": 976.5,
+       "ok": true
+      },
+      "m1.l0.fp_adder": {
+       "module": "alu_core_u_fp_adders_across_formats",
+       "area_um2": 830.718,
+       "abc_delay_ps": 808.17,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_adder"
+       ]
+      },
+      "m1.l0.unpacker": {
+       "module": "alu_core_u_m1_l0_unpacker",
+       "area_um2": 314.146,
+       "abc_delay_ps": 463.98,
+       "ok": true
+      },
+      "m1.l0.rounder": {
+       "module": "alu_core_u_m1_l0_rounder",
+       "area_um2": 1020.11,
+       "abc_delay_ps": 1932.51,
+       "ok": true
+      },
+      "m1.l0.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 1018.514,
+       "abc_delay_ps": 617.61,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_multiplier"
+       ]
+      },
+      "m1.l0.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1202.32,
+       "abc_delay_ps": 976.5,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_comparator"
+       ]
+      },
+      "m2.l0.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 1018.514,
+       "abc_delay_ps": 617.61,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_multiplier",
+        "m1.l0.fp_multiplier"
+       ]
+      },
+      "m2.l1.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 1018.514,
+       "abc_delay_ps": 617.61,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_multiplier",
+        "m1.l0.fp_multiplier",
+        "m2.l0.fp_multiplier"
+       ]
+      },
+      "m2.l0.unpacker": {
+       "module": "alu_core_u_m2_l0_unpacker",
+       "area_um2": 80.332,
+       "abc_delay_ps": 242.1,
+       "ok": true
+      },
+      "m2.l0.rounder": {
+       "module": "alu_core_u_m2_l0_rounder",
+       "area_um2": 889.238,
+       "abc_delay_ps": 1847.29,
+       "ok": true
+      },
+      "m2.l1.unpacker": {
+       "module": "alu_core_u_m2_l1_unpacker",
+       "area_um2": 80.332,
+       "abc_delay_ps": 242.1,
+       "ok": true
+      },
+      "m2.l1.rounder": {
+       "module": "alu_core_u_m2_l1_rounder",
+       "area_um2": 889.238,
+       "abc_delay_ps": 1847.29,
+       "ok": true
+      },
+      "m2.l0.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1202.32,
+       "abc_delay_ps": 976.5,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_comparator",
+        "m1.l0.fp_comparator"
+       ]
+      },
+      "m2.l1.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1202.32,
+       "abc_delay_ps": 976.5,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_comparator",
+        "m1.l0.fp_comparator",
+        "m2.l0.fp_comparator"
+       ]
+      }
+     },
+     "seconds": 3.0,
+     "detail": ""
+    },
+    "node_hash": "4cf2791e1dbbd24563740222df8ef5acfaaff3b8e538f054a339e4838bf8d7c6"
+   },
+   "synth_ppa": {
+    "value": {
+     "ok": true,
+     "area_um2": 6174.392,
+     "cells": 5290,
+     "abc_delay_ps": 4999.77,
+     "seconds": 20.0,
+     "pdk": "nangate45",
+     "clock_ps": 300,
+     "detail": ""
+    },
+    "node_hash": "64b19fce6d49d982715f02b580e880e8529efd7fbb64ce46e5429b64d4758a01"
+   }
+  }
+ },
+ {
+  "seed_name": "front_4",
+  "feasible": true,
+  "goal_values": [
+   8612.282,
+   5534.58
+  ],
+  "constraints": [
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "declaration.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "lint.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "conformance.pass == true",
+    "hard": true,
+    "satisfies": null
+   }
+  ],
+  "measurements": {
+   "declaration": {
+    "value": {
+     "decl.core.subword.family": "replicated_lanes",
+     "decl.core.fp_fma.m0.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m0.family": "single_path",
+     "decl.core.fp_adder.m0.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m0.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m0.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m0.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.exp.family": "exponent_path",
+     "decl.core.fp_adder.m0.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m0.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.align.family": "full_align",
+     "decl.core.fp_adder.m0.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m0.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m0.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m0.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m0.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m0.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m0.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m0.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.lz.family": "lza",
+     "decl.core.fp_adder.m0.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m0.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m0.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m0.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m0.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m0.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m0.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m0.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m0.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m1.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m1.family": "single_path",
+     "decl.core.fp_adder.m1.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m1.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m1.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m1.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.exp.family": "exponent_path",
+     "decl.core.fp_adder.m1.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m1.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.align.family": "full_align",
+     "decl.core.fp_adder.m1.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m1.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m1.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m1.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m1.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m1.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m1.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m1.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.lz.family": "lza",
+     "decl.core.fp_adder.m1.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m1.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m1.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m1.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m1.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m1.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m1.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m1.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m1.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m2.family": "separate_multiplier_and_adder",
+     "decl.core.fp_multiplier.m2.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m2.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m2.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_comparator.m0.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m0.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m0.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m0.comparator.radix": 2,
+     "decl.core.fp_comparator.m1.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m1.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m1.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m1.comparator.radix": 2,
+     "decl.core.fp_comparator.m2.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m2.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m2.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m2.comparator.radix": 2,
+     "decl.core.rounder.m0.family": "shared_across_formats",
+     "decl.core.rounder.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m0.lzc.output_form": "binary_count",
+     "decl.core.rounder.m0.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m0.shifter.stage_radix": 2,
+     "decl.core.rounder.m0.shifter.select_encoding": "binary",
+     "decl.core.rounder.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m0.shifter.sticky_collect": false,
+     "decl.core.rounder.m0.round.family": "increment_adder",
+     "decl.core.rounder.m0.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m0.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m0.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.family": "shared_across_formats",
+     "decl.core.rounder.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m1.lzc.output_form": "binary_count",
+     "decl.core.rounder.m1.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m1.shifter.stage_radix": 2,
+     "decl.core.rounder.m1.shifter.select_encoding": "binary",
+     "decl.core.rounder.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m1.shifter.sticky_collect": false,
+     "decl.core.rounder.m1.round.family": "increment_adder",
+     "decl.core.rounder.m1.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m1.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.family": "shared_across_formats",
+     "decl.core.rounder.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m2.lzc.output_form": "binary_count",
+     "decl.core.rounder.m2.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m2.shifter.stage_radix": 2,
+     "decl.core.rounder.m2.shifter.select_encoding": "binary",
+     "decl.core.rounder.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m2.shifter.sticky_collect": false,
+     "decl.core.rounder.m2.round.family": "increment_adder",
+     "decl.core.rounder.m2.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m2.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.exp_incrementer.topology": "sklansky",
+     "decl.core.unpacker.m0.family": "shared_across_formats",
+     "decl.core.unpacker.m0.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m0.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m0.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m0.shifter.stage_radix": 2,
+     "decl.core.unpacker.m0.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m0.shifter.sticky_collect": false,
+     "decl.core.unpacker.m1.family": "shared_across_formats",
+     "decl.core.unpacker.m1.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m1.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m1.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m1.shifter.stage_radix": 2,
+     "decl.core.unpacker.m1.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m1.shifter.sticky_collect": false,
+     "decl.core.unpacker.m2.family": "shared_across_formats",
+     "decl.core.unpacker.m2.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m2.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m2.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m2.shifter.stage_radix": 2,
+     "decl.core.unpacker.m2.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m2.shifter.sticky_collect": false,
+     "decl.STRUCTURE": [
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_m0_l0_fp_adder",
+       "_": [
+        "m0.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m0.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m0.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m0.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": "fmul",
+       "sv": "alu_core_u_m0_l0_fp_multiplier",
+       "_": [
+        "m0.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m0_l0_fp_comparator",
+       "_": [
+        "m0.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_m1_l0_fp_adder",
+       "_": [
+        "m1.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m1.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m1.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m1.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": "fmul",
+       "sv": "alu_core_u_m1_l0_fp_multiplier",
+       "_": [
+        "m1.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m1_l0_fp_comparator",
+       "_": [
+        "m1.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l0_fp_multiplier",
+       "_": [
+        "m2.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_m2_l1_fp_multiplier",
+       "_": [
+        "m2.l1.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m2.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m2.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m2.l1.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m2.l1.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l1.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l0_fp_comparator",
+       "_": [
+        "m2.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_m2_l1_fp_comparator",
+       "_": [
+        "m2.l1.fp_comparator"
+       ]
+      }
+     ],
+     "ok": true,
+     "defaulted": [
+      "core.subword.family",
+      "core.fp_fma.m0.family",
+      "core.fp_adder.m0.family",
+      "core.fp_adder.m0.subnormal_representation",
+      "core.fp_adder.m0.operand_order",
+      "core.fp_adder.m0.negation_handling",
+      "core.fp_adder.m0.sig_adder.family",
+      "core.fp_adder.m0.sig_adder.full_adder_logic",
+      "core.fp_adder.m0.sig_adder.chunk_width_bits",
+      "core.fp_adder.m0.exp.family",
+      "core.fp_adder.m0.exp.dual_direction_subtract",
+      "core.fp_adder.m0.exp.adder.family",
+      "core.fp_adder.m0.exp.adder.full_adder_logic",
+      "core.fp_adder.m0.exp.adder.chunk_width_bits",
+      "core.fp_adder.m0.align.family",
+      "core.fp_adder.m0.align.sticky_method",
+      "core.fp_adder.m0.align.shifter.family",
+      "core.fp_adder.m0.align.shifter.stage_radix",
+      "core.fp_adder.m0.align.shifter.select_encoding",
+      "core.fp_adder.m0.align.shifter.stage_order",
+      "core.fp_adder.m0.align.shifter.direction_handling",
+      "core.fp_adder.m0.align.shifter.sticky_collect",
+      "core.fp_adder.m0.align.tzc.family",
+      "core.fp_adder.m0.align.tzc.strategy",
+      "core.fp_adder.m0.align.tzc.isolate_circuit",
+      "core.fp_adder.m0.align.tzc.lzd.family",
+      "core.fp_adder.m0.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m0.align.tzc.lzd.output_form",
+      "core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m0.norm.family",
+      "core.fp_adder.m0.norm.coarse_granularity",
+      "core.fp_adder.m0.norm.shifter.family",
+      "core.fp_adder.m0.norm.shifter.stage_radix",
+      "core.fp_adder.m0.norm.shifter.select_encoding",
+      "core.fp_adder.m0.norm.shifter.stage_order",
+      "core.fp_adder.m0.norm.shifter.direction_handling",
+      "core.fp_adder.m0.norm.shifter.sticky_collect",
+      "core.fp_adder.m0.lz.family",
+      "core.fp_adder.m0.lz.correction_scheme",
+      "core.fp_adder.m0.lz.string_form",
+      "core.fp_adder.m0.lz.indicator_restriction",
+      "core.fp_adder.m0.lz.zero_result_detect",
+      "core.fp_adder.m0.lz.encoder.family",
+      "core.fp_adder.m0.lz.encoder.block_primitive",
+      "core.fp_adder.m0.lz.encoder.output_form",
+      "core.fp_adder.m0.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m0.family",
+      "core.fp_multiplier.m0.sig_mul.family",
+      "core.fp_multiplier.m0.exp_adder.family",
+      "core.fp_multiplier.m0.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m0.exp_adder.chunk_width_bits",
+      "core.fp_fma.m1.family",
+      "core.fp_adder.m1.family",
+      "core.fp_adder.m1.subnormal_representation",
+      "core.fp_adder.m1.operand_order",
+      "core.fp_adder.m1.negation_handling",
+      "core.fp_adder.m1.sig_adder.family",
+      "core.fp_adder.m1.sig_adder.full_adder_logic",
+      "core.fp_adder.m1.sig_adder.chunk_width_bits",
+      "core.fp_adder.m1.exp.family",
+      "core.fp_adder.m1.exp.dual_direction_subtract",
+      "core.fp_adder.m1.exp.adder.family",
+      "core.fp_adder.m1.exp.adder.full_adder_logic",
+      "core.fp_adder.m1.exp.adder.chunk_width_bits",
+      "core.fp_adder.m1.align.family",
+      "core.fp_adder.m1.align.sticky_method",
+      "core.fp_adder.m1.align.shifter.family",
+      "core.fp_adder.m1.align.shifter.stage_radix",
+      "core.fp_adder.m1.align.shifter.select_encoding",
+      "core.fp_adder.m1.align.shifter.stage_order",
+      "core.fp_adder.m1.align.shifter.direction_handling",
+      "core.fp_adder.m1.align.shifter.sticky_collect",
+      "core.fp_adder.m1.align.tzc.family",
+      "core.fp_adder.m1.align.tzc.strategy",
+      "core.fp_adder.m1.align.tzc.isolate_circuit",
+      "core.fp_adder.m1.align.tzc.lzd.family",
+      "core.fp_adder.m1.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m1.align.tzc.lzd.output_form",
+      "core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m1.norm.family",
+      "core.fp_adder.m1.norm.coarse_granularity",
+      "core.fp_adder.m1.norm.shifter.family",
+      "core.fp_adder.m1.norm.shifter.stage_radix",
+      "core.fp_adder.m1.norm.shifter.select_encoding",
+      "core.fp_adder.m1.norm.shifter.stage_order",
+      "core.fp_adder.m1.norm.shifter.direction_handling",
+      "core.fp_adder.m1.norm.shifter.sticky_collect",
+      "core.fp_adder.m1.lz.family",
+      "core.fp_adder.m1.lz.correction_scheme",
+      "core.fp_adder.m1.lz.string_form",
+      "core.fp_adder.m1.lz.indicator_restriction",
+      "core.fp_adder.m1.lz.zero_result_detect",
+      "core.fp_adder.m1.lz.encoder.family",
+      "core.fp_adder.m1.lz.encoder.block_primitive",
+      "core.fp_adder.m1.lz.encoder.output_form",
+      "core.fp_adder.m1.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m1.family",
+      "core.fp_multiplier.m1.sig_mul.family",
+      "core.fp_multiplier.m1.exp_adder.family",
+      "core.fp_multiplier.m1.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m1.exp_adder.chunk_width_bits",
+      "core.fp_fma.m2.family",
+      "core.fp_multiplier.m2.family",
+      "core.fp_multiplier.m2.sig_mul.family",
+      "core.fp_multiplier.m2.exp_adder.family",
+      "core.fp_multiplier.m2.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m2.exp_adder.chunk_width_bits",
+      "core.fp_comparator.m0.family",
+      "core.fp_comparator.m0.comparator.family",
+      "core.fp_comparator.m0.comparator.structure",
+      "core.fp_comparator.m0.comparator.radix",
+      "core.fp_comparator.m1.family",
+      "core.fp_comparator.m1.comparator.family",
+      "core.fp_comparator.m1.comparator.structure",
+      "core.fp_comparator.m1.comparator.radix",
+      "core.fp_comparator.m2.family",
+      "core.fp_comparator.m2.comparator.family",
+      "core.fp_comparator.m2.comparator.structure",
+      "core.fp_comparator.m2.comparator.radix",
+      "core.rounder.m0.lzc.family",
+      "core.rounder.m0.lzc.block_primitive",
+      "core.rounder.m0.lzc.output_form",
+      "core.rounder.m0.lzc.valid_flag_propagation",
+      "core.rounder.m0.shifter.family",
+      "core.rounder.m0.shifter.stage_radix",
+      "core.rounder.m0.shifter.select_encoding",
+      "core.rounder.m0.shifter.stage_order",
+      "core.rounder.m0.shifter.direction_handling",
+      "core.rounder.m0.shifter.sticky_collect",
+      "core.rounder.m0.round.family",
+      "core.rounder.m0.round.incrementer.family",
+      "core.rounder.m0.round.incrementer.structure",
+      "core.rounder.m0.round.incrementer.topology",
+      "core.rounder.m0.exp_adder.family",
+      "core.rounder.m0.exp_adder.full_adder_logic",
+      "core.rounder.m0.exp_adder.chunk_width_bits",
+      "core.rounder.m0.exp_incrementer.family",
+      "core.rounder.m0.exp_incrementer.structure",
+      "core.rounder.m0.exp_incrementer.topology",
+      "core.rounder.m1.lzc.family",
+      "core.rounder.m1.lzc.block_primitive",
+      "core.rounder.m1.lzc.output_form",
+      "core.rounder.m1.lzc.valid_flag_propagation",
+      "core.rounder.m1.shifter.family",
+      "core.rounder.m1.shifter.stage_radix",
+      "core.rounder.m1.shifter.select_encoding",
+      "core.rounder.m1.shifter.stage_order",
+      "core.rounder.m1.shifter.direction_handling",
+      "core.rounder.m1.shifter.sticky_collect",
+      "core.rounder.m1.round.family",
+      "core.rounder.m1.round.incrementer.family",
+      "core.rounder.m1.round.incrementer.structure",
+      "core.rounder.m1.round.incrementer.topology",
+      "core.rounder.m1.exp_adder.family",
+      "core.rounder.m1.exp_adder.full_adder_logic",
+      "core.rounder.m1.exp_adder.chunk_width_bits",
+      "core.rounder.m1.exp_incrementer.family",
+      "core.rounder.m1.exp_incrementer.structure",
+      "core.rounder.m1.exp_incrementer.topology",
+      "core.rounder.m2.lzc.family",
+      "core.rounder.m2.lzc.block_primitive",
+      "core.rounder.m2.lzc.output_form",
+      "core.rounder.m2.lzc.valid_flag_propagation",
+      "core.rounder.m2.shifter.family",
+      "core.rounder.m2.shifter.stage_radix",
+      "core.rounder.m2.shifter.select_encoding",
+      "core.rounder.m2.shifter.stage_order",
+      "core.rounder.m2.shifter.direction_handling",
+      "core.rounder.m2.shifter.sticky_collect",
+      "core.rounder.m2.round.family",
+      "core.rounder.m2.round.incrementer.family",
+      "core.rounder.m2.round.incrementer.structure",
+      "core.rounder.m2.round.incrementer.topology",
+      "core.rounder.m2.exp_adder.family",
+      "core.rounder.m2.exp_adder.full_adder_logic",
+      "core.rounder.m2.exp_adder.chunk_width_bits",
+      "core.rounder.m2.exp_incrementer.family",
+      "core.rounder.m2.exp_incrementer.structure",
+      "core.rounder.m2.exp_incrementer.topology",
+      "core.unpacker.m0.denormal_handling",
+      "core.unpacker.m0.lzc.family",
+      "core.unpacker.m0.lzc.block_primitive",
+      "core.unpacker.m0.lzc.output_form",
+      "core.unpacker.m0.lzc.valid_flag_propagation",
+      "core.unpacker.m0.shifter.family",
+      "core.unpacker.m0.shifter.stage_radix",
+      "core.unpacker.m0.shifter.select_encoding",
+      "core.unpacker.m0.shifter.stage_order",
+      "core.unpacker.m0.shifter.direction_handling",
+      "core.unpacker.m0.shifter.sticky_collect",
+      "core.unpacker.m1.denormal_handling",
+      "core.unpacker.m1.lzc.family",
+      "core.unpacker.m1.lzc.block_primitive",
+      "core.unpacker.m1.lzc.output_form",
+      "core.unpacker.m1.lzc.valid_flag_propagation",
+      "core.unpacker.m1.shifter.family",
+      "core.unpacker.m1.shifter.stage_radix",
+      "core.unpacker.m1.shifter.select_encoding",
+      "core.unpacker.m1.shifter.stage_order",
+      "core.unpacker.m1.shifter.direction_handling",
+      "core.unpacker.m1.shifter.sticky_collect",
+      "core.unpacker.m2.denormal_handling",
+      "core.unpacker.m2.lzc.family",
+      "core.unpacker.m2.lzc.block_primitive",
+      "core.unpacker.m2.lzc.output_form",
+      "core.unpacker.m2.lzc.valid_flag_propagation",
+      "core.unpacker.m2.shifter.family",
+      "core.unpacker.m2.shifter.stage_radix",
+      "core.unpacker.m2.shifter.select_encoding",
+      "core.unpacker.m2.shifter.stage_order",
+      "core.unpacker.m2.shifter.direction_handling",
+      "core.unpacker.m2.shifter.sticky_collect"
+     ],
+     "defaulted_under": {},
+     "detail": "declaration ok (6 declared, 218 at defaults)"
+    },
+    "node_hash": "declaration"
+   },
+   "lint": {
+    "value": {
+     "ok": true,
+     "detail": "",
+     "seconds": 1.3
+    },
+    "node_hash": "cf883f3cb0feda0cb1b76562574fd233cfb7eb2c894a2df5f3a409691af15a50"
+   },
+   "conformance": {
+    "value": {
+     "pass": true,
+     "mismatch_count": 0,
+     "first_mismatches": [],
+     "detail": "bit-exact against the reference",
+     "cycles_per_frame": null,
+     "seconds": 3.9
+    },
+    "node_hash": "50341bb6c2c5ff7742591f2f72e032e294a906178e064bb5ab33c44bc94082c5"
+   },
+   "yosys_stat": {
+    "value": {
+     "ok": true,
+     "cells": 32744,
+     "detail": "",
+     "seconds": 7.0
+    },
+    "node_hash": "62492ee68935f896bff855991367a1246b0188280015ddf7a3a38eeaa3d3134f"
+   },
+   "synth_unit": {
+    "value": {
+     "ok": true,
+     "area_um2": 9645.160000000002,
+     "attribution": {
+      "m0.l0.fp_adder": {
+       "module": "alu_core_u_m0_l0_fp_adder",
+       "area_um2": 1738.842,
+       "abc_delay_ps": 3097.64,
+       "ok": true
+      },
+      "m0.l0.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true
+      },
+      "m0.l0.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true
+      },
+      "m0.l0.fp_multiplier": {
+       "module": "alu_core_u_m0_l0_fp_multiplier",
+       "area_um2": 1073.31,
+       "abc_delay_ps": 959.95,
+       "ok": true
+      },
+      "m0.l0.fp_comparator": {
+       "module": "alu_core_u_m0_l0_fp_comparator",
+       "area_um2": 373.996,
+       "abc_delay_ps": 660.28,
+       "ok": true
+      },
+      "m1.l0.fp_adder": {
+       "module": "alu_core_u_m1_l0_fp_adder",
+       "area_um2": 1738.842,
+       "abc_delay_ps": 3097.64,
+       "ok": true
+      },
+      "m1.l0.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.unpacker"
+       ]
+      },
+      "m1.l0.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.rounder"
+       ]
+      },
+      "m1.l0.fp_multiplier": {
+       "module": "alu_core_u_m1_l0_fp_multiplier",
+       "area_um2": 1073.31,
+       "abc_delay_ps": 959.95,
+       "ok": true
+      },
+      "m1.l0.fp_comparator": {
+       "module": "alu_core_u_m1_l0_fp_comparator",
+       "area_um2": 352.716,
+       "abc_delay_ps": 773.12,
+       "ok": true
+      },
+      "m2.l0.fp_multiplier": {
+       "module": "alu_core_u_m2_l0_fp_multiplier",
+       "area_um2": 1066.66,
+       "abc_delay_ps": 982.72,
+       "ok": true
+      },
+      "m2.l1.fp_multiplier": {
+       "module": "alu_core_u_m2_l1_fp_multiplier",
+       "area_um2": 1066.66,
+       "abc_delay_ps": 982.72,
+       "ok": true
+      },
+      "m2.l0.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.unpacker",
+        "m1.l0.unpacker"
+       ]
+      },
+      "m2.l0.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.rounder",
+        "m1.l0.rounder"
+       ]
+      },
+      "m2.l1.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.unpacker",
+        "m1.l0.unpacker",
+        "m2.l0.unpacker"
+       ]
+      },
+      "m2.l1.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.rounder",
+        "m1.l0.rounder",
+        "m2.l0.rounder"
+       ]
+      },
+      "m2.l0.fp_comparator": {
+       "module": "alu_core_u_m2_l0_fp_comparator",
+       "area_um2": 346.066,
+       "abc_delay_ps": 733.98,
+       "ok": true
+      },
+      "m2.l1.fp_comparator": {
+       "module": "alu_core_u_m2_l1_fp_comparator",
+       "area_um2": 346.066,
+       "abc_delay_ps": 733.98,
+       "ok": true
+      }
+     },
+     "seconds": 1.9,
+     "detail": ""
+    },
+    "node_hash": "78eeaf7d2d59ee58afe94351bcdc051e71aca8da1525b5da0c7c39e983f4b815"
+   },
+   "synth_ppa": {
+    "value": {
+     "ok": true,
+     "area_um2": 8612.282,
+     "cells": 7520,
+     "abc_delay_ps": 5534.58,
+     "seconds": 12.6,
+     "pdk": "nangate45",
+     "clock_ps": 300,
+     "detail": ""
+    },
+    "node_hash": "a4dc491282c71a86da3b1596880d2d28f920985e0f725d9aa61ad1da4fdaf31d"
+   }
+  }
+ },
+ {
+  "seed_name": "front_5",
+  "feasible": true,
+  "goal_values": [
+   7025.592,
+   5453.88
+  ],
+  "constraints": [
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "declaration.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "lint.ok == true",
+    "hard": true,
+    "satisfies": null
+   },
+   {
+    "status": "satisfied",
+    "slack": 0.0,
+    "lhs": true,
+    "rhs": true,
+    "text": "conformance.pass == true",
+    "hard": true,
+    "satisfies": null
+   }
+  ],
+  "measurements": {
+   "declaration": {
+    "value": {
+     "decl.core.subword.family": "replicated_lanes",
+     "decl.core.fp_fma.m0.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m0.family": "single_path",
+     "decl.core.fp_adder.m0.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m0.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m0.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m0.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.exp.family": "exponent_path",
+     "decl.core.fp_adder.m0.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m0.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m0.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m0.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m0.align.family": "full_align",
+     "decl.core.fp_adder.m0.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m0.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m0.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m0.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m0.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m0.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m0.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m0.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m0.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m0.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m0.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m0.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m0.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m0.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m0.lz.family": "lza",
+     "decl.core.fp_adder.m0.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m0.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m0.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m0.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m0.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m0.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m0.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m0.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m0.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m0.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m0.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m1.family": "separate_multiplier_and_adder",
+     "decl.core.fp_adder.m1.family": "single_path",
+     "decl.core.fp_adder.m1.subnormal_representation": "as_stored",
+     "decl.core.fp_adder.m1.operand_order": "swap_before_shift",
+     "decl.core.fp_adder.m1.negation_handling": "end_around_carry",
+     "decl.core.fp_adder.m1.sig_adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.sig_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.sig_adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.exp.family": "exponent_path",
+     "decl.core.fp_adder.m1.exp.dual_direction_subtract": false,
+     "decl.core.fp_adder.m1.exp.adder.family": "ripple_carry",
+     "decl.core.fp_adder.m1.exp.adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_adder.m1.exp.adder.chunk_width_bits": 1,
+     "decl.core.fp_adder.m1.align.family": "full_align",
+     "decl.core.fp_adder.m1.align.sticky_method": "or_tree_shifted_out",
+     "decl.core.fp_adder.m1.align.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.align.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.align.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.align.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.align.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.align.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.align.tzc.family": "trailing_zero",
+     "decl.core.fp_adder.m1.align.tzc.strategy": "reverse_then_lzd",
+     "decl.core.fp_adder.m1.align.tzc.isolate_circuit": "twos_complement_and",
+     "decl.core.fp_adder.m1.align.tzc.lzd.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.align.tzc.lzd.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.align.tzc.lzd.output_form": "binary_count",
+     "decl.core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation": false,
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+     "decl.core.fp_adder.m1.align.tzc.negation_incrementer.topology": "sklansky",
+     "decl.core.fp_adder.m1.norm.family": "coarse_fine",
+     "decl.core.fp_adder.m1.norm.coarse_granularity": 4,
+     "decl.core.fp_adder.m1.norm.shifter.family": "barrel_mux_tree",
+     "decl.core.fp_adder.m1.norm.shifter.stage_radix": 2,
+     "decl.core.fp_adder.m1.norm.shifter.select_encoding": "binary",
+     "decl.core.fp_adder.m1.norm.shifter.stage_order": "small_shift_first",
+     "decl.core.fp_adder.m1.norm.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.fp_adder.m1.norm.shifter.sticky_collect": false,
+     "decl.core.fp_adder.m1.lz.family": "lza",
+     "decl.core.fp_adder.m1.lz.correction_scheme": "post_norm_fine_shift",
+     "decl.core.fp_adder.m1.lz.string_form": "single_indicator",
+     "decl.core.fp_adder.m1.lz.indicator_restriction": "general",
+     "decl.core.fp_adder.m1.lz.zero_result_detect": "indicator_or",
+     "decl.core.fp_adder.m1.lz.encoder.family": "lzd_cell_tree",
+     "decl.core.fp_adder.m1.lz.encoder.block_primitive": "pair_cell",
+     "decl.core.fp_adder.m1.lz.encoder.output_form": "binary_count",
+     "decl.core.fp_adder.m1.lz.encoder.valid_flag_propagation": false,
+     "decl.core.fp_multiplier.m1.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m1.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m1.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_fma.m2.family": "separate_multiplier_and_adder",
+     "decl.core.fp_multiplier.m2.family": "sig_mul_then_round",
+     "decl.core.fp_multiplier.m2.sig_mul.family": "behavioral_star",
+     "decl.core.fp_multiplier.m2.exp_adder.family": "ripple_carry",
+     "decl.core.fp_multiplier.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.fp_multiplier.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.fp_comparator.m0.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m0.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m0.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m0.comparator.radix": 2,
+     "decl.core.fp_comparator.m1.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m1.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m1.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m1.comparator.radix": 2,
+     "decl.core.fp_comparator.m2.family": "integer_compare_on_bits",
+     "decl.core.fp_comparator.m2.comparator.family": "prefix_comparator",
+     "decl.core.fp_comparator.m2.comparator.structure": "msb_first_prefix",
+     "decl.core.fp_comparator.m2.comparator.radix": 2,
+     "decl.core.rounder.m0.family": "shared_across_formats",
+     "decl.core.rounder.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m0.lzc.output_form": "binary_count",
+     "decl.core.rounder.m0.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m0.shifter.stage_radix": 2,
+     "decl.core.rounder.m0.shifter.select_encoding": "binary",
+     "decl.core.rounder.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m0.shifter.sticky_collect": false,
+     "decl.core.rounder.m0.round.family": "increment_adder",
+     "decl.core.rounder.m0.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m0.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m0.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m0.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m0.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m0.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m0.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.family": "shared_across_formats",
+     "decl.core.rounder.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m1.lzc.output_form": "binary_count",
+     "decl.core.rounder.m1.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m1.shifter.stage_radix": 2,
+     "decl.core.rounder.m1.shifter.select_encoding": "binary",
+     "decl.core.rounder.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m1.shifter.sticky_collect": false,
+     "decl.core.rounder.m1.round.family": "increment_adder",
+     "decl.core.rounder.m1.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m1.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m1.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m1.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m1.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m1.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m1.exp_incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.family": "shared_across_formats",
+     "decl.core.rounder.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.rounder.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.rounder.m2.lzc.output_form": "binary_count",
+     "decl.core.rounder.m2.lzc.valid_flag_propagation": false,
+     "decl.core.rounder.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.rounder.m2.shifter.stage_radix": 2,
+     "decl.core.rounder.m2.shifter.select_encoding": "binary",
+     "decl.core.rounder.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.rounder.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.rounder.m2.shifter.sticky_collect": false,
+     "decl.core.rounder.m2.round.family": "increment_adder",
+     "decl.core.rounder.m2.round.incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.round.incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.round.incrementer.topology": "sklansky",
+     "decl.core.rounder.m2.exp_adder.family": "ripple_carry",
+     "decl.core.rounder.m2.exp_adder.full_adder_logic": "generate_propagate",
+     "decl.core.rounder.m2.exp_adder.chunk_width_bits": 1,
+     "decl.core.rounder.m2.exp_incrementer.family": "prefix_and_incrementer",
+     "decl.core.rounder.m2.exp_incrementer.structure": "ripple_and_chain",
+     "decl.core.rounder.m2.exp_incrementer.topology": "sklansky",
+     "decl.core.unpacker.m0.family": "shared_across_formats",
+     "decl.core.unpacker.m0.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m0.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m0.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m0.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m0.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m0.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m0.shifter.stage_radix": 2,
+     "decl.core.unpacker.m0.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m0.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m0.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m0.shifter.sticky_collect": false,
+     "decl.core.unpacker.m1.family": "shared_across_formats",
+     "decl.core.unpacker.m1.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m1.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m1.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m1.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m1.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m1.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m1.shifter.stage_radix": 2,
+     "decl.core.unpacker.m1.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m1.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m1.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m1.shifter.sticky_collect": false,
+     "decl.core.unpacker.m2.family": "shared_across_formats",
+     "decl.core.unpacker.m2.denormal_handling": "in_unpack",
+     "decl.core.unpacker.m2.lzc.family": "lzd_cell_tree",
+     "decl.core.unpacker.m2.lzc.block_primitive": "pair_cell",
+     "decl.core.unpacker.m2.lzc.output_form": "binary_count",
+     "decl.core.unpacker.m2.lzc.valid_flag_propagation": false,
+     "decl.core.unpacker.m2.shifter.family": "barrel_mux_tree",
+     "decl.core.unpacker.m2.shifter.stage_radix": 2,
+     "decl.core.unpacker.m2.shifter.select_encoding": "binary",
+     "decl.core.unpacker.m2.shifter.stage_order": "small_shift_first",
+     "decl.core.unpacker.m2.shifter.direction_handling": "mirrored_datapath",
+     "decl.core.unpacker.m2.shifter.sticky_collect": false,
+     "decl.STRUCTURE": [
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_fp_adders_across_formats",
+       "group": "fp_adders_across_formats",
+       "_": [
+        "m0.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m0.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m0.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m0.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m0.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 0,
+       "lane": 0,
+       "width": 16,
+       "format": "fp16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m0.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_adder",
+       "slot": "fp_adder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub"
+       ],
+       "sv": "alu_core_u_fp_adders_across_formats",
+       "group": "fp_adders_across_formats",
+       "_": [
+        "m1.l0.fp_adder"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m1.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m1.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+       ],
+       "_": [
+        "m1.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m1.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 1,
+       "lane": 0,
+       "width": 16,
+       "format": "bf16",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m1.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m2.l0.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "fp_multiplier",
+       "slot": "fp_multiplier",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_fp_multipliers_across_formats",
+       "group": "fp_multipliers_across_formats",
+       "_": [
+        "m2.l1.fp_multiplier"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m2.l0.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m2.l0.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l0.fp_fma"
+       ]
+      },
+      {
+       "kind": "unpacker",
+       "slot": "unpacker",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_unpackers_across_formats",
+       "group": "unpackers_across_formats",
+       "_": [
+        "m2.l1.unpacker"
+       ]
+      },
+      {
+       "kind": "rounder",
+       "slot": "rounder",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "sv": "alu_core_u_rounders_across_formats",
+       "group": "rounders_across_formats",
+       "_": [
+        "m2.l1.rounder"
+       ]
+      },
+      {
+       "kind": "fp_fma",
+       "slot": "fp_fma",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": "fmul",
+       "_": [
+        "m2.l1.fp_fma"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 0,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m2.l0.fp_comparator"
+       ]
+      },
+      {
+       "kind": "fp_comparator",
+       "slot": "fp_comparator",
+       "mode": 2,
+       "lane": 1,
+       "width": 8,
+       "format": "fp8e5m2",
+       "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+       ],
+       "sv": "alu_core_u_fp_comparators_across_formats",
+       "group": "fp_comparators_across_formats",
+       "_": [
+        "m2.l1.fp_comparator"
+       ]
+      }
+     ],
+     "ok": true,
+     "defaulted": [
+      "core.subword.family",
+      "core.fp_fma.m0.family",
+      "core.fp_adder.m0.family",
+      "core.fp_adder.m0.subnormal_representation",
+      "core.fp_adder.m0.operand_order",
+      "core.fp_adder.m0.negation_handling",
+      "core.fp_adder.m0.sig_adder.family",
+      "core.fp_adder.m0.sig_adder.full_adder_logic",
+      "core.fp_adder.m0.sig_adder.chunk_width_bits",
+      "core.fp_adder.m0.exp.family",
+      "core.fp_adder.m0.exp.dual_direction_subtract",
+      "core.fp_adder.m0.exp.adder.family",
+      "core.fp_adder.m0.exp.adder.full_adder_logic",
+      "core.fp_adder.m0.exp.adder.chunk_width_bits",
+      "core.fp_adder.m0.align.family",
+      "core.fp_adder.m0.align.sticky_method",
+      "core.fp_adder.m0.align.shifter.family",
+      "core.fp_adder.m0.align.shifter.stage_radix",
+      "core.fp_adder.m0.align.shifter.select_encoding",
+      "core.fp_adder.m0.align.shifter.stage_order",
+      "core.fp_adder.m0.align.shifter.direction_handling",
+      "core.fp_adder.m0.align.shifter.sticky_collect",
+      "core.fp_adder.m0.align.tzc.family",
+      "core.fp_adder.m0.align.tzc.strategy",
+      "core.fp_adder.m0.align.tzc.isolate_circuit",
+      "core.fp_adder.m0.align.tzc.lzd.family",
+      "core.fp_adder.m0.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m0.align.tzc.lzd.output_form",
+      "core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m0.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m0.norm.family",
+      "core.fp_adder.m0.norm.coarse_granularity",
+      "core.fp_adder.m0.norm.shifter.family",
+      "core.fp_adder.m0.norm.shifter.stage_radix",
+      "core.fp_adder.m0.norm.shifter.select_encoding",
+      "core.fp_adder.m0.norm.shifter.stage_order",
+      "core.fp_adder.m0.norm.shifter.direction_handling",
+      "core.fp_adder.m0.norm.shifter.sticky_collect",
+      "core.fp_adder.m0.lz.family",
+      "core.fp_adder.m0.lz.correction_scheme",
+      "core.fp_adder.m0.lz.string_form",
+      "core.fp_adder.m0.lz.indicator_restriction",
+      "core.fp_adder.m0.lz.zero_result_detect",
+      "core.fp_adder.m0.lz.encoder.family",
+      "core.fp_adder.m0.lz.encoder.block_primitive",
+      "core.fp_adder.m0.lz.encoder.output_form",
+      "core.fp_adder.m0.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m0.family",
+      "core.fp_multiplier.m0.sig_mul.family",
+      "core.fp_multiplier.m0.exp_adder.family",
+      "core.fp_multiplier.m0.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m0.exp_adder.chunk_width_bits",
+      "core.fp_fma.m1.family",
+      "core.fp_adder.m1.family",
+      "core.fp_adder.m1.subnormal_representation",
+      "core.fp_adder.m1.operand_order",
+      "core.fp_adder.m1.negation_handling",
+      "core.fp_adder.m1.sig_adder.family",
+      "core.fp_adder.m1.sig_adder.full_adder_logic",
+      "core.fp_adder.m1.sig_adder.chunk_width_bits",
+      "core.fp_adder.m1.exp.family",
+      "core.fp_adder.m1.exp.dual_direction_subtract",
+      "core.fp_adder.m1.exp.adder.family",
+      "core.fp_adder.m1.exp.adder.full_adder_logic",
+      "core.fp_adder.m1.exp.adder.chunk_width_bits",
+      "core.fp_adder.m1.align.family",
+      "core.fp_adder.m1.align.sticky_method",
+      "core.fp_adder.m1.align.shifter.family",
+      "core.fp_adder.m1.align.shifter.stage_radix",
+      "core.fp_adder.m1.align.shifter.select_encoding",
+      "core.fp_adder.m1.align.shifter.stage_order",
+      "core.fp_adder.m1.align.shifter.direction_handling",
+      "core.fp_adder.m1.align.shifter.sticky_collect",
+      "core.fp_adder.m1.align.tzc.family",
+      "core.fp_adder.m1.align.tzc.strategy",
+      "core.fp_adder.m1.align.tzc.isolate_circuit",
+      "core.fp_adder.m1.align.tzc.lzd.family",
+      "core.fp_adder.m1.align.tzc.lzd.block_primitive",
+      "core.fp_adder.m1.align.tzc.lzd.output_form",
+      "core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.family",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.structure",
+      "core.fp_adder.m1.align.tzc.negation_incrementer.topology",
+      "core.fp_adder.m1.norm.family",
+      "core.fp_adder.m1.norm.coarse_granularity",
+      "core.fp_adder.m1.norm.shifter.family",
+      "core.fp_adder.m1.norm.shifter.stage_radix",
+      "core.fp_adder.m1.norm.shifter.select_encoding",
+      "core.fp_adder.m1.norm.shifter.stage_order",
+      "core.fp_adder.m1.norm.shifter.direction_handling",
+      "core.fp_adder.m1.norm.shifter.sticky_collect",
+      "core.fp_adder.m1.lz.family",
+      "core.fp_adder.m1.lz.correction_scheme",
+      "core.fp_adder.m1.lz.string_form",
+      "core.fp_adder.m1.lz.indicator_restriction",
+      "core.fp_adder.m1.lz.zero_result_detect",
+      "core.fp_adder.m1.lz.encoder.family",
+      "core.fp_adder.m1.lz.encoder.block_primitive",
+      "core.fp_adder.m1.lz.encoder.output_form",
+      "core.fp_adder.m1.lz.encoder.valid_flag_propagation",
+      "core.fp_multiplier.m1.family",
+      "core.fp_multiplier.m1.sig_mul.family",
+      "core.fp_multiplier.m1.exp_adder.family",
+      "core.fp_multiplier.m1.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m1.exp_adder.chunk_width_bits",
+      "core.fp_fma.m2.family",
+      "core.fp_multiplier.m2.family",
+      "core.fp_multiplier.m2.sig_mul.family",
+      "core.fp_multiplier.m2.exp_adder.family",
+      "core.fp_multiplier.m2.exp_adder.full_adder_logic",
+      "core.fp_multiplier.m2.exp_adder.chunk_width_bits",
+      "core.fp_comparator.m0.family",
+      "core.fp_comparator.m0.comparator.family",
+      "core.fp_comparator.m0.comparator.structure",
+      "core.fp_comparator.m0.comparator.radix",
+      "core.fp_comparator.m1.family",
+      "core.fp_comparator.m1.comparator.family",
+      "core.fp_comparator.m1.comparator.structure",
+      "core.fp_comparator.m1.comparator.radix",
+      "core.fp_comparator.m2.family",
+      "core.fp_comparator.m2.comparator.family",
+      "core.fp_comparator.m2.comparator.structure",
+      "core.fp_comparator.m2.comparator.radix",
+      "core.rounder.m0.lzc.family",
+      "core.rounder.m0.lzc.block_primitive",
+      "core.rounder.m0.lzc.output_form",
+      "core.rounder.m0.lzc.valid_flag_propagation",
+      "core.rounder.m0.shifter.family",
+      "core.rounder.m0.shifter.stage_radix",
+      "core.rounder.m0.shifter.select_encoding",
+      "core.rounder.m0.shifter.stage_order",
+      "core.rounder.m0.shifter.direction_handling",
+      "core.rounder.m0.shifter.sticky_collect",
+      "core.rounder.m0.round.family",
+      "core.rounder.m0.round.incrementer.family",
+      "core.rounder.m0.round.incrementer.structure",
+      "core.rounder.m0.round.incrementer.topology",
+      "core.rounder.m0.exp_adder.family",
+      "core.rounder.m0.exp_adder.full_adder_logic",
+      "core.rounder.m0.exp_adder.chunk_width_bits",
+      "core.rounder.m0.exp_incrementer.family",
+      "core.rounder.m0.exp_incrementer.structure",
+      "core.rounder.m0.exp_incrementer.topology",
+      "core.rounder.m1.lzc.family",
+      "core.rounder.m1.lzc.block_primitive",
+      "core.rounder.m1.lzc.output_form",
+      "core.rounder.m1.lzc.valid_flag_propagation",
+      "core.rounder.m1.shifter.family",
+      "core.rounder.m1.shifter.stage_radix",
+      "core.rounder.m1.shifter.select_encoding",
+      "core.rounder.m1.shifter.stage_order",
+      "core.rounder.m1.shifter.direction_handling",
+      "core.rounder.m1.shifter.sticky_collect",
+      "core.rounder.m1.round.family",
+      "core.rounder.m1.round.incrementer.family",
+      "core.rounder.m1.round.incrementer.structure",
+      "core.rounder.m1.round.incrementer.topology",
+      "core.rounder.m1.exp_adder.family",
+      "core.rounder.m1.exp_adder.full_adder_logic",
+      "core.rounder.m1.exp_adder.chunk_width_bits",
+      "core.rounder.m1.exp_incrementer.family",
+      "core.rounder.m1.exp_incrementer.structure",
+      "core.rounder.m1.exp_incrementer.topology",
+      "core.rounder.m2.lzc.family",
+      "core.rounder.m2.lzc.block_primitive",
+      "core.rounder.m2.lzc.output_form",
+      "core.rounder.m2.lzc.valid_flag_propagation",
+      "core.rounder.m2.shifter.family",
+      "core.rounder.m2.shifter.stage_radix",
+      "core.rounder.m2.shifter.select_encoding",
+      "core.rounder.m2.shifter.stage_order",
+      "core.rounder.m2.shifter.direction_handling",
+      "core.rounder.m2.shifter.sticky_collect",
+      "core.rounder.m2.round.family",
+      "core.rounder.m2.round.incrementer.family",
+      "core.rounder.m2.round.incrementer.structure",
+      "core.rounder.m2.round.incrementer.topology",
+      "core.rounder.m2.exp_adder.family",
+      "core.rounder.m2.exp_adder.full_adder_logic",
+      "core.rounder.m2.exp_adder.chunk_width_bits",
+      "core.rounder.m2.exp_incrementer.family",
+      "core.rounder.m2.exp_incrementer.structure",
+      "core.rounder.m2.exp_incrementer.topology",
+      "core.unpacker.m0.denormal_handling",
+      "core.unpacker.m0.lzc.family",
+      "core.unpacker.m0.lzc.block_primitive",
+      "core.unpacker.m0.lzc.output_form",
+      "core.unpacker.m0.lzc.valid_flag_propagation",
+      "core.unpacker.m0.shifter.family",
+      "core.unpacker.m0.shifter.stage_radix",
+      "core.unpacker.m0.shifter.select_encoding",
+      "core.unpacker.m0.shifter.stage_order",
+      "core.unpacker.m0.shifter.direction_handling",
+      "core.unpacker.m0.shifter.sticky_collect",
+      "core.unpacker.m1.denormal_handling",
+      "core.unpacker.m1.lzc.family",
+      "core.unpacker.m1.lzc.block_primitive",
+      "core.unpacker.m1.lzc.output_form",
+      "core.unpacker.m1.lzc.valid_flag_propagation",
+      "core.unpacker.m1.shifter.family",
+      "core.unpacker.m1.shifter.stage_radix",
+      "core.unpacker.m1.shifter.select_encoding",
+      "core.unpacker.m1.shifter.stage_order",
+      "core.unpacker.m1.shifter.direction_handling",
+      "core.unpacker.m1.shifter.sticky_collect",
+      "core.unpacker.m2.denormal_handling",
+      "core.unpacker.m2.lzc.family",
+      "core.unpacker.m2.lzc.block_primitive",
+      "core.unpacker.m2.lzc.output_form",
+      "core.unpacker.m2.lzc.valid_flag_propagation",
+      "core.unpacker.m2.shifter.family",
+      "core.unpacker.m2.shifter.stage_radix",
+      "core.unpacker.m2.shifter.select_encoding",
+      "core.unpacker.m2.shifter.stage_order",
+      "core.unpacker.m2.shifter.direction_handling",
+      "core.unpacker.m2.shifter.sticky_collect"
+     ],
+     "defaulted_under": {},
+     "detail": "declaration ok (6 declared, 218 at defaults)"
+    },
+    "node_hash": "declaration"
+   },
+   "lint": {
+    "value": {
+     "ok": true,
+     "detail": "",
+     "seconds": 1.1
+    },
+    "node_hash": "16bacb47fa58bb5c0d358c3be74169fae3e0359bbe963ba30c1652d44483bc6e"
+   },
+   "conformance": {
+    "value": {
+     "pass": true,
+     "mismatch_count": 0,
+     "first_mismatches": [],
+     "detail": "bit-exact against the reference",
+     "cycles_per_frame": null,
+     "seconds": 3.8
+    },
+    "node_hash": "1d6ad5ef09e06494c78adcb3a29e74aa3679447ae65247c6c8a6c2f5c0cb61d7"
+   },
+   "yosys_stat": {
+    "value": {
+     "ok": true,
+     "cells": 42427,
+     "detail": "",
+     "seconds": 6.8
+    },
+    "node_hash": "76dd095b33f624029535a4fc223025dc1d435d48e045730b6da98e5ca1f279fe"
+   },
+   "synth_unit": {
+    "value": {
+     "ok": true,
+     "area_um2": 2637.3900000000003,
+     "attribution": {
+      "m0.l0.fp_adder": {
+       "module": "alu_core_u_fp_adders_across_formats",
+       "area_um2": 460.446,
+       "abc_delay_ps": 298.94,
+       "ok": true
+      },
+      "m0.l0.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true
+      },
+      "m0.l0.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true
+      },
+      "m0.l0.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 702.772,
+       "abc_delay_ps": 201.83,
+       "ok": true
+      },
+      "m0.l0.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1005.48,
+       "abc_delay_ps": 436.79,
+       "ok": true
+      },
+      "m1.l0.fp_adder": {
+       "module": "alu_core_u_fp_adders_across_formats",
+       "area_um2": 460.446,
+       "abc_delay_ps": 298.94,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_adder"
+       ]
+      },
+      "m1.l0.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.unpacker"
+       ]
+      },
+      "m1.l0.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.rounder"
+       ]
+      },
+      "m1.l0.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 702.772,
+       "abc_delay_ps": 201.83,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_multiplier"
+       ]
+      },
+      "m1.l0.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1005.48,
+       "abc_delay_ps": 436.79,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_comparator"
+       ]
+      },
+      "m2.l0.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 702.772,
+       "abc_delay_ps": 201.83,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_multiplier",
+        "m1.l0.fp_multiplier"
+       ]
+      },
+      "m2.l1.fp_multiplier": {
+       "module": "alu_core_u_fp_multipliers_across_formats",
+       "area_um2": 702.772,
+       "abc_delay_ps": 201.83,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_multiplier",
+        "m1.l0.fp_multiplier",
+        "m2.l0.fp_multiplier"
+       ]
+      },
+      "m2.l0.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.unpacker",
+        "m1.l0.unpacker"
+       ]
+      },
+      "m2.l0.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.rounder",
+        "m1.l0.rounder"
+       ]
+      },
+      "m2.l1.unpacker": {
+       "module": "alu_core_u_unpackers_across_formats",
+       "area_um2": 0.0,
+       "abc_delay_ps": 0.0,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.unpacker",
+        "m1.l0.unpacker",
+        "m2.l0.unpacker"
+       ]
+      },
+      "m2.l1.rounder": {
+       "module": "alu_core_u_rounders_across_formats",
+       "area_um2": 468.692,
+       "abc_delay_ps": 270.78,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.rounder",
+        "m1.l0.rounder",
+        "m2.l0.rounder"
+       ]
+      },
+      "m2.l0.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1005.48,
+       "abc_delay_ps": 436.79,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_comparator",
+        "m1.l0.fp_comparator"
+       ]
+      },
+      "m2.l1.fp_comparator": {
+       "module": "alu_core_u_fp_comparators_across_formats",
+       "area_um2": 1005.48,
+       "abc_delay_ps": 436.79,
+       "ok": true,
+       "shared_with": [
+        "m0.l0.fp_comparator",
+        "m1.l0.fp_comparator",
+        "m2.l0.fp_comparator"
+       ]
+      }
+     },
+     "seconds": 0.5,
+     "detail": ""
+    },
+    "node_hash": "646f55157f80c26a91ad6338864abf4903734fc3ef8101f4a35be3b0c29a7bce"
+   },
+   "synth_ppa": {
+    "value": {
+     "ok": true,
+     "area_um2": 7025.592,
+     "cells": 5849,
+     "abc_delay_ps": 5453.88,
+     "seconds": 14.9,
+     "pdk": "nangate45",
+     "clock_ps": 300,
+     "detail": ""
+    },
+    "node_hash": "3aae1ba5c0f2d9aa7d1695bb6a2f70a60d6880fda67b349eede3e7c3cfbcf428"
+   }
+  }
+ }
+]

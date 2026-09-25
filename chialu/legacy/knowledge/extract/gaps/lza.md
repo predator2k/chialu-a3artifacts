@@ -1,0 +1,15 @@
+# lza: proposed changes to the space
+
+* input_tokens, initial_group_width, recursion and prediction_correction choices of the origin design [hokenek_cook_1990]
+* borrow-save recoding, sign handling and postnormalization choices [seidel_2004]
+* msb_first_shift_encoding so shifting starts before the encoding completes [lang_2004]
+* lza_timing two_cycles_before_addition, driving operand prenormalization [lutz_2011]
+* sign_detection_source lza_result [srinivasan_2013]
+* lane-segmented LZA for SIMD precision modes [kaul_2012, huang_2007]
+* pseudo_lza low-power style [pillai_1997]
+* separate LZAs per exponent-difference case on the near path [schmookler_2001, sohn_2012, lutz_2019]
+* choice `denormal_shift_bound: {compare_and_select_lesser, force_lza_bit, or_denormal_mask_into_lza_vector, or_denormal_mask_into_lza_inputs}` — the bound that keeps the normalizer from shifting past a denormal result's radix point is an anticipator modification rather than a normalizer option [schwarz_2003]
+* choice `estimate_source: {gpk_edge_vector, aligner_shift_amount}` — the edge-vector count serves when the result comes only from the compound adder, the aligner shift amount when the incrementer also contributes [oh_2006]
+* choice `correction_detection: mask_vector_zero_check` — a mask vector with a single one at the shift position, ANDed with the adder output into a zero checker, detects the off-by-one without waiting for the normalizer output [oh_2006]
+* a per-row split of the leading-zero count — two smaller LZCs over the folded edge rows rather than one 106-bit LZC [mueller_2005]
+* an operand-representation choice (carry-save against assimilated two's complement) and a position-correction method on the slot filler [vangal_2006]

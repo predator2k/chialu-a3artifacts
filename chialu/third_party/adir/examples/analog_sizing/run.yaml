@@ -1,0 +1,178 @@
+# Device sizes for a fixed op-amp topology in a fixed PDK: widths,
+# lengths and the bias current on a fine grid, a SPICE evaluator whose
+# analyses range from seconds to hours, and a hard operating-region
+# constraint that makes most of the box infeasible. The backend is SMAC
+# over space.json with log-scale hints; the LLM enters as the discover
+# role that proposes seeds from gm/ID reasoning. The nominal power
+# ranks every candidate; the top fifth run every analysis across the
+# PVT corners, which the corners variable maps the node over. The
+# chianalog library is named as the task needs it; ngspice is a CHIA
+# node.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: analog_sizing
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  spice:
+    resources:
+      spice: 16
+      claude_creds: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+  llm:
+    resources:
+      llm: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-claude:latest
+      run_options:
+        - -v ${HOME}/.claude:/root/.claude:ro
+  evolver:
+    resources:
+      evolver: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+cache:
+  ngspice:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chianalog.OpAmp
+  run_dir: run/analog_sizing
+
+  variables:
+    topology:                            # the elaboration creates the device set; matched pairs are one variable each
+      fixed: two_stage_miller
+    pdk:
+      fixed: sky130
+    corners:
+      fixed: [tt_25, ss_125, ff_m40]
+    device.*.w_um:
+      search: {min: 0.5, max: 200, step: 0.1}
+    device.*.l_um:
+      search: {min: 0.18, max: 5, step: 0.02}
+    bias.i_ua:
+      search: {min: 1, max: 500, step: 1}
+    cc.pf:                               # the Miller capacitor
+      search: {min: 0.5, max: 10, step: 0.1}
+
+  artifacts:                             # no seed: the netlist is a node output
+    testbenches:                         # DC, AC, transient, noise, per corner
+      role: fixed
+      kind: text
+      source: generated
+      members: [dc, ac, tran, noise]
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      netlist:
+        node: chianalog.render_netlist
+        inputs:
+          topology: vars.topology
+          pdk: vars.pdk
+          sizes: decl.device             # the indexed family as a mapping: w_um and l_um per device
+          bias_ua: decl.bias.i_ua
+          cc_pf: decl.cc.pf
+      spice_dc:                          # operating point: every device in saturation with a margin
+        node: ngspice
+        inputs:
+          netlist: netlist.text
+          testbench: artifacts.testbenches.dc
+          corner: tt_25
+      spice_ac:
+        node: ngspice
+        inputs:
+          netlist: netlist.text
+          testbench: artifacts.testbenches.ac
+          corner: tt_25
+        when:
+          - spice_dc.saturated
+      spice_tran:
+        node: ngspice
+        inputs:
+          netlist: netlist.text
+          testbench: artifacts.testbenches.tran
+          corner: tt_25
+        when:
+          - spice_dc.saturated
+      spice_noise:
+        node: ngspice
+        inputs:
+          netlist: netlist.text
+          testbench: artifacts.testbenches.noise
+          corner: tt_25
+        when:
+          - spice_dc.saturated
+      spice_pvt:                         # every analysis at every corner: level 2
+        node: ngspice
+        map_over:
+          corner: vars.corners
+        inputs:
+          netlist: netlist.text
+          testbench: artifacts.testbenches   # the mapping of all four
+        when:
+          - spice_dc.saturated
+          - goal.1 le quantile(archive.goal.1, 0.2)
+    feedback: [spice_dc.margins, spice_ac.report]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: netlist.ok, eq: true, hard: true}
+    - {metric: spice_dc.saturated, eq: true, hard: true}
+    - {metric: spice_ac.gain_db, ge: 60}
+    - {metric: spice_ac.gbw_mhz, ge: 50}
+    - {metric: spice_ac.pm_deg, ge: 60}
+    - {metric: spice_tran.slew_v_us, ge: 20}
+    - {metric: spice_noise.input_nv_rthz, le: 20}
+    - {expr: min(spice_pvt.gain_db), ge: 55}        # the level-2 specs, over the corners
+    - {expr: min(spice_pvt.pm_deg), ge: 55}
+
+  goal:
+    fidelity:
+      - minimize: spice_dc.power_uw      # nominal
+      - minimize: max(spice_pvt.power_uw)   # worst corner
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+
+  knowledge: chianalog/knowledge
+
+  search:
+    backend: smac
+    iterations: 2000
+    parallel: 16
+    numeric:
+      surrogate: gp
+      acquisition: ei
+      log_scale: ["device.*.w_um", "device.*.l_um", "bias.i_ua", "cc.pf"]
+    seeds:
+      generated: [textbook_gmid, paper]
+      discover: 4                        # four further sizings proposed by the discover model before the run
+    models:
+      discover:
+        agent: claude
+        model: claude-opus-4-8
+        effort: high
+    budget:
+      wall_hours: 48
+      node_runs: 20000
+    stop:
+      plateau_iterations: 300
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: false

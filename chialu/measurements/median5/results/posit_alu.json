@@ -1,0 +1,624 @@
+{
+  "id": "posit_alu",
+  "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/posit_alu.sv",
+  "top": "alu_core",
+  "clock_ps": 30000,
+  "repeats1": {
+    "ok": true,
+    "area_um2": 5533.598,
+    "abc_delay_ps": 5679.93,
+    "cells": 4737,
+    "cells_run_index": 0,
+    "seconds": 7.544,
+    "repeats": 1,
+    "seeds": [
+      null
+    ],
+    "runs": [
+      {
+        "ok": true,
+        "area_um2": 5533.598,
+        "cells": 4737,
+        "abc_delay_ps": 5679.93,
+        "seconds": 7.4,
+        "pdk": "nangate45",
+        "clock_ps": 30000,
+        "detail": "",
+        "status": "ok",
+        "repeat_index": 0,
+        "abc_seed": null,
+        "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,30000;&put;buffer;upsize,-D,30000;dnsize,-D,30000;topo;stime",
+        "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 30000\n&put\nbuffer\nupsize -D 30000\ndnsize -D 30000\ntopo\nstime\n",
+        "rtl": {
+          "sha256": "13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8.gz",
+          "encoding": "gzip"
+        },
+        "netlist": {
+          "sha256": "3ff8f51d2a0b96efab82f09294700e4b33794ed45c630d44a49b131c1488e247",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/3ff8f51d2a0b96efab82f09294700e4b33794ed45c630d44a49b131c1488e247.gz",
+          "encoding": "gzip"
+        },
+        "mapping_input": "rtl",
+        "liberties": [
+          {
+            "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+            "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+            "encoding": "gzip"
+          }
+        ],
+        "liberty_hash": "38d65aff29303470",
+        "tool_hash": "4b9888fa0093b04f",
+        "tools": {
+          "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+          "executables": {
+            "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+            "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+          }
+        },
+        "effort": "medium",
+        "share": false,
+        "top": "alu_core",
+        "hierarchy": false,
+        "timeout_s": 3600,
+        "pdk_descriptor": {
+          "name": "nangate45",
+          "aliases": [
+            "freepdk45"
+          ],
+          "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+          "process_nm": 45,
+          "corner": "TT 1.1V 25C",
+          "area_unit": "um2",
+          "liberty": [
+            {
+              "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+              "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+            }
+          ],
+          "abc": {
+            "clock_ps": 1000,
+            "scripts": {
+              "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+            }
+          },
+          "yosys": {
+            "synth": "synth -top {top} -flatten {noshare} -noabc"
+          }
+        },
+        "log": {
+          "sha256": "3ae059ac143a76beceff109ac1ebc674b63fbd7244566e619358961c8879e01a",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/3ae059ac143a76beceff109ac1ebc674b63fbd7244566e619358961c8879e01a.gz",
+          "encoding": "gzip"
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+          "encoding": "gzip"
+        },
+        "yosys_script": {
+          "sha256": "09b62cb4d0ddb8eb384401469e8bde6c86402d7774e74cb8b6bb7fac59cf52f9",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/09b62cb4d0ddb8eb384401469e8bde6c86402d7774e74cb8b6bb7fac59cf52f9.gz",
+          "encoding": "gzip"
+        }
+      }
+    ],
+    "successful_runs": 1,
+    "statistics": {
+      "area_um2": {
+        "median": 5533.598,
+        "min": 5533.598,
+        "max": 5533.598,
+        "std": 0.0
+      },
+      "abc_delay_ps": {
+        "median": 5679.93,
+        "min": 5679.93,
+        "max": 5679.93,
+        "std": 0.0
+      },
+      "cells": {
+        "median": 4737,
+        "min": 4737,
+        "max": 4737,
+        "std": 0.0
+      }
+    },
+    "median_rule": "all_requested_runs_must_succeed; partial_statistics_are_diagnostic_only",
+    "pdk": "nangate45",
+    "clock_ps": 30000,
+    "detail": "",
+    "wall_seconds": 7.546609228476882
+  },
+  "repeats5": {
+    "ok": true,
+    "area_um2": 5398.204,
+    "abc_delay_ps": 5686.81,
+    "cells": 4722,
+    "cells_run_index": 1,
+    "seconds": 17.376,
+    "repeats": 5,
+    "seeds": [
+      null,
+      11,
+      23,
+      37,
+      53
+    ],
+    "runs": [
+      {
+        "ok": true,
+        "area_um2": 5533.598,
+        "cells": 4737,
+        "abc_delay_ps": 5679.93,
+        "seconds": 6.6,
+        "pdk": "nangate45",
+        "clock_ps": 30000,
+        "detail": "",
+        "status": "ok",
+        "repeat_index": 0,
+        "abc_seed": null,
+        "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,30000;&put;buffer;upsize,-D,30000;dnsize,-D,30000;topo;stime",
+        "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 30000\n&put\nbuffer\nupsize -D 30000\ndnsize -D 30000\ntopo\nstime\n",
+        "rtl": {
+          "sha256": "13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8.gz",
+          "encoding": "gzip"
+        },
+        "netlist": {
+          "sha256": "9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da.gz",
+          "encoding": "gzip"
+        },
+        "mapping_input": "rtl",
+        "liberties": [
+          {
+            "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+            "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+            "encoding": "gzip"
+          }
+        ],
+        "liberty_hash": "38d65aff29303470",
+        "tool_hash": "4b9888fa0093b04f",
+        "tools": {
+          "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+          "executables": {
+            "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+            "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+          }
+        },
+        "effort": "medium",
+        "share": false,
+        "top": "alu_core",
+        "hierarchy": false,
+        "timeout_s": 3600,
+        "pdk_descriptor": {
+          "name": "nangate45",
+          "aliases": [
+            "freepdk45"
+          ],
+          "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+          "process_nm": 45,
+          "corner": "TT 1.1V 25C",
+          "area_unit": "um2",
+          "liberty": [
+            {
+              "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+              "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+            }
+          ],
+          "abc": {
+            "clock_ps": 1000,
+            "scripts": {
+              "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+            }
+          },
+          "yosys": {
+            "synth": "synth -top {top} -flatten {noshare} -noabc"
+          }
+        },
+        "log": {
+          "sha256": "9d0bbc17719a5dd6f97d7af573f724718d4f25d7e8ddfc5efee94ec4fccc2af7",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/9d0bbc17719a5dd6f97d7af573f724718d4f25d7e8ddfc5efee94ec4fccc2af7.gz",
+          "encoding": "gzip"
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+          "encoding": "gzip"
+        },
+        "yosys_script": {
+          "sha256": "e680a70b41fa16e1db419649a1788da2a3f00e84bfd679cdcfddd8faae54c424",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e680a70b41fa16e1db419649a1788da2a3f00e84bfd679cdcfddd8faae54c424.gz",
+          "encoding": "gzip"
+        }
+      },
+      {
+        "ok": true,
+        "area_um2": 5398.204,
+        "cells": 4722,
+        "abc_delay_ps": 5684.95,
+        "seconds": 2.8,
+        "pdk": "nangate45",
+        "clock_ps": 30000,
+        "detail": "",
+        "status": "ok",
+        "repeat_index": 1,
+        "abc_seed": 11,
+        "abc_script": "+strash;permute -S 11;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,30000;&put;buffer;upsize,-D,30000;dnsize,-D,30000;topo;stime",
+        "abc_script_text": "strash\npermute -S 11\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 30000\n&put\nbuffer\nupsize -D 30000\ndnsize -D 30000\ntopo\nstime\n",
+        "rtl": {
+          "sha256": "13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8.gz",
+          "encoding": "gzip"
+        },
+        "netlist": {
+          "sha256": "9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da.gz",
+          "encoding": "gzip"
+        },
+        "mapping_input": "rtlil",
+        "liberties": [
+          {
+            "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+            "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+            "encoding": "gzip"
+          }
+        ],
+        "liberty_hash": "38d65aff29303470",
+        "tool_hash": "4b9888fa0093b04f",
+        "tools": {
+          "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+          "executables": {
+            "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+            "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+          }
+        },
+        "effort": "medium",
+        "share": false,
+        "top": "alu_core",
+        "hierarchy": false,
+        "timeout_s": 3600,
+        "pdk_descriptor": {
+          "name": "nangate45",
+          "aliases": [
+            "freepdk45"
+          ],
+          "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+          "process_nm": 45,
+          "corner": "TT 1.1V 25C",
+          "area_unit": "um2",
+          "liberty": [
+            {
+              "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+              "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+            }
+          ],
+          "abc": {
+            "clock_ps": 1000,
+            "scripts": {
+              "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+            }
+          },
+          "yosys": {
+            "synth": "synth -top {top} -flatten {noshare} -noabc"
+          }
+        },
+        "log": {
+          "sha256": "0503cfb9ce2ff3917f718685e268c46813497296e7475e1f889bbe4b6658ffd0",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/0503cfb9ce2ff3917f718685e268c46813497296e7475e1f889bbe4b6658ffd0.gz",
+          "encoding": "gzip"
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+          "encoding": "gzip"
+        },
+        "yosys_script": {
+          "sha256": "21d583dd27e55ce71034c08d9cb93d7db78bef095708eb6270dc33d4f31220c4",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/21d583dd27e55ce71034c08d9cb93d7db78bef095708eb6270dc33d4f31220c4.gz",
+          "encoding": "gzip"
+        }
+      },
+      {
+        "ok": true,
+        "area_um2": 5346.6,
+        "cells": 4600,
+        "abc_delay_ps": 5975.75,
+        "seconds": 2.3,
+        "pdk": "nangate45",
+        "clock_ps": 30000,
+        "detail": "",
+        "status": "ok",
+        "repeat_index": 2,
+        "abc_seed": 23,
+        "abc_script": "+strash;permute -S 23;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,30000;&put;buffer;upsize,-D,30000;dnsize,-D,30000;topo;stime",
+        "abc_script_text": "strash\npermute -S 23\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 30000\n&put\nbuffer\nupsize -D 30000\ndnsize -D 30000\ntopo\nstime\n",
+        "rtl": {
+          "sha256": "13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8.gz",
+          "encoding": "gzip"
+        },
+        "netlist": {
+          "sha256": "9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da.gz",
+          "encoding": "gzip"
+        },
+        "mapping_input": "rtlil",
+        "liberties": [
+          {
+            "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+            "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+            "encoding": "gzip"
+          }
+        ],
+        "liberty_hash": "38d65aff29303470",
+        "tool_hash": "4b9888fa0093b04f",
+        "tools": {
+          "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+          "executables": {
+            "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+            "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+          }
+        },
+        "effort": "medium",
+        "share": false,
+        "top": "alu_core",
+        "hierarchy": false,
+        "timeout_s": 3600,
+        "pdk_descriptor": {
+          "name": "nangate45",
+          "aliases": [
+            "freepdk45"
+          ],
+          "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+          "process_nm": 45,
+          "corner": "TT 1.1V 25C",
+          "area_unit": "um2",
+          "liberty": [
+            {
+              "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+              "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+            }
+          ],
+          "abc": {
+            "clock_ps": 1000,
+            "scripts": {
+              "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+            }
+          },
+          "yosys": {
+            "synth": "synth -top {top} -flatten {noshare} -noabc"
+          }
+        },
+        "log": {
+          "sha256": "988b645cb83fee0b4dfa4b1322db3e80bf8a600268f1975cbc830c6bba76e731",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/988b645cb83fee0b4dfa4b1322db3e80bf8a600268f1975cbc830c6bba76e731.gz",
+          "encoding": "gzip"
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+          "encoding": "gzip"
+        },
+        "yosys_script": {
+          "sha256": "e02ead9365df0e12f4762f0d71b689bd8e38d3ceca159ea9403900e11471ca11",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e02ead9365df0e12f4762f0d71b689bd8e38d3ceca159ea9403900e11471ca11.gz",
+          "encoding": "gzip"
+        }
+      },
+      {
+        "ok": true,
+        "area_um2": 5470.29,
+        "cells": 4757,
+        "abc_delay_ps": 5686.81,
+        "seconds": 2.2,
+        "pdk": "nangate45",
+        "clock_ps": 30000,
+        "detail": "",
+        "status": "ok",
+        "repeat_index": 3,
+        "abc_seed": 37,
+        "abc_script": "+strash;permute -S 37;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,30000;&put;buffer;upsize,-D,30000;dnsize,-D,30000;topo;stime",
+        "abc_script_text": "strash\npermute -S 37\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 30000\n&put\nbuffer\nupsize -D 30000\ndnsize -D 30000\ntopo\nstime\n",
+        "rtl": {
+          "sha256": "13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8.gz",
+          "encoding": "gzip"
+        },
+        "netlist": {
+          "sha256": "9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da.gz",
+          "encoding": "gzip"
+        },
+        "mapping_input": "rtlil",
+        "liberties": [
+          {
+            "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+            "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+            "encoding": "gzip"
+          }
+        ],
+        "liberty_hash": "38d65aff29303470",
+        "tool_hash": "4b9888fa0093b04f",
+        "tools": {
+          "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+          "executables": {
+            "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+            "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+          }
+        },
+        "effort": "medium",
+        "share": false,
+        "top": "alu_core",
+        "hierarchy": false,
+        "timeout_s": 3600,
+        "pdk_descriptor": {
+          "name": "nangate45",
+          "aliases": [
+            "freepdk45"
+          ],
+          "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+          "process_nm": 45,
+          "corner": "TT 1.1V 25C",
+          "area_unit": "um2",
+          "liberty": [
+            {
+              "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+              "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+            }
+          ],
+          "abc": {
+            "clock_ps": 1000,
+            "scripts": {
+              "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+            }
+          },
+          "yosys": {
+            "synth": "synth -top {top} -flatten {noshare} -noabc"
+          }
+        },
+        "log": {
+          "sha256": "178b34e941d36a93b4c6de5f4e213d7ca4037d207775dfa83f9be55488b6363e",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/178b34e941d36a93b4c6de5f4e213d7ca4037d207775dfa83f9be55488b6363e.gz",
+          "encoding": "gzip"
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+          "encoding": "gzip"
+        },
+        "yosys_script": {
+          "sha256": "bceac239de65285ca2a1009f34960240f6d8a3a4687bda00d0b054ae1b1d831e",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/bceac239de65285ca2a1009f34960240f6d8a3a4687bda00d0b054ae1b1d831e.gz",
+          "encoding": "gzip"
+        }
+      },
+      {
+        "ok": true,
+        "area_um2": 5249.51,
+        "cells": 4498,
+        "abc_delay_ps": 6067.38,
+        "seconds": 3.0,
+        "pdk": "nangate45",
+        "clock_ps": 30000,
+        "detail": "",
+        "status": "ok",
+        "repeat_index": 4,
+        "abc_seed": 53,
+        "abc_script": "+strash;permute -S 53;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,30000;&put;buffer;upsize,-D,30000;dnsize,-D,30000;topo;stime",
+        "abc_script_text": "strash\npermute -S 53\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 30000\n&put\nbuffer\nupsize -D 30000\ndnsize -D 30000\ntopo\nstime\n",
+        "rtl": {
+          "sha256": "13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/13950420c12d95967ff159e9546674332afcb121411e904981da29d034eaf5e8.gz",
+          "encoding": "gzip"
+        },
+        "netlist": {
+          "sha256": "9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/9f4d7142badd4e8b8fff386560820dd86da656741ac39e8e71203cfaf593f8da.gz",
+          "encoding": "gzip"
+        },
+        "mapping_input": "rtlil",
+        "liberties": [
+          {
+            "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+            "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+            "encoding": "gzip"
+          }
+        ],
+        "liberty_hash": "38d65aff29303470",
+        "tool_hash": "4b9888fa0093b04f",
+        "tools": {
+          "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+          "executables": {
+            "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+            "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+          }
+        },
+        "effort": "medium",
+        "share": false,
+        "top": "alu_core",
+        "hierarchy": false,
+        "timeout_s": 3600,
+        "pdk_descriptor": {
+          "name": "nangate45",
+          "aliases": [
+            "freepdk45"
+          ],
+          "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+          "process_nm": 45,
+          "corner": "TT 1.1V 25C",
+          "area_unit": "um2",
+          "liberty": [
+            {
+              "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+              "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+            }
+          ],
+          "abc": {
+            "clock_ps": 1000,
+            "scripts": {
+              "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+              "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+            }
+          },
+          "yosys": {
+            "synth": "synth -top {top} -flatten {noshare} -noabc"
+          }
+        },
+        "log": {
+          "sha256": "477c17326e8e787003ac14e05424826fe594980f87e81a4699223b12619c289b",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/477c17326e8e787003ac14e05424826fe594980f87e81a4699223b12619c289b.gz",
+          "encoding": "gzip"
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+          "encoding": "gzip"
+        },
+        "yosys_script": {
+          "sha256": "1c5b9f3293996eab80b629e56426aa2e0be3f5c832517e66bdecf87fd7b173de",
+          "path": "$CHIALU_HOME/wt/median5/measurements/median5/artifacts/1c5b9f3293996eab80b629e56426aa2e0be3f5c832517e66bdecf87fd7b173de.gz",
+          "encoding": "gzip"
+        }
+      }
+    ],
+    "successful_runs": 5,
+    "statistics": {
+      "area_um2": {
+        "median": 5398.204,
+        "min": 5249.51,
+        "max": 5533.598,
+        "std": 98.2756214523214
+      },
+      "abc_delay_ps": {
+        "median": 5686.81,
+        "min": 5679.93,
+        "max": 6067.38,
+        "std": 167.9566872262012
+      },
+      "cells": {
+        "median": 4722,
+        "min": 4498,
+        "max": 4757,
+        "std": 98.98161445440259
+      }
+    },
+    "median_rule": "all_requested_runs_must_succeed; partial_statistics_are_diagnostic_only",
+    "pdk": "nangate45",
+    "clock_ps": 30000,
+    "detail": "",
+    "wall_seconds": 17.377993959002197
+  }
+}

@@ -1,0 +1,8 @@
+{
+ "ok": true,
+ "area_um2": 5419.484,
+ "abc_delay_ps": 2800.75,
+ "cells": 4783,
+ "rtl_sha256": "dcfd99e373bb2f054b41f1fc69de644d3c074311efdf64e9dc3e38ef6a047167",
+ "clock_ps": 300
+}

@@ -1,0 +1,17 @@
+# multi_precision_simd_fma: proposed changes to the space
+
+* widen `lane_split` beyond the four fixed values, or make it a set of simultaneously supported configurations — exemplars use 1x32/2x16/4x8, 1x24/2x12/4x6 mantissa lanes, 2x64/4x32 super-slices, 8x64/16x32 vector lanes, a native 1x82 extended mode, and FPnew supports 1xFP64, 2xFP32, 4xFP16, 8xFP8 at once [crespo_2022, kaul_2012, sadasivam_2017, maruyama_2010, sodani_2016, sharangpani_2000, mach_2020]
+* choice `module_vectorization: {segmented, duplicated, hybrid}` — shareable modules are segmented by precision multiplexers while timing-sensitive exponent/rounding paths are duplicated [huang_2007]
+* choices `mantissa_representation: twos_complement` and `normalization_structure: constant_then_variable` — internal two's complement avoids end-around carry and normalization splits into a constant and a variable shift [huang_2007]
+* choice `lane_boundary_reset` (partial products, adder carries, LZA signals) — names which structures are cut at lane boundaries [kaul_2012]
+* choices `certainty_tracking` (accuracy field width) and `retry_sequence` — narrow results carry a certainty field and are recomputed at higher precision when uncertain [kaul_2012]
+* choice `slice_implementation: {parallel, merged}`, `mixed_format_relation` (multiply in src_fmt, add in dst_fmt), and `per_format_pipeline_depth` — control area, latency flexibility, and energy proportionality [mach_2020]
+* choice `lane_implementation: {fractured_datapath, supplemental_unit}` — Itanium peels the second single-precision operand to a supplemental FMAC rather than fracturing the main one [sharangpani_2000]
+* choice for sharing the multiplier datapath with packed int32/int16/int8 multiplication [sinharoy_2015]
+* choice `supported_format_pair: posit_and_ieee754` — every precision mode can share both format datapaths [crespo_2022]
+* choices for vector width, arithmetic pipelines per core, and shared operation latency — A64FX fixes 512 bits, two pipelines, nine cycles; Knights Landing sustains one AVX-512 instruction per VPU per cycle [sato_2020, sodani_2016]
+* choice `simd_element_source: {lane_split_within_datapath, fpu_instance_per_element}` — POWER7 takes one 64-bit FPU instance per SIMD element instead of splitting one datapath into narrower lanes [boersma_2011]
+* `lane_split` values `1x128`, `2x64` and `4x32` — one 128-bit register holds one quadruple, two double or four single precision operands [manolopoulos_2016]
+* the `multiplier` slot admitting `twin_precision_subword` — the one-array-serves-three-precisions multiplier with off-diagonal partial-product regions forced to zero belongs to that family [manolopoulos_2016]
+* choice `product_assimilation_point: {start_of_add_stage, after_alignment}` — adding the multiplier's two carry-save vectors before alignment shrinks the alignment shifters and every module after the addition [manolopoulos_2016]
+* choices `shared_alignment_shifter: Bool` and `subshifter_decomposition: per_lane_subshifters_combined_in_wider_modes` — one far-path shifter aligns either operand by the sign of the exponent difference, and the 115-bit aligner and the 118-bit normalizer are built from per-lane sub-shifters that pair up in the wider modes [manolopoulos_2016]

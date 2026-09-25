@@ -1,0 +1,11 @@
+427964 vectors, 427964 dumped, 1 s
+mismatches 24 of 427964: {'flags_only': 24}
+  bf16/fmul/flags_only: 8
+  fp8e5m2/fmul/flags_only: 16
+== flags_only
+   mode bf16 op fmul rnd RNE: a=007f b=3f81 expected y=0080 flags=08 got y=0080 flags=0c
+   mode bf16 op fmul rnd RNE: a=007f b=bf81 expected y=8080 flags=08 got y=8080 flags=0c
+   mode bf16 op fmul rnd RNE: a=3f81 b=007f expected y=0080 flags=08 got y=0080 flags=0c
+   mode bf16 op fmul rnd RNE: a=3f81 b=807f expected y=8080 flags=08 got y=8080 flags=0c
+   mode bf16 op fmul rnd RNE: a=807f b=3f81 expected y=8080 flags=08 got y=8080 flags=0c
+   mode bf16 op fmul rnd RNE: a=807f b=bf81 expected y=0080 flags=08 got y=0080 flags=0c

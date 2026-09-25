@@ -1,0 +1,98 @@
+{
+  "fp_alu_cmp": {
+    "pre_change_result": {
+      "ok": true,
+      "area_um2": 7283.612,
+      "cells": 6156,
+      "abc_delay_ps": 4318.54,
+      "seconds": 28.2,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "wall_seconds": 28.226698398590088
+    },
+    "replay_receipt": "results/fp_alu_cmp.json#repeats1",
+    "exact_metrics_match": true,
+    "note": "The legacy implementation deleted its logs; the separately measured receipt reproduces its exact metrics."
+  },
+  "fp_alu_cmp_hf": {
+    "pre_change_result": {
+      "ok": true,
+      "area_um2": 6350.218,
+      "cells": 5403,
+      "abc_delay_ps": 4365.67,
+      "seconds": 22.1,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "wall_seconds": 22.103051900863647
+    },
+    "replay_receipt": "results/fp_alu_cmp_hf.json#repeats1",
+    "exact_metrics_match": true,
+    "note": "The legacy implementation deleted its logs; the separately measured receipt reproduces its exact metrics."
+  },
+  "int_subword_alu": {
+    "pre_change_result": {
+      "ok": true,
+      "area_um2": 5743.472,
+      "cells": 4992,
+      "abc_delay_ps": 1735.74,
+      "seconds": 4.8,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "wall_seconds": 4.770383596420288
+    },
+    "replay_receipt": "results/int_subword_alu.json#repeats1",
+    "exact_metrics_match": true,
+    "note": "The legacy implementation deleted its logs; the separately measured receipt reproduces its exact metrics."
+  },
+  "vec_dot_acc_cmp": {
+    "pre_change_result": {
+      "ok": true,
+      "area_um2": 28018.578,
+      "cells": 22535,
+      "abc_delay_ps": 8393.62,
+      "seconds": 59.2,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "wall_seconds": 59.175034523010254
+    },
+    "replay_receipt": "results/vec_dot_acc_cmp.json#repeats1",
+    "exact_metrics_match": true,
+    "note": "The legacy implementation deleted its logs; the separately measured receipt reproduces its exact metrics."
+  },
+  "vec_dot_acc_cmp_fp16": {
+    "pre_change_result": {
+      "ok": true,
+      "area_um2": 17285.212,
+      "cells": 13959,
+      "abc_delay_ps": 7892.01,
+      "seconds": 23.4,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "wall_seconds": 23.374362468719482
+    },
+    "replay_receipt": "results/vec_dot_acc_cmp_fp16.json#repeats1",
+    "exact_metrics_match": true,
+    "note": "The legacy implementation deleted its logs; the separately measured receipt reproduces its exact metrics."
+  },
+  "vec_dot_acc_cmp_fp8": {
+    "pre_change_result": {
+      "ok": true,
+      "area_um2": 17591.378,
+      "cells": 13724,
+      "abc_delay_ps": 7732.24,
+      "seconds": 38.8,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "wall_seconds": 38.774601221084595
+    },
+    "replay_receipt": "results/vec_dot_acc_cmp_fp8.json#repeats1",
+    "exact_metrics_match": true,
+    "note": "The legacy implementation deleted its logs; the separately measured receipt reproduces its exact metrics."
+  }
+}

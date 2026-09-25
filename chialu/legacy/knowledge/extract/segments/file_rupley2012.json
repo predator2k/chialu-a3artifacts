@@ -1,0 +1,22 @@
+{
+ "key": "file_rupley2012",
+ "file": "rupley2012.pdf",
+ "kind": "slides",
+ "citation": "",
+ "pages": 20,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 19,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

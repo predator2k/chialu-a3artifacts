@@ -1,0 +1,16 @@
+# logarithmic: proposed changes to the space
+
+* mantissa_adder value alternating_set_one — ILM-k replaces the k low adder bits with alternating 1/0 outputs to keep a double-sided error distribution [ansari2021]
+* choices approximation_bits, power_of_two_detector (nearest_one) and maximum_rounded_power — the double-sided base needs the approximated bit count, the nearest-power detector and the saturation limit as tunables [ansari2021]
+* log_adder slot value one_hot_reduced_truth_adder — the exact adder specialized to a one-hot operand is not nameable [ansari2021]
+* pipeline-organization choice — a four-stage basic block with a staggered correction-block cascade, and an iterations range beyond 4 (1-6 evaluated) [babic2011]
+* operand truncation width relative to the leading one — Mitch-w retains w-1 mantissa bits and DR-ALM retains t bits from each leading one [kim2019, yin2021]
+* signed_number_handling choice — exact two's-complement, approximate one's-complement (C1 / one's complement plus OR) and sign-magnitude conversions differ in cost and corner-case error [kim2019, yin2021, ansari2021]
+* constant compensation values in the correction domain — the lsb-round-up plus 0.0001 unbiasing constant and the fixed-one compensation after log addition [kim2019, yin2021]
+* exact zero-detection choice — zero handling changes CNN accuracy and hardware structure [kim2019]
+* log_adder slot value lower_part_approximate — LOA / MAA3 / SOA lower cells fill that role in the ALM and IALM designs [liu2018]
+* binary_log_converter_precision and inexact_width_allocation (M1/M2/M3) — the converter truncation width and per-adder inexact widths are separate tunables in the iterative variants [liu2018]
+* correction_composition — operand decomposition composes with divided approximation, table correction (TCV) and Mitchell error correction (MEC) [mahalingam2006]
+* correction_position before_output_scaling, correction_constant and fraction_truncation_t — the minimally biased multiplier fixes the constant, adds it before scaling and truncates t low log bits; normalized inputs can remove the LOD and barrel shifter [saadat2018]
+* log_approximation value straight_line_characteristic_plus_fraction — distinguishes the table-free interpolation from table/PWL alternatives [mitchell1962]
+* sig_mul_then_round.sig_mul and dynamic_segment.core_multiplier slots should admit the logarithmic family [saadat2018, yin2021]

@@ -1,0 +1,208 @@
+# An L2 data prefetcher in C++ for ChampSim: a storage budget that is
+# counted by a compile-time probe rather than asked for, a train and a
+# held-out trace list as two instances of one simulator node, per-trace
+# IPC as a mapping the goal aggregates, three seeds across the
+# prefetcher families, and a record per candidate. Geomean IPC on the
+# train traces is the goal; AdaEvolve drives the search.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: prefetcher_champsim
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+  ssh_private_key: ${SSH_KEY}
+
+available_node_types:
+  champsim_build:                        # compiles a candidate into a ChampSim binary
+    resources:
+      champsim_build: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-champsim:latest
+      pull_before_run: true
+      run_options:
+        - --cpuset-cpus=0-7
+        - -v ${TRACE_DIR}:${TRACE_DIR}:ro
+  champsim:                              # one trace per worker
+    resources:
+      champsim: 1
+    num_workers: 5
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-champsim:latest
+      pull_before_run: true
+      run_options:
+        - -v ${TRACE_DIR}:${TRACE_DIR}:ro
+  evolver:
+    resources:
+      evolver: 1
+      opencode_creds: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  build_champsim:
+    cache: true
+  champsim:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chipf.CachePrefetcher
+  run_dir: run/prefetcher_champsim
+
+  variables:
+    cache_level:
+      fixed: L2C
+    api:
+      fixed: champsim_v3                 # prefetcher_cache_operate / prefetcher_cache_fill
+    language_standard:
+      fixed: cpp17
+    prefetch_degree_max:
+      fixed: 8
+    family:                              # the candidate declares which family it is
+      search: [next_line, stride_ip, spatial_region, temporal_correlation, best_offset, composite_confidence]
+    # the storage budget is a metric (accounting.bytes) under a hard constraint, not a variable
+
+  artifacts:
+    prefetcher:
+      role: seed
+      kind: text
+      source: file
+      file: seeds/next_line.cc           # prefetch the next line
+      language: cpp
+      evolve: [evolved_pf]               # the struct; headers and the harness stay outside
+    harness:                             # the ChampSim glue around evolved_pf
+      role: fixed
+      kind: text
+      source: generated
+      language: cpp
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      lint:
+        node: chipf.lint                 # only the documented API; no heap containers
+        inputs:
+          source: candidate.prefetcher
+          api: vars.api
+      build:
+        node: chipf.build_champsim
+        inputs:
+          source: candidate
+          root: /home/ray/champsim
+          module_name: evolved_pf
+        resources:
+          champsim_build: 1
+      accounting:                        # sizeof(evolved_pf) by a compile-time probe
+        node: chipf.state_bytes
+        inputs:
+          source: candidate.prefetcher
+          struct: evolved_pf
+      probe:                             # one trace, short: determinism and a quick IPC
+        node: champsim
+        inputs:
+          binary: build.binary
+          trace_dir: ${TRACE_DIR}
+          benchmarks: [605.mcf_s-472B]
+          warmup_instructions: 1000000
+          simulation_instructions: 5000000
+          repeat: 2                      # two runs; deterministic iff they agree
+      train:                             # the training traces
+        node: champsim
+        inputs:
+          binary: build.binary
+          trace_dir: ${TRACE_DIR}
+          benchmarks: [602.gcc_s-734B, 605.mcf_s-472B, 623.xalancbmk_s-10B]
+          warmup_instructions: 5000000
+          simulation_instructions: 25000000
+          baseline_ipc: seed.train.ipc   # per-trace regression against the seed
+        when:
+          - probe.deterministic
+          - probe.ipc_geomean ge 0.98 * seed.probe.ipc_geomean
+      heldout:                           # simulated once, for the front, at report time
+        node: champsim
+        inputs:
+          binary: build.binary
+          trace_dir: ${TRACE_DIR}
+          benchmarks: [619.lbm_s-4268B, 620.omnetpp_s-874B]
+          warmup_instructions: 5000000
+          simulation_instructions: 25000000
+        report_only: true
+    feedback: [build.detail, train.per_workload, train.traffic_detail]
+    report: [heldout.ipc, heldout.ipc_geomean]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: lint.ok, eq: true, hard: true}
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: accounting.bytes, le: 65536, hard: true}
+    - {metric: probe.deterministic, eq: true, hard: true}
+    - {metric: train.dram_traffic_increase_pct, le: 15}
+    - {metric: train.ipc_regression_pct_max, le: 2}   # no train trace loses more than this against the seed
+
+  goal:
+    maximize: geomean(train.ipc)
+    score:
+      rule: ratio_to_seed                # seed = 1.0
+      infeasible: zero
+
+  knowledge: chipf/knowledge
+
+  search:
+    backend: adaevolve
+    iterations: 60
+    parallel: 3
+    diff_mode: true
+    max_solution_bytes: 60000
+    retries: 2
+    database:                            # num_islands defaults to the seed count (3)
+      use_migration: false
+      use_paradigm_breakthrough: true
+      diversity_strategy: code
+    seeds:
+      files: [seeds/next_line.cc, seeds/stride_ip.cc, seeds/best_offset.cc]
+    context:
+      programs: 2
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+    tactics:
+      sources: [unexplored_values, worst_constraint]
+      select: ucb
+      window: 10
+    models:
+      solution:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+      guide:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+    budget:
+      wall_hours: 12
+      llm_calls: 200
+    stop:
+      plateau_iterations: 30
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: true

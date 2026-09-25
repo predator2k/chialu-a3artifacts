@@ -1,0 +1,17 @@
+{
+  "fpnew": {
+    "path": "$A3EVAL/runs/fpnew/fpnew_parallel_hand_seed.sv",
+    "bytes": 315894,
+    "sha256": "b255b7a6e817cfe33178b253c1b3410deb1ea4dc9b1a41188d2b1c98004ac860"
+  },
+  "hardfloat": {
+    "path": "$A3EVAL/runs/hardfloat/hardfloat_hand_seed.sv",
+    "bytes": 195439,
+    "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909"
+  },
+  "transdot": {
+    "path": "$A3EVAL/runs/transdot/transdot_merged_hand_seed.sv",
+    "bytes": 407707,
+    "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57"
+  }
+}

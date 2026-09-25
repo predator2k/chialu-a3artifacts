@@ -1,0 +1,65 @@
+---
+handle: walczyk_2021
+citation: C. J. Walczyk, L. V. Moroz, J. L. Cieśliński, "Improving the Accuracy of the Fast Inverse Square Root by Modifying Newton-Raphson Corrections", Entropy, vol. 23, no. 1, art. 86, 2021
+actual_citation: same
+status: ok
+kind: paper
+unit_classes: [VEC_SFU]
+formats: [fp32, fp64, fp128]
+authority: incremental
+pages_read: 1-20 / 20
+---
+
+## summary
+The paper proposes InvSqrt2 and InvSqrt3, which combine a magic-constant inverse-square-root seed with minimax-modified Newton–Raphson corrections for fp32/fp64 and higher precision. InvSqrt2 retains the original operation count, while InvSqrt3 reduces the maximum relative error further at additional cost beyond one correction. # p.5-p.7, p.12-p.15
+
+## families
+### newton_raphson  (role: extends)
+mechanism: A seed produced by integer reinterpretation, right shift, and subtraction from a format-specific magic constant is refined by corrections of the form y_j = c_1j y_{j-1} - c_2j x y_{j-1}^3. InvSqrt2 constrains c_2j = 0.5 and optimizes c_1j. InvSqrt3 optimizes both coefficients. The coefficients and magic constant minimize the maximum relative error over the reduced interval x̃ ∈ [1,4). # p.2-p.7
+choices:
+  steps: 1, 2, 3, 4 [outside domain]   # p.10, p.12-p.13
+new_choices:
+  correction_form: coefficient_modified_cubic — replaces the fixed Newton–Raphson coefficients with c_1j/c_2j parameters   # p.4-p.7
+  coefficient_optimization: minimax_relative_error — selects coefficients by minimizing maximum relative error   # p.3-p.7
+slots:
+  none
+parameters: fp32/fp64/fp128; 1-4 corrections; InvSqrt2 magic constants 0x5F376908/0x5FE6ED2102DCBFDA/0x5FFE6ED2102DCBFDA59415059AC483B5; InvSqrt3 magic constants 0x5F200000/0x5FE400000000000C/0x5FFE4000000000000000000000000000; pipeline stages/latency/II UNKNOWN   # p.5-p.10, p.13
+results:
+| metric | value | unit | technology / device | baseline | condition | page |
+| maximum numerical relative error | 0.87916 × 10−3 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | InvSqrt: 1.75124 × 10−3 | InvSqrt2, fp32, one correction, GCC 4.9.2 32-bit | p.12 |
+| maximum numerical relative error | 0.65017 × 10−3 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | InvSqrt: 1.75124 × 10−3 | InvSqrt3, fp32, one correction, GCC 4.9.2 32-bit | p.12 |
+| maximum numerical relative error | 0.68363 × 10−6 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | InvSqrt: 4.65441 × 10−6 | InvSqrt2, fp32, two corrections, GCC 4.9.2 32-bit | p.13 |
+| maximum numerical relative error | 0.38701 × 10−6 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | InvSqrt: 4.65441 × 10−6 | InvSqrt3, fp32, two corrections, GCC 4.9.2 32-bit | p.13 |
+| numerical relative-error range | −0.38701 × 10−6 to 0.35196 × 10−6 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | none | InvSqrt3s, fp32 subnormal inputs, two corrections, GCC 32-bit | p.8 |
+| maximum numerical relative error | 2.5213 × 10−13 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | two corrections: 0.57968 × 10−6 | InvSqrt2D, fp64, three corrections | p.13 |
+| maximum numerical relative error | 1.1103 × 10−16 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | three corrections: 2.5213 × 10−13 | InvSqrt2D, fp64, four corrections | p.13 |
+| multiplication count | 7 | multiplications | platform-independent / device UNKNOWN / 2021 | InvSqrt: 7 multiplications | InvSqrt2, two corrections | p.13 |
+| multiplication count | 8 | multiplications | platform-independent / device UNKNOWN / 2021 | InvSqrt: 7 multiplications | InvSqrt3, two corrections | p.13 |
+| accuracy gain | 12 | times higher accuracy | Intel Core i5-3470 / node UNKNOWN / 2021 | InvSqrt | InvSqrt3, fp32, two corrections | p.13 |
+| accuracy gain | 14.5 | times higher accuracy | device UNKNOWN / node UNKNOWN / 2021 | InvSqrt | InvSqrt3, fp64, two corrections | p.13 |
+errors_and_checks: The optimization target is maximum relative error. The reported fp32 maximum errors are 0.65017 × 10−3 after one InvSqrt3 correction and 0.38701 × 10−6 after two corrections. The derivation omits floating-point rounding, and experimentally optimized coefficients improve the one-correction result by only about 0.001%. No fault-detection mechanism or correct-rounding proof is reported. # p.4, p.12-p.14
+conditions: The algorithms target microcontrollers/FPGAs/GPUs with floating-point multiplication/addition/FMA but without fast LUT-based inverse-square-root instructions. SSE/AVX reciprocal-square-root instructions remain faster and more accurate for general-purpose computing. Numerical error varies with processor/compiler, especially after the second correction. # p.1, p.15, p.19
+evidence: §2 equations (12)-(32) and code listings; §3 equations (33)-(45); Tables 1-3; equations (52)-(56); Appendix A; Tables A1-A2.
+
+## new_families
+### magic_constant_bit_seed  (domain: sfu: elementary-function units, closest: newton_raphson, why_not: the initial approximation is generated by floating-point bit reinterpretation and integer shift/subtraction rather than a seed table or Newton–Raphson recurrence)
+mechanism: Positive floating-point x is reinterpreted as an integer I_x. The seed integer is I_y0 = R - floor(I_x/2), where R is a format-specific magic constant. Reinterpreting I_y0 as floating point yields a piecewise-linear inverse-square-root approximation. Subnormals are scaled into the normal range before seed generation and the result is rescaled afterward. # p.2-p.3, p.8-p.10
+choices:
+  floating_format: {fp32, fp64, fp128}   # p.2, p.8-p.10
+  magic_constant_selection: {zeroth_error_minimax, correction_aware_minimax, floating_point_experimental}   # p.3, p.9-p.10, p.14
+  subnormal_handling: {normal_only, scale_to_normal}   # p.7-p.8
+results:
+| metric | value | unit | technology / device | baseline | condition | page |
+| maximum numerical relative error after attached correction | 0.65017 × 10−3 | relative error | Intel Core i5-3470 / node UNKNOWN / 2021 | original magic seed plus standard correction: 1.75124 × 10−3 | InvSqrt3 magic constant 0x5F200000 plus one modified correction, fp32 | p.12 |
+| optimized magic-constant offset | 17 | integer | Intel Core i5-3470 / node UNKNOWN / 2021 | theoretical R = 0x5F200000 | fp32 InvSqrt3, one correction; experimental R = 0x5F200011 | p.14 |
+evidence: §1 equations (1)-(5); §3.1 code InvSqrt3s; §3.2 equations (33)-(42); Figure 4.
+
+## space_gaps
+* The sfu `newton_raphson` family needs a seed slot that permits `magic_constant_bit_seed`, because this document uses no seed table. # p.2, p.5-p.7
+* The `steps` domain needs the value 4, because InvSqrt2D uses four corrections to reach a maximum relative error of 1.1103 × 10−16. # p.10, p.13
+* The `newton_raphson` family needs choices for modified correction coefficients and their minimax objective. # p.4-p.7
+* The seed vocabulary needs explicit subnormal normalization/rescaling behavior. # p.8
+
+## open_questions
+* The paper does not determine globally optimal floating-point coefficients when rounding errors are included; it reports that the tested improvement over rounded real-valued optima is negligible. # p.13-p.14
+* The paper does not report hardware area/delay/power, pipeline depth, latency, or initiation interval for an implementation. # p.1-p.20

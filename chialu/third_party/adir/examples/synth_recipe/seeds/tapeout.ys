@@ -1,0 +1,10 @@
+# ADIR-DECL v1
+# VAR abc.script_family=dch
+# ADIR-END
+# The block's previous flow: opt -full after synth, dc2 and structural
+# choices before a higher-effort mapping.
+read_verilog -sv {rtl}
+hierarchy -check -top {top}
+synth -top {top} -flatten -noabc -noshare
+opt -full
+abc -liberty {liberty} -script +strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;topo;stime

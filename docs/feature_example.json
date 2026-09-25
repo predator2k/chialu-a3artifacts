@@ -1,0 +1,1069 @@
+{
+ "plan": "add-none_mul-none_log-none_pair-none_fmt-none_sw-pcc",
+ "structures": [
+  {
+   "id": "m0.l0.adder",
+   "kind": "adder",
+   "slot": "adder",
+   "index": "m0",
+   "mode": 0,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_twos_complement"
+  },
+  {
+   "id": "m0.l0.bitcount",
+   "kind": "bitcount",
+   "slot": "bitcount",
+   "index": "m0",
+   "mode": 0,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_twos_complement"
+  },
+  {
+   "id": "m0.l0.comparator",
+   "kind": "comparator",
+   "slot": "comparator",
+   "index": "m0",
+   "mode": 0,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_twos_complement"
+  },
+  {
+   "id": "m0.l0.logic",
+   "kind": "logic",
+   "slot": "logic",
+   "index": "m0",
+   "mode": 0,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_twos_complement"
+  },
+  {
+   "id": "m0.l0.multiplier",
+   "kind": "multiplier",
+   "slot": "multiplier",
+   "index": "m0",
+   "mode": 0,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_twos_complement"
+  },
+  {
+   "id": "m0.l0.shifter",
+   "kind": "shifter",
+   "slot": "shifter",
+   "index": "m0",
+   "mode": 0,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_twos_complement"
+  },
+  {
+   "id": "m1.l0.adder",
+   "kind": "adder",
+   "slot": "adder",
+   "index": "m1",
+   "mode": 1,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_unsigned"
+  },
+  {
+   "id": "m1.l0.bitcount",
+   "kind": "bitcount",
+   "slot": "bitcount",
+   "index": "m1",
+   "mode": 1,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_unsigned"
+  },
+  {
+   "id": "m1.l0.comparator",
+   "kind": "comparator",
+   "slot": "comparator",
+   "index": "m1",
+   "mode": 1,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_unsigned"
+  },
+  {
+   "id": "m1.l0.logic",
+   "kind": "logic",
+   "slot": "logic",
+   "index": "m1",
+   "mode": 1,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_unsigned"
+  },
+  {
+   "id": "m1.l0.multiplier",
+   "kind": "multiplier",
+   "slot": "multiplier",
+   "index": "m1",
+   "mode": 1,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_unsigned"
+  },
+  {
+   "id": "m1.l0.shifter",
+   "kind": "shifter",
+   "slot": "shifter",
+   "index": "m1",
+   "mode": 1,
+   "lane": 0,
+   "width": 16,
+   "format": "int16_unsigned"
+  },
+  {
+   "id": "m2.l0.adder",
+   "kind": "adder",
+   "slot": "adder",
+   "index": "m2",
+   "mode": 2,
+   "lane": 0,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l0.bitcount",
+   "kind": "bitcount",
+   "slot": "bitcount",
+   "index": "m2",
+   "mode": 2,
+   "lane": 0,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l0.comparator",
+   "kind": "comparator",
+   "slot": "comparator",
+   "index": "m2",
+   "mode": 2,
+   "lane": 0,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l0.logic",
+   "kind": "logic",
+   "slot": "logic",
+   "index": "m2",
+   "mode": 2,
+   "lane": 0,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l0.multiplier",
+   "kind": "multiplier",
+   "slot": "multiplier",
+   "index": "m2",
+   "mode": 2,
+   "lane": 0,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l0.shifter",
+   "kind": "shifter",
+   "slot": "shifter",
+   "index": "m2",
+   "mode": 2,
+   "lane": 0,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l1.adder",
+   "kind": "adder",
+   "slot": "adder",
+   "index": "m2",
+   "mode": 2,
+   "lane": 1,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l1.bitcount",
+   "kind": "bitcount",
+   "slot": "bitcount",
+   "index": "m2",
+   "mode": 2,
+   "lane": 1,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l1.comparator",
+   "kind": "comparator",
+   "slot": "comparator",
+   "index": "m2",
+   "mode": 2,
+   "lane": 1,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l1.logic",
+   "kind": "logic",
+   "slot": "logic",
+   "index": "m2",
+   "mode": 2,
+   "lane": 1,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l1.multiplier",
+   "kind": "multiplier",
+   "slot": "multiplier",
+   "index": "m2",
+   "mode": 2,
+   "lane": 1,
+   "width": 8,
+   "format": "int8_twos_complement"
+  },
+  {
+   "id": "m2.l1.shifter",
+   "kind": "shifter",
+   "slot": "shifter",
+   "index": "m2",
+   "mode": 2,
+   "lane": 1,
+   "width": 8,
+   "format": "int8_twos_complement"
+  }
+ ],
+ "A": {
+  "fam": "popcount_counter_tree",
+  "feat": {
+   "EST__area": 6186.6,
+   "EST__delay": 1007.8,
+   "EST__coverage": 1.0,
+   "ROW__m0.l0.adder__area": 97.89,
+   "ROW__m0.l0.adder__delay": 580.85,
+   "ROW__m0.l0.bitcount__area": 83.52,
+   "ROW__m0.l0.bitcount__delay": 499.73,
+   "ROW__m0.l0.comparator__area": 64.11,
+   "ROW__m0.l0.comparator__delay": 361.77,
+   "ROW__m0.l0.logic__area": 84.32,
+   "ROW__m0.l0.logic__delay": 160.75,
+   "ROW__m0.l0.multiplier__area": 1878.23,
+   "ROW__m0.l0.multiplier__delay": 1007.81,
+   "ROW__m0.l0.shifter__area": 242.33,
+   "ROW__m0.l0.shifter__delay": 515.53,
+   "ROW__m1.l0.adder__area": 97.89,
+   "ROW__m1.l0.adder__delay": 580.85,
+   "ROW__m1.l0.bitcount__area": 83.52,
+   "ROW__m1.l0.bitcount__delay": 499.73,
+   "ROW__m1.l0.comparator__area": 64.11,
+   "ROW__m1.l0.comparator__delay": 361.77,
+   "ROW__m1.l0.logic__area": 84.32,
+   "ROW__m1.l0.logic__delay": 160.75,
+   "ROW__m1.l0.multiplier__area": 1878.23,
+   "ROW__m1.l0.multiplier__delay": 1007.81,
+   "ROW__m1.l0.shifter__area": 242.33,
+   "ROW__m1.l0.shifter__delay": 515.53,
+   "ROW__m2.l0.adder__area": 48.94,
+   "ROW__m2.l0.adder__delay": 322.63,
+   "ROW__m2.l0.bitcount__area": 36.18,
+   "ROW__m2.l0.bitcount__delay": 347.27,
+   "ROW__m2.l0.comparator__area": 31.39,
+   "ROW__m2.l0.comparator__delay": 171.6,
+   "ROW__m2.l0.logic__area": 42.29,
+   "ROW__m2.l0.logic__delay": 108.41,
+   "ROW__m2.l0.multiplier__area": 373.46,
+   "ROW__m2.l0.multiplier__delay": 794.4,
+   "ROW__m2.l0.shifter__area": 110.66,
+   "ROW__m2.l0.shifter__delay": 420.67,
+   "ROW__m2.l1.adder__area": 48.94,
+   "ROW__m2.l1.adder__delay": 322.63,
+   "ROW__m2.l1.bitcount__area": 36.18,
+   "ROW__m2.l1.bitcount__delay": 347.27,
+   "ROW__m2.l1.comparator__area": 31.39,
+   "ROW__m2.l1.comparator__delay": 171.6,
+   "ROW__m2.l1.logic__area": 42.29,
+   "ROW__m2.l1.logic__delay": 108.41,
+   "ROW__m2.l1.multiplier__area": 373.46,
+   "ROW__m2.l1.multiplier__delay": 794.4,
+   "ROW__m2.l1.shifter__area": 110.66,
+   "ROW__m2.l1.shifter__delay": 420.67,
+   "AGG__area_sum": 6186.64,
+   "AGG__area_max": 1878.23,
+   "AGG__area_mean": 257.7766666666667,
+   "AGG__delay_max": 1007.81,
+   "AGG__delay_mean": 440.95166666666677,
+   "AGG__delay_top1": 1007.81,
+   "AGG__area_top1": 1878.23,
+   "AGG__delay_top2": 2015.62,
+   "AGG__area_top2": 3756.46,
+   "AGG__delay_top3": 2810.02,
+   "AGG__area_top3": 4129.92,
+   "AGG__delay_top5": 4185.27,
+   "AGG__area_top5": 4745.71,
+   "AGG__n_rows": 24.0,
+   "PLAN__add_none": 1.0,
+   "PLAN__add_all": 0.0,
+   "PLAN__add_per_mode": 0.0,
+   "PLAN__add_per_lane": 0.0,
+   "PLAN__add_comparator": 0.0,
+   "PLAN__add_stage": 0.0,
+   "PLAN__add_arith": 0.0,
+   "PLAN__add_pcc": 0.0,
+   "PLAN__add_rep": 0.0,
+   "PLAN__mul_none": 1.0,
+   "PLAN__mul_all": 0.0,
+   "PLAN__mul_per_mode": 0.0,
+   "PLAN__mul_per_lane": 0.0,
+   "PLAN__mul_comparator": 0.0,
+   "PLAN__mul_stage": 0.0,
+   "PLAN__mul_arith": 0.0,
+   "PLAN__mul_pcc": 0.0,
+   "PLAN__mul_rep": 0.0,
+   "PLAN__log_none": 1.0,
+   "PLAN__log_all": 0.0,
+   "PLAN__log_per_mode": 0.0,
+   "PLAN__log_per_lane": 0.0,
+   "PLAN__log_comparator": 0.0,
+   "PLAN__log_stage": 0.0,
+   "PLAN__log_arith": 0.0,
+   "PLAN__log_pcc": 0.0,
+   "PLAN__log_rep": 0.0,
+   "PLAN__pair_none": 1.0,
+   "PLAN__pair_all": 0.0,
+   "PLAN__pair_per_mode": 0.0,
+   "PLAN__pair_per_lane": 0.0,
+   "PLAN__pair_comparator": 0.0,
+   "PLAN__pair_stage": 0.0,
+   "PLAN__pair_arith": 0.0,
+   "PLAN__pair_pcc": 0.0,
+   "PLAN__pair_rep": 0.0,
+   "PLAN__fmt_none": 1.0,
+   "PLAN__fmt_all": 0.0,
+   "PLAN__fmt_per_mode": 0.0,
+   "PLAN__fmt_per_lane": 0.0,
+   "PLAN__fmt_comparator": 0.0,
+   "PLAN__fmt_stage": 0.0,
+   "PLAN__fmt_arith": 0.0,
+   "PLAN__fmt_pcc": 0.0,
+   "PLAN__fmt_rep": 0.0,
+   "PLAN__sw_none": 0.0,
+   "PLAN__sw_all": 0.0,
+   "PLAN__sw_per_mode": 0.0,
+   "PLAN__sw_per_lane": 0.0,
+   "PLAN__sw_comparator": 0.0,
+   "PLAN__sw_stage": 0.0,
+   "PLAN__sw_arith": 0.0,
+   "PLAN__sw_pcc": 1.0,
+   "PLAN__sw_rep": 0.0,
+   "PLAN__intfp_none": 0.0,
+   "PLAN__intfp_all": 0.0,
+   "PLAN__intfp_per_mode": 0.0,
+   "PLAN__intfp_per_lane": 0.0,
+   "PLAN__intfp_comparator": 0.0,
+   "PLAN__intfp_stage": 0.0,
+   "PLAN__intfp_arith": 0.0,
+   "PLAN__intfp_pcc": 0.0,
+   "PLAN__intfp_rep": 0.0,
+   "SHR__n_groups": 0.0,
+   "SHR__max_gsize": 0.0,
+   "SHR__sum_grouped": 0.0,
+   "SHR__mean_gsize": 0.0,
+   "SHR__frac_grouped": 0.0,
+   "KIND__adder_grouped": 0.0,
+   "KIND__multiplier_grouped": 0.0,
+   "KIND__logic_grouped": 0.0,
+   "KIND__comparator_grouped": 0.0,
+   "KIND__shifter_grouped": 0.0,
+   "KIND__bitcount_grouped": 0.0,
+   "KIND__rounder_grouped": 0.0,
+   "KIND__unpacker_grouped": 0.0,
+   "KIND__fp_adder_grouped": 0.0,
+   "KIND__fp_multiplier_grouped": 0.0,
+   "KIND__fp_comparator_grouped": 0.0,
+   "KIND__fp_fma_grouped": 0.0
+  },
+  "design": {
+   "adder.m0.family": "ripple_carry",
+   "adder.m1.family": "ripple_carry",
+   "adder.m2.family": "ripple_carry",
+   "bitcount.m0.family": "popcount_counter_tree",
+   "bitcount.m1.family": "popcount_counter_tree",
+   "bitcount.m2.family": "popcount_counter_tree",
+   "comparator.m0.family": "prefix_comparator",
+   "comparator.m1.family": "prefix_comparator",
+   "comparator.m2.family": "prefix_comparator",
+   "logic.m0.family": "lane_replicated_gates",
+   "logic.m1.family": "lane_replicated_gates",
+   "logic.m2.family": "lane_replicated_gates",
+   "multiplier.m0.family": "behavioral_star",
+   "multiplier.m1.family": "behavioral_star",
+   "multiplier.m2.family": "behavioral_star",
+   "shifter.m0.family": "barrel_mux_tree",
+   "shifter.m1.family": "barrel_mux_tree",
+   "shifter.m2.family": "barrel_mux_tree"
+  },
+  "rows": [
+   {
+    "id": "m0.l0.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 97.89,
+    "delay_ps": 580.85,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 1878.23,
+    "delay_ps": 1007.81,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 64.11,
+    "delay_ps": 361.77,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 242.33,
+    "delay_ps": 515.53,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 84.32,
+    "delay_ps": 160.75,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.bitcount",
+    "kind": "bitcount",
+    "family": "popcount_counter_tree",
+    "area_um2": 83.52,
+    "delay_ps": 499.73,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m1.l0.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 97.89,
+    "delay_ps": 580.85,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 1878.23,
+    "delay_ps": 1007.81,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 64.11,
+    "delay_ps": 361.77,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 242.33,
+    "delay_ps": 515.53,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 84.32,
+    "delay_ps": 160.75,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.bitcount",
+    "kind": "bitcount",
+    "family": "popcount_counter_tree",
+    "area_um2": 83.52,
+    "delay_ps": 499.73,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m2.l0.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 48.94,
+    "delay_ps": 322.63,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 48.94,
+    "delay_ps": 322.63,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 373.46,
+    "delay_ps": 794.4,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 373.46,
+    "delay_ps": 794.4,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 31.39,
+    "delay_ps": 171.6,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 31.39,
+    "delay_ps": 171.6,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 110.66,
+    "delay_ps": 420.67,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 110.66,
+    "delay_ps": 420.67,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 42.29,
+    "delay_ps": 108.41,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 42.29,
+    "delay_ps": 108.41,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.bitcount",
+    "kind": "bitcount",
+    "family": "popcount_counter_tree",
+    "area_um2": 36.18,
+    "delay_ps": 347.27,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.bitcount",
+    "kind": "bitcount",
+    "family": "popcount_counter_tree",
+    "area_um2": 36.18,
+    "delay_ps": 347.27,
+    "modes": [
+     2
+    ]
+   }
+  ]
+ },
+ "B": {
+  "fam": "priority_encoder",
+  "feat": {
+   "EST__area": 6054.2,
+   "EST__delay": 1007.8,
+   "EST__coverage": 1.0,
+   "ROW__m0.l0.adder__area": 97.89,
+   "ROW__m0.l0.adder__delay": 580.85,
+   "ROW__m0.l0.bitcount__area": 38.84,
+   "ROW__m0.l0.bitcount__delay": 279.58,
+   "ROW__m0.l0.comparator__area": 64.11,
+   "ROW__m0.l0.comparator__delay": 361.77,
+   "ROW__m0.l0.logic__area": 84.32,
+   "ROW__m0.l0.logic__delay": 160.75,
+   "ROW__m0.l0.multiplier__area": 1878.23,
+   "ROW__m0.l0.multiplier__delay": 1007.81,
+   "ROW__m0.l0.shifter__area": 242.33,
+   "ROW__m0.l0.shifter__delay": 515.53,
+   "ROW__m1.l0.adder__area": 97.89,
+   "ROW__m1.l0.adder__delay": 580.85,
+   "ROW__m1.l0.bitcount__area": 38.84,
+   "ROW__m1.l0.bitcount__delay": 279.58,
+   "ROW__m1.l0.comparator__area": 64.11,
+   "ROW__m1.l0.comparator__delay": 361.77,
+   "ROW__m1.l0.logic__area": 84.32,
+   "ROW__m1.l0.logic__delay": 160.75,
+   "ROW__m1.l0.multiplier__area": 1878.23,
+   "ROW__m1.l0.multiplier__delay": 1007.81,
+   "ROW__m1.l0.shifter__area": 242.33,
+   "ROW__m1.l0.shifter__delay": 515.53,
+   "ROW__m2.l0.adder__area": 48.94,
+   "ROW__m2.l0.adder__delay": 322.63,
+   "ROW__m2.l0.bitcount__area": 14.63,
+   "ROW__m2.l0.bitcount__delay": 157.02,
+   "ROW__m2.l0.comparator__area": 31.39,
+   "ROW__m2.l0.comparator__delay": 171.6,
+   "ROW__m2.l0.logic__area": 42.29,
+   "ROW__m2.l0.logic__delay": 108.41,
+   "ROW__m2.l0.multiplier__area": 373.46,
+   "ROW__m2.l0.multiplier__delay": 794.4,
+   "ROW__m2.l0.shifter__area": 110.66,
+   "ROW__m2.l0.shifter__delay": 420.67,
+   "ROW__m2.l1.adder__area": 48.94,
+   "ROW__m2.l1.adder__delay": 322.63,
+   "ROW__m2.l1.bitcount__area": 14.63,
+   "ROW__m2.l1.bitcount__delay": 157.02,
+   "ROW__m2.l1.comparator__area": 31.39,
+   "ROW__m2.l1.comparator__delay": 171.6,
+   "ROW__m2.l1.logic__area": 42.29,
+   "ROW__m2.l1.logic__delay": 108.41,
+   "ROW__m2.l1.multiplier__area": 373.46,
+   "ROW__m2.l1.multiplier__delay": 794.4,
+   "ROW__m2.l1.shifter__area": 110.66,
+   "ROW__m2.l1.shifter__delay": 420.67,
+   "AGG__area_sum": 6054.179999999999,
+   "AGG__area_max": 1878.23,
+   "AGG__area_mean": 252.25749999999996,
+   "AGG__delay_max": 1007.81,
+   "AGG__delay_mean": 406.7516666666666,
+   "AGG__delay_top1": 1007.81,
+   "AGG__area_top1": 1878.23,
+   "AGG__delay_top2": 2015.62,
+   "AGG__area_top2": 3756.46,
+   "AGG__delay_top3": 2810.02,
+   "AGG__area_top3": 4129.92,
+   "AGG__delay_top5": 4185.27,
+   "AGG__area_top5": 4745.71,
+   "AGG__n_rows": 24.0,
+   "PLAN__add_none": 1.0,
+   "PLAN__add_all": 0.0,
+   "PLAN__add_per_mode": 0.0,
+   "PLAN__add_per_lane": 0.0,
+   "PLAN__add_comparator": 0.0,
+   "PLAN__add_stage": 0.0,
+   "PLAN__add_arith": 0.0,
+   "PLAN__add_pcc": 0.0,
+   "PLAN__add_rep": 0.0,
+   "PLAN__mul_none": 1.0,
+   "PLAN__mul_all": 0.0,
+   "PLAN__mul_per_mode": 0.0,
+   "PLAN__mul_per_lane": 0.0,
+   "PLAN__mul_comparator": 0.0,
+   "PLAN__mul_stage": 0.0,
+   "PLAN__mul_arith": 0.0,
+   "PLAN__mul_pcc": 0.0,
+   "PLAN__mul_rep": 0.0,
+   "PLAN__log_none": 1.0,
+   "PLAN__log_all": 0.0,
+   "PLAN__log_per_mode": 0.0,
+   "PLAN__log_per_lane": 0.0,
+   "PLAN__log_comparator": 0.0,
+   "PLAN__log_stage": 0.0,
+   "PLAN__log_arith": 0.0,
+   "PLAN__log_pcc": 0.0,
+   "PLAN__log_rep": 0.0,
+   "PLAN__pair_none": 1.0,
+   "PLAN__pair_all": 0.0,
+   "PLAN__pair_per_mode": 0.0,
+   "PLAN__pair_per_lane": 0.0,
+   "PLAN__pair_comparator": 0.0,
+   "PLAN__pair_stage": 0.0,
+   "PLAN__pair_arith": 0.0,
+   "PLAN__pair_pcc": 0.0,
+   "PLAN__pair_rep": 0.0,
+   "PLAN__fmt_none": 1.0,
+   "PLAN__fmt_all": 0.0,
+   "PLAN__fmt_per_mode": 0.0,
+   "PLAN__fmt_per_lane": 0.0,
+   "PLAN__fmt_comparator": 0.0,
+   "PLAN__fmt_stage": 0.0,
+   "PLAN__fmt_arith": 0.0,
+   "PLAN__fmt_pcc": 0.0,
+   "PLAN__fmt_rep": 0.0,
+   "PLAN__sw_none": 0.0,
+   "PLAN__sw_all": 0.0,
+   "PLAN__sw_per_mode": 0.0,
+   "PLAN__sw_per_lane": 0.0,
+   "PLAN__sw_comparator": 0.0,
+   "PLAN__sw_stage": 0.0,
+   "PLAN__sw_arith": 0.0,
+   "PLAN__sw_pcc": 1.0,
+   "PLAN__sw_rep": 0.0,
+   "PLAN__intfp_none": 0.0,
+   "PLAN__intfp_all": 0.0,
+   "PLAN__intfp_per_mode": 0.0,
+   "PLAN__intfp_per_lane": 0.0,
+   "PLAN__intfp_comparator": 0.0,
+   "PLAN__intfp_stage": 0.0,
+   "PLAN__intfp_arith": 0.0,
+   "PLAN__intfp_pcc": 0.0,
+   "PLAN__intfp_rep": 0.0,
+   "SHR__n_groups": 0.0,
+   "SHR__max_gsize": 0.0,
+   "SHR__sum_grouped": 0.0,
+   "SHR__mean_gsize": 0.0,
+   "SHR__frac_grouped": 0.0,
+   "KIND__adder_grouped": 0.0,
+   "KIND__multiplier_grouped": 0.0,
+   "KIND__logic_grouped": 0.0,
+   "KIND__comparator_grouped": 0.0,
+   "KIND__shifter_grouped": 0.0,
+   "KIND__bitcount_grouped": 0.0,
+   "KIND__rounder_grouped": 0.0,
+   "KIND__unpacker_grouped": 0.0,
+   "KIND__fp_adder_grouped": 0.0,
+   "KIND__fp_multiplier_grouped": 0.0,
+   "KIND__fp_comparator_grouped": 0.0,
+   "KIND__fp_fma_grouped": 0.0
+  },
+  "design": {
+   "adder.m0.family": "ripple_carry",
+   "adder.m1.family": "ripple_carry",
+   "adder.m2.family": "ripple_carry",
+   "bitcount.m0.family": "priority_encoder",
+   "bitcount.m1.family": "priority_encoder",
+   "bitcount.m2.family": "priority_encoder",
+   "comparator.m0.family": "prefix_comparator",
+   "comparator.m1.family": "prefix_comparator",
+   "comparator.m2.family": "prefix_comparator",
+   "logic.m0.family": "lane_replicated_gates",
+   "logic.m1.family": "lane_replicated_gates",
+   "logic.m2.family": "lane_replicated_gates",
+   "multiplier.m0.family": "behavioral_star",
+   "multiplier.m1.family": "behavioral_star",
+   "multiplier.m2.family": "behavioral_star",
+   "shifter.m0.family": "barrel_mux_tree",
+   "shifter.m1.family": "barrel_mux_tree",
+   "shifter.m2.family": "barrel_mux_tree"
+  },
+  "rows": [
+   {
+    "id": "m0.l0.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 97.89,
+    "delay_ps": 580.85,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 1878.23,
+    "delay_ps": 1007.81,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 64.11,
+    "delay_ps": 361.77,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 242.33,
+    "delay_ps": 515.53,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 84.32,
+    "delay_ps": 160.75,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m0.l0.bitcount",
+    "kind": "bitcount",
+    "family": "priority_encoder",
+    "area_um2": 38.84,
+    "delay_ps": 279.58,
+    "modes": [
+     0
+    ]
+   },
+   {
+    "id": "m1.l0.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 97.89,
+    "delay_ps": 580.85,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 1878.23,
+    "delay_ps": 1007.81,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 64.11,
+    "delay_ps": 361.77,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 242.33,
+    "delay_ps": 515.53,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 84.32,
+    "delay_ps": 160.75,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m1.l0.bitcount",
+    "kind": "bitcount",
+    "family": "priority_encoder",
+    "area_um2": 38.84,
+    "delay_ps": 279.58,
+    "modes": [
+     1
+    ]
+   },
+   {
+    "id": "m2.l0.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 48.94,
+    "delay_ps": 322.63,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.adder",
+    "kind": "adder",
+    "family": "ripple_carry",
+    "area_um2": 48.94,
+    "delay_ps": 322.63,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 373.46,
+    "delay_ps": 794.4,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.multiplier",
+    "kind": "multiplier",
+    "family": "behavioral_star",
+    "area_um2": 373.46,
+    "delay_ps": 794.4,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 31.39,
+    "delay_ps": 171.6,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.comparator",
+    "kind": "comparator",
+    "family": "prefix_comparator",
+    "area_um2": 31.39,
+    "delay_ps": 171.6,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 110.66,
+    "delay_ps": 420.67,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.shifter",
+    "kind": "shifter",
+    "family": "barrel_mux_tree",
+    "area_um2": 110.66,
+    "delay_ps": 420.67,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 42.29,
+    "delay_ps": 108.41,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.logic",
+    "kind": "logic",
+    "family": "lane_replicated_gates",
+    "area_um2": 42.29,
+    "delay_ps": 108.41,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l0.bitcount",
+    "kind": "bitcount",
+    "family": "priority_encoder",
+    "area_um2": 14.63,
+    "delay_ps": 157.02,
+    "modes": [
+     2
+    ]
+   },
+   {
+    "id": "m2.l1.bitcount",
+    "kind": "bitcount",
+    "family": "priority_encoder",
+    "area_um2": 14.63,
+    "delay_ps": 157.02,
+    "modes": [
+     2
+    ]
+   }
+  ]
+ }
+}

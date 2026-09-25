@@ -1,0 +1,20 @@
+{
+  "collected": 101,
+  "observed_pass_marks": 82,
+  "observed_fail_marks": 11,
+  "timeouts": [
+    "diminished_cyclic_selftest",
+    "digit_recurrence_selftest",
+    "dot_custom_format_selftest",
+    "exit_alias_binding_selftest",
+    "approximate_truncated_selftest",
+    "generator_binding_selftest",
+    "native_truncated_multiplier_selftest",
+    "dot_component_selftest",
+    "dot_fidelity_selftest",
+    "rns_mod_add_selftest",
+    "architecture_accuracy_selftest"
+  ],
+  "status": "interrupted_optional_broad_audit_after_unrelated_simulation_timeouts",
+  "retry_status": "interrupted_three_extended_simulation_retries_without_a_final_verdict"
+}

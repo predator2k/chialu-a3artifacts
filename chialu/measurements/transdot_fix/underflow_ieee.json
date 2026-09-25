@@ -1,0 +1,17 @@
+{
+  "contract": "ieee",
+  "rtl": "$A3EVAL/runs/transdot/transdot_merged_hand_seed.sv",
+  "results": {
+    "reference": {
+      "vectors": 542788,
+      "mismatches": 0,
+      "first": []
+    },
+    "generated": {
+      "vectors": 542788,
+      "mismatches": 0,
+      "first": []
+    }
+  },
+  "fp8_lane_differences": 0
+}

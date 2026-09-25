@@ -1,0 +1,11 @@
+# Python 3.10 or newer. ADIR is the submodule under third_party/adir
+# (pip install -e third_party/adir); the loop runtime (CHIA, ray, SkyDiscover)
+# is installed from its own repositories. The verify layer, the domain
+# library and the knowledge tools need only pyyaml and mpmath.
+pyyaml
+mpmath
+# knowledge-base extraction (chialu/extract.py)
+pypdf
+# PPA surrogate (ml/surrogate.py): one of
+xgboost
+scikit-learn

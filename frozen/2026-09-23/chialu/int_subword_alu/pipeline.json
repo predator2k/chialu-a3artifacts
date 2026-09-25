@@ -1,0 +1,143 @@
+{
+ "target": "$A3EVAL/3rdparty/chialu/targets/int_subword_alu.yaml",
+ "run_file": "$A3EVAL/3rdparty/chialu/targets/int_subword_alu.nollm.yaml",
+ "run_dir": "$A3EVAL/3rdparty/chialu/run/int_subword_alu",
+ "stages": {
+  "calibrate": {
+   "area_scale": 0.9282,
+   "delay_scale": 1.5824,
+   "glue": {
+    "mode": {
+     "0": 94.7,
+     "1": 0.0,
+     "2": 23.6
+    },
+    "top": 0.0,
+    "outputs": {
+     "y": 1185.7,
+     "flags": 1210.8
+    },
+    "deepest_mode_bus_ps": 1291.8,
+    "whole_ps": 1265.54,
+    "factors": {
+     "adder/ripple_carry": 0.932,
+     "multiplier/behavioral_star": 0.9944,
+     "comparator/prefix_comparator": 0.9108,
+     "shifter/barrel_mux_tree": 1.0119,
+     "logic/lane_replicated_gates": 1.0,
+     "bitcount/popcount_counter_tree": 1.0075
+    }
+   },
+   "exit": 0,
+   "estimate_exit": 0,
+   "measured": [
+    true,
+    [
+     5743.472,
+     1735.74
+    ]
+   ],
+   "estimated": [
+    true,
+    [
+     6187.7,
+     1096.9
+    ]
+   ],
+   "file": "$A3EVAL/3rdparty/chialu/targets/int_subword_alu.numeric.cal.yaml"
+  },
+  "numeric": {
+   "exit": 0,
+   "records": 222,
+   "front_seeds_exit": 0,
+   "run_file": "$A3EVAL/3rdparty/chialu/targets/int_subword_alu.numeric.cal.yaml",
+   "schemes": [
+    {
+     "scheme": "add-all_mul-all_log-all_pair-none_fmt-none_sw-pcc",
+     "exit": 0,
+     "records": 37,
+     "estimate": {
+      "area_um2": 2842.6,
+      "delay_ps": 2927.2,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-all_mul-none_log-all_pair-none_fmt-none_sw-pcc",
+     "exit": 0,
+     "records": 37,
+     "estimate": {
+      "area_um2": 5404.9,
+      "delay_ps": 1735.7,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-all_mul-all_log-per_lane_pair-none_fmt-none_sw-pcc",
+     "exit": 0,
+     "records": 37,
+     "estimate": {
+      "area_um2": 2881.8,
+      "delay_ps": 2927.2,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-per_lane_mul-all_log-all_pair-none_fmt-none_sw-pcc",
+     "exit": 0,
+     "records": 37,
+     "estimate": {
+      "area_um2": 2888.0,
+      "delay_ps": 2927.2,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-per_lane_mul-all_log-per_lane_pair-none_fmt-none_sw-pcc",
+     "exit": 0,
+     "records": 37,
+     "estimate": {
+      "area_um2": 2927.3,
+      "delay_ps": 2927.2,
+      "coverage": 1.0
+     }
+    },
+    {
+     "scheme": "add-all_mul-all_log-per_mode_pair-none_fmt-none_sw-pcc",
+     "exit": 0,
+     "records": 37,
+     "estimate": {
+      "area_um2": 2999.1,
+      "delay_ps": 2927.2,
+      "coverage": 1.0
+     }
+    }
+   ],
+   "schemes_enumerated": 144,
+   "schemes_priced": 144,
+   "front": [
+    "front_1",
+    "front_5"
+   ]
+  },
+  "seeds": {
+   "exit": 0,
+   "seeds": {
+    "front_1": {
+     "feasible": true,
+     "goal": [
+      4859.022,
+      1750.24
+     ]
+    },
+    "front_5": {
+     "feasible": true,
+     "goal": [
+      4087.888,
+      2106.84
+     ]
+    }
+   }
+  }
+ }
+}

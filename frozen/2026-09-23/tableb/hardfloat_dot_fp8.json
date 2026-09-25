@@ -1,0 +1,81 @@
+{
+ "design": "hardfloat_dot",
+ "row": "fp8",
+ "contract": "sequential",
+ "chars": 98539,
+ "modules": [],
+ "lint": {
+  "ok": true,
+  "seconds": 0.2,
+  "detail": ""
+ },
+ "conformance": {
+  "pass": false,
+  "mismatch_count": 87,
+  "vectors": 3153,
+  "seconds": 3.1,
+  "detail": "87 vectors mismatch; the first ones:\n* vector 69: mode 0; d expected 0xbf805445 got 0xbf805446\n* vector 125: mode 0; d expected 0xca9fff0f got 0xca9fff0e\n* vector 352: mode 0; d expected 0xc5661fff got 0xc5661ffe\n* vector 409: mode 0; d expected 0xcafffff3 got 0xcafffff4\n* vector 546: mode 0; d expected 0x4591800d got 0x4591800c\n* vector 568: mode 0; d expected 0x46c00000 got 0x46bfffff\n* vector 684: mode 0; d expected 0x49fc7ff3 got 0x49fc7ff4\n* vector 692: mode 0; d expected 0xd124efc5 got 0xd124efc6"
+ },
+ "ulp": {
+  "target": "$A3EVAL/3rdparty/chialu/targets/eval/vec_dot_acc_cmp_fp8.yaml",
+  "n_random": 3000,
+  "vectors": 3153,
+  "definition": "error = |got - ref| / ulp(ref binade); ref is the fused reference's packed d; zero or subnormal ref: ulp = 2^(emin - p + 1); specials are classes rather than errors",
+  "vs_fused": {
+   "exact_fraction": 0.972407,
+   "exact": 3066,
+   "numeric_vectors": 3153,
+   "max_ulp": 8388608.0,
+   "mean_ulp": 5362.639708214399,
+   "max_ulp_vs_exact": 8388608.0,
+   "mean_ulp_vs_exact": 5362.631039966809,
+   "histogram": {
+    "0": 3066,
+    "(0.5, 1]": 77,
+    "(1, 2]": 3,
+    "(2, 4]": 2,
+    "(4, 8]": 1,
+    "(8, 16]": 1,
+    "(1024, inf]": 3
+   },
+   "classes": {
+    "value": 87,
+    "value/operand_special=no": 87
+   },
+   "worst": "8388608.0 ulp: i=3141 mode 0 a=[62, 190, 61, 191] b=[189, 191, 189, 190] c=bfe80001 fused b4000000 sequential 80000000 got 00000000 specials=[]"
+  },
+  "vs_sequential": {
+   "exact_fraction": 0.999049,
+   "exact": 3150,
+   "max_ulp": 0.0,
+   "mean_ulp": 0.0,
+   "histogram": {
+    "0": 3153
+   },
+   "classes": {
+    "zero_sign": 3
+   }
+  },
+  "samples": {
+   "value/operand_special=no": [
+    "i=69 mode 0 a=[5, 13, 146, 6] b=[4, 167, 67, 130] c=bf7fffff fused bf805445 sequential bf805446 got bf805446 specials=[]",
+    "i=125 mode 0 a=[3, 108, 133, 11] b=[61, 229, 161, 246] c=42fbb2cc fused ca9fff0f sequential ca9fff0e got ca9fff0e specials=[]",
+    "i=352 mode 0 a=[29, 176, 249, 197] b=[41, 149, 39, 96] c=c0000000 fused c5661fff sequential c5661ffe got c5661ffe specials=[]",
+    "i=409 mode 0 a=[134, 180, 248, 25] b=[112, 207, 92, 74] c=0ce25d17 fused cafffff3 sequential cafffff4 got cafffff4 specials=[]",
+    "i=546 mode 0 a=[52, 193, 154, 192] b=[38, 219, 174, 232] c=1056703d fused 4591800d sequential 4591800c got 4591800c specials=[]",
+    "i=568 mode 0 a=[155, 151, 218, 69] b=[177, 42, 216, 139] c=af3e65b0 fused 46c00000 sequential 46bfffff got 46bfffff specials=[]"
+   ]
+  },
+  "seconds": 2
+ },
+ "synth": {
+  "ok": true,
+  "area_um2": 11578.448,
+  "abc_delay_ps": 13593.31,
+  "cells": 9487,
+  "seconds": 8.6,
+  "detail": "",
+  "clock_ps": 300
+ },
+ "seconds": 16
+}

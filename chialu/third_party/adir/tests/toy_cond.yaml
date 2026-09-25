@@ -1,0 +1,73 @@
+cluster_name: toy
+provider:
+  head_ip: localhost
+available_node_types:
+  local:
+    resources:
+      cpu: 4
+      claude_creds: 1
+    num_workers: 1
+adir:
+  module: toy.Cond
+  variables:
+    lanes:
+      fixed: 3
+    mode:
+      runtime: [x, y]
+    mul:
+      search: all
+    unpack:
+      search: all
+    first:
+      search: all
+    pack:
+      search: all
+    lane.*:
+      search: all
+    narrow.*:
+      search: all
+  artifacts:
+    program:
+      role: seed
+      kind: text
+      source: generated
+      language: python
+      evolve: [compute]
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      check:
+        node: toy.nodes.check
+        inputs:
+          text: candidate.program
+      measure:
+        node: toy.nodes.measure
+        inputs:
+          text: candidate.program
+          lanes: vars.lanes
+        when:
+          - check.pass
+    feedback: [check.detail]
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: check.pass, eq: true, hard: true}
+  goal:
+    minimize: measure.area
+  search:
+    backend: adaevolve
+    iterations: 3
+    context:
+      programs: 1
+      show: full
+    seeds:
+      generated: [base]
+    tactics:
+      sources: [unexplored_values]
+    models:
+      solution:
+        agent: claude
+        model: test-model
+  archive:
+    store: jsonl
+    path: results_db.jsonl

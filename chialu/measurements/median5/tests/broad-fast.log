@@ -1,0 +1,47 @@
+bringing up nodes...
+bringing up nodes...
+
+..................................................................F
+FAILED (call) tests/test_selftests.py::test_selftest[diminished_cyclic_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.diminished_cyclic_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.diminished_cyclic_selftest did not finish in 600s
+F
+FAILED (call) tests/test_selftests.py::test_selftest[digit_recurrence_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.digit_recurrence_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.digit_recurrence_selftest did not finish in 600s
+F
+FAILED (call) tests/test_selftests.py::test_selftest[dot_custom_format_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.dot_custom_format_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.dot_custom_format_selftest did not finish in 600s
+.F
+FAILED (call) tests/test_selftests.py::test_selftest[exit_alias_binding_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.exit_alias_binding_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.exit_alias_binding_selftest did not finish in 600s
+F
+FAILED (call) tests/test_selftests.py::test_selftest[approximate_truncated_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.approximate_truncated_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.approximate_truncated_selftest did not finish in 600s
+....F
+FAILED (call) tests/test_selftests.py::test_selftest[generator_binding_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.generator_binding_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.generator_binding_selftest did not finish in 600s
+.....F
+FAILED (call) tests/test_selftests.py::test_selftest[native_truncated_multiplier_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.native_truncated_multiplier_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.native_truncated_multiplier_selftest did not finish in 600s
+..F
+FAILED (call) tests/test_selftests.py::test_selftest[dot_component_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.dot_component_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.dot_component_selftest did not finish in 600s
+F
+FAILED (call) tests/test_selftests.py::test_selftest[dot_fidelity_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.dot_fidelity_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.dot_fidelity_selftest did not finish in 600s
+.F
+FAILED (call) tests/test_selftests.py::test_selftest[rns_mod_add_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.rns_mod_add_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.rns_mod_add_selftest did not finish in 600s
+...F
+FAILED (call) tests/test_selftests.py::test_selftest[architecture_accuracy_selftest] after 600 s
+    E           subprocess.TimeoutExpired: Command '['$CHIALU_HOME/miniconda3/envs/chia_env/bin/python3.10', '-m', 'chialu.verify.architecture_accuracy_selftest']' timed out after 600 seconds
+    E           Failed: chialu.verify.architecture_accuracy_selftest did not finish in 600s

@@ -1,0 +1,200 @@
+adir:
+  module: chialu.ALU
+  run_dir: run/int_subword_alu.numeric
+  variables:
+    modes:
+      runtime:
+      - count: 1
+        format: int16
+      - count: 1
+        format: uint16
+      - count: 2
+        format: int8
+    ops:
+      runtime:
+      - add
+      - sub
+      - adc
+      - neg
+      - abs
+      - add_sat
+      - mul
+      - mul_high
+      - min
+      - max
+      - cmp
+      - shl
+      - shr_arith
+      - rol
+      - and
+      - or
+      - xor
+      - not
+      - popcount
+      - clz
+      - ctz
+    accuracy:
+      fixed: exact
+    check:
+      fixed:
+        default:
+          detect: none
+        fallback: duplicate
+        rules:
+        - name: all
+          formats:
+          - int16
+          - uint16
+          - int8
+          ops:
+          - add
+          - sub
+          - adc
+          - neg
+          - abs
+          - add_sat
+          - mul
+          - mul_high
+          - min
+          - max
+          - cmp
+          - shl
+          - shr_arith
+          - rol
+          - and
+          - or
+          - xor
+          - not
+          - popcount
+          - clz
+          - ctz
+          choices:
+          - family: residue
+            modulus: 15
+            generator_style: csa_tree
+            comparator.family: direct_compare
+    clock_ps:
+      fixed: 300
+    rounding:
+      fixed: RNE
+    daz_in:
+      fixed: false
+    ftz_out:
+      fixed: false
+    flags:
+      fixed:
+      - carry
+      - int_overflow
+    sr_bits:
+      fixed: 8
+    unary_dual:
+      fixed: false
+    check_sr:
+      fixed: true
+    nan_payload:
+      fixed: canonical
+    invalid_result:
+      fixed: saturate
+    nan_to_int:
+      fixed: zero
+    minmax_nan:
+      fixed: propagate
+    tininess:
+      fixed: after
+    int_div_zero:
+      fixed: riscv
+    zero_sign:
+      fixed: positive
+    quire_overflow:
+      fixed: wrap
+    block_scale_rounding:
+      fixed: nearest
+    block_element_overflow:
+      fixed: saturate
+    sr_compare:
+      fixed: gt
+    flag_scope:
+      fixed: per_result
+    check_flags:
+      fixed: false
+    verify.n_random:
+      fixed: 300
+    verify.seed:
+      fixed: 655366
+    verify.n_random_masks:
+      fixed: 2000
+    core.family:
+      fixed: unit_per_class
+    core.*:
+      search: all
+    core.subword.family:
+      search:
+      - partitioned_carry_chain
+      - replicated_lanes
+  artifacts:
+    verify_bundle:
+      role: fixed
+      kind: text
+      source: generated
+      indexed_by: verify_files
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      estimate:
+        node: chialu.eda.estimate
+        inputs:
+          files: artifacts.verify_bundle
+          decl: decl.core
+          pdk: nangate45
+          effort: medium
+          area_scale: 0.9282
+          delay_scale: 1.5824
+          glue_json: '{"mode": {"0": 94.7, "1": 0.0, "2": 23.6}, "top": 0.0}'
+          context_json: '{"adder/ripple_carry": 0.932, "multiplier/behavioral_star": 0.9944, "comparator/prefix_comparator": 0.9108, "shifter/barrel_mux_tree": 1.0119, "logic/lane_replicated_gates": 1.0,
+            "bitcount/popcount_counter_tree": 1.0075}'
+          plan_json: '{"shared": {"adders_0": {"members": ["m0.l0.adder", "m1.l0.adder", "m2.l0.adder"], "why": "one lane-partitioned adder for these lanes"}, "multipliers_0": {"members": ["m0.l0.multiplier",
+            "m1.l0.multiplier", "m2.l0.multiplier", "m2.l1.multiplier"], "family": "twin_precision_subword", "why": "one gated twin-precision matrix for these lanes"}, "gate_rows_0": {"members": ["m0.l0.logic",
+            "m1.l0.logic", "m2.l0.logic"], "family": "wide_gate_row", "why": "one gate row for these lanes"}}, "structures": {}, "why": "sharing scheme add-per_lane_mul-all_log-per_lane_pair-none_fmt-none_sw-pcc:
+            adders per_lane, multipliers all, gate rows per_lane, adder partner none, float sharing none, subword partitioned_carry_chain", "components": {"subword": {"family": "partitioned_carry_chain"}}}'
+    feedback:
+    - estimate.detail
+  constraints:
+  - metric: declaration.ok
+    eq: true
+    hard: true
+  - metric: estimate.ok
+    eq: true
+    hard: true
+  - metric: estimate.coverage
+    ge: 0.8
+  goal:
+    pareto:
+    - minimize: estimate.area_um2
+    - minimize: estimate.delay_ps
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+  knowledge: ../chialu/knowledge
+  role:
+    file: ../targets/prompts/role.md
+  task:
+    script: ../chialu/task.py
+  search:
+    backend: nsga2
+    iterations: 400
+    numeric:
+      seed: 1
+    seeds:
+      generated:
+      - baseline
+      - packed_banks
+      - per_position
+      - dedicated_speed
+    stop:
+      plateau_iterations: 120
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    report:
+      front_only: false

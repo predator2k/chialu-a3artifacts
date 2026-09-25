@@ -1,0 +1,5 @@
+FAIL smoke10.int_subword_alu.plain [reads] ses_f283549a9ffe9YhOHu9KrFB7g4: glob pattern $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/**/candidate.sv outside $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/calls/call_3
+FAIL smoke10.int_subword_alu.plain [reads] ses_f283549a9ffe9YhOHu9KrFB7g4: glob pattern $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/**/*.yaml outside $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/calls/call_3
+FAIL smoke10.int_subword_alu.plain [reads] ses_f283549a9ffe9YhOHu9KrFB7g4: glob pattern $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/**/plain_loop.py outside $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/calls/call_3
+FAIL smoke10.int_subword_alu.plain [reads] ses_f283549a9ffe9YhOHu9KrFB7g4: glob pattern $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/**/* outside $CHIALU_HOME/agent_ws/smoke10.int_subword_alu.plain-90cee0a4/calls/call_3
+4 runs, 4 failed checks in smoke10.int_subword_alu.plain

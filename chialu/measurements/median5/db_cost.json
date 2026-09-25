@@ -1,0 +1,13 @@
+{
+  "rows": 16446,
+  "successful": 14074,
+  "seconds_rows": 15493,
+  "seconds_sum": 590325.3999999971,
+  "seconds_median": 8.3,
+  "status": {
+    "ok": 14074,
+    "fail": 1038,
+    "skip": 1334
+  },
+  "five_upper_estimate_seconds": 2951626.9999999856
+}

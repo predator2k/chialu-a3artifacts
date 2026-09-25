@@ -1,0 +1,18 @@
+# single_path: proposed changes to the space
+
+* choice `case_partition: close_or_far` recorded on the single path — the textbook distinguishes the cancellation case from the large-alignment case even when one datapath serves both [muller_2018]
+* choice `rounding_merge_position: significand_addition_stage` — the flagged prefix designs merge rounding into the significand prefix tree, which `round: flagged_prefix` alone does not place [beaumont_smith1999, beaumont_smith1999, burgess2005]
+* choice `normalization_rounding_overlap: Bool` — the five-stage FADD performs normalization shifting concurrently with rounding and corrects with a final small shift [suzuki_1996]
+* choices `mantissa_representation: sign_and_magnitude` and `subtraction_style: ones_complement_end_around` — the ILLIAC IV element subtracts unlike-sign mantissas with one's complement and end-around carry [davis_1969]
+* choice `residue_preserving_output: Bool` — the FPAR emits the exact rounding residue r = (a + b) - round(a + b) with the rounded sum at the same depth and frequency [kadric_2016]
+* extend `pipeline_depth` above 5 — a seven-stage fp64 adder on Virtex-6 is outside the range [kadric_2016]
+* choice `logic_style: self_timed_dynamic` and `operation_set: add_subtract_compare_complement_convert` — the PA7100 FALU shares one dynamic-logic datapath across those operations [asprey_1993]
+* choice `operation_merging` naming the merged hardware areas (characteristic compare/preshift, fraction add, post-normalize) — the 360/91 pipeline is defined by that merge [anderson1967]
+* choice `precision_result_selection: upper_or_lower_half` — single and double instructions select different halves of the 6600's double-length result [thornton_1970]
+* choice `alignment_shifter_circuit: pass_transistor` — chosen over a binary-weighted multiplexer for area [beaumont_smith1999]
+* choice `throughput_mode: {2_cycles, 3_cycles}` — a pin-programmable unpipelined ALU starts one operation every 2 or 3 clocks [darley_1990]
+* `subnormal` value `none` for posit datapaths and `pipeline_depth` values for format-specific FMA slices (2/3/4 cycles) — posits have no subnormals, and a single-path FMA serves addition in FPnew [uguen_2019, mach_2020]
+* slot `near_lz: lza` on the single path — the LZA runs concurrently with the addition and a shared multiplexer corrects the one-bit error [beaumont_smith1999, bruguera_1999]
+* choice `tail_path_split: parallel_normalizer_and_rounding_select` — the post-adder stage builds the normalizer circuit and the rounding-selection circuit side by side and selects one, because an add or subtract needs a wide normalization or a rounding but never both [lichtenau_2016]
+* choice `shared_radix_datapath: binary_hexadecimal_decimal` — one shifter, one adder and one rounder serve binary, hexadecimal and decimal, the decimal 6-corrections suppressed for binary [lichtenau_2016]
+* choice `denormal_exponent_correction: {parallel_difference_select, late_aligner_correction_stage}` — the denormal correction is either a late select among D, D-1 and D+1 or an extra aligner stage [schwarz_2003]

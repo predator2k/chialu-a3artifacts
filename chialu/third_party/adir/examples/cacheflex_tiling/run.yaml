@@ -1,0 +1,132 @@
+# The CacheFlex tile sweep under a numeric backend: the artifact's loop
+# nest is fixed and the K and M tiles are the searched declaration, so
+# `smac`, `random` or `grid` reproduce the paper's KC sweep as cells on
+# the artifact's gem5 fork. The domain library and the task file are the
+# cacheflex_kernel ones (symlinks); ${CACHEFLEX_ROOT} is the artifact
+# checkout.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: cacheflex_tiling
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  cf:
+    resources:
+      cf_build: 2
+      cf_sim: 6
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    worker_env_commands:
+      - export PATH=$HOME/miniconda3/envs/chia_env/bin:$PATH
+      - export LD_LIBRARY_PATH=$HOME/miniconda3/envs/cacheflex/lib
+
+head_env_commands:
+  - export PATH=$HOME/miniconda3/envs/chia_env/bin:$PATH
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --include-dashboard=false --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  build:
+    cache: true
+  gem5_cell:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: cacheflex.SpmGemm
+  run_dir: run/cacheflex_tiling
+
+  variables:
+    workload:
+      fixed: W7
+    vl:
+      fixed: 16
+    kc:                                  # the paper's sweep points at VL16, up to the SPM cap
+      search: [32, 64, 128, 192, 256, 320, 341]
+    mc:
+      search: [56, 112, 224, 392, 784]
+
+  artifacts:
+    driver:                              # the artifact's loop nest, fixed under a numeric backend
+      role: fixed
+      kind: text
+      source: generated
+      language: cpp
+    harness:
+      role: fixed
+      kind: text
+      source: generated
+      language: cpp
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      build:
+        node: cacheflex.nodes.build
+        inputs:
+          source: candidate
+          root: ${CACHEFLEX_ROOT}
+          vl: vars.vl
+      verify:
+        node: cacheflex.nodes.verify
+        inputs:
+          binary_mock: build.binary_mock
+          root: ${CACHEFLEX_ROOT}
+          vl: vars.vl
+          workload: vars.workload
+          kc: decl.kc
+          mc: decl.mc
+      gem5:
+        node: cacheflex.nodes.gem5_cell
+        inputs:
+          binary_gem5: build.binary_gem5
+          root: ${CACHEFLEX_ROOT}
+          vl: vars.vl
+          workload: vars.workload
+          kc: decl.kc
+          mc: decl.mc
+          mock_checksum: verify.checksum
+        when:
+          - verify.pass
+    feedback: [gem5.stats]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: verify.pass, eq: true, hard: true}
+    - {metric: gem5.ok, eq: true, hard: true}
+    - {metric: gem5.checksum_match, eq: true, hard: true}
+
+  goal:
+    minimize: gem5.cycles
+    score:
+      rule: ratio_to_seed
+      infeasible: zero
+
+  search:
+    backend: smac                        # or random, grid; `adir run --backend <name>`
+    iterations: 12
+    parallel_nodes: 2
+    numeric:
+      seed: 1
+      initial_design_size: 3
+    seeds:
+      generated: [paper]                 # the artifact's pinned KC=256, MC=784 as the first design
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    report:
+      front_only: false

@@ -1,0 +1,146 @@
+# Directives per program site of a fixed C++ kernel under a fixed HLS
+# tool and device: elaboration scans the source for the sites, so the
+# searched families are created by elaboration; the pragma set is a node
+# output of the declarations. The tool's estimate ranks every candidate,
+# the bottom third by latency reach full synthesis. A GNN over the
+# program graph is a prior that ranks the generated seeds; the tool's
+# estimate is a node. The chihls library is named as the task needs it;
+# vitis_hls is a CHIA node.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: hls_pragma
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  hls:
+    resources:
+      hls: 1
+    num_workers: 4
+    compatible_ips: ["${HLS_HOST}"]
+  evolver:
+    resources:
+      evolver: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+cache:
+  vitis_hls:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chihls.PragmaSet
+  run_dir: run/hls_pragma
+
+  variables:
+    device:
+      fixed: xcu250
+    clock_mhz:
+      fixed: 300
+    site.*.unroll:                       # one per loop site the source scan finds
+      search: [1, 2, 4, 8, 16]
+    site.*.pipeline_ii:                  # 0: no pipeline pragma
+      search: [0, 1, 2, 4]
+    array.*.partition:                   # one per array the scan finds
+      search: [none, cyclic_2, cyclic_4, block_4, complete]
+
+  artifacts:                             # no seed: the pragma set is a node output
+    source:
+      role: input
+      kind: text
+      source: file
+      file: kernel.cpp
+      language: cpp
+    testbench:
+      role: fixed
+      kind: text
+      source: file
+      file: tb/kernel_tb.cpp
+      language: cpp
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      pragmas:                           # the source with pragmas inserted at the sites
+        node: chihls.insert_pragmas
+        inputs:
+          source: artifacts.source
+          sites: decl.site               # the indexed family as a mapping: unroll and pipeline_ii per site
+          arrays: decl.array
+      hls_estimate:                      # the tool's fast estimate, seconds: level 1
+        node: vitis_hls
+        inputs:
+          source: pragmas.text
+          device: vars.device
+          clock_mhz: vars.clock_mhz
+          mode: estimate
+        when:
+          - pragmas.ok
+      cosim:                             # functional check against the C model
+        node: vitis_hls
+        inputs:
+          source: pragmas.text
+          testbench: artifacts.testbench
+          device: vars.device
+          clock_mhz: vars.clock_mhz
+          mode: cosim
+        when:
+          - pragmas.ok
+      hls_synth:                         # full synthesis, minutes to an hour: level 2
+        node: vitis_hls
+        inputs:
+          source: pragmas.text
+          device: vars.device
+          clock_mhz: vars.clock_mhz
+          mode: synth
+        when:
+          - cosim.pass
+          - goal.1 le quantile(archive.goal.1, 0.3)
+    feedback: [pragmas.detail, hls_estimate.report, hls_synth.report]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: pragmas.ok, eq: true, hard: true}
+    - {metric: cosim.pass, eq: true, hard: true}
+    - {metric: hls_synth.lut, le: 1728000}          # the device's resources
+    - {metric: hls_synth.dsp, le: 12288}
+    - {metric: hls_synth.bram, le: 2688}
+
+  goal:
+    fidelity:
+      - minimize: hls_estimate.latency
+      - minimize: hls_synth.latency
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+
+  search:
+    backend: smac
+    iterations: 400
+    parallel: 4
+    numeric:
+      surrogate: random_forest
+      acquisition: ei
+    seeds:
+      generated: [no_pragmas, all_pipelined, unroll_inner]
+      rank:
+        prior: chihls_gnn                # a GNN over the program graph; ranks seeds, never gates
+        top: 3
+    budget:
+      wall_hours: 72
+      node_runs: 1200
+    stop:
+      plateau_iterations: 80
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: false
+    report:
+      front_only: false

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "fp_alu",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/fp_alu.sv",
+    "top": "alu_core",
+    "clock_ps": 20000
+  },
+  {
+    "id": "fp_fma_alu",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/fp_fma_alu.sv",
+    "top": "alu_core",
+    "clock_ps": 20000
+  },
+  {
+    "id": "mixed_cvt_alu",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/mixed_cvt_alu.sv",
+    "top": "alu_core",
+    "clock_ps": 14000
+  },
+  {
+    "id": "approx_alu",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/approx_alu.sv",
+    "top": "alu_core",
+    "clock_ps": 3000
+  },
+  {
+    "id": "posit_alu",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/posit_alu.sv",
+    "top": "alu_core",
+    "clock_ps": 30000
+  },
+  {
+    "id": "block_alu",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/block_alu.sv",
+    "top": "alu_core",
+    "clock_ps": 16000
+  },
+  {
+    "id": "vec_dot_acc",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/vec_dot_acc.sv",
+    "top": "dot_core",
+    "clock_ps": 40000
+  },
+  {
+    "id": "vec_sfu",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/vec_sfu.sv",
+    "top": "sfu_core",
+    "clock_ps": 4000
+  },
+  {
+    "id": "vec_dot_acc_cmp_fp16_td",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/vec_dot_acc_cmp_fp16_td.sv",
+    "top": "dot_core",
+    "clock_ps": 300
+  },
+  {
+    "id": "vec_dot_acc_cmp_fp16_tdw",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/vec_dot_acc_cmp_fp16_tdw.sv",
+    "top": "dot_core",
+    "clock_ps": 300
+  },
+  {
+    "id": "vec_dot_acc_cmp_fp8_td",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/vec_dot_acc_cmp_fp8_td.sv",
+    "top": "dot_core",
+    "clock_ps": 300
+  },
+  {
+    "id": "vec_dot_acc_cmp_fp8_tdw",
+    "rtl": "$CHIALU_HOME/wt/median5/measurements/median5/rtl/vec_dot_acc_cmp_fp8_tdw.sv",
+    "top": "dot_core",
+    "clock_ps": 300
+  }
+]

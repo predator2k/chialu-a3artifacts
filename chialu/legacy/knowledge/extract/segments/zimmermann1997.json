@@ -1,0 +1,147 @@
+{
+ "key": "zimmermann1997",
+ "file": "adder_arch.pdf",
+ "kind": "thesis",
+ "citation": "",
+ "pages": 110,
+ "title": "Binary Adder Architectures for Cell-Based VLSI and their Synthesis",
+ "authors": "Reto Zimmermann",
+ "source": "toc_llm",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "Front matter",
+   "start": 0,
+   "end": 6,
+   "kind": "front",
+   "extract": false,
+   "families": [],
+   "why": "The chapter is front matter and contains no arithmetic-unit design detail."
+  },
+  {
+   "id": "s02",
+   "title": "Introduction",
+   "start": 7,
+   "end": 8,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter states the thesis motivation/goals and surveys related work without developing an arithmetic mechanism."
+  },
+  {
+   "id": "s03",
+   "title": "Basic Conditions and Implications",
+   "start": 9,
+   "end": 19,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "carry_save_datapath"
+   ],
+   "why": "The chapter distinguishes carry-propagate and carry-save arithmetic and explains the architectural implications of retaining redundant sum/carry representations."
+  },
+  {
+   "id": "s04",
+   "title": "Basic Addition Principles and Structures",
+   "start": 20,
+   "end": 39,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "carry_lookahead",
+    "carry_skip",
+    "carry_select",
+    "conditional_sum",
+    "carry_increment",
+    "parallel_prefix",
+    "carry_save_datapath"
+   ],
+   "why": "The chapter defines two-operand/multioperand addition structures and derives the principal carry speed-up and prefix mechanisms."
+  },
+  {
+   "id": "s05",
+   "title": "Adder Architectures",
+   "start": 40,
+   "end": 62,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "carry_lookahead",
+    "carry_skip",
+    "carry_select",
+    "conditional_sum",
+    "carry_increment",
+    "parallel_prefix"
+   ],
+   "why": "The chapter describes and quantitatively compares the main binary carry-propagate adder architectures for cell-based implementation."
+  },
+  {
+   "id": "s06",
+   "title": "Special Adders",
+   "start": 63,
+   "end": 72,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "parallel_prefix",
+    "compound_flagged_prefix",
+    "prefix_and_incrementer",
+    "prefix_comparator"
+   ],
+   "why": "The chapter adapts prefix structures for flag generation, late carry inputs, incrementing, and optimized comparison."
+  },
+  {
+   "id": "s07",
+   "title": "Adder Synthesis",
+   "start": 73,
+   "end": 91,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "carry_lookahead",
+    "carry_increment",
+    "parallel_prefix",
+    "prefix_synthesis_nonuniform_arrival"
+   ],
+   "why": "The chapter gives synthesis and optimization algorithms for fixed and arbitrary prefix graphs under area/delay constraints."
+  },
+  {
+   "id": "s08",
+   "title": "VLSI Aspects of Adders",
+   "start": 92,
+   "end": 102,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "carry_increment",
+    "parallel_prefix",
+    "fpga_carry_chain"
+   ],
+   "why": "The chapter evaluates circuit/pipeline/FPGA realizations of prefix, ripple-carry, and carry-increment adders despite also covering general VLSI concerns."
+  },
+  {
+   "id": "s09",
+   "title": "Conclusions",
+   "start": 103,
+   "end": 104,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter is concluding back matter that summarizes mechanisms and comparisons developed in earlier chapters."
+  },
+  {
+   "id": "s10",
+   "title": "Bibliography and Curriculum Vitae",
+   "start": 105,
+   "end": 109,
+   "kind": "back",
+   "extract": false,
+   "families": [],
+   "why": "The chapter contains bibliography and curriculum-vitae material rather than arithmetic-unit design detail."
+  }
+ ]
+}

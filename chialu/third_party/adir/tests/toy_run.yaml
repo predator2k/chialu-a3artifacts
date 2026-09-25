@@ -1,0 +1,117 @@
+cluster_name: toy
+provider:
+  head_ip: localhost
+available_node_types:
+  local:
+    resources:
+      cpu: 4
+      claude_creds: 1
+    num_workers: 1
+adir:
+  module: toy.Box
+  variables:
+    lanes:
+      fixed: 2
+    lanes_outer:
+      fixed: 1
+    mode:
+      runtime: [a, b]
+    algo:
+      search: [fast, small]
+    algo.k:
+      search: {min: 1, max: 8, step: 1}
+    lane.*.style:
+      search: all
+    cfg:
+      preset: std
+    accuracy:
+      fixed: exact
+  artifacts:
+    program:
+      role: seed
+      kind: text
+      source: generated
+      language: python
+      evolve: [compute]
+    harness:
+      role: fixed
+      kind: text
+      source: generated
+      language: python
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      check:
+        node: toy.nodes.check
+        inputs:
+          text: candidate.program
+      measure:
+        node: toy.nodes.measure
+        inputs:
+          text: candidate.program
+          lanes: vars.lanes
+          style: decl.lane.l0.style
+        when:
+          - check.pass
+      curve:
+        node: toy.nodes.curve
+        map_over:
+          cap: [1, 2, 4]
+        inputs:
+          text: candidate.program
+        when:
+          - check.pass
+      slow:
+        node: toy.nodes.slow
+        inputs:
+          text: candidate.program
+          blob: measure.blob           # a transient output: the graph carries it, no record keeps it
+        when:
+          - check.pass
+          - measure.area le 1.5 * seed.measure.area
+      heldout:
+        node: toy.nodes.measure
+        inputs:
+          text: candidate.program
+          lanes: vars.lanes
+          scale: 2
+        report_only: true
+    feedback: [check.detail, curve.cycles, slow.score]
+    report: [heldout.area]
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: check.pass, eq: true, hard: true}
+    - {metric: measure.delay, le: 100}
+    - {expr: min(curve.cycles), le: 5000}
+  goal:
+    minimize: measure.area
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+  search:
+    backend: adaevolve
+    iterations: 5
+    context:
+      programs: 1
+      show: full                     # the stub clients read the program text
+    seeds:
+      generated: [baseline, small]
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+      sources: [toy_notes, toy_plan]
+    tactics:
+      sources: [unexplored_values, worst_constraint]
+    models:
+      solution:
+        agent: claude
+        model: test-model
+      strategy:
+        agent: claude
+        model: test-strategy
+  archive:
+    store: jsonl
+    path: results_db.jsonl

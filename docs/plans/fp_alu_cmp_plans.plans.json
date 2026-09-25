@@ -1,0 +1,564 @@
+{
+  "micro_vars": {
+    "core.fp_adder.m0.family": [
+      "single_path",
+      "two_path",
+      "delay_optimized_unified",
+      "low_power_gated"
+    ],
+    "core.fp_adder.m1.family": [
+      "single_path",
+      "two_path",
+      "delay_optimized_unified",
+      "low_power_gated"
+    ],
+    "core.fp_adder.m2.family": [
+      "single_path",
+      "two_path",
+      "delay_optimized_unified",
+      "low_power_gated"
+    ],
+    "core.fp_comparator.m0.family": [
+      "integer_compare_on_bits",
+      "dedicated_magnitude_comparator"
+    ],
+    "core.fp_comparator.m1.family": [
+      "integer_compare_on_bits",
+      "dedicated_magnitude_comparator"
+    ],
+    "core.fp_comparator.m2.family": [
+      "integer_compare_on_bits",
+      "dedicated_magnitude_comparator"
+    ],
+    "core.fp_multiplier.m0.family": [
+      "sig_mul_then_round",
+      "round_fused_in_reduction"
+    ],
+    "core.fp_multiplier.m1.family": [
+      "sig_mul_then_round",
+      "round_fused_in_reduction"
+    ],
+    "core.fp_multiplier.m2.family": [
+      "sig_mul_then_round",
+      "round_fused_in_reduction"
+    ]
+  },
+  "plans": [
+    {
+      "name": "add-none_mul-none_log-none_pair-none_fmt-none",
+      "plan": {
+        "shared": {},
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-none_fmt-none: adders none, multipliers none, gate rows none, adder partner none, float sharing none"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-none_fmt-stage",
+      "plan": {
+        "shared": {
+          "rounders_across_formats": {
+            "family": "shared_across_formats",
+            "members": [
+              "m0.l0.rounder",
+              "m1.l0.rounder",
+              "m2.l0.rounder",
+              "m2.l1.rounder"
+            ],
+            "why": "one rounder for every float format"
+          },
+          "unpackers_across_formats": {
+            "family": "shared_across_formats",
+            "members": [
+              "m0.l0.unpacker",
+              "m1.l0.unpacker",
+              "m2.l0.unpacker",
+              "m2.l1.unpacker"
+            ],
+            "why": "one unpacker for every float format"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-none_fmt-stage: adders none, multipliers none, gate rows none, adder partner none, float sharing stage"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-none_fmt-arith",
+      "plan": {
+        "shared": {
+          "fp_adders_across_formats": {
+            "members": [
+              "m0.l0.fp_adder",
+              "m1.l0.fp_adder",
+              "m2.l0.fp_adder",
+              "m2.l1.fp_adder"
+            ],
+            "why": "one fp_adder for every float format, at the union geometry of their modes"
+          },
+          "fp_comparators_across_formats": {
+            "members": [
+              "m0.l0.fp_comparator",
+              "m1.l0.fp_comparator",
+              "m2.l0.fp_comparator",
+              "m2.l1.fp_comparator"
+            ],
+            "why": "one fp_comparator for every float format, at the union geometry of their modes"
+          },
+          "fp_multipliers_across_formats": {
+            "members": [
+              "m0.l0.fp_multiplier",
+              "m1.l0.fp_multiplier",
+              "m2.l0.fp_multiplier",
+              "m2.l1.fp_multiplier"
+            ],
+            "why": "one fp_multiplier for every float format, at the union geometry of their modes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-none_fmt-arith: adders none, multipliers none, gate rows none, adder partner none, float sharing arith"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-none_fmt-all",
+      "plan": {
+        "shared": {
+          "fp_adders_across_formats": {
+            "members": [
+              "m0.l0.fp_adder",
+              "m1.l0.fp_adder",
+              "m2.l0.fp_adder",
+              "m2.l1.fp_adder"
+            ],
+            "why": "one fp_adder for every float format, at the union geometry of their modes"
+          },
+          "fp_comparators_across_formats": {
+            "members": [
+              "m0.l0.fp_comparator",
+              "m1.l0.fp_comparator",
+              "m2.l0.fp_comparator",
+              "m2.l1.fp_comparator"
+            ],
+            "why": "one fp_comparator for every float format, at the union geometry of their modes"
+          },
+          "fp_multipliers_across_formats": {
+            "members": [
+              "m0.l0.fp_multiplier",
+              "m1.l0.fp_multiplier",
+              "m2.l0.fp_multiplier",
+              "m2.l1.fp_multiplier"
+            ],
+            "why": "one fp_multiplier for every float format, at the union geometry of their modes"
+          },
+          "rounders_across_formats": {
+            "family": "shared_across_formats",
+            "members": [
+              "m0.l0.rounder",
+              "m1.l0.rounder",
+              "m2.l0.rounder",
+              "m2.l1.rounder"
+            ],
+            "why": "one rounder for every float format"
+          },
+          "unpackers_across_formats": {
+            "family": "shared_across_formats",
+            "members": [
+              "m0.l0.unpacker",
+              "m1.l0.unpacker",
+              "m2.l0.unpacker",
+              "m2.l1.unpacker"
+            ],
+            "why": "one unpacker for every float format"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-none_fmt-all: adders none, multipliers none, gate rows none, adder partner none, float sharing all"
+      }
+    }
+  ],
+  "structures": [
+    {
+      "format": "fp16",
+      "id": "m0.l0.fp_adder",
+      "index": "m0",
+      "kind": "fp_adder",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd",
+        "fsub"
+      ],
+      "slot": "fp_adder",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.unpacker",
+      "index": "m0",
+      "kind": "unpacker",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "unpacker",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.rounder",
+      "index": "m0",
+      "kind": "rounder",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "rounder",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.fp_fma",
+      "index": "m0",
+      "kind": "fp_fma",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "fp_fma",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.fp_multiplier",
+      "index": "m0",
+      "kind": "fp_multiplier",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fmul"
+      ],
+      "slot": "fp_multiplier",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.fp_comparator",
+      "index": "m0",
+      "kind": "fp_comparator",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "fp_comparator",
+      "width": 16
+    },
+    {
+      "format": "bf16",
+      "id": "m1.l0.fp_adder",
+      "index": "m1",
+      "kind": "fp_adder",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "fadd",
+        "fsub"
+      ],
+      "slot": "fp_adder",
+      "width": 16
+    },
+    {
+      "format": "bf16",
+      "id": "m1.l0.unpacker",
+      "index": "m1",
+      "kind": "unpacker",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "unpacker",
+      "width": 16
+    },
+    {
+      "format": "bf16",
+      "id": "m1.l0.rounder",
+      "index": "m1",
+      "kind": "rounder",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "rounder",
+      "width": 16
+    },
+    {
+      "format": "bf16",
+      "id": "m1.l0.fp_fma",
+      "index": "m1",
+      "kind": "fp_fma",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "fp_fma",
+      "width": 16
+    },
+    {
+      "format": "bf16",
+      "id": "m1.l0.fp_multiplier",
+      "index": "m1",
+      "kind": "fp_multiplier",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "fmul"
+      ],
+      "slot": "fp_multiplier",
+      "width": 16
+    },
+    {
+      "format": "bf16",
+      "id": "m1.l0.fp_comparator",
+      "index": "m1",
+      "kind": "fp_comparator",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "fp_comparator",
+      "width": 16
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l0.fp_adder",
+      "index": "m2",
+      "kind": "fp_adder",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub"
+      ],
+      "slot": "fp_adder",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l1.fp_adder",
+      "index": "m2",
+      "kind": "fp_adder",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub"
+      ],
+      "slot": "fp_adder",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l0.unpacker",
+      "index": "m2",
+      "kind": "unpacker",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "unpacker",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l0.rounder",
+      "index": "m2",
+      "kind": "rounder",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "rounder",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l0.fp_fma",
+      "index": "m2",
+      "kind": "fp_fma",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "fp_fma",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l1.unpacker",
+      "index": "m2",
+      "kind": "unpacker",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul",
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "unpacker",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l1.rounder",
+      "index": "m2",
+      "kind": "rounder",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "rounder",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l1.fp_fma",
+      "index": "m2",
+      "kind": "fp_fma",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fadd",
+        "fsub",
+        "fmul"
+      ],
+      "slot": "fp_fma",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l0.fp_multiplier",
+      "index": "m2",
+      "kind": "fp_multiplier",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fmul"
+      ],
+      "slot": "fp_multiplier",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l1.fp_multiplier",
+      "index": "m2",
+      "kind": "fp_multiplier",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fmul"
+      ],
+      "slot": "fp_multiplier",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l0.fp_comparator",
+      "index": "m2",
+      "kind": "fp_comparator",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "fp_comparator",
+      "width": 8
+    },
+    {
+      "format": "fp8e5m2",
+      "id": "m2.l1.fp_comparator",
+      "index": "m2",
+      "kind": "fp_comparator",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "fmin",
+        "fmax",
+        "fcmp"
+      ],
+      "slot": "fp_comparator",
+      "width": 8
+    }
+  ],
+  "target": "targets/eval/fp_alu_cmp_plans.yaml"
+}

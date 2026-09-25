@@ -1,0 +1,210 @@
+# BOOM critical-path optimization: an agentic CLI edits the BOOM Chisel
+# under a Chipyard checkout to raise the achievable frequency of BoomTile
+# on sky130 without giving up IPC. A repo artifact with a declaration
+# file, a Verilator node for the IPC bound, a hammer_vlsi node on the
+# touched sub-blocks screening the same node on the tile, the move
+# library as the local vocabulary, and a record per candidate in a
+# SQLite node.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: boom_timing_opt
+
+provider:
+  head_ip: ${HEAD_IP}
+
+auth:
+  ssh_user: ${USER}
+  ssh_private_key: ${SSH_KEY}
+
+available_node_types:
+  chisel_build:
+    resources:
+      chipyard: 1
+      claude_creds: 1
+    num_workers: 2
+    compatible_ips: ["${HEAD_IP}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-chipyard:latest
+      pull_before_run: true
+  verilator_run:
+    resources:
+      verilator_run: 1
+    num_workers: 2
+    compatible_ips: ["${HEAD_IP}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-verilator:latest
+      pull_before_run: true
+  llm:                                   # Claude Code with its credentials
+    resources:
+      llm: 1
+    num_workers: 1
+    compatible_ips: ["${HEAD_IP}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-claude:latest
+      run_options:
+        - -v ${HOME}/.claude:/root/.claude:ro
+  vlsi:                                  # Genus and the sky130 collateral; user-supplied
+    resources:
+      vlsi: 1
+    num_workers: 2
+    compatible_ips: ["${VLSI_HOST}"]
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  chisel_build:
+    cache: true
+  verilator_suite:
+    cache: true
+  hammer_vlsi:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chitiming.CoreTimingTarget
+  run_dir: run/boom_timing_opt
+
+  variables:
+    chipyard_config:
+      fixed: MegaBoomV3Config
+    vlsi_top:
+      fixed: BoomTile
+    pdk:
+      fixed: sky130
+    clock_period_ns:                     # the period the slack is reported against
+      fixed: 10.0
+    # no search variables: the edits are open-ended, and the declaration
+    # file carries MOVE lines only
+
+  artifacts:
+    chipyard:
+      role: seed
+      kind: repo
+      source: checkout
+      path: /home/ray/chipyard
+      base_rev: ${CHIPYARD_BASE_REV}
+      language: chisel
+      evolve: ["generators/boom/src/main/scala/**"]
+      declaration_file: .adir/declaration.txt   # MOVE lines of a candidate; part of its diff
+    benchmarks:
+      role: input
+      kind: repo
+      source: checkout
+      path: /home/ray/verilatorbins
+      base_rev: ${BENCH_REV}
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      build:                             # Chisel to Verilog; the touched modules from the diff
+        node: chitiming.chisel_build
+        inputs:
+          repo: candidate.chipyard
+          config: vars.chipyard_config
+        resources:
+          chipyard: 1
+      verilator:
+        node: chitiming.verilator_suite
+        inputs:
+          rtl: build.rtl
+          benchmarks: artifacts.benchmarks
+          suite: [embench, asmtests]
+        resources:
+          verilator_run: 1
+      synth_subblock:                    # Genus on the edited sub-modules alone
+        node: hammer_vlsi
+        inputs:
+          rtl: build.rtl
+          top: build.touched_modules
+          pdk: vars.pdk
+          tool: genus
+          clock_period_ns: vars.clock_period_ns
+        when:
+          - verilator.pass
+        resources:
+          vlsi: 1
+      synth_tile:                        # Genus on the tile; the level of record
+        node: hammer_vlsi
+        inputs:
+          rtl: build.rtl
+          top: vars.vlsi_top
+          pdk: vars.pdk
+          tool: genus
+          clock_period_ns: vars.clock_period_ns
+        when:
+          - verilator.pass
+          - synth_subblock.wns_ns ge seed.synth_subblock.wns_ns
+        resources:
+          vlsi: 1
+    feedback: [build.detail, verilator.detail, synth_subblock.critical_path, synth_tile.critical_path]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: verilator.pass, eq: true, hard: true}     # every benchmark runs to completion with the expected output
+    - expr: 100 * (1 - verilator.ipc_geomean / seed.verilator.ipc_geomean)   # IPC loss against the baseline, percent
+      le: 5.0
+
+  goal:
+    maximize: verilator.ipc_geomean / synth_tile.achievable_period_ns   # the iron-law product
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+
+  knowledge: chitiming/knowledge
+
+  search:
+    backend: claude_code                 # an agentic CLI edits the checkout; the solution is the diff
+    iterations: 15
+    parallel: 1
+    retries: 1
+    seeds:
+      generated: [baseline]              # the unmodified tree, synthesized and simulated once
+    context:
+      programs: 1
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+    tactics:
+      sources: [critical_path, moves]
+      select: ucb
+      window: 5
+    models:
+      solution:
+        agent: claude
+        model: claude-opus-4-8
+        effort: max
+    tools:
+      - name: repo_bash                  # grep the staged timing report, edit Chisel, rebuild
+        node: chisel_build
+        work_dir: /home/ray/chipyard
+        timeout_seconds: 600
+      - name: synth_experiment           # start/poll sub-block synthesis of the edited against the unmodified RTL
+        node: vlsi
+        timeout_seconds: 3600
+      - name: archive_query              # SQL over the record table
+        node: head
+        timeout_seconds: 30
+    budget:
+      wall_hours: 72
+      llm_calls: 40
+    stop:
+      plateau_iterations: 6
+
+  archive:
+    store: sqlite
+    path: ${TIMING_OPT_DB_DIR}/timing.db
+    query_tool: true
+    keep_transcripts: true
+    report:
+      front_only: false

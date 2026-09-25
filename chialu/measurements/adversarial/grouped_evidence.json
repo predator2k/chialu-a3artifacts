@@ -1,0 +1,2301 @@
+{
+  "before": [
+    {
+      "kind": "multiplier",
+      "width": 3,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w3_c761a5b27ee8",
+      "status": "fail",
+      "size_bytes": 6096,
+      "reason": "multiplier_direct_pp_parallel_w3_c761a5b27ee8: FAIL 1136; MISMATCH vector=2 got=31 expected=01 | MISMATCH vector=3 got=0f expected=3f"
+    },
+    {
+      "kind": "multiplier",
+      "width": 3,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": false
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w3_967b9ce8cff7",
+      "status": "pass",
+      "size_bytes": 6094,
+      "reason": "multiplier_direct_pp_parallel_w3_967b9ce8cff7: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w4_25a0f12dfc0c",
+      "status": "pass",
+      "size_bytes": 7136,
+      "reason": "multiplier_direct_pp_parallel_w4_25a0f12dfc0c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w5_fc29c733270f",
+      "status": "fail",
+      "size_bytes": 8330,
+      "reason": "multiplier_direct_pp_parallel_w5_fc29c733270f: FAIL 1436; MISMATCH vector=2 got=3c1 expected=001 | MISMATCH vector=3 got=03f expected=3ff"
+    },
+    {
+      "kind": "multiplier",
+      "width": 7,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w7_b33e4af8df00",
+      "status": "fail",
+      "size_bytes": 11541,
+      "reason": "multiplier_direct_pp_parallel_w7_b33e4af8df00: FAIL 1507; MISMATCH vector=2 got=3f01 expected=0001 | MISMATCH vector=3 got=00ff expected=3fff"
+    }
+  ],
+  "after": [
+    {
+      "kind": "multiplier",
+      "width": 3,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w3_c761a5b27ee8",
+      "status": "pass",
+      "size_bytes": 6440,
+      "reason": "multiplier_direct_pp_parallel_w3_c761a5b27ee8: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 3,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": false
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w3_967b9ce8cff7",
+      "status": "pass",
+      "size_bytes": 6094,
+      "reason": "multiplier_direct_pp_parallel_w3_967b9ce8cff7: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 4,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w4_25a0f12dfc0c",
+      "status": "pass",
+      "size_bytes": 7136,
+      "reason": "multiplier_direct_pp_parallel_w4_25a0f12dfc0c: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 5,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w5_fc29c733270f",
+      "status": "pass",
+      "size_bytes": 8702,
+      "reason": "multiplier_direct_pp_parallel_w5_fc29c733270f: PASS"
+    },
+    {
+      "kind": "multiplier",
+      "width": 7,
+      "family": "direct_pp_parallel",
+      "pins": {
+        "group_bits": 2,
+        "_signed": true
+      },
+      "label": "odd signed top group",
+      "name": "multiplier_direct_pp_parallel_w7_b33e4af8df00",
+      "status": "pass",
+      "size_bytes": 11952,
+      "reason": "multiplier_direct_pp_parallel_w7_b33e4af8df00: PASS"
+    }
+  ],
+  "whole_alu_before": [
+    {
+      "name": "c00135",
+      "scheme": "add-none_mul-none_log-none_pair-none_fmt-none_sw-pcc",
+      "sha256": "eac819cb2fd290c48a8ecfc41b636c575a861f3cb9269c9184324af590ad1c8d",
+      "lint": {
+        "ok": true,
+        "detail": "",
+        "seconds": 2.4
+      },
+      "conformance": {
+        "pass": false,
+        "mismatch_count": 15884,
+        "first_mismatches": [
+          "MISMATCH i=970826 in=01807ca01a got=eb008 expect=eb000",
+          "MISMATCH i=970845 in=6c00c5c01a got=4880a expect=48808",
+          "MISMATCH i=970846 in=0380cbc09a got=2181a expect=21818",
+          "MISMATCH i=970847 in=2c00b3551a got=10aaa expect=10aa8",
+          "MISMATCH i=970848 in=1f00b07f9a got=40ffa expect=40ff8",
+          "MISMATCH i=970863 in=4f8138ff9a got=2ffea expect=2ffe8",
+          "MISMATCH i=970878 in=3a827f7f9a got=16fca expect=16fc8",
+          "MISMATCH i=970893 in=32844eff9a got=f1f8a expect=f1f88",
+          "MISMATCH i=970908 in=1e88357f9a got=42f0a expect=42f08",
+          "MISMATCH i=970921 in=71907f409a got=3a20a expect=3a202"
+        ],
+        "detail": "15884 vectors mismatch; the first ones:\n* vector 970826: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x40 (64); a[1]=0x3 (3) b[1]=0xf9 (-7); flags expected 0x0 got 0x8\n* vector 970845: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x80 (-128); a[1]=0xd8 (-40) b[1]=0x8b (-117); flags expected 0x8 got 0xa\n* vector 970846: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x81 (-127); a[1]=0x7 (7) b[1]=0x97 (-105); flags expected 0x8 got 0xa\n* vector 970847: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xaa (-86); a[1]=0x58 (88) b[1]=0x66 (102); flags expected 0x8 got 0xa\n* vector 970848: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xff (-1); a[1]=0x3e (62) b[1]=0x60 (96); flags expected 0x8 got 0xa\n* vector 970863: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x2 (2) b[0]=0xff (-1); a[1]=0x9f (-97) b[1]=0x71 (113); flags expected 0x8 got 0xa\n* vector 970878: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x4 (4) b[0]=0xff (-1); a[1]=0x75 (117) b[1]=0xfe (-2); flags expected 0x8 got 0xa\n* vector 970893: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8 (8) b[0]=0xff (-1); a[1]=0x65 (101) b[1]=0x9d (-99); flags expected 0x8 got 0xa\nthe declaration names core.multiplier.m2.merge_tree.cpa.adder.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+        "cycles_per_frame": null,
+        "seconds": 51.5,
+        "rule_defect_candidate": true,
+        "rule_members": [
+          "core.multiplier.m2.merge_tree.cpa.adder.family=end_around_carry (end_around_carry|*|*)"
+        ]
+      },
+      "seconds": 58.71
+    },
+    {
+      "name": "r0150",
+      "scheme": "add-none_mul-none_log-all_pair-comparator_fmt-none_sw-pcc",
+      "sha256": "ca2eac1aea617ce78b6448e85a8d8f2f7d07e328feccb64263ded1279715adf8",
+      "lint": {
+        "ok": true,
+        "detail": "",
+        "seconds": 1.1
+      },
+      "conformance": {
+        "pass": false,
+        "mismatch_count": 15869,
+        "first_mismatches": [
+          "MISMATCH i=970826 in=01807ca01a got=eb008 expect=eb000",
+          "MISMATCH i=970845 in=6c00c5c01a got=4880a expect=48808",
+          "MISMATCH i=970846 in=0380cbc09a got=2181a expect=21818",
+          "MISMATCH i=970847 in=2c00b3551a got=10aaa expect=10aa8",
+          "MISMATCH i=970848 in=1f00b07f9a got=40ffa expect=40ff8",
+          "MISMATCH i=970863 in=4f8138ff9a got=2ffea expect=2ffe8",
+          "MISMATCH i=970878 in=3a827f7f9a got=16fca expect=16fc8",
+          "MISMATCH i=970893 in=32844eff9a got=f1f8a expect=f1f88",
+          "MISMATCH i=970908 in=1e88357f9a got=42f0a expect=42f08",
+          "MISMATCH i=970921 in=71907f409a got=3a20a expect=3a202"
+        ],
+        "detail": "15869 vectors mismatch; the first ones:\n* vector 970826: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x40 (64); a[1]=0x3 (3) b[1]=0xf9 (-7); flags expected 0x0 got 0x8\n* vector 970845: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x80 (-128); a[1]=0xd8 (-40) b[1]=0x8b (-117); flags expected 0x8 got 0xa\n* vector 970846: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x81 (-127); a[1]=0x7 (7) b[1]=0x97 (-105); flags expected 0x8 got 0xa\n* vector 970847: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xaa (-86); a[1]=0x58 (88) b[1]=0x66 (102); flags expected 0x8 got 0xa\n* vector 970848: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xff (-1); a[1]=0x3e (62) b[1]=0x60 (96); flags expected 0x8 got 0xa\n* vector 970863: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x2 (2) b[0]=0xff (-1); a[1]=0x9f (-97) b[1]=0x71 (113); flags expected 0x8 got 0xa\n* vector 970878: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x4 (4) b[0]=0xff (-1); a[1]=0x75 (117) b[1]=0xfe (-2); flags expected 0x8 got 0xa\n* vector 970893: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8 (8) b[0]=0xff (-1); a[1]=0x65 (101) b[1]=0x9d (-99); flags expected 0x8 got 0xa\nthe declaration names core.multiplier.m2.merge_adder.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+        "cycles_per_frame": null,
+        "seconds": 58.1,
+        "rule_defect_candidate": true,
+        "rule_members": [
+          "core.multiplier.m2.merge_adder.family=end_around_carry (end_around_carry|*|*)"
+        ]
+      },
+      "seconds": 65.83
+    },
+    {
+      "name": "r0181",
+      "scheme": "add-none_mul-per_mode_log-all_pair-none_fmt-none_sw-rep",
+      "sha256": "59e6e024c2a056aa4fb2e56d8525c769e0ca5bd2d61d359082a16006ed90d053",
+      "lint": {
+        "ok": true,
+        "detail": "",
+        "seconds": 5.0
+      },
+      "conformance": {
+        "pass": false,
+        "mismatch_count": 9905,
+        "first_mismatches": [
+          "MISMATCH i=121756 in=0000c00018 got=80002 expect=80000",
+          "MISMATCH i=121757 in=0000c00098 got=80012 expect=80010",
+          "MISMATCH i=121758 in=0000d55518 got=aaaa2 expect=aaaa0",
+          "MISMATCH i=121759 in=0000ffff98 got=ffff2 expect=ffff0",
+          "MISMATCH i=121791 in=00087fff98 got=fff02 expect=fff00",
+          "MISMATCH i=121823 in=00807fff98 got=ff002 expect=ff000",
+          "MISMATCH i=121887 in=2aaaffff98 got=aaab2 expect=aaab0",
+          "MISMATCH i=121903 in=3fff7fff98 got=80022 expect=80020",
+          "MISMATCH i=121919 in=3fffffff98 got=80012 expect=80010",
+          "MISMATCH i=121951 in=4000ffff98 got=7fff2 expect=7fff0"
+        ],
+        "detail": "9905 vectors mismatch; the first ones:\n* vector 121756: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x8000 (-32768); flags expected 0x0 got 0x2\n* vector 121757: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x8001 (-32767); flags expected 0x0 got 0x2\n* vector 121758: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xaaaa (-21846); flags expected 0x0 got 0x2\n* vector 121759: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121791: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x10 (16) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121823: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x100 (256) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121887: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x5555 (21845) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121903: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x7ffe (32766) b[0]=0xffff (-1); flags expected 0x0 got 0x2\nthe declaration names core.comparator.m2.subtractor.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+        "cycles_per_frame": null,
+        "seconds": 67.2,
+        "rule_defect_candidate": true,
+        "rule_members": [
+          "core.comparator.m2.subtractor.family=end_around_carry (end_around_carry|*|*)"
+        ]
+      },
+      "seconds": 77.27
+    }
+  ],
+  "cli_after": [
+    {
+      "name": "c00135",
+      "feasible": true,
+      "measurements": {
+        "declaration": {
+          "value": {
+            "decl.check.all.family": "residue",
+            "decl.core.adder.m0.family": "carry_lookahead",
+            "decl.core.adder.m1.family": "carry_lookahead",
+            "decl.core.adder.m2.family": "carry_lookahead",
+            "decl.core.multiplier.m0.family": "redundant_binary_multiplier",
+            "decl.core.multiplier.m1.family": "booth_recoded_parallel",
+            "decl.core.multiplier.m2.family": "segmented_grid",
+            "decl.core.shifter.m0.family": "butterfly_network",
+            "decl.core.shifter.m0.sticky_collect": true,
+            "decl.core.shifter.m1.family": "barrel_mux_tree",
+            "decl.core.shifter.m1.stage_radix": "full_width_single_stage",
+            "decl.core.shifter.m1.select_encoding": "one_hot_decoded",
+            "decl.core.shifter.m1.stage_order": "large_shift_first",
+            "decl.core.shifter.m1.direction_handling": "amount_negation",
+            "decl.core.shifter.m1.sticky_collect": true,
+            "decl.core.shifter.m2.family": "barrel_mux_tree",
+            "decl.core.shifter.m2.stage_radix": 8,
+            "decl.core.shifter.m2.select_encoding": "binary",
+            "decl.core.shifter.m2.stage_order": "large_shift_first",
+            "decl.core.shifter.m2.direction_handling": "mirrored_datapath",
+            "decl.core.shifter.m2.sticky_collect": false,
+            "decl.core.bitcount.m0.family": "priority_encoder",
+            "decl.core.bitcount.m1.family": "trailing_zero",
+            "decl.core.bitcount.m2.family": "lzd_cell_tree",
+            "decl.core.subword.family": "partitioned_carry_chain",
+            "decl.core.subword.boundary_mechanism": "carry_kill_gate",
+            "decl.core.logic.m0.family": "lane_replicated_gates",
+            "decl.core.logic.m1.family": "lane_replicated_gates",
+            "decl.core.logic.m2.family": "lane_replicated_gates",
+            "decl.core.comparator.m0.family": "prefix_comparator",
+            "decl.core.comparator.m0.structure": "msb_first_prefix",
+            "decl.core.comparator.m0.radix": 2,
+            "decl.core.comparator.m1.family": "subtractor_comparator",
+            "decl.core.comparator.m2.family": "subtractor_comparator",
+            "decl.check.all.residue.modulus": 15,
+            "decl.check.all.residue.generator_style": "csa_tree",
+            "decl.check.all.residue.comparator.family": "direct_compare",
+            "decl.core.adder.m0.group_size": 6,
+            "decl.core.adder.m1.group_size": 6,
+            "decl.core.adder.m2.group_size": 6,
+            "decl.core.adder.m0.levels": 1,
+            "decl.core.adder.m1.levels": 1,
+            "decl.core.adder.m2.levels": 1,
+            "decl.core.adder.m0.intergroup_carry": "lookahead",
+            "decl.core.adder.m1.intergroup_carry": "lookahead",
+            "decl.core.adder.m2.intergroup_carry": "lookahead",
+            "decl.core.multiplier.m0.booth_radix": 4,
+            "decl.core.multiplier.m1.booth_radix": 16,
+            "decl.core.multiplier.m1.hard_multiple_gen": "specialized_3m_cpa",
+            "decl.core.multiplier.m1.sign_extension": "full_extension",
+            "decl.core.multiplier.m1.negative_pp_encoding": "twos_complement_row",
+            "decl.core.multiplier.m2.recursion_depth": 1,
+            "decl.core.multiplier.m2.seg_w": 2,
+            "decl.core.multiplier.m2.num_seg": 4,
+            "decl.core.multiplier.m2.segment_shape": "square",
+            "decl.core.multiplier.m2.merge_form": "shift_add_tree",
+            "decl.core.multiplier.m0.rb_encoding": "plus_minus_pair",
+            "decl.core.multiplier.m0.rbnb_converter": "cpa",
+            "decl.core.multiplier.m1.reduction.family": "compressor_4_2_tree",
+            "decl.core.multiplier.m1.reduction.compressor_kind": "5_2",
+            "decl.core.multiplier.m1.reduction.cpa.family": "hybrid_arrival_driven",
+            "decl.core.multiplier.m1.reduction.cpa.region_count": 4,
+            "decl.core.multiplier.m1.reduction.cpa.region_adder_mix": "uniform_cla",
+            "decl.core.multiplier.m1.reduction.cpa.arrival_model": "measured_tree_profile",
+            "decl.core.multiplier.m1.reduction.cpa.boundary_search": "delay_bound_boundary_enumeration",
+            "decl.core.multiplier.m1.hard_multiple_adder.family": "ling_prefix",
+            "decl.core.multiplier.m1.hard_multiple_adder.topology": "sklansky",
+            "decl.core.multiplier.m1.hard_multiple_adder.pseudo_carry_group": 3,
+            "decl.core.multiplier.m1.hard_multiple_adder.sum_recovery": "late_select_mux",
+            "decl.core.multiplier.m1.negation_incrementer.family": "prefix_and_incrementer",
+            "decl.core.multiplier.m1.negation_incrementer.structure": "ripple_and_chain",
+            "decl.core.multiplier.m2.segment.family": "direct_pp_parallel",
+            "decl.core.multiplier.m2.segment.group_bits": 2,
+            "decl.core.multiplier.m2.segment.signed_scheme": "sign_extension",
+            "decl.core.multiplier.m2.segment.reduction.family": "tiled_cpa_reduction_tree",
+            "decl.core.multiplier.m2.segment.reduction.adder_width": 8,
+            "decl.core.multiplier.m2.segment.reduction.carry_assimilation": "extra_counter_row",
+            "decl.core.multiplier.m2.segment.reduction.terminal_reduction": "compressor_9_2",
+            "decl.core.multiplier.m2.segment.reduction.cpa.family": "uniform",
+            "decl.core.multiplier.m2.segment.reduction.cpa.adder.family": "ling_prefix",
+            "decl.core.multiplier.m2.segment.reduction.cpa.adder.topology": "han_carlson",
+            "decl.core.multiplier.m2.segment.reduction.cpa.adder.pseudo_carry_group": 1,
+            "decl.core.multiplier.m2.segment.reduction.cpa.adder.sum_recovery": "late_select_mux",
+            "decl.core.multiplier.m2.segment.reduction.tile_adder.family": "compound_flagged_prefix",
+            "decl.core.multiplier.m2.segment.reduction.tile_adder.topology": "kogge_stone",
+            "decl.core.multiplier.m2.segment.reduction.tile_adder.outputs": "sum_sum1",
+            "decl.core.multiplier.m2.segment.reduction.tile_adder.implementation": "flag_row",
+            "decl.core.multiplier.m2.segment.reduction.tile_adder.late_carry_in": true,
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.family": "compound_flagged_prefix",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.topology": "ladner_fischer",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.outputs": "sum_sum1",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.implementation": "flag_row",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.late_carry_in": false,
+            "decl.core.multiplier.m2.merge_adder.family": "sparse_prefix_hybrid",
+            "decl.core.multiplier.m2.merge_adder.valency": 2,
+            "decl.core.multiplier.m2.merge_adder.log2_sparsity": 1,
+            "decl.core.multiplier.m2.merge_adder.tree_topology": "han_carlson",
+            "decl.core.multiplier.m2.merge_adder.sum_block_style": "carry_select",
+            "decl.core.multiplier.m2.merge_adder.sum_block.family": "parallel_prefix",
+            "decl.core.multiplier.m2.merge_adder.sum_block.topology": "han_carlson",
+            "decl.core.multiplier.m2.merge_adder.sum_block.valency": 2,
+            "decl.core.multiplier.m2.merge_tree.family": "tiled_cpa_reduction_tree",
+            "decl.core.multiplier.m2.merge_tree.adder_width": 8,
+            "decl.core.multiplier.m2.merge_tree.carry_assimilation": "staggered_tiling",
+            "decl.core.multiplier.m2.merge_tree.terminal_reduction": "compressor_4_2",
+            "decl.core.multiplier.m2.merge_tree.cpa.family": "uniform",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.family": "end_around_carry",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.modulus": "mod_2n_plus_1_diminished_one",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.recirculation": "cyclic_prefix_level",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.topology": "sklansky",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.incrementer.family": "prefix_and_incrementer",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.incrementer.structure": "ripple_and_chain",
+            "decl.core.multiplier.m2.merge_tree.tile_adder.family": "compound_flagged_prefix",
+            "decl.core.multiplier.m2.merge_tree.tile_adder.topology": "kogge_stone",
+            "decl.core.multiplier.m2.merge_tree.tile_adder.outputs": "sum_sum1",
+            "decl.core.multiplier.m2.merge_tree.tile_adder.implementation": "flag_row",
+            "decl.core.multiplier.m2.merge_tree.tile_adder.late_carry_in": true,
+            "decl.core.multiplier.m0.final_converter.family": "prefix_synthesis_nonuniform_arrival",
+            "decl.core.multiplier.m0.final_converter.arrival_profile": "lsb_late",
+            "decl.core.shifter.m0.network": "butterfly",
+            "decl.core.bitcount.m2.block_primitive": "pair_cell",
+            "decl.core.bitcount.m0.output_form": "one_hot_then_encode",
+            "decl.core.bitcount.m2.output_form": "one_hot_shift_controls",
+            "decl.core.bitcount.m2.valid_flag_propagation": false,
+            "decl.core.bitcount.m1.strategy": "reverse_then_lzd",
+            "decl.core.bitcount.m1.isolate_circuit": "twos_complement_and",
+            "decl.core.bitcount.m0.lookahead_group": 12,
+            "decl.core.bitcount.m0.levels": 1,
+            "decl.core.bitcount.m1.lzd.family": "prefix_lzc",
+            "decl.core.bitcount.m1.lzd.prefix_topology": "sklansky",
+            "decl.core.bitcount.m1.lzd.count_form": "popcount_of_complement",
+            "decl.core.bitcount.m1.lzd.counter.family": "popcount_counter_tree",
+            "decl.core.bitcount.m1.lzd.counter.counter_primitive": "lut_rom",
+            "decl.core.bitcount.m1.lzd.counter.tree_shape": "linear_chain",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.family": "carry_increment",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.intergroup_carry": "lookahead_tree",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_sizing": "variable_ramp",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.increment_levels": 1,
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_adder.family": "parallel_prefix",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_adder.topology": "knowles_mixed",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_adder.valency": 2,
+            "decl.core.bitcount.m1.lzd.counter.final_adder.increment_stage.family": "prefix_and_incrementer",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.increment_stage.structure": "select_blocks",
+            "decl.core.bitcount.m1.negation_incrementer.family": "prefix_and_incrementer",
+            "decl.core.bitcount.m1.negation_incrementer.structure": "prefix_and_tree",
+            "decl.core.bitcount.m1.negation_incrementer.topology": "kogge_stone",
+            "decl.core.comparator.m1.zero_detect": "sum_or_tree",
+            "decl.core.comparator.m2.zero_detect": "sum_or_tree",
+            "decl.core.comparator.m1.subtractor.family": "parallel_prefix",
+            "decl.core.comparator.m2.subtractor.family": "manchester_carry_chain",
+            "decl.core.comparator.m2.subtractor.chain_segment_length": 4,
+            "decl.core.comparator.m2.subtractor.variable_skip": true,
+            "decl.core.comparator.m1.subtractor.topology": "ladner_fischer",
+            "decl.core.comparator.m1.subtractor.valency": 2,
+            "decl.STRUCTURE": [
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m0_l0_adder",
+                "_": [
+                  "m0.l0.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m0_l0_multiplier",
+                "_": [
+                  "m0.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m0_l0_comparator",
+                "_": [
+                  "m0.l0.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m0_l0_shifter",
+                "_": [
+                  "m0.l0.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_m0_l0_logic",
+                "_": [
+                  "m0.l0.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m0_l0_bitcount",
+                "_": [
+                  "m0.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m1_l0_adder",
+                "_": [
+                  "m1.l0.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m1_l0_multiplier",
+                "_": [
+                  "m1.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m1_l0_comparator",
+                "_": [
+                  "m1.l0.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m1_l0_shifter",
+                "_": [
+                  "m1.l0.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_m1_l0_logic",
+                "_": [
+                  "m1.l0.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m1_l0_bitcount",
+                "_": [
+                  "m1.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m2_l0_adder",
+                "_": [
+                  "m2.l0.adder"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m2_l1_adder",
+                "_": [
+                  "m2.l1.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m2_l0_multiplier",
+                "_": [
+                  "m2.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m2_l1_multiplier",
+                "_": [
+                  "m2.l1.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m2_l0_comparator",
+                "_": [
+                  "m2.l0.comparator"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m2_l1_comparator",
+                "_": [
+                  "m2.l1.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m2_l0_shifter",
+                "_": [
+                  "m2.l0.shifter"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m2_l1_shifter",
+                "_": [
+                  "m2.l1.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_m2_l0_logic",
+                "_": [
+                  "m2.l0.logic"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_m2_l1_logic",
+                "_": [
+                  "m2.l1.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m2_l0_bitcount",
+                "_": [
+                  "m2.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m2_l1_bitcount",
+                "_": [
+                  "m2.l1.bitcount"
+                ]
+              }
+            ],
+            "ok": true,
+            "defaulted": [
+              "check.all.family",
+              "core.shifter.m1.family",
+              "core.shifter.m2.family",
+              "core.shifter.m2.select_encoding",
+              "core.shifter.m2.direction_handling",
+              "core.shifter.m2.sticky_collect",
+              "core.subword.family",
+              "core.subword.boundary_mechanism",
+              "core.logic.m0.family",
+              "core.logic.m1.family",
+              "core.logic.m2.family",
+              "core.comparator.m0.family",
+              "core.comparator.m0.structure",
+              "core.comparator.m0.radix",
+              "check.all.residue.modulus",
+              "check.all.residue.generator_style",
+              "check.all.residue.comparator.family",
+              "core.adder.m0.levels",
+              "core.adder.m1.levels",
+              "core.adder.m2.levels",
+              "core.multiplier.m0.booth_radix",
+              "core.multiplier.m2.recursion_depth",
+              "core.multiplier.m2.seg_w",
+              "core.multiplier.m2.segment_shape",
+              "core.multiplier.m0.rbnb_converter",
+              "core.multiplier.m1.hard_multiple_adder.topology",
+              "core.multiplier.m1.hard_multiple_adder.sum_recovery",
+              "core.multiplier.m1.negation_incrementer.family",
+              "core.multiplier.m1.negation_incrementer.structure",
+              "core.multiplier.m2.segment.family",
+              "core.multiplier.m2.segment.reduction.carry_assimilation",
+              "core.multiplier.m2.segment.reduction.cpa.family",
+              "core.multiplier.m2.segment.reduction.cpa.adder.pseudo_carry_group",
+              "core.multiplier.m2.segment.reduction.cpa.adder.sum_recovery",
+              "core.multiplier.m2.segment.reduction.tile_adder.outputs",
+              "core.multiplier.m2.segment.hard_multiple_adder.outputs",
+              "core.multiplier.m2.segment.hard_multiple_adder.late_carry_in",
+              "core.multiplier.m2.merge_adder.valency",
+              "core.multiplier.m2.merge_adder.sum_block_style",
+              "core.multiplier.m2.merge_adder.sum_block.valency",
+              "core.multiplier.m2.merge_tree.cpa.family",
+              "core.multiplier.m2.merge_tree.cpa.adder.topology",
+              "core.multiplier.m2.merge_tree.cpa.adder.incrementer.family",
+              "core.multiplier.m2.merge_tree.cpa.adder.incrementer.structure",
+              "core.multiplier.m2.merge_tree.tile_adder.outputs",
+              "core.bitcount.m2.block_primitive",
+              "core.bitcount.m2.valid_flag_propagation",
+              "core.bitcount.m1.strategy",
+              "core.bitcount.m1.isolate_circuit",
+              "core.bitcount.m0.levels",
+              "core.bitcount.m1.lzd.count_form",
+              "core.bitcount.m1.lzd.counter.family",
+              "core.bitcount.m1.lzd.counter.final_adder.increment_levels",
+              "core.bitcount.m1.lzd.counter.final_adder.block_adder.valency",
+              "core.bitcount.m1.lzd.counter.final_adder.increment_stage.family",
+              "core.bitcount.m1.negation_incrementer.family",
+              "core.comparator.m1.zero_detect",
+              "core.comparator.m2.zero_detect",
+              "core.comparator.m1.subtractor.valency"
+            ],
+            "defaulted_under": {},
+            "detail": "declaration ok (95 declared, 59 at defaults)"
+          },
+          "node_hash": "declaration"
+        },
+        "lint": {
+          "value": {
+            "ok": true,
+            "detail": "",
+            "seconds": 2.2
+          },
+          "node_hash": "f4d056ac04ca5f50d28b2c0d7da0ff24e5b26b46bfa8ceb08c5c8c4aa9779f73"
+        },
+        "conformance": {
+          "value": {
+            "pass": true,
+            "mismatch_count": 0,
+            "first_mismatches": [],
+            "detail": "bit-exact against the reference",
+            "cycles_per_frame": null,
+            "seconds": 27.7
+          },
+          "node_hash": "930bef8ba7aac6c8f9be50f3a2a68f6225702f42c0d3bd2e31671c27a7314099"
+        }
+      }
+    },
+    {
+      "name": "r0150",
+      "feasible": true,
+      "measurements": {
+        "declaration": {
+          "value": {
+            "decl.check.all.family": "residue",
+            "decl.core.adder.m0.family": "carry_lookahead",
+            "decl.core.adder.m1.family": "ripple_carry",
+            "decl.core.adder.m1.full_adder_logic": "generate_propagate",
+            "decl.core.adder.m1.chunk_width_bits": 1,
+            "decl.core.adder.m2.family": "ripple_carry",
+            "decl.core.adder.m2.full_adder_logic": "generate_propagate",
+            "decl.core.adder.m2.chunk_width_bits": 1,
+            "decl.core.multiplier.m0.family": "twin_precision_subword",
+            "decl.core.multiplier.m1.family": "squarer",
+            "decl.core.multiplier.m2.family": "segmented_grid",
+            "decl.core.shifter.m0.family": "masked_merged",
+            "decl.core.shifter.m0.sticky_collect": true,
+            "decl.core.shifter.m1.family": "butterfly_network",
+            "decl.core.shifter.m1.sticky_collect": true,
+            "decl.core.shifter.m2.family": "butterfly_network",
+            "decl.core.shifter.m2.sticky_collect": true,
+            "decl.core.bitcount.m0.family": "priority_encoder",
+            "decl.core.bitcount.m1.family": "trailing_zero",
+            "decl.core.bitcount.m2.family": "popcount_counter_tree",
+            "decl.core.bitcount.m2.counter_primitive": "compressor_4_2",
+            "decl.core.bitcount.m2.tree_shape": "balanced_tree",
+            "decl.core.bitcount.m2.final_adder.family": "prefix_synthesis_nonuniform_arrival",
+            "decl.core.subword.family": "partitioned_carry_chain",
+            "decl.core.subword.boundary_mechanism": "carry_kill_gate",
+            "decl.core.logic.m0.family": "wide_gate_row",
+            "decl.core.logic.m1.family": "wide_gate_row",
+            "decl.core.logic.m2.family": "wide_gate_row",
+            "decl.core.comparator.m0.family": "prefix_comparator",
+            "decl.core.comparator.m0.structure": "msb_first_prefix",
+            "decl.core.comparator.m0.radix": 2,
+            "decl.core.comparator.m1.family": "prefix_comparator",
+            "decl.core.comparator.m1.structure": "msb_first_prefix",
+            "decl.core.comparator.m1.radix": 2,
+            "decl.core.comparator.m2.family": "subtractor_comparator",
+            "decl.check.all.residue.modulus": 15,
+            "decl.check.all.residue.generator_style": "csa_tree",
+            "decl.check.all.residue.comparator.family": "direct_compare",
+            "decl.core.adder.m0.group_size": 2,
+            "decl.core.adder.m0.levels": 1,
+            "decl.core.adder.m0.intergroup_carry": "ripple",
+            "decl.core.multiplier.m2.recursion_depth": 1,
+            "decl.core.multiplier.m1.folding_scheme": "basic_symmetry",
+            "decl.core.multiplier.m0.per_lane_signed": false,
+            "decl.core.multiplier.m2.seg_w": 8,
+            "decl.core.multiplier.m2.num_seg": 3,
+            "decl.core.multiplier.m2.segment_shape": "rectangular",
+            "decl.core.multiplier.m2.merge_form": "carry_save_tree",
+            "decl.core.multiplier.m1.reduction.family": "csa_reduction_tree",
+            "decl.core.multiplier.m1.reduction.geometry": "tdm_arrival_driven",
+            "decl.core.multiplier.m1.reduction.counter_kind": "5_2",
+            "decl.core.multiplier.m1.reduction.cpa.family": "uniform",
+            "decl.core.multiplier.m1.reduction.cpa.adder.family": "ling_prefix",
+            "decl.core.multiplier.m1.reduction.cpa.adder.topology": "han_carlson",
+            "decl.core.multiplier.m1.reduction.cpa.adder.pseudo_carry_group": 1,
+            "decl.core.multiplier.m1.reduction.cpa.adder.sum_recovery": "xor_correction",
+            "decl.core.multiplier.m1.cross.family": "direct_pp_parallel",
+            "decl.core.multiplier.m1.cross.group_bits": 2,
+            "decl.core.multiplier.m1.cross.signed_scheme": "sign_extension",
+            "decl.core.multiplier.m1.cross.reduction.family": "csa_reduction_tree",
+            "decl.core.multiplier.m1.cross.reduction.geometry": "dadda",
+            "decl.core.multiplier.m1.cross.reduction.counter_kind": "3_2",
+            "decl.core.multiplier.m1.cross.reduction.cpa.family": "hybrid_arrival_driven",
+            "decl.core.multiplier.m1.cross.reduction.cpa.region_count": 2,
+            "decl.core.multiplier.m1.cross.reduction.cpa.region_adder_mix": "ripple_then_select",
+            "decl.core.multiplier.m1.cross.reduction.cpa.arrival_model": "measured_tree_profile",
+            "decl.core.multiplier.m1.cross.reduction.cpa.boundary_search": "arrival_profile_intersection",
+            "decl.core.multiplier.m1.cross.hard_multiple_adder.family": "parallel_prefix",
+            "decl.core.multiplier.m1.cross.hard_multiple_adder.topology": "ladner_fischer",
+            "decl.core.multiplier.m1.cross.hard_multiple_adder.valency": 2,
+            "decl.core.multiplier.m1.pre_adder.family": "prefix_synthesis_nonuniform_arrival",
+            "decl.core.multiplier.m1.pre_adder.arrival_profile": "msb_late",
+            "decl.core.multiplier.m0.lane_cpa.family": "ripple_carry",
+            "decl.core.multiplier.m0.lane_cpa.full_adder_logic": "xor_majority",
+            "decl.core.multiplier.m0.lane_cpa.chunk_width_bits": 1,
+            "decl.core.multiplier.m2.segment.family": "direct_pp_parallel",
+            "decl.core.multiplier.m2.segment.group_bits": 2,
+            "decl.core.multiplier.m2.segment.signed_scheme": "sign_extension",
+            "decl.core.multiplier.m2.segment.reduction.family": "csa_reduction_tree",
+            "decl.core.multiplier.m2.segment.reduction.geometry": "dadda",
+            "decl.core.multiplier.m2.segment.reduction.counter_kind": "3_2",
+            "decl.core.multiplier.m2.segment.reduction.cpa.family": "hybrid_arrival_driven",
+            "decl.core.multiplier.m2.segment.reduction.cpa.region_count": 2,
+            "decl.core.multiplier.m2.segment.reduction.cpa.region_adder_mix": "ripple_skip_select",
+            "decl.core.multiplier.m2.segment.reduction.cpa.arrival_model": "uniform",
+            "decl.core.multiplier.m2.segment.reduction.cpa.boundary_search": "arrival_profile_intersection",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.family": "compound_flagged_prefix",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.topology": "harris",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.log2_sparsity": 0,
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.fanout_cap": 4,
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.outputs": "sum_sum1_summinus1",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.implementation": "flag_row",
+            "decl.core.multiplier.m2.segment.hard_multiple_adder.late_carry_in": true,
+            "decl.core.multiplier.m2.merge_adder.family": "end_around_carry",
+            "decl.core.multiplier.m2.merge_adder.modulus": "mod_2n_plus_1_diminished_one",
+            "decl.core.multiplier.m2.merge_adder.recirculation": "select_based",
+            "decl.core.multiplier.m2.merge_adder.topology": "harris",
+            "decl.core.multiplier.m2.merge_adder.log2_sparsity": 0,
+            "decl.core.multiplier.m2.merge_adder.fanout_cap": 4,
+            "decl.core.multiplier.m2.merge_adder.incrementer.family": "prefix_and_incrementer",
+            "decl.core.multiplier.m2.merge_adder.incrementer.structure": "select_blocks",
+            "decl.core.multiplier.m2.merge_tree.family": "csa_reduction_tree",
+            "decl.core.multiplier.m2.merge_tree.geometry": "wallace",
+            "decl.core.multiplier.m2.merge_tree.counter_kind": "3_2",
+            "decl.core.multiplier.m2.merge_tree.cpa.family": "uniform",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.family": "compound_flagged_prefix",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.topology": "brent_kung",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.outputs": "sum_sum1",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.implementation": "dual_carry_tree",
+            "decl.core.multiplier.m2.merge_tree.cpa.adder.late_carry_in": false,
+            "decl.core.shifter.m0.mask_generator": "two_thermometer_and",
+            "decl.core.shifter.m0.merge_style": "per_bit_mux",
+            "decl.core.shifter.m1.network": "inverse_butterfly",
+            "decl.core.shifter.m2.network": "inverse_butterfly",
+            "decl.core.shifter.m0.rotator.family": "barrel_mux_tree",
+            "decl.core.shifter.m0.rotator.stage_radix": 2,
+            "decl.core.shifter.m0.rotator.select_encoding": "one_hot_decoded",
+            "decl.core.shifter.m0.rotator.stage_order": "large_shift_first",
+            "decl.core.bitcount.m0.output_form": "one_hot_then_encode",
+            "decl.core.bitcount.m1.strategy": "debruijn_multiply_index",
+            "decl.core.bitcount.m1.isolate_circuit": "twos_complement_and",
+            "decl.core.bitcount.m0.lookahead_group": 8,
+            "decl.core.bitcount.m0.levels": 2,
+            "decl.core.bitcount.m2.final_adder.arrival_profile": "multiplier_vee",
+            "decl.core.bitcount.m1.lzd.family": "prefix_lzc",
+            "decl.core.bitcount.m1.lzd.prefix_topology": "sklansky",
+            "decl.core.bitcount.m1.lzd.count_form": "popcount_of_complement",
+            "decl.core.bitcount.m1.lzd.counter.family": "popcount_counter_tree",
+            "decl.core.bitcount.m1.lzd.counter.counter_primitive": "counter_7_3",
+            "decl.core.bitcount.m1.lzd.counter.tree_shape": "linear_chain",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.family": "carry_select",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_sizing": "square_root_ramp",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.duplication": "shared_add_one",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.select_source": "rippled_block_carries",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_adder.family": "ripple_carry",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_adder.full_adder_logic": "xor_majority",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.block_adder.chunk_width_bits": 1,
+            "decl.core.bitcount.m1.lzd.counter.final_adder.add_one.family": "prefix_and_incrementer",
+            "decl.core.bitcount.m1.lzd.counter.final_adder.add_one.structure": "ripple_and_chain",
+            "decl.core.bitcount.m1.negation_incrementer.family": "prefix_and_incrementer",
+            "decl.core.bitcount.m1.negation_incrementer.structure": "ripple_and_chain",
+            "decl.core.logic.m0.not_via_xor": false,
+            "decl.core.logic.m1.not_via_xor": false,
+            "decl.core.logic.m2.not_via_xor": false,
+            "decl.core.comparator.m2.zero_detect": "sum_or_tree",
+            "decl.core.comparator.m2.subtractor.family": "ripple_carry",
+            "decl.core.comparator.m2.subtractor.full_adder_logic": "generate_propagate",
+            "decl.core.comparator.m2.subtractor.chunk_width_bits": 1,
+            "decl.STRUCTURE": [
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_pair_m0_l0",
+                "group": "pair_m0_l0",
+                "_": [
+                  "m0.l0.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m0_l0_multiplier",
+                "_": [
+                  "m0.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_pair_m0_l0",
+                "group": "pair_m0_l0",
+                "_": [
+                  "m0.l0.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m0_l0_shifter",
+                "_": [
+                  "m0.l0.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m0.l0.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m0_l0_bitcount",
+                "_": [
+                  "m0.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_pair_m1_l0",
+                "group": "pair_m1_l0",
+                "_": [
+                  "m1.l0.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m1_l0_multiplier",
+                "_": [
+                  "m1.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_pair_m1_l0",
+                "group": "pair_m1_l0",
+                "_": [
+                  "m1.l0.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m1_l0_shifter",
+                "_": [
+                  "m1.l0.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m1.l0.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m1_l0_bitcount",
+                "_": [
+                  "m1.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_pair_m2_l0",
+                "group": "pair_m2_l0",
+                "_": [
+                  "m2.l0.adder"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_pair_m2_l1",
+                "group": "pair_m2_l1",
+                "_": [
+                  "m2.l1.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m2_l0_multiplier",
+                "_": [
+                  "m2.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m2_l1_multiplier",
+                "_": [
+                  "m2.l1.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_pair_m2_l0",
+                "group": "pair_m2_l0",
+                "_": [
+                  "m2.l0.comparator"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_pair_m2_l1",
+                "group": "pair_m2_l1",
+                "_": [
+                  "m2.l1.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m2_l0_shifter",
+                "_": [
+                  "m2.l0.shifter"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m2_l1_shifter",
+                "_": [
+                  "m2.l1.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m2.l0.logic"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m2.l1.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m2_l0_bitcount",
+                "_": [
+                  "m2.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m2_l1_bitcount",
+                "_": [
+                  "m2.l1.bitcount"
+                ]
+              }
+            ],
+            "ok": true,
+            "defaulted": [
+              "check.all.family",
+              "core.adder.m1.family",
+              "core.adder.m1.full_adder_logic",
+              "core.adder.m1.chunk_width_bits",
+              "core.adder.m2.family",
+              "core.adder.m2.full_adder_logic",
+              "core.adder.m2.chunk_width_bits",
+              "core.bitcount.m2.family",
+              "core.bitcount.m2.tree_shape",
+              "core.subword.family",
+              "core.subword.boundary_mechanism",
+              "core.comparator.m0.family",
+              "core.comparator.m0.structure",
+              "core.comparator.m0.radix",
+              "core.comparator.m1.family",
+              "core.comparator.m1.structure",
+              "core.comparator.m1.radix",
+              "check.all.residue.modulus",
+              "check.all.residue.generator_style",
+              "check.all.residue.comparator.family",
+              "core.adder.m0.group_size",
+              "core.adder.m0.levels",
+              "core.adder.m0.intergroup_carry",
+              "core.multiplier.m2.recursion_depth",
+              "core.multiplier.m1.folding_scheme",
+              "core.multiplier.m0.per_lane_signed",
+              "core.multiplier.m1.reduction.family",
+              "core.multiplier.m1.reduction.cpa.family",
+              "core.multiplier.m1.reduction.cpa.adder.pseudo_carry_group",
+              "core.multiplier.m1.cross.family",
+              "core.multiplier.m1.cross.reduction.family",
+              "core.multiplier.m1.cross.reduction.geometry",
+              "core.multiplier.m1.cross.reduction.counter_kind",
+              "core.multiplier.m1.cross.reduction.cpa.region_count",
+              "core.multiplier.m1.cross.reduction.cpa.region_adder_mix",
+              "core.multiplier.m1.cross.reduction.cpa.boundary_search",
+              "core.multiplier.m1.cross.hard_multiple_adder.valency",
+              "core.multiplier.m0.lane_cpa.family",
+              "core.multiplier.m0.lane_cpa.chunk_width_bits",
+              "core.multiplier.m2.segment.family",
+              "core.multiplier.m2.segment.reduction.family",
+              "core.multiplier.m2.segment.reduction.geometry",
+              "core.multiplier.m2.segment.reduction.counter_kind",
+              "core.multiplier.m2.segment.reduction.cpa.region_count",
+              "core.multiplier.m2.segment.reduction.cpa.arrival_model",
+              "core.multiplier.m2.segment.reduction.cpa.boundary_search",
+              "core.multiplier.m2.segment.hard_multiple_adder.log2_sparsity",
+              "core.multiplier.m2.merge_adder.log2_sparsity",
+              "core.multiplier.m2.merge_adder.incrementer.family",
+              "core.multiplier.m2.merge_tree.family",
+              "core.multiplier.m2.merge_tree.counter_kind",
+              "core.multiplier.m2.merge_tree.cpa.family",
+              "core.multiplier.m2.merge_tree.cpa.adder.outputs",
+              "core.multiplier.m2.merge_tree.cpa.adder.implementation",
+              "core.multiplier.m2.merge_tree.cpa.adder.late_carry_in",
+              "core.shifter.m1.network",
+              "core.shifter.m2.network",
+              "core.shifter.m0.rotator.family",
+              "core.shifter.m0.rotator.stage_radix",
+              "core.bitcount.m1.isolate_circuit",
+              "core.bitcount.m1.lzd.count_form",
+              "core.bitcount.m1.lzd.counter.family",
+              "core.bitcount.m1.lzd.counter.final_adder.select_source",
+              "core.bitcount.m1.lzd.counter.final_adder.block_adder.family",
+              "core.bitcount.m1.lzd.counter.final_adder.block_adder.chunk_width_bits",
+              "core.bitcount.m1.lzd.counter.final_adder.add_one.family",
+              "core.bitcount.m1.lzd.counter.final_adder.add_one.structure",
+              "core.bitcount.m1.negation_incrementer.family",
+              "core.bitcount.m1.negation_incrementer.structure",
+              "core.logic.m0.not_via_xor",
+              "core.logic.m1.not_via_xor",
+              "core.logic.m2.not_via_xor",
+              "core.comparator.m2.zero_detect",
+              "core.comparator.m2.subtractor.family",
+              "core.comparator.m2.subtractor.full_adder_logic",
+              "core.comparator.m2.subtractor.chunk_width_bits"
+            ],
+            "defaulted_under": {},
+            "detail": "declaration ok (72 declared, 76 at defaults)"
+          },
+          "node_hash": "declaration"
+        },
+        "lint": {
+          "value": {
+            "ok": true,
+            "detail": "",
+            "seconds": 1.1
+          },
+          "node_hash": "05f7f5cfd46e3a8966f93dad790accd138643d9f057a74293e57aa7c04d2e29a"
+        },
+        "conformance": {
+          "value": {
+            "pass": true,
+            "mismatch_count": 0,
+            "first_mismatches": [],
+            "detail": "bit-exact against the reference",
+            "cycles_per_frame": null,
+            "seconds": 26.6
+          },
+          "node_hash": "9a0ede1cae3bc3524e20f2196c526efae88db7b588f604f1341e4a12d9e31978"
+        }
+      }
+    },
+    {
+      "name": "r0181",
+      "feasible": true,
+      "measurements": {
+        "declaration": {
+          "value": {
+            "decl.check.all.family": "residue",
+            "decl.core.adder.m0.family": "compound_flagged_prefix",
+            "decl.core.adder.m1.family": "parallel_prefix",
+            "decl.core.adder.m2.family": "carry_skip",
+            "decl.core.multiplier.m0.family": "segmented_grid",
+            "decl.core.multiplier.m1.family": "squarer",
+            "decl.core.multiplier.m2.family": "twin_precision_subword",
+            "decl.core.shifter.m0.family": "barrel_mux_tree",
+            "decl.core.shifter.m0.stage_radix": 4,
+            "decl.core.shifter.m0.select_encoding": "binary",
+            "decl.core.shifter.m0.stage_order": "large_shift_first",
+            "decl.core.shifter.m0.direction_handling": "data_reversal",
+            "decl.core.shifter.m0.sticky_collect": true,
+            "decl.core.shifter.m1.family": "barrel_mux_tree",
+            "decl.core.shifter.m1.stage_radix": "full_width_single_stage",
+            "decl.core.shifter.m1.select_encoding": "binary",
+            "decl.core.shifter.m1.stage_order": "small_shift_first",
+            "decl.core.shifter.m1.direction_handling": "mirrored_datapath",
+            "decl.core.shifter.m1.sticky_collect": false,
+            "decl.core.shifter.m2.family": "masked_merged",
+            "decl.core.shifter.m2.sticky_collect": false,
+            "decl.core.bitcount.m0.family": "lzd_cell_tree",
+            "decl.core.bitcount.m1.family": "lzd_cell_tree",
+            "decl.core.bitcount.m2.family": "priority_encoder",
+            "decl.core.subword.family": "replicated_lanes",
+            "decl.core.logic.m0.family": "wide_gate_row",
+            "decl.core.logic.m1.family": "wide_gate_row",
+            "decl.core.logic.m2.family": "wide_gate_row",
+            "decl.core.comparator.m0.family": "subtractor_comparator",
+            "decl.core.comparator.m1.family": "subtractor_comparator",
+            "decl.core.comparator.m2.family": "subtractor_comparator",
+            "decl.check.all.residue.modulus": 15,
+            "decl.check.all.residue.generator_style": "csa_tree",
+            "decl.check.all.residue.comparator.family": "direct_compare",
+            "decl.core.adder.m2.block_sizing": "uniform",
+            "decl.core.adder.m2.block_width": 5,
+            "decl.core.adder.m2.skip_levels": 1,
+            "decl.core.adder.m2.skip_gate": "mux",
+            "decl.core.adder.m0.topology": "sklansky",
+            "decl.core.adder.m1.topology": "han_carlson",
+            "decl.core.adder.m1.valency": 2,
+            "decl.core.adder.m0.outputs": "sum_sum1_summinus1",
+            "decl.core.adder.m0.implementation": "flag_row",
+            "decl.core.adder.m0.late_carry_in": false,
+            "decl.core.adder.m2.block_adder.family": "ripple_carry",
+            "decl.core.adder.m2.block_adder.full_adder_logic": "two_half_adders_or",
+            "decl.core.adder.m2.block_adder.chunk_width_bits": 1,
+            "decl.core.multiplier.m0.recursion_depth": 3,
+            "decl.core.multiplier.m1.folding_scheme": "divide_and_conquer",
+            "decl.core.multiplier.m2.per_lane_signed": false,
+            "decl.core.multiplier.m0.seg_w": 2,
+            "decl.core.multiplier.m0.num_seg": 4,
+            "decl.core.multiplier.m0.segment_shape": "square",
+            "decl.core.multiplier.m0.merge_form": "cpa",
+            "decl.core.multiplier.m1.reduction.family": "tiled_cpa_reduction_tree",
+            "decl.core.multiplier.m1.reduction.adder_width": 4,
+            "decl.core.multiplier.m1.reduction.carry_assimilation": "staggered_tiling",
+            "decl.core.multiplier.m1.reduction.terminal_reduction": "3_2_counter",
+            "decl.core.multiplier.m1.reduction.cpa.family": "uniform",
+            "decl.core.multiplier.m1.reduction.cpa.adder.family": "sparse_prefix_hybrid",
+            "decl.core.multiplier.m1.reduction.cpa.adder.valency": 2,
+            "decl.core.multiplier.m1.reduction.cpa.adder.log2_sparsity": 1,
+            "decl.core.multiplier.m1.reduction.cpa.adder.tree_topology": "kogge_stone",
+            "decl.core.multiplier.m1.reduction.cpa.adder.sum_block_style": "ripple_precompute",
+            "decl.core.multiplier.m1.reduction.cpa.adder.sum_block.family": "parallel_prefix",
+            "decl.core.multiplier.m1.reduction.cpa.adder.sum_block.topology": "knowles_mixed",
+            "decl.core.multiplier.m1.reduction.cpa.adder.sum_block.valency": 2,
+            "decl.core.multiplier.m1.reduction.tile_adder.family": "prefix_synthesis_nonuniform_arrival",
+            "decl.core.multiplier.m1.reduction.tile_adder.arrival_profile": "lsb_late",
+            "decl.core.multiplier.m1.cross.family": "booth_recoded_parallel",
+            "decl.core.multiplier.m1.cross.booth_radix": 8,
+            "decl.core.multiplier.m1.cross.hard_multiple_gen": "specialized_3m_cpa",
+            "decl.core.multiplier.m1.cross.sign_extension": "roorda_compact",
+            "decl.core.multiplier.m1.cross.negative_pp_encoding": "twos_complement_row",
+            "decl.core.multiplier.m1.cross.reduction.family": "tiled_cpa_reduction_tree",
+            "decl.core.multiplier.m1.cross.reduction.adder_width": 4,
+            "decl.core.multiplier.m1.cross.reduction.carry_assimilation": "extra_counter_row",
+            "decl.core.multiplier.m1.cross.reduction.terminal_reduction": "3_2_counter",
+            "decl.core.multiplier.m1.cross.reduction.cpa.family": "hybrid_arrival_driven",
+            "decl.core.multiplier.m1.cross.reduction.cpa.region_count": 4,
+            "decl.core.multiplier.m1.cross.reduction.cpa.region_adder_mix": "ripple_then_select",
+            "decl.core.multiplier.m1.cross.reduction.cpa.arrival_model": "measured_tree_profile",
+            "decl.core.multiplier.m1.cross.reduction.cpa.boundary_search": "delay_bound_boundary_enumeration",
+            "decl.core.multiplier.m1.cross.reduction.tile_adder.family": "compound_flagged_prefix",
+            "decl.core.multiplier.m1.cross.reduction.tile_adder.topology": "han_carlson",
+            "decl.core.multiplier.m1.cross.reduction.tile_adder.outputs": "sum_sum1",
+            "decl.core.multiplier.m1.cross.reduction.tile_adder.implementation": "dual_carry_tree",
+            "decl.core.multiplier.m1.cross.reduction.tile_adder.late_carry_in": true,
+            "decl.core.multiplier.m1.cross.hard_multiple_adder.family": "ling_prefix",
+            "decl.core.multiplier.m1.cross.hard_multiple_adder.topology": "knowles_mixed",
+            "decl.core.multiplier.m1.cross.hard_multiple_adder.pseudo_carry_group": 1,
+            "decl.core.multiplier.m1.cross.hard_multiple_adder.sum_recovery": "xor_correction",
+            "decl.core.multiplier.m1.cross.negation_incrementer.family": "prefix_and_incrementer",
+            "decl.core.multiplier.m1.cross.negation_incrementer.structure": "ripple_and_chain",
+            "decl.core.multiplier.m1.pre_adder.family": "manchester_carry_chain",
+            "decl.core.multiplier.m1.pre_adder.chain_segment_length": 2,
+            "decl.core.multiplier.m1.pre_adder.variable_skip": true,
+            "decl.core.multiplier.m2.lane_cpa.family": "ripple_carry",
+            "decl.core.multiplier.m2.lane_cpa.full_adder_logic": "generate_propagate",
+            "decl.core.multiplier.m2.lane_cpa.chunk_width_bits": 1,
+            "decl.core.multiplier.m0.segment.family": "direct_pp_parallel",
+            "decl.core.multiplier.m0.segment.group_bits": 2,
+            "decl.core.multiplier.m0.segment.signed_scheme": "sign_extension",
+            "decl.core.multiplier.m0.segment.reduction.family": "csa_reduction_tree",
+            "decl.core.multiplier.m0.segment.reduction.geometry": "balanced_delay",
+            "decl.core.multiplier.m0.segment.reduction.counter_kind": "5_2",
+            "decl.core.multiplier.m0.segment.reduction.cpa.family": "uniform",
+            "decl.core.multiplier.m0.segment.reduction.cpa.adder.family": "prefix_synthesis_nonuniform_arrival",
+            "decl.core.multiplier.m0.segment.reduction.cpa.adder.arrival_profile": "lsb_late",
+            "decl.core.multiplier.m0.segment.hard_multiple_adder.family": "parallel_prefix",
+            "decl.core.multiplier.m0.segment.hard_multiple_adder.topology": "han_carlson",
+            "decl.core.multiplier.m0.segment.hard_multiple_adder.valency": 2,
+            "decl.core.multiplier.m0.merge_adder.family": "sparse_prefix_hybrid",
+            "decl.core.multiplier.m0.merge_adder.valency": 2,
+            "decl.core.multiplier.m0.merge_adder.log2_sparsity": 1,
+            "decl.core.multiplier.m0.merge_adder.tree_topology": "knowles_mixed",
+            "decl.core.multiplier.m0.merge_adder.sum_block_style": "conditional_sum",
+            "decl.core.multiplier.m0.merge_tree.family": "csa_reduction_tree",
+            "decl.core.multiplier.m0.merge_tree.geometry": "tdm_arrival_driven",
+            "decl.core.multiplier.m0.merge_tree.counter_kind": "4_2",
+            "decl.core.multiplier.m0.merge_tree.cpa.family": "uniform",
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.family": "carry_skip",
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.block_sizing": "uniform",
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.block_width": 2,
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.skip_levels": 1,
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.skip_gate": "and_or_bypass",
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.block_adder.family": "parallel_prefix",
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.block_adder.topology": "sklansky",
+            "decl.core.multiplier.m0.merge_tree.cpa.adder.block_adder.valency": 3,
+            "decl.core.shifter.m2.mask_generator": "lut",
+            "decl.core.shifter.m2.merge_style": "per_bit_mux",
+            "decl.core.shifter.m2.rotator.family": "barrel_mux_tree",
+            "decl.core.shifter.m2.rotator.stage_radix": 8,
+            "decl.core.shifter.m2.rotator.select_encoding": "binary",
+            "decl.core.shifter.m2.rotator.stage_order": "large_shift_first",
+            "decl.core.bitcount.m0.block_primitive": "nibble_cell",
+            "decl.core.bitcount.m1.block_primitive": "pair_cell",
+            "decl.core.bitcount.m0.output_form": "binary_count",
+            "decl.core.bitcount.m1.output_form": "binary_count",
+            "decl.core.bitcount.m2.output_form": "direct_binary",
+            "decl.core.bitcount.m0.valid_flag_propagation": true,
+            "decl.core.bitcount.m1.valid_flag_propagation": true,
+            "decl.core.bitcount.m2.lookahead_group": 16,
+            "decl.core.bitcount.m2.levels": 2,
+            "decl.core.logic.m0.not_via_xor": false,
+            "decl.core.logic.m1.not_via_xor": false,
+            "decl.core.logic.m2.not_via_xor": false,
+            "decl.core.comparator.m0.zero_detect": "sum_or_tree",
+            "decl.core.comparator.m1.zero_detect": "sum_or_tree",
+            "decl.core.comparator.m2.zero_detect": "sum_or_tree",
+            "decl.core.comparator.m0.subtractor.family": "parallel_prefix",
+            "decl.core.comparator.m1.subtractor.family": "prefix_synthesis_nonuniform_arrival",
+            "decl.core.comparator.m2.subtractor.family": "end_around_carry",
+            "decl.core.comparator.m0.subtractor.topology": "kogge_stone",
+            "decl.core.comparator.m2.subtractor.modulus": "generic_p_correction",
+            "decl.core.comparator.m2.subtractor.topology": "ladner_fischer",
+            "decl.core.comparator.m0.subtractor.valency": 2,
+            "decl.core.comparator.m2.subtractor.modulus_value": 165,
+            "decl.core.comparator.m1.subtractor.arrival_profile": "uniform",
+            "decl.STRUCTURE": [
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m0_l0_adder",
+                "_": [
+                  "m0.l0.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m0_l0_multiplier",
+                "_": [
+                  "m0.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m0_l0_comparator",
+                "_": [
+                  "m0.l0.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m0_l0_shifter",
+                "_": [
+                  "m0.l0.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m0.l0.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 0,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m0_l0_bitcount",
+                "_": [
+                  "m0.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m1_l0_adder",
+                "_": [
+                  "m1.l0.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_m1_l0_multiplier",
+                "_": [
+                  "m1.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m1_l0_comparator",
+                "_": [
+                  "m1.l0.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m1_l0_shifter",
+                "_": [
+                  "m1.l0.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m1.l0.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 1,
+                "lane": 0,
+                "width": 16,
+                "format": "int16_unsigned",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m1_l0_bitcount",
+                "_": [
+                  "m1.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m2_l0_adder",
+                "_": [
+                  "m2.l0.adder"
+                ]
+              },
+              {
+                "kind": "adder",
+                "slot": "adder",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "add",
+                  "sub",
+                  "adc",
+                  "neg",
+                  "abs",
+                  "add_sat"
+                ],
+                "sv": "alu_core_u_m2_l1_adder",
+                "_": [
+                  "m2.l1.adder"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_multipliers_0",
+                "group": "multipliers_0",
+                "_": [
+                  "m2.l0.multiplier"
+                ]
+              },
+              {
+                "kind": "multiplier",
+                "slot": "multiplier",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "mul",
+                  "mul_high"
+                ],
+                "sv": "alu_core_u_multipliers_0",
+                "group": "multipliers_0",
+                "_": [
+                  "m2.l1.multiplier"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m2_l0_comparator",
+                "_": [
+                  "m2.l0.comparator"
+                ]
+              },
+              {
+                "kind": "comparator",
+                "slot": "comparator",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "min",
+                  "max",
+                  "cmp"
+                ],
+                "sv": "alu_core_u_m2_l1_comparator",
+                "_": [
+                  "m2.l1.comparator"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m2_l0_shifter",
+                "_": [
+                  "m2.l0.shifter"
+                ]
+              },
+              {
+                "kind": "shifter",
+                "slot": "shifter",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "shl",
+                  "shr_arith",
+                  "rol"
+                ],
+                "sv": "alu_core_u_m2_l1_shifter",
+                "_": [
+                  "m2.l1.shifter"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m2.l0.logic"
+                ]
+              },
+              {
+                "kind": "logic",
+                "slot": "logic",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "and",
+                  "or",
+                  "xor",
+                  "not"
+                ],
+                "sv": "alu_core_u_gate_rows_0",
+                "group": "gate_rows_0",
+                "_": [
+                  "m2.l1.logic"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 2,
+                "lane": 0,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m2_l0_bitcount",
+                "_": [
+                  "m2.l0.bitcount"
+                ]
+              },
+              {
+                "kind": "bitcount",
+                "slot": "bitcount",
+                "mode": 2,
+                "lane": 1,
+                "width": 8,
+                "format": "int8_twos_complement",
+                "ops": [
+                  "popcount",
+                  "clz",
+                  "ctz"
+                ],
+                "sv": "alu_core_u_m2_l1_bitcount",
+                "_": [
+                  "m2.l1.bitcount"
+                ]
+              }
+            ],
+            "ok": true,
+            "defaulted": [
+              "check.all.family",
+              "core.shifter.m0.family",
+              "core.shifter.m0.select_encoding",
+              "core.shifter.m1.family",
+              "core.shifter.m1.select_encoding",
+              "core.shifter.m1.stage_order",
+              "core.shifter.m1.direction_handling",
+              "core.shifter.m1.sticky_collect",
+              "core.shifter.m2.sticky_collect",
+              "check.all.residue.modulus",
+              "check.all.residue.generator_style",
+              "check.all.residue.comparator.family",
+              "core.adder.m2.block_sizing",
+              "core.adder.m2.skip_levels",
+              "core.adder.m2.skip_gate",
+              "core.adder.m0.topology",
+              "core.adder.m1.valency",
+              "core.adder.m0.late_carry_in",
+              "core.adder.m2.block_adder.family",
+              "core.adder.m2.block_adder.chunk_width_bits",
+              "core.multiplier.m2.per_lane_signed",
+              "core.multiplier.m0.seg_w",
+              "core.multiplier.m0.segment_shape",
+              "core.multiplier.m0.merge_form",
+              "core.multiplier.m1.reduction.terminal_reduction",
+              "core.multiplier.m1.reduction.cpa.family",
+              "core.multiplier.m1.reduction.cpa.adder.valency",
+              "core.multiplier.m1.reduction.cpa.adder.sum_block.valency",
+              "core.multiplier.m1.cross.reduction.carry_assimilation",
+              "core.multiplier.m1.cross.reduction.terminal_reduction",
+              "core.multiplier.m1.cross.reduction.cpa.region_adder_mix",
+              "core.multiplier.m1.cross.reduction.tile_adder.outputs",
+              "core.multiplier.m1.cross.reduction.tile_adder.implementation",
+              "core.multiplier.m1.cross.hard_multiple_adder.pseudo_carry_group",
+              "core.multiplier.m1.cross.negation_incrementer.family",
+              "core.multiplier.m1.cross.negation_incrementer.structure",
+              "core.multiplier.m1.pre_adder.chain_segment_length",
+              "core.multiplier.m2.lane_cpa.family",
+              "core.multiplier.m2.lane_cpa.full_adder_logic",
+              "core.multiplier.m2.lane_cpa.chunk_width_bits",
+              "core.multiplier.m0.segment.family",
+              "core.multiplier.m0.segment.reduction.family",
+              "core.multiplier.m0.segment.reduction.cpa.family",
+              "core.multiplier.m0.segment.hard_multiple_adder.valency",
+              "core.multiplier.m0.merge_adder.valency",
+              "core.multiplier.m0.merge_tree.family",
+              "core.multiplier.m0.merge_tree.cpa.family",
+              "core.multiplier.m0.merge_tree.cpa.adder.block_sizing",
+              "core.multiplier.m0.merge_tree.cpa.adder.block_width",
+              "core.multiplier.m0.merge_tree.cpa.adder.skip_levels",
+              "core.multiplier.m0.merge_tree.cpa.adder.block_adder.topology",
+              "core.shifter.m2.rotator.family",
+              "core.shifter.m2.rotator.select_encoding",
+              "core.bitcount.m1.block_primitive",
+              "core.bitcount.m0.output_form",
+              "core.bitcount.m1.output_form",
+              "core.logic.m0.not_via_xor",
+              "core.logic.m1.not_via_xor",
+              "core.logic.m2.not_via_xor",
+              "core.comparator.m0.zero_detect",
+              "core.comparator.m1.zero_detect",
+              "core.comparator.m2.zero_detect",
+              "core.comparator.m0.subtractor.valency",
+              "core.comparator.m1.subtractor.arrival_profile"
+            ],
+            "defaulted_under": {},
+            "detail": "declaration ok (95 declared, 64 at defaults)"
+          },
+          "node_hash": "declaration"
+        },
+        "lint": {
+          "value": {
+            "ok": true,
+            "detail": "",
+            "seconds": 5.5
+          },
+          "node_hash": "fc1cc0e2b775e1f4ef94d5424595cd91a88f6e0dc6a7757f09719da515764ec8"
+        },
+        "conformance": {
+          "value": {
+            "pass": true,
+            "mismatch_count": 0,
+            "first_mismatches": [],
+            "detail": "bit-exact against the reference",
+            "cycles_per_frame": null,
+            "seconds": 49.2
+          },
+          "node_hash": "604c96060d8d1a08452cd1a1ad6af9b4bb1d78a20850b276d6dcb9e9a334a70c"
+        }
+      }
+    }
+  ]
+}

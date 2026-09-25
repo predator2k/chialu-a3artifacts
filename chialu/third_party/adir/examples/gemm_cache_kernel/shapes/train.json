@@ -1,0 +1,8 @@
+[
+ {"member": "gemm_small", "M": 96, "N": 96, "K": 96},
+ {"member": "gemm_small", "M": 128, "N": 64, "K": 128},
+ {"member": "gemm_large", "M": 384, "N": 384, "K": 384},
+ {"member": "gemm_large", "M": 512, "N": 256, "K": 256},
+ {"member": "gemm_tall", "M": 1024, "N": 48, "K": 256},
+ {"member": "gemm_wide", "M": 48, "N": 1024, "K": 256}
+]

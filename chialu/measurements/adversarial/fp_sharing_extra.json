@@ -1,0 +1,1679 @@
+{
+  "kind": "fp",
+  "revision": "HEAD",
+  "symbol": null,
+  "cases": 5,
+  "results": [
+    {
+      "name": "r0007",
+      "plan": {
+        "structures": {
+          "m0.l0.rounder": {
+            "pin": {
+              "lzc.family": "lzd_cell_tree",
+              "lzc.block_primitive": "nibble_cell",
+              "lzc.output_form": "one_hot_shift_controls",
+              "lzc.valid_flag_propagation": true,
+              "shifter.family": "butterfly_network",
+              "shifter.sticky_collect": false,
+              "round.family": "flagged_prefix",
+              "exp_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "select_blocks",
+              "shifter.network": "inverse_butterfly",
+              "round.compound_adder.family": "compound_flagged_prefix",
+              "round.compound_adder.outputs": "sum_sum1",
+              "round.compound_adder.implementation": "dual_carry_tree",
+              "round.compound_adder.topology": "ladner_fischer",
+              "round.compound_adder.late_carry_in": true,
+              "exp_adder.arrival_profile": "lsb_late"
+            },
+            "family": "shared_per_lane"
+          },
+          "m1.l0.rounder": {
+            "pin": {
+              "lzc.family": "priority_encoder",
+              "lzc.output_form": "direct_binary",
+              "shifter.family": "butterfly_network",
+              "shifter.sticky_collect": false,
+              "round.family": "increment_adder",
+              "round.incrementer.family": "prefix_and_incrementer",
+              "round.incrementer.structure": "prefix_and_tree",
+              "round.incrementer.topology": "sklansky",
+              "exp_adder.family": "carry_lookahead",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "select_blocks",
+              "lzc.lookahead_group": 12,
+              "lzc.levels": 1,
+              "shifter.network": "butterfly",
+              "exp_adder.group_size": 7,
+              "exp_adder.levels": 1,
+              "exp_adder.intergroup_carry": "select"
+            },
+            "family": "shared_per_lane"
+          },
+          "m2.l0.rounder": {
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "masked_merged",
+              "shifter.sticky_collect": true,
+              "round.family": "flagged_prefix",
+              "exp_adder.family": "ling_prefix",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "ripple_and_chain",
+              "lzc.prefix_topology": "kogge_stone",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "lut_rom",
+              "lzc.counter.tree_shape": "linear_chain",
+              "lzc.counter.final_adder.family": "sparse_prefix_hybrid",
+              "lzc.counter.final_adder.valency": 2,
+              "lzc.counter.final_adder.log2_sparsity": 1,
+              "lzc.counter.final_adder.tree_topology": "sklansky",
+              "lzc.counter.final_adder.sum_block_style": "ripple_precompute",
+              "lzc.counter.final_adder.sum_block.family": "ripple_carry",
+              "lzc.counter.final_adder.sum_block.full_adder_logic": "generate_propagate",
+              "lzc.counter.final_adder.sum_block.chunk_width_bits": 1,
+              "shifter.mask_generator": "two_thermometer_and",
+              "shifter.merge_style": "and_or_merge",
+              "shifter.rotator.family": "barrel_mux_tree",
+              "shifter.rotator.stage_radix": 2,
+              "shifter.rotator.select_encoding": "binary",
+              "shifter.rotator.stage_order": "large_shift_first",
+              "round.compound_adder.family": "compound_flagged_prefix",
+              "round.compound_adder.outputs": "sum_sum1_summinus1",
+              "round.compound_adder.implementation": "dual_carry_tree",
+              "round.compound_adder.topology": "sklansky",
+              "round.compound_adder.late_carry_in": true,
+              "exp_adder.topology": "knowles_mixed",
+              "exp_adder.pseudo_carry_group": 2,
+              "exp_adder.sum_recovery": "late_select_mux"
+            },
+            "family": "dedicated_per_op"
+          },
+          "m2.l1.rounder": {
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "masked_merged",
+              "shifter.sticky_collect": true,
+              "round.family": "flagged_prefix",
+              "exp_adder.family": "ling_prefix",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "ripple_and_chain",
+              "lzc.prefix_topology": "kogge_stone",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "lut_rom",
+              "lzc.counter.tree_shape": "linear_chain",
+              "lzc.counter.final_adder.family": "sparse_prefix_hybrid",
+              "lzc.counter.final_adder.valency": 2,
+              "lzc.counter.final_adder.log2_sparsity": 1,
+              "lzc.counter.final_adder.tree_topology": "sklansky",
+              "lzc.counter.final_adder.sum_block_style": "ripple_precompute",
+              "lzc.counter.final_adder.sum_block.family": "ripple_carry",
+              "lzc.counter.final_adder.sum_block.full_adder_logic": "generate_propagate",
+              "lzc.counter.final_adder.sum_block.chunk_width_bits": 1,
+              "shifter.mask_generator": "two_thermometer_and",
+              "shifter.merge_style": "and_or_merge",
+              "shifter.rotator.family": "barrel_mux_tree",
+              "shifter.rotator.stage_radix": 2,
+              "shifter.rotator.select_encoding": "binary",
+              "shifter.rotator.stage_order": "large_shift_first",
+              "round.compound_adder.family": "compound_flagged_prefix",
+              "round.compound_adder.outputs": "sum_sum1_summinus1",
+              "round.compound_adder.implementation": "dual_carry_tree",
+              "round.compound_adder.topology": "sklansky",
+              "round.compound_adder.late_carry_in": true,
+              "exp_adder.topology": "knowles_mixed",
+              "exp_adder.pseudo_carry_group": 2,
+              "exp_adder.sum_recovery": "late_select_mux"
+            },
+            "family": "dedicated_per_op"
+          },
+          "m0.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m1.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_unpack",
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "masked_merged",
+              "shifter.sticky_collect": true,
+              "lzc.prefix_topology": "kogge_stone",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "counter_7_3",
+              "lzc.counter.tree_shape": "linear_chain",
+              "lzc.counter.final_adder.family": "end_around_carry",
+              "lzc.counter.final_adder.modulus": "mod_2n_plus_1_diminished_one",
+              "lzc.counter.final_adder.recirculation": "two_pass_prefix",
+              "lzc.counter.final_adder.topology": "knowles_mixed",
+              "lzc.counter.final_adder.incrementer.family": "prefix_and_incrementer",
+              "lzc.counter.final_adder.incrementer.structure": "prefix_and_tree",
+              "lzc.counter.final_adder.incrementer.topology": "sklansky",
+              "shifter.mask_generator": "lut",
+              "shifter.merge_style": "per_bit_mux",
+              "shifter.rotator.family": "barrel_mux_tree",
+              "shifter.rotator.stage_radix": "full_width_single_stage",
+              "shifter.rotator.select_encoding": "one_hot_decoded",
+              "shifter.rotator.stage_order": "small_shift_first"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m2.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m2.l1.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m1.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m0.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.fp_adder": {
+            "pin": {
+              "subnormal_representation": "pseudo_normalized_wide_exponent",
+              "operand_order": "swap_before_shift",
+              "negation_handling": "end_around_carry",
+              "sig_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "exp.family": "exponent_path",
+              "exp.dual_direction_subtract": true,
+              "exp.adder.family": "carry_increment",
+              "norm.family": "single_barrel",
+              "norm.shifter.family": "butterfly_network",
+              "norm.shifter.sticky_collect": true,
+              "path_separation": "nonstandard_unified_rounding",
+              "subtraction_style": "twos_complement",
+              "sig_adder.arrival_profile": "uniform",
+              "exp.adder.intergroup_carry": "lookahead_tree",
+              "exp.adder.block_sizing": "uniform",
+              "exp.adder.block_width": 8,
+              "exp.adder.increment_levels": 2,
+              "exp.adder.block_adder.family": "parallel_prefix",
+              "exp.adder.block_adder.topology": "ladner_fischer",
+              "exp.adder.block_adder.valency": 2,
+              "exp.adder.increment_stage.family": "prefix_and_incrementer",
+              "exp.adder.increment_stage.structure": "prefix_and_tree",
+              "exp.adder.increment_stage.topology": "kogge_stone",
+              "norm.shifter.network": "inverse_butterfly",
+              "far_align.family": "full_align",
+              "far_align.sticky_method": "or_tree_shifted_out",
+              "far_align.shifter.family": "funnel",
+              "far_align.shifter.sticky_collect": false,
+              "far_align.shifter.window_mux_radix": 8,
+              "far_align.shifter.amount_preprocess": "ones_complement_for_right",
+              "far_align.tzc.family": "trailing_zero",
+              "far_align.tzc.strategy": "debruijn_multiply_index",
+              "far_align.tzc.isolate_circuit": "ripple_kill_chain",
+              "far_align.tzc.lzd.family": "priority_encoder",
+              "far_align.tzc.lzd.output_form": "one_hot_then_encode",
+              "far_align.tzc.lzd.lookahead_group": 12,
+              "far_align.tzc.lzd.levels": 3,
+              "far_align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "far_align.tzc.negation_incrementer.structure": "prefix_and_tree",
+              "far_align.tzc.negation_incrementer.topology": "kogge_stone",
+              "near_lz.family": "lzc_after_add",
+              "near_lz.counter.family": "priority_encoder",
+              "near_lz.counter.output_form": "one_hot_then_encode",
+              "near_lz.counter.lookahead_group": 4,
+              "near_lz.counter.levels": 1,
+              "eac_incrementer.family": "prefix_and_incrementer",
+              "eac_incrementer.structure": "prefix_and_tree",
+              "eac_incrementer.topology": "kogge_stone"
+            },
+            "family": "delay_optimized_unified"
+          },
+          "m2.l1.fp_multiplier": {
+            "pin": {
+              "sig_mul.family": "carry_save_array",
+              "exp_adder.family": "sparse_prefix_hybrid",
+              "sig_mul.signed_scheme": "pezaris_negative_weight",
+              "sig_mul.cpa.family": "uniform",
+              "sig_mul.cpa.adder.family": "sparse_prefix_hybrid",
+              "sig_mul.cpa.adder.valency": 2,
+              "sig_mul.cpa.adder.log2_sparsity": 1,
+              "sig_mul.cpa.adder.tree_topology": "han_carlson",
+              "sig_mul.cpa.adder.sum_block_style": "ripple_precompute",
+              "sig_mul.cpa.adder.sum_block.family": "parallel_prefix",
+              "sig_mul.cpa.adder.sum_block.topology": "ladner_fischer",
+              "sig_mul.cpa.adder.sum_block.valency": 2,
+              "exp_adder.valency": 2,
+              "exp_adder.log2_sparsity": 1,
+              "exp_adder.tree_topology": "kogge_stone",
+              "exp_adder.sum_block_style": "carry_select",
+              "exp_adder.sum_block.family": "ripple_carry",
+              "exp_adder.sum_block.full_adder_logic": "generate_propagate",
+              "exp_adder.sum_block.chunk_width_bits": 1
+            },
+            "family": "sig_mul_then_round"
+          },
+          "m2.l1.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 2
+            },
+            "family": "dedicated_magnitude_comparator"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "options": {
+          "x_form": "guard_round_sticky"
+        },
+        "shared": {
+          "fp_adder_bank0": {
+            "members": [
+              "m0.l0.fp_adder",
+              "m1.l0.fp_adder",
+              "m2.l0.fp_adder"
+            ],
+            "canonical": "m2.l0.fp_adder",
+            "why": "one fp_adder bank for mutually exclusive modes",
+            "family": "delay_optimized_unified",
+            "pin": {
+              "subnormal_representation": "pseudo_normalized_wide_exponent",
+              "operand_order": "swap_before_shift",
+              "negation_handling": "end_around_carry",
+              "sig_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "exp.family": "exponent_path",
+              "exp.dual_direction_subtract": true,
+              "exp.adder.family": "carry_increment",
+              "norm.family": "single_barrel",
+              "norm.shifter.family": "butterfly_network",
+              "norm.shifter.sticky_collect": true,
+              "path_separation": "nonstandard_unified_rounding",
+              "subtraction_style": "twos_complement",
+              "sig_adder.arrival_profile": "uniform",
+              "exp.adder.intergroup_carry": "lookahead_tree",
+              "exp.adder.block_sizing": "uniform",
+              "exp.adder.block_width": 8,
+              "exp.adder.increment_levels": 2,
+              "exp.adder.block_adder.family": "parallel_prefix",
+              "exp.adder.block_adder.topology": "ladner_fischer",
+              "exp.adder.block_adder.valency": 2,
+              "exp.adder.increment_stage.family": "prefix_and_incrementer",
+              "exp.adder.increment_stage.structure": "prefix_and_tree",
+              "exp.adder.increment_stage.topology": "kogge_stone",
+              "norm.shifter.network": "inverse_butterfly",
+              "far_align.family": "full_align",
+              "far_align.sticky_method": "or_tree_shifted_out",
+              "far_align.shifter.family": "funnel",
+              "far_align.shifter.sticky_collect": false,
+              "far_align.shifter.window_mux_radix": 8,
+              "far_align.shifter.amount_preprocess": "ones_complement_for_right",
+              "far_align.tzc.family": "trailing_zero",
+              "far_align.tzc.strategy": "debruijn_multiply_index",
+              "far_align.tzc.isolate_circuit": "ripple_kill_chain",
+              "far_align.tzc.lzd.family": "priority_encoder",
+              "far_align.tzc.lzd.output_form": "one_hot_then_encode",
+              "far_align.tzc.lzd.lookahead_group": 12,
+              "far_align.tzc.lzd.levels": 3,
+              "far_align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "far_align.tzc.negation_incrementer.structure": "prefix_and_tree",
+              "far_align.tzc.negation_incrementer.topology": "kogge_stone",
+              "near_lz.family": "lzc_after_add",
+              "near_lz.counter.family": "priority_encoder",
+              "near_lz.counter.output_form": "one_hot_then_encode",
+              "near_lz.counter.lookahead_group": 4,
+              "near_lz.counter.levels": 1,
+              "eac_incrementer.family": "prefix_and_incrementer",
+              "eac_incrementer.structure": "prefix_and_tree",
+              "eac_incrementer.topology": "kogge_stone"
+            }
+          },
+          "fp_multiplier_bank0": {
+            "members": [
+              "m0.l0.fp_multiplier",
+              "m1.l0.fp_multiplier",
+              "m2.l0.fp_multiplier"
+            ],
+            "canonical": "m2.l0.fp_multiplier",
+            "why": "one fp_multiplier bank for mutually exclusive modes",
+            "family": "sig_mul_then_round",
+            "pin": {
+              "sig_mul.family": "carry_save_array",
+              "exp_adder.family": "sparse_prefix_hybrid",
+              "sig_mul.signed_scheme": "pezaris_negative_weight",
+              "sig_mul.cpa.family": "uniform",
+              "sig_mul.cpa.adder.family": "sparse_prefix_hybrid",
+              "sig_mul.cpa.adder.valency": 2,
+              "sig_mul.cpa.adder.log2_sparsity": 1,
+              "sig_mul.cpa.adder.tree_topology": "han_carlson",
+              "sig_mul.cpa.adder.sum_block_style": "ripple_precompute",
+              "sig_mul.cpa.adder.sum_block.family": "parallel_prefix",
+              "sig_mul.cpa.adder.sum_block.topology": "ladner_fischer",
+              "sig_mul.cpa.adder.sum_block.valency": 2,
+              "exp_adder.valency": 2,
+              "exp_adder.log2_sparsity": 1,
+              "exp_adder.tree_topology": "kogge_stone",
+              "exp_adder.sum_block_style": "carry_select",
+              "exp_adder.sum_block.family": "ripple_carry",
+              "exp_adder.sum_block.full_adder_logic": "generate_propagate",
+              "exp_adder.sum_block.chunk_width_bits": 1
+            }
+          },
+          "fp_comparator_bank0": {
+            "members": [
+              "m0.l0.fp_comparator",
+              "m1.l0.fp_comparator",
+              "m2.l0.fp_comparator"
+            ],
+            "canonical": "m2.l0.fp_comparator",
+            "why": "one fp_comparator bank for mutually exclusive modes",
+            "family": "dedicated_magnitude_comparator",
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 2
+            }
+          }
+        },
+        "components": {
+          "subword": {
+            "pin": {},
+            "family": "replicated_lanes"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 20.0
+      },
+      "sha256": "a0b9ac0dff152ea149bad52c8c4bb1fc30e2fc5e4d594ff8812e86ea8d91f764"
+    },
+    {
+      "name": "r0018",
+      "plan": {
+        "structures": {
+          "m2.l0.fp_adder": {
+            "pin": {
+              "subnormal_representation": "as_stored",
+              "operand_order": "shift_each_operand",
+              "negation_handling": "end_around_carry",
+              "sig_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "exp.family": "exponent_path",
+              "exp.dual_direction_subtract": true,
+              "exp.adder.family": "carry_increment",
+              "path_threshold": 3,
+              "close_path_trigger": "exp_diff_only",
+              "path_select_point": "early_exponent_compare",
+              "sig_adder.arrival_profile": "uniform",
+              "exp.adder.intergroup_carry": "lookahead_tree",
+              "exp.adder.block_sizing": "uniform",
+              "exp.adder.block_width": 6,
+              "exp.adder.increment_levels": 2,
+              "exp.adder.block_adder.family": "ripple_carry",
+              "exp.adder.block_adder.full_adder_logic": "generate_propagate",
+              "exp.adder.block_adder.chunk_width_bits": 1,
+              "exp.adder.increment_stage.family": "prefix_and_incrementer",
+              "exp.adder.increment_stage.structure": "select_blocks",
+              "far_align.family": "full_align",
+              "far_align.sticky_method": "precomputed_mask",
+              "far_align.shifter.family": "masked_merged",
+              "far_align.shifter.sticky_collect": true,
+              "far_align.shifter.mask_generator": "two_thermometer_and",
+              "far_align.shifter.merge_style": "per_bit_mux",
+              "far_align.shifter.rotator.family": "barrel_mux_tree",
+              "far_align.shifter.rotator.stage_radix": 8,
+              "far_align.shifter.rotator.select_encoding": "binary",
+              "far_align.shifter.rotator.stage_order": "small_shift_first",
+              "far_align.tzc.family": "trailing_zero",
+              "far_align.tzc.strategy": "debruijn_multiply_index",
+              "far_align.tzc.isolate_circuit": "ripple_kill_chain",
+              "far_align.tzc.lzd.family": "lzd_cell_tree",
+              "far_align.tzc.lzd.block_primitive": "pair_cell",
+              "far_align.tzc.lzd.output_form": "one_hot_shift_controls",
+              "far_align.tzc.lzd.valid_flag_propagation": true,
+              "far_align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "far_align.tzc.negation_incrementer.structure": "prefix_and_tree",
+              "far_align.tzc.negation_incrementer.topology": "kogge_stone",
+              "close_norm.family": "single_barrel",
+              "close_norm.shifter.family": "barrel_mux_tree",
+              "close_norm.shifter.stage_radix": 2,
+              "close_norm.shifter.select_encoding": "binary",
+              "close_norm.shifter.stage_order": "large_shift_first",
+              "close_norm.shifter.direction_handling": "amount_negation",
+              "close_norm.shifter.sticky_collect": true,
+              "near_lz.family": "lzc_after_add",
+              "near_lz.counter.family": "lzd_cell_tree",
+              "near_lz.counter.block_primitive": "nibble_cell",
+              "near_lz.counter.output_form": "one_hot_shift_controls",
+              "near_lz.counter.valid_flag_propagation": true
+            },
+            "family": "two_path"
+          },
+          "m2.l1.fp_adder": {
+            "pin": {
+              "subnormal_representation": "as_stored",
+              "operand_order": "shift_each_operand",
+              "negation_handling": "end_around_carry",
+              "sig_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "exp.family": "exponent_path",
+              "exp.dual_direction_subtract": true,
+              "exp.adder.family": "carry_increment",
+              "path_threshold": 3,
+              "close_path_trigger": "exp_diff_only",
+              "path_select_point": "early_exponent_compare",
+              "sig_adder.arrival_profile": "uniform",
+              "exp.adder.intergroup_carry": "lookahead_tree",
+              "exp.adder.block_sizing": "uniform",
+              "exp.adder.block_width": 6,
+              "exp.adder.increment_levels": 2,
+              "exp.adder.block_adder.family": "ripple_carry",
+              "exp.adder.block_adder.full_adder_logic": "generate_propagate",
+              "exp.adder.block_adder.chunk_width_bits": 1,
+              "exp.adder.increment_stage.family": "prefix_and_incrementer",
+              "exp.adder.increment_stage.structure": "select_blocks",
+              "far_align.family": "full_align",
+              "far_align.sticky_method": "precomputed_mask",
+              "far_align.shifter.family": "masked_merged",
+              "far_align.shifter.sticky_collect": true,
+              "far_align.shifter.mask_generator": "two_thermometer_and",
+              "far_align.shifter.merge_style": "per_bit_mux",
+              "far_align.shifter.rotator.family": "barrel_mux_tree",
+              "far_align.shifter.rotator.stage_radix": 8,
+              "far_align.shifter.rotator.select_encoding": "binary",
+              "far_align.shifter.rotator.stage_order": "small_shift_first",
+              "far_align.tzc.family": "trailing_zero",
+              "far_align.tzc.strategy": "debruijn_multiply_index",
+              "far_align.tzc.isolate_circuit": "ripple_kill_chain",
+              "far_align.tzc.lzd.family": "lzd_cell_tree",
+              "far_align.tzc.lzd.block_primitive": "pair_cell",
+              "far_align.tzc.lzd.output_form": "one_hot_shift_controls",
+              "far_align.tzc.lzd.valid_flag_propagation": true,
+              "far_align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "far_align.tzc.negation_incrementer.structure": "prefix_and_tree",
+              "far_align.tzc.negation_incrementer.topology": "kogge_stone",
+              "close_norm.family": "single_barrel",
+              "close_norm.shifter.family": "barrel_mux_tree",
+              "close_norm.shifter.stage_radix": 2,
+              "close_norm.shifter.select_encoding": "binary",
+              "close_norm.shifter.stage_order": "large_shift_first",
+              "close_norm.shifter.direction_handling": "amount_negation",
+              "close_norm.shifter.sticky_collect": true,
+              "near_lz.family": "lzc_after_add",
+              "near_lz.counter.family": "lzd_cell_tree",
+              "near_lz.counter.block_primitive": "nibble_cell",
+              "near_lz.counter.output_form": "one_hot_shift_controls",
+              "near_lz.counter.valid_flag_propagation": true
+            },
+            "family": "two_path"
+          },
+          "m0.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "subtractor_comparator",
+              "comparator.zero_detect": "sum_or_tree",
+              "comparator.subtractor.family": "parallel_prefix",
+              "comparator.subtractor.topology": "knowles_mixed",
+              "comparator.subtractor.valency": 2
+            },
+            "family": "integer_compare_on_bits"
+          },
+          "m1.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "subtractor_comparator",
+              "comparator.zero_detect": "operand_xnor",
+              "comparator.subtractor.family": "end_around_carry",
+              "comparator.subtractor.modulus": "mod_2n_plus_1_diminished_one",
+              "comparator.subtractor.recirculation": "select_based",
+              "comparator.subtractor.topology": "sklansky",
+              "comparator.subtractor.incrementer.family": "prefix_and_incrementer",
+              "comparator.subtractor.incrementer.structure": "prefix_and_tree",
+              "comparator.subtractor.incrementer.topology": "kogge_stone"
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m2.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "subtractor_comparator",
+              "comparator.zero_detect": "sum_or_tree",
+              "comparator.subtractor.family": "carry_lookahead",
+              "comparator.subtractor.group_size": 2,
+              "comparator.subtractor.levels": 1,
+              "comparator.subtractor.intergroup_carry": "select"
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m2.l1.fp_comparator": {
+            "pin": {
+              "comparator.family": "subtractor_comparator",
+              "comparator.zero_detect": "sum_or_tree",
+              "comparator.subtractor.family": "carry_lookahead",
+              "comparator.subtractor.group_size": 2,
+              "comparator.subtractor.levels": 1,
+              "comparator.subtractor.intergroup_carry": "select"
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m0.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_unpack",
+              "lzc.family": "lzd_cell_tree",
+              "lzc.block_primitive": "pair_cell",
+              "lzc.output_form": "one_hot_shift_controls",
+              "lzc.valid_flag_propagation": true,
+              "shifter.family": "butterfly_network",
+              "shifter.sticky_collect": false,
+              "shifter.network": "butterfly"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m1.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_unpack",
+              "lzc.family": "priority_encoder",
+              "lzc.output_form": "one_hot_then_encode",
+              "shifter.family": "butterfly_network",
+              "shifter.sticky_collect": true,
+              "lzc.lookahead_group": 4,
+              "lzc.levels": 1,
+              "shifter.network": "butterfly"
+            },
+            "family": "shared_per_lane"
+          },
+          "m2.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_unpack",
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "funnel",
+              "shifter.sticky_collect": true,
+              "lzc.prefix_topology": "brent_kung",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "compressor_4_2",
+              "lzc.counter.tree_shape": "balanced_tree",
+              "lzc.counter.final_adder.family": "end_around_carry",
+              "lzc.counter.final_adder.modulus": "mod_2n_plus_1_diminished_one",
+              "lzc.counter.final_adder.recirculation": "cyclic_prefix_level",
+              "lzc.counter.final_adder.topology": "ladner_fischer",
+              "lzc.counter.final_adder.incrementer.family": "prefix_and_incrementer",
+              "lzc.counter.final_adder.incrementer.structure": "prefix_and_tree",
+              "lzc.counter.final_adder.incrementer.topology": "brent_kung",
+              "shifter.window_mux_radix": 2,
+              "shifter.amount_preprocess": "subtract_from_n"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m2.l1.unpacker": {
+            "pin": {
+              "denormal_handling": "in_unpack",
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "funnel",
+              "shifter.sticky_collect": true,
+              "lzc.prefix_topology": "brent_kung",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "compressor_4_2",
+              "lzc.counter.tree_shape": "balanced_tree",
+              "lzc.counter.final_adder.family": "end_around_carry",
+              "lzc.counter.final_adder.modulus": "mod_2n_plus_1_diminished_one",
+              "lzc.counter.final_adder.recirculation": "cyclic_prefix_level",
+              "lzc.counter.final_adder.topology": "ladner_fischer",
+              "lzc.counter.final_adder.incrementer.family": "prefix_and_incrementer",
+              "lzc.counter.final_adder.incrementer.structure": "prefix_and_tree",
+              "lzc.counter.final_adder.incrementer.topology": "brent_kung",
+              "shifter.window_mux_radix": 2,
+              "shifter.amount_preprocess": "subtract_from_n"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m1.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m0.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.rounder": {
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "barrel_mux_tree",
+              "shifter.stage_radix": 4,
+              "shifter.select_encoding": "one_hot_decoded",
+              "shifter.stage_order": "small_shift_first",
+              "shifter.direction_handling": "mirrored_datapath",
+              "shifter.sticky_collect": true,
+              "round.family": "flagged_prefix",
+              "exp_adder.family": "carry_lookahead",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "ripple_and_chain",
+              "lzc.prefix_topology": "brent_kung",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "lut_rom",
+              "lzc.counter.tree_shape": "balanced_tree",
+              "lzc.counter.final_adder.family": "manchester_carry_chain",
+              "lzc.counter.final_adder.chain_segment_length": 2,
+              "lzc.counter.final_adder.variable_skip": true,
+              "round.compound_adder.family": "compound_flagged_prefix",
+              "round.compound_adder.outputs": "sum_sum1",
+              "round.compound_adder.implementation": "flag_row",
+              "round.compound_adder.topology": "kogge_stone",
+              "round.compound_adder.late_carry_in": false,
+              "exp_adder.group_size": 6,
+              "exp_adder.levels": 1,
+              "exp_adder.intergroup_carry": "select"
+            },
+            "family": "shared_per_lane"
+          },
+          "m2.l1.fp_multiplier": {
+            "pin": {
+              "sig_mul.family": "twin_precision_subword",
+              "exp_adder.family": "carry_increment",
+              "sig_mul.per_lane_signed": true,
+              "sig_mul.lane_cpa.family": "sparse_prefix_hybrid",
+              "sig_mul.lane_cpa.valency": 2,
+              "sig_mul.lane_cpa.log2_sparsity": 1,
+              "sig_mul.lane_cpa.tree_topology": "han_carlson",
+              "sig_mul.lane_cpa.sum_block_style": "carry_select",
+              "sig_mul.lane_cpa.sum_block.family": "parallel_prefix",
+              "sig_mul.lane_cpa.sum_block.topology": "han_carlson",
+              "sig_mul.lane_cpa.sum_block.valency": 2,
+              "exp_adder.intergroup_carry": "lookahead_tree",
+              "exp_adder.block_sizing": "variable_ramp",
+              "exp_adder.increment_levels": 1,
+              "exp_adder.block_adder.family": "parallel_prefix",
+              "exp_adder.block_adder.topology": "ladner_fischer",
+              "exp_adder.block_adder.valency": 2,
+              "exp_adder.increment_stage.family": "prefix_and_incrementer",
+              "exp_adder.increment_stage.structure": "select_blocks"
+            },
+            "family": "sig_mul_then_round"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "options": {
+          "x_form": "guard_round_sticky"
+        },
+        "shared": {
+          "rounder_bank0": {
+            "members": [
+              "m0.l0.rounder",
+              "m1.l0.rounder",
+              "m2.l0.rounder"
+            ],
+            "canonical": "m2.l0.rounder",
+            "why": "one rounder bank for mutually exclusive modes",
+            "family": "shared_per_lane",
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "barrel_mux_tree",
+              "shifter.stage_radix": 4,
+              "shifter.select_encoding": "one_hot_decoded",
+              "shifter.stage_order": "small_shift_first",
+              "shifter.direction_handling": "mirrored_datapath",
+              "shifter.sticky_collect": true,
+              "round.family": "flagged_prefix",
+              "exp_adder.family": "carry_lookahead",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "ripple_and_chain",
+              "lzc.prefix_topology": "brent_kung",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "lut_rom",
+              "lzc.counter.tree_shape": "balanced_tree",
+              "lzc.counter.final_adder.family": "manchester_carry_chain",
+              "lzc.counter.final_adder.chain_segment_length": 2,
+              "lzc.counter.final_adder.variable_skip": true,
+              "round.compound_adder.family": "compound_flagged_prefix",
+              "round.compound_adder.outputs": "sum_sum1",
+              "round.compound_adder.implementation": "flag_row",
+              "round.compound_adder.topology": "kogge_stone",
+              "round.compound_adder.late_carry_in": false,
+              "exp_adder.group_size": 6,
+              "exp_adder.levels": 1,
+              "exp_adder.intergroup_carry": "select"
+            }
+          },
+          "fp_multiplier_bank0": {
+            "members": [
+              "m0.l0.fp_multiplier",
+              "m1.l0.fp_multiplier",
+              "m2.l0.fp_multiplier"
+            ],
+            "canonical": "m2.l0.fp_multiplier",
+            "why": "one fp_multiplier bank for mutually exclusive modes",
+            "family": "sig_mul_then_round",
+            "pin": {
+              "sig_mul.family": "twin_precision_subword",
+              "exp_adder.family": "carry_increment",
+              "sig_mul.per_lane_signed": true,
+              "sig_mul.lane_cpa.family": "sparse_prefix_hybrid",
+              "sig_mul.lane_cpa.valency": 2,
+              "sig_mul.lane_cpa.log2_sparsity": 1,
+              "sig_mul.lane_cpa.tree_topology": "han_carlson",
+              "sig_mul.lane_cpa.sum_block_style": "carry_select",
+              "sig_mul.lane_cpa.sum_block.family": "parallel_prefix",
+              "sig_mul.lane_cpa.sum_block.topology": "han_carlson",
+              "sig_mul.lane_cpa.sum_block.valency": 2,
+              "exp_adder.intergroup_carry": "lookahead_tree",
+              "exp_adder.block_sizing": "variable_ramp",
+              "exp_adder.increment_levels": 1,
+              "exp_adder.block_adder.family": "parallel_prefix",
+              "exp_adder.block_adder.topology": "ladner_fischer",
+              "exp_adder.block_adder.valency": 2,
+              "exp_adder.increment_stage.family": "prefix_and_incrementer",
+              "exp_adder.increment_stage.structure": "select_blocks"
+            }
+          }
+        },
+        "components": {
+          "subword": {
+            "pin": {},
+            "family": "replicated_lanes"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.3
+      },
+      "sha256": "603906d77d7135b3c2ef753bd9de9ec82626dfdca78da5994f8ca02f843f32f7"
+    },
+    {
+      "name": "r0020",
+      "plan": {
+        "structures": {
+          "m0.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "tree_reduction",
+              "comparator.radix": 4
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m1.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 4
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m2.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 3
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m2.l1.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 3
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m0.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "shared_per_lane"
+          },
+          "m1.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_unpack",
+              "lzc.family": "lzd_cell_tree",
+              "lzc.block_primitive": "pair_cell",
+              "lzc.output_form": "binary_count",
+              "lzc.valid_flag_propagation": false,
+              "shifter.family": "butterfly_network",
+              "shifter.sticky_collect": true,
+              "shifter.network": "inverse_butterfly"
+            },
+            "family": "shared_per_lane"
+          },
+          "m2.l0.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m2.l1.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m1.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m0.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.rounder": {
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "funnel",
+              "shifter.sticky_collect": true,
+              "round.family": "increment_adder",
+              "round.incrementer.family": "prefix_and_incrementer",
+              "round.incrementer.structure": "prefix_and_tree",
+              "round.incrementer.topology": "kogge_stone",
+              "exp_adder.family": "ling_prefix",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "prefix_and_tree",
+              "exp_incrementer.topology": "sklansky",
+              "lzc.prefix_topology": "sklansky",
+              "lzc.count_form": "popcount_of_complement",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "compressor_4_2",
+              "lzc.counter.tree_shape": "linear_chain",
+              "lzc.counter.final_adder.family": "sparse_prefix_hybrid",
+              "lzc.counter.final_adder.valency": 2,
+              "lzc.counter.final_adder.log2_sparsity": 1,
+              "lzc.counter.final_adder.tree_topology": "sklansky",
+              "lzc.counter.final_adder.sum_block_style": "carry_select",
+              "lzc.counter.final_adder.sum_block.family": "ripple_carry",
+              "lzc.counter.final_adder.sum_block.full_adder_logic": "generate_propagate",
+              "lzc.counter.final_adder.sum_block.chunk_width_bits": 1,
+              "shifter.window_mux_radix": 2,
+              "shifter.amount_preprocess": "subtract_from_n",
+              "exp_adder.topology": "sklansky",
+              "exp_adder.pseudo_carry_group": 3,
+              "exp_adder.sum_recovery": "xor_correction"
+            },
+            "family": "dedicated_per_op"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "options": {
+          "x_form": "exact"
+        },
+        "shared": {
+          "rounder_bank0": {
+            "members": [
+              "m0.l0.rounder",
+              "m1.l0.rounder",
+              "m2.l0.rounder"
+            ],
+            "canonical": "m2.l0.rounder",
+            "why": "one rounder bank for mutually exclusive modes",
+            "family": "dedicated_per_op",
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "funnel",
+              "shifter.sticky_collect": true,
+              "round.family": "increment_adder",
+              "round.incrementer.family": "prefix_and_incrementer",
+              "round.incrementer.structure": "prefix_and_tree",
+              "round.incrementer.topology": "kogge_stone",
+              "exp_adder.family": "ling_prefix",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "prefix_and_tree",
+              "exp_incrementer.topology": "sklansky",
+              "lzc.prefix_topology": "sklansky",
+              "lzc.count_form": "popcount_of_complement",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "compressor_4_2",
+              "lzc.counter.tree_shape": "linear_chain",
+              "lzc.counter.final_adder.family": "sparse_prefix_hybrid",
+              "lzc.counter.final_adder.valency": 2,
+              "lzc.counter.final_adder.log2_sparsity": 1,
+              "lzc.counter.final_adder.tree_topology": "sklansky",
+              "lzc.counter.final_adder.sum_block_style": "carry_select",
+              "lzc.counter.final_adder.sum_block.family": "ripple_carry",
+              "lzc.counter.final_adder.sum_block.full_adder_logic": "generate_propagate",
+              "lzc.counter.final_adder.sum_block.chunk_width_bits": 1,
+              "shifter.window_mux_radix": 2,
+              "shifter.amount_preprocess": "subtract_from_n",
+              "exp_adder.topology": "sklansky",
+              "exp_adder.pseudo_carry_group": 3,
+              "exp_adder.sum_recovery": "xor_correction"
+            }
+          },
+          "fp_adder_bank0": {
+            "members": [
+              "m0.l0.fp_adder",
+              "m1.l0.fp_adder",
+              "m2.l0.fp_adder"
+            ],
+            "canonical": "m2.l0.fp_adder",
+            "why": "one fp_adder bank for mutually exclusive modes"
+          }
+        },
+        "components": {
+          "subword": {
+            "pin": {},
+            "family": "replicated_lanes"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.8
+      },
+      "sha256": "7554fd3e9928a44a29a87ad6293413fa234c56aa8b7727f535cb0642b5c18fba"
+    },
+    {
+      "name": "r0024",
+      "plan": {
+        "structures": {
+          "m0.l0.fp_fma": {
+            "pin": {
+              "subnormal_representation": "pseudo_normalized_wide_exponent",
+              "negation_handling": "end_around_carry",
+              "sharing": "dedicated_per_mode",
+              "multiplier.family": "squarer",
+              "multiplier.folding_scheme": "divide_and_conquer",
+              "multiplier.reduction.family": "tiled_cpa_reduction_tree",
+              "multiplier.reduction.adder_width": 4,
+              "multiplier.reduction.carry_assimilation": "extra_counter_row",
+              "multiplier.reduction.terminal_reduction": "3_2_counter",
+              "multiplier.reduction.cpa.family": "uniform",
+              "multiplier.reduction.cpa.adder.family": "ling_prefix",
+              "multiplier.reduction.cpa.adder.topology": "sklansky",
+              "multiplier.reduction.cpa.adder.pseudo_carry_group": 2,
+              "multiplier.reduction.cpa.adder.sum_recovery": "late_select_mux",
+              "multiplier.reduction.tile_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "multiplier.reduction.tile_adder.arrival_profile": "multiplier_vee",
+              "multiplier.cross.family": "booth_recoded_parallel",
+              "multiplier.cross.booth_radix": 4,
+              "multiplier.cross.hard_multiple_gen": "cpa_precompute",
+              "multiplier.cross.sign_extension": "full_extension",
+              "multiplier.cross.negative_pp_encoding": "ones_complement_plus_neg_bit",
+              "multiplier.cross.reduction.family": "tiled_cpa_reduction_tree",
+              "multiplier.cross.reduction.adder_width": 8,
+              "multiplier.cross.reduction.carry_assimilation": "extra_counter_row",
+              "multiplier.cross.reduction.terminal_reduction": "compressor_9_2",
+              "multiplier.cross.reduction.cpa.family": "uniform",
+              "multiplier.cross.reduction.cpa.adder.family": "ling_prefix",
+              "multiplier.cross.reduction.cpa.adder.topology": "kogge_stone",
+              "multiplier.cross.reduction.cpa.adder.pseudo_carry_group": 1,
+              "multiplier.cross.reduction.cpa.adder.sum_recovery": "xor_correction",
+              "multiplier.cross.reduction.tile_adder.family": "ling_prefix",
+              "multiplier.cross.reduction.tile_adder.topology": "knowles_mixed",
+              "multiplier.cross.reduction.tile_adder.pseudo_carry_group": 1,
+              "multiplier.cross.reduction.tile_adder.sum_recovery": "xor_correction",
+              "multiplier.cross.hard_multiple_adder.family": "compound_flagged_prefix",
+              "multiplier.cross.hard_multiple_adder.topology": "harris",
+              "multiplier.cross.hard_multiple_adder.log2_sparsity": 0,
+              "multiplier.cross.hard_multiple_adder.fanout_cap": 7,
+              "multiplier.cross.hard_multiple_adder.outputs": "sum_sum1",
+              "multiplier.cross.hard_multiple_adder.implementation": "dual_carry_tree",
+              "multiplier.cross.hard_multiple_adder.late_carry_in": false,
+              "multiplier.cross.negation_incrementer.family": "prefix_and_incrementer",
+              "multiplier.cross.negation_incrementer.structure": "prefix_and_tree",
+              "multiplier.cross.negation_incrementer.topology": "brent_kung",
+              "multiplier.pre_adder.family": "sparse_prefix_hybrid",
+              "multiplier.pre_adder.valency": 2,
+              "multiplier.pre_adder.log2_sparsity": 1,
+              "multiplier.pre_adder.tree_topology": "han_carlson",
+              "multiplier.pre_adder.sum_block_style": "conditional_sum",
+              "align.family": "full_align",
+              "align.sticky_method": "trailing_zero_compare",
+              "align.shifter.family": "funnel",
+              "align.shifter.sticky_collect": true,
+              "align.shifter.window_mux_radix": 8,
+              "align.shifter.amount_preprocess": "subtract_from_n",
+              "align.tzc.family": "trailing_zero",
+              "align.tzc.strategy": "reverse_then_lzd",
+              "align.tzc.isolate_circuit": "twos_complement_and",
+              "align.tzc.lzd.family": "priority_encoder",
+              "align.tzc.lzd.output_form": "one_hot_then_encode",
+              "align.tzc.lzd.lookahead_group": 4,
+              "align.tzc.lzd.levels": 1,
+              "align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "align.tzc.negation_incrementer.structure": "prefix_and_tree",
+              "align.tzc.negation_incrementer.topology": "brent_kung",
+              "lza.family": "lza",
+              "lza.correction_scheme": "post_norm_fine_shift",
+              "lza.string_form": "dual_pos_neg_strings",
+              "lza.split_string_select": "true_sign",
+              "lza.indicator_restriction": "positive_result_only",
+              "lza.zero_result_detect": "operand_function_or",
+              "lza.encoder.family": "priority_encoder",
+              "lza.encoder.output_form": "one_hot_then_encode",
+              "lza.encoder.lookahead_group": 12,
+              "lza.encoder.levels": 2,
+              "cpa.family": "carry_select",
+              "cpa.block_sizing": "delay_balanced_dp",
+              "cpa.block_width": 7,
+              "cpa.duplication": "shared_add_one",
+              "cpa.select_source": "lookahead_tree",
+              "cpa.block_adder.family": "parallel_prefix",
+              "cpa.block_adder.topology": "knowles_mixed",
+              "cpa.block_adder.valency": 2,
+              "cpa.add_one.family": "prefix_and_incrementer",
+              "cpa.add_one.structure": "prefix_and_tree",
+              "cpa.add_one.topology": "sklansky",
+              "norm_shifter.family": "funnel",
+              "norm_shifter.sticky_collect": false,
+              "norm_shifter.window_mux_radix": 8,
+              "norm_shifter.amount_preprocess": "ones_complement_for_right"
+            },
+            "family": "classic_fma"
+          },
+          "m1.l0.fp_fma": {
+            "pin": {
+              "subnormal_representation": "pseudo_normalized_wide_exponent",
+              "negation_handling": "dual_adder",
+              "sharing": "dedicated_per_mode",
+              "rounding_position": "fused_with_cpa_dual_sum",
+              "normalize_before_add": false,
+              "add_skip_for_pure_addition": false,
+              "multiplier.family": "squarer",
+              "multiplier.folding_scheme": "booth_folding",
+              "multiplier.reduction.family": "compressor_4_2_tree",
+              "multiplier.reduction.compressor_kind": "5_2",
+              "multiplier.reduction.cpa.family": "hybrid_arrival_driven",
+              "multiplier.reduction.cpa.region_count": 2,
+              "multiplier.reduction.cpa.region_adder_mix": "ripple_cla_select",
+              "multiplier.reduction.cpa.arrival_model": "measured_tree_profile",
+              "multiplier.reduction.cpa.boundary_search": "delay_bound_boundary_enumeration",
+              "multiplier.cross.family": "direct_pp_parallel",
+              "multiplier.cross.group_bits": 1,
+              "multiplier.cross.signed_scheme": "baugh_wooley",
+              "multiplier.cross.reduction.family": "csa_reduction_tree",
+              "multiplier.cross.reduction.geometry": "wallace",
+              "multiplier.cross.reduction.counter_kind": "3_2",
+              "multiplier.cross.reduction.cpa.family": "uniform",
+              "multiplier.cross.reduction.cpa.adder.family": "parallel_prefix",
+              "multiplier.cross.reduction.cpa.adder.topology": "brent_kung",
+              "multiplier.cross.reduction.cpa.adder.valency": 2,
+              "multiplier.cross.hard_multiple_adder.family": "parallel_prefix",
+              "multiplier.cross.hard_multiple_adder.topology": "kogge_stone",
+              "multiplier.cross.hard_multiple_adder.valency": 2,
+              "multiplier.pre_adder.family": "compound_flagged_prefix",
+              "multiplier.pre_adder.topology": "knowles_mixed",
+              "multiplier.pre_adder.outputs": "sum_sum1",
+              "multiplier.pre_adder.implementation": "dual_carry_tree",
+              "multiplier.pre_adder.late_carry_in": true,
+              "align.family": "full_align",
+              "align.sticky_method": "or_tree_shifted_out",
+              "align.shifter.family": "barrel_mux_tree",
+              "align.shifter.stage_radix": "full_width_single_stage",
+              "align.shifter.select_encoding": "one_hot_decoded",
+              "align.shifter.stage_order": "small_shift_first",
+              "align.shifter.direction_handling": "mirrored_datapath",
+              "align.shifter.sticky_collect": false,
+              "align.tzc.family": "trailing_zero",
+              "align.tzc.strategy": "debruijn_multiply_index",
+              "align.tzc.isolate_circuit": "ripple_kill_chain",
+              "align.tzc.lzd.family": "priority_encoder",
+              "align.tzc.lzd.output_form": "one_hot_then_encode",
+              "align.tzc.lzd.lookahead_group": 8,
+              "align.tzc.lzd.levels": 3,
+              "align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "align.tzc.negation_incrementer.structure": "select_blocks",
+              "lza.family": "lza",
+              "lza.correction_scheme": "post_norm_fine_shift",
+              "lza.string_form": "single_indicator",
+              "lza.split_string_select": "maximum_count",
+              "lza.indicator_restriction": "positive_result_only",
+              "lza.zero_result_detect": "operand_function_or",
+              "lza.encoder.family": "prefix_lzc",
+              "lza.encoder.prefix_topology": "kogge_stone",
+              "lza.encoder.count_form": "popcount_of_complement",
+              "lza.encoder.counter.family": "popcount_counter_tree",
+              "lza.encoder.counter.counter_primitive": "full_adder_3_2",
+              "lza.encoder.counter.tree_shape": "wallace_style",
+              "lza.encoder.counter.final_adder.family": "conditional_sum",
+              "lza.encoder.counter.final_adder.base_block_width": 1,
+              "lza.encoder.counter.final_adder.selection_radix": 2,
+              "cpa.family": "carry_lookahead",
+              "cpa.group_size": 6,
+              "cpa.levels": 1,
+              "cpa.intergroup_carry": "ripple",
+              "norm_shifter.family": "funnel",
+              "norm_shifter.sticky_collect": true,
+              "norm_shifter.window_mux_radix": 8,
+              "norm_shifter.amount_preprocess": "ones_complement_for_right"
+            },
+            "family": "reduced_latency_fma"
+          },
+          "m2.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l0.fp_adder": {
+            "pin": {
+              "subnormal_representation": "pseudo_normalized_wide_exponent",
+              "operand_order": "shift_each_operand",
+              "negation_handling": "dual_adder",
+              "sig_adder.family": "end_around_carry",
+              "exp.family": "exponent_path",
+              "exp.dual_direction_subtract": false,
+              "exp.adder.family": "manchester_carry_chain",
+              "align.family": "full_align",
+              "align.sticky_method": "precomputed_mask",
+              "align.shifter.family": "barrel_mux_tree",
+              "align.shifter.stage_radix": 8,
+              "align.shifter.select_encoding": "binary",
+              "align.shifter.stage_order": "large_shift_first",
+              "align.shifter.direction_handling": "data_reversal",
+              "align.shifter.sticky_collect": false,
+              "align.tzc.family": "trailing_zero",
+              "align.tzc.strategy": "isolate_then_encode",
+              "align.tzc.isolate_circuit": "ripple_kill_chain",
+              "align.tzc.lzd.family": "lzd_cell_tree",
+              "align.tzc.lzd.block_primitive": "nibble_cell",
+              "align.tzc.lzd.output_form": "binary_count",
+              "align.tzc.lzd.valid_flag_propagation": true,
+              "align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "align.tzc.negation_incrementer.structure": "ripple_and_chain",
+              "norm.family": "coarse_fine",
+              "norm.coarse_granularity": 4,
+              "norm.shifter.family": "butterfly_network",
+              "norm.shifter.sticky_collect": true,
+              "lz.family": "lzc_after_add",
+              "datapath_partitions": 2,
+              "sig_adder.modulus": "mod_2n_plus_1_diminished_one",
+              "sig_adder.recirculation": "two_pass_prefix",
+              "sig_adder.topology": "harris",
+              "sig_adder.log2_sparsity": 0,
+              "sig_adder.fanout_cap": 2,
+              "sig_adder.incrementer.family": "prefix_and_incrementer",
+              "sig_adder.incrementer.structure": "select_blocks",
+              "exp.adder.chain_segment_length": 2,
+              "exp.adder.variable_skip": false,
+              "norm.shifter.network": "butterfly",
+              "lz.counter.family": "lzd_cell_tree",
+              "lz.counter.block_primitive": "pair_cell",
+              "lz.counter.output_form": "one_hot_shift_controls",
+              "lz.counter.valid_flag_propagation": false
+            },
+            "family": "low_power_gated"
+          },
+          "m2.l1.fp_adder": {
+            "pin": {
+              "subnormal_representation": "pseudo_normalized_wide_exponent",
+              "operand_order": "shift_each_operand",
+              "negation_handling": "dual_adder",
+              "sig_adder.family": "end_around_carry",
+              "exp.family": "exponent_path",
+              "exp.dual_direction_subtract": false,
+              "exp.adder.family": "manchester_carry_chain",
+              "align.family": "full_align",
+              "align.sticky_method": "precomputed_mask",
+              "align.shifter.family": "barrel_mux_tree",
+              "align.shifter.stage_radix": 8,
+              "align.shifter.select_encoding": "binary",
+              "align.shifter.stage_order": "large_shift_first",
+              "align.shifter.direction_handling": "data_reversal",
+              "align.shifter.sticky_collect": false,
+              "align.tzc.family": "trailing_zero",
+              "align.tzc.strategy": "isolate_then_encode",
+              "align.tzc.isolate_circuit": "ripple_kill_chain",
+              "align.tzc.lzd.family": "lzd_cell_tree",
+              "align.tzc.lzd.block_primitive": "nibble_cell",
+              "align.tzc.lzd.output_form": "binary_count",
+              "align.tzc.lzd.valid_flag_propagation": true,
+              "align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+              "align.tzc.negation_incrementer.structure": "ripple_and_chain",
+              "norm.family": "coarse_fine",
+              "norm.coarse_granularity": 4,
+              "norm.shifter.family": "butterfly_network",
+              "norm.shifter.sticky_collect": true,
+              "lz.family": "lzc_after_add",
+              "datapath_partitions": 2,
+              "sig_adder.modulus": "mod_2n_plus_1_diminished_one",
+              "sig_adder.recirculation": "two_pass_prefix",
+              "sig_adder.topology": "harris",
+              "sig_adder.log2_sparsity": 0,
+              "sig_adder.fanout_cap": 2,
+              "sig_adder.incrementer.family": "prefix_and_incrementer",
+              "sig_adder.incrementer.structure": "select_blocks",
+              "exp.adder.chain_segment_length": 2,
+              "exp.adder.variable_skip": false,
+              "norm.shifter.network": "butterfly",
+              "lz.counter.family": "lzd_cell_tree",
+              "lz.counter.block_primitive": "pair_cell",
+              "lz.counter.output_form": "one_hot_shift_controls",
+              "lz.counter.valid_flag_propagation": false
+            },
+            "family": "low_power_gated"
+          },
+          "m2.l0.fp_multiplier": {
+            "pin": {
+              "sig_mul.family": "segmented_grid",
+              "exp_adder.family": "carry_increment",
+              "sig_mul.recursion_depth": 1,
+              "sig_mul.seg_w": 8,
+              "sig_mul.num_seg": 3,
+              "sig_mul.segment_shape": "square",
+              "sig_mul.merge_form": "carry_save_tree",
+              "sig_mul.segment.family": "carry_save_array",
+              "sig_mul.segment.signed_scheme": "pezaris_negative_weight",
+              "sig_mul.segment.cpa.family": "hybrid_arrival_driven",
+              "sig_mul.segment.cpa.region_count": 4,
+              "sig_mul.segment.cpa.region_adder_mix": "vba_select_cla_select_vba",
+              "sig_mul.segment.cpa.arrival_model": "measured_tree_profile",
+              "sig_mul.segment.cpa.boundary_search": "arrival_profile_intersection",
+              "sig_mul.merge_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "sig_mul.merge_adder.arrival_profile": "multiplier_vee",
+              "sig_mul.merge_tree.family": "tiled_cpa_reduction_tree",
+              "sig_mul.merge_tree.adder_width": 4,
+              "sig_mul.merge_tree.carry_assimilation": "terminal_compressor",
+              "sig_mul.merge_tree.terminal_reduction": "compressor_4_2",
+              "sig_mul.merge_tree.cpa.family": "hybrid_arrival_driven",
+              "sig_mul.merge_tree.cpa.region_count": 2,
+              "sig_mul.merge_tree.cpa.region_adder_mix": "vba_select_cla_select_vba",
+              "sig_mul.merge_tree.cpa.arrival_model": "measured_tree_profile",
+              "sig_mul.merge_tree.cpa.boundary_search": "arrival_profile_intersection",
+              "sig_mul.merge_tree.tile_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "sig_mul.merge_tree.tile_adder.arrival_profile": "uniform",
+              "exp_adder.intergroup_carry": "lookahead_tree",
+              "exp_adder.block_sizing": "variable_ramp",
+              "exp_adder.increment_levels": 2,
+              "exp_adder.block_adder.family": "parallel_prefix",
+              "exp_adder.block_adder.topology": "kogge_stone",
+              "exp_adder.block_adder.valency": 4,
+              "exp_adder.increment_stage.family": "prefix_and_incrementer",
+              "exp_adder.increment_stage.structure": "prefix_and_tree",
+              "exp_adder.increment_stage.topology": "brent_kung"
+            },
+            "family": "sig_mul_then_round"
+          },
+          "m2.l1.fp_multiplier": {
+            "pin": {
+              "sig_mul.family": "segmented_grid",
+              "exp_adder.family": "carry_increment",
+              "sig_mul.recursion_depth": 1,
+              "sig_mul.seg_w": 8,
+              "sig_mul.num_seg": 3,
+              "sig_mul.segment_shape": "square",
+              "sig_mul.merge_form": "carry_save_tree",
+              "sig_mul.segment.family": "carry_save_array",
+              "sig_mul.segment.signed_scheme": "pezaris_negative_weight",
+              "sig_mul.segment.cpa.family": "hybrid_arrival_driven",
+              "sig_mul.segment.cpa.region_count": 4,
+              "sig_mul.segment.cpa.region_adder_mix": "vba_select_cla_select_vba",
+              "sig_mul.segment.cpa.arrival_model": "measured_tree_profile",
+              "sig_mul.segment.cpa.boundary_search": "arrival_profile_intersection",
+              "sig_mul.merge_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "sig_mul.merge_adder.arrival_profile": "multiplier_vee",
+              "sig_mul.merge_tree.family": "tiled_cpa_reduction_tree",
+              "sig_mul.merge_tree.adder_width": 4,
+              "sig_mul.merge_tree.carry_assimilation": "terminal_compressor",
+              "sig_mul.merge_tree.terminal_reduction": "compressor_4_2",
+              "sig_mul.merge_tree.cpa.family": "hybrid_arrival_driven",
+              "sig_mul.merge_tree.cpa.region_count": 2,
+              "sig_mul.merge_tree.cpa.region_adder_mix": "vba_select_cla_select_vba",
+              "sig_mul.merge_tree.cpa.arrival_model": "measured_tree_profile",
+              "sig_mul.merge_tree.cpa.boundary_search": "arrival_profile_intersection",
+              "sig_mul.merge_tree.tile_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "sig_mul.merge_tree.tile_adder.arrival_profile": "uniform",
+              "exp_adder.intergroup_carry": "lookahead_tree",
+              "exp_adder.block_sizing": "variable_ramp",
+              "exp_adder.increment_levels": 2,
+              "exp_adder.block_adder.family": "parallel_prefix",
+              "exp_adder.block_adder.topology": "kogge_stone",
+              "exp_adder.block_adder.valency": 4,
+              "exp_adder.increment_stage.family": "prefix_and_incrementer",
+              "exp_adder.increment_stage.structure": "prefix_and_tree",
+              "exp_adder.increment_stage.topology": "brent_kung"
+            },
+            "family": "sig_mul_then_round"
+          },
+          "m0.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 3
+            },
+            "family": "dedicated_magnitude_comparator"
+          },
+          "m1.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "subtractor_comparator",
+              "comparator.zero_detect": "operand_xnor",
+              "comparator.subtractor.family": "compound_flagged_prefix",
+              "comparator.subtractor.topology": "han_carlson",
+              "comparator.subtractor.outputs": "sum_sum1_summinus1",
+              "comparator.subtractor.implementation": "dual_carry_tree",
+              "comparator.subtractor.late_carry_in": false
+            },
+            "family": "integer_compare_on_bits"
+          },
+          "m2.l0.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 4
+            },
+            "family": "integer_compare_on_bits"
+          },
+          "m2.l1.fp_comparator": {
+            "pin": {
+              "comparator.family": "prefix_comparator",
+              "comparator.structure": "msb_first_prefix",
+              "comparator.radix": 4
+            },
+            "family": "integer_compare_on_bits"
+          },
+          "m2.l1.rounder": {
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "barrel_mux_tree",
+              "shifter.stage_radix": 8,
+              "shifter.select_encoding": "one_hot_decoded",
+              "shifter.stage_order": "small_shift_first",
+              "shifter.direction_handling": "mirrored_datapath",
+              "shifter.sticky_collect": true,
+              "round.family": "increment_adder",
+              "round.incrementer.family": "prefix_and_incrementer",
+              "round.incrementer.structure": "select_blocks",
+              "exp_adder.family": "ling_prefix",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "prefix_and_tree",
+              "exp_incrementer.topology": "kogge_stone",
+              "lzc.prefix_topology": "sklansky",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "full_adder_3_2",
+              "lzc.counter.tree_shape": "linear_chain",
+              "lzc.counter.final_adder.family": "parallel_prefix",
+              "lzc.counter.final_adder.topology": "kogge_stone",
+              "lzc.counter.final_adder.valency": 2,
+              "exp_adder.topology": "knowles_mixed",
+              "exp_adder.pseudo_carry_group": 2,
+              "exp_adder.sum_recovery": "xor_correction"
+            },
+            "family": "dedicated_per_op"
+          },
+          "m2.l1.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "shared_per_lane"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "options": {
+          "x_form": "exact"
+        },
+        "shared": {
+          "rounder_bank0": {
+            "members": [
+              "m0.l0.rounder",
+              "m1.l0.rounder",
+              "m2.l0.rounder"
+            ],
+            "canonical": "m2.l0.rounder",
+            "why": "one rounder bank for mutually exclusive modes",
+            "family": "dedicated_per_op",
+            "pin": {
+              "lzc.family": "prefix_lzc",
+              "shifter.family": "barrel_mux_tree",
+              "shifter.stage_radix": 8,
+              "shifter.select_encoding": "one_hot_decoded",
+              "shifter.stage_order": "small_shift_first",
+              "shifter.direction_handling": "mirrored_datapath",
+              "shifter.sticky_collect": true,
+              "round.family": "increment_adder",
+              "round.incrementer.family": "prefix_and_incrementer",
+              "round.incrementer.structure": "select_blocks",
+              "exp_adder.family": "ling_prefix",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "prefix_and_tree",
+              "exp_incrementer.topology": "kogge_stone",
+              "lzc.prefix_topology": "sklansky",
+              "lzc.count_form": "lookahead_flags",
+              "lzc.counter.family": "popcount_counter_tree",
+              "lzc.counter.counter_primitive": "full_adder_3_2",
+              "lzc.counter.tree_shape": "linear_chain",
+              "lzc.counter.final_adder.family": "parallel_prefix",
+              "lzc.counter.final_adder.topology": "kogge_stone",
+              "lzc.counter.final_adder.valency": 2,
+              "exp_adder.topology": "knowles_mixed",
+              "exp_adder.pseudo_carry_group": 2,
+              "exp_adder.sum_recovery": "xor_correction"
+            }
+          },
+          "unpacker_bank0": {
+            "members": [
+              "m0.l0.unpacker",
+              "m1.l0.unpacker",
+              "m2.l0.unpacker"
+            ],
+            "canonical": "m2.l0.unpacker",
+            "why": "one unpacker bank for mutually exclusive modes",
+            "family": "shared_per_lane",
+            "pin": {
+              "denormal_handling": "in_datapath"
+            }
+          }
+        },
+        "components": {
+          "subword": {
+            "pin": {},
+            "family": "replicated_lanes"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 52.8
+      },
+      "sha256": "5f05944303d8cda258a97e02a6eb596ad205ad47c3aaf25350b925465ab1f142"
+    },
+    {
+      "name": "r0031",
+      "plan": {
+        "structures": {
+          "m1.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m0.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l0.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.fp_fma": {
+            "pin": {},
+            "family": "separate_multiplier_and_adder"
+          },
+          "m2.l1.rounder": {
+            "pin": {
+              "lzc.family": "lzd_cell_tree",
+              "lzc.block_primitive": "pair_cell",
+              "lzc.output_form": "binary_count",
+              "lzc.valid_flag_propagation": true,
+              "shifter.family": "butterfly_network",
+              "shifter.sticky_collect": true,
+              "round.family": "flagged_prefix",
+              "exp_adder.family": "carry_lookahead",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "ripple_and_chain",
+              "shifter.network": "inverse_butterfly",
+              "round.compound_adder.family": "compound_flagged_prefix",
+              "round.compound_adder.outputs": "sum_sum1",
+              "round.compound_adder.implementation": "dual_carry_tree",
+              "round.compound_adder.topology": "brent_kung",
+              "round.compound_adder.late_carry_in": true,
+              "exp_adder.group_size": 7,
+              "exp_adder.levels": 1,
+              "exp_adder.intergroup_carry": "lookahead"
+            },
+            "family": "dedicated_per_op"
+          },
+          "m2.l1.unpacker": {
+            "pin": {
+              "denormal_handling": "in_datapath"
+            },
+            "family": "per_unit_unpack"
+          },
+          "m2.l1.fp_comparator": {
+            "pin": {
+              "comparator.family": "subtractor_comparator",
+              "comparator.zero_detect": "operand_xnor",
+              "comparator.subtractor.family": "carry_lookahead",
+              "comparator.subtractor.group_size": 2,
+              "comparator.subtractor.levels": 1,
+              "comparator.subtractor.intergroup_carry": "lookahead"
+            },
+            "family": "dedicated_magnitude_comparator"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "options": {
+          "x_form": "guard_round_sticky"
+        },
+        "shared": {
+          "rounder_bank0": {
+            "members": [
+              "m0.l0.rounder",
+              "m1.l0.rounder",
+              "m2.l0.rounder"
+            ],
+            "canonical": "m2.l0.rounder",
+            "why": "one rounder bank for mutually exclusive modes",
+            "family": "dedicated_per_op",
+            "pin": {
+              "lzc.family": "lzd_cell_tree",
+              "lzc.block_primitive": "pair_cell",
+              "lzc.output_form": "binary_count",
+              "lzc.valid_flag_propagation": true,
+              "shifter.family": "butterfly_network",
+              "shifter.sticky_collect": true,
+              "round.family": "flagged_prefix",
+              "exp_adder.family": "carry_lookahead",
+              "exp_incrementer.family": "prefix_and_incrementer",
+              "exp_incrementer.structure": "ripple_and_chain",
+              "shifter.network": "inverse_butterfly",
+              "round.compound_adder.family": "compound_flagged_prefix",
+              "round.compound_adder.outputs": "sum_sum1",
+              "round.compound_adder.implementation": "dual_carry_tree",
+              "round.compound_adder.topology": "brent_kung",
+              "round.compound_adder.late_carry_in": true,
+              "exp_adder.group_size": 7,
+              "exp_adder.levels": 1,
+              "exp_adder.intergroup_carry": "lookahead"
+            }
+          },
+          "unpacker_bank0": {
+            "members": [
+              "m0.l0.unpacker",
+              "m1.l0.unpacker",
+              "m2.l0.unpacker"
+            ],
+            "canonical": "m2.l0.unpacker",
+            "why": "one unpacker bank for mutually exclusive modes",
+            "family": "per_unit_unpack",
+            "pin": {
+              "denormal_handling": "in_datapath"
+            }
+          },
+          "fp_adder_bank0": {
+            "members": [
+              "m0.l0.fp_adder",
+              "m1.l0.fp_adder",
+              "m2.l0.fp_adder"
+            ],
+            "canonical": "m2.l0.fp_adder",
+            "why": "one fp_adder bank for mutually exclusive modes"
+          },
+          "fp_multiplier_bank0": {
+            "members": [
+              "m0.l0.fp_multiplier",
+              "m1.l0.fp_multiplier",
+              "m2.l0.fp_multiplier"
+            ],
+            "canonical": "m2.l0.fp_multiplier",
+            "why": "one fp_multiplier bank for mutually exclusive modes"
+          },
+          "fp_comparator_bank0": {
+            "members": [
+              "m0.l0.fp_comparator",
+              "m1.l0.fp_comparator",
+              "m2.l0.fp_comparator"
+            ],
+            "canonical": "m2.l0.fp_comparator",
+            "why": "one fp_comparator bank for mutually exclusive modes",
+            "family": "dedicated_magnitude_comparator",
+            "pin": {
+              "comparator.family": "subtractor_comparator",
+              "comparator.zero_detect": "operand_xnor",
+              "comparator.subtractor.family": "carry_lookahead",
+              "comparator.subtractor.group_size": 2,
+              "comparator.subtractor.levels": 1,
+              "comparator.subtractor.intergroup_carry": "lookahead"
+            }
+          }
+        },
+        "components": {
+          "subword": {
+            "pin": {},
+            "family": "replicated_lanes"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 17.3
+      },
+      "sha256": "1c23e89ef96ce92dc6d04c7967add881391d54c29cbd9bd02b077a9f2aa99676"
+    }
+  ]
+}

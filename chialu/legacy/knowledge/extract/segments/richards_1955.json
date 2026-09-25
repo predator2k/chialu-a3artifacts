@@ -1,0 +1,170 @@
+{
+ "key": "richards_1955",
+ "file": "Arithmetic operations in digital computers (Richards, R. K. (Richard Kohler), 1921-).pdf",
+ "kind": "book",
+ "citation": "Richards, \"Arithmetic Operations in Digital Computers\", Van Nostrand, 1955",
+ "pages": 416,
+ "title": "Arithmetic Operations in Digital Computers",
+ "authors": "R. K. Richards",
+ "source": "toc_llm",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "Front matter",
+   "start": 0,
+   "end": 11,
+   "kind": "front",
+   "extract": false,
+   "families": [],
+   "why": "The section is front matter rather than arithmetic-unit design content."
+  },
+  {
+   "id": "s02",
+   "title": "Symbolic Representation of Quantities",
+   "start": 12,
+   "end": 36,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter discusses number representations without describing a covered arithmetic-unit mechanism."
+  },
+  {
+   "id": "s03",
+   "title": "Boolean Algebra Applied to Computer Components",
+   "start": 37,
+   "end": 61,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter presents general Boolean algebra and switching-circuit synthesis rather than arithmetic-unit architectures."
+  },
+  {
+   "id": "s04",
+   "title": "Switching Networks",
+   "start": 62,
+   "end": 91,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter covers general switching networks and components rather than a specific arithmetic-unit mechanism."
+  },
+  {
+   "id": "s05",
+   "title": "Binary Addition and Subtraction",
+   "start": 92,
+   "end": 146,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "carry_lookahead",
+    "end_around_carry",
+    "speculative_variable_latency"
+   ],
+   "why": "The chapter describes binary adder/subtracter organizations, carry propagation and acceleration, complement recirculation, and carry-completion operation."
+  },
+  {
+   "id": "s06",
+   "title": "Binary Multiplication and Division",
+   "start": 147,
+   "end": 187,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "sequential_shift_add",
+    "carry_save_array",
+    "restoring_nonrestoring"
+   ],
+   "why": "The chapter describes partial-product multiplication and iterative binary division mechanisms."
+  },
+  {
+   "id": "s07",
+   "title": "Decimal Codes",
+   "start": 188,
+   "end": 203,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter classifies decimal digit representations without describing an arithmetic unit or conversion mechanism."
+  },
+  {
+   "id": "s08",
+   "title": "Counting, Binary and Decimal",
+   "start": 204,
+   "end": 219,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "prefix_and_incrementer"
+   ],
+   "why": "The chapter describes binary and decimal counter structures that implement repeated increment operations."
+  },
+  {
+   "id": "s09",
+   "title": "Decimal Addition and Subtraction",
+   "start": 220,
+   "end": 257,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "bcd_direct_addition"
+   ],
+   "why": "The chapter develops decimal adders and subtracters for binary-coded decimal digits, including 8421 correction logic."
+  },
+  {
+   "id": "s10",
+   "title": "Decimal Multiplication and Division",
+   "start": 258,
+   "end": 296,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "iterative_decimal_multiplication",
+    "decimal_digit_recurrence"
+   ],
+   "why": "The chapter compares digit-at-a-time decimal multiplication and division mechanisms with speed-oriented refinements."
+  },
+  {
+   "id": "s11",
+   "title": "Miscellaneous Operations",
+   "start": 297,
+   "end": 324,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "binary_decimal_conversion"
+   ],
+   "why": "The chapter describes fixed-iteration procedures for converting values between decimal and binary representations."
+  },
+  {
+   "id": "s12",
+   "title": "Computer Organization and Control",
+   "start": 325,
+   "end": 364,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns computer organization, sequencing, and control rather than arithmetic-unit mechanisms."
+  },
+  {
+   "id": "s13",
+   "title": "Programming",
+   "start": 365,
+   "end": 395,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns stored-program programming methods rather than arithmetic-unit hardware."
+  },
+  {
+   "id": "s14",
+   "title": "Bibliography and Index",
+   "start": 396,
+   "end": 415,
+   "kind": "back",
+   "extract": false,
+   "families": [],
+   "why": "The section is bibliography and index material rather than design content."
+  }
+ ]
+}

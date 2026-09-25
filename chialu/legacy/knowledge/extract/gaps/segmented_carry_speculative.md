@@ -1,0 +1,18 @@
+# segmented_carry_speculative: proposed changes to the space
+
+* sub_adder_width range extended below 4 (1- and 2-bit blocks) and above 16 (24-bit local adders for the 1024-bit case) — evaluated configurations fall outside Int[4..16:2] [camus2015, ebrahimi2020, zhu2010, zhu2010b, verma2008]
+* prediction_window range extended to odd values, 1 bit and 16 bits and beyond — SPEC width 1, GeAr's P from 1 through N-R, and 16-bit hierarchical windows are all used [camus2015, shafique2015, ye2013, zhu2010, zhu2010b]
+* symbolic widths (2k sub-adder, k window, N/k-1 sub-adders) — the ACA defines its widths relationally rather than as one integer [kahng_kang2012, mittal2016]
+* segment_overlap / resultant_width choice — overlapping sub-adders with R committed bits distinguish ACAA/GeAr/SCSA/CCA/CSA/GCSA/BCSA [kahng_kang2012, shafique2015, jiang2017, jiang2020]
+* carry_in_scheme values generate_bit_prediction and previous_block_msb_generate — the boundary carry is taken from the generate signal rather than a window [xu2018, hu_qian2015]
+* sum_carry_source choice — the first sum above a boundary uses the exact local carry while higher propagation uses the predicted carry [xu2018]
+* prediction_scope and carry_skip_preceding_blocks choices — the predictor may read the current and next block or several preceding carry generators [ebrahimi2020, kim2013]
+* prediction_structure hierarchical_4_bit_components — fixed-width predictors composed through propagate-detection control logic [ye2013]
+* carry_generator_arrangement selected_dual_generator — a Type I result selects between two Type II generators evaluated with carry 0 and 1 [zhu2010]
+* prediction_window_profile {uniform, cascaded_higher_order} and block_count — ETAIIM gives higher-order blocks longer windows [zhu2010b]
+* carry cut-back tunables: propagate_monitor_width, cutback_count, cutback_position, carry_guess_direction, straight_cut_gate (OR-cut vs SPEC-plus-mux) and speculation_input {static, dynamic} [camus2016, camus2015]
+* correction_bus_width and balancing_bus_width — independently sized increment/decrement and sum-flip reach in the ISA [camus2015]
+* exact_recovery slot (optional parallel_prefix circuit in an additional cycle) and a carry-predictor slot for the instantiated carry_lookahead generator [kim2013, zhu2010b]
+* nonuniform segmentation_pattern and correction-term accumulation — DSEC accumulators use ordered stage widths such as 358/457 with a later correction cycle [venkatesan2011]
+* segmentation_control adaptive_voltage_dependent — carry propagation across segmentation points follows the voltage scaling [mittal2016]
+* approximate_compressor_tree.cpa and speculative_variable_latency.base_adder slots should admit segmented_carry_speculative [lin2013, verma2008]

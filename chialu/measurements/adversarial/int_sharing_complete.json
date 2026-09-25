@@ -1,0 +1,910 @@
+{
+  "kind": "int",
+  "revision": "HEAD",
+  "symbol": null,
+  "cases": 4,
+  "results": [
+    {
+      "name": "r0057",
+      "plan": {
+        "structures": {
+          "m0.l0.adder": {
+            "pin": {
+              "valency": 2,
+              "log2_sparsity": 2,
+              "tree_topology": "knowles_mixed",
+              "sum_block_style": "carry_select",
+              "sum_block.family": "parallel_prefix",
+              "sum_block.topology": "han_carlson",
+              "sum_block.valency": 2
+            },
+            "family": "sparse_prefix_hybrid"
+          },
+          "m1.l0.adder": {
+            "pin": {
+              "intergroup_carry": "lookahead_tree",
+              "block_sizing": "variable_ramp",
+              "increment_levels": 1,
+              "block_adder.family": "parallel_prefix",
+              "block_adder.topology": "ladner_fischer",
+              "block_adder.valency": 2,
+              "increment_stage.family": "prefix_and_incrementer",
+              "increment_stage.structure": "select_blocks"
+            },
+            "family": "carry_increment"
+          },
+          "m2.l0.adder": {
+            "pin": {
+              "arrival_profile": "msb_late"
+            },
+            "family": "prefix_synthesis_nonuniform_arrival"
+          },
+          "m2.l1.adder": {
+            "pin": {
+              "arrival_profile": "msb_late"
+            },
+            "family": "prefix_synthesis_nonuniform_arrival"
+          },
+          "m2.l1.multiplier": {
+            "pin": {
+              "booth_radix": 4,
+              "hard_multiple_gen": "cpa_precompute",
+              "sign_extension": "full_extension",
+              "negative_pp_encoding": "ones_complement_plus_neg_bit",
+              "reduction.family": "csa_reduction_tree",
+              "reduction.geometry": "tdm_arrival_driven",
+              "reduction.counter_kind": "5_2",
+              "reduction.cpa.family": "uniform",
+              "reduction.cpa.adder.family": "parallel_prefix",
+              "reduction.cpa.adder.topology": "brent_kung",
+              "reduction.cpa.adder.valency": 3,
+              "hard_multiple_adder.family": "compound_flagged_prefix",
+              "hard_multiple_adder.topology": "sklansky",
+              "hard_multiple_adder.outputs": "sum_sum1",
+              "hard_multiple_adder.implementation": "dual_carry_tree",
+              "hard_multiple_adder.late_carry_in": true,
+              "negation_incrementer.family": "prefix_and_incrementer",
+              "negation_incrementer.structure": "prefix_and_tree",
+              "negation_incrementer.topology": "brent_kung"
+            },
+            "family": "booth_recoded_parallel"
+          },
+          "m0.l0.shifter": {
+            "pin": {
+              "sticky_collect": true,
+              "network": "inverse_butterfly"
+            },
+            "family": "butterfly_network"
+          },
+          "m1.l0.shifter": {
+            "pin": {
+              "sticky_collect": true,
+              "mask_generator": "lut",
+              "merge_style": "per_bit_mux",
+              "rotator.family": "barrel_mux_tree",
+              "rotator.stage_radix": 2,
+              "rotator.select_encoding": "binary",
+              "rotator.stage_order": "large_shift_first"
+            },
+            "family": "masked_merged"
+          },
+          "m2.l0.shifter": {
+            "pin": {
+              "sticky_collect": false,
+              "mask_generator": "thermometer_decode",
+              "merge_style": "and_or_merge",
+              "rotator.family": "barrel_mux_tree",
+              "rotator.stage_radix": "full_width_single_stage",
+              "rotator.select_encoding": "binary",
+              "rotator.stage_order": "small_shift_first"
+            },
+            "family": "masked_merged"
+          },
+          "m2.l1.shifter": {
+            "pin": {
+              "sticky_collect": false,
+              "mask_generator": "thermometer_decode",
+              "merge_style": "and_or_merge",
+              "rotator.family": "barrel_mux_tree",
+              "rotator.stage_radix": "full_width_single_stage",
+              "rotator.select_encoding": "binary",
+              "rotator.stage_order": "small_shift_first"
+            },
+            "family": "masked_merged"
+          },
+          "m0.l0.bitcount": {
+            "pin": {
+              "block_primitive": "nibble_cell",
+              "output_form": "binary_count",
+              "valid_flag_propagation": false
+            },
+            "family": "lzd_cell_tree"
+          },
+          "m1.l0.bitcount": {
+            "pin": {
+              "strategy": "reverse_then_lzd",
+              "isolate_circuit": "twos_complement_and",
+              "lzd.family": "priority_encoder",
+              "lzd.output_form": "one_hot_then_encode",
+              "lzd.lookahead_group": 8,
+              "lzd.levels": 3,
+              "negation_incrementer.family": "prefix_and_incrementer",
+              "negation_incrementer.structure": "prefix_and_tree",
+              "negation_incrementer.topology": "brent_kung"
+            },
+            "family": "trailing_zero"
+          },
+          "m2.l0.bitcount": {
+            "pin": {
+              "output_form": "one_hot_then_encode",
+              "lookahead_group": 4,
+              "levels": 3
+            },
+            "family": "priority_encoder"
+          },
+          "m2.l1.bitcount": {
+            "pin": {
+              "output_form": "one_hot_then_encode",
+              "lookahead_group": 4,
+              "levels": 3
+            },
+            "family": "priority_encoder"
+          },
+          "m0.l0.logic": {
+            "pin": {},
+            "family": "lane_replicated_gates"
+          },
+          "m1.l0.logic": {
+            "pin": {},
+            "family": "lane_replicated_gates"
+          },
+          "m0.l0.comparator": {
+            "pin": {
+              "zero_detect": "operand_xnor",
+              "subtractor.family": "carry_lookahead",
+              "subtractor.group_size": 5,
+              "subtractor.levels": 1,
+              "subtractor.intergroup_carry": "lookahead"
+            },
+            "family": "subtractor_comparator"
+          },
+          "m1.l0.comparator": {
+            "pin": {
+              "zero_detect": "operand_xnor",
+              "subtractor.family": "fpga_carry_chain",
+              "subtractor.chain_segment_length": 8,
+              "subtractor.prefix_over_chain": false
+            },
+            "family": "subtractor_comparator"
+          },
+          "m2.l0.comparator": {
+            "pin": {
+              "structure": "msb_first_prefix",
+              "radix": 4
+            },
+            "family": "prefix_comparator"
+          },
+          "m2.l1.comparator": {
+            "pin": {
+              "structure": "msb_first_prefix",
+              "radix": 4
+            },
+            "family": "prefix_comparator"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "shared": {
+          "multipliers_0": {
+            "members": [
+              "m0.l0.multiplier",
+              "m1.l0.multiplier",
+              "m2.l0.multiplier"
+            ],
+            "family": "twin_precision_subword",
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "gate_rows_0": {
+            "members": [
+              "m2.l0.logic",
+              "m2.l1.logic"
+            ],
+            "family": "wide_gate_row",
+            "why": "one gate row for these lanes"
+          }
+        },
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 15.8
+      },
+      "sha256": "e6d56cbd224e468d8f1824f8e9b1901c4ce50aed9853883ac928adb5281f2742"
+    },
+    {
+      "name": "r0072",
+      "plan": {
+        "structures": {
+          "m0.l0.multiplier": {
+            "pin": {
+              "folding_scheme": "divide_and_conquer",
+              "reduction.family": "csa_reduction_tree",
+              "reduction.geometry": "reduced_area",
+              "reduction.counter_kind": "4_2",
+              "reduction.cpa.family": "hybrid_arrival_driven",
+              "reduction.cpa.region_count": 4,
+              "reduction.cpa.region_adder_mix": "vba_select_cla_select_vba",
+              "reduction.cpa.arrival_model": "measured_tree_profile",
+              "reduction.cpa.boundary_search": "delay_bound_boundary_enumeration",
+              "cross.family": "direct_pp_parallel",
+              "cross.group_bits": 2,
+              "cross.signed_scheme": "baugh_wooley",
+              "cross.reduction.family": "compressor_4_2_tree",
+              "cross.reduction.compressor_kind": "7_3",
+              "cross.reduction.cpa.family": "hybrid_arrival_driven",
+              "cross.reduction.cpa.region_count": 3,
+              "cross.reduction.cpa.region_adder_mix": "vba_select_cla_select_vba",
+              "cross.reduction.cpa.arrival_model": "measured_tree_profile",
+              "cross.reduction.cpa.boundary_search": "delay_bound_boundary_enumeration",
+              "cross.hard_multiple_adder.family": "ling_prefix",
+              "cross.hard_multiple_adder.topology": "knowles_mixed",
+              "cross.hard_multiple_adder.pseudo_carry_group": 1,
+              "cross.hard_multiple_adder.sum_recovery": "late_select_mux",
+              "pre_adder.family": "parallel_prefix",
+              "pre_adder.topology": "harris",
+              "pre_adder.valency": 2,
+              "pre_adder.log2_sparsity": 0,
+              "pre_adder.fanout_cap": 7
+            },
+            "family": "squarer"
+          },
+          "m1.l0.multiplier": {
+            "pin": {
+              "folding_scheme": "divide_and_conquer",
+              "reduction.family": "csa_reduction_tree",
+              "reduction.geometry": "tdm_arrival_driven",
+              "reduction.counter_kind": "7_3",
+              "reduction.cpa.family": "uniform",
+              "reduction.cpa.adder.family": "conditional_sum",
+              "reduction.cpa.adder.base_block_width": 1,
+              "reduction.cpa.adder.selection_radix": 2,
+              "cross.family": "direct_pp_parallel",
+              "cross.group_bits": 1,
+              "cross.signed_scheme": "sign_extension",
+              "cross.reduction.family": "compressor_4_2_tree",
+              "cross.reduction.compressor_kind": "7_3",
+              "cross.reduction.cpa.family": "hybrid_arrival_driven",
+              "cross.reduction.cpa.region_count": 3,
+              "cross.reduction.cpa.region_adder_mix": "ripple_skip_select",
+              "cross.reduction.cpa.arrival_model": "measured_tree_profile",
+              "cross.reduction.cpa.boundary_search": "arrival_profile_intersection",
+              "cross.hard_multiple_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "cross.hard_multiple_adder.arrival_profile": "lsb_late",
+              "pre_adder.family": "carry_lookahead",
+              "pre_adder.group_size": 2,
+              "pre_adder.levels": 1,
+              "pre_adder.intergroup_carry": "select"
+            },
+            "family": "squarer"
+          },
+          "m0.l0.shifter": {
+            "pin": {
+              "sticky_collect": true,
+              "mask_generator": "thermometer_decode",
+              "merge_style": "per_bit_mux",
+              "rotator.family": "barrel_mux_tree",
+              "rotator.stage_radix": 8,
+              "rotator.select_encoding": "one_hot_decoded",
+              "rotator.stage_order": "large_shift_first"
+            },
+            "family": "masked_merged"
+          },
+          "m1.l0.shifter": {
+            "pin": {
+              "sticky_collect": false,
+              "network": "inverse_butterfly"
+            },
+            "family": "butterfly_network"
+          },
+          "m2.l0.shifter": {
+            "pin": {
+              "stage_radix": 4,
+              "select_encoding": "binary",
+              "stage_order": "large_shift_first",
+              "direction_handling": "amount_negation",
+              "sticky_collect": true
+            },
+            "family": "barrel_mux_tree"
+          },
+          "m2.l1.shifter": {
+            "pin": {
+              "stage_radix": 4,
+              "select_encoding": "binary",
+              "stage_order": "large_shift_first",
+              "direction_handling": "amount_negation",
+              "sticky_collect": true
+            },
+            "family": "barrel_mux_tree"
+          },
+          "m0.l0.bitcount": {
+            "pin": {
+              "counter_primitive": "full_adder_3_2",
+              "tree_shape": "linear_chain",
+              "final_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "final_adder.arrival_profile": "multiplier_vee"
+            },
+            "family": "popcount_counter_tree"
+          },
+          "m1.l0.bitcount": {
+            "pin": {
+              "counter_primitive": "compressor_4_2",
+              "tree_shape": "linear_chain",
+              "final_adder.family": "carry_skip",
+              "final_adder.block_sizing": "trapezoidal_variable",
+              "final_adder.block_width": 2,
+              "final_adder.skip_levels": 1,
+              "final_adder.skip_gate": "and_or_bypass",
+              "final_adder.block_adder.family": "parallel_prefix",
+              "final_adder.block_adder.topology": "han_carlson",
+              "final_adder.block_adder.valency": 2
+            },
+            "family": "popcount_counter_tree"
+          },
+          "m2.l0.bitcount": {
+            "pin": {
+              "strategy": "debruijn_multiply_index",
+              "isolate_circuit": "ripple_kill_chain",
+              "lzd.family": "lzd_cell_tree",
+              "lzd.block_primitive": "pair_cell",
+              "lzd.output_form": "one_hot_shift_controls",
+              "lzd.valid_flag_propagation": true,
+              "negation_incrementer.family": "prefix_and_incrementer",
+              "negation_incrementer.structure": "ripple_and_chain"
+            },
+            "family": "trailing_zero"
+          },
+          "m2.l1.bitcount": {
+            "pin": {
+              "strategy": "debruijn_multiply_index",
+              "isolate_circuit": "ripple_kill_chain",
+              "lzd.family": "lzd_cell_tree",
+              "lzd.block_primitive": "pair_cell",
+              "lzd.output_form": "one_hot_shift_controls",
+              "lzd.valid_flag_propagation": true,
+              "negation_incrementer.family": "prefix_and_incrementer",
+              "negation_incrementer.structure": "ripple_and_chain"
+            },
+            "family": "trailing_zero"
+          },
+          "m0.l0.logic": {
+            "pin": {
+              "not_via_xor": false
+            },
+            "family": "wide_gate_row"
+          },
+          "m1.l0.logic": {
+            "pin": {},
+            "family": "lane_replicated_gates"
+          },
+          "m2.l0.logic": {
+            "pin": {},
+            "family": "lane_replicated_gates"
+          },
+          "m2.l1.logic": {
+            "pin": {},
+            "family": "lane_replicated_gates"
+          },
+          "m0.l0.comparator": {
+            "pin": {
+              "zero_detect": "operand_xnor",
+              "subtractor.family": "compound_flagged_prefix",
+              "subtractor.topology": "kogge_stone",
+              "subtractor.outputs": "sum_sum1",
+              "subtractor.implementation": "dual_carry_tree",
+              "subtractor.late_carry_in": false
+            },
+            "family": "subtractor_comparator"
+          },
+          "m1.l0.comparator": {
+            "pin": {
+              "structure": "tree_reduction",
+              "radix": 2
+            },
+            "family": "prefix_comparator"
+          },
+          "m2.l0.comparator": {
+            "pin": {
+              "structure": "tree_reduction",
+              "radix": 2
+            },
+            "family": "prefix_comparator"
+          },
+          "m2.l1.comparator": {
+            "pin": {
+              "structure": "tree_reduction",
+              "radix": 2
+            },
+            "family": "prefix_comparator"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m0.l0.adder",
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes",
+            "family": "carry_increment"
+          },
+          "multipliers_0": {
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "family": "twin_precision_subword",
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.1
+      },
+      "sha256": "11c403dc18039ae13a4dad09d05c53a132e44bca12ced25d25b186c87a1877fd"
+    },
+    {
+      "name": "r0079",
+      "plan": {
+        "structures": {
+          "m2.l1.multiplier": {
+            "pin": {},
+            "family": "behavioral_star"
+          },
+          "m0.l0.shifter": {
+            "pin": {
+              "stage_radix": 8,
+              "select_encoding": "binary",
+              "stage_order": "small_shift_first",
+              "direction_handling": "data_reversal",
+              "sticky_collect": true
+            },
+            "family": "barrel_mux_tree"
+          },
+          "m1.l0.shifter": {
+            "pin": {
+              "sticky_collect": true,
+              "mask_generator": "lut",
+              "merge_style": "per_bit_mux",
+              "rotator.family": "barrel_mux_tree",
+              "rotator.stage_radix": 2,
+              "rotator.select_encoding": "one_hot_decoded",
+              "rotator.stage_order": "small_shift_first"
+            },
+            "family": "masked_merged"
+          },
+          "m2.l0.shifter": {
+            "pin": {
+              "sticky_collect": false,
+              "mask_generator": "two_thermometer_and",
+              "merge_style": "and_or_merge",
+              "rotator.family": "barrel_mux_tree",
+              "rotator.stage_radix": 2,
+              "rotator.select_encoding": "one_hot_decoded",
+              "rotator.stage_order": "small_shift_first"
+            },
+            "family": "masked_merged"
+          },
+          "m2.l1.shifter": {
+            "pin": {
+              "sticky_collect": false,
+              "mask_generator": "two_thermometer_and",
+              "merge_style": "and_or_merge",
+              "rotator.family": "barrel_mux_tree",
+              "rotator.stage_radix": 2,
+              "rotator.select_encoding": "one_hot_decoded",
+              "rotator.stage_order": "small_shift_first"
+            },
+            "family": "masked_merged"
+          },
+          "m0.l0.bitcount": {
+            "pin": {
+              "output_form": "one_hot_then_encode",
+              "lookahead_group": 16,
+              "levels": 2
+            },
+            "family": "priority_encoder"
+          },
+          "m1.l0.bitcount": {
+            "pin": {
+              "counter_primitive": "full_adder_3_2",
+              "tree_shape": "wallace_style",
+              "final_adder.family": "end_around_carry",
+              "final_adder.modulus": "generic_p_correction",
+              "final_adder.topology": "harris",
+              "final_adder.log2_sparsity": 0,
+              "final_adder.fanout_cap": 4,
+              "final_adder.modulus_value": 3
+            },
+            "family": "popcount_counter_tree"
+          },
+          "m2.l0.bitcount": {
+            "pin": {
+              "block_primitive": "pair_cell",
+              "output_form": "binary_count",
+              "valid_flag_propagation": false
+            },
+            "family": "lzd_cell_tree"
+          },
+          "m2.l1.bitcount": {
+            "pin": {
+              "block_primitive": "pair_cell",
+              "output_form": "binary_count",
+              "valid_flag_propagation": false
+            },
+            "family": "lzd_cell_tree"
+          },
+          "m2.l1.logic": {
+            "pin": {
+              "not_via_xor": true
+            },
+            "family": "wide_gate_row"
+          },
+          "m0.l0.comparator": {
+            "pin": {
+              "structure": "tree_reduction",
+              "radix": 4
+            },
+            "family": "prefix_comparator"
+          },
+          "m1.l0.comparator": {
+            "pin": {
+              "zero_detect": "operand_xnor",
+              "subtractor.family": "carry_increment",
+              "subtractor.intergroup_carry": "rippled",
+              "subtractor.block_sizing": "uniform",
+              "subtractor.block_width": 2,
+              "subtractor.increment_levels": 2,
+              "subtractor.block_adder.family": "ripple_carry",
+              "subtractor.block_adder.full_adder_logic": "half_sum_mux_carry",
+              "subtractor.block_adder.chunk_width_bits": 1,
+              "subtractor.increment_stage.family": "prefix_and_incrementer",
+              "subtractor.increment_stage.structure": "ripple_and_chain"
+            },
+            "family": "subtractor_comparator"
+          },
+          "m2.l0.comparator": {
+            "pin": {
+              "structure": "tree_reduction",
+              "radix": 2
+            },
+            "family": "prefix_comparator"
+          },
+          "m2.l1.comparator": {
+            "pin": {
+              "structure": "tree_reduction",
+              "radix": 2
+            },
+            "family": "prefix_comparator"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m0.l0.adder",
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes",
+            "family": "compound_flagged_prefix"
+          },
+          "multipliers_0": {
+            "members": [
+              "m0.l0.multiplier",
+              "m1.l0.multiplier",
+              "m2.l0.multiplier"
+            ],
+            "family": "twin_precision_subword",
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "gate_rows_0": {
+            "members": [
+              "m0.l0.logic",
+              "m1.l0.logic",
+              "m2.l0.logic"
+            ],
+            "family": "wide_gate_row",
+            "why": "one gate row for these lanes"
+          }
+        },
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 15.8
+      },
+      "sha256": "cee3c75df3f6dfbe6a1b300b25c1607f8cc62ce77f4ded706a4afbaacf361eda"
+    },
+    {
+      "name": "r0100",
+      "plan": {
+        "structures": {
+          "m0.l0.adder": {
+            "pin": {
+              "group_size": 7,
+              "levels": 1,
+              "intergroup_carry": "lookahead"
+            },
+            "family": "carry_lookahead"
+          },
+          "m0.l0.multiplier": {
+            "pin": {
+              "recursion_depth": 3,
+              "seg_w": 8,
+              "num_seg": 2,
+              "segment_shape": "square",
+              "merge_form": "shift_add_tree",
+              "segment.family": "booth_recoded_parallel",
+              "segment.booth_radix": 8,
+              "segment.hard_multiple_gen": "specialized_3m_cpa",
+              "segment.sign_extension": "prevention_constant",
+              "segment.negative_pp_encoding": "twos_complement_row",
+              "segment.reduction.family": "csa_reduction_tree",
+              "segment.reduction.geometry": "reduced_area",
+              "segment.reduction.counter_kind": "5_2",
+              "segment.reduction.cpa.family": "hybrid_arrival_driven",
+              "segment.reduction.cpa.region_count": 3,
+              "segment.reduction.cpa.region_adder_mix": "ripple_skip",
+              "segment.reduction.cpa.arrival_model": "measured_tree_profile",
+              "segment.reduction.cpa.boundary_search": "arrival_profile_intersection",
+              "segment.hard_multiple_adder.family": "prefix_synthesis_nonuniform_arrival",
+              "segment.hard_multiple_adder.arrival_profile": "uniform",
+              "segment.negation_incrementer.family": "prefix_and_incrementer",
+              "segment.negation_incrementer.structure": "select_blocks",
+              "merge_adder.family": "ling_prefix",
+              "merge_adder.topology": "han_carlson",
+              "merge_adder.pseudo_carry_group": 4,
+              "merge_adder.sum_recovery": "xor_correction",
+              "merge_tree.family": "csa_reduction_tree",
+              "merge_tree.geometry": "reduced_area",
+              "merge_tree.counter_kind": "4_2",
+              "merge_tree.cpa.family": "uniform",
+              "merge_tree.cpa.adder.family": "conditional_sum",
+              "merge_tree.cpa.adder.base_block_width": 1,
+              "merge_tree.cpa.adder.selection_radix": 2
+            },
+            "family": "segmented_grid"
+          },
+          "m1.l0.multiplier": {
+            "pin": {
+              "signed_scheme": "baugh_wooley",
+              "cpa.family": "uniform",
+              "cpa.adder.family": "sparse_prefix_hybrid",
+              "cpa.adder.valency": 2,
+              "cpa.adder.log2_sparsity": 1,
+              "cpa.adder.tree_topology": "knowles_mixed",
+              "cpa.adder.sum_block_style": "ripple_precompute",
+              "cpa.adder.sum_block.family": "parallel_prefix",
+              "cpa.adder.sum_block.topology": "harris",
+              "cpa.adder.sum_block.valency": 2,
+              "cpa.adder.sum_block.log2_sparsity": 0,
+              "cpa.adder.sum_block.fanout_cap": 4
+            },
+            "family": "carry_save_array"
+          },
+          "m0.l0.shifter": {
+            "pin": {
+              "sticky_collect": false,
+              "window_mux_radix": 4,
+              "amount_preprocess": "subtract_from_n"
+            },
+            "family": "funnel"
+          },
+          "m1.l0.shifter": {
+            "pin": {
+              "stage_radix": 2,
+              "select_encoding": "one_hot_decoded",
+              "stage_order": "small_shift_first",
+              "direction_handling": "mirrored_datapath",
+              "sticky_collect": true
+            },
+            "family": "barrel_mux_tree"
+          },
+          "m2.l0.shifter": {
+            "pin": {
+              "stage_radix": "full_width_single_stage",
+              "select_encoding": "one_hot_decoded",
+              "stage_order": "large_shift_first",
+              "direction_handling": "mirrored_datapath",
+              "sticky_collect": false
+            },
+            "family": "barrel_mux_tree"
+          },
+          "m2.l1.shifter": {
+            "pin": {
+              "stage_radix": "full_width_single_stage",
+              "select_encoding": "one_hot_decoded",
+              "stage_order": "large_shift_first",
+              "direction_handling": "mirrored_datapath",
+              "sticky_collect": false
+            },
+            "family": "barrel_mux_tree"
+          },
+          "m0.l0.bitcount": {
+            "pin": {
+              "strategy": "debruijn_multiply_index",
+              "isolate_circuit": "twos_complement_and",
+              "lzd.family": "priority_encoder",
+              "lzd.output_form": "direct_binary",
+              "lzd.lookahead_group": 4,
+              "lzd.levels": 1,
+              "negation_incrementer.family": "prefix_and_incrementer",
+              "negation_incrementer.structure": "select_blocks"
+            },
+            "family": "trailing_zero"
+          },
+          "m1.l0.bitcount": {
+            "pin": {
+              "strategy": "reverse_then_lzd",
+              "isolate_circuit": "ripple_kill_chain",
+              "lzd.family": "priority_encoder",
+              "lzd.output_form": "direct_binary",
+              "lzd.lookahead_group": 16,
+              "lzd.levels": 1,
+              "negation_incrementer.family": "prefix_and_incrementer",
+              "negation_incrementer.structure": "ripple_and_chain"
+            },
+            "family": "trailing_zero"
+          },
+          "m2.l0.bitcount": {
+            "pin": {
+              "output_form": "one_hot_then_encode",
+              "lookahead_group": 8,
+              "levels": 2
+            },
+            "family": "priority_encoder"
+          },
+          "m2.l1.bitcount": {
+            "pin": {
+              "output_form": "one_hot_then_encode",
+              "lookahead_group": 8,
+              "levels": 2
+            },
+            "family": "priority_encoder"
+          },
+          "m0.l0.logic": {
+            "pin": {},
+            "family": "lane_replicated_gates"
+          },
+          "m1.l0.logic": {
+            "pin": {},
+            "family": "lane_replicated_gates"
+          },
+          "m0.l0.comparator": {
+            "pin": {
+              "structure": "tree_reduction",
+              "radix": 2
+            },
+            "family": "prefix_comparator"
+          },
+          "m1.l0.comparator": {
+            "pin": {
+              "structure": "msb_first_prefix",
+              "radix": 3
+            },
+            "family": "prefix_comparator"
+          },
+          "m2.l0.comparator": {
+            "pin": {
+              "zero_detect": "sum_or_tree",
+              "subtractor.family": "carry_increment",
+              "subtractor.intergroup_carry": "rippled",
+              "subtractor.block_sizing": "uniform",
+              "subtractor.block_width": 6,
+              "subtractor.increment_levels": 1,
+              "subtractor.block_adder.family": "parallel_prefix",
+              "subtractor.block_adder.topology": "knowles_mixed",
+              "subtractor.block_adder.valency": 2,
+              "subtractor.increment_stage.family": "prefix_and_incrementer",
+              "subtractor.increment_stage.structure": "select_blocks"
+            },
+            "family": "subtractor_comparator"
+          },
+          "m2.l1.comparator": {
+            "pin": {
+              "zero_detect": "sum_or_tree",
+              "subtractor.family": "carry_increment",
+              "subtractor.intergroup_carry": "rippled",
+              "subtractor.block_sizing": "uniform",
+              "subtractor.block_width": 6,
+              "subtractor.increment_levels": 1,
+              "subtractor.block_adder.family": "parallel_prefix",
+              "subtractor.block_adder.topology": "knowles_mixed",
+              "subtractor.block_adder.valency": 2,
+              "subtractor.increment_stage.family": "prefix_and_incrementer",
+              "subtractor.increment_stage.structure": "select_blocks"
+            },
+            "family": "subtractor_comparator"
+          },
+          "m1.l0.adder": {
+            "pin": {
+              "group_size": 7,
+              "levels": 1,
+              "intergroup_carry": "lookahead"
+            },
+            "family": "carry_lookahead"
+          }
+        },
+        "why": "front point 0 of the numeric stage; sharing scheme",
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes",
+            "family": "carry_lookahead"
+          },
+          "multipliers_0": {
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "family": "twin_precision_subword",
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "gate_rows_0": {
+            "members": [
+              "m2.l0.logic",
+              "m2.l1.logic"
+            ],
+            "family": "wide_gate_row",
+            "why": "one gate row for these lanes"
+          }
+        },
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        }
+      },
+      "conformance": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.3
+      },
+      "sha256": "8d56fa4cd94c510cecb27bf449a125157c0e63817bf830aa8f3171145ddc65a1"
+    }
+  ]
+}

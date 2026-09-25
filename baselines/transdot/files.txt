@@ -1,0 +1,17 @@
+# TransDot's sources for the no-DP SIMD FMA point (filelist_best.f without the divider,
+# the caster's vendor units and the testbench), relative to 3rdparty/transdot
+src/common_cells/src/cf_math_pkg.sv
+src/common_cells/src/lzc.sv
+src/common_cells/src/rr_arb_tree.sv
+src/fpnew_pkg.sv
+src/fpnew_classifier.sv
+src/fpnew_cast_multi.sv
+src/fpnew_rounding.sv
+src/fpnew_fma.sv
+src/transdot_no_dp/transdot_fp16_fp32_fma_simd_base.sv
+src/fpnew_noncomp.sv
+src/fpnew_opgroup_fmt_slice.sv
+src/fpnew_opgroup_multifmt_slice.sv
+src/fpnew_opgroup_block.sv
+src/fpnew_top.sv
+src/transdot_no_dp/transdot_fpu_top.sv

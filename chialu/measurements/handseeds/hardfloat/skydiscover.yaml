@@ -1,0 +1,52 @@
+max_iterations: 20
+checkpoint_interval: 1
+random_seed: 42
+log_level: INFO
+log_dir: $CHIALU_HOME/tmp/handseeds/verified/hardfloat/skydiscover/logs
+language: systemverilog
+file_suffix: .sv
+diff_based_generation: true
+max_solution_length: 400000
+llm:
+  timeout: 1800
+  retries: 3
+  max_tokens: 32000
+  models:
+  - name: deepseek-flash
+    weight: 1.0
+    reasoning_effort: high
+    timeout: 1200
+  guide_models:
+  - name: deepseek-flash
+    weight: 1.0
+    reasoning_effort: high
+    timeout: 1200
+prompt:
+  template: default
+  template_dir: $CHIALU_HOME/tmp/handseeds/verified/hardfloat/prompt_templates
+  system_message: problem.md
+  suggest_simplification_after_chars: null
+search:
+  type: adaevolve
+  num_inspirations: 1
+  database:
+    db_path: $CHIALU_HOME/tmp/handseeds/verified/hardfloat/skydiscover/db
+    num_islands: 1
+    max_islands: 5
+    max_error_retries: 0
+    pareto_objectives:
+    - goal.1
+    - goal.2
+    higher_is_better:
+      goal.1: false
+      goal.2: false
+    fitness_key: combined_score
+    use_migration: true
+    migration_interval: 10
+    use_paradigm_breakthrough: true
+    diversity_strategy: metric
+evaluator:
+  timeout: 3600
+  max_retries: 0
+  cascade_evaluation: false
+  parallel_evaluations: 2

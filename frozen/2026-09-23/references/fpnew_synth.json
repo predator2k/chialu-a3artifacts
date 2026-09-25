@@ -1,0 +1,58 @@
+{
+ "MERGED/alu_core": {
+  "file": "runs/fpnew/fpnew_merged_alu_core.sv",
+  "chars": 315851,
+  "at": {
+   "300": {
+    "ok": true,
+    "area_um2": 4873.652,
+    "abc_delay_ps": 3705.08,
+    "cells": 4200,
+    "seconds": 3.5,
+    "detail": ""
+   }
+  }
+ },
+ "MERGED/bare": {
+  "file": "runs/fpnew/fpnew_merged_bare.sv",
+  "chars": 308908,
+  "at": {
+   "300": {
+    "ok": true,
+    "area_um2": 5299.252,
+    "abc_delay_ps": 3624.64,
+    "cells": 4518,
+    "seconds": 3.7,
+    "detail": ""
+   }
+  }
+ },
+ "PARALLEL/alu_core": {
+  "file": "runs/fpnew/fpnew_parallel_alu_core.sv",
+  "chars": 315853,
+  "at": {
+   "300": {
+    "ok": true,
+    "area_um2": 6163.486,
+    "abc_delay_ps": 3681.84,
+    "cells": 5314,
+    "seconds": 3.6,
+    "detail": ""
+   }
+  }
+ },
+ "PARALLEL/bare": {
+  "file": "runs/fpnew/fpnew_parallel_bare.sv",
+  "chars": 308910,
+  "at": {
+   "300": {
+    "ok": true,
+    "area_um2": 6524.98,
+    "abc_delay_ps": 3773.84,
+    "cells": 5671,
+    "seconds": 3.5,
+    "detail": ""
+   }
+  }
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "key": "pasca_2011",
+ "file": "Bogdan_PASCA-Calcul_flottant_haute_performance_sur_circuits_reconfigurables_2011.pdf",
+ "kind": "thesis",
+ "citation": "B. Pasca, \"High-Performance Floating-Point Computing on Reconfigurable Circuits\", PhD thesis, ENS Lyon, 2011",
+ "pages": 199,
+ "title": "High-performance floating-point computing on reconfigurable circuits",
+ "authors": "Bogdan Pasca",
+ "source": "toc_llm",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "Front matter",
+   "start": 0,
+   "end": 18,
+   "kind": "front",
+   "extract": false,
+   "families": [],
+   "why": "The front matter contains publication metadata and acknowledgements rather than arithmetic-unit design detail."
+  },
+  {
+   "id": "s02",
+   "title": "Introduction",
+   "start": 19,
+   "end": 22,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The introduction motivates FPGA computing and application parallelism without describing an arithmetic-unit mechanism."
+  },
+  {
+   "id": "s03",
+   "title": "Field Programmable Gate Arrays",
+   "start": 23,
+   "end": 34,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "fpga_carry_chain",
+    "dsp48_style_slice"
+   ],
+   "why": "The chapter surveys FPGA carry hardware and embedded multiplier/DSP resources that determine arithmetic-unit implementations."
+  },
+  {
+   "id": "s04",
+   "title": "Floating-point arithmetic",
+   "start": 35,
+   "end": 42,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter defines floating-point formats and numerical semantics without presenting a hardware mechanism."
+  },
+  {
+   "id": "s05",
+   "title": "Custom arithmetic data-path design",
+   "start": 43,
+   "end": 60,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns arithmetic-library/HLS workflows and the FloPoCo framework rather than a specific arithmetic-unit architecture."
+  },
+  {
+   "id": "s06",
+   "title": "Binary addition in FloPoCo",
+   "start": 61,
+   "end": 80,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "ripple_carry",
+    "carry_lookahead",
+    "carry_select",
+    "carry_increment",
+    "parallel_prefix",
+    "fpga_carry_chain"
+   ],
+   "why": "The chapter compares FPGA carry-propagation and segmented short-latency adder architectures and evaluates their frequency/resource tradeoffs."
+  },
+  {
+   "id": "s07",
+   "title": "Large multipliers with fewer DSP blocks",
+   "start": 81,
+   "end": 100,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "recursive_karatsuba"
+   ],
+   "why": "The chapter develops operand-decomposition algorithms that reduce the DSP-block count of large exact multipliers."
+  },
+  {
+   "id": "s08",
+   "title": "Polynomial-based architectures for function evaluation",
+   "start": 101,
+   "end": 114,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "piecewise_poly",
+    "lut_plus_poly",
+    "horner",
+    "uniform_high_bit_decode",
+    "truncated_fixed_width"
+   ],
+   "why": "The chapter defines FPGA function evaluators built from segmented polynomial approximations, coefficient tables, Horner evaluation, and truncated arithmetic."
+  },
+  {
+   "id": "s09",
+   "title": "Multiplicative square root algorithms",
+   "start": 115,
+   "end": 124,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "digit_recurrence_sqrt_combined",
+    "newton_raphson",
+    "piecewise_poly",
+    "lut_plus_poly"
+   ],
+   "why": "The chapter compares digit-recurrence and multiplier-based square-root units and develops a polynomial-approximation implementation."
+  },
+  {
+   "id": "s10",
+   "title": "Floating-point exponential",
+   "start": 125,
+   "end": 136,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "direct_lut",
+    "lut_plus_poly",
+    "single_poly",
+    "horner",
+    "cordic",
+    "range_reduction"
+   ],
+   "why": "The chapter compares table/CORDIC exponential units and develops a floating-point exponential architecture using range reduction and polynomial evaluation."
+  },
+  {
+   "id": "s11",
+   "title": "Floating-point accumulation and sum-of-products",
+   "start": 137,
+   "end": 148,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "kulisch_long_accumulator",
+    "streaming_accurate_accumulator"
+   ],
+   "why": "The chapter develops fixed-point-window floating-point accumulators and sum-of-products units that defer normalization and improve accumulation accuracy."
+  },
+  {
+   "id": "s12",
+   "title": "High-level synthesis of perfect loop nests",
+   "start": 149,
+   "end": 170,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The chapter concerns compiler scheduling and high-level synthesis of loop nests rather than arithmetic-unit microarchitecture."
+  },
+  {
+   "id": "s13",
+   "title": "Using FloPoCo to solve Table Maker’s Dilemma",
+   "start": 171,
+   "end": 184,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "correct_rounding_strategy"
+   ],
+   "why": "The chapter develops an FPGA-based search for hardest-to-round cases that determines the precision required by correctly rounded elementary-function units."
+  },
+  {
+   "id": "s14",
+   "title": "Conclusions and Perspectives",
+   "start": 185,
+   "end": 188,
+   "kind": "chapter",
+   "extract": false,
+   "families": [],
+   "why": "The conclusions summarize earlier contributions and constitute back matter rather than a new source of design detail."
+  },
+  {
+   "id": "s15",
+   "title": "Bibliography",
+   "start": 189,
+   "end": 198,
+   "kind": "back",
+   "extract": false,
+   "families": [],
+   "why": "The bibliography contains citations rather than chapter-level arithmetic-unit descriptions."
+  }
+ ]
+}

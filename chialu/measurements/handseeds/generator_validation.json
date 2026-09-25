@@ -1,0 +1,10 @@
+{
+  "idempotent": true,
+  "files_checked": 103,
+  "legacy_hand_files_unchanged": {
+    "targets/eval/fp_alu_cmp.hand_adaevolve.yaml": "8c877c9c64b644b9c6da0c2f0ec91a169b6c0f27080ce6d1f537eb0f1c05c365",
+    "targets/eval/fp_alu_cmp.hand_beam_search.yaml": "c4a7f128e7360cd23dc72a38c46d96af137edfd878d43612ece950f62cc66e54",
+    "targets/eval/fp_alu_cmp.hand_best_of_n.yaml": "541ed185f56c130fe18fdb3ff236df4c753369ec961c20ea8dd302d44dfcf216",
+    "targets/eval/fp_alu_cmp.hand_chialu.yaml": "016f40a73b6d13d9fa1bbf4233de447739ee8e798c313dd9f575239ad8faf42e"
+  }
+}

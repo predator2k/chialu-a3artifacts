@@ -1,0 +1,119 @@
+# A mapping (dataflow, tile factors, spatial split per memory level) of
+# a fixed DNN layer set onto a fixed accelerator in Timeloop's
+# architecture form. Every decision is a VAR value, the evaluator is an
+# analytical model in milliseconds, and the backend is a numeric
+# optimizer over space.json that never sees text: the candidate is a
+# declaration block alone, and the mapping file is a node output. The
+# chimap library and the timeloop node are named as the task needs them.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: accel_mapping
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  timeloop:
+    resources:
+      timeloop: 32
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: timeloopaccelergy/timeloop-accelergy-pytorch:latest
+  evolver:
+    resources:
+      evolver: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+cache:
+  timeloop:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chimap.AccelMapping
+  run_dir: run/accel_mapping
+
+  variables:
+    arch:                                # a preset: the architecture file and its memory levels
+      fixed: eyeriss_like
+    layers:
+      fixed: resnet50_conv
+    map.dataflow:
+      search: [ws, os, is]
+    map.tile.*:                          # one per (memory level, loop dimension) the arch and layer set define
+      search: {min: 1, max: 256, step: 1}
+    map.spatial.*:                       # one per memory level: which dimension is split spatially
+      search: [none, c, k, p, q]
+
+  artifacts:                             # no seed: a numeric backend mutates declarations only
+    arch:
+      role: input
+      kind: text
+      source: file
+      file: arch/eyeriss_like.yaml
+    layers:
+      role: input
+      kind: text
+      source: file
+      file: layers/resnet50_conv.yaml
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      mapping:                           # the Timeloop mapping file from the declarations
+        node: chimap.render_mapping
+        inputs:
+          arch: artifacts.arch
+          dataflow: decl.map.dataflow
+          tiles: decl.map.tile
+          spatial: decl.map.spatial
+      timeloop:                          # validity, energy and cycles per layer
+        node: timeloop
+        inputs:
+          arch: artifacts.arch
+          mapping: mapping.text
+          layers: artifacts.layers
+        when:
+          - mapping.valid
+    feedback: [mapping.detail, timeloop.detail]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: mapping.valid, eq: true, hard: true}
+    - {metric: timeloop.valid, eq: true, hard: true}     # the mapping fits every level's capacity
+
+  goal:
+    minimize: sum(timeloop.energy) * sum(timeloop.cycles)   # energy-delay product over the layer set
+    score:
+      rule: ratio_to_seed
+      infeasible: zero
+
+  search:
+    backend: nsga2                       # pymoo's NSGA-II over space.json; smac for a Bayesian run
+    iterations: 100000
+    parallel: 32
+    numeric:                             # backend keys, passed through
+      library: pymoo
+      pop_size: 200
+      crossover: sbx
+      mutation: pm
+    seeds:
+      generated: [timeloop_mapper_low_effort, paper_mapping]   # the tool's own mapper output; the paper mapping
+    budget:
+      wall_hours: 6
+      node_runs: 100000
+    stop:
+      plateau_iterations: 5000
+
+  archive:
+    store: sqlite
+    path: mappings.db
+    keep_transcripts: false
+    report:
+      front_only: true

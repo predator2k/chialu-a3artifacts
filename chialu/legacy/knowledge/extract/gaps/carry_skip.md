@@ -1,0 +1,14 @@
+# carry_skip: proposed changes to the space
+
+* `block_sizing` values for algorithmically searched distributions that are not a named geometric profile: a linear-time heuristic or O(n^3 log n) exact search, Majerski's closed-form optimal/economical distributions, Turrini's recursive delay-pair optimization, and an arrival-profile-optimized value for multiplier final adders [chan_schlag1990, majerski1967, turrini1989, stelling1996]
+* `block_sizing` value for blocks that are unimodal within separately sized sections, with a `section_sizing: bimodal` choice, a `direct_section_paths` choice for extra mux paths across critical portions of a section, and a `optimization_method: delay_constrained_growth` design method that grows from a central nucleus under a delay bound [kantabutra1993, kantabutra1993b]
+* choice for the delay-model class: constant relative skip delay T, Model 1 block-count-linear versus Model 2 block-size-quadratic wire delay, arbitrary nonnegative delay functions, and separate group-skip Tg and block-skip Tb delays [chan1992, guyot1987, oklobdzija_barnes1985, turrini1989]
+* choice for how group-propagate setup time is incorporated or bounded in the delay model [chan1992]
+* `distribution_search` choice for the transf/transf2 geometric hole-filling algorithms and a `group_partition_method: histogram_optimal` value [guyot1987, oklobdzija_barnes1985]
+* per-level `block_width` (or a `level_block_widths` list) so that two-level designs can encode distinct widths per level and full group/section distributions; Stratix V uses 2-bit first-level blocks and a 20-bit second-level block, which exceeds the declared maximum of 16 [lewis_2013, guyot1987, oklobdzija_barnes1985]
+* `inverse_propagate_parity: xor_reduction` choice for chains that bypass with inverted carry polarity, and a `carry_polarity_alternation` parameter on the ripple block adder [hauck2000, guyot1987]
+* choices `propagation_test`, `skip_placement` (group, internal nested, intergroup net, interlaced, combined) and `max_gate_inputs` from the origin paper [lehman_burla1961]
+* `skip_gate` value for the S2 all-NOR skip circuit and a `carry_circuit_type: {S1_classical, S2_nor_gate}` choice, plus `optimization_objective: {optimal, economical}` and `end_around_carry_mode` [majerski1967]
+* `redundancy: {redundant, irredundant}` choice distinguishing the logically redundant AND-OR skip from the duplicated-carry-chain irredundant implementation [zimmermann1997#s04, zimmermann1997#s05]
+* choices `distribution_symmetry: {symmetric, asymmetric}`, `delay_granularity: {uniform, per_cell_per_level, path_merge_adjusted}` and `carry_in_modeling: Bool` from the delay-pair optimizer [turrini1989]
+* `skip_levels` upper bound above 3, since Turrini's program handles 4 or more levels and demonstrates 5 or 6 levels at 128 bits [turrini1989]

@@ -1,0 +1,149 @@
+# Minimal single-machine cluster for the memcpy RoCC example.
+#
+# Node types — one chisel-build (chipyard), one verilator, and one container per
+# LLM backend (claude / opencode / antigravity; pick per run with --llm) — all
+# pinned to the SAME machine (${THIS_MACHINE}). The head runs in your conda env
+# on that machine; each node type is a docker container on it.
+#
+# Usage:
+#   python -m chia.cli.main up   examples/memcpy/cluster.yaml
+#   ray job submit --working-dir . -- python examples/memcpy/memcpy_loop.py
+#   python -m chia.cli.main down examples/memcpy/cluster.yaml
+#
+# SITE-SPECIFIC — edit before first use:
+#   * The llm node mounts your Claude Code credentials/harness setup via
+#       -v ${HOME}/.claude:/home/ray/.claude
+#     Point this at the dir holding your .claude (settings.json must accept the
+#     bypass-permissions disclaimer, or the CLI hangs on first launch).
+#   * The antigravity node mounts your `agy` sign-in state the same way via
+#       -v ${HOME}/.gemini:/home/ray/.gemini
+#     (OAuth only — run `agy` on the host and sign in first, choosing the
+#     `global` location so Gemini Pro is available).
+#   * The opencode node needs the credentials of whichever provider your
+#     MEMCPY_OPENCODE_MODEL uses (opencode is provider-agnostic) — see the
+#     "Provider credentials" block on that node; it ships with Google Vertex AI
+#     (ADC + GOOGLE_CLOUD_PROJECT) wired up as the worked example.
+#   * ${THIS_MACHINE} / ${USER} are filled in by `chia up`.
+
+cluster_name: memcpy
+
+provider:
+    head_ip: ${THIS_MACHINE}
+
+auth:
+    ssh_user: ${USER}
+    # ssh_private_key: ~/.ssh/<ssh_key_name>   # omit if your key is in ssh-agent
+
+available_node_types:
+
+    chisel_build:
+        resources: {"chipyard": 1}
+        num_workers: 1
+        compatible_ips: ["${THIS_MACHINE}"]
+        worker_setup_commands: ["source /home/ray/chipyard/env.sh"]
+        docker:
+            image: "ghcr.io/ucb-bar/chia-chisel-build:latest"
+            container_name: "memcpy-chisel-build-${USER}"
+            pull_before_run: True
+            pull_timeout: 7200  # chia-chisel-build is large; default 600s is too short
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+
+    verilator_run:
+        resources: {"verilator_run": 1}
+        num_workers: 1
+        compatible_ips: ["${THIS_MACHINE}"]
+        docker:
+            image: "ghcr.io/ucb-bar/chia-verilator-run:latest"
+            container_name: "memcpy-verilator-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+
+    # ----- LLM backend: pick ONE -----
+    # The loop dispatches the implement/debug nodes to the backend chosen with
+    #   chia job submit -- python .../memcpy_loop.py --llm {claude,opencode,antigravity}
+    # Keep ALL nodes up and select per run with --llm, OR comment out the nodes
+    # for the backends you won't use (to save a container / its image pull).
+
+    # Claude Code backend (resource: llm)  — used with `--llm claude` (default).
+    llm:
+        resources: {"llm": 1}
+        num_workers: 1
+        compatible_ips: ["${THIS_MACHINE}"]
+        docker:
+            image: "ghcr.io/ucb-bar/chia-claude-code:latest"
+            container_name: "memcpy-claude-code-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+                - "--user $(id -u):$(id -g)"
+                # Mount the .claude directory for credentials
+                - "-v ${HOME}/.claude:/home/ray/.claude"
+            run_setup_commands:
+                - echo "user:x:$(id -u):$(id -g)::/home/ray:/bin/bash" >> /etc/passwd
+                # Empty working directory the Claude Code process chdirs into.
+                - mkdir -p /home/ray/llm_env
+
+    # OpenCode backend (resource: opencode_creds)  — used with `--llm opencode`.
+    opencode:
+        resources: {"opencode_creds": 1}
+        num_workers: 1
+        compatible_ips: ["${THIS_MACHINE}"]
+        worker_setup_commands: ["source ~/.bashrc"]
+        docker:
+            image: "ghcr.io/ucb-bar/chia-opencode:latest"
+            container_name: "memcpy-opencode-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+                # ---- Provider credentials: add what MEMCPY_OPENCODE_MODEL's provider
+                #      needs. opencode talks to any provider; each authenticates
+                #      differently. Examples (uncomment / adapt):
+                # opencode's own stored logins (`opencode auth login` on the host):
+                # - "-v ${HOME}/.local/share/opencode:/home/ray/.local/share/opencode"
+                # API-key providers:
+                # - "-e ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}"
+                # - "-e OPENAI_API_KEY=${OPENAI_API_KEY}"
+                # Google Vertex AI (google-vertex/…): Application Default Credentials
+                # + project. `gcloud auth application-default login` and
+                # `... set-quota-project <project>` on the host first; export
+                # GOOGLE_CLOUD_PROJECT before `chia up`. (A missing host dir would be
+                # created root-owned by docker — make sure it exists.)
+                - "-v ${HOME}/.config/gcloud:/home/ray/.config/gcloud"
+                - "-e GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT}"
+                - "-e VERTEX_LOCATION=global"   # Gemini Pro is served from `global` only
+
+    # Antigravity backend (resource: antigravity_creds)  — used with `--llm antigravity`.
+    antigravity:
+        resources: {"antigravity_creds": 1}
+        num_workers: 1
+        compatible_ips: ["${THIS_MACHINE}"]
+        docker:
+            image: "ghcr.io/ucb-bar/chia-antigravity:latest"
+            container_name: "memcpy-antigravity-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+                - "--user $(id -u):$(id -g)"
+                # agy OAuth token + settings (project/location); agy also writes
+                # its per-call MCP config here.
+                - "-v ${HOME}/.gemini:/home/ray/.gemini"
+            run_setup_commands:
+                - echo "user:x:$(id -u):$(id -g)::/home/ray:/bin/bash" >> /etc/passwd
+
+head_env_commands: ["source ~/.bashrc && conda activate chia_env"]
+# head_setup_commands: ["source ~/.bashrc && conda activate chia_env"]
+
+head_start_ray_commands:
+    - ray stop
+    - ulimit -c unlimited && ray start --head --port=6379 --dashboard-port=8081 --include-dashboard=True --dashboard-agent-listen-port=0 --temp-dir=/tmp/ray/${USER}
+
+worker_start_ray_commands:
+    - ray stop
+    - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0

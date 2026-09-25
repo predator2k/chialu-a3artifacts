@@ -1,0 +1,28 @@
+{
+  "int": {
+    "total_pairs": 112,
+    "prior_cases": 83,
+    "prior_covered": 102,
+    "extra": [
+      "r0057",
+      "r0072",
+      "r0079",
+      "r0100"
+    ],
+    "complete": true
+  },
+  "fp": {
+    "total_pairs": 144,
+    "prior_cases": 85,
+    "prior_covered": 144,
+    "extra": [],
+    "complete": true
+  },
+  "hf": {
+    "total_pairs": 144,
+    "prior_cases": 83,
+    "prior_covered": 144,
+    "extra": [],
+    "complete": true
+  }
+}

@@ -1,0 +1,20 @@
+# injection
+
+Rounding by injection: a mode-dependent constant (zero, half an ulp for nearest, one ulp less epsilon for the infinities) is added at the round position before the final carry-propagate addition, so every IEEE mode becomes truncation of the sum, and a compound adder computing the corrected and uncorrected high sums resolves the normalization-dependent injection position. The RNE tie is repaired from the result LSB and the sticky bit.
+
+The constants merge into whatever adds anyway: an extra row of the partial-product tree in a multiplier, the carry-in and low bits of a compound prefix adder in the Seidel-Even adders, or a fixed location in a prenormalized FMA where two final adders absorb the LZA correction and add and inject in one cycle without a post-add normalization stage. modes fixes how many constants exist; position places the injection before the final add on a far path, while the near path normalizes an exact difference and needs no rounding, which is how the unified R/N path split bounds rounding to two binades; unified_add_sub_cases merges the effective-subtraction cases through the same constants. A fused operation suppresses the injection and forwards the full-width mantissa. The subnormal cost is a bidirectional shift of the reduced partial products so the sum lands at the fixed injection locations.
+
+Two rounding points in parallel cover the normalization-dependent position without a post-add shift. The z13 adder compresses A and B through a 2-to-2 CSA to open the hole for the injection term, one bit wide for binary and four bits wide for decimal through a decimal CSA block, then injects at a first and a second rounding point at once, the second covering digits 33 to 36. Its compound adder computes the result and the result plus one over digits 0 through 33 while the two injection values are added over digits 34 to 36, so the rounded result is selected from the compound adder's carry-outs c0 and c1 together with the injection carry-outs Cj and Ck. Addition in homogeneous precision admits no second carry-out from the upper rounding point, which is what lets the addition and the injection rounding finish in one step and still deliver the correctly rounded result. The correction after rounding is one bit for binary and one digit for decimal. Injection values precomputed per radix, with the binary round, guard and sticky bits mapped onto digits 34 to 36 with padding, let one datapath round both radices without adding delay on the critical path.
+
+Pick injection when a compound adder already exists in the datapath and the mode logic should collapse to constants; compound_adder_select when candidates must be chosen after normalization; increment_adder when latency is free. The QTF and YZ dual-result schemes avoid injection during partial-product reduction at the cost of more intricate decision logic.
+
+## references
+
+even_2000 -> G. Even and P.-M. Seidel, "A Comparison of Three Rounding Algorithms for IEEE Floating-Point Multiplication", IEEE Transactions on Computers, 2000
+seidel_2001 -> P.-M. Seidel and G. Even, "On the Design of Fast IEEE Floating-Point Adders", 15th IEEE Symposium on Computer Arithmetic, 2001
+seidel_2004 -> P.-M. Seidel and G. Even, "Delay-Optimized Implementation of IEEE Floating-Point Addition", IEEE Transactions on Computers, 2004
+lutz_2011 -> D. R. Lutz, "Fused Multiply-Add Microarchitecture Comprising Separate Early-Normalizing Multiply and Add Pipelines", Proc. 20th IEEE Symposium on Computer Arithmetic (ARITH-20), pp. 123-128, 2011.
+montoye_1990 -> R. K. Montoye, E. Hokenek, S. L. Runyon, "Design of the IBM RISC System/6000 Floating-Point Execution Unit", IBM Journal of Research and Development, 1990
+oberman_favor_1999 -> S. Oberman, G. Favor, F. Weber, "AMD 3DNow! Technology: Architecture and Implementations", IEEE Micro, vol. 19, no. 2, pp. 37-48, 1999.
+seidel_2003 -> P.-M. Seidel, "Multiple Path IEEE Floating-Point Fused Multiply-Add", IEEE MWSCAS, 2003
+lichtenau_2016 -> C. Lichtenau, S. Carlough, S. M. Mueller, "Quad Precision Floating Point on the IBM z13", ARITH-23, 2016

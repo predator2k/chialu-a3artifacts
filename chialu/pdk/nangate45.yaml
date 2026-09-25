@@ -1,0 +1,33 @@
+# PDK descriptor: Nangate 45 nm Open Cell Library on the FreePDK45 process.
+# Cited from an instance as `target: nangate45` (or the alias freepdk45).
+# The loop's synthesis step (yosys + ABC liberty mapping) reads the
+# liberty files listed here on the EDA node; a missing file is fetched
+# from `url` into ~/pdk/ (gunzipped when the URL ends in .gz).
+name: nangate45
+aliases: [freepdk45]
+description: Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)
+process_nm: 45
+corner: TT 1.1V 25C
+area_unit: um2
+liberty:
+  - path: pdk/lib/NangateOpenCellLibrary_typical.lib
+    url: https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+abc:
+  clock_ps: 1000              # default delay target (&nf -D); the instance's flow: clock_ps overrides it
+  # the ABC scripts per effort level (yosys -script form, commas for blanks; the node writes the chosen one as a script file).
+  # Every level rewrites the AIG before mapping; a mapping-only flow (&nf alone) is not offered.
+  #   low:    &dc2 rewriting, then &nf, yosys's default liberty mapper, at its default effort
+  #   medium: &dc2 and &dch -f structural choices, then &nf -C 32 -F 8 -p (more priority cuts, more area-flow rounds, pin permutation)
+  #   high:   a second rewriting round (&syn2, &dc2) before &dch -f and &nf -C 32 -F 16 -p (32 is &nf's cut limit); &fraig -x SAT sweeping is left out, since it ran without end on the alu_mixed32 seed's divider arrays
+  # After mapping, the netlist is buffered and sized under the same target
+  # (buffer;upsize -D;dnsize -D), which is what yosys's own -liberty flow appends when a
+  # constraint is given. Without it ABC's stime charges the mapper's high-fanout nets in
+  # full: measured 2026-09-17 it overstates the delay of float-bearing designs by 12 to
+  # 27% for 2 to 3% area and leaves the integer ones unmoved.
+  scripts:
+    low: "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+    medium: "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+    high: "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+yosys:
+  # {noshare} is "-noshare" unless flow.synth_share: true (the SAT-based SHARE pass, which merges same-type cells in mutually exclusive branches, ran without end on the alu_mixed32 top)
+  synth: "synth -top {top} -flatten {noshare} -noabc"   # flatten: one area total, one critical path; -noabc: the mapping is the abc.scripts entry above (synth's own ABC pass would run yosys's default script)

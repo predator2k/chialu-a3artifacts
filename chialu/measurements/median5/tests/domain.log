@@ -1,0 +1,30 @@
+  ok   bound through adir
+  ok   structure-indexed adder families
+  ok   the adder family domain is the narrowed list
+  ok   the checker modulus is fixed
+  ok   the seed artifact has a module
+  ok   the checker is generated
+  ok   verify files
+  ok   plan_seed renders the plan
+  ok   four seeds and the plans
+  ok   seed baseline declares only searched variables
+  ok   seed baseline declares its structures
+  ok   seed baseline keeps the block inside the mutable region
+  ok   seed packed_banks declares only searched variables
+  ok   seed packed_banks declares its structures
+  ok   seed packed_banks keeps the block inside the mutable region
+  ok   seed per_position declares only searched variables
+  ok   seed per_position declares its structures
+  ok   seed per_position keeps the block inside the mutable region
+  ok   seed dedicated_speed declares only searched variables
+  ok   seed dedicated_speed declares its structures
+  ok   seed dedicated_speed keeps the block inside the mutable region
+  ok   seed add8_plan declares only searched variables
+  ok   seed add8_plan declares its structures
+  ok   seed add8_plan keeps the block inside the mutable region
+  ok   seed add_cmp8_plan declares only searched variables
+  ok   seed add_cmp8_plan declares its structures
+  ok   seed add_cmp8_plan keeps the block inside the mutable region
+  ok   packed_banks groups structures
+  skip EDA (requested)
+[domain_selftest] all pass ($CHIALU_HOME/tmp/median5/domain)

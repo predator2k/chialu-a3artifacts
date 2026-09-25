@@ -1,0 +1,88 @@
+cluster_name: toy
+provider:
+  head_ip: localhost
+available_node_types:
+  local:
+    resources:
+      cpu: 4
+      claude_creds: 1
+    num_workers: 1
+adir:
+  module: toy.Box
+  variables:
+    lanes:
+      fixed: 2
+    lanes_outer:
+      fixed: 1
+    mode:
+      runtime: [a, b]
+    algo:
+      search: [fast, small]
+    algo.k:
+      search: {min: 1, max: 8, step: 1}
+    lane.*.style:
+      search: all
+    cfg:
+      preset: std
+    accuracy:
+      fixed: exact
+  artifacts:
+    program:
+      role: seed
+      kind: text
+      source: generated
+      language: python
+      evolve: [compute]
+    harness:
+      role: fixed
+      kind: text
+      source: generated
+      language: python
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      gate:
+        node: toy.nodes.build_check
+        rollback: true
+        inputs:
+          text: candidate.program
+      curve:
+        node: toy.nodes.curve
+        map_over:
+          cap: [1, 2, 4]
+        inputs:
+          text: candidate.program
+        when:
+          - gate.built
+      tail:
+        node: toy.nodes.after_curve
+        map_over:
+          cap: [1, 2, 4]
+        giveup: {sigma: 1, max_skips: 1, min_done: 2}
+        inputs:
+          text: candidate.program
+        when:
+          - min(curve.ok)
+    feedback: [gate.detail, tail.seen]      # `tail` is pruned unless something needs it
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: gate.built, eq: true, hard: true}
+    - {expr: min(curve.ok), eq: true, hard: true}
+  goal:
+    minimize: geomean(curve.cycles)
+    score:
+      rule: ratio_to_seed
+      infeasible: zero
+  search:
+    backend: adaevolve
+    iterations: 1
+    seeds:
+      generated: [baseline]
+    models:
+      solution:
+        agent: claude
+        model: test-model
+  archive:
+    store: jsonl
+    path: results_db.jsonl

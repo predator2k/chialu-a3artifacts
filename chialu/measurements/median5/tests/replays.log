@@ -1,0 +1,6 @@
+int_subword_alu 0 PASS
+int_subword_alu 4 PASS
+fp_alu_cmp 0 PASS
+fp_alu_cmp 4 PASS
+fp_alu_cmp_hf 0 PASS
+fp_alu_cmp_hf 4 PASS

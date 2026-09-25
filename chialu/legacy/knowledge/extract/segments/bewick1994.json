@@ -1,0 +1,152 @@
+{
+ "key": "bewick1994",
+ "file": "CSL-TR-94-617.pdf",
+ "kind": "thesis",
+ "citation": "G. W. Bewick, \"Fast Multiplication: Algorithms and Implementation\", PhD dissertation, Stanford University, CSL-TR-94-617, 1994",
+ "pages": 170,
+ "title": "FAST MULTIPLICATION: ALGORITHMS AND IMPLEMENTATION",
+ "authors": "Gary W. Bewick",
+ "source": "toc_llm",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "Front matter",
+   "start": 0,
+   "end": 14,
+   "kind": "front",
+   "extract": false,
+   "families": [],
+   "why": "The front matter contains only publication metadata, approvals, acknowledgments, and a summary of material developed in later chapters."
+  },
+  {
+   "id": "s02",
+   "title": "Introduction",
+   "start": 15,
+   "end": 26,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "sequential_shift_add",
+    "carry_save_array",
+    "booth_recoded_parallel"
+   ],
+   "why": "The introduction surveys binary multiplier architectures and implementation tradeoffs before the detailed treatment."
+  },
+  {
+   "id": "s03",
+   "title": "Generating Partial Products",
+   "start": 27,
+   "end": 54,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "booth_recoded_parallel"
+   ],
+   "why": "The chapter defines conventional and higher-radix Booth recoding and develops partially redundant hard-multiple generation."
+  },
+  {
+   "id": "s04",
+   "title": "Adders for Multiplication",
+   "start": 55,
+   "end": 81,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "carry_lookahead",
+    "carry_select",
+    "conditional_sum",
+    "parallel_prefix",
+    "ling_prefix"
+   ],
+   "why": "The chapter derives and compares high-speed carry-propagate structures used for hard multiples and final multiplier assimilation."
+  },
+  {
+   "id": "s05",
+   "title": "Implementing Multipliers",
+   "start": 82,
+   "end": 109,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "carry_save_array",
+    "booth_recoded_parallel"
+   ],
+   "why": "The chapter describes the construction and physical optimization of Booth/non-Booth partial-product generators and carry-save summation networks."
+  },
+  {
+   "id": "s06",
+   "title": "Exploring the Design Space",
+   "start": 110,
+   "end": 148,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "booth_recoded_parallel",
+    "carry_save_array",
+    "ling_prefix"
+   ],
+   "why": "The chapter evaluates complete multiplier organizations and their final carry-propagate adders by latency, area, and power."
+  },
+  {
+   "id": "s07",
+   "title": "Conclusions",
+   "start": 149,
+   "end": 151,
+   "kind": "chapter",
+   "extract": true,
+   "families": [
+    "booth_recoded_parallel",
+    "carry_save_array"
+   ],
+   "why": "The conclusions compare Booth variants and tree/array carry-save reduction structures using measured design results."
+  },
+  {
+   "id": "s08",
+   "title": "Sign Extension in Booth Multipliers",
+   "start": 152,
+   "end": 157,
+   "kind": "appendix",
+   "extract": true,
+   "families": [
+    "booth_recoded_parallel"
+   ],
+   "why": "The appendix derives compact sign-extension and negative-partial-product handling for Booth-recoded multipliers."
+  },
+  {
+   "id": "s09",
+   "title": "Efficient Sticky Bit Computation",
+   "start": 158,
+   "end": 163,
+   "kind": "appendix",
+   "extract": true,
+   "families": [
+    "sig_mul_then_round"
+   ],
+   "why": "The appendix develops hardware for computing the IEEE floating-point multiplier sticky bit without waiting for every low product bit from the final adder."
+  },
+  {
+   "id": "s10",
+   "title": "Negative Logic Adders",
+   "start": 164,
+   "end": 165,
+   "kind": "appendix",
+   "extract": true,
+   "families": [
+    "carry_lookahead",
+    "parallel_prefix",
+    "ling_prefix"
+   ],
+   "why": "The appendix proves the positive/negative-logic equivalence used to implement alternating-polarity high-speed carry networks."
+  },
+  {
+   "id": "s11",
+   "title": "Bibliography",
+   "start": 166,
+   "end": 169,
+   "kind": "back",
+   "extract": false,
+   "families": [],
+   "why": "The bibliography contains citations rather than arithmetic-unit design detail."
+  }
+ ]
+}

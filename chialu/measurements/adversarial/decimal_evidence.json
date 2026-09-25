@@ -1,0 +1,476 @@
+{
+  "before": [
+    {
+      "name": "bcd_direct_addition_mod_2n_minus_1",
+      "pins": {
+        "digit_adder.family": "end_around_carry",
+        "digit_adder.modulus": "mod_2n_minus_1"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "bcd_direct_addition",
+        "pins": {
+          "digit_adder.family": "end_around_carry",
+          "digit_adder.modulus": "mod_2n_minus_1"
+        },
+        "label": "bcd_direct_addition_mod_2n_minus_1",
+        "name": "bcd_adder_bcd_direct_addition_w8_5c44bbd9f2a0",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": false,
+        "mismatch_count": 927,
+        "first_mismatches": [
+          "MISMATCH i=9 in=00424 got=11 expect=10",
+          "MISMATCH i=13 in=00664 got=b1 expect=00",
+          "MISMATCH i=15 in=02404 got=11 expect=10",
+          "MISMATCH i=16 in=02424 got=19 expect=18",
+          "MISMATCH i=19 in=02660 got=b8 expect=07",
+          "MISMATCH i=20 in=02664 got=b9 expect=08",
+          "MISMATCH i=26 in=04260 got=18 expect=08",
+          "MISMATCH i=27 in=04264 got=19 expect=09",
+          "MISMATCH i=32 in=14140 got=10 expect=00",
+          "MISMATCH i=33 in=14260 got=58 expect=48"
+        ],
+        "detail": "927 vectors mismatch; the first ones:\n* vector 9: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x9 (9); y[0] expected 0x10 (10) got 0x11 (11)\n* vector 13: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x99 (99); y[0] expected 0x0 (0) got 0xb1 (invalid)\n* vector 15: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x9 (9) b[0]=0x1 (1); y[0] expected 0x10 (10) got 0x11 (11)\n* vector 16: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x9 (9) b[0]=0x9 (9); y[0] expected 0x18 (18) got 0x19 (19)\n* vector 19: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x9 (9) b[0]=0x98 (98); y[0] expected 0x7 (7) got 0xb8 (invalid)\n* vector 20: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x9 (9) b[0]=0x99 (99); y[0] expected 0x8 (8) got 0xb9 (invalid)\n* vector 26: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x10 (10) b[0]=0x98 (98); y[0] expected 0x8 (8) got 0x18 (18)\n* vector 27: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x10 (10) b[0]=0x99 (99); y[0] expected 0x9 (9) got 0x19 (19)",
+        "cycles_per_frame": null,
+        "seconds": 6.7,
+        "rule_defect_candidate": false,
+        "rule_members": [],
+        "source_bytes": 26689,
+        "source_sha256": "0a62baed33c6e326ebe0f89fceea23cfad0b87f43344f129d5dea41f7f541aac",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "bcd_direct_addition_mod_2n_plus_1_diminished_one",
+      "pins": {
+        "digit_adder.family": "end_around_carry",
+        "digit_adder.modulus": "mod_2n_plus_1_diminished_one"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "bcd_direct_addition",
+        "pins": {
+          "digit_adder.family": "end_around_carry",
+          "digit_adder.modulus": "mod_2n_plus_1_diminished_one"
+        },
+        "label": "bcd_direct_addition_mod_2n_plus_1_diminished_one",
+        "name": "bcd_adder_bcd_direct_addition_w8_bd60e2e2ef4b",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": false,
+        "mismatch_count": 882,
+        "first_mismatches": [
+          "MISMATCH i=0 in=00000 got=11 expect=00",
+          "MISMATCH i=1 in=00004 got=12 expect=01",
+          "MISMATCH i=2 in=00024 got=20 expect=09",
+          "MISMATCH i=3 in=00040 got=21 expect=10",
+          "MISMATCH i=4 in=00140 got=61 expect=50",
+          "MISMATCH i=5 in=00260 got=09 expect=98",
+          "MISMATCH i=6 in=00264 got=00 expect=99",
+          "MISMATCH i=7 in=00400 got=12 expect=01",
+          "MISMATCH i=8 in=00404 got=13 expect=02",
+          "MISMATCH i=9 in=00424 got=20 expect=10"
+        ],
+        "detail": "882 vectors mismatch; the first ones:\n* vector 0: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x0 (0); y[0] expected 0x0 (0) got 0x11 (11)\n* vector 1: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x1 (1); y[0] expected 0x1 (1) got 0x12 (12)\n* vector 2: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x9 (9); y[0] expected 0x9 (9) got 0x20 (20)\n* vector 3: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x10 (10); y[0] expected 0x10 (10) got 0x21 (21)\n* vector 4: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x50 (50); y[0] expected 0x50 (50) got 0x61 (61)\n* vector 5: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x98 (98); y[0] expected 0x98 (98) got 0x9 (9)\n* vector 6: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x99 (99); y[0] expected 0x99 (99) got 0x0 (0)\n* vector 7: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x0 (0); y[0] expected 0x1 (1) got 0x12 (12)",
+        "cycles_per_frame": null,
+        "seconds": 6.5,
+        "rule_defect_candidate": false,
+        "rule_members": [],
+        "source_bytes": 27347,
+        "source_sha256": "2bbc3f3739892f2249dd9930e158e219a3c3c86a0d421503509113d49d02f429",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "bcd_direct_addition_generic_p_correction",
+      "pins": {
+        "digit_adder.family": "end_around_carry",
+        "digit_adder.modulus": "generic_p_correction",
+        "digit_adder.modulus_value": 3
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "bcd_direct_addition",
+        "pins": {
+          "digit_adder.family": "end_around_carry",
+          "digit_adder.modulus": "generic_p_correction",
+          "digit_adder.modulus_value": 3
+        },
+        "label": "bcd_direct_addition_generic_p_correction",
+        "name": "bcd_adder_bcd_direct_addition_w8_fbe5d3bbc36a",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": false,
+        "mismatch_count": 1284,
+        "first_mismatches": [
+          "MISMATCH i=0 in=00000 got=aa expect=00",
+          "MISMATCH i=1 in=00004 got=ab expect=01",
+          "MISMATCH i=2 in=00024 got=aa expect=09",
+          "MISMATCH i=3 in=00040 got=ba expect=10",
+          "MISMATCH i=4 in=00140 got=ca expect=50",
+          "MISMATCH i=5 in=00260 got=ac expect=98",
+          "MISMATCH i=6 in=00264 got=aa expect=99",
+          "MISMATCH i=7 in=00400 got=ab expect=01",
+          "MISMATCH i=8 in=00404 got=ac expect=02",
+          "MISMATCH i=9 in=00424 got=b1 expect=10"
+        ],
+        "detail": "1284 vectors mismatch; the first ones:\n* vector 0: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x0 (0); y[0] expected 0x0 (0) got 0xaa (invalid)\n* vector 1: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x1 (1); y[0] expected 0x1 (1) got 0xab (invalid)\n* vector 2: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x9 (9); y[0] expected 0x9 (9) got 0xaa (invalid)\n* vector 3: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x10 (10); y[0] expected 0x10 (10) got 0xba (invalid)\n* vector 4: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x50 (50); y[0] expected 0x50 (50) got 0xca (invalid)\n* vector 5: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x98 (98); y[0] expected 0x98 (98) got 0xac (invalid)\n* vector 6: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x99 (99); y[0] expected 0x99 (99) got 0xaa (invalid)\n* vector 7: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x0 (0); y[0] expected 0x1 (1) got 0xab (invalid)",
+        "cycles_per_frame": null,
+        "seconds": 6.4,
+        "rule_defect_candidate": false,
+        "rule_members": [],
+        "source_bytes": 24540,
+        "source_sha256": "a88fbde0d77aa767d6359fe2109388634f29ce2671ac0a8587be0f9b1166edcd",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "speculative_decimal_addition_mod_2n_minus_1",
+      "pins": {
+        "carry_network.family": "end_around_carry",
+        "carry_network.modulus": "mod_2n_minus_1"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "speculative_decimal_addition",
+        "pins": {
+          "carry_network.family": "end_around_carry",
+          "carry_network.modulus": "mod_2n_minus_1"
+        },
+        "label": "speculative_decimal_addition_mod_2n_minus_1",
+        "name": "bcd_adder_speculative_decimal_addition_w8_f250a62d6af8",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": false,
+        "mismatch_count": 672,
+        "first_mismatches": [
+          "MISMATCH i=13 in=00664 got=01 expect=00",
+          "MISMATCH i=19 in=02660 got=08 expect=07",
+          "MISMATCH i=20 in=02664 got=09 expect=08",
+          "MISMATCH i=26 in=04260 got=09 expect=08",
+          "MISMATCH i=27 in=04264 got=10 expect=09",
+          "MISMATCH i=32 in=14140 got=01 expect=00",
+          "MISMATCH i=33 in=14260 got=49 expect=48",
+          "MISMATCH i=34 in=14264 got=50 expect=49",
+          "MISMATCH i=37 in=26024 got=08 expect=07",
+          "MISMATCH i=38 in=26040 got=09 expect=08"
+        ],
+        "detail": "672 vectors mismatch; the first ones:\n* vector 13: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x99 (99); y[0] expected 0x0 (0) got 0x1 (1)\n* vector 19: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x9 (9) b[0]=0x98 (98); y[0] expected 0x7 (7) got 0x8 (8)\n* vector 20: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x9 (9) b[0]=0x99 (99); y[0] expected 0x8 (8) got 0x9 (9)\n* vector 26: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x10 (10) b[0]=0x98 (98); y[0] expected 0x8 (8) got 0x9 (9)\n* vector 27: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x10 (10) b[0]=0x99 (99); y[0] expected 0x9 (9) got 0x10 (10)\n* vector 32: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x50 (50) b[0]=0x50 (50); y[0] expected 0x0 (0) got 0x1 (1)\n* vector 33: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x50 (50) b[0]=0x98 (98); y[0] expected 0x48 (48) got 0x49 (49)\n* vector 34: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x50 (50) b[0]=0x99 (99); y[0] expected 0x49 (49) got 0x50 (50)",
+        "cycles_per_frame": null,
+        "seconds": 6.3,
+        "rule_defect_candidate": false,
+        "rule_members": [],
+        "source_bytes": 27558,
+        "source_sha256": "84d739d87488a75e82d0c325311f1ace3b2259f1542a93d31025c6e025fcb222",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "speculative_decimal_addition_mod_2n_plus_1_diminished_one",
+      "pins": {
+        "carry_network.family": "end_around_carry",
+        "carry_network.modulus": "mod_2n_plus_1_diminished_one"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "speculative_decimal_addition",
+        "pins": {
+          "carry_network.family": "end_around_carry",
+          "carry_network.modulus": "mod_2n_plus_1_diminished_one"
+        },
+        "label": "speculative_decimal_addition_mod_2n_plus_1_diminished_one",
+        "name": "bcd_adder_speculative_decimal_addition_w8_70748a421c90",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": false,
+        "mismatch_count": 612,
+        "first_mismatches": [
+          "MISMATCH i=0 in=00000 got=01 expect=00",
+          "MISMATCH i=1 in=00004 got=02 expect=01",
+          "MISMATCH i=2 in=00024 got=10 expect=09",
+          "MISMATCH i=3 in=00040 got=11 expect=10",
+          "MISMATCH i=4 in=00140 got=51 expect=50",
+          "MISMATCH i=5 in=00260 got=99 expect=98",
+          "MISMATCH i=6 in=00264 got=00 expect=99",
+          "MISMATCH i=7 in=00400 got=02 expect=01",
+          "MISMATCH i=8 in=00404 got=03 expect=02",
+          "MISMATCH i=9 in=00424 got=11 expect=10"
+        ],
+        "detail": "612 vectors mismatch; the first ones:\n* vector 0: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x0 (0); y[0] expected 0x0 (0) got 0x1 (1)\n* vector 1: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x1 (1); y[0] expected 0x1 (1) got 0x2 (2)\n* vector 2: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x9 (9); y[0] expected 0x9 (9) got 0x10 (10)\n* vector 3: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x10 (10); y[0] expected 0x10 (10) got 0x11 (11)\n* vector 4: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x50 (50); y[0] expected 0x50 (50) got 0x51 (51)\n* vector 5: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x98 (98); y[0] expected 0x98 (98) got 0x99 (99)\n* vector 6: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x99 (99); y[0] expected 0x99 (99) got 0x0 (0)\n* vector 7: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x0 (0); y[0] expected 0x1 (1) got 0x2 (2)",
+        "cycles_per_frame": null,
+        "seconds": 6.9,
+        "rule_defect_candidate": false,
+        "rule_members": [],
+        "source_bytes": 29262,
+        "source_sha256": "98ae9c2b20111c1c74c00bcbf9518fc877ffa0feb031bf7e105be47c8f064ad6",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "speculative_decimal_addition_generic_p_correction",
+      "pins": {
+        "carry_network.family": "end_around_carry",
+        "carry_network.modulus": "generic_p_correction",
+        "carry_network.modulus_value": 3
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "speculative_decimal_addition",
+        "pins": {
+          "carry_network.family": "end_around_carry",
+          "carry_network.modulus": "generic_p_correction",
+          "carry_network.modulus_value": 3
+        },
+        "label": "speculative_decimal_addition_generic_p_correction",
+        "name": "bcd_adder_speculative_decimal_addition_w8_6b6a2da608ad",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": false,
+        "mismatch_count": 1284,
+        "first_mismatches": [
+          "MISMATCH i=0 in=00000 got=aa expect=00",
+          "MISMATCH i=1 in=00004 got=ab expect=01",
+          "MISMATCH i=2 in=00024 got=aa expect=09",
+          "MISMATCH i=3 in=00040 got=a1 expect=10",
+          "MISMATCH i=4 in=00140 got=a2 expect=50",
+          "MISMATCH i=5 in=00260 got=a2 expect=98",
+          "MISMATCH i=6 in=00264 got=a0 expect=99",
+          "MISMATCH i=7 in=00400 got=ab expect=01",
+          "MISMATCH i=8 in=00404 got=ac expect=02",
+          "MISMATCH i=9 in=00424 got=ab expect=10"
+        ],
+        "detail": "1284 vectors mismatch; the first ones:\n* vector 0: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x0 (0); y[0] expected 0x0 (0) got 0xaa (invalid)\n* vector 1: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x1 (1); y[0] expected 0x1 (1) got 0xab (invalid)\n* vector 2: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x9 (9); y[0] expected 0x9 (9) got 0xaa (invalid)\n* vector 3: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x10 (10); y[0] expected 0x10 (10) got 0xa1 (invalid)\n* vector 4: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x50 (50); y[0] expected 0x50 (50) got 0xa2 (invalid)\n* vector 5: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x98 (98); y[0] expected 0x98 (98) got 0xa2 (invalid)\n* vector 6: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x99 (99); y[0] expected 0x99 (99) got 0xa0 (invalid)\n* vector 7: mode 0 (1 x bcd2), op add, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x0 (0); y[0] expected 0x1 (1) got 0xab (invalid)",
+        "cycles_per_frame": null,
+        "seconds": 6.7,
+        "rule_defect_candidate": false,
+        "rule_members": [],
+        "source_bytes": 26561,
+        "source_sha256": "52c8f8d1f362b830b2d5bb1fff35842d8fcd8db7252a2fae41776893f75aae3d",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    }
+  ],
+  "after": [
+    {
+      "name": "bcd_direct_addition_mod_2n_minus_1",
+      "pins": {
+        "digit_adder.family": "end_around_carry",
+        "digit_adder.modulus": "mod_2n_minus_1"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "bcd_direct_addition",
+        "pins": {
+          "digit_adder.family": "end_around_carry",
+          "digit_adder.modulus": "mod_2n_minus_1"
+        },
+        "label": "bcd_direct_addition_mod_2n_minus_1",
+        "name": "bcd_adder_bcd_direct_addition_w8_5c44bbd9f2a0",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 6.0,
+        "source_bytes": 28480,
+        "source_sha256": "ec2f76ef97595b5637ce80038b30880c968974d2c69798aa0be52b010dab3f21",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "bcd_direct_addition_mod_2n_plus_1_diminished_one",
+      "pins": {
+        "digit_adder.family": "end_around_carry",
+        "digit_adder.modulus": "mod_2n_plus_1_diminished_one"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "bcd_direct_addition",
+        "pins": {
+          "digit_adder.family": "end_around_carry",
+          "digit_adder.modulus": "mod_2n_plus_1_diminished_one"
+        },
+        "label": "bcd_direct_addition_mod_2n_plus_1_diminished_one",
+        "name": "bcd_adder_bcd_direct_addition_w8_bd60e2e2ef4b",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 6.1,
+        "source_bytes": 29789,
+        "source_sha256": "d79eaf15c43917b6a2c63b421af6ca5aebea6a3d47234f74dbe8c5e9014bf1c9",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "bcd_direct_addition_generic_p_correction",
+      "pins": {
+        "digit_adder.family": "end_around_carry",
+        "digit_adder.modulus": "generic_p_correction",
+        "digit_adder.modulus_value": 3
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "bcd_direct_addition",
+        "pins": {
+          "digit_adder.family": "end_around_carry",
+          "digit_adder.modulus": "generic_p_correction",
+          "digit_adder.modulus_value": 3
+        },
+        "label": "bcd_direct_addition_generic_p_correction",
+        "name": "bcd_adder_bcd_direct_addition_w8_fbe5d3bbc36a",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 6.6,
+        "source_bytes": 26458,
+        "source_sha256": "42b1afec2f29ebe3c6672f2d5779c28341b6b6ee7b3a68360973e38077b6e490",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "speculative_decimal_addition_mod_2n_minus_1",
+      "pins": {
+        "carry_network.family": "end_around_carry",
+        "carry_network.modulus": "mod_2n_minus_1"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "speculative_decimal_addition",
+        "pins": {
+          "carry_network.family": "end_around_carry",
+          "carry_network.modulus": "mod_2n_minus_1"
+        },
+        "label": "speculative_decimal_addition_mod_2n_minus_1",
+        "name": "bcd_adder_speculative_decimal_addition_w8_f250a62d6af8",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 5.8,
+        "source_bytes": 29725,
+        "source_sha256": "98993ed67afe8a8b8baac4aaafb8ca1f1d7ae244cdb170df094e0a14f4d0dc32",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "speculative_decimal_addition_mod_2n_plus_1_diminished_one",
+      "pins": {
+        "carry_network.family": "end_around_carry",
+        "carry_network.modulus": "mod_2n_plus_1_diminished_one"
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "speculative_decimal_addition",
+        "pins": {
+          "carry_network.family": "end_around_carry",
+          "carry_network.modulus": "mod_2n_plus_1_diminished_one"
+        },
+        "label": "speculative_decimal_addition_mod_2n_plus_1_diminished_one",
+        "name": "bcd_adder_speculative_decimal_addition_w8_70748a421c90",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 6.0,
+        "source_bytes": 32496,
+        "source_sha256": "af8e8bae46c1d6d961293c3cbe3894343bf6f0ae36b5bc2547889cdb29757cbc",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    },
+    {
+      "name": "speculative_decimal_addition_generic_p_correction",
+      "pins": {
+        "carry_network.family": "end_around_carry",
+        "carry_network.modulus": "generic_p_correction",
+        "carry_network.modulus_value": 3
+      },
+      "component": {
+        "kind": "bcd_adder",
+        "width": 8,
+        "family": "speculative_decimal_addition",
+        "pins": {
+          "carry_network.family": "end_around_carry",
+          "carry_network.modulus": "generic_p_correction",
+          "carry_network.modulus_value": 3
+        },
+        "label": "speculative_decimal_addition_generic_p_correction",
+        "name": "bcd_adder_speculative_decimal_addition_w8_6b6a2da608ad",
+        "status": "no_golden",
+        "reason": "A binary arithmetic slot binds modular arithmetic; ops.py has no contract for that composition."
+      },
+      "result": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 6.1,
+        "source_bytes": 28395,
+        "source_sha256": "54ad1fd5c9adc873838fa0cbf52e6ccde57530c54e2e0e9b02618d8fd17bb2de",
+        "vectors_sha256": "0a1b4dc955b1af9c587b8c4ecf36a69b5df894c9376d454809e0ad4cdf6f6abe",
+        "expected_sha256": "2cf8d8a05676f15aa6ff04d8f8fb872dc3f76ef069c107dc8bf4ce8343acf57b"
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+ "design": "chialu_td",
+ "row": "fp8",
+ "contract": "fused (exact frame, TransDot's slots)",
+ "chars": 404863,
+ "modules": [
+  "fam_dot_multi_term_fused_dot_n4_s3c24_a281lm149_x52e16s24_45d58fac1a5a"
+ ],
+ "lint": {
+  "ok": true,
+  "seconds": 9.4,
+  "detail": ""
+ },
+ "conformance": {
+  "pass": true,
+  "mismatch_count": 0,
+  "vectors": 3153,
+  "seconds": 414.4,
+  "detail": "bit-exact against the reference"
+ },
+ "ulp": {
+  "target": "/home/host/scratch/tableb_tree/targets/eval/vec_dot_acc_cmp_fp8.yaml",
+  "n_random": 3000,
+  "vectors": 3153,
+  "definition": "error = |got - ref| / ulp(ref binade); ref is the fused reference's packed d; zero or subnormal ref: ulp = 2^(emin - p + 1); specials are classes rather than errors",
+  "vs_fused": {
+   "exact_fraction": 1.0,
+   "exact": 3153,
+   "numeric_vectors": 3153,
+   "max_ulp": 0.0,
+   "mean_ulp": 0.0,
+   "max_ulp_vs_exact": 0.0,
+   "mean_ulp_vs_exact": 0.0,
+   "histogram": {
+    "0": 3153
+   },
+   "classes": {}
+  },
+  "vs_sequential": {
+   "exact_fraction": 0.97209,
+   "exact": 3065,
+   "max_ulp": 4.253529586511731e+37,
+   "mean_ulp": 2.698084101815243e+34,
+   "histogram": {
+    "0": 3066,
+    "(0.5, 1]": 77,
+    "(1, 2]": 3,
+    "(2, 4]": 2,
+    "(4, 8]": 1,
+    "(8, 16]": 1,
+    "(1024, inf]": 3
+   },
+   "classes": {
+    "value": 87,
+    "zero_sign": 1
+   }
+  },
+  "samples": {},
+  "seconds": 3
+ },
+ "synth": {
+  "ok": true,
+  "area_um2": 25734.968,
+  "abc_delay_ps": 11740.06,
+  "cells": 22588,
+  "seconds": 99.0,
+  "detail": "",
+  "clock_ps": 40000
+ },
+ "seconds": 529
+}

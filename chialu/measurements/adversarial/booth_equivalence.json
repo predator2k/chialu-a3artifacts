@@ -1,0 +1,29 @@
+[
+  {
+    "width": 2,
+    "radix": 8,
+    "result": {
+      "pass": true,
+      "detail": "",
+      "seconds": 0.4
+    }
+  },
+  {
+    "width": 5,
+    "radix": 16,
+    "result": {
+      "pass": true,
+      "detail": "",
+      "seconds": 0.4
+    }
+  },
+  {
+    "width": 6,
+    "radix": 16,
+    "result": {
+      "pass": true,
+      "detail": "",
+      "seconds": 0.7
+    }
+  }
+]

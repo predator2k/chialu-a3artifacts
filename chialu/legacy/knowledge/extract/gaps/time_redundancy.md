@@ -1,0 +1,9 @@
+# time_redundancy: proposed changes to the space
+
+* `transform` values `untransformed_retry` (instruction, program-segment or program rollback after a transient fault), `self_dual` (alternating logic), `rotation` (bitwise logic without extra slices) and `split_duplicate_quarters` (QTR) — each is a reported recomputation transform the enum cannot name [avizienis_1971, lala_2001, patel_fung_1982, townsend_2003]
+* choices for the Razor sampling structure (main flip-flop plus shadow latch), delayed-clock spacing, pipeline recovery (clock gating or counterflow flush), metastability handling and error-rate voltage control — the timing-speculation form has its own design decisions [ernst_2003]
+* choice for partition width or duplicated fraction, partition count and parallel module replication — REDWC's two half-width replicas and QTR's three quarter-width modules differ on these axes [johnson_1988, townsend_2003]
+* choices for checkpoint placement and storage and for repetition scope — checkpoint frequency trades normal execution time against rollback time [lala_2001]
+* a protected-unit slot admitting ripple-carry and carry-lookahead adders and regular multiply/divide arrays, and a base-adder slot for the quarter-width modules — coverage theorems and hardware reuse are stated per checked unit [patel_fung_1982, patel_fung_1983, townsend_2003]
+* per-operand `shift_distance` (l, m) with quotient and remainder realignment, and a `comparison_alignment` choice (right-shift the recomputed result or left-shift the stored one) — RESO-(2,3) shifts dividend and divisor differently, and RESO offers two comparison organizations [patel_fung_1983, patel_fung_1982]
+* a majority-voter slot alongside `two_rail_tree` in `comparator` (also for `duplication`) — QTR corrects by voting rather than by equality checking [townsend_2003]

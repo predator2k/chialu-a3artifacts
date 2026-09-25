@@ -1,0 +1,15 @@
+{
+ "pass": true,
+ "mismatch_count": 0,
+ "first_mismatches": [],
+ "detail": "bit-exact against the reference",
+ "cycles_per_frame": null,
+ "seconds": 3.3,
+ "lint": {
+  "ok": true,
+  "detail": "",
+  "seconds": 0.3
+ },
+ "n_random": 20000,
+ "vectors": 427964
+}

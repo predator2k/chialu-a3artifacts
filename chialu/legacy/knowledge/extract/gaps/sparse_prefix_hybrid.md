@@ -1,0 +1,16 @@
+# sparse_prefix_hybrid: proposed changes to the space
+
+* sum_block_style value modified_carry_select_ling with a boundary_signal choice paired_even_odd_ling_carries — Ling pseudo-carries replace real carries, so each block receives paired H4k/H4k-1 signals and (Gi, Pi-1) terms instead of one boundary carry. [dimitrakopoulos2005]
+* slot sum_block admits carry_select — the measured Ling hybrid uses modified carry-select blocks that the slot domain does not name. [dimitrakopoulos2005]
+* tree_topology value ladner_fischer — the Ling hybrid is evaluated with Ladner-Fischer as well as Kogge-Stone boundary trees. [dimitrakopoulos2005]
+* choice lane_boundary_carry_reset (e.g. 24b_and_12b) — resetting carries at block boundaries partitions the tree into two or four independent additions for lower-precision lanes. [kaul_2012]
+* tree_topology value spanning_tree — a multiway tree of Manchester modules derives uniformly spaced carries from overlapping propagate/generate intervals without a back-propagation pass. [lynch_swartzlander1992]
+* tree_topology value irregular_sparse — the Intel 1-in-4 tree lets two carry-merge gates take extra fanout while every other gate keeps fanout 1 or 2. [mathew2003]
+* choices logic_partition (dynamic critical / static noncritical) and threshold_voltage_partition (low-Vt critical / high-Vt noncritical) — critical/noncritical logic-style and dual-Vt assignment are the energy levers of the side path. [mathew2003]
+* tree_topology value quaternary_tree — Intel's quaternary tree is classified as a sparse design alongside Han-Carlson. [oklobdzija2005]
+* choice circuit_family with values static_cmos/domino/compound_domino (also dual_rail_domino_static, delayed_precharge_footless_domino) — the gate family of the carry tree is an explicit axis in every energy-delay comparison. [oklobdzija2005, zeydel2010, wijeratne_2007, yu_2006, zlatanovici2009]
+* slot sum_block value conditional_sum — several designs use a conditional-sum precompute/select block that sum_block_style names but the slot domain does not. [mathew2003, yu_2006, zeydel2010, zlatanovici2009]
+* choice sparsity_distribution value wire_length_dependent_nonuniform — log2_sparsity cannot express sparsity 2 in short-wire regions and sparsity 8 in long-wire regions of one adder. [yu_2006]
+* choice carry_plus_one_scheme value dual_propagation — propagating carry and carry+1 removes one stage compared with a later OR stage. [yu_2006]
+* choice critical_carry_replication value replicated_fanout_one — the isolated fanout-1 critical path is replicated to produce intermediate carries. [yu_2006]
+* choice log2_sparsity beyond 3 — the critical tree of a 57-bit dual adder core generates 1 carry in 16 and selects conditional 1-in-4 carries before the sum select. [vangal_2006]

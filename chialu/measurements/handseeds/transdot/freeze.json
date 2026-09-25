@@ -1,0 +1,116 @@
+{
+ "spec": {
+  "unit": "alu",
+  "modes": [
+   {
+    "count": 1,
+    "format": "fp16"
+   },
+   {
+    "count": 1,
+    "format": "bf16"
+   },
+   {
+    "count": 2,
+    "format": "fp8e5m2"
+   }
+  ],
+  "ops": [
+   "fadd",
+   "fsub",
+   "fmul",
+   "fmin",
+   "fmax",
+   "fcmp"
+  ],
+  "rounding": [
+   "RNE",
+   "RTZ",
+   "RDN",
+   "RUP"
+  ],
+  "daz_in": [
+   false
+  ],
+  "ftz_out": [
+   false
+  ],
+  "unary_dual": [
+   false
+  ],
+  "check_sr": [
+   true
+  ],
+  "flags": [
+   "invalid",
+   "overflow",
+   "underflow",
+   "inexact"
+  ],
+  "sr_bits": 8,
+  "underflow_contract": "fpnew_merged_16",
+  "x_form": "exact",
+  "nan_payload": "canonical",
+  "invalid_result": "saturate",
+  "nan_to_int": "zero",
+  "minmax_nan": "number",
+  "tininess": "after",
+  "int_div_zero": "riscv",
+  "zero_sign": "positive",
+  "quire_overflow": "wrap",
+  "block_scale_rounding": "nearest",
+  "block_element_overflow": "saturate",
+  "sr_compare": "gt",
+  "check_flags": false,
+  "flag_scope": "per_operation",
+  "fma_contract": "fused",
+  "accuracy": "exact",
+  "accuracy_ctl": "static",
+  "check_en": false,
+  "dut_name": "alu_core",
+  "families": [
+   "float"
+  ],
+  "n_random": 20000,
+  "seed": 655366
+ },
+ "n_vectors": 427964,
+ "vector_sha256": "c859354f3bea6512fe1f92df3133dacfb51aa8476ebf96dbff9b670272f277bf",
+ "ports": [
+  [
+   "a",
+   "in",
+   16
+  ],
+  [
+   "b",
+   "in",
+   16
+  ],
+  [
+   "op",
+   "in",
+   3
+  ],
+  [
+   "mode",
+   "in",
+   2
+  ],
+  [
+   "rounding_sel",
+   "in",
+   2
+  ],
+  [
+   "y",
+   "out",
+   16
+  ],
+  [
+   "flags",
+   "out",
+   4
+  ]
+ ]
+}

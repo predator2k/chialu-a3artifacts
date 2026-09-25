@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+.venv/
+third_party/*
+!third_party/adir
+out/
+run/*
+!run/README.md
+pdk/lib/*.lib
+.DS_Store
+ops/vm_ip
+ops/vm.env
+legacy/knowledge/pdf/*.zip
+legacy/knowledge/pdf/volumes/
+/cluster.yaml
+/contract.json
+/s.log
+/s.err
+/s.out
+ml/models/
+# derived by chialu.surrogate_seeds beside the run files (the numeric file over the surrogate, the evaluation graphs)
+targets/**/*.surrogate*.yaml
+# derived by chialu.pipeline beside the run files (named by their content's hash)
+targets/**/*.pipeline*.yaml
+targets/**/*.nollm.*.yaml

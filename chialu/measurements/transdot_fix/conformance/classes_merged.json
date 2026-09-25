@@ -1,0 +1,9 @@
+{
+ "rtl": "runs/transdot/transdot_merged_alu_core.sv",
+ "vectors": 427964,
+ "mismatches": 0,
+ "by_class": {},
+ "by_mode_op_class": {},
+ "examples": {},
+ "seconds": 4
+}

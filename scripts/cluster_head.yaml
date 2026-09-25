@@ -1,0 +1,52 @@
+# <host>-only CHIA/Ray cluster for exp10 (2026-09-25 audit #7/#8), read by `chia up`.
+# Modelled on the cluster section at the top of targets/int_subword_alu.yaml, without <host>:
+#   - no eda_<host> node type, no auth override, no SSH tunnel and no Python relay (#7: the relay dropped
+#     GCS connections);
+#   - no tunnel means chia pins no ports; the head's worker ports are set here explicitly and widely
+#     (20000-29999, 10000 ports; the tunnelled config had 21000-21399 = 400, which the leaked Cache actors and
+#     idle workers exhausted, #8). The range sits below <host>'s ephemeral range (32768-60999). The `eda`
+#     worker raylet on the same machine keeps Ray's default range 10002-19999, so the two do not overlap.
+# Bring up (the lead):  source chialu-env.sh; chia up $CHIALU_HOME/cluster_head.yaml -y
+# Drivers connect with  RAY_ADDRESS=<HEAD_IP>:6395  (THIS_MACHINE:CHIA_RAY_PORT).
+cluster_name: head_exp10
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  eda:                                   # <host>: verilator, yosys, ABC; the opencode login
+    resources:
+      eda: 124                           # tool slots: a simulation node takes CHIALU_VERILATOR_JOBS of them, a synthesis one CHIALU_EDA_SYNTH_WEIGHT
+      opencode_creds: 100                # concurrent agent calls; one per run in flight
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    worker_env_commands:
+      - source $CHIALU_HOME/chialu-env.sh
+      - export RAY_num_workers_soft_limit=150
+      - export VERTEX_LOCATION=global
+
+head_env_commands:
+  - source $CHIALU_HOME/chialu-env.sh
+  - export VERTEX_LOCATION=global
+  - export RAY_num_workers_soft_limit=150
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=${CHIA_RAY_PORT} --include-dashboard=false --dashboard-agent-listen-port=0 --min-worker-port=24000 --max-worker-port=29999
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:${CHIA_RAY_PORT} --dashboard-agent-listen-port=0 --min-worker-port=10002 --max-worker-port=19999
+
+cache:
+  conformance:
+    cache: true
+  fault:
+    cache: true
+  synth_unit:
+    cache: true
+  synth_ppa:
+    cache: true

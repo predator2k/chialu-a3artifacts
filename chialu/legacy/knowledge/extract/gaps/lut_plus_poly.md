@@ -1,0 +1,17 @@
+# lut_plus_poly: proposed changes to the space
+
+* extend `degree` beyond 5 (6, 7, 9, 14 are used) — double-precision Tang tables use degree 6, the K5 uses a degree-9 Taylor form, and the correctly rounded logarithm uses degrees 7 and 14 [tang_1989, tang_1990, lynch_1995, dedinechin_2007]
+* extend `index_bits` to 13 — the FPGA generator reports 8192 subintervals [pasca_2011__s08]
+* `breakpoint_placement` values `power_of_two_segmented_uniform`, `exponent_parity_balanced`, and nearest-point indexing by INT(256 x) — the ELM logarithm, the FPGA square root, and Gal's tables each index differently from top-bit decode [coleman_2000, pasca_2011__s09, gal_1991]
+* choice `table_entry_representation: {single, lead_trail_pair}` and `working_precision: {target, wider}` — split entries give twice working precision with working-precision operations, and the chapter frames target-versus-wider precision as the choice behind Gal points [tang_1989, tang_1990, muller_2016__s05]
+* choice `representability_target` (required trailing zero/one run in table values or dominant coefficients) — Gal tables constrain 7 to 14 bits per function [gal_1991]
+* choice `coefficient_generation: {stored, on_the_fly}` — the K5 generates Taylor coefficients during evaluation under limited constant memory [lynch_1995]
+* choices `error_centering_bias: per_function` and `error_correction: scaled_template_table` — a precomputed bias or a scaled error-curve table corrects truncation error [oberman_2005, coleman_2000]
+* choice `residual_evaluator: {table, piecewise_poly}` with the leading-table reconstruction e^A (1 + Z + f(Z)), plus component slots for value table, coefficient table, and truncated multiplier [dedinechin_2010, pasca_2011__s10]
+* choice `table_sharing` across quick and accurate phases and a rounding-contract choice `{faithful, correct}` [dedinechin_2007, pasca_2011__s09]
+* choice for the function set served by one shared table-driven unit [christie_1996, alpert_1993]
+* choice `local_reduction: {division, reciprocal_multiply, atanh_transform}` — the logarithm's local argument can be formed three ways [tang_1990]
+* choice `coefficient_rom_packing: target_specific` — FPGA coefficient fields are packed around BRAM shapes [pasca_2011__s08]
+* choice `anchor_representation: {single_extended, double_double}` — libraries differ in how table anchors are stored [muller_2016__s13]
+* choice `lookup_interval` for a uniform-interval softmax logarithm table [du_2019]
+* a new family `add_table_lookup_add` for the Wong-Goto central-difference table-bank evaluator, which does not fit coefficient table plus polynomial [wong_1995]

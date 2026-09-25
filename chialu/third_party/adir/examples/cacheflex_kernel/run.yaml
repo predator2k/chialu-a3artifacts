@@ -1,0 +1,176 @@
+# The CacheFlex SPM GEMM (github.com/JingqunZhang/cacheflex-ae) under
+# ADIR: the loop nest that drives the artifact's fixed SVE/SPM
+# microkernel is the seed, the K and M tiles are searched variables, and
+# a cell is the artifact's own flow: the three-step SPM build, QEMU
+# against a naive reference and for the checksum, one gem5 cell on the
+# paper's core with the L2 converted to a scratchpad. The domain library
+# is `cacheflex/` beside this file; ${CACHEFLEX_ROOT} is the artifact
+# checkout (github.com/JingqunZhang/cacheflex-ae, built), which the seed is
+# read from as well as the toolchain, so `adir check` needs it set.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: cacheflex_kernel
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  cf:                                    # the artifact's toolchain, QEMU and gem5 on the host
+    resources:
+      cf_build: 2
+      cf_sim: 6
+      opencode_creds: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    worker_env_commands:
+      - export PATH=$HOME/.opencode/bin:$HOME/miniconda3/envs/chia_env/bin:$PATH
+      - export LD_LIBRARY_PATH=$HOME/miniconda3/envs/cacheflex/lib    # the gem5 binary's libpython
+
+head_env_commands:
+  - export PATH=$HOME/.opencode/bin:$HOME/miniconda3/envs/chia_env/bin:$PATH
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --include-dashboard=false --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  build:
+    cache: true
+  gem5_cell:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: cacheflex.SpmGemm
+  run_dir: run/cacheflex_kernel
+
+  variables:
+    workload:                            # the paper's W7: 784 x 256 x 1024
+      fixed: W7
+    vl:                                  # SVE 16 x 128 bits
+      fixed: 16
+    kc:                                  # the K tile of B in the SPM; 341 is the VL16 capacity
+      search: {min: 32, max: 341, step: 1}
+    mc:                                  # the M tile of A
+      search: {min: 8, max: 784, step: 8}
+
+  artifacts:
+    driver:                              # gemm_v3, the loop nest: the mutable region
+      role: seed                         # the artifact's own v3_fused nest, read from the checkout
+      kind: text
+      source: generated
+      language: cpp
+      evolve: [gemm_v3]
+    harness:                             # the artifact's headers, the operands, the ROI, the checksum, the VERIFY compare
+      role: fixed
+      kind: text
+      source: generated
+      language: cpp
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      build:                             # the QEMU mock and the gem5 SPM binary through spm_compiler.py
+        node: cacheflex.nodes.build
+        inputs:
+          source: candidate
+          root: ${CACHEFLEX_ROOT}
+          vl: vars.vl
+      verify:                            # QEMU: the reduced shape against the naive reference, the workload checksum
+        node: cacheflex.nodes.verify
+        inputs:
+          binary_mock: build.binary_mock
+          root: ${CACHEFLEX_ROOT}
+          vl: vars.vl
+          workload: vars.workload
+          kc: decl.kc
+          mc: decl.mc
+      gem5:                              # one cell on the artifact's gem5 fork
+        node: cacheflex.nodes.gem5_cell
+        inputs:
+          binary_gem5: build.binary_gem5
+          root: ${CACHEFLEX_ROOT}
+          vl: vars.vl
+          workload: vars.workload
+          kc: decl.kc
+          mc: decl.mc
+          mock_checksum: verify.checksum
+        when:
+          - verify.pass
+    feedback: [build.detail, verify.detail, gem5.stats]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: verify.pass, eq: true, hard: true}
+    - {metric: gem5.ok, eq: true, hard: true}
+    - {metric: gem5.checksum_match, eq: true, hard: true}
+
+  goal:
+    minimize: gem5.cycles
+    score:
+      rule: ratio_to_seed
+      infeasible: zero
+
+  knowledge: cacheflex/knowledge
+  task:
+    context: task.md
+
+  search:
+    backend: adaevolve                   # the nest is a seed artifact, which a numeric backend refuses;
+                                         # `cacheflex_tiling/` is this unit with the nest fixed, for smac/grid
+    iterations: 60
+    parallel: 2
+    eval_timeout_s: 12000                # build 900 + verify 2 x 1800 + the gem5 cell 7200,
+                                         # so a slow candidate is not killed mid-cell
+    diff_mode: true
+    max_solution_bytes: 40000
+    retries: 1
+    database:
+      use_migration: true
+      diversity_strategy: metric
+    seeds:
+      generated: [paper]                 # the artifact's loop nest at its pinned KC and MC
+    context:
+      programs: 1
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+      sample: ucb
+      sources: [cacheflex_layout]
+      log: true
+    tactics:
+      sources: [unexplored_values]
+      select: ucb
+      window: 20
+    models:
+      solution:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+        timeout_s: 1800
+      guide:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+        timeout_s: 1800
+    budget:
+      wall_hours: 24
+      node_runs: 600
+      llm_calls: 300
+    stop:
+      plateau_iterations: 25
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: false

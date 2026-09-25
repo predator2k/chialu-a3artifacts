@@ -1,0 +1,10 @@
+# kulisch_long_accumulator: proposed changes to the space
+
+* `accumulator_width_bits` range extended below 512 and off the 32-bit grid — the exact binary16 accumulators are 80, 96 and 144 bits, application-specific accumulators are 100 to 200 bits, and the evaluated binary32 accumulator is 559 bits [brunie_2017, pasca_2011#s11, uguen_2019]
+* choice `accumulator_encoding: {twos_complement, sign_magnitude}` — decides whether the product or the accumulator is conditionally negated, and two's-complement conversion at the input replaces replicated add/subtract and separate carry/borrow storage [brunie_2017, uguen_2017]
+* `organization` values `centralized_banked_sram`, `ram_segmented` and `pipelined_sub_adders`, or a `complete_register_storage: {segment_registers, centralized_banked_sram}` choice — the evaluated designs store the register in banked SRAM behind one shared accumulator or pipeline the sub-adder stages [koenig_2017, uguen_2017]
+* `carry_resolution` values `state_directed` (all-ones/all-zeros metadata directing rare carry/borrow beyond the accessed words) and `delayed_with_final_N_cycle_flush` [koenig_2017, uguen_2017]
+* choices `carry_chunk_bits` / `segment_width_bits` / `sub_adder_width_bits` and `redundant_exit: {zero_flush, pipelined_propagation}` — segment width sets the recurrent carry length and frequency, and the exit decides latency-only versus hardware conversion [pasca_2011#s11, uguen_2019, uguen_2017]
+* a slot for the exact unnormalized product multiplier and a slot for the final fixed-to-floating conversion with an output-rounding choice — some designs round only towards zero, others to nearest even [pasca_2011#s11, koenig_2017, brunie_2017, uguen_2019]
+* choice `overflow_margin_bits` / `extension_bits: {0, 16, 64}` — the margin above the exact width sets how many maximum-magnitude products accumulate before overflow [muller_2018#s08, brunie_2017]
+* choice `cache_interface: {L1, L2}` for the accelerator form — the memory attachment sets operand bandwidth and the vector size at which performance drops [koenig_2017]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "fp_alu_cmp",
+    "rtl": "$CHIALU_HOME/wt/median5/targets/seeds/fp_alu_cmp.baseline.sv",
+    "top": "alu_core"
+  },
+  {
+    "id": "fp_alu_cmp_hf",
+    "rtl": "$CHIALU_HOME/wt/median5/targets/seeds/fp_alu_cmp_hf.baseline.sv",
+    "top": "alu_core"
+  },
+  {
+    "id": "int_subword_alu",
+    "rtl": "$CHIALU_HOME/wt/median5/targets/seeds/int_subword_alu.baseline.sv",
+    "top": "alu_core"
+  },
+  {
+    "id": "vec_dot_acc_cmp",
+    "rtl": "$CHIALU_HOME/wt/median5/targets/seeds/vec_dot_acc_cmp.baseline.sv",
+    "top": "dot_core"
+  },
+  {
+    "id": "vec_dot_acc_cmp_fp16",
+    "rtl": "$CHIALU_HOME/wt/median5/targets/seeds/vec_dot_acc_cmp_fp16.baseline.sv",
+    "top": "dot_core"
+  },
+  {
+    "id": "vec_dot_acc_cmp_fp8",
+    "rtl": "$CHIALU_HOME/wt/median5/targets/seeds/vec_dot_acc_cmp_fp8.baseline.sv",
+    "top": "dot_core"
+  },
+  {
+    "id": "fpnew_fpnew_merged_alu_core",
+    "rtl": "$A3EVAL/runs/fpnew/fpnew_merged_alu_core.sv",
+    "top": "alu_core"
+  },
+  {
+    "id": "fpnew_fpnew_parallel_alu_core",
+    "rtl": "$A3EVAL/runs/fpnew/fpnew_parallel_alu_core.sv",
+    "top": "alu_core"
+  },
+  {
+    "id": "fpnew_fpnew_merged_bare",
+    "rtl": "$A3EVAL/runs/fpnew/fpnew_merged_bare.sv",
+    "top": "fpnew_bare"
+  },
+  {
+    "id": "fpnew_fpnew_parallel_bare",
+    "rtl": "$A3EVAL/runs/fpnew/fpnew_parallel_bare.sv",
+    "top": "fpnew_bare"
+  },
+  {
+    "id": "transdot_transdot_merged_alu_core",
+    "rtl": "$A3EVAL/runs/transdot/transdot_merged_alu_core.sv",
+    "top": "alu_core"
+  },
+  {
+    "id": "hardfloat_alu_core",
+    "rtl": "$A3EVAL/runs/hardfloat/alu_core.v",
+    "top": "alu_core"
+  },
+  {
+    "id": "tableb300_transdot_dp_transdot_dp_dot_core_fp16",
+    "rtl": "$A3EVAL/runs/tableb300/transdot_dp/transdot_dp_dot_core_fp16.sv",
+    "top": "dot_core"
+  },
+  {
+    "id": "tableb300_transdot_dp_transdot_dp_dot_core_fp8",
+    "rtl": "$A3EVAL/runs/tableb300/transdot_dp/transdot_dp_dot_core_fp8.sv",
+    "top": "dot_core"
+  },
+  {
+    "id": "tableb300_transdot_no_dp_transdot_no_dp_dot_core_fp16",
+    "rtl": "$A3EVAL/runs/tableb300/transdot_no_dp/transdot_no_dp_dot_core_fp16.sv",
+    "top": "dot_core"
+  },
+  {
+    "id": "tableb300_transdot_no_dp_transdot_no_dp_dot_core_fp8",
+    "rtl": "$A3EVAL/runs/tableb300/transdot_no_dp/transdot_no_dp_dot_core_fp8.sv",
+    "top": "dot_core"
+  },
+  {
+    "id": "tableb300_hardfloat_dot_fp16_dot_core",
+    "rtl": "$A3EVAL/runs/tableb300/hardfloat_dot/fp16/dot_core.v",
+    "top": "dot_core"
+  },
+  {
+    "id": "tableb300_hardfloat_dot_fp8_dot_core",
+    "rtl": "$A3EVAL/runs/tableb300/hardfloat_dot/fp8/dot_core.v",
+    "top": "dot_core"
+  }
+]

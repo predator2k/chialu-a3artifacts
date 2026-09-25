@@ -1,0 +1,11 @@
+# exp10 start 2026-09-25 02:20:53; RAY_ADDRESS=<HEAD_IP>:6395
+a3eval 9d24818c7261cb66ad99ee4b4e1ccbeedfbbbd48 dirty=0 $A3EVAL
+chiALU 6c197d3688b88d300fc73281851ba76da00705cc dirty=0 $A3EVAL/3rdparty/chialu
+ADIR 23a9bd31a3be60e6172e4e12b00677e87577f440 dirty=0 $A3EVAL/3rdparty/chialu/third_party/adir
+chia 17276bf1695776cff244d847f8f9c9cd1ceae46d dirty=0 $CHIALU_HOME/src/chia
+opencode 1.18.31 OPENCODE_EXPERIMENTAL_OUTPUT_TOKEN_MAX=393216
+2026-09-25 02:20:54,447	INFO worker.py:1810 -- Connecting to existing Ray cluster at address: <HEAD_IP>:6395...
+2026-09-25 02:20:54,611	INFO worker.py:2013 -- Connected to Ray cluster.
+$CHIALU_HOME/miniconda3/envs/chia_env/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+cluster {'object_store_memory': 164454596198.0, 'CPU': 256.0, 'node:<HEAD_IP>': 2.0, 'memory': 383727391130.0, 'node:__internal_head__': 1.0, 'eda': 124.0, 'opencode_creds': 100.0}

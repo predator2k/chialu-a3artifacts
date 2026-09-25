@@ -1,0 +1,130 @@
+# RISC-V extension loop — full on-premises cluster (no AWS).
+# Fill every #FILL: provider.head_ip, provider.
+cluster_name: vext
+
+available_node_types:
+    llm:
+        resources: {"llm": 4}
+        num_workers: 2
+        compatible_ips:     # FILL
+        docker:                                            # self-contained claude CLI (matches examples/memcpy)
+            image: "ghcr.io/ucb-bar/chia-claude-code:latest"
+            container_name: "chia-claude-code-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+                - "--user $(id -u):$(id -g)"               # run as self so the mounted creds are readable
+                - "-v ${HOME}/.claude:/home/ray/.claude"   # Claude Code creds dir (NOT /scratch — that's stale)
+            run_setup_commands:
+                - echo "user:x:$(id -u):$(id -g)::/home/ray:/bin/bash" >> /etc/passwd
+                - mkdir -p /home/ray/llm_env               # empty cwd the claude CLI chdirs into
+
+    head_local:
+        resources: {"head_local": 8}
+        num_workers: 1
+        worker_env_commands: ["source ~/.bashrc && conda activate chia_env && export PATH=$HOME/.local/bin:$PATH"]
+        compatible_ips: #FILL
+
+    database:
+        resources: {"database": 2}
+        num_workers: 1
+        worker_env_commands: ["source ~/.bashrc && conda activate chia_env && export PATH=$HOME/.local/bin:$PATH"]
+        compatible_ips: #FILL
+
+    # Verilator DUT sims + lockstep cospike.
+    cosim:
+        resources: {"verilator_run": 4}
+        num_workers: 6
+        docker:
+            image: "ghcr.io/ucb-bar/chia-verilator-run:latest"
+            container_name: "chia-verilator-run-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+        compatible_ips: #FILL
+
+    # Chisel -> Verilator elaboration.
+    build:
+        resources: {"chipyard": 1}
+        num_workers: 3
+        worker_env_commands: ["cd /home/ray/chipyard && source env.sh"]
+        docker:
+            image: "ghcr.io/ucb-bar/chia-chisel-build:latest"
+            container_name: "chia-chisel-build-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+                - --shm-size=10.24gb
+                - -v $SSH_AUTH_SOCK:/ssh-agent
+        compatible_ips: #FILL
+
+    gen:
+        resources: {"dv": 1, "xcelium": 1}
+        num_workers: 4
+        docker:
+            image: "ghcr.io/ucb-bar/chia-riscv-dv:latest"
+            container_name: "chia-riscv-dv-${USER}"
+            pull_before_run: True
+            run_options:
+                - -v /ecad:/ecad:ro      # Xcelium + license mount (site path; adjust if not /ecad)
+        compatible_ips: #FILL
+
+    # Cross-compiles directed tests to ELFs.
+    riscv_build:
+        resources: {"riscv_build": 4}
+        num_workers: 1
+        docker:
+            image: "ghcr.io/ucb-bar/chia-riscv-cross:latest"
+            container_name: "chia-riscv-cross-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+        compatible_ips: #FILL
+
+    # Synthesis (PPA): Cadence Genus + sky130, baked in one image (genus + hammer
+    # + cacti + PDK). Needs a Genus license reachable from the host. To enable:
+    # fill image + compatible_ips, set num_workers>0, and set VEXT_SKY130_COL_PATH
+    # + VEXT_CACTI_PATH to the in-image paths. num_workers:0 = off (--no-synth).
+    vlsi:
+        resources: {"VLSI": 4, "Syn": 1, "cacti": 4}
+        num_workers: 0
+        docker:
+            image:  # FILL — genus + hammer + cacti + sky130 PDK image
+            container_name: "chia-genus-${USER}"
+            pull_before_run: True
+            run_options:
+                - --ulimit nofile=65536:65536
+        compatible_ips: #FILL  on-prem synth host(s)
+
+provider:
+    type: local
+    head_ip: #FILL
+
+auth:
+    ssh_user: ${USER}
+    ssh_private_key: #FILL      # on-prem ssh key path; leave unset to use your ssh-agent
+
+file_mounts: {}
+
+rsync_exclude:
+    - "**/.git"
+    - "**/.git/**"
+
+rsync_filter:
+    - ".gitignore"
+
+initialization_commands: []
+
+setup_commands: []
+
+head_env_commands: ["source ~/.bashrc && conda activate chia_env && export PATH=$HOME/.local/bin:$PATH"]
+
+head_start_ray_commands:
+    - ray stop
+    - ulimit -c unlimited && ray start --head --port=6379 --include-dashboard=True --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+    - ray stop
+    - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0

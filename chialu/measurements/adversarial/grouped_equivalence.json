@@ -1,0 +1,38 @@
+[
+  {
+    "width": 3,
+    "family": "direct_pp_parallel",
+    "pins": {
+      "group_bits": 2
+    },
+    "result": {
+      "pass": true,
+      "detail": "",
+      "seconds": 0.4
+    }
+  },
+  {
+    "width": 5,
+    "family": "direct_pp_parallel",
+    "pins": {
+      "group_bits": 2
+    },
+    "result": {
+      "pass": true,
+      "detail": "",
+      "seconds": 0.3
+    }
+  },
+  {
+    "width": 7,
+    "family": "direct_pp_parallel",
+    "pins": {
+      "group_bits": 2
+    },
+    "result": {
+      "pass": true,
+      "detail": "",
+      "seconds": 1.5
+    }
+  }
+]

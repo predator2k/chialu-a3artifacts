@@ -1,0 +1,22 @@
+{
+ "key": "von_neumann_1956",
+ "file": "neumann1956.pdf",
+ "kind": "book",
+ "citation": "J. von Neumann, \"Probabilistic Logics and the Synthesis of Reliable Organisms from Unreliable Components\", in Automata Studies (AM-34), Princeton University Press, pp. 43-98, 1956",
+ "pages": 56,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 55,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

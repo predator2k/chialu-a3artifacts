@@ -1,0 +1,3 @@
+[
+ {"id": "transdot_transdot_merged_alu_core", "rtl": "$A3EVAL/runs/transdot/transdot_merged_alu_core.sv", "top": "alu_core"}
+]

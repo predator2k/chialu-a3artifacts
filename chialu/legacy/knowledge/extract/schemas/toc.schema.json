@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "authors", "segments"],
+  "properties": {
+    "title": {"type": "string"},
+    "authors": {"type": "string"},
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "start", "end", "kind"],
+        "properties": {
+          "title": {"type": "string"},
+          "start": {"type": "integer"},
+          "end": {"type": "integer"},
+          "kind": {"type": "string", "enum": ["front", "chapter", "appendix", "back"]}
+        }
+      }
+    }
+  }
+}

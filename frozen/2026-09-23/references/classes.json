@@ -1,0 +1,34 @@
+{
+ "rtl": "runs/hardfloat/alu_core.v",
+ "vectors": 427964,
+ "mismatches": 47819,
+ "by_class": {
+  "value": 42894,
+  "nan_result": 4925
+ },
+ "by_mode_op_class": {
+  "fp8e5m2/fadd/nan_result": 2485,
+  "fp8e5m2/fadd/value": 21426,
+  "fp8e5m2/fsub/nan_result": 2440,
+  "fp8e5m2/fsub/value": 21468
+ },
+ "examples": {
+  "value": [
+   "mode fp8e5m2 op fadd rnd RNE: a=2600 b=4a00 expected y=4a00 flags=08 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=7a00 b=f601 expected y=7601 flags=00 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=8500 b=6c02 expected y=6c02 flags=08 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=4100 b=7203 expected y=7203 flags=08 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=9400 b=6604 expected y=6604 flags=08 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=ac00 b=5b05 expected y=5b05 flags=08 got y=0000 flags=00"
+  ],
+  "nan_result": [
+   "mode fp8e5m2 op fadd rnd RNE: a=7f00 b=d53d expected y=7e3d flags=00 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=b500 b=217e expected y=b57e flags=08 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=dd00 b=58fe expected y=da7e flags=00 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=e001 b=587e expected y=de7e flags=00 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=b901 b=b9fe expected y=bd7e flags=00 got y=0000 flags=00",
+   "mode fp8e5m2 op fadd rnd RNE: a=7e02 b=d23c expected y=7e3c flags=08 got y=0000 flags=00"
+  ]
+ },
+ "seconds": 3
+}

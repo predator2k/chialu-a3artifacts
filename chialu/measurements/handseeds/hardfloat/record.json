@@ -1,0 +1,1254 @@
+{
+ "run": "hardfloat",
+ "iteration": null,
+ "candidate_id": "seed:hardfloat_hand_seed",
+ "parent_id": null,
+ "seed_name": "hardfloat_hand_seed",
+ "is_seed": true,
+ "unit_id": "e573eb3d34e34209fb3b238fd296c5eb0044a64fae921c7e424e435f9c856d58",
+ "space_hash": "e0f38d9233a95b2a7aa7693046247135b13a567f7f50da3227f033338059f4b2",
+ "evaluator_hash": "321c332ababc9567dae50bdb618dffb3ba084144dabb0e706bbaeedb57ae5bcd",
+ "search_hash": "7416896e3d720bcc58c275d8b6ec0252a5105d98cdf99bc1e8c32325744ca8e9",
+ "model": null,
+ "operator": null,
+ "prompt_config": null,
+ "tactic_id": null,
+ "instruction_id": null,
+ "declarations": {
+  "vars": {},
+  "lines": [],
+  "verified": true
+ },
+ "constraints": [
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "synth_ppa.ok == true",
+   "hard": true,
+   "satisfies": null
+  },
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "declaration.ok == true",
+   "hard": true,
+   "satisfies": null
+  },
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "lint.ok == true",
+   "hard": true,
+   "satisfies": null
+  },
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "conformance.pass == true",
+   "hard": true,
+   "satisfies": null
+  }
+ ],
+ "measurements": {
+  "declaration": {
+   "value": {
+    "decl.x_form": "exact",
+    "decl.core.subword.family": "replicated_lanes",
+    "decl.core.fp_fma.m0.family": "separate_multiplier_and_adder",
+    "decl.core.fp_adder.m0.family": "single_path",
+    "decl.core.fp_adder.m0.subnormal_representation": "as_stored",
+    "decl.core.fp_adder.m0.operand_order": "swap_before_shift",
+    "decl.core.fp_adder.m0.negation_handling": "end_around_carry",
+    "decl.core.fp_adder.m0.sig_adder.family": "ripple_carry",
+    "decl.core.fp_adder.m0.sig_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m0.sig_adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m0.exp.family": "exponent_path",
+    "decl.core.fp_adder.m0.exp.dual_direction_subtract": false,
+    "decl.core.fp_adder.m0.exp.adder.family": "ripple_carry",
+    "decl.core.fp_adder.m0.exp.adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m0.exp.adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m0.align.family": "full_align",
+    "decl.core.fp_adder.m0.align.sticky_method": "or_tree_shifted_out",
+    "decl.core.fp_adder.m0.align.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m0.align.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m0.align.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m0.align.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m0.align.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m0.align.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m0.align.tzc.family": "trailing_zero",
+    "decl.core.fp_adder.m0.align.tzc.strategy": "reverse_then_lzd",
+    "decl.core.fp_adder.m0.align.tzc.isolate_circuit": "twos_complement_and",
+    "decl.core.fp_adder.m0.align.tzc.lzd.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m0.align.tzc.lzd.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m0.align.tzc.lzd.output_form": "binary_count",
+    "decl.core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation": false,
+    "decl.core.fp_adder.m0.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+    "decl.core.fp_adder.m0.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+    "decl.core.fp_adder.m0.norm.family": "coarse_fine",
+    "decl.core.fp_adder.m0.norm.coarse_granularity": 4,
+    "decl.core.fp_adder.m0.norm.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m0.norm.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m0.norm.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m0.norm.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m0.norm.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m0.norm.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m0.lz.family": "lza",
+    "decl.core.fp_adder.m0.lz.correction_scheme": "post_norm_fine_shift",
+    "decl.core.fp_adder.m0.lz.string_form": "single_indicator",
+    "decl.core.fp_adder.m0.lz.indicator_restriction": "general",
+    "decl.core.fp_adder.m0.lz.zero_result_detect": "indicator_or",
+    "decl.core.fp_adder.m0.lz.encoder.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m0.lz.encoder.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m0.lz.encoder.output_form": "binary_count",
+    "decl.core.fp_adder.m0.lz.encoder.valid_flag_propagation": false,
+    "decl.core.fp_multiplier.m0.family": "sig_mul_then_round",
+    "decl.core.fp_multiplier.m0.sig_mul.family": "behavioral_star",
+    "decl.core.fp_multiplier.m0.exp_adder.family": "ripple_carry",
+    "decl.core.fp_multiplier.m0.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_multiplier.m0.exp_adder.chunk_width_bits": 1,
+    "decl.core.fp_fma.m1.family": "separate_multiplier_and_adder",
+    "decl.core.fp_adder.m1.family": "single_path",
+    "decl.core.fp_adder.m1.subnormal_representation": "as_stored",
+    "decl.core.fp_adder.m1.operand_order": "swap_before_shift",
+    "decl.core.fp_adder.m1.negation_handling": "end_around_carry",
+    "decl.core.fp_adder.m1.sig_adder.family": "ripple_carry",
+    "decl.core.fp_adder.m1.sig_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m1.sig_adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m1.exp.family": "exponent_path",
+    "decl.core.fp_adder.m1.exp.dual_direction_subtract": false,
+    "decl.core.fp_adder.m1.exp.adder.family": "ripple_carry",
+    "decl.core.fp_adder.m1.exp.adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m1.exp.adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m1.align.family": "full_align",
+    "decl.core.fp_adder.m1.align.sticky_method": "or_tree_shifted_out",
+    "decl.core.fp_adder.m1.align.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m1.align.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m1.align.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m1.align.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m1.align.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m1.align.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m1.align.tzc.family": "trailing_zero",
+    "decl.core.fp_adder.m1.align.tzc.strategy": "reverse_then_lzd",
+    "decl.core.fp_adder.m1.align.tzc.isolate_circuit": "twos_complement_and",
+    "decl.core.fp_adder.m1.align.tzc.lzd.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m1.align.tzc.lzd.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m1.align.tzc.lzd.output_form": "binary_count",
+    "decl.core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation": false,
+    "decl.core.fp_adder.m1.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+    "decl.core.fp_adder.m1.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+    "decl.core.fp_adder.m1.norm.family": "coarse_fine",
+    "decl.core.fp_adder.m1.norm.coarse_granularity": 4,
+    "decl.core.fp_adder.m1.norm.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m1.norm.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m1.norm.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m1.norm.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m1.norm.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m1.norm.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m1.lz.family": "lza",
+    "decl.core.fp_adder.m1.lz.correction_scheme": "post_norm_fine_shift",
+    "decl.core.fp_adder.m1.lz.string_form": "single_indicator",
+    "decl.core.fp_adder.m1.lz.indicator_restriction": "general",
+    "decl.core.fp_adder.m1.lz.zero_result_detect": "indicator_or",
+    "decl.core.fp_adder.m1.lz.encoder.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m1.lz.encoder.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m1.lz.encoder.output_form": "binary_count",
+    "decl.core.fp_adder.m1.lz.encoder.valid_flag_propagation": false,
+    "decl.core.fp_multiplier.m1.family": "sig_mul_then_round",
+    "decl.core.fp_multiplier.m1.sig_mul.family": "behavioral_star",
+    "decl.core.fp_multiplier.m1.exp_adder.family": "ripple_carry",
+    "decl.core.fp_multiplier.m1.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_multiplier.m1.exp_adder.chunk_width_bits": 1,
+    "decl.core.fp_fma.m2.family": "separate_multiplier_and_adder",
+    "decl.core.fp_multiplier.m2.family": "sig_mul_then_round",
+    "decl.core.fp_multiplier.m2.sig_mul.family": "behavioral_star",
+    "decl.core.fp_multiplier.m2.exp_adder.family": "ripple_carry",
+    "decl.core.fp_multiplier.m2.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_multiplier.m2.exp_adder.chunk_width_bits": 1,
+    "decl.core.fp_comparator.m0.family": "integer_compare_on_bits",
+    "decl.core.fp_comparator.m0.comparator.family": "prefix_comparator",
+    "decl.core.fp_comparator.m0.comparator.structure": "msb_first_prefix",
+    "decl.core.fp_comparator.m0.comparator.radix": 2,
+    "decl.core.fp_comparator.m1.family": "integer_compare_on_bits",
+    "decl.core.fp_comparator.m1.comparator.family": "prefix_comparator",
+    "decl.core.fp_comparator.m1.comparator.structure": "msb_first_prefix",
+    "decl.core.fp_comparator.m1.comparator.radix": 2,
+    "decl.core.fp_comparator.m2.family": "integer_compare_on_bits",
+    "decl.core.fp_comparator.m2.comparator.family": "prefix_comparator",
+    "decl.core.fp_comparator.m2.comparator.structure": "msb_first_prefix",
+    "decl.core.fp_comparator.m2.comparator.radix": 2,
+    "decl.core.rounder.m0.family": "dedicated_per_op",
+    "decl.core.rounder.m0.lzc.family": "lzd_cell_tree",
+    "decl.core.rounder.m0.lzc.block_primitive": "pair_cell",
+    "decl.core.rounder.m0.lzc.output_form": "binary_count",
+    "decl.core.rounder.m0.lzc.valid_flag_propagation": false,
+    "decl.core.rounder.m0.shifter.family": "barrel_mux_tree",
+    "decl.core.rounder.m0.shifter.stage_radix": 2,
+    "decl.core.rounder.m0.shifter.select_encoding": "binary",
+    "decl.core.rounder.m0.shifter.stage_order": "small_shift_first",
+    "decl.core.rounder.m0.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.rounder.m0.shifter.sticky_collect": false,
+    "decl.core.rounder.m0.round.family": "increment_adder",
+    "decl.core.rounder.m0.round.incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m0.round.incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m0.exp_adder.family": "ripple_carry",
+    "decl.core.rounder.m0.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.rounder.m0.exp_adder.chunk_width_bits": 1,
+    "decl.core.rounder.m0.exp_incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m0.exp_incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m1.family": "dedicated_per_op",
+    "decl.core.rounder.m1.lzc.family": "lzd_cell_tree",
+    "decl.core.rounder.m1.lzc.block_primitive": "pair_cell",
+    "decl.core.rounder.m1.lzc.output_form": "binary_count",
+    "decl.core.rounder.m1.lzc.valid_flag_propagation": false,
+    "decl.core.rounder.m1.shifter.family": "barrel_mux_tree",
+    "decl.core.rounder.m1.shifter.stage_radix": 2,
+    "decl.core.rounder.m1.shifter.select_encoding": "binary",
+    "decl.core.rounder.m1.shifter.stage_order": "small_shift_first",
+    "decl.core.rounder.m1.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.rounder.m1.shifter.sticky_collect": false,
+    "decl.core.rounder.m1.round.family": "increment_adder",
+    "decl.core.rounder.m1.round.incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m1.round.incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m1.exp_adder.family": "ripple_carry",
+    "decl.core.rounder.m1.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.rounder.m1.exp_adder.chunk_width_bits": 1,
+    "decl.core.rounder.m1.exp_incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m1.exp_incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m2.family": "dedicated_per_op",
+    "decl.core.rounder.m2.lzc.family": "lzd_cell_tree",
+    "decl.core.rounder.m2.lzc.block_primitive": "pair_cell",
+    "decl.core.rounder.m2.lzc.output_form": "binary_count",
+    "decl.core.rounder.m2.lzc.valid_flag_propagation": false,
+    "decl.core.rounder.m2.shifter.family": "barrel_mux_tree",
+    "decl.core.rounder.m2.shifter.stage_radix": 2,
+    "decl.core.rounder.m2.shifter.select_encoding": "binary",
+    "decl.core.rounder.m2.shifter.stage_order": "small_shift_first",
+    "decl.core.rounder.m2.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.rounder.m2.shifter.sticky_collect": false,
+    "decl.core.rounder.m2.round.family": "increment_adder",
+    "decl.core.rounder.m2.round.incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m2.round.incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m2.exp_adder.family": "ripple_carry",
+    "decl.core.rounder.m2.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.rounder.m2.exp_adder.chunk_width_bits": 1,
+    "decl.core.rounder.m2.exp_incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m2.exp_incrementer.structure": "ripple_and_chain",
+    "decl.core.unpacker.m0.family": "per_unit_unpack",
+    "decl.core.unpacker.m0.denormal_handling": "in_unpack",
+    "decl.core.unpacker.m0.lzc.family": "lzd_cell_tree",
+    "decl.core.unpacker.m0.lzc.block_primitive": "pair_cell",
+    "decl.core.unpacker.m0.lzc.output_form": "binary_count",
+    "decl.core.unpacker.m0.lzc.valid_flag_propagation": false,
+    "decl.core.unpacker.m0.shifter.family": "barrel_mux_tree",
+    "decl.core.unpacker.m0.shifter.stage_radix": 2,
+    "decl.core.unpacker.m0.shifter.select_encoding": "binary",
+    "decl.core.unpacker.m0.shifter.stage_order": "small_shift_first",
+    "decl.core.unpacker.m0.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.unpacker.m0.shifter.sticky_collect": false,
+    "decl.core.unpacker.m1.family": "per_unit_unpack",
+    "decl.core.unpacker.m1.denormal_handling": "in_unpack",
+    "decl.core.unpacker.m1.lzc.family": "lzd_cell_tree",
+    "decl.core.unpacker.m1.lzc.block_primitive": "pair_cell",
+    "decl.core.unpacker.m1.lzc.output_form": "binary_count",
+    "decl.core.unpacker.m1.lzc.valid_flag_propagation": false,
+    "decl.core.unpacker.m1.shifter.family": "barrel_mux_tree",
+    "decl.core.unpacker.m1.shifter.stage_radix": 2,
+    "decl.core.unpacker.m1.shifter.select_encoding": "binary",
+    "decl.core.unpacker.m1.shifter.stage_order": "small_shift_first",
+    "decl.core.unpacker.m1.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.unpacker.m1.shifter.sticky_collect": false,
+    "decl.core.unpacker.m2.family": "per_unit_unpack",
+    "decl.core.unpacker.m2.denormal_handling": "in_unpack",
+    "decl.core.unpacker.m2.lzc.family": "lzd_cell_tree",
+    "decl.core.unpacker.m2.lzc.block_primitive": "pair_cell",
+    "decl.core.unpacker.m2.lzc.output_form": "binary_count",
+    "decl.core.unpacker.m2.lzc.valid_flag_propagation": false,
+    "decl.core.unpacker.m2.shifter.family": "barrel_mux_tree",
+    "decl.core.unpacker.m2.shifter.stage_radix": 2,
+    "decl.core.unpacker.m2.shifter.select_encoding": "binary",
+    "decl.core.unpacker.m2.shifter.stage_order": "small_shift_first",
+    "decl.core.unpacker.m2.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.unpacker.m2.shifter.sticky_collect": false,
+    "ok": true,
+    "defaulted": [
+     "x_form",
+     "core.subword.family",
+     "core.fp_fma.m0.family",
+     "core.fp_adder.m0.family",
+     "core.fp_adder.m0.subnormal_representation",
+     "core.fp_adder.m0.operand_order",
+     "core.fp_adder.m0.negation_handling",
+     "core.fp_adder.m0.sig_adder.family",
+     "core.fp_adder.m0.sig_adder.full_adder_logic",
+     "core.fp_adder.m0.sig_adder.chunk_width_bits",
+     "core.fp_adder.m0.exp.family",
+     "core.fp_adder.m0.exp.dual_direction_subtract",
+     "core.fp_adder.m0.exp.adder.family",
+     "core.fp_adder.m0.exp.adder.full_adder_logic",
+     "core.fp_adder.m0.exp.adder.chunk_width_bits",
+     "core.fp_adder.m0.align.family",
+     "core.fp_adder.m0.align.sticky_method",
+     "core.fp_adder.m0.align.shifter.family",
+     "core.fp_adder.m0.align.shifter.stage_radix",
+     "core.fp_adder.m0.align.shifter.select_encoding",
+     "core.fp_adder.m0.align.shifter.stage_order",
+     "core.fp_adder.m0.align.shifter.direction_handling",
+     "core.fp_adder.m0.align.shifter.sticky_collect",
+     "core.fp_adder.m0.align.tzc.family",
+     "core.fp_adder.m0.align.tzc.strategy",
+     "core.fp_adder.m0.align.tzc.isolate_circuit",
+     "core.fp_adder.m0.align.tzc.lzd.family",
+     "core.fp_adder.m0.align.tzc.lzd.block_primitive",
+     "core.fp_adder.m0.align.tzc.lzd.output_form",
+     "core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation",
+     "core.fp_adder.m0.align.tzc.negation_incrementer.family",
+     "core.fp_adder.m0.align.tzc.negation_incrementer.structure",
+     "core.fp_adder.m0.norm.family",
+     "core.fp_adder.m0.norm.coarse_granularity",
+     "core.fp_adder.m0.norm.shifter.family",
+     "core.fp_adder.m0.norm.shifter.stage_radix",
+     "core.fp_adder.m0.norm.shifter.select_encoding",
+     "core.fp_adder.m0.norm.shifter.stage_order",
+     "core.fp_adder.m0.norm.shifter.direction_handling",
+     "core.fp_adder.m0.norm.shifter.sticky_collect",
+     "core.fp_adder.m0.lz.family",
+     "core.fp_adder.m0.lz.correction_scheme",
+     "core.fp_adder.m0.lz.string_form",
+     "core.fp_adder.m0.lz.indicator_restriction",
+     "core.fp_adder.m0.lz.zero_result_detect",
+     "core.fp_adder.m0.lz.encoder.family",
+     "core.fp_adder.m0.lz.encoder.block_primitive",
+     "core.fp_adder.m0.lz.encoder.output_form",
+     "core.fp_adder.m0.lz.encoder.valid_flag_propagation",
+     "core.fp_multiplier.m0.family",
+     "core.fp_multiplier.m0.sig_mul.family",
+     "core.fp_multiplier.m0.exp_adder.family",
+     "core.fp_multiplier.m0.exp_adder.full_adder_logic",
+     "core.fp_multiplier.m0.exp_adder.chunk_width_bits",
+     "core.fp_fma.m1.family",
+     "core.fp_adder.m1.family",
+     "core.fp_adder.m1.subnormal_representation",
+     "core.fp_adder.m1.operand_order",
+     "core.fp_adder.m1.negation_handling",
+     "core.fp_adder.m1.sig_adder.family",
+     "core.fp_adder.m1.sig_adder.full_adder_logic",
+     "core.fp_adder.m1.sig_adder.chunk_width_bits",
+     "core.fp_adder.m1.exp.family",
+     "core.fp_adder.m1.exp.dual_direction_subtract",
+     "core.fp_adder.m1.exp.adder.family",
+     "core.fp_adder.m1.exp.adder.full_adder_logic",
+     "core.fp_adder.m1.exp.adder.chunk_width_bits",
+     "core.fp_adder.m1.align.family",
+     "core.fp_adder.m1.align.sticky_method",
+     "core.fp_adder.m1.align.shifter.family",
+     "core.fp_adder.m1.align.shifter.stage_radix",
+     "core.fp_adder.m1.align.shifter.select_encoding",
+     "core.fp_adder.m1.align.shifter.stage_order",
+     "core.fp_adder.m1.align.shifter.direction_handling",
+     "core.fp_adder.m1.align.shifter.sticky_collect",
+     "core.fp_adder.m1.align.tzc.family",
+     "core.fp_adder.m1.align.tzc.strategy",
+     "core.fp_adder.m1.align.tzc.isolate_circuit",
+     "core.fp_adder.m1.align.tzc.lzd.family",
+     "core.fp_adder.m1.align.tzc.lzd.block_primitive",
+     "core.fp_adder.m1.align.tzc.lzd.output_form",
+     "core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation",
+     "core.fp_adder.m1.align.tzc.negation_incrementer.family",
+     "core.fp_adder.m1.align.tzc.negation_incrementer.structure",
+     "core.fp_adder.m1.norm.family",
+     "core.fp_adder.m1.norm.coarse_granularity",
+     "core.fp_adder.m1.norm.shifter.family",
+     "core.fp_adder.m1.norm.shifter.stage_radix",
+     "core.fp_adder.m1.norm.shifter.select_encoding",
+     "core.fp_adder.m1.norm.shifter.stage_order",
+     "core.fp_adder.m1.norm.shifter.direction_handling",
+     "core.fp_adder.m1.norm.shifter.sticky_collect",
+     "core.fp_adder.m1.lz.family",
+     "core.fp_adder.m1.lz.correction_scheme",
+     "core.fp_adder.m1.lz.string_form",
+     "core.fp_adder.m1.lz.indicator_restriction",
+     "core.fp_adder.m1.lz.zero_result_detect",
+     "core.fp_adder.m1.lz.encoder.family",
+     "core.fp_adder.m1.lz.encoder.block_primitive",
+     "core.fp_adder.m1.lz.encoder.output_form",
+     "core.fp_adder.m1.lz.encoder.valid_flag_propagation",
+     "core.fp_multiplier.m1.family",
+     "core.fp_multiplier.m1.sig_mul.family",
+     "core.fp_multiplier.m1.exp_adder.family",
+     "core.fp_multiplier.m1.exp_adder.full_adder_logic",
+     "core.fp_multiplier.m1.exp_adder.chunk_width_bits",
+     "core.fp_fma.m2.family",
+     "core.fp_multiplier.m2.family",
+     "core.fp_multiplier.m2.sig_mul.family",
+     "core.fp_multiplier.m2.exp_adder.family",
+     "core.fp_multiplier.m2.exp_adder.full_adder_logic",
+     "core.fp_multiplier.m2.exp_adder.chunk_width_bits",
+     "core.fp_comparator.m0.family",
+     "core.fp_comparator.m0.comparator.family",
+     "core.fp_comparator.m0.comparator.structure",
+     "core.fp_comparator.m0.comparator.radix",
+     "core.fp_comparator.m1.family",
+     "core.fp_comparator.m1.comparator.family",
+     "core.fp_comparator.m1.comparator.structure",
+     "core.fp_comparator.m1.comparator.radix",
+     "core.fp_comparator.m2.family",
+     "core.fp_comparator.m2.comparator.family",
+     "core.fp_comparator.m2.comparator.structure",
+     "core.fp_comparator.m2.comparator.radix",
+     "core.rounder.m0.family",
+     "core.rounder.m0.lzc.family",
+     "core.rounder.m0.lzc.block_primitive",
+     "core.rounder.m0.lzc.output_form",
+     "core.rounder.m0.lzc.valid_flag_propagation",
+     "core.rounder.m0.shifter.family",
+     "core.rounder.m0.shifter.stage_radix",
+     "core.rounder.m0.shifter.select_encoding",
+     "core.rounder.m0.shifter.stage_order",
+     "core.rounder.m0.shifter.direction_handling",
+     "core.rounder.m0.shifter.sticky_collect",
+     "core.rounder.m0.round.family",
+     "core.rounder.m0.round.incrementer.family",
+     "core.rounder.m0.round.incrementer.structure",
+     "core.rounder.m0.exp_adder.family",
+     "core.rounder.m0.exp_adder.full_adder_logic",
+     "core.rounder.m0.exp_adder.chunk_width_bits",
+     "core.rounder.m0.exp_incrementer.family",
+     "core.rounder.m0.exp_incrementer.structure",
+     "core.rounder.m1.family",
+     "core.rounder.m1.lzc.family",
+     "core.rounder.m1.lzc.block_primitive",
+     "core.rounder.m1.lzc.output_form",
+     "core.rounder.m1.lzc.valid_flag_propagation",
+     "core.rounder.m1.shifter.family",
+     "core.rounder.m1.shifter.stage_radix",
+     "core.rounder.m1.shifter.select_encoding",
+     "core.rounder.m1.shifter.stage_order",
+     "core.rounder.m1.shifter.direction_handling",
+     "core.rounder.m1.shifter.sticky_collect",
+     "core.rounder.m1.round.family",
+     "core.rounder.m1.round.incrementer.family",
+     "core.rounder.m1.round.incrementer.structure",
+     "core.rounder.m1.exp_adder.family",
+     "core.rounder.m1.exp_adder.full_adder_logic",
+     "core.rounder.m1.exp_adder.chunk_width_bits",
+     "core.rounder.m1.exp_incrementer.family",
+     "core.rounder.m1.exp_incrementer.structure",
+     "core.rounder.m2.family",
+     "core.rounder.m2.lzc.family",
+     "core.rounder.m2.lzc.block_primitive",
+     "core.rounder.m2.lzc.output_form",
+     "core.rounder.m2.lzc.valid_flag_propagation",
+     "core.rounder.m2.shifter.family",
+     "core.rounder.m2.shifter.stage_radix",
+     "core.rounder.m2.shifter.select_encoding",
+     "core.rounder.m2.shifter.stage_order",
+     "core.rounder.m2.shifter.direction_handling",
+     "core.rounder.m2.shifter.sticky_collect",
+     "core.rounder.m2.round.family",
+     "core.rounder.m2.round.incrementer.family",
+     "core.rounder.m2.round.incrementer.structure",
+     "core.rounder.m2.exp_adder.family",
+     "core.rounder.m2.exp_adder.full_adder_logic",
+     "core.rounder.m2.exp_adder.chunk_width_bits",
+     "core.rounder.m2.exp_incrementer.family",
+     "core.rounder.m2.exp_incrementer.structure",
+     "core.unpacker.m0.family",
+     "core.unpacker.m0.denormal_handling",
+     "core.unpacker.m0.lzc.family",
+     "core.unpacker.m0.lzc.block_primitive",
+     "core.unpacker.m0.lzc.output_form",
+     "core.unpacker.m0.lzc.valid_flag_propagation",
+     "core.unpacker.m0.shifter.family",
+     "core.unpacker.m0.shifter.stage_radix",
+     "core.unpacker.m0.shifter.select_encoding",
+     "core.unpacker.m0.shifter.stage_order",
+     "core.unpacker.m0.shifter.direction_handling",
+     "core.unpacker.m0.shifter.sticky_collect",
+     "core.unpacker.m1.family",
+     "core.unpacker.m1.denormal_handling",
+     "core.unpacker.m1.lzc.family",
+     "core.unpacker.m1.lzc.block_primitive",
+     "core.unpacker.m1.lzc.output_form",
+     "core.unpacker.m1.lzc.valid_flag_propagation",
+     "core.unpacker.m1.shifter.family",
+     "core.unpacker.m1.shifter.stage_radix",
+     "core.unpacker.m1.shifter.select_encoding",
+     "core.unpacker.m1.shifter.stage_order",
+     "core.unpacker.m1.shifter.direction_handling",
+     "core.unpacker.m1.shifter.sticky_collect",
+     "core.unpacker.m2.family",
+     "core.unpacker.m2.denormal_handling",
+     "core.unpacker.m2.lzc.family",
+     "core.unpacker.m2.lzc.block_primitive",
+     "core.unpacker.m2.lzc.output_form",
+     "core.unpacker.m2.lzc.valid_flag_propagation",
+     "core.unpacker.m2.shifter.family",
+     "core.unpacker.m2.shifter.stage_radix",
+     "core.unpacker.m2.shifter.select_encoding",
+     "core.unpacker.m2.shifter.stage_order",
+     "core.unpacker.m2.shifter.direction_handling",
+     "core.unpacker.m2.shifter.sticky_collect"
+    ],
+    "defaulted_under": {},
+    "detail": "declaration ok (0 declared, 217 at defaults)"
+   },
+   "node_hash": "declaration"
+  },
+  "lint": {
+   "value": {
+    "ok": true,
+    "detail": "",
+    "seconds": 0.2
+   },
+   "node_hash": "358aee2b86fbc1ca6066734194fed712c61ad153bafb882360f7337f93baebe6"
+  },
+  "conformance": {
+   "value": {
+    "pass": true,
+    "mismatch_count": 0,
+    "first_mismatches": [],
+    "detail": "bit-exact against the reference",
+    "cycles_per_frame": null,
+    "seconds": 0.5
+   },
+   "node_hash": "df0800ca7e9392c38857cba30ced84a5e2ebca0ee3fb7b697b08717bf346e49d"
+  },
+  "yosys_stat": {
+   "value": {
+    "ok": true,
+    "cells": 7568,
+    "detail": "",
+    "seconds": 1.3
+   },
+   "node_hash": "7c127bc96d46bbe8de45d99087f86d6a594b012fc647847e20fe7a9e20141607"
+  },
+  "synth_ppa": {
+   "value": {
+    "ok": true,
+    "area_um2": 5420.548,
+    "abc_delay_ps": 2800.75,
+    "cells": 4742,
+    "cells_run_index": 1,
+    "seconds": 19.312,
+    "repeats": 5,
+    "seeds": [
+     null,
+     11,
+     23,
+     37,
+     53
+    ],
+    "runs": [
+     {
+      "ok": true,
+      "area_um2": 5419.484,
+      "cells": 4783,
+      "abc_delay_ps": 2800.75,
+      "seconds": 3.8,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 0,
+      "abc_seed": null,
+      "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtl",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "6f1d2662fe663add001625673a0dc2ca44d0274b41ee1304d990e0b9d25c52db",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/6f1d2662fe663add001625673a0dc2ca44d0274b41ee1304d990e0b9d25c52db.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "333a3f9b6ecb386f81db0101248f4ca8f33f28962de1a370d48cb40ab3fac4fd",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/333a3f9b6ecb386f81db0101248f4ca8f33f28962de1a370d48cb40ab3fac4fd.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 5420.548,
+      "cells": 4742,
+      "abc_delay_ps": 3148.06,
+      "seconds": 2.1,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 1,
+      "abc_seed": 11,
+      "abc_script": "+strash;permute -S 11;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 11\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "85b1646935bcb6e3d1f37a87fa2ec02c673f0a2315aa22a91c107919b645bf37",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/85b1646935bcb6e3d1f37a87fa2ec02c673f0a2315aa22a91c107919b645bf37.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "dafedd55d3d0a6ee54d5b05441eaf912aafcf856f08aa5fbe7d2eb44a927fa39",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/dafedd55d3d0a6ee54d5b05441eaf912aafcf856f08aa5fbe7d2eb44a927fa39.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 5515.51,
+      "cells": 4773,
+      "abc_delay_ps": 2775.13,
+      "seconds": 2.1,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 2,
+      "abc_seed": 23,
+      "abc_script": "+strash;permute -S 23;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 23\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "d884aff75cca74d4868b12dcbf4c04f9574e43aa714f531f26693c4900afacce",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/d884aff75cca74d4868b12dcbf4c04f9574e43aa714f531f26693c4900afacce.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "5c2bf2d3a0515bfbd3a8496d19fd9eaec31c041bf331d934e16cd84a52fd8a1f",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/5c2bf2d3a0515bfbd3a8496d19fd9eaec31c041bf331d934e16cd84a52fd8a1f.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 5365.486,
+      "cells": 4716,
+      "abc_delay_ps": 2778.37,
+      "seconds": 2.2,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 3,
+      "abc_seed": 37,
+      "abc_script": "+strash;permute -S 37;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 37\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "8ca4a924fb0c0908b7e45edfc6f5bc807da56785d069ec04a2696512d9e729d1",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8ca4a924fb0c0908b7e45edfc6f5bc807da56785d069ec04a2696512d9e729d1.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "98e79bde5facec88bb12e4d9c714c2a6857f12f7f75766f62b992bfa286e96ef",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/98e79bde5facec88bb12e4d9c714c2a6857f12f7f75766f62b992bfa286e96ef.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 5479.068,
+      "cells": 4785,
+      "abc_delay_ps": 2902.93,
+      "seconds": 2.2,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 4,
+      "abc_seed": 53,
+      "abc_script": "+strash;permute -S 53;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 53\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/2f4677ad42e67e15e590ab25e74c0b08eccf8a5eaade27320e626b3a1b892c69.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "ecf3ee7c0b493353857be0ca59f27c13bf99e49b9c0d9690c8bddb28be228b5c",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/ecf3ee7c0b493353857be0ca59f27c13bf99e49b9c0d9690c8bddb28be228b5c.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "2b673cc20cdd5ad3a3d1e6de75f2faea43aba6234e451fe99bacfdcdfabff3bc",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/2b673cc20cdd5ad3a3d1e6de75f2faea43aba6234e451fe99bacfdcdfabff3bc.gz",
+       "encoding": "gzip"
+      }
+     }
+    ],
+    "successful_runs": 5,
+    "statistics": {
+     "area_um2": {
+      "median": 5420.548,
+      "min": 5365.486,
+      "max": 5515.51,
+      "std": 52.11466134745588
+     },
+     "abc_delay_ps": {
+      "median": 2800.75,
+      "min": 2775.13,
+      "max": 3148.06,
+      "std": 141.4096130254234
+     },
+     "cells": {
+      "median": 4773,
+      "min": 4716,
+      "max": 4785,
+      "std": 26.7686383665662
+     }
+    },
+    "median_rule": "all_requested_runs_must_succeed; partial_statistics_are_diagnostic_only",
+    "pdk": "nangate45",
+    "clock_ps": 300,
+    "detail": "",
+    "report_run": {
+     "ok": true,
+     "area_um2": 5407.78,
+     "cells": 4735,
+     "abc_delay_ps": 2986.41,
+     "seconds": 3.6,
+     "pdk": "nangate45",
+     "clock_ps": 300,
+     "detail": "",
+     "status": "ok",
+     "repeat_index": 0,
+     "abc_seed": null,
+     "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+     "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+     "rtl": {
+      "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909.gz",
+      "encoding": "gzip"
+     },
+     "netlist": {
+      "sha256": "e22c54e8f1befc300ee365c7933c3fb7f063dc4a671e27c2051119caae63a10f",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e22c54e8f1befc300ee365c7933c3fb7f063dc4a671e27c2051119caae63a10f.gz",
+      "encoding": "gzip"
+     },
+     "mapping_input": "rtl",
+     "liberties": [
+      {
+       "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+       "encoding": "gzip"
+      }
+     ],
+     "liberty_hash": "38d65aff29303470",
+     "tool_hash": "4b9888fa0093b04f",
+     "tools": {
+      "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+      "executables": {
+       "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+       "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+      }
+     },
+     "effort": "medium",
+     "share": false,
+     "top": "alu_core",
+     "hierarchy": true,
+     "keep_scopeinfo": false,
+     "timeout_s": 1200,
+     "pdk_descriptor": {
+      "name": "nangate45",
+      "aliases": [
+       "freepdk45"
+      ],
+      "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+      "process_nm": 45,
+      "corner": "TT 1.1V 25C",
+      "area_unit": "um2",
+      "liberty": [
+       {
+        "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+        "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+       }
+      ],
+      "abc": {
+       "clock_ps": 1000,
+       "scripts": {
+        "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+        "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+        "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+       }
+      },
+      "yosys": {
+       "synth": "synth -top {top} -flatten {noshare} -noabc"
+      }
+     },
+     "log": {
+      "sha256": "f1486e68878e67bb7fcea06a385e59a617fa576670fe2625aeae0a9614bcd00c",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/f1486e68878e67bb7fcea06a385e59a617fa576670fe2625aeae0a9614bcd00c.gz",
+      "encoding": "gzip"
+     },
+     "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+      "encoding": "gzip"
+     },
+     "yosys_script": {
+      "sha256": "1fdac8dd753f8d7d8a540255e8e036dfa1fd1152b22599ec7b0c059591e02583",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/1fdac8dd753f8d7d8a540255e8e036dfa1fd1152b22599ec7b0c059591e02583.gz",
+      "encoding": "gzip"
+     },
+     "attribution_run": {
+      "ok": true,
+      "area_um2": 5407.78,
+      "cells": 4772,
+      "abc_delay_ps": 2986.41,
+      "seconds": 2.6,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 0,
+      "abc_seed": null,
+      "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b18dad5196b0323acc418cc4923d3f1141293b025b9505dcdd2e37af197f5909.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "e22c54e8f1befc300ee365c7933c3fb7f063dc4a671e27c2051119caae63a10f",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e22c54e8f1befc300ee365c7933c3fb7f063dc4a671e27c2051119caae63a10f.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": true,
+      "keep_scopeinfo": true,
+      "timeout_s": 600,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "d6786e6486e48d0f57363612e6183d40b553fe831965ebabbb503cf6eb1ebf23",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/d6786e6486e48d0f57363612e6183d40b553fe831965ebabbb503cf6eb1ebf23.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "e5c5400ebdffac598d407b79d86deeffb5b06bb8f85a8119c40b0ba703b9ff34",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e5c5400ebdffac598d407b79d86deeffb5b06bb8f85a8119c40b0ba703b9ff34.gz",
+       "encoding": "gzip"
+      },
+      "purpose": "diagnostic_name_kept_base_mapping"
+     },
+     "summary": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## Units of the flattened design (shared = logic ABC merged between instances, split equally)\ninstance                   module                             member                area um2      %   cells  shared  in arr  out arr\ntop glue (operand decode, the op mux, the flags)                                      5407.8  100.0\ntotal                                                                                 5407.8\nin arr / out arr: the latest arrival (ps) at the unit's input / output port nets; a unit whose out arr is near the total is on the critical path, one whose in arr is late waits for another unit\n",
+     "critical_path": "1. y[0]                     2986.4 ps  from a[7]                  54 cells   top(54, 2986 ps)",
+     "paths": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## The 20 latest endpoints; owner(cells, ps) per segment of the path\n\n  1. y[0]                     2986.4 ps  from a[7]                  54 cells   top(54, 2986 ps)\n  2. y[2]                     2986.2 ps  from a[7]                  54 cells   top(54, 2986 ps)\n  3. y[1]                     2980.3 ps  from a[7]                  54 cells   top(54, 2980 ps)\n  4. y[10]                    2974.2 ps  from a[7]                  55 cells   top(55, 2974 ps)\n  5. y[12]                    2971.1 ps  from a[7]                  55 cells   top(55, 2971 ps)\n  6. y[4]                     2963.9 ps  from a[7]                  54 cells   top(54, 2964 ps)\n  7. y[9]                     2963.3 ps  from a[7]                  55 cells   top(55, 2963 ps)\n  8. y[11]                    2963.1 ps  from a[7]                  55 cells   top(55, 2963 ps)\n  9. y[8]                     2960.3 ps  from a[7]                  55 cells   top(55, 2960 ps)\n 10. y[13]                    2958.4 ps  from a[7]                  55 cells   top(55, 2958 ps)\n 11. y[3]                     2957.0 ps  from a[7]                  54 cells   top(54, 2957 ps)\n 12. y[6]                     2944.4 ps  from a[7]                  54 cells   top(54, 2944 ps)\n 13. y[7]                     2931.7 ps  from a[7]                  54 cells   top(54, 2932 ps)\n 14. y[5]                     2925.8 ps  from a[7]                  54 cells   top(54, 2926 ps)\n 15. y[14]                    2913.0 ps  from a[7]                  53 cells   top(53, 2913 ps)\n 16. flags[3]                 2812.5 ps  from a[7]                  53 cells   top(53, 2812 ps)\n 17. flags[1]                 2740.6 ps  from a[7]                  52 cells   top(52, 2741 ps)\n 18. flags[2]                 2337.0 ps  from b[2]                  44 cells   top(44, 2337 ps)\n 19. y[15]                    1888.4 ps  from b[11]                 33 cells   top(33, 1888 ps)\n 20. flags[0]                  682.9 ps  from a[6]                  15 cells   top(15, 683 ps)\n\n## The first 3 of them cell by cell\n### 1. y[0] at 2986.4 ps\nstart a[7] (input)  ->  end y[0] (output)   2986.4 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2986.4 ps  (+2986.4)   in via a[7]   out via y[0]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2914.5   44.5  r->f  OAI221_X1   top                        $abc$20710$new_n4733                           1    1.4   21.3\n 53   2964.5   50.0  f->r  OAI221_X1   top                        $abc$20710$new_n4742                           1    1.6   34.8\n 54   2986.4   21.9  r->f  AOI22_X1    top                        y[0]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n### 2. y[2] at 2986.2 ps\nstart a[7] (input)  ->  end y[2] (output)   2986.2 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2986.2 ps  (+2986.2)   in via a[7]   out via y[2]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2914.5   44.5  r->f  OAI221_X1   top                        $abc$20710$new_n4572                           1    1.4   20.8\n 53   2964.2   49.7  f->r  OAI221_X1   top                        $abc$20710$new_n4581                           1    1.6   34.8\n 54   2986.2   21.9  r->f  AOI22_X1    top                        y[2]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n### 3. y[1] at 2980.3 ps\nstart a[7] (input)  ->  end y[1] (output)   2980.3 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2980.3 ps  (+2980.3)   in via a[7]   out via y[1]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2908.9   38.9  r->f  OAI211_X1   top                        $abc$20710$new_n4651                           1    1.4   20.1\n 53   2958.3   49.4  f->r  OAI221_X1   top                        $abc$20710$new_n4664                           1    1.6   34.7\n 54   2980.3   21.9  r->f  AOI22_X1    top                        y[1]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n",
+     "area_by_hierarchy": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## Area per instance of the flattened design (cells shared between instances split equally; total 5407.8 um2)\ninstance                                       module                                    area um2      %    cells\ntop (whole design)                                                                         5407.8  100.0   4735.0\n\n## Structure members -> modules -> instances\nmember                   module                                   instances                           area\n",
+     "report_seconds": 2.6
+    },
+    "summary": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## Units of the flattened design (shared = logic ABC merged between instances, split equally)\ninstance                   module                             member                area um2      %   cells  shared  in arr  out arr\ntop glue (operand decode, the op mux, the flags)                                      5407.8  100.0\ntotal                                                                                 5407.8\nin arr / out arr: the latest arrival (ps) at the unit's input / output port nets; a unit whose out arr is near the total is on the critical path, one whose in arr is late waits for another unit\n",
+    "critical_path": "1. y[0]                     2986.4 ps  from a[7]                  54 cells   top(54, 2986 ps)",
+    "paths": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## The 20 latest endpoints; owner(cells, ps) per segment of the path\n\n  1. y[0]                     2986.4 ps  from a[7]                  54 cells   top(54, 2986 ps)\n  2. y[2]                     2986.2 ps  from a[7]                  54 cells   top(54, 2986 ps)\n  3. y[1]                     2980.3 ps  from a[7]                  54 cells   top(54, 2980 ps)\n  4. y[10]                    2974.2 ps  from a[7]                  55 cells   top(55, 2974 ps)\n  5. y[12]                    2971.1 ps  from a[7]                  55 cells   top(55, 2971 ps)\n  6. y[4]                     2963.9 ps  from a[7]                  54 cells   top(54, 2964 ps)\n  7. y[9]                     2963.3 ps  from a[7]                  55 cells   top(55, 2963 ps)\n  8. y[11]                    2963.1 ps  from a[7]                  55 cells   top(55, 2963 ps)\n  9. y[8]                     2960.3 ps  from a[7]                  55 cells   top(55, 2960 ps)\n 10. y[13]                    2958.4 ps  from a[7]                  55 cells   top(55, 2958 ps)\n 11. y[3]                     2957.0 ps  from a[7]                  54 cells   top(54, 2957 ps)\n 12. y[6]                     2944.4 ps  from a[7]                  54 cells   top(54, 2944 ps)\n 13. y[7]                     2931.7 ps  from a[7]                  54 cells   top(54, 2932 ps)\n 14. y[5]                     2925.8 ps  from a[7]                  54 cells   top(54, 2926 ps)\n 15. y[14]                    2913.0 ps  from a[7]                  53 cells   top(53, 2913 ps)\n 16. flags[3]                 2812.5 ps  from a[7]                  53 cells   top(53, 2812 ps)\n 17. flags[1]                 2740.6 ps  from a[7]                  52 cells   top(52, 2741 ps)\n 18. flags[2]                 2337.0 ps  from b[2]                  44 cells   top(44, 2337 ps)\n 19. y[15]                    1888.4 ps  from b[11]                 33 cells   top(33, 1888 ps)\n 20. flags[0]                  682.9 ps  from a[6]                  15 cells   top(15, 683 ps)\n\n## The first 3 of them cell by cell\n### 1. y[0] at 2986.4 ps\nstart a[7] (input)  ->  end y[0] (output)   2986.4 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2986.4 ps  (+2986.4)   in via a[7]   out via y[0]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2914.5   44.5  r->f  OAI221_X1   top                        $abc$20710$new_n4733                           1    1.4   21.3\n 53   2964.5   50.0  f->r  OAI221_X1   top                        $abc$20710$new_n4742                           1    1.6   34.8\n 54   2986.4   21.9  r->f  AOI22_X1    top                        y[0]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n### 2. y[2] at 2986.2 ps\nstart a[7] (input)  ->  end y[2] (output)   2986.2 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2986.2 ps  (+2986.2)   in via a[7]   out via y[2]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2914.5   44.5  r->f  OAI221_X1   top                        $abc$20710$new_n4572                           1    1.4   20.8\n 53   2964.2   49.7  f->r  OAI221_X1   top                        $abc$20710$new_n4581                           1    1.6   34.8\n 54   2986.2   21.9  r->f  AOI22_X1    top                        y[2]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n### 3. y[1] at 2980.3 ps\nstart a[7] (input)  ->  end y[1] (output)   2980.3 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2980.3 ps  (+2980.3)   in via a[7]   out via y[1]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2908.9   38.9  r->f  OAI211_X1   top                        $abc$20710$new_n4651                           1    1.4   20.1\n 53   2958.3   49.4  f->r  OAI221_X1   top                        $abc$20710$new_n4664                           1    1.6   34.7\n 54   2980.3   21.9  r->f  AOI22_X1    top                        y[1]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n",
+    "area_by_hierarchy": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## Area per instance of the flattened design (cells shared between instances split equally; total 5407.8 um2)\ninstance                                       module                                    area um2      %    cells\ntop (whole design)                                                                         5407.8  100.0   4735.0\n\n## Structure members -> modules -> instances\nmember                   module                                   instances                           area\n",
+    "report_seconds": 6.4
+   },
+   "node_hash": "674d6037b7886d4c1996000b4f35b3823d71902162292f2780c39cd7fc540329"
+  }
+ },
+ "skipped": {},
+ "gave_up": {},
+ "hard_fail": false,
+ "feasible": true,
+ "goal_values": [
+  5420.548,
+  2800.75
+ ],
+ "fidelity_level": 1,
+ "touched": [],
+ "sub": [],
+ "score": {
+  "combined_score": 1.0,
+  "rule": "ratio_to_seed"
+ },
+ "source_sha256": "1ec8f0cddb394e44db7bb87688238a27b0c1fd98bc227ed7f0c38d89809fe528",
+ "source_path": "$CHIALU_HOME/tmp/handseeds/verified/hardfloat/seeds/hardfloat_hand_seed/program.sv",
+ "cost": {
+  "seconds": 21.028,
+  "node_calls": 4,
+  "cache_hits": 0
+ },
+ "feedback": {
+  "conformance.detail": "bit-exact against the reference",
+  "synth_ppa.detail": "",
+  "synth_ppa.summary": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## Units of the flattened design (shared = logic ABC merged between instances, split equally)\ninstance                   module                             member                area um2      %   cells  shared  in arr  out arr\ntop glue (operand decode, the op mux, the flags)                                      5407.8  100.0\ntotal                                                                                 5407.8\nin arr / out arr: the latest arrival (ps) at the unit's input / output port nets; a unit whose out arr is near the total is on the critical path, one whose in arr is late waits for another unit\n",
+  "synth_ppa.critical_path": "1. y[0]                     2986.4 ps  from a[7]                  54 cells   top(54, 2986 ps)",
+  "synth_ppa.paths": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## The 20 latest endpoints; owner(cells, ps) per segment of the path\n\n  1. y[0]                     2986.4 ps  from a[7]                  54 cells   top(54, 2986 ps)\n  2. y[2]                     2986.2 ps  from a[7]                  54 cells   top(54, 2986 ps)\n  3. y[1]                     2980.3 ps  from a[7]                  54 cells   top(54, 2980 ps)\n  4. y[10]                    2974.2 ps  from a[7]                  55 cells   top(55, 2974 ps)\n  5. y[12]                    2971.1 ps  from a[7]                  55 cells   top(55, 2971 ps)\n  6. y[4]                     2963.9 ps  from a[7]                  54 cells   top(54, 2964 ps)\n  7. y[9]                     2963.3 ps  from a[7]                  55 cells   top(55, 2963 ps)\n  8. y[11]                    2963.1 ps  from a[7]                  55 cells   top(55, 2963 ps)\n  9. y[8]                     2960.3 ps  from a[7]                  55 cells   top(55, 2960 ps)\n 10. y[13]                    2958.4 ps  from a[7]                  55 cells   top(55, 2958 ps)\n 11. y[3]                     2957.0 ps  from a[7]                  54 cells   top(54, 2957 ps)\n 12. y[6]                     2944.4 ps  from a[7]                  54 cells   top(54, 2944 ps)\n 13. y[7]                     2931.7 ps  from a[7]                  54 cells   top(54, 2932 ps)\n 14. y[5]                     2925.8 ps  from a[7]                  54 cells   top(54, 2926 ps)\n 15. y[14]                    2913.0 ps  from a[7]                  53 cells   top(53, 2913 ps)\n 16. flags[3]                 2812.5 ps  from a[7]                  53 cells   top(53, 2812 ps)\n 17. flags[1]                 2740.6 ps  from a[7]                  52 cells   top(52, 2741 ps)\n 18. flags[2]                 2337.0 ps  from b[2]                  44 cells   top(44, 2337 ps)\n 19. y[15]                    1888.4 ps  from b[11]                 33 cells   top(33, 1888 ps)\n 20. flags[0]                  682.9 ps  from a[6]                  15 cells   top(15, 683 ps)\n\n## The first 3 of them cell by cell\n### 1. y[0] at 2986.4 ps\nstart a[7] (input)  ->  end y[0] (output)   2986.4 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2986.4 ps  (+2986.4)   in via a[7]   out via y[0]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2914.5   44.5  r->f  OAI221_X1   top                        $abc$20710$new_n4733                           1    1.4   21.3\n 53   2964.5   50.0  f->r  OAI221_X1   top                        $abc$20710$new_n4742                           1    1.6   34.8\n 54   2986.4   21.9  r->f  AOI22_X1    top                        y[0]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n### 2. y[2] at 2986.2 ps\nstart a[7] (input)  ->  end y[2] (output)   2986.2 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2986.2 ps  (+2986.2)   in via a[7]   out via y[2]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2914.5   44.5  r->f  OAI221_X1   top                        $abc$20710$new_n4572                           1    1.4   20.8\n 53   2964.2   49.7  f->r  OAI221_X1   top                        $abc$20710$new_n4581                           1    1.6   34.8\n 54   2986.2   21.9  r->f  AOI22_X1    top                        y[2]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n### 3. y[1] at 2980.3 ps\nstart a[7] (input)  ->  end y[1] (output)   2980.3 ps   54 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  top                           54 cells      0.0 ->  2980.3 ps  (+2980.3)   in via a[7]   out via y[1]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1    100.7  100.7  f->f  OR3_X1      top                        $abc$20710$new_n78                             3   12.2   24.7\n  2    194.4   93.6  f->r  NOR4_X4     top                        $abc$20710$new_n148                            6   10.8   53.0\n  3    214.6   20.2  r->f  NOR2_X2     top                        $abc$20710$new_n149                            2    7.4   16.0\n  4    275.2   60.6  f->f  XOR2_X2     top                        $abc$20710$new_n430                            4   10.6   15.5\n  5    325.1   49.9  f->r  AOI21_X4    top                        $abc$20710$new_n2158                           6   12.8   29.3\n  6    384.9   59.7  r->r  XOR2_X2     top                        $abc$20710$new_n2179                           4    6.8   30.6\n  7    443.2   58.3  r->f  XNOR2_X1    top                        $abc$20710$new_n2180                           3    5.8   25.0\n  8    493.8   50.6  f->r  AOI21_X1    top                        $abc$20710$new_n2191                           2    2.6   26.0\n  9    513.6   19.8  r->f  OAI21_X1    top                        $abc$20710$new_n2193                           2    2.4   11.8\n 10    549.6   36.0  f->f  AND2_X2     top                        $abc$20710$new_n2194                           2    8.8    8.6\n 11    581.8   32.2  f->r  OAI21_X4    top                        $abc$20710$new_n2195                           3    7.4   19.1\n 12    606.5   24.7  r->f  AOI221_X2   top                        $abc$20710$new_n2196                           2    3.2   22.2\n 13    692.0   85.4  f->f  OR3_X2      top                        $abc$20710$new_n2197                           4    6.8   14.6\n 14    797.6  105.6  f->r  AOI221_X2   top                        $abc$20710$new_n2205                           5    9.9   65.0\n 15    865.5   67.9  r->r  AND4_X2     top                        $abc$20710$new_n2242                           1    3.4   12.5\n 16    894.1   28.7  r->r  BUF_X4      top                        $abc$20710$new_n2243                           8   17.3   12.9\n 17    930.8   36.7  r->f  XNOR2_X2    top                        $abc$20710$new_n2275                           2    2.5   13.1\n 18    992.6   61.8  f->f  MUX2_X1     top                        $abc$20710$new_n2289                           2    2.4   10.9\n 19   1048.4   55.9  f->f  MUX2_X2     top                        $abc$20710$new_n2291                           2    2.9   10.1\n 20   1106.3   57.8  f->f  MUX2_X2     top                        $abc$20710$new_n2292                           3    4.5   11.0\n 21   1142.8   36.5  f->r  OAI21_X1    top                        $abc$20710$new_n2390                           3    3.5   27.0\n 22   1181.9   39.1  r->r  AND2_X1     top                        $abc$20710$new_n2392                           2    2.6   10.7\n 23   1240.8   58.9  r->r  AND4_X2     top                        $abc$20710$new_n2407                           3    5.8   14.7\n 24   1290.7   49.9  r->r  AND4_X4     top                        $abc$20710$new_n2433                           3    5.0   10.5\n 25   1334.7   44.0  r->r  AND3_X2     top                        $abc$20710$new_n2441                           3    4.9   12.2\n 26   1364.2   29.6  r->f  NAND3_X1    top                        $abc$20710$new_n2456                           2    4.6   22.9\n 27   1427.8   63.6  f->r  NOR3_X2     top                        $abc$20710$new_n2461                           3    6.6   39.0\n 28   1461.2   33.4  r->f  NAND3_X2    top                        $abc$20710$new_n2465                           2    6.4   18.0\n 29   1490.2   28.9  f->r  OAI21_X4    top                        $abc$20710$new_n2466                           2    5.6   18.2\n 30   1536.4   46.2  r->f  XNOR2_X2    top                        $abc$20710$new_n2469                           4    8.8   15.4\n 31   1578.8   42.4  f->f  OR2_X4      top                        $abc$20710$new_n2539                           2    4.5    8.0\n 32   1641.6   62.9  f->r  AOI211_X2   top                        $abc$20710$new_n2541                           1    3.4   37.1\n 33   1674.9   33.2  r->r  BUF_X4      top                        $abc$20710$new_n2542                          10   16.3   12.6\n 34   1720.8   45.9  r->f  XNOR2_X1    top                        $abc$20710$new_n2544                           2    4.8   19.4\n 35   1761.1   40.4  f->r  OAI21_X2    top                        $abc$20710$new_n2557                           3    7.0   27.0\n 36   1781.3   20.2  r->f  AOI211_X2   top                        $abc$20710$new_n2559                           3    4.0   12.6\n 37   1835.5   54.2  f->f  OR2_X1      top                        $abc$20710$new_n2582                           1    3.0   10.6\n 38   1912.9   77.5  f->r  AOI221_X2   top                        $abc$20710$new_n2584                           2    3.2   41.2\n 39   1945.9   33.0  r->f  OAI211_X1   top                        $abc$20710$new_n2840                           2    3.1   24.1\n 40   2046.5  100.6  f->r  NOR4_X1     top                        $abc$20710$new_n2841                           2    3.3   57.5\n 41   2096.6   50.1  r->f  OAI33_X1    top                        $abc$20710$new_n2854                           3    6.8   28.2\n 42   2190.3   93.7  f->r  NOR4_X2     top                        $abc$20710$new_n2855                           3    5.0   50.3\n 43   2254.6   64.4  r->r  AND4_X2     top                        $abc$20710$new_n2856                           3    5.9   14.9\n 44   2295.3   40.7  r->f  XNOR2_X1    top                        $abc$20710$new_n2903                           1    1.5    9.5\n 45   2353.1   57.7  f->f  MUX2_X2     top                        $abc$20710$new_n2905                           3    4.6   11.1\n 46   2512.9  159.8  f->r  OAI33_X1    top                        $abc$20710$new_n2907                           8   13.5  147.3\n 47   2611.8   98.9  r->f  XNOR2_X1    top                        $abc$20710$new_n3705                           4    7.3   45.2\n 48   2654.7   43.0  f->r  INV_X2      top                        $abc$20710$new_n3823                           5   13.6   23.7\n 49   2683.3   28.6  r->f  NAND3_X4    top                        $abc$20710$new_n3825                           7   12.2   17.7\n 50   2789.8  106.5  f->f  OR4_X4      top                        $abc$20710$new_n4218                           1    2.8   14.9\n 51   2870.0   80.2  f->r  AOI211_X2   top                        $abc$20710$new_n4219                           7   11.7   66.6\n 52   2908.9   38.9  r->f  OAI211_X1   top                        $abc$20710$new_n4651                           1    1.4   20.1\n 53   2958.3   49.4  f->r  OAI221_X1   top                        $abc$20710$new_n4664                           1    1.6   34.7\n 54   2980.3   21.9  r->f  AOI22_X1    top                        y[1]                                           0    0.0   14.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n\n",
+  "synth_ppa.area_by_hierarchy": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 1): area 5420.548 um2, 4742 cells, ABC delay 2800.75 ps\nthese reports (the same netlist mapped with `keep` on 0 unit port nets, so cells keep an owner): area 5407.78 um2, 4772 cells, ABC delay 2986.41 ps, this timing analysis 2986.4 ps; the numbers differ from the metric by a few per cent\n\n## Area per instance of the flattened design (cells shared between instances split equally; total 5407.8 um2)\ninstance                                       module                                    area um2      %    cells\ntop (whole design)                                                                         5407.8  100.0   4735.0\n\n## Structure members -> modules -> instances\nmember                   module                                   instances                           area\n"
+ },
+ "stderr": null,
+ "decision": "pending",
+ "retracted": []
+}

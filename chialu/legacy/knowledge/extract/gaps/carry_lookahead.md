@@ -1,0 +1,15 @@
+# carry_lookahead: proposed changes to the space
+
+* choice `carry_scope: {all_orders, grouped}` — the textbook distinguishes flat simultaneous carry over the whole word from grouped simultaneous carry over three or four orders [richards_1955]
+* `levels` domain extended beyond 4 — the recursively optimized block adder and the distant-carry adder use level counts that vary with width and span without that limit [chan1992, sklansky1960, sklansky1960b]
+* choice `gate_delay_model: {linear_fanin_fanout, ...}` — the dynamic-programming optimizer needs a delay model with fan-in and fan-out terms [chan1992]
+* choice `carry_output_mode: {accurate, inaccurate}` — the reconfigurable approximate CLA multiplexes an accurate or an early inaccurate carry by operating mode [akbari2018]
+* circuit-style choices (`logic_polarity`, `circuit_mapping: ecl_nor_wire_or`, `circuit_style: {pass_transistor_multiplexer, dynamic_pulse_or_and_or}`) — the ECL, pass-transistor and dynamic-pulse designs differ only in circuit realization [bewick1994, ohkubo1995, weinberger_smith1958]
+* choice `lane_carry_break: {none, mode_dependent_kill}` — SIMD final adders break carries at lane boundaries with an early kill term or configurable chain breaks [danysh_2005, crespo_2022]
+* choice `carry_logic_placement: lut_absorbed_with_cascade` — Versal absorbs the dedicated carry logic into LUTs with cascade paths and 8-bit lookahead blocks [gaide_2019]
+* choice `group_generate_form: {gp, ling_h_i}` — the 64-bit design builds the hierarchy from Ling H/I terms rather than G/P terms [naffziger1996]
+* choice `arithmetic_signal: {carry, borrow}` and a mixed-group hierarchy value — the CDC 6600 propagates borrow-generate/pass terms through groupings of two, three, three and six [thornton_1970]
+* choice `groups_per_section` or a per-level group size — the Model 91 combines two groups per section above four-bit groups [anderson1967]
+* choice `carry_span_profile: equal_at_all_levels` — the distant-carry evaluation fixes the same span at every auxiliary and actual carry level [sklansky1960b]
+* choice `modular_carry_integration: carry_equation_association` — the modulo 2^n+1 adders fold the reentering carry into the bit or group carry equations [vergos2002]
+* slots in other families admitting `carry_lookahead` — `accuracy_configurable.base_adder`, `self_checking_datapath` base ALU, `redundant_decimal_addition` digit adder, `speculative_variable_latency` recovery adder, squarer final adder, `segmented_carry_speculative` carry predictor [akbari2018, lo_1992, shirazi_1989, verma2008, wires1999, zhu2010b]

@@ -1,0 +1,245 @@
+# An LDPC decoder for the IEEE 802.11n (648, 1/2) code: the schedule
+# (flooding, row-layered, column-layered) and the check-node algorithm
+# (min-sum, offset min-sum, normalized min-sum) are searched variables.
+# The check-node choice is algorithm-level: it feeds a pinned algorithm
+# model whose channel simulation must pass a FER bound before any RTL of
+# the candidate is judged. Area under a throughput and a delay bound on
+# nangate45; EvoX drives the search from three seeds.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: ldpc_decoder
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  eda:
+    resources:
+      eda: 8
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+  channel:                               # the BER/FER simulation of an algorithm model
+    resources:
+      channel: 4
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+  codex:
+    resources:
+      codex_creds: 4
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: chialu-codex:latest
+      container_name: chicode-codex-${USER}
+      run_options:
+        - -v ${CODEX_HOME}:/root/.codex:ro
+  evolver:
+    resources:
+      evolver: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  channel_sim:
+    cache: true
+  conformance:
+    cache: true
+  synth_unit:
+    cache: true
+  synth_ppa:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chicode.LDPCDecoder
+  run_dir: run/ldpc_decoder
+
+  variables:
+    code:
+      fixed: ieee80211n_648_r12
+    msg_format:                          # 4 integer bits, 2 fraction bits per message
+      fixed: q4.2
+    max_iterations:                      # selectable at run time
+      runtime: [8, 12]
+    early_termination:
+      fixed: true
+    io_width_bits:
+      fixed: 64
+    accuracy:                            # bit-exactness against the model stays; the FER bound is required
+      fixed: approximate
+    core.schedule:
+      search: [flooding, row_layered, column_layered]
+    core.cnu.algorithm:                  # algorithm-level: an input of the pinned model
+      search: [min_sum, offset_min_sum, normalized_min_sum]
+    core.cnu.offset:                     # exists iff core.cnu.algorithm = offset_min_sum
+      search: [0.25, 0.5, 0.75]
+    core.cnu.scale:                      # exists iff core.cnu.algorithm = normalized_min_sum
+      search: [0.75, 0.8125, 0.875]
+    core.vnu.family:
+      search: all
+    core.memory.family:
+      search: all
+
+  artifacts:
+    core:
+      role: seed
+      kind: text
+      source: generated
+      language: systemverilog
+      evolve: [ldpc_dec, "ldpc_dec_*"]
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      algorithm_model:                   # the fixed-point decoder model the RTL must match
+        node: chicode.algorithm_model
+        pin: true                        # recomputed only when a declaration it reads changes
+        inputs:
+          code: vars.code
+          msg_format: vars.msg_format
+          max_iterations: vars.max_iterations
+          schedule: decl.core.schedule
+          cnu: decl.core.cnu.algorithm
+          offset: decl.core.cnu.offset
+          scale: decl.core.cnu.scale
+      channel_sim:                       # the model against the channel
+        node: chicode.channel_sim
+        pin: true
+        inputs:
+          model: algorithm_model.model
+          channel: bpsk_awgn
+          snr_db: 2.5
+          frames: 200000
+        resources:
+          channel: 4
+      vectors:                           # frames through the model, for the RTL testbench
+        node: chicode.vectors
+        pin: true
+        inputs:
+          model: algorithm_model.model
+          frames: 2000
+          seed: 7
+      lint:
+        node: chialu.eda.lint
+        inputs:
+          rtl_text: candidate
+      conformance:                       # the RTL against the pinned vectors
+        node: chicode.conformance
+        inputs:
+          rtl_text: candidate
+          files: vectors.files
+          io_width_bits: vars.io_width_bits
+      yosys_stat:
+        node: chialu.eda.yosys_stat
+        inputs:
+          rtl_text: candidate
+          top: ldpc_dec
+      synth_unit:
+        node: chialu.eda.synth_unit
+        inputs:
+          rtl_text: candidate
+          structures: decl.STRUCTURE
+          pdk: nangate45
+          clock_ps: 2000
+          effort: medium
+        when:
+          - conformance.pass
+      synth_ppa:
+        node: chialu.eda.synth_ppa
+        inputs:
+          rtl_text: candidate
+          top: ldpc_dec
+          pdk: nangate45
+          clock_ps: 2000
+          effort: medium
+          timeout_s: 1800
+        when:
+          - conformance.pass
+          - synth_unit.area_um2 le 1.2 * seed.synth_unit.area_um2
+    feedback: [channel_sim.detail, conformance.detail, synth_ppa.detail, synth_ppa.critical_path]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - metric: channel_sim.fer            # the algorithm-level check, before any RTL node
+      le: 1.0e-4
+      hard: true
+      satisfies: fer_bound               # the requirement `accuracy: approximate` opens
+    - {metric: lint.ok, eq: true, hard: true}
+    - {metric: conformance.pass, eq: true, hard: true}
+    - expr: 324 / conformance.cycles_per_frame   # Gbit/s: 648 bits per frame at 2000 ps
+      ge: 5.0
+    - {metric: synth_ppa.abc_delay_ps, le: 2000}
+
+  goal:
+    minimize: synth_ppa.area_um2
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+
+  knowledge: chicode/knowledge
+
+  search:
+    backend: evox
+    iterations: 150
+    parallel: 3
+    diff_mode: true
+    max_solution_bytes: 300000
+    retries: 2
+    database:
+      switch_interval: 15                # iterations without improvement before the strategy is rewritten
+      auto_generate_variation_operators: false   # operators: domain supplies them
+    seeds:
+      generated: [flooding, row_layered, column_layered]   # one seed per schedule, min-sum in each
+      rank:
+        prior: chicode_structure_area
+        top: 3
+    context:
+      programs: 1
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+    tactics:
+      sources: [unexplored_values, critical_path, moves]
+      select: ucb
+      window: 15
+    models:
+      solution:
+        agent: codex
+        model: gpt-6-astra
+        effort: high
+      strategy:                          # EvoX: rewrites the search strategy class on stagnation
+        agent: codex
+        model: gpt-5.6-sol
+        effort: high
+      summary:
+        agent: codex
+        model: gpt-5.6-mini
+    budget:
+      wall_hours: 36
+      node_runs: 1200
+      llm_calls: 500
+    stop:
+      plateau_iterations: 45
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    shared: ../chicode_results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: false

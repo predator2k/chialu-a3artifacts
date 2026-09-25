@@ -1,0 +1,16 @@
+# accuracy_configurable: proposed changes to the space
+
+* `reconfig_grain` values for multiplier grains: `compressor_cell` (dual-quality 4:2 compressors), `multiplier_block` (per-4x4-block EDC selection), `wire_by_switch` (netlist switch insertion), `perforation_and_rounding` (coupled partial-product perforation and operand-width rounding), and joint truncation/rounding width with partial-product reduction hardware — the family is adder-shaped but half the evidence configures multipliers [akbari2017, lin2013, tasoulas2020, leon2018, leon2018b, vahdat2019]
+* `reconfig_grain` value for varying the carry-in prediction window independently of sub-adder grouping, plus `overlap_width` as the runtime-selected prediction-window width — GDA and GeAr expose two accuracy axes rather than one [ye2013, jiang2020, shafique2015]
+* extend `mode_count` to at least 16 — nine truncation settings, sixteen GDA modes, and a DyPR ROM of (n/2-1)x(n-1) configurations exceed the current range [frustaci2019, ye2013, leon2018]
+* choice `correction_depth: Int[1..4:1]` — the number of enabled pipelined correction stages is the ACA mode selector [kahng_kang2012]
+* choices `resultant_bits_R` and `prediction_bits_P` as first-class configuration parameters — they define GeAr's modes [shafique2015]
+* choice `configuration_policy: {external_static, delay_adaptive_self_configuration}` and `detection_window_bits` — SARA-DAR selects its own mode from detected carry-chain length [xu2018]
+* choice `compensation_latency: multistage` — carry-prediction errors can be compensated in more-significant segments at added latency [jiang2017]
+* choice `accurate_mode_recovery: stall_then_add_one` — the recovery protocol after a predictor miss is a design decision separate from `error_detection` [lin2013]
+* choice `switching_policy: power_threshold` — the demonstrated mode switch triggers on multiplication power exceeding a threshold [akbari2017]
+* choice `quality_selector: rom_indexed_mred` — a stored error-bound-to-configuration map selects the mode from an application error bound [leon2018]
+* choice `quality_objective: low_error_variance` — LVRM constrains error variance per weight rather than mean error [tasoulas2020]
+* an input-activity-suppression mechanism distinct from clock/power gating — nonzeroing truncation forces inputs to constants while keeping the hardware powered [frustaci2019]
+* slot `base_adder` — RAP-CLA builds on carry lookahead and the space has nowhere to record the underlying adder [akbari2018]
+* a generic quality-configurable synthesis family with selective extra-cycle recovery outside the adder-specific family [venkataramani2013]

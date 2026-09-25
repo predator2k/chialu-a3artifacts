@@ -1,0 +1,10 @@
+# pp_perforation: proposed changes to the space
+
+* choice `first_perforated_row: Int[0..n-1]` — the first omitted row j changes the error and the Pareto placement as much as the row count k does [zervakis2016]
+* choice `partial_product_generation: {spp, mbe}` — perforation applies to simple AND partial products or to modified-Booth digits, and the Booth form perforates whole radix-4 digits [zervakis2016, leon2018, leon2018b]
+* choice `perforation_geometry: {consecutive_rows, horizontal_vertical_break, fixed_positional_pattern}` with `horizontal_break_level`, `vertical_break_level` and a `sign_cell_policy: {omit_uniformly, preserve_sign_cells}` — the broken-array multiplier and the TruncApp multiplication unit omit cells by position rather than by row count [mahdiani2010, jiang2017, jiang2020, vahdat2017b]
+* choices `partial_product_rounding_bit: m` and `rounding_rule: Am + am-1` — PR|k,m rounds every retained partial product independently of the perforation depth [leon2018, leon2018b]
+* `correction` values `compare_xA_xB_swap` and `compare_A_B_swap` for the operand-swapping corrections, and confirmation that `error_correction_vector` covers the detected-error-magnitude addition of the enhanced underdesigned multiplier [zervakis2016, mittal2016]
+* slots for the reduction tree and final CPA, with an `accumulation_accuracy: {precise, hybrid_approximate_tree}` choice — the cell-based designs keep an accurate synthesis-optimized adder network, while hybrid variants place approximate compressors in the tree [kulkarni2011, leon2018, mazahir2017a, mazahir2017b]
+* choices `building_block_width: {2, 4}` and `block_precision_map: {all_approximate, mixed_precise_approximate}` (cell substitution by position or signed-logic match) for recursively tiled approximate multipliers [kulkarni2011, mazahir2017a, mazahir2017b, mittal2016]
+* `cell` values for the other building blocks the analyses cover: the Shafique 2x2, the Rehman ApproxMul3/4/5, and the Lin and Momeni 4x4 units [mazahir2017a, mazahir2017b]

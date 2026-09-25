@@ -1,0 +1,2756 @@
+{
+  "micro_vars": {
+    "core.adder.m1.family": [
+      "ripple_carry",
+      "manchester_carry_chain",
+      "carry_lookahead",
+      "carry_skip",
+      "carry_select",
+      "conditional_sum",
+      "carry_increment",
+      "parallel_prefix",
+      "sparse_prefix_hybrid",
+      "ling_prefix",
+      "compound_flagged_prefix",
+      "end_around_carry",
+      "prefix_synthesis_nonuniform_arrival",
+      "fpga_carry_chain"
+    ],
+    "core.adder.m2.family": [
+      "ripple_carry",
+      "manchester_carry_chain",
+      "carry_lookahead",
+      "carry_skip",
+      "carry_select",
+      "conditional_sum",
+      "carry_increment",
+      "parallel_prefix",
+      "sparse_prefix_hybrid",
+      "ling_prefix",
+      "compound_flagged_prefix",
+      "end_around_carry",
+      "prefix_synthesis_nonuniform_arrival",
+      "fpga_carry_chain"
+    ],
+    "core.adder.m3.family": [
+      "ripple_carry",
+      "manchester_carry_chain",
+      "carry_lookahead",
+      "carry_skip",
+      "carry_select",
+      "conditional_sum",
+      "carry_increment",
+      "parallel_prefix",
+      "sparse_prefix_hybrid",
+      "ling_prefix",
+      "compound_flagged_prefix",
+      "end_around_carry",
+      "prefix_synthesis_nonuniform_arrival",
+      "fpga_carry_chain"
+    ],
+    "core.comparator.m1.family": [
+      "prefix_comparator",
+      "subtractor_comparator"
+    ],
+    "core.comparator.m2.family": [
+      "prefix_comparator",
+      "subtractor_comparator"
+    ],
+    "core.comparator.m3.family": [
+      "prefix_comparator",
+      "subtractor_comparator"
+    ],
+    "core.fp_adder.m0.family": [
+      "single_path",
+      "two_path",
+      "delay_optimized_unified",
+      "low_power_gated"
+    ],
+    "core.fp_multiplier.m0.family": [
+      "sig_mul_then_round",
+      "round_fused_in_reduction"
+    ],
+    "core.multiplier.m1.family": [
+      "behavioral_star",
+      "booth_recoded_parallel",
+      "direct_pp_parallel",
+      "carry_save_array",
+      "recursive_karatsuba",
+      "squarer",
+      "segmented_grid",
+      "redundant_binary_multiplier"
+    ],
+    "core.multiplier.m2.family": [
+      "behavioral_star",
+      "booth_recoded_parallel",
+      "direct_pp_parallel",
+      "carry_save_array",
+      "recursive_karatsuba",
+      "squarer",
+      "segmented_grid",
+      "redundant_binary_multiplier"
+    ],
+    "core.multiplier.m3.family": [
+      "behavioral_star",
+      "booth_recoded_parallel",
+      "direct_pp_parallel",
+      "carry_save_array",
+      "recursive_karatsuba",
+      "squarer",
+      "segmented_grid",
+      "redundant_binary_multiplier"
+    ]
+  },
+  "plans": [
+    {
+      "name": "add-none_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {},
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders none, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {},
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-rep: adders none, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders none, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders none, multipliers none, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-rep: adders none, multipliers none, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-none_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-none_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders none, multipliers none, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders none, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-rep: adders none, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders none, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders none, multipliers all, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-rep: adders none, multipliers all, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-all_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-all_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders none, multipliers all, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders none, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-rep: adders none, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders none, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders none, multipliers per_mode, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-rep: adders none, multipliers per_mode, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders none, multipliers per_mode, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders none, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-rep: adders none, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders none, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders none, multipliers per_lane, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-none_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-rep",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "replicated_lanes"
+          }
+        },
+        "shared": {
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-rep: adders none, multipliers per_lane, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword replicated_lanes"
+      }
+    },
+    {
+      "name": "add-none_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-none_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders none, multipliers per_lane, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders all, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders all, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders all, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders all, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders all, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders all, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders all, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-all_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-all_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders all, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers none, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-none_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-none_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers none, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers all, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-all_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-all_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers all, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers per_mode, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers per_mode, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_mode, multipliers per_lane, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_mode_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m2.l0.adder",
+              "m2.l1.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m1_l0": {
+            "members": [
+              "m1.l0.adder",
+              "m1.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          },
+          "pair_m3_l0": {
+            "members": [
+              "m3.l0.adder",
+              "m3.l0.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_mode_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_mode, multipliers per_lane, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-none_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-none_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers none, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-none_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers none, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-none_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-none_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers none, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-all_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-all_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers all, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-all_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers all, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-all_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m2.l1.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-all_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers all, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_mode_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_mode_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers per_mode, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers per_mode, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m2.l0.multiplier",
+              "m2.l1.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_mode_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers per_mode, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_lane_log-none_pair-none_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_lane_log-none_pair-none_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers per_lane, gate rows none, adder partner none, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-none_sw-pcc: adders per_lane, multipliers per_lane, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank none, subword partitioned_carry_chain"
+      }
+    },
+    {
+      "name": "add-per_lane_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc",
+      "plan": {
+        "components": {
+          "subword": {
+            "family": "partitioned_carry_chain"
+          }
+        },
+        "shared": {
+          "adders_0": {
+            "members": [
+              "m1.l0.adder",
+              "m2.l0.adder",
+              "m3.l0.adder",
+              "m0.l0.fp_adder"
+            ],
+            "why": "one lane-partitioned adder for these lanes, its width the float significand add's, which the float adder takes through ports"
+          },
+          "multipliers_0": {
+            "family": "twin_precision_subword",
+            "members": [
+              "m1.l0.multiplier",
+              "m2.l0.multiplier",
+              "m3.l0.multiplier"
+            ],
+            "why": "one gated twin-precision matrix for these lanes"
+          },
+          "pair_m2_l1": {
+            "members": [
+              "m2.l1.adder",
+              "m2.l1.comparator"
+            ],
+            "why": "the comparator rides the adder's subtractor"
+          }
+        },
+        "structures": {},
+        "why": "sharing scheme add-per_lane_mul-per_lane_log-none_pair-comparator_fmt-none_intfp-all_sw-pcc: adders per_lane, multipliers per_lane, gate rows none, adder partner comparator, float sharing none, float adders in the integer bank all, subword partitioned_carry_chain"
+      }
+    }
+  ],
+  "structures": [
+    {
+      "format": "fp16",
+      "id": "m0.l0.fp_adder",
+      "index": "m0",
+      "kind": "fp_adder",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd"
+      ],
+      "slot": "fp_adder",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.unpacker",
+      "index": "m0",
+      "kind": "unpacker",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd",
+        "fmul",
+        "cvt(int8)",
+        "cvt(fp16)",
+        "cvt(fxs1i7f8)"
+      ],
+      "slot": "unpacker",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.rounder",
+      "index": "m0",
+      "kind": "rounder",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd",
+        "fmul",
+        "cvt(int8)",
+        "cvt(fp16)",
+        "cvt(fxs1i7f8)"
+      ],
+      "slot": "rounder",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.fp_fma",
+      "index": "m0",
+      "kind": "fp_fma",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fadd",
+        "fmul"
+      ],
+      "slot": "fp_fma",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.fp_multiplier",
+      "index": "m0",
+      "kind": "fp_multiplier",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "fmul"
+      ],
+      "slot": "fp_multiplier",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.converter.int8_twos_complement",
+      "index": "m0.int8_twos_complement",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "cvt(int8)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.converter.fp16",
+      "index": "m0.fp16",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "cvt(fp16)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "fp16",
+      "id": "m0.l0.converter.fxs1i7f8",
+      "index": "m0.fxs1i7f8",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 0,
+      "ops": [
+        "cvt(fxs1i7f8)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "int16_twos_complement",
+      "id": "m1.l0.adder",
+      "index": "m1",
+      "kind": "adder",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "add"
+      ],
+      "slot": "adder",
+      "width": 16
+    },
+    {
+      "format": "int16_twos_complement",
+      "id": "m1.l0.multiplier",
+      "index": "m1",
+      "kind": "multiplier",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "mul"
+      ],
+      "slot": "multiplier",
+      "width": 16
+    },
+    {
+      "format": "int16_twos_complement",
+      "id": "m1.l0.comparator",
+      "index": "m1",
+      "kind": "comparator",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "min"
+      ],
+      "slot": "comparator",
+      "width": 16
+    },
+    {
+      "format": "int16_twos_complement",
+      "id": "m1.l0.converter.int8_twos_complement",
+      "index": "m1.int8_twos_complement",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "cvt(int8)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "int16_twos_complement",
+      "id": "m1.l0.converter.fp16",
+      "index": "m1.fp16",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "cvt(fp16)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "int16_twos_complement",
+      "id": "m1.l0.converter.fxs1i7f8",
+      "index": "m1.fxs1i7f8",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 1,
+      "ops": [
+        "cvt(fxs1i7f8)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l0.adder",
+      "index": "m2",
+      "kind": "adder",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "add"
+      ],
+      "slot": "adder",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l1.adder",
+      "index": "m2",
+      "kind": "adder",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "add"
+      ],
+      "slot": "adder",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l0.multiplier",
+      "index": "m2",
+      "kind": "multiplier",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "mul"
+      ],
+      "slot": "multiplier",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l1.multiplier",
+      "index": "m2",
+      "kind": "multiplier",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "mul"
+      ],
+      "slot": "multiplier",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l0.comparator",
+      "index": "m2",
+      "kind": "comparator",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "min"
+      ],
+      "slot": "comparator",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l1.comparator",
+      "index": "m2",
+      "kind": "comparator",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "min"
+      ],
+      "slot": "comparator",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l0.converter.int8_twos_complement",
+      "index": "m2.int8_twos_complement",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "cvt(int8)"
+      ],
+      "slot": "converter",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l1.converter.int8_twos_complement",
+      "index": "m2.int8_twos_complement",
+      "kind": "converter",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "cvt(int8)"
+      ],
+      "slot": "converter",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l0.converter.fp16",
+      "index": "m2.fp16",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "cvt(fp16)"
+      ],
+      "slot": "converter",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l1.converter.fp16",
+      "index": "m2.fp16",
+      "kind": "converter",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "cvt(fp16)"
+      ],
+      "slot": "converter",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l0.converter.fxs1i7f8",
+      "index": "m2.fxs1i7f8",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "cvt(fxs1i7f8)"
+      ],
+      "slot": "converter",
+      "width": 8
+    },
+    {
+      "format": "int8_twos_complement",
+      "id": "m2.l1.converter.fxs1i7f8",
+      "index": "m2.fxs1i7f8",
+      "kind": "converter",
+      "lane": 1,
+      "library": true,
+      "mode": 2,
+      "ops": [
+        "cvt(fxs1i7f8)"
+      ],
+      "slot": "converter",
+      "width": 8
+    },
+    {
+      "format": "fxs1i7f8",
+      "id": "m3.l0.adder",
+      "index": "m3",
+      "kind": "adder",
+      "lane": 0,
+      "library": true,
+      "mode": 3,
+      "ops": [
+        "add"
+      ],
+      "slot": "adder",
+      "width": 16
+    },
+    {
+      "format": "fxs1i7f8",
+      "id": "m3.l0.multiplier",
+      "index": "m3",
+      "kind": "multiplier",
+      "lane": 0,
+      "library": true,
+      "mode": 3,
+      "ops": [
+        "mul"
+      ],
+      "slot": "multiplier",
+      "width": 16
+    },
+    {
+      "format": "fxs1i7f8",
+      "id": "m3.l0.comparator",
+      "index": "m3",
+      "kind": "comparator",
+      "lane": 0,
+      "library": true,
+      "mode": 3,
+      "ops": [
+        "min"
+      ],
+      "slot": "comparator",
+      "width": 16
+    },
+    {
+      "format": "fxs1i7f8",
+      "id": "m3.l0.converter.int8_twos_complement",
+      "index": "m3.int8_twos_complement",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 3,
+      "ops": [
+        "cvt(int8)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "fxs1i7f8",
+      "id": "m3.l0.converter.fp16",
+      "index": "m3.fp16",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 3,
+      "ops": [
+        "cvt(fp16)"
+      ],
+      "slot": "converter",
+      "width": 16
+    },
+    {
+      "format": "fxs1i7f8",
+      "id": "m3.l0.converter.fxs1i7f8",
+      "index": "m3.fxs1i7f8",
+      "kind": "converter",
+      "lane": 0,
+      "library": true,
+      "mode": 3,
+      "ops": [
+        "cvt(fxs1i7f8)"
+      ],
+      "slot": "converter",
+      "width": 16
+    }
+  ],
+  "target": "targets/mixed_cvt_alu.yaml"
+}

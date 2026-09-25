@@ -1,0 +1,50 @@
+cluster_name: toy_outer
+adir:
+  module: toy.Box
+  variables:
+    lanes:
+      fixed: 2
+    lanes_outer:
+      search: [1, 2]
+    mode:
+      fixed: a
+    algo:
+      fixed: small
+    lane.*.style:
+      fixed: x
+    cfg.a:
+      fixed: 1
+    cfg.b:
+      fixed: false
+    accuracy:
+      fixed: exact
+  artifacts:
+    harness:
+      role: fixed
+      kind: text
+      source: generated
+      language: python
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      inner:
+        node: adir.instance
+        inputs:
+          file: toy_numeric.yaml
+          bindings:
+            lanes: decl.lanes_outer
+          budget: {iterations: 4}
+    feedback: []
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+  goal:
+    minimize: inner.best.goal_values.0
+  search:
+    backend: grid
+    iterations: 4
+    seeds:
+      generated: [baseline]
+  archive:
+    store: jsonl
+    path: outer.jsonl

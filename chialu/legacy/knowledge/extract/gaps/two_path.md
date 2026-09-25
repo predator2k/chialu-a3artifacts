@@ -1,0 +1,15 @@
+# two_path: proposed changes to the space
+
+* choice `difference_one_prediction: exponent_lsb_and_significand_msb` — exponent LSBs predict a difference of one and significand MSBs pick the operand shifted right, which removes one speculative adder and its mux in the late-select form [beaumont_smith1999, beaumont_smith1999]
+* choices `near_difference_precompute: four_candidates` and `far_round_precompute: plus_1_plus_2_three_results` — the one-cycle binary64 adder precomputes four near differences and three far rounded candidates [lutz_2019]
+* `sig_adder` slot value `carry_save_datapath` — the packet-forwarding adder uses borrow-save 3:2/4:2 additions rather than a carry-propagate family [nielsen_2000]
+* `path_threshold` as a directional interval (-1 <= e1-e2 <= 4) or a `path_partition: asymmetric` choice — packet and standard operands have different widths and arrival schedules [nielsen_2000]
+* choice `bypass_path: Bool` — a third non-arithmetic route for results known from operand classification before significand addition [pillai_1997]
+* `close_path_trigger` value for a combined effective-subtraction / exponent-difference / significand-range predicate [seidel_2001]
+* choice `simultaneous_outputs: sum_and_difference` — the fused add-subtract unit delivers both results rather than selecting one [sohn_2012]
+* choice `subtraction_sign_resolution: dual_difference_select` — mx-my and my-mx computed concurrently, the positive one selected [muller_2018#s08]
+* choice `auxiliary_operation_overlay` — comparisons, min/max and conversions reuse the two paths without additional resources [oberman_favor_1999, oberman_1999]
+* choice `physical_malleability: fit_around_multiplier_logic` — the DSP-block adder is shaped to the block height around deeper multiplier logic [langhammer_2015, langhammer_2015b]
+* `close_path_trigger` value for the larger operand's mantissa against 1.5 — the exponent-difference-1 subtraction enters the close path only under that condition, which forces the normalizing left shift and removes the close path's rounding stage [naini_2001]
+* `operand_order` value for a speculative 0-to-3-bit right pre-shift of both mantissas before the precedence is known, with the swap into the subtrahend position afterwards [naini_2001]
+* choice `rounding_increment_injection: csa_row_at_lsb_plus_1` — a CSA row before the A+B+2 adder inserts the increment at bit 41 for single and bit 12 for double, in place of a flagged adder whose split carry chain would slow the adder topology [naini_2001]

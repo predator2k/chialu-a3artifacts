@@ -1,0 +1,181 @@
+# A congestion-control rule (window and pacing update from observed RTT,
+# loss and delivery rate) in C++ against a fixed ns-3 topology set and
+# traffic traces, with a fairness bound against a fixed competing flow.
+# A domain outside hardware: a randomized node that returns interval
+# records, a hard constraint that is itself a measurement, and nothing
+# in ADIR that is specific to the domain. The chinet library is named as
+# the task needs it; ns3 is a CHIA node.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: congestion_control
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  build:
+    resources:
+      build: 2
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: chinet-ns3:latest
+  ns3:
+    resources:
+      ns3: 1
+    num_workers: 8
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: chinet-ns3:latest
+  evolver:
+    resources:
+      evolver: 1
+      opencode_creds: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+cache:
+  build:
+    cache: true
+  ns3:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chinet.CongestionControl
+  run_dir: run/congestion_control
+
+  variables:
+    topology_set:
+      fixed: cellular_set_a
+    competing:
+      fixed: cubic
+    # no search variables: the rule is text, and the declaration block
+    # carries the domain's STATE lines (the per-flow state the rule keeps)
+
+  artifacts:
+    cc:                                  # the rule; the socket plumbing stays outside the evolve set
+      role: seed
+      kind: text
+      source: file
+      file: seeds/cubic_like.cc
+      language: cpp
+      evolve: [on_ack, on_loss, on_timer]
+    topologies:                          # one ns-3 topology per member of the set
+      role: input
+      kind: text
+      source: generated
+      indexed_by: topology_set
+    topologies_heldout:
+      role: input
+      kind: text
+      source: generated
+      indexed_by: topology_set_heldout
+    traces:
+      role: input
+      kind: text
+      source: file
+      file: traces/cellular_a.json
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      build:
+        node: chinet.build
+        inputs:
+          source: candidate
+        resources:
+          build: 1
+      ns3:                               # randomized; interval records per topology
+        node: ns3
+        inputs:
+          binary: build.binary
+          topologies: artifacts.topologies
+          traces: artifacts.traces
+          repetitions: 5
+          seed: 11
+        when:
+          - build.ok
+      fairness:                          # Jain's index against the competing flow
+        node: chinet.fairness
+        inputs:
+          binary: build.binary
+          competing: vars.competing
+          topologies: artifacts.topologies
+          repetitions: 5
+          seed: 11
+        when:
+          - build.ok
+      ns3_heldout:
+        node: ns3
+        inputs:
+          binary: build.binary
+          topologies: artifacts.topologies_heldout
+          traces: artifacts.traces
+          repetitions: 5
+          seed: 11
+        report_only: true
+    feedback: [build.detail, ns3.per_topology, fairness.detail]
+    report: [ns3_heldout.utility]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: fairness.jain, ge: 0.8, hard: true}    # an interval; satisfied when its lower bound is
+
+  goal:
+    maximize: geomean(ns3.utility)       # the node's throughput-delay power metric, an interval per topology
+    score:
+      rule: ratio_to_seed
+      infeasible: zero
+
+  knowledge: chinet/knowledge
+
+  search:
+    backend: adaevolve
+    iterations: 200
+    parallel: 4
+    diff_mode: true
+    max_solution_bytes: 40000
+    retries: 2
+    database:
+      use_migration: true
+      use_paradigm_breakthrough: true
+      diversity_strategy: code
+    seeds:
+      files: [seeds/cubic_like.cc, seeds/bbr_like.cc, seeds/copa_like.cc]
+    context:
+      programs: 2
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+    tactics:
+      sources: [worst_constraint, worst_topology]
+      select: ucb
+      window: 20
+    models:
+      solution:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+      guide:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+    budget:
+      wall_hours: 24
+      llm_calls: 400
+    stop:
+      plateau_iterations: 40
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: true

@@ -1,0 +1,22 @@
+{
+ "key": "file_webb2007",
+ "file": "webb2007.pdf",
+ "kind": "slides",
+ "citation": "",
+ "pages": 14,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 13,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

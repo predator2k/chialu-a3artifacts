@@ -1,0 +1,46 @@
+[
+  {
+    "name": "r0000",
+    "ok": true,
+    "area_um2": 9714.852,
+    "abc_delay_ps": 2271.56,
+    "cells": 8746,
+    "repeats": 1,
+    "warnings": [
+      "ABC: Warning: Detected 2 multi-output cells (for example, \"FA_X1\")."
+    ]
+  },
+  {
+    "name": "c00088",
+    "ok": true,
+    "area_um2": 11070.654,
+    "abc_delay_ps": 2119.54,
+    "cells": 9799,
+    "repeats": 1,
+    "warnings": [
+      "ABC: Warning: Detected 2 multi-output cells (for example, \"FA_X1\")."
+    ]
+  },
+  {
+    "name": "c00135",
+    "ok": true,
+    "area_um2": 7148.218,
+    "abc_delay_ps": 1732.82,
+    "cells": 6241,
+    "repeats": 1,
+    "warnings": [
+      "ABC: Warning: Detected 2 multi-output cells (for example, \"FA_X1\")."
+    ]
+  },
+  {
+    "name": "c00142",
+    "ok": true,
+    "area_um2": 6800.024,
+    "abc_delay_ps": 2443.77,
+    "cells": 5987,
+    "repeats": 1,
+    "warnings": [
+      "ABC: Warning: Detected 2 multi-output cells (for example, \"FA_X1\")."
+    ]
+  }
+]

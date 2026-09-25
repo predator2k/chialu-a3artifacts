@@ -1,0 +1,22 @@
+{
+ "key": "goldschmidt_1964",
+ "file": "34136725-MIT.pdf",
+ "kind": "thesis",
+ "citation": "Goldschmidt, \"Applications of Division by Convergence\", MS thesis, MIT, 1964",
+ "pages": 44,
+ "title": "",
+ "authors": "",
+ "source": "single",
+ "segments": [
+  {
+   "id": "s01",
+   "title": "whole document",
+   "start": 0,
+   "end": 43,
+   "kind": "whole",
+   "extract": true,
+   "families": [],
+   "why": "whole document / standard: extracted as is"
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+# compressed_lut
+
+A value table whose storage is reduced by an encoding that a small adder decodes. Two forms appear. The AMD approximation unit reads parallel p and q tables, 16-bit and 7-bit entries indexed by the operand, adds them, and prefixes a leading 1 to form a 14-bit reciprocal or 15-bit reciprocal-square-root estimate, in place of a direct table of more than 670 Kbits. The representative-plus-difference decomposition splits a polynomial evaluator's zero-order coefficient table T0 into one full-width representative near the midpoint of each group of 2^s contiguous entries and a narrow per-entry difference, and recovers the coefficient exactly by addition. Feed-forward.
+
+The decomposition is lossless, so the original approximation error requirement is untouched and the family adds no accuracy contract of its own. The group size is chosen by exhaustive search over the representative-table address width to minimize the total bits, 2^a' times w plus 2^a times w', and the extra input to the final multi-operand adder has negligible effect on worst-case delay because the critical path already runs through the squarer, multiplier, and final adder. The saving depends on the function: it is effective when T0 entries are wider than the higher-order coefficient tables and adjacent T0 entries differ by values representable in fewer bits, which gives 18.8% for a 16-bit degree-1 reciprocal and 13.8% to 14% for sine, but only 0.4% for a 24-bit degree-2 power-of-two table whose neighbours differ by nearly full width.
+
+The paired-table form is the seed generator of a Newton-Raphson or interpolating unit rather than the unit itself: it is chosen because a naive direct lookup at more than 14 accurate bits would exceed 670 Kbits, and its contract is more than 14 accurate bits, which a lighting calculation accepts in place of a full 24-bit result. The estimate is computed once as a scalar and replicated into both packed lanes because applications reuse one reciprocal or reciprocal square root. The family wins wherever a value table is the storage bottleneck of a table-plus-polynomial or seed-plus-iteration design, and loses nothing but one adder where the compression ratio is small.
+
+The seed instantiates the library's generated table for this family (`chialu/targets/rtl/families/sfu.py`: a base table over the leading pattern bits and a narrow delta table over the whole pattern, summed). `python3 -m chialu.targets.rtl.families.sfu --function <fn> --format <format> --family compressed_lut --pins k=v,...` emits the module with its modeled error for a rewrite.
+
+## references
+
+oberman_favor_1999 -> S. Oberman, G. Favor, F. Weber, "AMD 3DNow! Technology: Architecture and Implementations", IEEE Micro, vol. 19, no. 2, pp. 37-48, 1999.
+hsiao_2014 -> S.-F. Hsiao, C.-S. Wen, P.-H. Wu, "Compression of Lookup Table for Piecewise Polynomial Function Evaluation", Euromicro Conference on Digital System Design (DSD), pp. 279-284, 2014

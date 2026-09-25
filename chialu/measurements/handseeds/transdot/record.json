@@ -1,0 +1,1346 @@
+{
+ "run": "transdot",
+ "iteration": null,
+ "candidate_id": "seed:transdot_merged_hand_seed",
+ "parent_id": null,
+ "seed_name": "transdot_merged_hand_seed",
+ "is_seed": true,
+ "unit_id": "72542846a21e611ad20125189eb19328a7c5da1bb3fe090206cac375566d8844",
+ "space_hash": "56a450ba46a95a03b8775c5088ac3952467b9ab39f6595bfb46c99da5e2c051a",
+ "evaluator_hash": "321c332ababc9567dae50bdb618dffb3ba084144dabb0e706bbaeedb57ae5bcd",
+ "search_hash": "47d0be5cea6094f9ad790ea688548d51316242d7a418737d9a921fe3d71b4509",
+ "model": null,
+ "operator": null,
+ "prompt_config": null,
+ "tactic_id": null,
+ "instruction_id": null,
+ "declarations": {
+  "vars": {},
+  "lines": [],
+  "verified": true
+ },
+ "constraints": [
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "synth_ppa.ok == true",
+   "hard": true,
+   "satisfies": null
+  },
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "declaration.ok == true",
+   "hard": true,
+   "satisfies": null
+  },
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "lint.ok == true",
+   "hard": true,
+   "satisfies": null
+  },
+  {
+   "status": "satisfied",
+   "slack": 0.0,
+   "lhs": true,
+   "rhs": true,
+   "text": "conformance.pass == true",
+   "hard": true,
+   "satisfies": null
+  }
+ ],
+ "measurements": {
+  "declaration": {
+   "value": {
+    "decl.x_form": "exact",
+    "decl.core.subword.family": "replicated_lanes",
+    "decl.core.fp_fma.m0.family": "separate_multiplier_and_adder",
+    "decl.core.fp_adder.m0.family": "single_path",
+    "decl.core.fp_adder.m0.subnormal_representation": "as_stored",
+    "decl.core.fp_adder.m0.operand_order": "swap_before_shift",
+    "decl.core.fp_adder.m0.negation_handling": "end_around_carry",
+    "decl.core.fp_adder.m0.sig_adder.family": "ripple_carry",
+    "decl.core.fp_adder.m0.sig_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m0.sig_adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m0.exp.family": "exponent_path",
+    "decl.core.fp_adder.m0.exp.dual_direction_subtract": false,
+    "decl.core.fp_adder.m0.exp.adder.family": "ripple_carry",
+    "decl.core.fp_adder.m0.exp.adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m0.exp.adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m0.align.family": "full_align",
+    "decl.core.fp_adder.m0.align.sticky_method": "or_tree_shifted_out",
+    "decl.core.fp_adder.m0.align.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m0.align.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m0.align.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m0.align.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m0.align.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m0.align.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m0.align.tzc.family": "trailing_zero",
+    "decl.core.fp_adder.m0.align.tzc.strategy": "reverse_then_lzd",
+    "decl.core.fp_adder.m0.align.tzc.isolate_circuit": "twos_complement_and",
+    "decl.core.fp_adder.m0.align.tzc.lzd.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m0.align.tzc.lzd.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m0.align.tzc.lzd.output_form": "binary_count",
+    "decl.core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation": false,
+    "decl.core.fp_adder.m0.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+    "decl.core.fp_adder.m0.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+    "decl.core.fp_adder.m0.norm.family": "coarse_fine",
+    "decl.core.fp_adder.m0.norm.coarse_granularity": 4,
+    "decl.core.fp_adder.m0.norm.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m0.norm.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m0.norm.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m0.norm.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m0.norm.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m0.norm.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m0.lz.family": "lza",
+    "decl.core.fp_adder.m0.lz.correction_scheme": "post_norm_fine_shift",
+    "decl.core.fp_adder.m0.lz.string_form": "single_indicator",
+    "decl.core.fp_adder.m0.lz.indicator_restriction": "general",
+    "decl.core.fp_adder.m0.lz.zero_result_detect": "indicator_or",
+    "decl.core.fp_adder.m0.lz.encoder.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m0.lz.encoder.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m0.lz.encoder.output_form": "binary_count",
+    "decl.core.fp_adder.m0.lz.encoder.valid_flag_propagation": false,
+    "decl.core.fp_multiplier.m0.family": "sig_mul_then_round",
+    "decl.core.fp_multiplier.m0.sig_mul.family": "behavioral_star",
+    "decl.core.fp_multiplier.m0.exp_adder.family": "ripple_carry",
+    "decl.core.fp_multiplier.m0.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_multiplier.m0.exp_adder.chunk_width_bits": 1,
+    "decl.core.fp_fma.m1.family": "separate_multiplier_and_adder",
+    "decl.core.fp_adder.m1.family": "single_path",
+    "decl.core.fp_adder.m1.subnormal_representation": "as_stored",
+    "decl.core.fp_adder.m1.operand_order": "swap_before_shift",
+    "decl.core.fp_adder.m1.negation_handling": "end_around_carry",
+    "decl.core.fp_adder.m1.sig_adder.family": "ripple_carry",
+    "decl.core.fp_adder.m1.sig_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m1.sig_adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m1.exp.family": "exponent_path",
+    "decl.core.fp_adder.m1.exp.dual_direction_subtract": false,
+    "decl.core.fp_adder.m1.exp.adder.family": "ripple_carry",
+    "decl.core.fp_adder.m1.exp.adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m1.exp.adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m1.align.family": "full_align",
+    "decl.core.fp_adder.m1.align.sticky_method": "or_tree_shifted_out",
+    "decl.core.fp_adder.m1.align.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m1.align.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m1.align.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m1.align.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m1.align.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m1.align.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m1.align.tzc.family": "trailing_zero",
+    "decl.core.fp_adder.m1.align.tzc.strategy": "reverse_then_lzd",
+    "decl.core.fp_adder.m1.align.tzc.isolate_circuit": "twos_complement_and",
+    "decl.core.fp_adder.m1.align.tzc.lzd.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m1.align.tzc.lzd.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m1.align.tzc.lzd.output_form": "binary_count",
+    "decl.core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation": false,
+    "decl.core.fp_adder.m1.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+    "decl.core.fp_adder.m1.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+    "decl.core.fp_adder.m1.norm.family": "coarse_fine",
+    "decl.core.fp_adder.m1.norm.coarse_granularity": 4,
+    "decl.core.fp_adder.m1.norm.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m1.norm.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m1.norm.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m1.norm.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m1.norm.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m1.norm.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m1.lz.family": "lza",
+    "decl.core.fp_adder.m1.lz.correction_scheme": "post_norm_fine_shift",
+    "decl.core.fp_adder.m1.lz.string_form": "single_indicator",
+    "decl.core.fp_adder.m1.lz.indicator_restriction": "general",
+    "decl.core.fp_adder.m1.lz.zero_result_detect": "indicator_or",
+    "decl.core.fp_adder.m1.lz.encoder.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m1.lz.encoder.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m1.lz.encoder.output_form": "binary_count",
+    "decl.core.fp_adder.m1.lz.encoder.valid_flag_propagation": false,
+    "decl.core.fp_multiplier.m1.family": "sig_mul_then_round",
+    "decl.core.fp_multiplier.m1.sig_mul.family": "behavioral_star",
+    "decl.core.fp_multiplier.m1.exp_adder.family": "ripple_carry",
+    "decl.core.fp_multiplier.m1.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_multiplier.m1.exp_adder.chunk_width_bits": 1,
+    "decl.core.fp_fma.m2.family": "separate_multiplier_and_adder",
+    "decl.core.fp_adder.m2.family": "single_path",
+    "decl.core.fp_adder.m2.subnormal_representation": "as_stored",
+    "decl.core.fp_adder.m2.operand_order": "swap_before_shift",
+    "decl.core.fp_adder.m2.negation_handling": "end_around_carry",
+    "decl.core.fp_adder.m2.sig_adder.family": "ripple_carry",
+    "decl.core.fp_adder.m2.sig_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m2.sig_adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m2.exp.family": "exponent_path",
+    "decl.core.fp_adder.m2.exp.dual_direction_subtract": false,
+    "decl.core.fp_adder.m2.exp.adder.family": "ripple_carry",
+    "decl.core.fp_adder.m2.exp.adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_adder.m2.exp.adder.chunk_width_bits": 1,
+    "decl.core.fp_adder.m2.align.family": "full_align",
+    "decl.core.fp_adder.m2.align.sticky_method": "or_tree_shifted_out",
+    "decl.core.fp_adder.m2.align.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m2.align.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m2.align.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m2.align.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m2.align.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m2.align.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m2.align.tzc.family": "trailing_zero",
+    "decl.core.fp_adder.m2.align.tzc.strategy": "reverse_then_lzd",
+    "decl.core.fp_adder.m2.align.tzc.isolate_circuit": "twos_complement_and",
+    "decl.core.fp_adder.m2.align.tzc.lzd.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m2.align.tzc.lzd.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m2.align.tzc.lzd.output_form": "binary_count",
+    "decl.core.fp_adder.m2.align.tzc.lzd.valid_flag_propagation": false,
+    "decl.core.fp_adder.m2.align.tzc.negation_incrementer.family": "prefix_and_incrementer",
+    "decl.core.fp_adder.m2.align.tzc.negation_incrementer.structure": "ripple_and_chain",
+    "decl.core.fp_adder.m2.norm.family": "coarse_fine",
+    "decl.core.fp_adder.m2.norm.coarse_granularity": 4,
+    "decl.core.fp_adder.m2.norm.shifter.family": "barrel_mux_tree",
+    "decl.core.fp_adder.m2.norm.shifter.stage_radix": 2,
+    "decl.core.fp_adder.m2.norm.shifter.select_encoding": "binary",
+    "decl.core.fp_adder.m2.norm.shifter.stage_order": "small_shift_first",
+    "decl.core.fp_adder.m2.norm.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.fp_adder.m2.norm.shifter.sticky_collect": false,
+    "decl.core.fp_adder.m2.lz.family": "lza",
+    "decl.core.fp_adder.m2.lz.correction_scheme": "post_norm_fine_shift",
+    "decl.core.fp_adder.m2.lz.string_form": "single_indicator",
+    "decl.core.fp_adder.m2.lz.indicator_restriction": "general",
+    "decl.core.fp_adder.m2.lz.zero_result_detect": "indicator_or",
+    "decl.core.fp_adder.m2.lz.encoder.family": "lzd_cell_tree",
+    "decl.core.fp_adder.m2.lz.encoder.block_primitive": "pair_cell",
+    "decl.core.fp_adder.m2.lz.encoder.output_form": "binary_count",
+    "decl.core.fp_adder.m2.lz.encoder.valid_flag_propagation": false,
+    "decl.core.fp_multiplier.m2.family": "sig_mul_then_round",
+    "decl.core.fp_multiplier.m2.sig_mul.family": "behavioral_star",
+    "decl.core.fp_multiplier.m2.exp_adder.family": "ripple_carry",
+    "decl.core.fp_multiplier.m2.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.fp_multiplier.m2.exp_adder.chunk_width_bits": 1,
+    "decl.core.fp_comparator.m0.family": "integer_compare_on_bits",
+    "decl.core.fp_comparator.m0.comparator.family": "prefix_comparator",
+    "decl.core.fp_comparator.m0.comparator.structure": "msb_first_prefix",
+    "decl.core.fp_comparator.m0.comparator.radix": 2,
+    "decl.core.fp_comparator.m1.family": "integer_compare_on_bits",
+    "decl.core.fp_comparator.m1.comparator.family": "prefix_comparator",
+    "decl.core.fp_comparator.m1.comparator.structure": "msb_first_prefix",
+    "decl.core.fp_comparator.m1.comparator.radix": 2,
+    "decl.core.fp_comparator.m2.family": "integer_compare_on_bits",
+    "decl.core.fp_comparator.m2.comparator.family": "prefix_comparator",
+    "decl.core.fp_comparator.m2.comparator.structure": "msb_first_prefix",
+    "decl.core.fp_comparator.m2.comparator.radix": 2,
+    "decl.core.rounder.m0.family": "dedicated_per_op",
+    "decl.core.rounder.m0.lzc.family": "lzd_cell_tree",
+    "decl.core.rounder.m0.lzc.block_primitive": "pair_cell",
+    "decl.core.rounder.m0.lzc.output_form": "binary_count",
+    "decl.core.rounder.m0.lzc.valid_flag_propagation": false,
+    "decl.core.rounder.m0.shifter.family": "barrel_mux_tree",
+    "decl.core.rounder.m0.shifter.stage_radix": 2,
+    "decl.core.rounder.m0.shifter.select_encoding": "binary",
+    "decl.core.rounder.m0.shifter.stage_order": "small_shift_first",
+    "decl.core.rounder.m0.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.rounder.m0.shifter.sticky_collect": false,
+    "decl.core.rounder.m0.round.family": "increment_adder",
+    "decl.core.rounder.m0.round.incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m0.round.incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m0.exp_adder.family": "ripple_carry",
+    "decl.core.rounder.m0.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.rounder.m0.exp_adder.chunk_width_bits": 1,
+    "decl.core.rounder.m0.exp_incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m0.exp_incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m1.family": "dedicated_per_op",
+    "decl.core.rounder.m1.lzc.family": "lzd_cell_tree",
+    "decl.core.rounder.m1.lzc.block_primitive": "pair_cell",
+    "decl.core.rounder.m1.lzc.output_form": "binary_count",
+    "decl.core.rounder.m1.lzc.valid_flag_propagation": false,
+    "decl.core.rounder.m1.shifter.family": "barrel_mux_tree",
+    "decl.core.rounder.m1.shifter.stage_radix": 2,
+    "decl.core.rounder.m1.shifter.select_encoding": "binary",
+    "decl.core.rounder.m1.shifter.stage_order": "small_shift_first",
+    "decl.core.rounder.m1.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.rounder.m1.shifter.sticky_collect": false,
+    "decl.core.rounder.m1.round.family": "increment_adder",
+    "decl.core.rounder.m1.round.incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m1.round.incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m1.exp_adder.family": "ripple_carry",
+    "decl.core.rounder.m1.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.rounder.m1.exp_adder.chunk_width_bits": 1,
+    "decl.core.rounder.m1.exp_incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m1.exp_incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m2.family": "dedicated_per_op",
+    "decl.core.rounder.m2.lzc.family": "lzd_cell_tree",
+    "decl.core.rounder.m2.lzc.block_primitive": "pair_cell",
+    "decl.core.rounder.m2.lzc.output_form": "binary_count",
+    "decl.core.rounder.m2.lzc.valid_flag_propagation": false,
+    "decl.core.rounder.m2.shifter.family": "barrel_mux_tree",
+    "decl.core.rounder.m2.shifter.stage_radix": 2,
+    "decl.core.rounder.m2.shifter.select_encoding": "binary",
+    "decl.core.rounder.m2.shifter.stage_order": "small_shift_first",
+    "decl.core.rounder.m2.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.rounder.m2.shifter.sticky_collect": false,
+    "decl.core.rounder.m2.round.family": "increment_adder",
+    "decl.core.rounder.m2.round.incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m2.round.incrementer.structure": "ripple_and_chain",
+    "decl.core.rounder.m2.exp_adder.family": "ripple_carry",
+    "decl.core.rounder.m2.exp_adder.full_adder_logic": "generate_propagate",
+    "decl.core.rounder.m2.exp_adder.chunk_width_bits": 1,
+    "decl.core.rounder.m2.exp_incrementer.family": "prefix_and_incrementer",
+    "decl.core.rounder.m2.exp_incrementer.structure": "ripple_and_chain",
+    "decl.core.unpacker.m0.family": "per_unit_unpack",
+    "decl.core.unpacker.m0.denormal_handling": "in_unpack",
+    "decl.core.unpacker.m0.lzc.family": "lzd_cell_tree",
+    "decl.core.unpacker.m0.lzc.block_primitive": "pair_cell",
+    "decl.core.unpacker.m0.lzc.output_form": "binary_count",
+    "decl.core.unpacker.m0.lzc.valid_flag_propagation": false,
+    "decl.core.unpacker.m0.shifter.family": "barrel_mux_tree",
+    "decl.core.unpacker.m0.shifter.stage_radix": 2,
+    "decl.core.unpacker.m0.shifter.select_encoding": "binary",
+    "decl.core.unpacker.m0.shifter.stage_order": "small_shift_first",
+    "decl.core.unpacker.m0.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.unpacker.m0.shifter.sticky_collect": false,
+    "decl.core.unpacker.m1.family": "per_unit_unpack",
+    "decl.core.unpacker.m1.denormal_handling": "in_unpack",
+    "decl.core.unpacker.m1.lzc.family": "lzd_cell_tree",
+    "decl.core.unpacker.m1.lzc.block_primitive": "pair_cell",
+    "decl.core.unpacker.m1.lzc.output_form": "binary_count",
+    "decl.core.unpacker.m1.lzc.valid_flag_propagation": false,
+    "decl.core.unpacker.m1.shifter.family": "barrel_mux_tree",
+    "decl.core.unpacker.m1.shifter.stage_radix": 2,
+    "decl.core.unpacker.m1.shifter.select_encoding": "binary",
+    "decl.core.unpacker.m1.shifter.stage_order": "small_shift_first",
+    "decl.core.unpacker.m1.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.unpacker.m1.shifter.sticky_collect": false,
+    "decl.core.unpacker.m2.family": "per_unit_unpack",
+    "decl.core.unpacker.m2.denormal_handling": "in_unpack",
+    "decl.core.unpacker.m2.lzc.family": "lzd_cell_tree",
+    "decl.core.unpacker.m2.lzc.block_primitive": "pair_cell",
+    "decl.core.unpacker.m2.lzc.output_form": "binary_count",
+    "decl.core.unpacker.m2.lzc.valid_flag_propagation": false,
+    "decl.core.unpacker.m2.shifter.family": "barrel_mux_tree",
+    "decl.core.unpacker.m2.shifter.stage_radix": 2,
+    "decl.core.unpacker.m2.shifter.select_encoding": "binary",
+    "decl.core.unpacker.m2.shifter.stage_order": "small_shift_first",
+    "decl.core.unpacker.m2.shifter.direction_handling": "mirrored_datapath",
+    "decl.core.unpacker.m2.shifter.sticky_collect": false,
+    "ok": true,
+    "defaulted": [
+     "x_form",
+     "core.subword.family",
+     "core.fp_fma.m0.family",
+     "core.fp_adder.m0.family",
+     "core.fp_adder.m0.subnormal_representation",
+     "core.fp_adder.m0.operand_order",
+     "core.fp_adder.m0.negation_handling",
+     "core.fp_adder.m0.sig_adder.family",
+     "core.fp_adder.m0.sig_adder.full_adder_logic",
+     "core.fp_adder.m0.sig_adder.chunk_width_bits",
+     "core.fp_adder.m0.exp.family",
+     "core.fp_adder.m0.exp.dual_direction_subtract",
+     "core.fp_adder.m0.exp.adder.family",
+     "core.fp_adder.m0.exp.adder.full_adder_logic",
+     "core.fp_adder.m0.exp.adder.chunk_width_bits",
+     "core.fp_adder.m0.align.family",
+     "core.fp_adder.m0.align.sticky_method",
+     "core.fp_adder.m0.align.shifter.family",
+     "core.fp_adder.m0.align.shifter.stage_radix",
+     "core.fp_adder.m0.align.shifter.select_encoding",
+     "core.fp_adder.m0.align.shifter.stage_order",
+     "core.fp_adder.m0.align.shifter.direction_handling",
+     "core.fp_adder.m0.align.shifter.sticky_collect",
+     "core.fp_adder.m0.align.tzc.family",
+     "core.fp_adder.m0.align.tzc.strategy",
+     "core.fp_adder.m0.align.tzc.isolate_circuit",
+     "core.fp_adder.m0.align.tzc.lzd.family",
+     "core.fp_adder.m0.align.tzc.lzd.block_primitive",
+     "core.fp_adder.m0.align.tzc.lzd.output_form",
+     "core.fp_adder.m0.align.tzc.lzd.valid_flag_propagation",
+     "core.fp_adder.m0.align.tzc.negation_incrementer.family",
+     "core.fp_adder.m0.align.tzc.negation_incrementer.structure",
+     "core.fp_adder.m0.norm.family",
+     "core.fp_adder.m0.norm.coarse_granularity",
+     "core.fp_adder.m0.norm.shifter.family",
+     "core.fp_adder.m0.norm.shifter.stage_radix",
+     "core.fp_adder.m0.norm.shifter.select_encoding",
+     "core.fp_adder.m0.norm.shifter.stage_order",
+     "core.fp_adder.m0.norm.shifter.direction_handling",
+     "core.fp_adder.m0.norm.shifter.sticky_collect",
+     "core.fp_adder.m0.lz.family",
+     "core.fp_adder.m0.lz.correction_scheme",
+     "core.fp_adder.m0.lz.string_form",
+     "core.fp_adder.m0.lz.indicator_restriction",
+     "core.fp_adder.m0.lz.zero_result_detect",
+     "core.fp_adder.m0.lz.encoder.family",
+     "core.fp_adder.m0.lz.encoder.block_primitive",
+     "core.fp_adder.m0.lz.encoder.output_form",
+     "core.fp_adder.m0.lz.encoder.valid_flag_propagation",
+     "core.fp_multiplier.m0.family",
+     "core.fp_multiplier.m0.sig_mul.family",
+     "core.fp_multiplier.m0.exp_adder.family",
+     "core.fp_multiplier.m0.exp_adder.full_adder_logic",
+     "core.fp_multiplier.m0.exp_adder.chunk_width_bits",
+     "core.fp_fma.m1.family",
+     "core.fp_adder.m1.family",
+     "core.fp_adder.m1.subnormal_representation",
+     "core.fp_adder.m1.operand_order",
+     "core.fp_adder.m1.negation_handling",
+     "core.fp_adder.m1.sig_adder.family",
+     "core.fp_adder.m1.sig_adder.full_adder_logic",
+     "core.fp_adder.m1.sig_adder.chunk_width_bits",
+     "core.fp_adder.m1.exp.family",
+     "core.fp_adder.m1.exp.dual_direction_subtract",
+     "core.fp_adder.m1.exp.adder.family",
+     "core.fp_adder.m1.exp.adder.full_adder_logic",
+     "core.fp_adder.m1.exp.adder.chunk_width_bits",
+     "core.fp_adder.m1.align.family",
+     "core.fp_adder.m1.align.sticky_method",
+     "core.fp_adder.m1.align.shifter.family",
+     "core.fp_adder.m1.align.shifter.stage_radix",
+     "core.fp_adder.m1.align.shifter.select_encoding",
+     "core.fp_adder.m1.align.shifter.stage_order",
+     "core.fp_adder.m1.align.shifter.direction_handling",
+     "core.fp_adder.m1.align.shifter.sticky_collect",
+     "core.fp_adder.m1.align.tzc.family",
+     "core.fp_adder.m1.align.tzc.strategy",
+     "core.fp_adder.m1.align.tzc.isolate_circuit",
+     "core.fp_adder.m1.align.tzc.lzd.family",
+     "core.fp_adder.m1.align.tzc.lzd.block_primitive",
+     "core.fp_adder.m1.align.tzc.lzd.output_form",
+     "core.fp_adder.m1.align.tzc.lzd.valid_flag_propagation",
+     "core.fp_adder.m1.align.tzc.negation_incrementer.family",
+     "core.fp_adder.m1.align.tzc.negation_incrementer.structure",
+     "core.fp_adder.m1.norm.family",
+     "core.fp_adder.m1.norm.coarse_granularity",
+     "core.fp_adder.m1.norm.shifter.family",
+     "core.fp_adder.m1.norm.shifter.stage_radix",
+     "core.fp_adder.m1.norm.shifter.select_encoding",
+     "core.fp_adder.m1.norm.shifter.stage_order",
+     "core.fp_adder.m1.norm.shifter.direction_handling",
+     "core.fp_adder.m1.norm.shifter.sticky_collect",
+     "core.fp_adder.m1.lz.family",
+     "core.fp_adder.m1.lz.correction_scheme",
+     "core.fp_adder.m1.lz.string_form",
+     "core.fp_adder.m1.lz.indicator_restriction",
+     "core.fp_adder.m1.lz.zero_result_detect",
+     "core.fp_adder.m1.lz.encoder.family",
+     "core.fp_adder.m1.lz.encoder.block_primitive",
+     "core.fp_adder.m1.lz.encoder.output_form",
+     "core.fp_adder.m1.lz.encoder.valid_flag_propagation",
+     "core.fp_multiplier.m1.family",
+     "core.fp_multiplier.m1.sig_mul.family",
+     "core.fp_multiplier.m1.exp_adder.family",
+     "core.fp_multiplier.m1.exp_adder.full_adder_logic",
+     "core.fp_multiplier.m1.exp_adder.chunk_width_bits",
+     "core.fp_fma.m2.family",
+     "core.fp_adder.m2.family",
+     "core.fp_adder.m2.subnormal_representation",
+     "core.fp_adder.m2.operand_order",
+     "core.fp_adder.m2.negation_handling",
+     "core.fp_adder.m2.sig_adder.family",
+     "core.fp_adder.m2.sig_adder.full_adder_logic",
+     "core.fp_adder.m2.sig_adder.chunk_width_bits",
+     "core.fp_adder.m2.exp.family",
+     "core.fp_adder.m2.exp.dual_direction_subtract",
+     "core.fp_adder.m2.exp.adder.family",
+     "core.fp_adder.m2.exp.adder.full_adder_logic",
+     "core.fp_adder.m2.exp.adder.chunk_width_bits",
+     "core.fp_adder.m2.align.family",
+     "core.fp_adder.m2.align.sticky_method",
+     "core.fp_adder.m2.align.shifter.family",
+     "core.fp_adder.m2.align.shifter.stage_radix",
+     "core.fp_adder.m2.align.shifter.select_encoding",
+     "core.fp_adder.m2.align.shifter.stage_order",
+     "core.fp_adder.m2.align.shifter.direction_handling",
+     "core.fp_adder.m2.align.shifter.sticky_collect",
+     "core.fp_adder.m2.align.tzc.family",
+     "core.fp_adder.m2.align.tzc.strategy",
+     "core.fp_adder.m2.align.tzc.isolate_circuit",
+     "core.fp_adder.m2.align.tzc.lzd.family",
+     "core.fp_adder.m2.align.tzc.lzd.block_primitive",
+     "core.fp_adder.m2.align.tzc.lzd.output_form",
+     "core.fp_adder.m2.align.tzc.lzd.valid_flag_propagation",
+     "core.fp_adder.m2.align.tzc.negation_incrementer.family",
+     "core.fp_adder.m2.align.tzc.negation_incrementer.structure",
+     "core.fp_adder.m2.norm.family",
+     "core.fp_adder.m2.norm.coarse_granularity",
+     "core.fp_adder.m2.norm.shifter.family",
+     "core.fp_adder.m2.norm.shifter.stage_radix",
+     "core.fp_adder.m2.norm.shifter.select_encoding",
+     "core.fp_adder.m2.norm.shifter.stage_order",
+     "core.fp_adder.m2.norm.shifter.direction_handling",
+     "core.fp_adder.m2.norm.shifter.sticky_collect",
+     "core.fp_adder.m2.lz.family",
+     "core.fp_adder.m2.lz.correction_scheme",
+     "core.fp_adder.m2.lz.string_form",
+     "core.fp_adder.m2.lz.indicator_restriction",
+     "core.fp_adder.m2.lz.zero_result_detect",
+     "core.fp_adder.m2.lz.encoder.family",
+     "core.fp_adder.m2.lz.encoder.block_primitive",
+     "core.fp_adder.m2.lz.encoder.output_form",
+     "core.fp_adder.m2.lz.encoder.valid_flag_propagation",
+     "core.fp_multiplier.m2.family",
+     "core.fp_multiplier.m2.sig_mul.family",
+     "core.fp_multiplier.m2.exp_adder.family",
+     "core.fp_multiplier.m2.exp_adder.full_adder_logic",
+     "core.fp_multiplier.m2.exp_adder.chunk_width_bits",
+     "core.fp_comparator.m0.family",
+     "core.fp_comparator.m0.comparator.family",
+     "core.fp_comparator.m0.comparator.structure",
+     "core.fp_comparator.m0.comparator.radix",
+     "core.fp_comparator.m1.family",
+     "core.fp_comparator.m1.comparator.family",
+     "core.fp_comparator.m1.comparator.structure",
+     "core.fp_comparator.m1.comparator.radix",
+     "core.fp_comparator.m2.family",
+     "core.fp_comparator.m2.comparator.family",
+     "core.fp_comparator.m2.comparator.structure",
+     "core.fp_comparator.m2.comparator.radix",
+     "core.rounder.m0.family",
+     "core.rounder.m0.lzc.family",
+     "core.rounder.m0.lzc.block_primitive",
+     "core.rounder.m0.lzc.output_form",
+     "core.rounder.m0.lzc.valid_flag_propagation",
+     "core.rounder.m0.shifter.family",
+     "core.rounder.m0.shifter.stage_radix",
+     "core.rounder.m0.shifter.select_encoding",
+     "core.rounder.m0.shifter.stage_order",
+     "core.rounder.m0.shifter.direction_handling",
+     "core.rounder.m0.shifter.sticky_collect",
+     "core.rounder.m0.round.family",
+     "core.rounder.m0.round.incrementer.family",
+     "core.rounder.m0.round.incrementer.structure",
+     "core.rounder.m0.exp_adder.family",
+     "core.rounder.m0.exp_adder.full_adder_logic",
+     "core.rounder.m0.exp_adder.chunk_width_bits",
+     "core.rounder.m0.exp_incrementer.family",
+     "core.rounder.m0.exp_incrementer.structure",
+     "core.rounder.m1.family",
+     "core.rounder.m1.lzc.family",
+     "core.rounder.m1.lzc.block_primitive",
+     "core.rounder.m1.lzc.output_form",
+     "core.rounder.m1.lzc.valid_flag_propagation",
+     "core.rounder.m1.shifter.family",
+     "core.rounder.m1.shifter.stage_radix",
+     "core.rounder.m1.shifter.select_encoding",
+     "core.rounder.m1.shifter.stage_order",
+     "core.rounder.m1.shifter.direction_handling",
+     "core.rounder.m1.shifter.sticky_collect",
+     "core.rounder.m1.round.family",
+     "core.rounder.m1.round.incrementer.family",
+     "core.rounder.m1.round.incrementer.structure",
+     "core.rounder.m1.exp_adder.family",
+     "core.rounder.m1.exp_adder.full_adder_logic",
+     "core.rounder.m1.exp_adder.chunk_width_bits",
+     "core.rounder.m1.exp_incrementer.family",
+     "core.rounder.m1.exp_incrementer.structure",
+     "core.rounder.m2.family",
+     "core.rounder.m2.lzc.family",
+     "core.rounder.m2.lzc.block_primitive",
+     "core.rounder.m2.lzc.output_form",
+     "core.rounder.m2.lzc.valid_flag_propagation",
+     "core.rounder.m2.shifter.family",
+     "core.rounder.m2.shifter.stage_radix",
+     "core.rounder.m2.shifter.select_encoding",
+     "core.rounder.m2.shifter.stage_order",
+     "core.rounder.m2.shifter.direction_handling",
+     "core.rounder.m2.shifter.sticky_collect",
+     "core.rounder.m2.round.family",
+     "core.rounder.m2.round.incrementer.family",
+     "core.rounder.m2.round.incrementer.structure",
+     "core.rounder.m2.exp_adder.family",
+     "core.rounder.m2.exp_adder.full_adder_logic",
+     "core.rounder.m2.exp_adder.chunk_width_bits",
+     "core.rounder.m2.exp_incrementer.family",
+     "core.rounder.m2.exp_incrementer.structure",
+     "core.unpacker.m0.family",
+     "core.unpacker.m0.denormal_handling",
+     "core.unpacker.m0.lzc.family",
+     "core.unpacker.m0.lzc.block_primitive",
+     "core.unpacker.m0.lzc.output_form",
+     "core.unpacker.m0.lzc.valid_flag_propagation",
+     "core.unpacker.m0.shifter.family",
+     "core.unpacker.m0.shifter.stage_radix",
+     "core.unpacker.m0.shifter.select_encoding",
+     "core.unpacker.m0.shifter.stage_order",
+     "core.unpacker.m0.shifter.direction_handling",
+     "core.unpacker.m0.shifter.sticky_collect",
+     "core.unpacker.m1.family",
+     "core.unpacker.m1.denormal_handling",
+     "core.unpacker.m1.lzc.family",
+     "core.unpacker.m1.lzc.block_primitive",
+     "core.unpacker.m1.lzc.output_form",
+     "core.unpacker.m1.lzc.valid_flag_propagation",
+     "core.unpacker.m1.shifter.family",
+     "core.unpacker.m1.shifter.stage_radix",
+     "core.unpacker.m1.shifter.select_encoding",
+     "core.unpacker.m1.shifter.stage_order",
+     "core.unpacker.m1.shifter.direction_handling",
+     "core.unpacker.m1.shifter.sticky_collect",
+     "core.unpacker.m2.family",
+     "core.unpacker.m2.denormal_handling",
+     "core.unpacker.m2.lzc.family",
+     "core.unpacker.m2.lzc.block_primitive",
+     "core.unpacker.m2.lzc.output_form",
+     "core.unpacker.m2.lzc.valid_flag_propagation",
+     "core.unpacker.m2.shifter.family",
+     "core.unpacker.m2.shifter.stage_radix",
+     "core.unpacker.m2.shifter.select_encoding",
+     "core.unpacker.m2.shifter.stage_order",
+     "core.unpacker.m2.shifter.direction_handling",
+     "core.unpacker.m2.shifter.sticky_collect"
+    ],
+    "defaulted_under": {},
+    "detail": "declaration ok (0 declared, 263 at defaults)"
+   },
+   "node_hash": "declaration"
+  },
+  "conformance": {
+   "value": {
+    "pass": true,
+    "mismatch_count": 0,
+    "first_mismatches": [],
+    "detail": "bit-exact against the reference",
+    "cycles_per_frame": null,
+    "seconds": 0.9
+   },
+   "node_hash": "14c3b45f6dbb6075388dda327d13b34e2c6f783b952dfa6100a881f14c8eaa4f"
+  },
+  "lint": {
+   "value": {
+    "ok": true,
+    "detail": "",
+    "seconds": 0.9
+   },
+   "node_hash": "0f4026cfb6970d03e9dfaad0b3c2814b2b360160650f316fe6c7e31de0934a45"
+  },
+  "yosys_stat": {
+   "value": {
+    "ok": true,
+    "cells": 17798,
+    "detail": "",
+    "seconds": 6.0
+   },
+   "node_hash": "6b3bc2b0fe462d3b8312102a318fcc0ebe9a24b34c064ef1618c88c587387e75"
+  },
+  "synth_ppa": {
+   "value": {
+    "ok": true,
+    "area_um2": 4543.014,
+    "abc_delay_ps": 3816.79,
+    "cells": 3843,
+    "cells_run_index": 3,
+    "seconds": 25.405,
+    "repeats": 5,
+    "seeds": [
+     null,
+     11,
+     23,
+     37,
+     53
+    ],
+    "runs": [
+     {
+      "ok": true,
+      "area_um2": 4550.462,
+      "cells": 3939,
+      "abc_delay_ps": 3816.79,
+      "seconds": 6.8,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 0,
+      "abc_seed": null,
+      "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtl",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "529c9b56ea4e1ac6a734d518a8f38098d0599510bc383f541a5d47e0029f33b3",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/529c9b56ea4e1ac6a734d518a8f38098d0599510bc383f541a5d47e0029f33b3.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "b73c6ce36ba98dab8a7400a3076378187fb6f9adf8a8c0064a69bfd6a1f3dd53",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b73c6ce36ba98dab8a7400a3076378187fb6f9adf8a8c0064a69bfd6a1f3dd53.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 4403.098,
+      "cells": 3755,
+      "abc_delay_ps": 3872.01,
+      "seconds": 2.0,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 1,
+      "abc_seed": 11,
+      "abc_script": "+strash;permute -S 11;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 11\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "3fc3b6cffa9c951826eaf9fe961f443ef225b7c27cbf9c2b74de186594e1f874",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/3fc3b6cffa9c951826eaf9fe961f443ef225b7c27cbf9c2b74de186594e1f874.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "425b1096648a7b23dc6bbfc4c75adf35680be1e2ae74e46b543f91efd10bd365",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/425b1096648a7b23dc6bbfc4c75adf35680be1e2ae74e46b543f91efd10bd365.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 4520.138,
+      "cells": 3908,
+      "abc_delay_ps": 3908.84,
+      "seconds": 2.0,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 2,
+      "abc_seed": 23,
+      "abc_script": "+strash;permute -S 23;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 23\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "2cf8920e59bedad9c0320da7ebff0089c615ac3195f586ca90b24bcfedb86471",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/2cf8920e59bedad9c0320da7ebff0089c615ac3195f586ca90b24bcfedb86471.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "a22ff66817b7d6ad6efd0dbbc6c84633448920c5cefb5973c71eef3ee5a20963",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/a22ff66817b7d6ad6efd0dbbc6c84633448920c5cefb5973c71eef3ee5a20963.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 4543.014,
+      "cells": 3843,
+      "abc_delay_ps": 3727.94,
+      "seconds": 2.0,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 3,
+      "abc_seed": 37,
+      "abc_script": "+strash;permute -S 37;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 37\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "37e07217baaaef6bef911c0e51694dea0df65bf2c31a43445b0cf9ae9c7110ba",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/37e07217baaaef6bef911c0e51694dea0df65bf2c31a43445b0cf9ae9c7110ba.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "750d544babf9f8b032757045257d9cf922e1436fdd83844dc2fa680be183bf4c",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/750d544babf9f8b032757045257d9cf922e1436fdd83844dc2fa680be183bf4c.gz",
+       "encoding": "gzip"
+      }
+     },
+     {
+      "ok": true,
+      "area_um2": 4708.732,
+      "cells": 3893,
+      "abc_delay_ps": 3796.93,
+      "seconds": 2.1,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 4,
+      "abc_seed": 53,
+      "abc_script": "+strash;permute -S 53;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\npermute -S 53\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/b5dd0cb2a53818acdc92e9e2d646d06656a1dceaac75caf7b9878ae1dab8e224.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": false,
+      "keep_scopeinfo": false,
+      "timeout_s": 1200,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "4dd5027fba5776ce9aeb1ffcdaeec219d0556373d147ee93b51b0c3eb52bd43a",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/4dd5027fba5776ce9aeb1ffcdaeec219d0556373d147ee93b51b0c3eb52bd43a.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "80cd795a07d418d170d18e259b66e4284b4c685fa208e9c4afa412b1ff35056a",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/80cd795a07d418d170d18e259b66e4284b4c685fa208e9c4afa412b1ff35056a.gz",
+       "encoding": "gzip"
+      }
+     }
+    ],
+    "successful_runs": 5,
+    "statistics": {
+     "area_um2": {
+      "median": 4543.014,
+      "min": 4403.098,
+      "max": 4708.732,
+      "std": 97.56659539494038
+     },
+     "abc_delay_ps": {
+      "median": 3816.79,
+      "min": 3727.94,
+      "max": 3908.84,
+      "std": 62.47210302206905
+     },
+     "cells": {
+      "median": 3893,
+      "min": 3755,
+      "max": 3939,
+      "std": 64.27939016512214
+     }
+    },
+    "median_rule": "all_requested_runs_must_succeed; partial_statistics_are_diagnostic_only",
+    "pdk": "nangate45",
+    "clock_ps": 300,
+    "detail": "",
+    "report_run": {
+     "ok": true,
+     "area_um2": 4590.628,
+     "cells": 3892,
+     "abc_delay_ps": 3817.99,
+     "seconds": 7.1,
+     "pdk": "nangate45",
+     "clock_ps": 300,
+     "detail": "",
+     "status": "ok",
+     "repeat_index": 0,
+     "abc_seed": null,
+     "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+     "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+     "rtl": {
+      "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57.gz",
+      "encoding": "gzip"
+     },
+     "netlist": {
+      "sha256": "cb2955143ec0ede0c99720e83ee8e5dd626b07d00cd638b018d192a9988ae623",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/cb2955143ec0ede0c99720e83ee8e5dd626b07d00cd638b018d192a9988ae623.gz",
+      "encoding": "gzip"
+     },
+     "mapping_input": "rtl",
+     "liberties": [
+      {
+       "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+       "encoding": "gzip"
+      }
+     ],
+     "liberty_hash": "38d65aff29303470",
+     "tool_hash": "4b9888fa0093b04f",
+     "tools": {
+      "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+      "executables": {
+       "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+       "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+      }
+     },
+     "effort": "medium",
+     "share": false,
+     "top": "alu_core",
+     "hierarchy": true,
+     "keep_scopeinfo": false,
+     "timeout_s": 1200,
+     "pdk_descriptor": {
+      "name": "nangate45",
+      "aliases": [
+       "freepdk45"
+      ],
+      "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+      "process_nm": 45,
+      "corner": "TT 1.1V 25C",
+      "area_unit": "um2",
+      "liberty": [
+       {
+        "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+        "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+       }
+      ],
+      "abc": {
+       "clock_ps": 1000,
+       "scripts": {
+        "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+        "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+        "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+       }
+      },
+      "yosys": {
+       "synth": "synth -top {top} -flatten {noshare} -noabc"
+      }
+     },
+     "log": {
+      "sha256": "dd057fb68f76a9c28644884fc42cfc7b17fd33fb886dfbdf79994008ef1fae68",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/dd057fb68f76a9c28644884fc42cfc7b17fd33fb886dfbdf79994008ef1fae68.gz",
+      "encoding": "gzip"
+     },
+     "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+      "encoding": "gzip"
+     },
+     "yosys_script": {
+      "sha256": "8ab4d32300e10621e6f92255ce9dcd085bfd17c39d171ce8905277e922810fcd",
+      "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8ab4d32300e10621e6f92255ce9dcd085bfd17c39d171ce8905277e922810fcd.gz",
+      "encoding": "gzip"
+     },
+     "attribution_run": {
+      "ok": true,
+      "area_um2": 4600.47,
+      "cells": 4095,
+      "abc_delay_ps": 3908.84,
+      "seconds": 2.4,
+      "pdk": "nangate45",
+      "clock_ps": 300,
+      "detail": "",
+      "status": "ok",
+      "repeat_index": 0,
+      "abc_seed": null,
+      "abc_script": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,300;&put;buffer;upsize,-D,300;dnsize,-D,300;topo;stime",
+      "abc_script_text": "strash\n&get -n\n&dc2\n&dch -f\n&nf -C 32 -F 8 -p -D 300\n&put\nbuffer\nupsize -D 300\ndnsize -D 300\ntopo\nstime\n",
+      "rtl": {
+       "sha256": "fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/fa646a72ea54336091e31562204b1c0fbc6e9090306a86b483bee1179f410f57.gz",
+       "encoding": "gzip"
+      },
+      "netlist": {
+       "sha256": "bfc7de21927a9f19929bebd6330c30018ced7bd8f447dd143e786d7da95dd192",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/bfc7de21927a9f19929bebd6330c30018ced7bd8f447dd143e786d7da95dd192.gz",
+       "encoding": "gzip"
+      },
+      "mapping_input": "rtlil",
+      "liberties": [
+       {
+        "sha256": "8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1",
+        "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8d540a4d4cf6d09d27c87ad067857a9c0c2eeb023ab7a56e058cd3113db4e9b1.gz",
+        "encoding": "gzip"
+       }
+      ],
+      "liberty_hash": "38d65aff29303470",
+      "tool_hash": "4b9888fa0093b04f",
+      "tools": {
+       "versions": "yosys Yosys 0.68+36 (git sha1 17d51a330-dirty, Release, Clang /usr | verilator Verilator 5.051 devel rev v5.050-148-g1a4bcac66 (mod) | frontend slang | abc +strash;&get -n;&dc2;&dch -f;&nf -C 32 -F 8 -p -D {clock_ps};&put;buffer;upsize -D {clock_ps};dnsize -D {clock_ps};topo;stime",
+       "executables": {
+        "yosys": "7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6",
+        "yosys-abc": "9a47b87ed0f705246d61b289669c5540a42f31203da2c7971e35baed9fdfb4cf"
+       }
+      },
+      "effort": "medium",
+      "share": false,
+      "top": "alu_core",
+      "hierarchy": true,
+      "keep_scopeinfo": true,
+      "timeout_s": 600,
+      "pdk_descriptor": {
+       "name": "nangate45",
+       "aliases": [
+        "freepdk45"
+       ],
+       "description": "Nangate Open Cell Library, 45 nm, FreePDK45 process, typical corner (TT, 1.1 V, 25 C)",
+       "process_nm": 45,
+       "corner": "TT 1.1V 25C",
+       "area_unit": "um2",
+       "liberty": [
+        {
+         "path": "pdk/lib/NangateOpenCellLibrary_typical.lib",
+         "url": "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts/master/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib"
+        }
+       ],
+       "abc": {
+        "clock_ps": 1000,
+        "scripts": {
+         "low": "+strash;&get,-n;&dc2;&nf,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "medium": "+strash;&get,-n;&dc2;&dch,-f;&nf,-C,32,-F,8,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime",
+         "high": "+strash;&get,-n;&dc2;&syn2;&dc2;&dch,-f;&nf,-C,32,-F,16,-p,-D,{clock_ps};&put;buffer;upsize,-D,{clock_ps};dnsize,-D,{clock_ps};topo;stime"
+        }
+       },
+       "yosys": {
+        "synth": "synth -top {top} -flatten {noshare} -noabc"
+       }
+      },
+      "log": {
+       "sha256": "8354e3381c7eb60656a865b901ece00057ca5b733594a0649557eed8efdc667e",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/8354e3381c7eb60656a865b901ece00057ca5b733594a0649557eed8efdc667e.gz",
+       "encoding": "gzip"
+      },
+      "stderr": {
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+       "encoding": "gzip"
+      },
+      "yosys_script": {
+       "sha256": "4cbb7225e8bc7848c6bbbf4340c747fffef1c1df587080af22a5a76c826767ff",
+       "path": "$CHIALU_HOME/wt/handseeds/measurements/handseeds/artifacts/4cbb7225e8bc7848c6bbbf4340c747fffef1c1df587080af22a5a76c826767ff.gz",
+       "encoding": "gzip"
+      },
+      "purpose": "diagnostic_name_kept_base_mapping"
+     },
+     "summary": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## Units of the flattened design (shared = logic ABC merged between instances, split equally)\ninstance                   module                             member                area um2      %   cells  shared  in arr  out arr\nu_fpu                      transdot_fpu_top$alu_core.u_fpu    -                       2475.1   53.8    2093    1691     280     3909\nu_cmp_eq                   transdot_fpu_top$alu_core.u_cmp_eq -                         67.9    1.5      65      61     280      686\ntop glue (operand decode, the op mux, the flags)                                      2057.5   44.7\ntotal                                                                                 4600.5\nin arr / out arr: the latest arrival (ps) at the unit's input / output port nets; a unit whose out arr is near the total is on the critical path, one whose in arr is late waits for another unit\n",
+     "critical_path": "1. flags[2]                 3908.8 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 288 ps)",
+     "paths": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## The 20 latest endpoints; owner(cells, ps) per segment of the path\n\n  1. flags[2]                 3908.8 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 288 ps)\n  2. y[12]                    3902.8 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(72, 3609 ps) -> u_fpu(3, 163 ps) -> top(1, 25 ps)\n  3. flags[3]                 3888.5 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 267 ps)\n  4. y[7]                     3882.1 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3373 ps) -> u_fpu(8, 375 ps) -> top(1, 28 ps)\n  5. flags[1]                 3877.2 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 256 ps)\n  6. y[11]                    3860.5 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(4, 211 ps) -> top(1, 29 ps)\n  7. y[13]                    3847.3 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(72, 3609 ps) -> u_fpu(4, 104 ps) -> top(1, 28 ps)\n  8. y[15]                    3838.9 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3373 ps) -> u_fpu(7, 331 ps) -> top(1, 29 ps)\n  9. y[14]                    3832.0 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(75, 3707 ps) -> top(1, 19 ps)\n 10. y[10]                    3824.9 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(4, 172 ps) -> top(2, 31 ps)\n 11. y[8]                     3798.4 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(70, 3464 ps) -> u_fpu(4, 190 ps) -> top(2, 37 ps)\n 12. y[9]                     3768.2 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(74, 3650 ps) -> top(1, 12 ps)\n 13. y[5]                     3720.7 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(69, 3452 ps) -> u_fpu(5, 134 ps) -> top(1, 28 ps)\n 14. y[6]                     3714.2 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(70, 3464 ps) -> u_fpu(4, 115 ps) -> top(1, 29 ps)\n 15. y[4]                     3700.7 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(69, 3452 ps) -> u_fpu(5, 114 ps) -> top(1, 28 ps)\n 16. y[2]                     3679.0 ps  from a[2]                  75 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(68, 3435 ps) -> u_fpu(3, 104 ps) -> top(2, 34 ps)\n 17. y[3]                     3677.4 ps  from a[2]                  76 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(73, 3553 ps) -> top(1, 18 ps)\n 18. y[1]                     3665.9 ps  from a[2]                  75 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3513 ps) -> top(2, 47 ps)\n 19. y[0]                     3601.3 ps  from a[2]                  71 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3386 ps) -> u_fpu(2, 109 ps)\n 20. flags[0]                  708.9 ps  from op[2]                 14 cells   shared(3)(1, 46 ps) -> shared(top,u_fpu)(1, 60 ps) -> top(1, 46 ps) -> shared(top,u_fpu)(8, 397 ps) -> u_fpu(2, 102 ps) -> top(1, 57 ps)\n\n## The first 3 of them cell by cell\n### 1. flags[2] at 3908.8 ps\nstart a[2] (input)  ->  end flags[2] (output)   3908.8 ps   79 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             71 cells    106.1 ->  3621.2 ps  (+3515.1)   in via $abc$28862$new_n259   out via $abc$28862$new_n3364\n  u_fpu                          6 cells   3621.2 ->  3908.8 ps  (+ 287.6)   in via $abc$28862$new_n3364   out via flags[2]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3681.5   60.3  f->r  NOR3_X2     u_fpu                      $abc$28862$new_n3530                           2    3.9   29.7\n 75   3740.4   58.9  r->r  XOR2_X1     u_fpu                      $abc$28862$new_n3531                           2    3.3   29.1\n 76   3770.8   30.3  r->f  OAI211_X1   u_fpu                      $abc$28862$new_n3938                           1    1.6   17.4\n 77   3850.8   80.0  f->r  NOR4_X1     u_fpu                      $abc$28862$new_n3939                           1    1.6   41.1\n 78   3882.6   31.9  r->f  OAI221_X1   u_fpu                      $abc$28862$new_n3949                           1    1.4   18.5\n 79   3908.8   26.2  f->r  AOI21_X1    u_fpu                      flags[2]                                       0    0.0   13.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n### 2. y[12] at 3902.8 ps\nstart a[2] (input)  ->  end y[12] (output)   3902.8 ps   78 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             72 cells    106.1 ->  3714.7 ps  (+3608.5)   in via $abc$28862$new_n259   out via $abc$28862$new_n3368\n  u_fpu                          3 cells   3714.7 ->  3877.8 ps  (+ 163.1)   in via $abc$28862$new_n3368   out via res_main[12]\n  top                            1 cells   3877.8 ->  3902.8 ps  (+  25.0)   in via res_main[12]   out via y[12]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3714.7   93.5  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3368                           3    5.5   52.3\n 75   3774.0   59.3  r->f  XNOR2_X1    u_fpu                      $abc$28862$new_n3510                           2    3.1   20.6\n 76   3850.0   76.0  f->r  AOI221_X1   u_fpu                      $abc$28862$new_n3512                           1    0.9   36.0\n 77   3877.8   27.8  r->r  OR2_X1      u_fpu                      res_main[12]                                   1    1.0    6.7\n 78   3902.8   25.0  r->r  AND2_X1     top                        y[12]                                          0    0.0    5.4\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n### 3. flags[3] at 3888.5 ps\nstart a[2] (input)  ->  end flags[3] (output)   3888.5 ps   79 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             71 cells    106.1 ->  3621.2 ps  (+3515.1)   in via $abc$28862$new_n259   out via $abc$28862$new_n3364\n  u_fpu                          6 cells   3621.2 ->  3888.5 ps  (+ 267.3)   in via $abc$28862$new_n3364   out via flags[3]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3677.7   56.5  f->f  OR2_X2      u_fpu                      $abc$28862$new_n3549                           2    3.3    8.9\n 75   3708.1   30.4  f->f  AND2_X1     u_fpu                      $abc$28862$new_n3905                           1    1.5    5.9\n 76   3808.7  100.6  f->f  OR4_X2      u_fpu                      $abc$28862$new_n3911                           1    1.5   15.2\n 77   3842.7   34.1  f->r  OAI211_X1   u_fpu                      $abc$28862$new_n3914                           3    4.8   35.1\n 78   3864.6   21.9  r->f  OAI21_X1    u_fpu                      $abc$28862$new_n3951                           1    1.4   13.5\n 79   3888.5   24.0  f->r  AOI21_X1    u_fpu                      flags[3]                                       0    0.0   13.6\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n",
+     "area_by_hierarchy": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## Area per instance of the flattened design (cells shared between instances split equally; total 4600.5 um2)\ninstance                                       module                                    area um2      %    cells\ntop (whole design)                                                                         4600.5  100.0   3910.0\n  u_fpu                                        transdot_fpu_top$alu_core.u_fpu             2475.1   53.8   2093.2\n  u_cmp_eq                                     transdot_fpu_top$alu_core.u_cmp_eq            67.9    1.5     65.2\n\n## Structure members -> modules -> instances\nmember                   module                                   instances                           area\n",
+     "report_seconds": 2.5
+    },
+    "summary": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## Units of the flattened design (shared = logic ABC merged between instances, split equally)\ninstance                   module                             member                area um2      %   cells  shared  in arr  out arr\nu_fpu                      transdot_fpu_top$alu_core.u_fpu    -                       2475.1   53.8    2093    1691     280     3909\nu_cmp_eq                   transdot_fpu_top$alu_core.u_cmp_eq -                         67.9    1.5      65      61     280      686\ntop glue (operand decode, the op mux, the flags)                                      2057.5   44.7\ntotal                                                                                 4600.5\nin arr / out arr: the latest arrival (ps) at the unit's input / output port nets; a unit whose out arr is near the total is on the critical path, one whose in arr is late waits for another unit\n",
+    "critical_path": "1. flags[2]                 3908.8 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 288 ps)",
+    "paths": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## The 20 latest endpoints; owner(cells, ps) per segment of the path\n\n  1. flags[2]                 3908.8 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 288 ps)\n  2. y[12]                    3902.8 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(72, 3609 ps) -> u_fpu(3, 163 ps) -> top(1, 25 ps)\n  3. flags[3]                 3888.5 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 267 ps)\n  4. y[7]                     3882.1 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3373 ps) -> u_fpu(8, 375 ps) -> top(1, 28 ps)\n  5. flags[1]                 3877.2 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 256 ps)\n  6. y[11]                    3860.5 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(4, 211 ps) -> top(1, 29 ps)\n  7. y[13]                    3847.3 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(72, 3609 ps) -> u_fpu(4, 104 ps) -> top(1, 28 ps)\n  8. y[15]                    3838.9 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3373 ps) -> u_fpu(7, 331 ps) -> top(1, 29 ps)\n  9. y[14]                    3832.0 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(75, 3707 ps) -> top(1, 19 ps)\n 10. y[10]                    3824.9 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(4, 172 ps) -> top(2, 31 ps)\n 11. y[8]                     3798.4 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(70, 3464 ps) -> u_fpu(4, 190 ps) -> top(2, 37 ps)\n 12. y[9]                     3768.2 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(74, 3650 ps) -> top(1, 12 ps)\n 13. y[5]                     3720.7 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(69, 3452 ps) -> u_fpu(5, 134 ps) -> top(1, 28 ps)\n 14. y[6]                     3714.2 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(70, 3464 ps) -> u_fpu(4, 115 ps) -> top(1, 29 ps)\n 15. y[4]                     3700.7 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(69, 3452 ps) -> u_fpu(5, 114 ps) -> top(1, 28 ps)\n 16. y[2]                     3679.0 ps  from a[2]                  75 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(68, 3435 ps) -> u_fpu(3, 104 ps) -> top(2, 34 ps)\n 17. y[3]                     3677.4 ps  from a[2]                  76 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(73, 3553 ps) -> top(1, 18 ps)\n 18. y[1]                     3665.9 ps  from a[2]                  75 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3513 ps) -> top(2, 47 ps)\n 19. y[0]                     3601.3 ps  from a[2]                  71 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3386 ps) -> u_fpu(2, 109 ps)\n 20. flags[0]                  708.9 ps  from op[2]                 14 cells   shared(3)(1, 46 ps) -> shared(top,u_fpu)(1, 60 ps) -> top(1, 46 ps) -> shared(top,u_fpu)(8, 397 ps) -> u_fpu(2, 102 ps) -> top(1, 57 ps)\n\n## The first 3 of them cell by cell\n### 1. flags[2] at 3908.8 ps\nstart a[2] (input)  ->  end flags[2] (output)   3908.8 ps   79 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             71 cells    106.1 ->  3621.2 ps  (+3515.1)   in via $abc$28862$new_n259   out via $abc$28862$new_n3364\n  u_fpu                          6 cells   3621.2 ->  3908.8 ps  (+ 287.6)   in via $abc$28862$new_n3364   out via flags[2]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3681.5   60.3  f->r  NOR3_X2     u_fpu                      $abc$28862$new_n3530                           2    3.9   29.7\n 75   3740.4   58.9  r->r  XOR2_X1     u_fpu                      $abc$28862$new_n3531                           2    3.3   29.1\n 76   3770.8   30.3  r->f  OAI211_X1   u_fpu                      $abc$28862$new_n3938                           1    1.6   17.4\n 77   3850.8   80.0  f->r  NOR4_X1     u_fpu                      $abc$28862$new_n3939                           1    1.6   41.1\n 78   3882.6   31.9  r->f  OAI221_X1   u_fpu                      $abc$28862$new_n3949                           1    1.4   18.5\n 79   3908.8   26.2  f->r  AOI21_X1    u_fpu                      flags[2]                                       0    0.0   13.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n### 2. y[12] at 3902.8 ps\nstart a[2] (input)  ->  end y[12] (output)   3902.8 ps   78 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             72 cells    106.1 ->  3714.7 ps  (+3608.5)   in via $abc$28862$new_n259   out via $abc$28862$new_n3368\n  u_fpu                          3 cells   3714.7 ->  3877.8 ps  (+ 163.1)   in via $abc$28862$new_n3368   out via res_main[12]\n  top                            1 cells   3877.8 ->  3902.8 ps  (+  25.0)   in via res_main[12]   out via y[12]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3714.7   93.5  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3368                           3    5.5   52.3\n 75   3774.0   59.3  r->f  XNOR2_X1    u_fpu                      $abc$28862$new_n3510                           2    3.1   20.6\n 76   3850.0   76.0  f->r  AOI221_X1   u_fpu                      $abc$28862$new_n3512                           1    0.9   36.0\n 77   3877.8   27.8  r->r  OR2_X1      u_fpu                      res_main[12]                                   1    1.0    6.7\n 78   3902.8   25.0  r->r  AND2_X1     top                        y[12]                                          0    0.0    5.4\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n### 3. flags[3] at 3888.5 ps\nstart a[2] (input)  ->  end flags[3] (output)   3888.5 ps   79 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             71 cells    106.1 ->  3621.2 ps  (+3515.1)   in via $abc$28862$new_n259   out via $abc$28862$new_n3364\n  u_fpu                          6 cells   3621.2 ->  3888.5 ps  (+ 267.3)   in via $abc$28862$new_n3364   out via flags[3]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3677.7   56.5  f->f  OR2_X2      u_fpu                      $abc$28862$new_n3549                           2    3.3    8.9\n 75   3708.1   30.4  f->f  AND2_X1     u_fpu                      $abc$28862$new_n3905                           1    1.5    5.9\n 76   3808.7  100.6  f->f  OR4_X2      u_fpu                      $abc$28862$new_n3911                           1    1.5   15.2\n 77   3842.7   34.1  f->r  OAI211_X1   u_fpu                      $abc$28862$new_n3914                           3    4.8   35.1\n 78   3864.6   21.9  r->f  OAI21_X1    u_fpu                      $abc$28862$new_n3951                           1    1.4   13.5\n 79   3888.5   24.0  f->r  AOI21_X1    u_fpu                      flags[3]                                       0    0.0   13.6\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n",
+    "area_by_hierarchy": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## Area per instance of the flattened design (cells shared between instances split equally; total 4600.5 um2)\ninstance                                       module                                    area um2      %    cells\ntop (whole design)                                                                         4600.5  100.0   3910.0\n  u_fpu                                        transdot_fpu_top$alu_core.u_fpu             2475.1   53.8   2093.2\n  u_cmp_eq                                     transdot_fpu_top$alu_core.u_cmp_eq            67.9    1.5     65.2\n\n## Structure members -> modules -> instances\nmember                   module                                   instances                           area\n",
+    "report_seconds": 9.8
+   },
+   "node_hash": "cf1de308f3e9fbd2459b9dfa10c2b184c75b7eabc6ebd96ba962cdf1b23ad621"
+  }
+ },
+ "skipped": {},
+ "gave_up": {},
+ "hard_fail": false,
+ "feasible": true,
+ "goal_values": [
+  4543.014,
+  3816.79
+ ],
+ "fidelity_level": 1,
+ "touched": [],
+ "sub": [],
+ "score": {
+  "combined_score": 1.0,
+  "rule": "ratio_to_seed"
+ },
+ "source_sha256": "a21daecfe33095319b2ff12824fa6728969e0912ad3b3779624e35cb6b34c9a9",
+ "source_path": "$CHIALU_HOME/tmp/handseeds/verified/transdot/seeds/transdot_merged_hand_seed/program.sv",
+ "cost": {
+  "seconds": 31.958,
+  "node_calls": 4,
+  "cache_hits": 0
+ },
+ "feedback": {
+  "conformance.detail": "bit-exact against the reference",
+  "synth_ppa.detail": "",
+  "synth_ppa.summary": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## Units of the flattened design (shared = logic ABC merged between instances, split equally)\ninstance                   module                             member                area um2      %   cells  shared  in arr  out arr\nu_fpu                      transdot_fpu_top$alu_core.u_fpu    -                       2475.1   53.8    2093    1691     280     3909\nu_cmp_eq                   transdot_fpu_top$alu_core.u_cmp_eq -                         67.9    1.5      65      61     280      686\ntop glue (operand decode, the op mux, the flags)                                      2057.5   44.7\ntotal                                                                                 4600.5\nin arr / out arr: the latest arrival (ps) at the unit's input / output port nets; a unit whose out arr is near the total is on the critical path, one whose in arr is late waits for another unit\n",
+  "synth_ppa.critical_path": "1. flags[2]                 3908.8 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 288 ps)",
+  "synth_ppa.paths": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## The 20 latest endpoints; owner(cells, ps) per segment of the path\n\n  1. flags[2]                 3908.8 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 288 ps)\n  2. y[12]                    3902.8 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(72, 3609 ps) -> u_fpu(3, 163 ps) -> top(1, 25 ps)\n  3. flags[3]                 3888.5 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 267 ps)\n  4. y[7]                     3882.1 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3373 ps) -> u_fpu(8, 375 ps) -> top(1, 28 ps)\n  5. flags[1]                 3877.2 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(6, 256 ps)\n  6. y[11]                    3860.5 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(4, 211 ps) -> top(1, 29 ps)\n  7. y[13]                    3847.3 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(72, 3609 ps) -> u_fpu(4, 104 ps) -> top(1, 28 ps)\n  8. y[15]                    3838.9 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3373 ps) -> u_fpu(7, 331 ps) -> top(1, 29 ps)\n  9. y[14]                    3832.0 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(75, 3707 ps) -> top(1, 19 ps)\n 10. y[10]                    3824.9 ps  from a[2]                  79 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3515 ps) -> u_fpu(4, 172 ps) -> top(2, 31 ps)\n 11. y[8]                     3798.4 ps  from a[2]                  78 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(70, 3464 ps) -> u_fpu(4, 190 ps) -> top(2, 37 ps)\n 12. y[9]                     3768.2 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(74, 3650 ps) -> top(1, 12 ps)\n 13. y[5]                     3720.7 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(69, 3452 ps) -> u_fpu(5, 134 ps) -> top(1, 28 ps)\n 14. y[6]                     3714.2 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(70, 3464 ps) -> u_fpu(4, 115 ps) -> top(1, 29 ps)\n 15. y[4]                     3700.7 ps  from a[2]                  77 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(69, 3452 ps) -> u_fpu(5, 114 ps) -> top(1, 28 ps)\n 16. y[2]                     3679.0 ps  from a[2]                  75 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(68, 3435 ps) -> u_fpu(3, 104 ps) -> top(2, 34 ps)\n 17. y[3]                     3677.4 ps  from a[2]                  76 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(73, 3553 ps) -> top(1, 18 ps)\n 18. y[1]                     3665.9 ps  from a[2]                  75 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(71, 3513 ps) -> top(2, 47 ps)\n 19. y[0]                     3601.3 ps  from a[2]                  71 cells   shared(3)(2, 106 ps) -> shared(top,u_fpu)(67, 3386 ps) -> u_fpu(2, 109 ps)\n 20. flags[0]                  708.9 ps  from op[2]                 14 cells   shared(3)(1, 46 ps) -> shared(top,u_fpu)(1, 60 ps) -> top(1, 46 ps) -> shared(top,u_fpu)(8, 397 ps) -> u_fpu(2, 102 ps) -> top(1, 57 ps)\n\n## The first 3 of them cell by cell\n### 1. flags[2] at 3908.8 ps\nstart a[2] (input)  ->  end flags[2] (output)   3908.8 ps   79 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             71 cells    106.1 ->  3621.2 ps  (+3515.1)   in via $abc$28862$new_n259   out via $abc$28862$new_n3364\n  u_fpu                          6 cells   3621.2 ->  3908.8 ps  (+ 287.6)   in via $abc$28862$new_n3364   out via flags[2]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3681.5   60.3  f->r  NOR3_X2     u_fpu                      $abc$28862$new_n3530                           2    3.9   29.7\n 75   3740.4   58.9  r->r  XOR2_X1     u_fpu                      $abc$28862$new_n3531                           2    3.3   29.1\n 76   3770.8   30.3  r->f  OAI211_X1   u_fpu                      $abc$28862$new_n3938                           1    1.6   17.4\n 77   3850.8   80.0  f->r  NOR4_X1     u_fpu                      $abc$28862$new_n3939                           1    1.6   41.1\n 78   3882.6   31.9  r->f  OAI221_X1   u_fpu                      $abc$28862$new_n3949                           1    1.4   18.5\n 79   3908.8   26.2  f->r  AOI21_X1    u_fpu                      flags[2]                                       0    0.0   13.7\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n### 2. y[12] at 3902.8 ps\nstart a[2] (input)  ->  end y[12] (output)   3902.8 ps   78 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             72 cells    106.1 ->  3714.7 ps  (+3608.5)   in via $abc$28862$new_n259   out via $abc$28862$new_n3368\n  u_fpu                          3 cells   3714.7 ->  3877.8 ps  (+ 163.1)   in via $abc$28862$new_n3368   out via res_main[12]\n  top                            1 cells   3877.8 ->  3902.8 ps  (+  25.0)   in via res_main[12]   out via y[12]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3714.7   93.5  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3368                           3    5.5   52.3\n 75   3774.0   59.3  r->f  XNOR2_X1    u_fpu                      $abc$28862$new_n3510                           2    3.1   20.6\n 76   3850.0   76.0  f->r  AOI221_X1   u_fpu                      $abc$28862$new_n3512                           1    0.9   36.0\n 77   3877.8   27.8  r->r  OR2_X1      u_fpu                      res_main[12]                                   1    1.0    6.7\n 78   3902.8   25.0  r->r  AND2_X1     top                        y[12]                                          0    0.0    5.4\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n### 3. flags[3] at 3888.5 ps\nstart a[2] (input)  ->  end flags[3] (output)   3888.5 ps   79 cells\nsegments (consecutive cells owned by one hierarchy instance):\n  shared(3)                      2 cells      0.0 ->   106.1 ps  (+ 106.1)   in via a[2]   out via $abc$28862$new_n259\n  shared(top,u_fpu)             71 cells    106.1 ->  3621.2 ps  (+3515.1)   in via $abc$28862$new_n259   out via $abc$28862$new_n3364\n  u_fpu                          6 cells   3621.2 ->  3888.5 ps  (+ 267.3)   in via $abc$28862$new_n3364   out via flags[3]\n\n  #  arrival   incr edge  cell        owner                      output net                                    fo   load   slew\n  1     53.2   53.2  f->r  NOR3_X2     shared(3)                  $abc$28862$new_n174                            3    5.0   33.3\n  2    106.1   52.9  r->r  AND3_X2     shared(3)                  $abc$28862$new_n259                            5    7.6   14.8\n  3    123.2   17.1  r->f  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n1000                           1    3.0   12.1\n  4    204.7   81.5  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n1002                           3    4.1   44.2\n  5    268.9   64.2  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1006                           2    3.9   32.5\n  6    332.3   63.4  r->r  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1014                           3    4.1   33.1\n  7    353.8   21.4  r->f  NAND2_X1    shared(top,u_fpu)          $abc$28862$new_n1020                           1    2.9   13.7\n  8    407.3   53.5  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n1021                           3   11.5   40.4\n  9    429.1   21.8  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1023                           3    8.6   15.1\n 10    460.1   31.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1025                           2    8.6   24.3\n 11    504.3   44.2  r->f  XNOR2_X1    shared(top,u_fpu)          $abc$28862$new_n1089                           1    1.5   17.7\n 12    571.4   67.1  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1090                           5    9.8   13.8\n 13    611.9   40.5  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n1091                           1    5.8   10.1\n 14    654.5   42.6  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1131                           2    9.1   24.3\n 15    676.0   21.4  r->f  OAI21_X4    shared(top,u_fpu)          $abc$28862$new_n1132                           2    8.0   12.3\n 16    707.9   32.0  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n1133                           2    6.4   21.2\n 17    738.9   31.0  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n1134                           4    6.6   18.4\n 18    797.4   58.5  f->f  XOR2_X1     shared(top,u_fpu)          $abc$28862$new_n1137                           3    4.1   14.1\n 19    913.7  116.3  f->r  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n1859                           4    7.9  104.6\n 20    963.1   49.3  r->f  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n1885                           5   10.0   37.0\n 21   1005.6   42.5  f->f  BUF_X4      shared(top,u_fpu)          $abc$28862$new_n1912                          10   18.1    9.0\n 22   1070.0   64.5  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1913                           3    4.5   13.1\n 23   1125.8   55.8  f->f  MUX2_X2     shared(top,u_fpu)          $abc$28862$new_n1919                           2    2.5    9.8\n 24   1189.6   63.9  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n1920                           3    3.8   12.4\n 25   1224.5   34.9  f->r  OAI211_X1   shared(top,u_fpu)          $abc$28862$new_n1922                           2    2.5   24.4\n 26   1263.6   39.1  r->f  NAND4_X1    shared(top,u_fpu)          $abc$28862$new_n2174                           1    3.5   22.8\n 27   1353.6   90.0  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2175                           2    4.6   48.5\n 28   1385.4   31.8  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2179                           2    4.8   20.5\n 29   1418.6   33.2  f->r  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2181                           2    4.0   20.4\n 30   1439.1   20.4  r->f  AOI21_X1    shared(top,u_fpu)          $abc$28862$new_n2182                           2    2.9   14.0\n 31   1487.4   48.4  f->f  OR2_X2      shared(top,u_fpu)          $abc$28862$new_n2185                           4    6.8   10.7\n 32   1553.5   66.1  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2186                           3    6.4   52.5\n 33   1590.0   36.5  r->f  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2187                           3    4.3   22.3\n 34   1639.1   49.1  f->r  AOI211_X1   shared(top,u_fpu)          $abc$28862$new_n2189                           2    2.5   42.9\n 35   1670.2   31.1  r->f  OAI21_X1    shared(top,u_fpu)          $abc$28862$new_n2190                           2    3.8   18.8\n 36   1704.9   34.7  f->r  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2191                           2    3.2   21.2\n 37   1746.7   41.8  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n2192                           3    6.8   24.9\n 38   1798.0   51.3  f->r  OAI211_X2   shared(top,u_fpu)          $abc$28862$new_n2193                           3    7.4   30.8\n 39   1823.0   25.0  r->f  AOI21_X2    shared(top,u_fpu)          $abc$28862$new_n2194                           3    8.0   16.8\n 40   1871.2   48.2  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n2201                           3    6.8   43.2\n 41   1910.8   39.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n2218                           3    5.4   24.0\n 42   2002.9   92.1  f->f  OR4_X2      shared(top,u_fpu)          $abc$28862$new_n2226                           4    9.8   20.4\n 43   2044.7   41.8  f->f  AND3_X1     shared(top,u_fpu)          $abc$28862$new_n2321                           1    3.1    8.2\n 44   2135.9   91.2  f->r  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n2330                           3    8.5   60.0\n 45   2188.3   52.4  r->f  NAND4_X4    shared(top,u_fpu)          $abc$28862$new_n2344                           8   18.6   30.7\n 46   2252.6   64.4  f->f  OR3_X4      shared(top,u_fpu)          $abc$28862$new_n2555                           1    3.2   11.1\n 47   2309.9   57.3  f->r  AOI22_X2    shared(top,u_fpu)          $abc$28862$new_n2556                           3    7.3   34.0\n 48   2363.0   53.1  r->f  XNOR2_X2    shared(top,u_fpu)          $abc$28862$new_n2557                           3    7.1   16.7\n 49   2447.4   84.4  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n2559                           2    4.8   49.0\n 50   2474.7   27.3  r->f  OAI21_X2    shared(top,u_fpu)          $abc$28862$new_n2560                           2    7.1   18.6\n 51   2506.4   31.7  f->r  AOI21_X4    shared(top,u_fpu)          $abc$28862$new_n2562                           2    7.9   23.0\n 52   2531.0   24.7  r->f  OAI211_X4   shared(top,u_fpu)          $abc$28862$new_n2567                           3    8.1   21.2\n 53   2573.6   42.5  f->f  AND4_X4     shared(top,u_fpu)          $abc$28862$new_n2633                           5   10.2    7.8\n 54   2654.7   81.1  f->f  OR3_X2      shared(top,u_fpu)          $abc$28862$new_n2640                           3   11.0   17.0\n 55   2682.6   28.0  f->r  NAND3_X4    shared(top,u_fpu)          $abc$28862$new_n2665                           5   12.9   16.2\n 56   2703.9   21.3  r->f  NAND2_X4    shared(top,u_fpu)          $abc$28862$new_n2668                          10   17.8   13.3\n 57   2763.3   59.3  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2669                           2    1.8   10.2\n 58   2822.0   58.7  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2685                           2    1.8   10.2\n 59   2890.2   68.2  f->f  MUX2_X1     shared(top,u_fpu)          $abc$28862$new_n2696                           3    6.0   14.6\n 60   3000.7  110.5  f->f  OR4_X4      shared(top,u_fpu)          $abc$28862$new_n2697                           4    8.3   16.7\n 61   3034.6   33.9  f->f  AND3_X4     shared(top,u_fpu)          $abc$28862$new_n3002                           3    8.9    7.0\n 62   3059.5   25.0  f->f  BUF_X8      shared(top,u_fpu)          $abc$28862$new_n3003                          10   15.9    5.8\n 63   3103.2   43.7  f->r  AOI211_X2   shared(top,u_fpu)          $abc$28862$new_n3012                           2    3.3   36.7\n 64   3137.4   34.2  r->f  OAI33_X1    shared(top,u_fpu)          $abc$28862$new_n3021                           1    2.9   18.3\n 65   3203.7   66.3  f->r  NOR4_X2     shared(top,u_fpu)          $abc$28862$new_n3029                           1    3.2   41.7\n 66   3238.3   34.6  r->f  AOI221_X2   shared(top,u_fpu)          $abc$28862$new_n3052                           2    4.8   21.4\n 67   3305.1   66.8  f->r  NOR2_X1     shared(top,u_fpu)          $abc$28862$new_n3058                           5    8.3   46.1\n 68   3329.7   24.6  r->f  NOR4_X1     shared(top,u_fpu)          $abc$28862$new_n3059                           3    4.0   17.4\n 69   3364.5   34.7  f->f  AND2_X1     shared(top,u_fpu)          $abc$28862$new_n3360                           1    1.5    6.0\n 70   3447.1   82.6  f->r  AOI221_X1   shared(top,u_fpu)          $abc$28862$new_n3361                           2    3.4   53.4\n 71   3474.3   27.2  r->f  INV_X1      shared(top,u_fpu)          $abc$28862$new_n3362                           2    8.2   19.5\n 72   3570.6   96.3  f->r  NOR4_X4     shared(top,u_fpu)          $abc$28862$new_n3363                           5   10.7   52.6\n 73   3621.2   50.6  r->f  NAND4_X2    shared(top,u_fpu)          $abc$28862$new_n3364                           4   10.5   33.1\n 74   3677.7   56.5  f->f  OR2_X2      u_fpu                      $abc$28862$new_n3549                           2    3.3    8.9\n 75   3708.1   30.4  f->f  AND2_X1     u_fpu                      $abc$28862$new_n3905                           1    1.5    5.9\n 76   3808.7  100.6  f->f  OR4_X2      u_fpu                      $abc$28862$new_n3911                           1    1.5   15.2\n 77   3842.7   34.1  f->r  OAI211_X1   u_fpu                      $abc$28862$new_n3914                           3    4.8   35.1\n 78   3864.6   21.9  r->f  OAI21_X1    u_fpu                      $abc$28862$new_n3951                           1    1.4   13.5\n 79   3888.5   24.0  f->r  AOI21_X1    u_fpu                      flags[3]                                       0    0.0   13.6\nedge: input edge -> output edge (r rise, f fall); load in fF at the cell output; slew in ps; shared(...) = logic ABC merged between instances\n  shared(3) = top, u_cmp_eq, u_fpu\n\n",
+  "synth_ppa.area_by_hierarchy": "# alu_core at clock 300 ps on NangateOpenCellLibrary_typical.lib\nthe metric (synth_ppa, per-metric median of 5; cells from run 3): area 4543.014 um2, 3843 cells, ABC delay 3816.79 ps\nthese reports (the same netlist mapped with `keep` on 38 unit port nets, so cells keep an owner): area 4600.47 um2, 4095 cells, ABC delay 3908.84 ps, this timing analysis 3908.8 ps; the numbers differ from the metric by a few per cent\n\n## Area per instance of the flattened design (cells shared between instances split equally; total 4600.5 um2)\ninstance                                       module                                    area um2      %    cells\ntop (whole design)                                                                         4600.5  100.0   3910.0\n  u_fpu                                        transdot_fpu_top$alu_core.u_fpu             2475.1   53.8   2093.2\n  u_cmp_eq                                     transdot_fpu_top$alu_core.u_cmp_eq            67.9    1.5     65.2\n\n## Structure members -> modules -> instances\nmember                   module                                   instances                           area\n"
+ },
+ "stderr": null,
+ "decision": "pending",
+ "retracted": []
+}

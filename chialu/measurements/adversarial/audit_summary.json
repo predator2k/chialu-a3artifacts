@@ -1,0 +1,3085 @@
+{
+  "int": {
+    "generation": {
+      "target": "int",
+      "draws": 300,
+      "forced": {
+        "before": {
+          "families": [
+            985,
+            1219
+          ],
+          "all": [
+            5750,
+            11268
+          ]
+        },
+        "after": {
+          "families": [
+            1219,
+            1219
+          ],
+          "all": [
+            7990,
+            11268
+          ]
+        },
+        "points": 400,
+        "per_family": 1,
+        "per_value": 1,
+        "cap": 400,
+        "unreachable": {
+          "families": 1383,
+          "all": 171879
+        },
+        "note": "covered/total over reachable (variable, member) pairs; unreachable pairs counted apart"
+      },
+      "rendered": 700,
+      "errors": [],
+      "raw_errors": 0,
+      "selected": 80,
+      "features_total": 35441,
+      "features_selected": 17721,
+      "dropped": 0
+    },
+    "freeze": {
+      "spec": {
+        "unit": "alu",
+        "modes": [
+          {
+            "count": 1,
+            "format": "int16"
+          },
+          {
+            "count": 1,
+            "format": "uint16"
+          },
+          {
+            "count": 2,
+            "format": "int8"
+          }
+        ],
+        "ops": [
+          "add",
+          "sub",
+          "adc",
+          "neg",
+          "abs",
+          "add_sat",
+          "mul",
+          "mul_high",
+          "min",
+          "max",
+          "cmp",
+          "shl",
+          "shr_arith",
+          "rol",
+          "and",
+          "or",
+          "xor",
+          "not",
+          "popcount",
+          "clz",
+          "ctz"
+        ],
+        "rounding": [
+          "RNE"
+        ],
+        "daz_in": [
+          false
+        ],
+        "ftz_out": [
+          false
+        ],
+        "unary_dual": [
+          false
+        ],
+        "check_sr": [
+          true
+        ],
+        "flags": [
+          "carry",
+          "int_overflow"
+        ],
+        "sr_bits": 8,
+        "x_form": "exact",
+        "nan_payload": "canonical",
+        "invalid_result": "saturate",
+        "nan_to_int": "zero",
+        "minmax_nan": "propagate",
+        "tininess": "after",
+        "int_div_zero": "riscv",
+        "zero_sign": "positive",
+        "quire_overflow": "wrap",
+        "block_scale_rounding": "nearest",
+        "block_element_overflow": "saturate",
+        "sr_compare": "gt",
+        "check_flags": false,
+        "flag_scope": "per_result",
+        "fma_contract": "fused",
+        "accuracy": "exact",
+        "accuracy_ctl": "static",
+        "check": {
+          "fallback": "duplicate",
+          "groups": [
+            {
+              "name": "all",
+              "pairs": [
+                [
+                  0,
+                  "abs"
+                ],
+                [
+                  0,
+                  "adc"
+                ],
+                [
+                  0,
+                  "add"
+                ],
+                [
+                  0,
+                  "add_sat"
+                ],
+                [
+                  0,
+                  "and"
+                ],
+                [
+                  0,
+                  "clz"
+                ],
+                [
+                  0,
+                  "cmp"
+                ],
+                [
+                  0,
+                  "ctz"
+                ],
+                [
+                  0,
+                  "max"
+                ],
+                [
+                  0,
+                  "min"
+                ],
+                [
+                  0,
+                  "mul"
+                ],
+                [
+                  0,
+                  "mul_high"
+                ],
+                [
+                  0,
+                  "neg"
+                ],
+                [
+                  0,
+                  "not"
+                ],
+                [
+                  0,
+                  "or"
+                ],
+                [
+                  0,
+                  "popcount"
+                ],
+                [
+                  0,
+                  "rol"
+                ],
+                [
+                  0,
+                  "shl"
+                ],
+                [
+                  0,
+                  "shr_arith"
+                ],
+                [
+                  0,
+                  "sub"
+                ],
+                [
+                  0,
+                  "xor"
+                ],
+                [
+                  1,
+                  "abs"
+                ],
+                [
+                  1,
+                  "adc"
+                ],
+                [
+                  1,
+                  "add"
+                ],
+                [
+                  1,
+                  "add_sat"
+                ],
+                [
+                  1,
+                  "and"
+                ],
+                [
+                  1,
+                  "clz"
+                ],
+                [
+                  1,
+                  "cmp"
+                ],
+                [
+                  1,
+                  "ctz"
+                ],
+                [
+                  1,
+                  "max"
+                ],
+                [
+                  1,
+                  "min"
+                ],
+                [
+                  1,
+                  "mul"
+                ],
+                [
+                  1,
+                  "mul_high"
+                ],
+                [
+                  1,
+                  "neg"
+                ],
+                [
+                  1,
+                  "not"
+                ],
+                [
+                  1,
+                  "or"
+                ],
+                [
+                  1,
+                  "popcount"
+                ],
+                [
+                  1,
+                  "rol"
+                ],
+                [
+                  1,
+                  "shl"
+                ],
+                [
+                  1,
+                  "shr_arith"
+                ],
+                [
+                  1,
+                  "sub"
+                ],
+                [
+                  1,
+                  "xor"
+                ],
+                [
+                  2,
+                  "abs"
+                ],
+                [
+                  2,
+                  "adc"
+                ],
+                [
+                  2,
+                  "add"
+                ],
+                [
+                  2,
+                  "add_sat"
+                ],
+                [
+                  2,
+                  "and"
+                ],
+                [
+                  2,
+                  "clz"
+                ],
+                [
+                  2,
+                  "cmp"
+                ],
+                [
+                  2,
+                  "ctz"
+                ],
+                [
+                  2,
+                  "max"
+                ],
+                [
+                  2,
+                  "min"
+                ],
+                [
+                  2,
+                  "mul"
+                ],
+                [
+                  2,
+                  "mul_high"
+                ],
+                [
+                  2,
+                  "neg"
+                ],
+                [
+                  2,
+                  "not"
+                ],
+                [
+                  2,
+                  "or"
+                ],
+                [
+                  2,
+                  "popcount"
+                ],
+                [
+                  2,
+                  "rol"
+                ],
+                [
+                  2,
+                  "shl"
+                ],
+                [
+                  2,
+                  "shr_arith"
+                ],
+                [
+                  2,
+                  "sub"
+                ],
+                [
+                  2,
+                  "xor"
+                ]
+              ],
+              "detect": null,
+              "fallback": "duplicate",
+              "family": "residue",
+              "pins": {
+                "modulus": 15,
+                "generator_style": "csa_tree"
+              },
+              "comparator": {
+                "family": "direct_compare"
+              },
+              "slots": {}
+            }
+          ],
+          "unchecked": []
+        },
+        "check_en": true,
+        "dut_name": "alu_core",
+        "families": [
+          "integer"
+        ],
+        "n_random": 20000,
+        "seed": 655366,
+        "checker_name": "alu_checker",
+        "n_random_masks": 2000,
+        "detect": {
+          "false_alarms": [
+            "==",
+            0
+          ],
+          "single_bit_coverage": [
+            "==",
+            1.0
+          ],
+          "random_alias": [
+            "<=",
+            0.0834
+          ]
+        }
+      },
+      "n_vectors": 1274226,
+      "vector_sha256": "2514b5e1724d189e47c3627dcdae3db32066a6dfe44c3f7d27127bd782484f29",
+      "ports": [
+        [
+          "a",
+          "in",
+          16
+        ],
+        [
+          "b",
+          "in",
+          16
+        ],
+        [
+          "op",
+          "in",
+          5
+        ],
+        [
+          "mode",
+          "in",
+          2
+        ],
+        [
+          "y",
+          "out",
+          16
+        ],
+        [
+          "flags",
+          "out",
+          4
+        ]
+      ]
+    },
+    "initial_cases": 80,
+    "initial_pass": 75,
+    "initial_lint_pass": 80,
+    "initial_failures": [
+      {
+        "name": "c00088",
+        "scheme": "add-none_mul-none_log-none_pair-none_fmt-none_sw-pcc",
+        "sha256": "22ef81292e89d4690e209e7152ccc2921c47566c5494db03503c0ad2b470aa88",
+        "lint": {
+          "ok": true,
+          "detail": "",
+          "seconds": 6.4
+        },
+        "conformance": {
+          "pass": false,
+          "mismatch_count": 2365,
+          "first_mismatches": [
+            "MISMATCH i=121982 in=7fffd55518 got=55562 expect=55560",
+            "MISMATCH i=121998 in=7fffd55518 got=55562 expect=55560",
+            "MISMATCH i=141139 in=7ffe8d1918 got=b16a2 expect=b16a0",
+            "MISMATCH i=142206 in=400055551c got=aa2b2 expect=2aab2",
+            "MISMATCH i=142222 in=4000d5551c got=aa2a2 expect=2aaa2",
+            "MISMATCH i=142238 in=555555551c got=9bf22 expect=1c722",
+            "MISMATCH i=142254 in=7fffd5551c got=7f802 expect=00000",
+            "MISMATCH i=142258 in=400055551c got=aa2b2 expect=2aab2",
+            "MISMATCH i=142262 in=4000d5551c got=aa2a2 expect=2aaa2",
+            "MISMATCH i=142266 in=555555551c got=9bf22 expect=1c722"
+          ],
+          "detail": "2365 vectors mismatch; the first ones:\n* vector 121982: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xffff (-1) b[0]=0xaaaa (-21846); flags expected 0x0 got 0x2\n* vector 121998: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xffff (-1) b[0]=0xaaaa (-21846); flags expected 0x0 got 0x2\n* vector 141139: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xfffd (-3) b[0]=0x1a32 (6706); flags expected 0x0 got 0x2\n* vector 142206: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8000 (-32768) b[0]=0xaaaa (-21846); y[0] expected 0x2aab (10923) got 0xaa2b (-21973)\n* vector 142222: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8001 (-32767) b[0]=0xaaaa (-21846); y[0] expected 0x2aaa (10922) got 0xaa2a (-21974)\n* vector 142238: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xaaaa (-21846) b[0]=0xaaaa (-21846); y[0] expected 0x1c72 (7282) got 0x9bf2 (-25614)\n* vector 142254: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0xffff (-1) b[0]=0xaaaa (-21846); y[0] expected 0x0 (0) got 0x7f80 (32640); flags expected 0x0 got 0x2\n* vector 142258: mode 0 (1 x int16_twos_complement), op mul_high, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8000 (-32768) b[0]=0xaaaa (-21846); y[0] expected 0x2aab (10923) got 0xaa2b (-21973)\nthe declaration names core.multiplier.m1.final_converter.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+          "cycles_per_frame": null,
+          "seconds": 99.2,
+          "rule_defect_candidate": true,
+          "rule_members": [
+            "core.multiplier.m1.final_converter.family=end_around_carry (end_around_carry|*|*)"
+          ]
+        },
+        "seconds": 110.44
+      },
+      {
+        "name": "c00135",
+        "scheme": "add-none_mul-none_log-none_pair-none_fmt-none_sw-pcc",
+        "sha256": "eac819cb2fd290c48a8ecfc41b636c575a861f3cb9269c9184324af590ad1c8d",
+        "lint": {
+          "ok": true,
+          "detail": "",
+          "seconds": 2.4
+        },
+        "conformance": {
+          "pass": false,
+          "mismatch_count": 15884,
+          "first_mismatches": [
+            "MISMATCH i=970826 in=01807ca01a got=eb008 expect=eb000",
+            "MISMATCH i=970845 in=6c00c5c01a got=4880a expect=48808",
+            "MISMATCH i=970846 in=0380cbc09a got=2181a expect=21818",
+            "MISMATCH i=970847 in=2c00b3551a got=10aaa expect=10aa8",
+            "MISMATCH i=970848 in=1f00b07f9a got=40ffa expect=40ff8",
+            "MISMATCH i=970863 in=4f8138ff9a got=2ffea expect=2ffe8",
+            "MISMATCH i=970878 in=3a827f7f9a got=16fca expect=16fc8",
+            "MISMATCH i=970893 in=32844eff9a got=f1f8a expect=f1f88",
+            "MISMATCH i=970908 in=1e88357f9a got=42f0a expect=42f08",
+            "MISMATCH i=970921 in=71907f409a got=3a20a expect=3a202"
+          ],
+          "detail": "15884 vectors mismatch; the first ones:\n* vector 970826: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x40 (64); a[1]=0x3 (3) b[1]=0xf9 (-7); flags expected 0x0 got 0x8\n* vector 970845: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x80 (-128); a[1]=0xd8 (-40) b[1]=0x8b (-117); flags expected 0x8 got 0xa\n* vector 970846: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x81 (-127); a[1]=0x7 (7) b[1]=0x97 (-105); flags expected 0x8 got 0xa\n* vector 970847: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xaa (-86); a[1]=0x58 (88) b[1]=0x66 (102); flags expected 0x8 got 0xa\n* vector 970848: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xff (-1); a[1]=0x3e (62) b[1]=0x60 (96); flags expected 0x8 got 0xa\n* vector 970863: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x2 (2) b[0]=0xff (-1); a[1]=0x9f (-97) b[1]=0x71 (113); flags expected 0x8 got 0xa\n* vector 970878: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x4 (4) b[0]=0xff (-1); a[1]=0x75 (117) b[1]=0xfe (-2); flags expected 0x8 got 0xa\n* vector 970893: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8 (8) b[0]=0xff (-1); a[1]=0x65 (101) b[1]=0x9d (-99); flags expected 0x8 got 0xa\nthe declaration names core.multiplier.m2.merge_tree.cpa.adder.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+          "cycles_per_frame": null,
+          "seconds": 51.5,
+          "rule_defect_candidate": true,
+          "rule_members": [
+            "core.multiplier.m2.merge_tree.cpa.adder.family=end_around_carry (end_around_carry|*|*)"
+          ]
+        },
+        "seconds": 58.71
+      },
+      {
+        "name": "r0150",
+        "scheme": "add-none_mul-none_log-all_pair-comparator_fmt-none_sw-pcc",
+        "sha256": "ca2eac1aea617ce78b6448e85a8d8f2f7d07e328feccb64263ded1279715adf8",
+        "lint": {
+          "ok": true,
+          "detail": "",
+          "seconds": 1.1
+        },
+        "conformance": {
+          "pass": false,
+          "mismatch_count": 15869,
+          "first_mismatches": [
+            "MISMATCH i=970826 in=01807ca01a got=eb008 expect=eb000",
+            "MISMATCH i=970845 in=6c00c5c01a got=4880a expect=48808",
+            "MISMATCH i=970846 in=0380cbc09a got=2181a expect=21818",
+            "MISMATCH i=970847 in=2c00b3551a got=10aaa expect=10aa8",
+            "MISMATCH i=970848 in=1f00b07f9a got=40ffa expect=40ff8",
+            "MISMATCH i=970863 in=4f8138ff9a got=2ffea expect=2ffe8",
+            "MISMATCH i=970878 in=3a827f7f9a got=16fca expect=16fc8",
+            "MISMATCH i=970893 in=32844eff9a got=f1f8a expect=f1f88",
+            "MISMATCH i=970908 in=1e88357f9a got=42f0a expect=42f08",
+            "MISMATCH i=970921 in=71907f409a got=3a20a expect=3a202"
+          ],
+          "detail": "15869 vectors mismatch; the first ones:\n* vector 970826: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x0 (0) b[0]=0x40 (64); a[1]=0x3 (3) b[1]=0xf9 (-7); flags expected 0x0 got 0x8\n* vector 970845: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x80 (-128); a[1]=0xd8 (-40) b[1]=0x8b (-117); flags expected 0x8 got 0xa\n* vector 970846: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x81 (-127); a[1]=0x7 (7) b[1]=0x97 (-105); flags expected 0x8 got 0xa\n* vector 970847: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xaa (-86); a[1]=0x58 (88) b[1]=0x66 (102); flags expected 0x8 got 0xa\n* vector 970848: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xff (-1); a[1]=0x3e (62) b[1]=0x60 (96); flags expected 0x8 got 0xa\n* vector 970863: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x2 (2) b[0]=0xff (-1); a[1]=0x9f (-97) b[1]=0x71 (113); flags expected 0x8 got 0xa\n* vector 970878: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x4 (4) b[0]=0xff (-1); a[1]=0x75 (117) b[1]=0xfe (-2); flags expected 0x8 got 0xa\n* vector 970893: mode 2 (2 x int8_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x8 (8) b[0]=0xff (-1); a[1]=0x65 (101) b[1]=0x9d (-99); flags expected 0x8 got 0xa\nthe declaration names core.multiplier.m2.merge_adder.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+          "cycles_per_frame": null,
+          "seconds": 58.1,
+          "rule_defect_candidate": true,
+          "rule_members": [
+            "core.multiplier.m2.merge_adder.family=end_around_carry (end_around_carry|*|*)"
+          ]
+        },
+        "seconds": 65.83
+      },
+      {
+        "name": "r0181",
+        "scheme": "add-none_mul-per_mode_log-all_pair-none_fmt-none_sw-rep",
+        "sha256": "59e6e024c2a056aa4fb2e56d8525c769e0ca5bd2d61d359082a16006ed90d053",
+        "lint": {
+          "ok": true,
+          "detail": "",
+          "seconds": 5.0
+        },
+        "conformance": {
+          "pass": false,
+          "mismatch_count": 9905,
+          "first_mismatches": [
+            "MISMATCH i=121756 in=0000c00018 got=80002 expect=80000",
+            "MISMATCH i=121757 in=0000c00098 got=80012 expect=80010",
+            "MISMATCH i=121758 in=0000d55518 got=aaaa2 expect=aaaa0",
+            "MISMATCH i=121759 in=0000ffff98 got=ffff2 expect=ffff0",
+            "MISMATCH i=121791 in=00087fff98 got=fff02 expect=fff00",
+            "MISMATCH i=121823 in=00807fff98 got=ff002 expect=ff000",
+            "MISMATCH i=121887 in=2aaaffff98 got=aaab2 expect=aaab0",
+            "MISMATCH i=121903 in=3fff7fff98 got=80022 expect=80020",
+            "MISMATCH i=121919 in=3fffffff98 got=80012 expect=80010",
+            "MISMATCH i=121951 in=4000ffff98 got=7fff2 expect=7fff0"
+          ],
+          "detail": "9905 vectors mismatch; the first ones:\n* vector 121756: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x8000 (-32768); flags expected 0x0 got 0x2\n* vector 121757: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0x8001 (-32767); flags expected 0x0 got 0x2\n* vector 121758: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xaaaa (-21846); flags expected 0x0 got 0x2\n* vector 121759: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x1 (1) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121791: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x10 (16) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121823: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x100 (256) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121887: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x5555 (21845) b[0]=0xffff (-1); flags expected 0x0 got 0x2\n* vector 121903: mode 0 (1 x int16_twos_complement), op mul, rounding=RNE, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x7ffe (32766) b[0]=0xffff (-1); flags expected 0x0 got 0x2\nthe declaration names core.comparator.m2.subtractor.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+          "cycles_per_frame": null,
+          "seconds": 67.2,
+          "rule_defect_candidate": true,
+          "rule_members": [
+            "core.comparator.m2.subtractor.family=end_around_carry (end_around_carry|*|*)"
+          ]
+        },
+        "seconds": 77.27
+      },
+      {
+        "name": "c00142",
+        "scheme": "add-none_mul-none_log-none_pair-none_fmt-none_sw-rep",
+        "sha256": "e0023e1c40e2ba7c9ad5012333b461fd16d815c4bd31f6c2c01876ddc8c10a91",
+        "lint": {
+          "ok": true,
+          "detail": "",
+          "seconds": 1.8
+        },
+        "conformance": {
+          "phase": "compile",
+          "pass": false,
+          "detail": "verilator timeout after 900s",
+          "seconds": 900.2
+        },
+        "seconds": 902.06
+      }
+    ],
+    "final_unique_cases": 87,
+    "final_pass": 86,
+    "final_results": {
+      "r0092": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.4
+      },
+      "c00151": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 25.6
+      },
+      "c00087": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 28.2
+      },
+      "c00017": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.9
+      },
+      "r0141": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.2
+      },
+      "c00111": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 29.3
+      },
+      "c00104": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.9
+      },
+      "c00100": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.8
+      },
+      "c00359": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 32.4
+      },
+      "c00118": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 55.5
+      },
+      "c00088": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 65.3
+      },
+      "c00090": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.1
+      },
+      "r0259": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.0
+      },
+      "c00033": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.8
+      },
+      "c00097": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 132.0
+      },
+      "r0112": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 32.5
+      },
+      "c00205": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.1
+      },
+      "c00042": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 25.7
+      },
+      "c00128": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 126.0
+      },
+      "r0252": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.0
+      },
+      "c00373": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 83.4
+      },
+      "c00127": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.8
+      },
+      "c00135": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.7
+      },
+      "r0006": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.6
+      },
+      "c00020": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.8
+      },
+      "c00021": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.4
+      },
+      "r0087": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 60.9
+      },
+      "c00307": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 29.5
+      },
+      "c00188": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.6
+      },
+      "c00046": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 52.4
+      },
+      "r0284": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.2
+      },
+      "c00058": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 64.0
+      },
+      "c00043": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 54.8
+      },
+      "c00045": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 42.0
+      },
+      "c00160": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.6
+      },
+      "c00132": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 35.3
+      },
+      "r0278": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 71.1
+      },
+      "r0251": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 17.6
+      },
+      "c00134": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.0
+      },
+      "c00096": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.5
+      },
+      "c00117": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.3
+      },
+      "c00091": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 117.7
+      },
+      "c00013": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 29.8
+      },
+      "c00038": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 49.5
+      },
+      "r0235": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 19.7
+      },
+      "c00217": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.4
+      },
+      "c00026": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 50.2
+      },
+      "r0089": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.1
+      },
+      "c00101": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 25.1
+      },
+      "c00143": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.7
+      },
+      "c00181": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 46.1
+      },
+      "c00048": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 43.1
+      },
+      "c00113": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.9
+      },
+      "r0150": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.6
+      },
+      "c00120": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.5
+      },
+      "c00246": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.2
+      },
+      "c00014": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.1
+      },
+      "c00339": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 40.9
+      },
+      "c00076": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 50.4
+      },
+      "c00157": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 100.0
+      },
+      "r0131": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 28.0
+      },
+      "c00105": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 29.7
+      },
+      "c00083": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.9
+      },
+      "c00057": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 251.4
+      },
+      "r0175": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 15.7
+      },
+      "c00070": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.4
+      },
+      "c00018": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 41.2
+      },
+      "c00221": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 40.7
+      },
+      "c00094": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.0
+      },
+      "r0213": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.3
+      },
+      "c00300": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.0
+      },
+      "c00198": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 21.5
+      },
+      "r0083": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 51.7
+      },
+      "r0181": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 49.2
+      },
+      "c00019": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.3
+      },
+      "c00317": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 20.0
+      },
+      "r0106": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 17.3
+      },
+      "c00036": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.1
+      },
+      "r0257": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 116.7
+      },
+      "c00142": {
+        "phase": "compile",
+        "pass": false,
+        "detail": "verilator timeout after 900s",
+        "seconds": 900.2
+      },
+      "r0066": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 20.0
+      },
+      "r0076": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 16.2
+      },
+      "r0120": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 16.4
+      },
+      "r0057": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 15.8
+      },
+      "r0072": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.1
+      },
+      "r0079": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 15.8
+      },
+      "r0100": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.3
+      }
+    }
+  },
+  "fp": {
+    "generation": {
+      "target": "fp",
+      "draws": 300,
+      "forced": {
+        "before": {
+          "families": [
+            1947,
+            2507
+          ],
+          "all": [
+            11153,
+            293579
+          ]
+        },
+        "after": {
+          "families": [
+            2507,
+            2507
+          ],
+          "all": [
+            15720,
+            293579
+          ]
+        },
+        "points": 400,
+        "per_family": 1,
+        "per_value": 1,
+        "cap": 400,
+        "unreachable": {
+          "families": 3417,
+          "all": 185930
+        },
+        "note": "covered/total over reachable (variable, member) pairs; unreachable pairs counted apart"
+      },
+      "rendered": 700,
+      "errors": [],
+      "raw_errors": 0,
+      "selected": 80,
+      "features_total": 86692,
+      "features_selected": 47102,
+      "dropped": 0
+    },
+    "freeze": {
+      "spec": {
+        "unit": "alu",
+        "modes": [
+          {
+            "count": 1,
+            "format": "fp16"
+          },
+          {
+            "count": 1,
+            "format": "bf16"
+          },
+          {
+            "count": 2,
+            "format": "fp8e5m2"
+          }
+        ],
+        "ops": [
+          "fadd",
+          "fsub",
+          "fmul",
+          "fmin",
+          "fmax",
+          "fcmp"
+        ],
+        "rounding": [
+          "RNE",
+          "RTZ",
+          "RDN",
+          "RUP"
+        ],
+        "daz_in": [
+          false
+        ],
+        "ftz_out": [
+          false
+        ],
+        "unary_dual": [
+          false
+        ],
+        "check_sr": [
+          true
+        ],
+        "flags": [
+          "invalid",
+          "overflow",
+          "underflow",
+          "inexact"
+        ],
+        "sr_bits": 8,
+        "x_form": "exact",
+        "nan_payload": "canonical",
+        "invalid_result": "saturate",
+        "nan_to_int": "zero",
+        "minmax_nan": "number",
+        "tininess": "after",
+        "int_div_zero": "riscv",
+        "zero_sign": "positive",
+        "quire_overflow": "wrap",
+        "block_scale_rounding": "nearest",
+        "block_element_overflow": "saturate",
+        "sr_compare": "gt",
+        "check_flags": false,
+        "flag_scope": "per_operation",
+        "fma_contract": "fused",
+        "accuracy": "exact",
+        "accuracy_ctl": "static",
+        "check_en": false,
+        "dut_name": "alu_core",
+        "families": [
+          "float"
+        ],
+        "n_random": 20000,
+        "seed": 655366
+      },
+      "n_vectors": 427964,
+      "vector_sha256": "c859354f3bea6512fe1f92df3133dacfb51aa8476ebf96dbff9b670272f277bf",
+      "ports": [
+        [
+          "a",
+          "in",
+          16
+        ],
+        [
+          "b",
+          "in",
+          16
+        ],
+        [
+          "op",
+          "in",
+          3
+        ],
+        [
+          "mode",
+          "in",
+          2
+        ],
+        [
+          "rounding_sel",
+          "in",
+          2
+        ],
+        [
+          "y",
+          "out",
+          16
+        ],
+        [
+          "flags",
+          "out",
+          4
+        ]
+      ]
+    },
+    "initial_cases": 80,
+    "initial_pass": 80,
+    "initial_lint_pass": 80,
+    "initial_failures": [],
+    "final_unique_cases": 88,
+    "final_pass": 88,
+    "final_results": {
+      "c00032": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 32.6
+      },
+      "r0015": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 38.7
+      },
+      "c00120": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 87.0
+      },
+      "c00045": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 56.8
+      },
+      "c00096": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 56.3
+      },
+      "c00199": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 102.3
+      },
+      "c00209": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.3
+      },
+      "c00233": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 42.4
+      },
+      "r0073": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 48.1
+      },
+      "c00012": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 36.4
+      },
+      "c00087": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 25.6
+      },
+      "c00251": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.5
+      },
+      "c00223": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 35.5
+      },
+      "c00036": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 56.1
+      },
+      "c00167": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 86.9
+      },
+      "c00273": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 43.1
+      },
+      "c00231": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 50.1
+      },
+      "c00146": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 56.2
+      },
+      "c00093": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.0
+      },
+      "c00188": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 50.8
+      },
+      "c00107": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.3
+      },
+      "c00394": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 40.4
+      },
+      "c00061": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.1
+      },
+      "c00129": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 42.4
+      },
+      "c00200": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 35.2
+      },
+      "c00258": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 62.9
+      },
+      "c00229": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.2
+      },
+      "c00212": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.3
+      },
+      "c00029": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.7
+      },
+      "c00210": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.7
+      },
+      "c00082": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 69.2
+      },
+      "c00203": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 29.7
+      },
+      "c00026": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 365.8
+      },
+      "c00002": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.0
+      },
+      "c00006": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.6
+      },
+      "r0046": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.5
+      },
+      "c00202": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.7
+      },
+      "r0275": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 88.6
+      },
+      "c00112": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 28.0
+      },
+      "c00221": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.0
+      },
+      "c00302": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.4
+      },
+      "c00013": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.4
+      },
+      "c00237": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 50.8
+      },
+      "c00298": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.4
+      },
+      "c00148": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.0
+      },
+      "c00165": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.7
+      },
+      "c00099": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.2
+      },
+      "r0077": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.4
+      },
+      "c00224": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.7
+      },
+      "r0113": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.3
+      },
+      "c00039": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 61.6
+      },
+      "c00046": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 39.1
+      },
+      "c00214": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 45.2
+      },
+      "r0279": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.3
+      },
+      "c00230": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 66.1
+      },
+      "c00007": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.7
+      },
+      "c00145": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 43.3
+      },
+      "c00080": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 32.9
+      },
+      "c00189": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.6
+      },
+      "c00265": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.4
+      },
+      "c00217": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 36.4
+      },
+      "c00283": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.0
+      },
+      "r0234": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 34.3
+      },
+      "c00225": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 44.8
+      },
+      "c00000": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.3
+      },
+      "c00275": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.7
+      },
+      "c00053": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 35.8
+      },
+      "c00207": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 29.6
+      },
+      "r0032": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 39.5
+      },
+      "c00238": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 42.2
+      },
+      "c00331": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 53.3
+      },
+      "c00100": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 49.9
+      },
+      "c00049": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.6
+      },
+      "c00250": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.7
+      },
+      "c00197": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.8
+      },
+      "c00057": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 61.1
+      },
+      "c00301": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 39.0
+      },
+      "r0158": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 20.1
+      },
+      "c00249": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.5
+      },
+      "r0154": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 51.3
+      },
+      "r0007": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 20.0
+      },
+      "r0018": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.3
+      },
+      "r0020": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.8
+      },
+      "r0024": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 52.8
+      },
+      "r0031": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 17.3
+      },
+      "r0160": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 47.6
+      },
+      "r0169": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 100.2
+      },
+      "c00313": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 53.2
+      }
+    }
+  },
+  "hf": {
+    "generation": {
+      "target": "hf",
+      "draws": 300,
+      "forced": {
+        "before": {
+          "families": [
+            1830,
+            2330
+          ],
+          "all": [
+            10408,
+            291790
+          ]
+        },
+        "after": {
+          "families": [
+            2330,
+            2330
+          ],
+          "all": [
+            14549,
+            291790
+          ]
+        },
+        "points": 400,
+        "per_family": 1,
+        "per_value": 1,
+        "cap": 400,
+        "unreachable": {
+          "families": 3351,
+          "all": 184490
+        },
+        "note": "covered/total over reachable (variable, member) pairs; unreachable pairs counted apart"
+      },
+      "rendered": 700,
+      "errors": [],
+      "raw_errors": 0,
+      "selected": 80,
+      "features_total": 81272,
+      "features_selected": 43826,
+      "dropped": 0
+    },
+    "freeze": {
+      "spec": {
+        "unit": "alu",
+        "modes": [
+          {
+            "count": 1,
+            "format": "fp16"
+          },
+          {
+            "count": 1,
+            "format": "bf16"
+          },
+          {
+            "count": 2,
+            "format": "fp8e5m2",
+            "ops": [
+              "fmul",
+              "fmin",
+              "fmax",
+              "fcmp"
+            ]
+          }
+        ],
+        "ops": [
+          "fadd",
+          "fsub",
+          "fmul",
+          "fmin",
+          "fmax",
+          "fcmp"
+        ],
+        "rounding": [
+          "RNE",
+          "RTZ",
+          "RDN",
+          "RUP"
+        ],
+        "daz_in": [
+          false
+        ],
+        "ftz_out": [
+          false
+        ],
+        "unary_dual": [
+          false
+        ],
+        "check_sr": [
+          true
+        ],
+        "flags": [
+          "invalid",
+          "overflow",
+          "underflow",
+          "inexact"
+        ],
+        "sr_bits": 8,
+        "x_form": "exact",
+        "nan_payload": "canonical",
+        "invalid_result": "saturate",
+        "nan_to_int": "zero",
+        "minmax_nan": "number",
+        "tininess": "after",
+        "int_div_zero": "riscv",
+        "zero_sign": "positive",
+        "quire_overflow": "wrap",
+        "block_scale_rounding": "nearest",
+        "block_element_overflow": "saturate",
+        "sr_compare": "gt",
+        "check_flags": false,
+        "flag_scope": "per_operation",
+        "fma_contract": "fused",
+        "accuracy": "exact",
+        "accuracy_ctl": "static",
+        "check_en": false,
+        "dut_name": "alu_core",
+        "families": [
+          "float"
+        ],
+        "n_random": 20000,
+        "seed": 655366
+      },
+      "n_vectors": 380140,
+      "vector_sha256": "7be6096f224a3cace3b741b28e9fcfe4235fa0cd8eb4f2b2f2f668343d77b95d",
+      "ports": [
+        [
+          "a",
+          "in",
+          16
+        ],
+        [
+          "b",
+          "in",
+          16
+        ],
+        [
+          "op",
+          "in",
+          3
+        ],
+        [
+          "mode",
+          "in",
+          2
+        ],
+        [
+          "rounding_sel",
+          "in",
+          2
+        ],
+        [
+          "y",
+          "out",
+          16
+        ],
+        [
+          "flags",
+          "out",
+          4
+        ]
+      ]
+    },
+    "initial_cases": 80,
+    "initial_pass": 79,
+    "initial_lint_pass": 80,
+    "initial_failures": [
+      {
+        "name": "c00354",
+        "scheme": "add-none_mul-none_log-none_pair-none_fmt-none",
+        "sha256": "40351d0ea3a6e3473951771f34296c7f0d4fd3f28aab5a2a4ccb8660299b6fb8",
+        "lint": {
+          "ok": true,
+          "detail": "",
+          "seconds": 9.1
+        },
+        "conformance": {
+          "pass": false,
+          "mismatch_count": 239,
+          "first_mismatches": [
+            "MISMATCH i=143986 in=1fc0400085 got=3f7e8 expect=3f7f8",
+            "MISMATCH i=143987 in=1fc0403f05 got=3f7e8 expect=3f7f8",
+            "MISMATCH i=143988 in=1fc0403f85 got=3f7e8 expect=3f7f8",
+            "MISMATCH i=143989 in=1fc0404005 got=3f7e8 expect=3f7f8",
+            "MISMATCH i=143990 in=1fc0404085 got=3f7e8 expect=3f7f8",
+            "MISMATCH i=144046 in=2000400085 got=3ffe8 expect=3fff8",
+            "MISMATCH i=144047 in=2000403f05 got=3ffe8 expect=3fff8",
+            "MISMATCH i=144048 in=2000403f85 got=3ffe8 expect=3fff8",
+            "MISMATCH i=144049 in=2000404005 got=3ffe8 expect=3fff8",
+            "MISMATCH i=144050 in=2000404085 got=3ffe8 expect=3fff8"
+          ],
+          "detail": "239 vectors mismatch; the first ones:\n* vector 143986: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x8001 (-9.18355e-41); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 143987: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x807e (-1.15713e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 143988: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x807f (-1.16631e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 143989: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x8080 (-1.17549e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 143990: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x3f80 (1) b[0]=0x8081 (-1.18468e-38); y[0] expected 0x3f7f (0.996094) got 0x3f7e (0.992188)\n* vector 144046: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x4000 (2) b[0]=0x8001 (-9.18355e-41); y[0] expected 0x3fff (1.99219) got 0x3ffe (1.98438)\n* vector 144047: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x4000 (2) b[0]=0x807e (-1.15713e-38); y[0] expected 0x3fff (1.99219) got 0x3ffe (1.98438)\n* vector 144048: mode 1 (1 x bf16), op fadd, rounding=RTZ, daz_in=False, ftz_out=False, unary_dual=False; a[0]=0x4000 (2) b[0]=0x807f (-1.16631e-38); y[0] expected 0x3fff (1.99219) got 0x3ffe (1.98438)\nthe declaration names core.fp_adder.m0.near_lz.string_form=dual_pos_neg_strings (lza|string_form|dual_pos_neg_strings), core.fp_adder.m0.sig_adder.family=end_around_carry (end_around_carry|*|*), core.fp_fma.m1.family=reduced_latency_fma (conditional family), core.fp_fma.m1.rounding_position=fused_with_cpa_dual_sum (reduced_latency_fma|rounding_position|fused_with_cpa_dual_sum), core.fp_multiplier.m2.sig_mul.merge_tree.tile_adder.family=end_around_carry (end_around_carry|*|*), core.rounder.m0.round.injection_adder.family=end_around_carry (end_around_carry|*|*), core.rounder.m2.exp_adder.family=end_around_carry (end_around_carry|*|*), which chialu.behavior_rules admitted under this contract: a failure of a library-rendered unit here is a rule or library defect rather than a candidate defect",
+          "cycles_per_frame": null,
+          "seconds": 126.0,
+          "rule_defect_candidate": true,
+          "rule_members": [
+            "core.fp_adder.m0.near_lz.string_form=dual_pos_neg_strings (lza|string_form|dual_pos_neg_strings)",
+            "core.fp_adder.m0.sig_adder.family=end_around_carry (end_around_carry|*|*)",
+            "core.fp_fma.m1.family=reduced_latency_fma (conditional family)",
+            "core.fp_fma.m1.rounding_position=fused_with_cpa_dual_sum (reduced_latency_fma|rounding_position|fused_with_cpa_dual_sum)",
+            "core.fp_multiplier.m2.sig_mul.merge_tree.tile_adder.family=end_around_carry (end_around_carry|*|*)",
+            "core.rounder.m0.round.injection_adder.family=end_around_carry (end_around_carry|*|*)",
+            "core.rounder.m2.exp_adder.family=end_around_carry (end_around_carry|*|*)"
+          ]
+        },
+        "seconds": 140.55
+      }
+    ],
+    "final_unique_cases": 86,
+    "final_pass": 86,
+    "final_results": {
+      "c00170": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 28.5
+      },
+      "c00113": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 36.3
+      },
+      "c00031": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 35.6
+      },
+      "c00243": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 50.7
+      },
+      "c00169": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.7
+      },
+      "c00111": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 52.7
+      },
+      "r0118": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 38.6
+      },
+      "r0192": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 52.2
+      },
+      "r0234": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 60.6
+      },
+      "c00005": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 28.6
+      },
+      "c00160": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.1
+      },
+      "c00156": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 50.4
+      },
+      "r0158": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 54.4
+      },
+      "c00283": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 32.0
+      },
+      "r0134": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.8
+      },
+      "c00257": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 96.1
+      },
+      "c00219": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 32.0
+      },
+      "r0051": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 77.0
+      },
+      "c00161": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 44.3
+      },
+      "c00166": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.2
+      },
+      "c00110": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 25.8
+      },
+      "c00260": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 69.6
+      },
+      "c00209": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.7
+      },
+      "r0063": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 18.6
+      },
+      "c00220": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.9
+      },
+      "c00051": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 34.8
+      },
+      "c00030": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.4
+      },
+      "c00171": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 34.9
+      },
+      "c00250": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 60.5
+      },
+      "c00130": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 52.2
+      },
+      "c00331": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 40.4
+      },
+      "c00152": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.1
+      },
+      "r0033": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 42.9
+      },
+      "c00174": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 36.9
+      },
+      "r0232": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.0
+      },
+      "c00118": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 44.5
+      },
+      "c00233": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.9
+      },
+      "c00228": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 56.2
+      },
+      "c00190": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.5
+      },
+      "c00199": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 38.1
+      },
+      "r0274": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.0
+      },
+      "c00391": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 58.7
+      },
+      "c00064": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 28.5
+      },
+      "c00029": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.5
+      },
+      "c00068": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.0
+      },
+      "c00142": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.3
+      },
+      "r0143": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.7
+      },
+      "c00053": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 25.5
+      },
+      "r0195": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.9
+      },
+      "r0237": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 109.5
+      },
+      "c00216": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.9
+      },
+      "c00295": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 40.5
+      },
+      "c00105": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 27.6
+      },
+      "c00074": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 53.6
+      },
+      "c00120": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 34.2
+      },
+      "c00096": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 45.3
+      },
+      "c00114": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 36.0
+      },
+      "c00052": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.7
+      },
+      "r0169": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 64.9
+      },
+      "c00226": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.1
+      },
+      "c00189": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 41.7
+      },
+      "c00176": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 39.3
+      },
+      "c00172": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 38.2
+      },
+      "c00200": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 28.2
+      },
+      "c00124": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 35.1
+      },
+      "r0065": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 45.2
+      },
+      "c00237": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 30.6
+      },
+      "c00019": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 31.5
+      },
+      "c00108": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 25.2
+      },
+      "c00232": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 37.6
+      },
+      "r0000": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.9
+      },
+      "r0260": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 63.3
+      },
+      "c00256": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 92.4
+      },
+      "c00164": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.2
+      },
+      "c00341": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 38.8
+      },
+      "c00249": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 44.3
+      },
+      "c00147": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 23.3
+      },
+      "r0157": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 26.4
+      },
+      "r0016": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 55.9
+      },
+      "c00354": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 44.0
+      },
+      "r0007": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 22.4
+      },
+      "r0024": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 51.4
+      },
+      "r0031": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 24.2
+      },
+      "r0120": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 33.7
+      },
+      "c00241": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 41.6
+      },
+      "c00217": {
+        "pass": true,
+        "mismatch_count": 0,
+        "first_mismatches": [],
+        "detail": "bit-exact against the reference",
+        "cycles_per_frame": null,
+        "seconds": 51.3
+      }
+    }
+  }
+}

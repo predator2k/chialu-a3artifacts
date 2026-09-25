@@ -1,0 +1,173 @@
+# A Yosys/ABC script for one fixed RTL block (a 32-bit ALU with a 16 x 16
+# multiplier) under a fixed liberty file and clock. The evaluator runs in
+# seconds, so the budget is thousands of iterations. An equivalence check of the mapped netlist
+# against the RTL makes the area number impossible to game. The domain
+# library is `chirecipe/` beside this file; the PDK descriptors and the
+# liberty files come from chiALU.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: synth_recipe
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  eda:
+    resources:
+      eda: 16
+      opencode_creds: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    worker_env_commands:
+      - export PATH=$HOME/.opencode/bin:$HOME/miniconda3/envs/chia_env/bin:$HOME/tools/bin:$HOME/tools/oss-cad-suite/bin:$PATH
+
+head_env_commands:
+  - export PATH=$HOME/.opencode/bin:$HOME/miniconda3/envs/chia_env/bin:$PATH
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --include-dashboard=false --dashboard-agent-listen-port=0
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0
+
+cache:
+  synth_recipe:
+    cache: true
+  equiv_netlist:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chirecipe.SynthRecipe
+  run_dir: run/synth_recipe
+
+  variables:
+    block:
+      fixed: alu_mixed32
+    pdk:
+      fixed: nangate45
+    clock_ps:
+      fixed: 1600
+    abc.script_family:                   # the recipe declares which family it belongs to
+      search: [resyn2, compress2rs, dch, custom]
+
+  artifacts:
+    recipe:                              # the script; the whole file is mutable
+      role: seed
+      kind: text
+      source: file
+      file: seeds/default.ys
+      language: yosys_script
+      evolve: ["*"]
+    rtl:
+      role: input
+      kind: text
+      source: file
+      file: rtl/alu_mixed32.sv
+      language: systemverilog
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      synth:                             # yosys plus ABC under the recipe
+        node: chirecipe.nodes.synth_recipe
+        inputs:
+          recipe: candidate.recipe
+          rtl: artifacts.rtl
+          top: vars.block
+          pdk: vars.pdk
+          clock_ps: vars.clock_ps
+          timeout_s: 600
+      equiv:                             # the mapped netlist against the RTL
+        node: chirecipe.nodes.equiv_netlist
+        inputs:
+          netlist: synth.netlist
+          rtl: artifacts.rtl
+          top: vars.block
+          pdk: vars.pdk
+          timeout_s: 300
+        when:
+          - synth.ok
+      sta:                               # library delay of the mapped netlist
+        node: chirecipe.nodes.sta
+        inputs:
+          netlist: synth.netlist
+          pdk: vars.pdk
+          clock_ps: vars.clock_ps
+          fallback_delay_ps: synth.abc_delay_ps
+        when:
+          - synth.ok
+    feedback: [synth.detail, synth.pass_trace, sta.critical_path]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: synth.ok, eq: true, hard: true}
+    - {metric: synth.seconds, le: 600, hard: true}
+    - {metric: equiv.pass, eq: true, hard: true}
+    - {metric: sta.delay_ps, le: 1600}
+
+  goal:
+    minimize: synth.area_um2
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+
+  knowledge: knowledge
+  task:
+    context: task.md
+
+  search:
+    backend: adaevolve                   # evox needs a SkyDiscover build that ships search/evox/config (the 0.1.0 wheel does not)
+    iterations: 3000
+    parallel: 8
+    eval_timeout_s: 1200
+    diff_mode: true
+    max_solution_bytes: 8000
+    retries: 1
+    database:
+      use_migration: true
+      migration_interval: 25
+      diversity_strategy: metric
+    seeds:
+      files: [seeds/default.ys, seeds/resyn2.ys, seeds/tapeout.ys]   # the tool's default, resyn2, the block's previous flow
+    context:
+      programs: 3
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+      log: true                        # every composed prompt under run/synth_recipe/prompts/
+    tactics:
+      sources: [unexplored_values, worst_constraint]
+      select: ucb
+      window: 50
+    models:
+      solution:
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+        timeout_s: 1800
+      guide:                             # AdaEvolve paradigm breakthroughs
+        agent: opencode
+        model: openrouter/deepseek/deepseek-v4.1-flash
+        timeout_s: 1800
+    budget:
+      wall_hours: 48
+      node_runs: 8000
+      llm_calls: 4000
+    stop:
+      plateau_iterations: 300
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: false
+    report:
+      front_only: false

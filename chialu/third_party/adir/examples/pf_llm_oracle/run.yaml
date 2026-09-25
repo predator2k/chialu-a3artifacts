@@ -1,0 +1,288 @@
+# An L1D prefetcher ensemble steered by a per-load-PC hint table, with the
+# table written by a program the search evolves instead of by a fine-tuned
+# model (PF-LLM / LMHint, Xu et al., ASPLOS '26).
+#
+# The paper fine-tuned a 0.5B model to read the assembly around each load
+# and emit a hint. It released no artifact, so its hint tables cannot be run
+# on these binaries and it cannot serve as a baseline. A candidate is read
+# instead against two references the sweep gives for free, on what was
+# actually measured -- IPC, cycles, DRAM traffic:
+#
+#   baseline      no prefetching at all: the floor
+#   best_single   the strongest one-size-fits-all choice, per workload.
+#                 Beating it is the whole point of deciding per load PC.
+#
+# An earlier version also assembled the sweep's per-PC argmin into a table
+# and called it a ceiling. It is not one: those choices are measured in runs
+# where a single member served every load, and composing them changes the
+# interference in the L1D and what every member trains on. The first search
+# candidate scored above it.
+#
+# Everything is real: ChampSim (upstream, Apache-2.0) with an `lmhint`
+# L1D module carrying the ensemble, the PHT and the PHB; benchmarks
+# the GAP benchmark suite, compiled here with -no-pie so an objdump
+# address is the PC in the trace; 400M-instruction traces cut by the
+# ChampSim pintool over the kernel only, never graph construction. The
+# window matters: at 8M simulated instructions bfs exposes two distinct
+# load PCs, at 60M it exposes 22, spanning 0% to 98% miss rate.
+
+adir:
+  module: pfllm.HintedPrefetcher
+  run_dir: /data2/<user>/a3-pfllm/run/pf_llm_oracle
+
+  variables:
+    cache_level:      {fixed: L1D}
+    api:              {fixed: champsim_modules}
+    isa:              {fixed: x86_64}
+    hint.bits:        {fixed: 8}          # 4 selection + 2 degree + 2 filter
+    hint.degree_levels: {fixed: 3}        # Q1 / median / Q3 of each member's native range
+    hint.fields:      {search: [SDF, SD, S]}
+    hint.default:     {search: [none, next_line, ip_stride, streamer]}
+    ensemble:         {search: [full, reduced]}
+    phb.entries:      {search: [256, 128, 512]}
+
+  artifacts:
+    hintgen:                              # the one thing the search rewrites
+      role: seed
+      kind: text
+      source: file
+      file: seeds/hintgen.py
+      language: python
+      evolve: ["*"]        # the whole generator; lint holds the contract, not fixed text
+    lmhint:                               # the hardware: router, multiplexer, orchestrator
+      role: fixed
+      kind: text
+      source: file
+      file: lmhint/lmhint.cc
+      language: cpp
+    subprefetchers:                       # the ensemble members
+      role: fixed
+      kind: text
+      source: file
+      file: lmhint/subprefetchers.h
+      language: cpp
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+
+      lint:                               # the binary only: no trace, no IPC, no table of answers
+        node: pfllm.lint
+        inputs:
+          source: candidate.hintgen
+          ensemble: decl.ensemble
+          fields: decl.hint.fields
+
+      accounting:                         # the on-chip cost the declaration implies
+        node: pfllm.state_bytes
+        inputs:
+          phb_entries: decl.phb.entries
+          hint_bits: vars.hint.bits
+          ensemble: decl.ensemble
+
+      hintgen:                            # run the candidate's program over every binary
+        node: pfllm.hintgen
+        inputs:
+          source: candidate.hintgen
+          benchmarks: [bfs_kron, bfs_urand, pr_kron, pr_urand, sssp_kron, sssp_urand, cc_kron, cc_urand,
+                      bc_kron, bc_urand, cc_sv_kron, cc_sv_urand, pr_spmv_kron, pr_spmv_urand,
+                      tc_kron, tc_urand]
+          bench_dir: ${BENCH_DIR}
+          ensemble: decl.ensemble
+          fields: decl.hint.fields
+          work_dir: ${PFLLM_WORK}
+          timeout_s: 300
+
+      pack:                               # the hints as the 8-bit table the hardware reads
+        node: pfllm.pack_pht
+        inputs:
+          hints: hintgen.hints
+          fields: decl.hint.fields
+          bits: vars.hint.bits
+          bench_dir: ${BENCH_DIR}
+          work_dir: ${PFLLM_WORK}
+
+      # ---- the ground truth: one sweep, reused by every candidate --------
+      # `pin` is deliberately absent: ADIR's pin keys on the node name while a
+      # mapped node runs once per index, so the pin would hold only the last
+      # member. The content cache already serves this -- the inputs never vary
+      # with the candidate.
+      sweep:                              # one cell per (member, workload): 7 x 16 = 112
+        node: pfllm.sweep
+        map_over:
+          member: [none, next_line, ip_stride, streamer, ampm, sandbox, sms]
+          benchmark: [bfs_kron, bfs_urand, pr_kron, pr_urand, sssp_kron, sssp_urand, cc_kron, cc_urand,
+                      bc_kron, bc_urand, cc_sv_kron, cc_sv_urand, pr_spmv_kron, pr_spmv_urand,
+                      tc_kron, tc_urand]
+        inputs:
+          bench_dir: ${BENCH_DIR}
+          trace_dir: ${TRACE_DIR}
+          champsim_bin: ${CHAMPSIM_BIN}
+          work_dir: ${PFLLM_WORK}
+          ensemble: full
+          phb_entries: 256
+          warmup_instructions: 20000000
+          simulation_instructions: 60000000
+        resources: {champsim: 1}
+
+      best:                               # the strongest single member, per workload
+        node: pfllm.best_single
+        pin: true
+        inputs:
+          ipc: sweep.ipc
+          dram: sweep.dram
+
+      baseline:                           # no prefetching: this workload's traffic reference
+        node: pfllm.simulate
+        pin: true
+        map_over:
+          benchmark: [bfs_kron, bfs_urand, pr_kron, pr_urand, sssp_kron, sssp_urand, cc_kron, cc_urand]
+        inputs:
+          tables: {}
+          trace_dir: ${TRACE_DIR}
+          champsim_bin: ${CHAMPSIM_BIN}
+          work_dir: ${PFLLM_WORK}
+          default_policy: none
+          warmup_instructions: 20000000
+          simulation_instructions: 60000000
+        resources: {champsim: 1}
+
+      probe:                              # one workload, short: determinism and a cheap screen
+        node: pfllm.simulate
+        map_over:
+          benchmark: [bfs_kron]
+        inputs:
+          tables: pack.tables
+          trace_dir: ${TRACE_DIR}
+          champsim_bin: ${CHAMPSIM_BIN}
+          work_dir: ${PFLLM_WORK}
+          ensemble: decl.ensemble
+          fields: decl.hint.fields
+          phb_entries: decl.phb.entries
+          default_policy: decl.hint.default
+          warmup_instructions: 5000000
+          simulation_instructions: 15000000
+          repeat: 2                       # deterministic iff the two runs agree
+        resources: {champsim: 1}
+
+      dev:                                # the goal, one member per workload
+        node: pfllm.simulate
+        map_over:
+          benchmark: [bfs_kron, bfs_urand, pr_kron, pr_urand, sssp_kron, sssp_urand, cc_kron, cc_urand]
+        giveup:
+          sigma: 2                        # pr runs three times as long as bfs under this seed
+          max_skips: 1                    # so it is waited for every other candidate, never staler
+        inputs:
+          tables: pack.tables
+          trace_dir: ${TRACE_DIR}
+          champsim_bin: ${CHAMPSIM_BIN}
+          work_dir: ${PFLLM_WORK}
+          ensemble: decl.ensemble
+          fields: decl.hint.fields
+          phb_entries: decl.phb.entries
+          default_policy: decl.hint.default
+          warmup_instructions: 20000000
+          simulation_instructions: 60000000
+          baseline_dram: best.dram        # per workload, against the best single prefetcher
+        when:
+          - min(probe.deterministic)
+        resources: {champsim: 1}
+
+      heldout:                            # never scored against; measured at report time
+        node: pfllm.simulate
+        report_only: true
+        map_over:
+          benchmark: [bc_kron, bc_urand, cc_sv_kron, cc_sv_urand, pr_spmv_kron, pr_spmv_urand, tc_kron, tc_urand]
+        inputs:
+          tables: pack.tables
+          trace_dir: ${TRACE_DIR}
+          champsim_bin: ${CHAMPSIM_BIN}
+          work_dir: ${PFLLM_WORK}
+          ensemble: decl.ensemble
+          fields: decl.hint.fields
+          phb_entries: decl.phb.entries
+          default_policy: decl.hint.default
+          warmup_instructions: 20000000
+          simulation_instructions: 60000000
+        resources: {champsim: 1}
+
+    feedback: [lint.detail, hintgen.distribution, hintgen.detail, dev.ipc, dev.detail,
+               dev.dram_traffic_increase_pct, dev.l1d_mpki, dev.pf_useless_pct,
+               best.ipc, best.detail, baseline.ipc]
+    report: [heldout.ipc, geomean(heldout.ipc), sum(heldout.cycles), sum(heldout.dram_reads),
+             sum(dev.cycles), sum(dev.dram_reads), best.ipc_geomean, geomean(baseline.ipc)]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: lint.ok, eq: true, hard: true}
+    - {metric: hintgen.ok, eq: true, hard: true}
+    - {metric: hintgen.coverage, ge: 0.99, hard: true}     # every load PC gets a decision
+    - {metric: hintgen.deterministic, eq: true, hard: true}
+    - {metric: accounting.bytes, le: 8192, hard: true}
+    - {expr: min(probe.deterministic), eq: true, hard: true}
+    - {metric: hintgen.seconds, le: 300}
+    - {metric: pack.pht_kb_per_mb, le: 128}                # the paper's table costs 74 KB per MB
+    - {expr: mean(dev.dram_traffic_increase_pct), le: 25}   # mean over the dev workloads
+    - {expr: max(dev.dram_traffic_increase_pct), le: 60}    # and no single workload far past it
+    - {expr: 100 * (1 - min(dev.ipc) / min(seed.dev.ipc)), le: 5}   # no dev workload collapses
+
+  goal:
+    maximize: geomean(dev.ipc)
+    score:
+      rule: ratio_to_seed
+      # A candidate over the traffic budget keeps partial credit for how far over it is.
+      # Under `zero` the landscape flattens: in the first smoke run a candidate that
+      # raised geomean IPC 34% and one that changed nothing both scored 0.
+      infeasible: slack
+
+  knowledge: pfllm/knowledge
+  task:
+    context: task.md
+
+  search:
+    backend: adaevolve
+    iterations: 2
+    parallel: 2
+    parallel_nodes: 12
+    diff_mode: true
+    max_solution_bytes: 60000
+    retries: 1
+    eval_timeout_s: 3600
+    database:
+      use_migration: false
+      diversity_strategy: code
+    seeds:
+      files: [seeds/hintgen.py]
+    context:
+      programs: 2
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+      sample: ucb
+    tactics:
+      sources: [unexplored_values, worst_constraint]
+      select: ucb
+      window: 10
+    models:
+      solution:
+        agent: opencode
+        provider: openrouter
+        model: deepseek/deepseek-v4.1-flash
+      guide:
+        agent: opencode
+        provider: openrouter
+        model: deepseek/deepseek-v4.1-flash
+    budget:
+      wall_hours: 4
+      llm_calls: 12
+    stop:
+      plateau_iterations: 5
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: true

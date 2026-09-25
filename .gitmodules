@@ -1,0 +1,11 @@
+[submodule "3rdparty/berkeley-hardfloat"]
+	path = 3rdparty/berkeley-hardfloat
+	url = https://github.com/ucb-bar/berkeley-hardfloat.git
+[submodule "3rdparty/cvfpu"]
+	path = 3rdparty/cvfpu
+	url = https://github.com/openhwgroup/cvfpu.git
+	branch = develop
+[submodule "3rdparty/transdot"]
+	path = 3rdparty/transdot
+	url = git@github.com:predator2k/SafeDot.git
+	branch = pncel-develop-plus-comb

@@ -1,0 +1,186 @@
+# Core parameters on a simulator: a few tens of discrete variables with
+# conditions, an evaluator of hours per point, a budget of a few hundred
+# points, so the backend is SMAC over space.json and the candidate is a
+# declaration alone. A short gem5 run on three benchmarks ranks every
+# candidate; the top quarter reach the training list; the held-out list
+# and a hammer_vlsi area run happen at report time. The chicore library
+# is named as the task needs it; gem5 and hammer_vlsi are CHIA nodes.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: uarch_dse
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  sim:
+    resources:
+      sim: 1
+    num_workers: 8
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: ghcr.io/ucb-bar/chia-gem5:latest
+      run_options:
+        - -v ${SIMPOINT_DIR}:${SIMPOINT_DIR}:ro
+  vlsi:
+    resources:
+      vlsi: 1
+    num_workers: 1
+    compatible_ips: ["${VLSI_HOST}"]
+  evolver:
+    resources:
+      evolver: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+cache:
+  gem5:
+    cache: true
+  hammer_vlsi:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chicore.CoreConfig
+  run_dir: run/uarch_dse
+
+  variables:
+    isa:
+      fixed: rv64gc
+    rob_entries:
+      search: {min: 32, max: 256, step: 32}
+    issue_width:
+      search: [2, 4, 8]
+    lq_entries:
+      search: {min: 16, max: 64, step: 16}
+    sq_entries:
+      search: {min: 16, max: 64, step: 16}
+    phys_regs:
+      search: {min: 64, max: 256, step: 32}
+    l1d_kb:
+      search: [16, 32, 64]
+    l1d_ways:
+      search: [4, 8]
+    l2_kb:
+      search: [256, 512, 1024]
+    l2_ways:
+      search: [8, 16]
+    bp_family:
+      search: [tage, gshare, perceptron]
+    prefetcher_family:
+      search: [none, stride, best_offset]
+    prefetcher.degree:                   # exists iff prefetcher_family is not none
+      search: {min: 1, max: 8, step: 1}
+
+  artifacts:                             # no seed: the configuration is a node output of the declarations
+    simpoints_train:
+      role: input
+      kind: text
+      source: file
+      file: bench/simpoints_train.json
+    simpoints_heldout:
+      role: input
+      kind: text
+      source: file
+      file: bench/simpoints_heldout.json
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      config:                            # the gem5 (or BOOM) configuration from the declarations
+        node: chicore.render_config
+        inputs:
+          isa: vars.isa
+          rob_entries: decl.rob_entries
+          issue_width: decl.issue_width
+          lq_entries: decl.lq_entries
+          sq_entries: decl.sq_entries
+          phys_regs: decl.phys_regs
+          l1d_kb: decl.l1d_kb
+          l1d_ways: decl.l1d_ways
+          l2_kb: decl.l2_kb
+          l2_ways: decl.l2_ways
+          bp_family: decl.bp_family
+          prefetcher_family: decl.prefetcher_family
+          prefetcher_degree: decl.prefetcher.degree
+      area:                              # an analytical area model, milliseconds
+        node: chicore.area_model
+        inputs:
+          config: config.text
+      gem5_short:                        # three benchmarks, short intervals: level 1
+        node: gem5
+        inputs:
+          config: config.text
+          simpoint_dir: ${SIMPOINT_DIR}
+          benchmarks: [605.mcf_s, 623.xalancbmk_s, 641.leela_s]
+          interval_instructions: 10000000
+        when:
+          - config.ok
+      gem5_train:                        # the training list: level 2
+        node: gem5
+        inputs:
+          config: config.text
+          simpoint_dir: ${SIMPOINT_DIR}
+          simpoints: artifacts.simpoints_train
+        when:
+          - goal.1 ge quantile(archive.goal.1, 0.75)
+      gem5_heldout:
+        node: gem5
+        inputs:
+          config: config.text
+          simpoint_dir: ${SIMPOINT_DIR}
+          simpoints: artifacts.simpoints_heldout
+        report_only: true
+      synth:                             # the BOOM instance of the configuration, for the front only
+        node: hammer_vlsi
+        inputs:
+          config: config.text
+          top: BoomTile
+          pdk: sky130
+          tool: genus
+          clock_period_ns: 10.0
+        report_only: true
+        resources:
+          vlsi: 1
+    feedback: [config.detail, gem5_short.stats]
+    report: [gem5_heldout.ipc, synth.area_um2, synth.wns_ns]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: config.ok, eq: true, hard: true}
+    - {metric: area.mm2, le: 1.2 * seed.area.mm2}
+
+  goal:
+    fidelity:
+      - maximize: geomean(gem5_short.ipc)
+      - maximize: geomean(gem5_train.ipc)
+    score:
+      rule: ratio_to_seed
+      infeasible: slack
+
+  search:
+    backend: smac                        # Bayesian optimization over space.json, with its conditions
+    iterations: 300
+    parallel: 4
+    numeric:
+      surrogate: random_forest
+      acquisition: ei
+    seeds:
+      generated: [boom_small, boom_medium, boom_large, paper]   # the shipped BOOM configurations and the paper's design
+    budget:
+      wall_hours: 240
+      node_runs: 600
+    stop:
+      plateau_iterations: 60
+
+  archive:
+    store: sqlite
+    path: uarch.db
+    query_tool: true
+    keep_transcripts: false
+    report:
+      front_only: false

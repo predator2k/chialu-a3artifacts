@@ -1,0 +1,228 @@
+# A tile chooser that generalizes across shapes: the candidate is a
+# Python function plan(shape, capacity_kb, banks, dtype) -> TILE, applied
+# by a fixed parametric kernel generator to every shape of a generated
+# grid. The per-shape optima of cacheflex_kernel, read from its archive
+# by a pinned node, normalize the goal. The chiacache library and the
+# gem5_kernel node are named as the task needs them.
+
+# ---- CHIA cluster (read by `chia up`) ---------------------------------
+cluster_name: tiling_heuristic
+
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+
+available_node_types:
+  build:
+    resources:
+      build: 2
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: chiacache-toolchain:latest
+  sim:
+    resources:
+      sim: 1
+    num_workers: 4
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: chiacache-gem5:latest
+  codex:
+    resources:
+      codex_creds: 4
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: chialu-codex:latest
+      run_options:
+        - -v ${CODEX_HOME}:/root/.codex:ro
+  evolver:
+    resources:
+      evolver: 1
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+
+cache:
+  build_from_plans:
+    cache: true
+  gem5_kernel:
+    cache: true
+
+# ---- ADIR instance (read by `adir`) -----------------------------------
+adir:
+  module: chiacache.TilingPlanner
+  run_dir: run/tiling_heuristic
+
+  variables:
+    l2.size_kb:
+      fixed: 2048
+    l2.ways:
+      fixed: 16
+    l2.line_bytes:
+      fixed: 64
+    l2.sp_ways:
+      fixed: 16
+    sp.banks:
+      fixed: 8
+    isa.ext:
+      fixed: cflex_v1
+    kernel.dtype:
+      fixed: fp16
+    plan.language:
+      fixed: python
+
+  artifacts:
+    planner:                             # the whole file is mutable
+      role: seed
+      kind: text
+      source: file
+      file: seeds/square_max_fit.py
+      language: python
+      evolve: ["*"]
+    kernel_template:                     # a parametric kernel that realizes any valid TILE
+      role: fixed
+      kind: text
+      source: generated
+      language: c
+    reference:
+      role: input
+      kind: text
+      source: file
+      file: ref/gemm_ref.c
+      language: c
+    shapes:                              # an M x N x K grid
+      role: input
+      kind: text
+      source: generated
+      indexed_by: gemm_grid
+    shapes_heldout:
+      role: input
+      kind: text
+      source: generated
+      indexed_by: gemm_grid_heldout
+
+  evaluate:
+    nodes:
+      declaration:
+        node: adir.declaration
+      plan_apply:                        # the planner over the shape set: one TILE per shape, each checked
+        node: chiacache.plan_apply
+        inputs:
+          planner: candidate.planner
+          shapes: artifacts.shapes
+          capacity_kb: vars.l2.size_kb / vars.l2.ways * vars.l2.sp_ways
+          banks: vars.sp.banks
+          dtype: vars.kernel.dtype
+      build:
+        node: chiacache.build_from_plans
+        inputs:
+          template: artifacts.kernel_template
+          plans: plan_apply.plans
+          ext: vars.isa.ext
+        resources:
+          build: 1
+      conformance:
+        node: chiacache.conformance
+        inputs:
+          binary: build.binary
+          reference: artifacts.reference
+          shapes: artifacts.shapes
+          trials: 4
+      kernel_model:                      # analytical, per shape: level 1
+        node: chiacache.tiling_model
+        inputs:
+          tiles: plan_apply.plans
+          banks: vars.sp.banks
+          capacity_kb: vars.l2.size_kb / vars.l2.ways * vars.l2.sp_ways
+      oracle:                            # the best per-shape cycles of cacheflex_kernel, read once
+        node: chiacache.archive_best
+        pin: true
+        inputs:
+          archive: ../cacheflex_kernel/results_db.jsonl
+          metric: gem5.cycles                # cacheflex_kernel measures on its `gem5` node
+          shapes: artifacts.shapes
+      sim:                               # simulation over the shape set: level 2
+        node: gem5_kernel
+        inputs:
+          binary: build.binary
+          shapes: artifacts.shapes
+          l2_size_kb: vars.l2.size_kb
+          l2_ways: vars.l2.ways
+          sp_ways: vars.l2.sp_ways
+          sp_banks: vars.sp.banks
+        when:
+          - conformance.pass
+          - goal.1 le quantile(archive.goal.1, 0.3)
+      sim_heldout:
+        node: gem5_kernel
+        inputs:
+          binary: build.binary
+          shapes: artifacts.shapes_heldout
+          l2_size_kb: vars.l2.size_kb
+          l2_ways: vars.l2.ways
+          sp_ways: vars.l2.sp_ways
+          sp_banks: vars.sp.banks
+        report_only: true
+    feedback: [plan_apply.detail, conformance.detail, sim.stats]
+    report: [sim_heldout.cycles]
+
+  constraints:
+    - {metric: declaration.ok, eq: true, hard: true}
+    - {metric: plan_apply.ok, eq: true, hard: true}      # every emitted plan passes the TILE check
+    - {metric: build.ok, eq: true, hard: true}
+    - {metric: conformance.pass, eq: true, hard: true}
+
+  goal:
+    fidelity:                            # a fraction of the per-shape optimum; 1.0 is the cacheflex_kernel result
+      - minimize: geomean(kernel_model.cycles / oracle.cycles)
+      - minimize: geomean(sim.cycles / oracle.cycles)
+    score:
+      rule: ratio_to_seed
+      infeasible: zero
+
+  knowledge: chiacache/knowledge
+
+  search:
+    backend: adaevolve
+    iterations: 200
+    parallel: 4
+    diff_mode: false                     # the planner is short; whole-file rewrites
+    max_solution_bytes: 20000
+    retries: 2
+    database:
+      use_migration: true
+      diversity_strategy: code
+    seeds:
+      generated: [square_max_fit, roofline, from_archive]   # from_archive: a decision tree fitted to the TILE lines of cacheflex_kernel
+    context:
+      programs: 2
+      show: declarations_metrics
+    prompts:
+      variants:
+        operator: [structural, local, free]
+        feedback_depth: [summary, full]
+      sample: ucb
+    tactics:
+      sources: [worst_constraint, worst_shapes]
+      select: ucb
+      window: 20
+    models:
+      solution:
+        agent: codex
+        model: gpt-6-astra
+        effort: high
+    budget:
+      wall_hours: 24
+      node_runs: 1500
+      llm_calls: 400
+    stop:
+      plateau_iterations: 40
+
+  archive:
+    store: jsonl
+    path: results_db.jsonl
+    keep_transcripts: true
+    report:
+      front_only: false
